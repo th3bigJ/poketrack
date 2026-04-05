@@ -5,28 +5,27 @@
 //  Created by Jordan Hardcastle on 05/04/2026.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct PokeTrackApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
+    private let modelContainer: ModelContainer
+
+    init() {
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            modelContainer = try PokeTrackModelContainer.makeProduction()
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("Failed to create ModelContainer: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(modelContainer)
     }
 }
