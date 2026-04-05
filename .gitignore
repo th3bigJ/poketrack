@@ -1,0 +1,24 @@
+# Xcode — user-specific (schemes, breakpoints); do not share across machines
+xcuserdata/
+
+# Build products
+build/
+DerivedData/
+
+# Xcode
+*.xcuserstate
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# Editor / tooling (SourceKit-LSP / Cursor)
+buildServer.json
