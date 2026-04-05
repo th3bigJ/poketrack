@@ -7,9 +7,11 @@ final class CardDataService {
     private(set) var cardsBySet: [String: [Card]] = [:]
     private(set) var lastError: String?
     private(set) var isLoading = false
+    private(set) var isSearchIndexReady = false
 
     private let session: URLSession
     private let fileManager: FileManager
+    private let searchIndex = CardSearchIndex()
 
     init(session: URLSession = .shared, fileManager: FileManager = .default) {
         self.session = session
@@ -39,10 +41,19 @@ final class CardDataService {
             let (data, _) = try await session.data(from: url)
             let decoded = try JSONDecoder().decode([TCGSet].self, from: data)
             sets = decoded.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+            Task { await self.prepareSearchIndex() }
         } catch {
             lastError = error.localizedDescription
             sets = []
         }
+    }
+
+    private func prepareSearchIndex() async {
+        await searchIndex.prepare(sets: sets) { [weak self] setCode in
+            guard let self else { return [] }
+            return await self.loadCards(forSetCode: setCode)
+        }
+        isSearchIndexReady = searchIndex.isReady
     }
 
     func loadCards(forSetCode setCode: String) async -> [Card] {
@@ -74,14 +85,41 @@ final class CardDataService {
         }
     }
 
-    func card(masterCardId: String, setCode: String) -> Card? {
-        cardsBySet[setCode]?.first { $0.masterCardId == masterCardId }
-    }
-
     func search(query: String) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
 
+        await searchIndex.prepare(sets: sets) { [weak self] setCode in
+            guard let self else { return [] }
+            return await self.loadCards(forSetCode: setCode)
+        }
+        isSearchIndexReady = searchIndex.isReady
+
+        if searchIndex.isReady {
+            let refs = searchIndex.refs(matchingNormalizedQuery: q)
+            if !refs.isEmpty {
+                return await cards(for: refs)
+            }
+        }
+        return await linearSubstringSearch(normalizedQuery: q)
+    }
+
+    private func cards(for refs: Set<CardRef>) async -> [Card] {
+        var bySet: [String: Set<String>] = [:]
+        for ref in refs {
+            bySet[ref.setCode, default: []].insert(ref.masterCardId)
+        }
+        var out: [Card] = []
+        for (setCode, ids) in bySet {
+            let loaded = await loadCards(forSetCode: setCode)
+            out.append(contentsOf: loaded.filter { ids.contains($0.masterCardId) })
+        }
+        return out.sorted {
+            $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending
+        }
+    }
+
+    private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
         var results: [Card] = []
         for set in sets {
             let code = set.setCode

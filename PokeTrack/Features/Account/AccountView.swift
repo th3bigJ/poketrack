@@ -60,29 +60,6 @@ struct AccountView: View {
                 }
             }
 
-            Section("Premium tools") {
-                NavigationLink {
-                    CardScannerView()
-                } label: {
-                    Label("Card scanner", systemImage: "camera.viewfinder")
-                }
-                NavigationLink {
-                    SealedProductsView()
-                } label: {
-                    Label("Sealed inventory", systemImage: "shippingbox")
-                }
-                NavigationLink {
-                    TransactionsListView()
-                } label: {
-                    Label("Transactions", systemImage: "list.bullet.rectangle")
-                }
-                NavigationLink {
-                    SharingPlaceholderView()
-                } label: {
-                    Label("Shared collections", systemImage: "person.2")
-                }
-            }
-
             Section("About") {
                 LabeledContent("R2 base URL") {
                     Text(AppConfiguration.r2BaseURL.absoluteString)

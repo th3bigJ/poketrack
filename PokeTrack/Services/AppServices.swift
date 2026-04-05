@@ -7,7 +7,6 @@ final class AppServices {
     let cardData = CardDataService()
     let pricing = PricingService()
     let store = StoreKitService()
-    let sealed = SealedCatalogService()
 
     func bootstrap() async {
         await withTaskGroup(of: Void.self) { group in

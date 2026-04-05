@@ -9,7 +9,7 @@ struct PaywallSheet: View {
         NavigationStack {
             List {
                 Section {
-                    Text("Premium unlocks unlimited collection, the card scanner, portfolio history, sealed inventory, transactions, collection sharing, and the home screen widget.")
+                    Text("Premium will unlock additional features as they ship. Catalog browsing uses your R2 data and public pricing.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }

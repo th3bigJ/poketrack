@@ -4,8 +4,6 @@ enum AppConfiguration {
     /// Single non-consumable premium product — create the same ID in App Store Connect.
     static let premiumProductID = "app1xy.PokeTrack.premium"
 
-    static let cloudKitContainerIdentifier = "iCloud.app1xy.PokeTrack"
-
     /// Public CDN base (no trailing slash). Set `POKETRACK_R2_BASE_URL` in Info.plist or env.
     static var r2BaseURL: URL {
         if let s = Bundle.main.object(forInfoDictionaryKey: "POKETRACK_R2_BASE_URL") as? String {
@@ -41,14 +39,6 @@ enum AppConfiguration {
         return ""
     }
 
-    /// `sealed-products/...` — empty = bucket root. Key: `POKETRACK_R2_SEALED_PREFIX`.
-    static var r2SealedPathPrefix: String {
-        if hasPlistOrEnv("POKETRACK_R2_SEALED_PREFIX") {
-            return plistOrEnvTrimmed("POKETRACK_R2_SEALED_PREFIX") ?? ""
-        }
-        return ""
-    }
-
     /// Card/set images (`cards/…`, `sets/logo/…`) — usually bucket root. Key: `POKETRACK_R2_ASSETS_PREFIX`.
     static var r2AssetsPathPrefix: String {
         if hasPlistOrEnv("POKETRACK_R2_ASSETS_PREFIX") {
@@ -66,10 +56,6 @@ enum AppConfiguration {
 
     static func r2PricingURL(path: String) -> URL {
         url(prefix: r2PricingPathPrefix, path: path)
-    }
-
-    static func r2SealedURL(path: String) -> URL {
-        url(prefix: r2SealedPathPrefix, path: path)
     }
 
     /// Images and logos from JSON relative paths (`cards/foo.png`, `sets/logo/...`).

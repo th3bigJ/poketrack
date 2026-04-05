@@ -1,10 +1,9 @@
-import SwiftData
 import SwiftUI
 
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var services = AppServices()
-    @State private var selectedTab: AppTab = .collection
+    @State private var selectedTab: AppTab = .browse
 
     var body: some View {
         Group {
@@ -49,14 +48,8 @@ struct RootView: View {
     @ViewBuilder
     private func tabView(for tab: AppTab) -> some View {
         switch tab {
-        case .collection:
-            CollectionView()
-        case .wishlist:
-            WishlistView()
         case .browse:
             BrowseView()
-        case .portfolio:
-            PortfolioView()
         case .account:
             AccountView()
         }
@@ -65,5 +58,4 @@ struct RootView: View {
 
 #Preview {
     RootView()
-        .modelContainer(PokeTrackModelContainer.makePreview())
 }

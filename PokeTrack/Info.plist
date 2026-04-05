@@ -4,8 +4,6 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>NSCameraUsageDescription</key>
-	<string>To scan and identify your Pokémon cards</string>
 	<key>POKETRACK_R2_BASE_URL</key>
 	<string>https://pub-041bf18f03164be388647b4363f87908.r2.dev</string>
 	<key>POKETRACK_R2_CATALOG_PREFIX</key>

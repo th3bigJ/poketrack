@@ -47,7 +47,7 @@ struct BrowseView: View {
                                 .font(.caption)
                                 .foregroundStyle(.red)
                         }
-                        Text("Configure POKETRACK_R2_BASE_URL. Catalog JSON uses POKETRACK_R2_CATALOG_PREFIX (default data); pricing and sealed use separate prefixes (default root). See Account → About for resolved URLs.")
+                        Text("Configure POKETRACK_R2_BASE_URL. Catalog JSON uses POKETRACK_R2_CATALOG_PREFIX (default data); pricing uses POKETRACK_R2_PRICING_PREFIX (default root). See Account → About for resolved URLs.")
                             .font(.caption2)
                             .foregroundStyle(.tertiary)
                     }
