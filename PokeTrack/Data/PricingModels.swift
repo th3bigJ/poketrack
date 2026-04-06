@@ -107,13 +107,26 @@ struct CardPriceHistory {
 // MARK: - Price Trends
 
 /// Decoded from `pricing/price-trends/{setCode}.json` for a single card entry.
-/// Structure: `{ variant, grade, current, daily: { changePct }, weekly: { changePct }, monthly: { changePct } }`
+/// Structure: `{ variant, grade, current, daily: { changePct }, weekly: { changePct }, monthly: { changePct }, allVariants: { variant: { grade: { daily, weekly, monthly } } } }`
 struct CardPriceTrends {
     let variant: String
     let grade: String
     let change1d: Double?
     let change7d: Double?
     let change30d: Double?
+    /// allVariants[variantKey][gradeKey] → (change1d, change7d, change30d)
+    let allVariants: [String: [String: (change1d: Double?, change7d: Double?, change30d: Double?)]]
+
+    func changes(for variant: String, grade: String) -> (change1d: Double?, change7d: Double?, change30d: Double?) {
+        if let gradeMap = allVariants[variant], let entry = gradeMap[grade] {
+            return entry
+        }
+        // Fall back to top-level values if this is the primary variant/grade
+        if variant == self.variant && grade == self.grade {
+            return (change1d, change7d, change30d)
+        }
+        return (nil, nil, nil)
+    }
 
     static func parse(from d: [String: Any]) -> CardPriceTrends? {
         let variant = d["variant"] as? String ?? ""
@@ -121,12 +134,30 @@ struct CardPriceTrends {
         func changePct(_ key: String) -> Double? {
             (d[key] as? [String: Any])?["changePct"] as? Double
         }
+        func parseGradeEntry(_ g: [String: Any]) -> (change1d: Double?, change7d: Double?, change30d: Double?) {
+            func pct(_ key: String) -> Double? { (g[key] as? [String: Any])?["changePct"] as? Double }
+            return (pct("daily"), pct("weekly"), pct("monthly"))
+        }
+        var allVariants: [String: [String: (change1d: Double?, change7d: Double?, change30d: Double?)]] = [:]
+        if let raw = d["allVariants"] as? [String: Any] {
+            for (vKey, vVal) in raw {
+                guard let gradeMap = vVal as? [String: Any] else { continue }
+                var grades: [String: (change1d: Double?, change7d: Double?, change30d: Double?)] = [:]
+                for (gKey, gVal) in gradeMap {
+                    if let gradeEntry = gVal as? [String: Any] {
+                        grades[gKey] = parseGradeEntry(gradeEntry)
+                    }
+                }
+                allVariants[vKey] = grades
+            }
+        }
         return CardPriceTrends(
             variant: variant,
             grade: grade,
             change1d: changePct("daily"),
             change7d: changePct("weekly"),
-            change30d: changePct("monthly")
+            change30d: changePct("monthly"),
+            allVariants: allVariants
         )
     }
 }

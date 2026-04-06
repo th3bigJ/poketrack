@@ -28,9 +28,7 @@ struct CardBrowseDetailView: View {
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            VStack(spacing: 0) {
-                headerRow
-
+            ZStack(alignment: .top) {
                 if cards.isEmpty {
                     ContentUnavailableView("No card", systemImage: "rectangle.on.rectangle.slash")
                         .foregroundStyle(.secondary)
@@ -44,7 +42,10 @@ struct CardBrowseDetailView: View {
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea(edges: .top)
                 }
+
+                headerRow
             }
             .background(Color.black)
             .navigationBarHidden(true)
@@ -128,7 +129,8 @@ struct CardBrowseDetailView: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 64)
-        .background(Color.black)
+        .background(.ultraThinMaterial.opacity(0.85))
+        .background(Color.black.opacity(0.3))
     }
 }
 
@@ -147,7 +149,7 @@ private struct CardBrowseDetailPage: View {
                         .aspectRatio(5/7, contentMode: .fit)
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 8)
+                .padding(.top, 64 + 8)
 
                 CardPricingPanel(card: card)
                     .padding(.top, 16)

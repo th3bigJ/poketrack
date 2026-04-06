@@ -186,6 +186,13 @@ final class PricingService {
                 return CardPriceHistory.parse(from: variantMap)
             }
         }
+        // Case-insensitive fallback (e.g. tcgdex_id "smp-SM211" vs file key "smp-sm211")
+        for key in keys {
+            let lower = key.lowercased()
+            if let variantMap = setMap.first(where: { $0.key.lowercased() == lower })?.value {
+                return CardPriceHistory.parse(from: variantMap)
+            }
+        }
         return nil
     }
 
@@ -199,6 +206,13 @@ final class PricingService {
         let keys = Self.pricingLookupKeys(for: card)
         for key in keys {
             if let entry = setMap[key] {
+                return CardPriceTrends.parse(from: entry)
+            }
+        }
+        // Case-insensitive fallback
+        for key in keys {
+            let lower = key.lowercased()
+            if let entry = setMap.first(where: { $0.key.lowercased() == lower })?.value {
                 return CardPriceTrends.parse(from: entry)
             }
         }

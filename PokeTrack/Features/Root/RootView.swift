@@ -25,6 +25,15 @@ private struct BrowseFullScreenHost: View {
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
             presentedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
         })
+        .overlay {
+            if presentedCardPresentation != nil {
+                Color.black
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: presentedCardPresentation != nil)
         .sheet(item: $presentedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
@@ -330,6 +339,15 @@ struct RootView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
+        .overlay {
+            if selectedCardPresentation != nil {
+                Color.black
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: selectedCardPresentation != nil)
         .onChange(of: searchFieldFocused) { _, isFocused in
             if isFocused {
                 withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
@@ -362,15 +380,6 @@ struct RootView: View {
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
         }
-        .overlay {
-            if selectedCardPresentation != nil {
-                Color.black
-                    .ignoresSafeArea()
-                    .allowsHitTesting(false)
-                    .transition(.opacity)
-            }
-        }
-        .animation(.easeInOut(duration: 0.2), value: selectedCardPresentation != nil)
         .fullScreenCover(item: $browseFullScreen) { route in
             BrowseFullScreenHost(route: route)
                 .environment(services)

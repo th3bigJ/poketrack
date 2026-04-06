@@ -74,7 +74,11 @@ struct CardPricingPanel: View {
         }
     }
 
-    private var currentTrend: CardPriceTrends? { trends }
+    private var currentTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?)? {
+        guard let trends, let variant = selectedVariant else { return nil }
+        let grade = selectedGrade ?? "raw"
+        return trends.changes(for: variant, grade: grade)
+    }
 
     // Picker keys: history variants if available, else scrydex keys
     private var displayedVariants: [String] {
@@ -96,7 +100,7 @@ struct CardPricingPanel: View {
             }
 
             // Market price / scrub date label
-            Text(scrubPoint != nil ? truncatedLabel(scrubPoint!.label) : "Market Price")
+            Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
                 .font(.caption)
                 .foregroundStyle(.white.opacity(0.5))
                 .padding(.top, 12)
@@ -109,11 +113,11 @@ struct CardPricingPanel: View {
                 .animation(.none, value: scrubPoint?.price)
 
             // % change badges
-            if let trend = currentTrend {
+            if let trendChanges = currentTrendChanges {
                 HStack(spacing: 12) {
-                    changeBadge(label: "1D", value: trend.change1d)
-                    changeBadge(label: "7D", value: trend.change7d)
-                    changeBadge(label: "1M", value: trend.change30d)
+                    changeBadge(label: "1D", value: trendChanges.change1d)
+                    changeBadge(label: "7D", value: trendChanges.change7d)
+                    changeBadge(label: "1M", value: trendChanges.change30d)
                 }
                 .padding(.top, 8)
                 .padding(.bottom, 4)
@@ -287,32 +291,76 @@ struct CardPricingPanel: View {
         .padding(.horizontal, 16)
     }
 
+    // Axis tick labels (short)
     private func truncatedLabel(_ label: String) -> String {
         switch chartRange {
         case .oneMonth:
-            return String(label.suffix(5))  // MM-DD
+            // "2026-03-21" → "21/03"
+            return dailyToShortUK(label)
         case .threeMonths:
-            // "2026-W14" → Monday date of that week e.g. "Mar 30"
-            return weekLabelToDate(label)
+            // "2026-W14" → "30/03"
+            return weekLabelToShortUK(label)
         case .oneYear:
             // "2026-03" → "Mar"
             return monthLabelToShort(label)
         }
     }
 
-    private func weekLabelToDate(_ label: String) -> String {
+    // Scrub overlay label (full dd/mm/yy)
+    private func scrubLabel(_ label: String) -> String {
+        switch chartRange {
+        case .oneMonth:
+            return dailyToFullUK(label)
+        case .threeMonths:
+            return weekLabelToFullUK(label)
+        case .oneYear:
+            let parts = label.components(separatedBy: "-")
+            guard parts.count == 2, let month = Int(parts[1]) else { return label }
+            let fmt = DateFormatter()
+            return "\(fmt.shortMonthSymbols[month - 1]) \(parts[0])"
+        }
+    }
+
+    private func dailyToShortUK(_ label: String) -> String {
+        // "2026-03-21" → "21/03"
+        let parts = label.components(separatedBy: "-")
+        guard parts.count == 3 else { return label }
+        return "\(parts[2])/\(parts[1])"
+    }
+
+    private func dailyToFullUK(_ label: String) -> String {
+        // "2026-03-21" → "21/03/26"
+        let parts = label.components(separatedBy: "-")
+        guard parts.count == 3, parts[0].count == 4 else { return label }
+        let yy = String(parts[0].suffix(2))
+        return "\(parts[2])/\(parts[1])/\(yy)"
+    }
+
+    private func weekLabelToShortUK(_ label: String) -> String {
+        guard let date = weekLabelToDate(label) else { return label }
+        let fmt = DateFormatter()
+        fmt.dateFormat = "dd/MM"
+        fmt.timeZone = TimeZone(identifier: "UTC")
+        return fmt.string(from: date)
+    }
+
+    private func weekLabelToFullUK(_ label: String) -> String {
+        guard let date = weekLabelToDate(label) else { return label }
+        let fmt = DateFormatter()
+        fmt.dateFormat = "dd/MM/yy"
+        fmt.timeZone = TimeZone(identifier: "UTC")
+        return fmt.string(from: date)
+    }
+
+    private func weekLabelToDate(_ label: String) -> Date? {
         // Format: "YYYY-Www"
         let parts = label.components(separatedBy: "-W")
         guard parts.count == 2,
               let year = Int(parts[0]),
-              let week = Int(parts[1]) else { return label }
+              let week = Int(parts[1]) else { return nil }
         var cal = Calendar(identifier: .iso8601)
         cal.timeZone = TimeZone(identifier: "UTC")!
-        guard let date = cal.date(from: DateComponents(weekOfYear: week, yearForWeekOfYear: year)) else { return label }
-        let fmt = DateFormatter()
-        fmt.dateFormat = "MMM d"
-        fmt.timeZone = TimeZone(identifier: "UTC")
-        return fmt.string(from: date)
+        return cal.date(from: DateComponents(weekOfYear: week, yearForWeekOfYear: year))
     }
 
     private func monthLabelToShort(_ label: String) -> String {
