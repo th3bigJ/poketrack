@@ -43,11 +43,18 @@ struct RootView: View {
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar` so detail matches Browse (back + title only).
     @State private var searchNavigationPath = NavigationPath()
+    /// Title shown in the search-detail header when `searchNavigationPath` is non-empty.
+    @State private var searchDetailTitle = ""
     /// Cards tab `NavigationStack` path — hide root chrome when a card detail (or other pushed screen) is showing.
     @State private var browseNavigationPath = NavigationPath()
     @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @FocusState private var searchFieldFocused: Bool
+
+    /// True when search has pushed into a detail view — swap the search bar for a back + title header.
+    private var isSearchDetailActive: Bool {
+        isSearchExperiencePresented && !searchNavigationPath.isEmpty
+    }
 
     /// Search open at root list: show chrome. Search with a pushed detail: hide chrome. Cards tab with a pushed detail: hide chrome. Else scroll-driven chrome on Browse.
     private var showUniversalSearchBar: Bool {
@@ -107,7 +114,38 @@ struct RootView: View {
 
             VStack(spacing: 0) {
                 Group {
-                    if showUniversalSearchBar {
+                    if isSearchDetailActive {
+                        // Back + title header shown when user has drilled into a search result.
+                        HStack(spacing: 4) {
+                            Button {
+                                searchNavigationPath = NavigationPath()
+                                searchFieldFocused = false
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 17, weight: .semibold))
+                                    Text("Search")
+                                        .font(.system(size: 17, weight: .regular))
+                                }
+                                .foregroundStyle(.primary)
+                                .padding(.leading, 8)
+                            }
+                            .buttonStyle(.plain)
+
+                            Spacer()
+
+                            Text(searchDetailTitle)
+                                .font(.headline)
+                                .lineLimit(1)
+                                .padding(.trailing, 16)
+                        }
+                        .frame(height: 44)
+                        .padding(.horizontal, 8)
+                        .padding(.top, 8)
+                        .padding(.bottom, 10)
+                        .frame(maxWidth: .infinity)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                    } else if showUniversalSearchBar {
                         UniversalSearchBar(
                             text: $universalQuery,
                             isFocused: $searchFieldFocused,
@@ -148,6 +186,7 @@ struct RootView: View {
                 .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSideMenuOpen)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
+                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
                 .clipped()
 
                 ZStack(alignment: .top) {
@@ -209,8 +248,20 @@ struct RootView: View {
                                 switch root {
                                 case .set(let s):
                                     SetCardsView(set: s)
+                                        .navigationBarBackButtonHidden(true)
+                                        .toolbar(.hidden, for: .navigationBar)
+                                        .onAppear {
+                                            searchDetailTitle = s.name
+                                            searchFieldFocused = false
+                                        }
                                 case .dex(let dexId, let displayName):
                                     DexCardsView(dexId: dexId, displayName: displayName)
+                                        .navigationBarBackButtonHidden(true)
+                                        .toolbar(.hidden, for: .navigationBar)
+                                        .onAppear {
+                                            searchDetailTitle = displayName
+                                            searchFieldFocused = false
+                                        }
                                 }
                             }
                         }

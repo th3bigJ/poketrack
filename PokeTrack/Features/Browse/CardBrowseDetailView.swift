@@ -52,7 +52,8 @@ struct CardBrowseDetailView: View {
                 }
 
                 if let card = currentCard {
-                    headerBar(title: card.cardName, headerTop: headerTop, headerHeight: headerHeight)
+                    let set = services.cardData.sets.first { $0.setCode == card.setCode }
+                    headerBar(title: card.cardName, set: set, headerTop: headerTop, headerHeight: headerHeight)
                 }
             }
             .ignoresSafeArea(edges: .top)
@@ -60,7 +61,7 @@ struct CardBrowseDetailView: View {
     }
 
     @ViewBuilder
-    private func headerBar(title: String, headerTop: CGFloat, headerHeight: CGFloat) -> some View {
+    private func headerBar(title: String, set: TCGSet?, headerTop: CGFloat, headerHeight: CGFloat) -> some View {
         ZStack {
             Text(title)
                 .font(.title3.bold())
@@ -78,6 +79,11 @@ struct CardBrowseDetailView: View {
                         .background(Circle().fill(Color.white.opacity(0.15)))
                 }
                 Spacer()
+                if let sym = set?.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty {
+                    SetSymbolAsyncImage(symbolSrc: sym, height: 28)
+                        .frame(width: 28, height: 28)
+                        .padding(.trailing, 4)
+                }
             }
         }
         .frame(height: headerHeight)
@@ -137,33 +143,8 @@ private struct CardBrowseDetailPage: View {
     @ViewBuilder
     private var cardSetAttribution: some View {
         if let set = setForCard {
-            let sideSlotWidth: CGFloat = 68
-            let logoHeight: CGFloat = 26
-            let symbolHeight: CGFloat = 22
-
-            HStack(alignment: .center, spacing: 10) {
-                SetLogoAsyncImage(logoSrc: set.logoSrc, height: logoHeight)
-                    .frame(width: sideSlotWidth, height: logoHeight)
-
-                Text(set.name)
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.72)
-                    .frame(maxWidth: .infinity)
-
-                Group {
-                    if let sym = set.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty {
-                        SetSymbolAsyncImage(symbolSrc: sym, height: symbolHeight)
-                            .frame(maxWidth: .infinity, maxHeight: symbolHeight)
-                    } else {
-                        Color.clear
-                    }
-                }
-                .frame(width: sideSlotWidth, height: logoHeight)
-            }
-            .padding(.horizontal, 16)
+            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 36)
+                .frame(height: 36)
         } else {
             Text("\(card.setCode) · \(card.cardNumber)")
                 .foregroundStyle(.secondary)

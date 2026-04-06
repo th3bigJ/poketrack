@@ -58,6 +58,7 @@ struct UniversalSearchResultsView: View {
                                         }
                                         .padding(.vertical, 10)
                                         .padding(.horizontal, 16)
+                                        .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
                                     Divider().padding(.leading, 16)
@@ -97,6 +98,7 @@ struct UniversalSearchResultsView: View {
                                         }
                                         .padding(.vertical, 8)
                                         .padding(.horizontal, 16)
+                                        .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
                                     Divider().padding(.leading, 16)
