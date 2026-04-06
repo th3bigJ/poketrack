@@ -2,10 +2,10 @@ import SwiftUI
 
 struct CardBrowseDetailView: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.dismiss) private var dismiss
 
     let cards: [Card]
     @State private var index: Int
+    @State private var navigationPath = NavigationPath()
 
     init(cards: [Card], startIndex: Int) {
         self.cards = cards
@@ -21,97 +21,125 @@ struct CardBrowseDetailView: View {
         return cards[index]
     }
 
-    var body: some View {
-        GeometryReader { geo in
-            let topInset = geo.safeAreaInsets.top
-            let headerTop = topInset + 8
-            let headerHeight: CGFloat = 48
-            /// `ScrollView` already respects the top safe area for its *first* layout pass, so the leading
-            /// `Color.clear` must only clear the **header row** (8pt below safe area + 48pt bar). Including
-            /// `safeAreaInsets.top` again stacks the inset twice and leaves a large black gap under the title.
-            let scrollTopClearance = headerHeight + 8
+    private var currentSet: TCGSet? {
+        guard let card = currentCard else { return nil }
+        return services.cardData.sets.first { $0.setCode == card.setCode }
+    }
 
-            ZStack(alignment: .top) {
-                Color.black.ignoresSafeArea()
+    var body: some View {
+        NavigationStack(path: $navigationPath) {
+            VStack(spacing: 0) {
+                headerRow
 
                 if cards.isEmpty {
                     ContentUnavailableView("No card", systemImage: "rectangle.on.rectangle.slash")
                         .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     TabView(selection: $index) {
                         ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
-                            CardBrowseDetailPage(
-                                card: card,
-                                topContentInset: scrollTopClearance,
-                                bottomInset: geo.safeAreaInsets.bottom + 16
-                            )
-                            .tag(i)
+                            CardBrowseDetailPage(card: card)
+                                .tag(i)
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
-                }
-
-                if let card = currentCard {
-                    let set = services.cardData.sets.first { $0.setCode == card.setCode }
-                    headerBar(title: card.cardName, set: set, headerTop: headerTop, headerHeight: headerHeight)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .ignoresSafeArea(edges: .top)
+            .background(Color.black)
+            .navigationBarHidden(true)
+            .navigationDestination(for: TCGSet.self) { set in
+                SetCardsView(set: set)
+            }
+            .navigationDestination(for: NationalDexPokemon.self) { mon in
+                DexCardsView(dexId: mon.nationalDexNumber, displayName: mon.displayName)
+            }
         }
+        .presentationBackground(Color.black)
+        .presentationDragIndicator(.visible)
+        .presentationDetents([.large])
+        .presentationCornerRadius(20)
+    }
+
+    private var currentPokemon: NationalDexPokemon? {
+        guard let dexId = currentCard?.dexIds?.first else { return nil }
+        return services.cardData.nationalDexPokemon.first { $0.nationalDexNumber == dexId }
+    }
+
+    private var pokemonImageURL: URL? {
+        guard let imageUrl = currentPokemon?.imageUrl else { return nil }
+        return AppConfiguration.pokemonArtURL(imageFileName: imageUrl)
     }
 
     @ViewBuilder
-    private func headerBar(title: String, set: TCGSet?, headerTop: CGFloat, headerHeight: CGFloat) -> some View {
-        ZStack {
-            Text(title)
-                .font(.title3.bold())
-                .foregroundStyle(.white)
-                .lineLimit(1)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .animation(.easeInOut(duration: 0.2), value: title)
+    private var headerRow: some View {
+        let slotWidth: CGFloat = 80
 
-            HStack {
-                Button { dismiss() } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(.white)
-                        .frame(width: 44, height: 44)
-                        .background(Circle().fill(Color.white.opacity(0.15)))
-                }
-                Spacer()
-                if let sym = set?.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty {
-                    SetSymbolAsyncImage(symbolSrc: sym, height: 28)
-                        .frame(width: 28, height: 28)
-                        .padding(.trailing, 4)
+        HStack(spacing: 0) {
+            // Set logo — tappable, fixed-width left slot
+            Button { if let set = currentSet { navigationPath.append(set) } } label: {
+                if let set = currentSet {
+                    SetLogoAsyncImage(logoSrc: set.logoSrc, height: 22)
+                        .frame(maxWidth: slotWidth, maxHeight: 22)
+                } else {
+                    Color.clear
                 }
             }
+            .buttonStyle(.plain)
+            .frame(width: slotWidth, alignment: .leading)
+
+            // Card name + set name — truly centred
+            VStack(spacing: 2) {
+                Text(currentCard?.cardName ?? "")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                    .animation(.easeInOut(duration: 0.15), value: currentCard?.cardName)
+
+                if let setName = currentSet?.name {
+                    Text(setName)
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.55))
+                        .lineLimit(1)
+                        .animation(.easeInOut(duration: 0.15), value: setName)
+                }
+            }
+            .frame(maxWidth: .infinity)
+
+            // Pokémon art — right slot, fixed size always to keep header height stable
+            Button {
+                if let mon = currentPokemon { navigationPath.append(mon) }
+            } label: {
+                Group {
+                    if let url = pokemonImageURL {
+                        CachedAsyncImage(url: url) { img in
+                            img.resizable().scaledToFit()
+                        } placeholder: {
+                            Color.clear
+                        }
+                    } else {
+                        Color.clear
+                    }
+                }
+                .frame(width: slotWidth, height: 44, alignment: .trailing)
+            }
+            .buttonStyle(.plain)
+            .disabled(currentPokemon == nil)
         }
-        .frame(height: headerHeight)
         .padding(.horizontal, 16)
-        .padding(.top, headerTop)
+        .frame(height: 64)
+        .background(Color.black)
     }
 }
 
 // MARK: - Single page (one card)
 
 private struct CardBrowseDetailPage: View {
-    @Environment(AppServices.self) private var services
-
     let card: Card
-    let topContentInset: CGFloat
-    let bottomInset: CGFloat
-
-    @State private var gbp: String = "—"
-
-    private var setForCard: TCGSet? {
-        services.cardData.sets.first { $0.setCode == card.setCode }
-    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                Color.clear.frame(height: topContentInset)
-
                 AsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageHighSrc ?? card.imageLowSrc)) {
                     $0.resizable().scaledToFit()
                 } placeholder: {
@@ -121,35 +149,14 @@ private struct CardBrowseDetailPage: View {
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
 
-                VStack(spacing: 16) {
-                    cardSetAttribution
-                    Text("Market (est.): \(gbp)")
-                        .font(.headline)
-                }
-                .padding(.top, 16)
+                CardPricingPanel(card: card)
+                    .padding(.top, 16)
+                    .padding(.bottom, 32)
             }
-            .padding(.bottom, bottomInset)
+            .frame(maxWidth: .infinity)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .scrollContentBackground(.hidden)
         .scrollIndicators(.hidden)
-        .task(id: "\(card.setCode)|\(card.masterCardId)") {
-            gbp = "—"
-            if let p = await services.pricing.gbpPrice(for: card, printing: CardPrinting.standard.rawValue) {
-                gbp = String(format: "£%.2f", p)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var cardSetAttribution: some View {
-        if let set = setForCard {
-            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 36)
-                .frame(height: 36)
-        } else {
-            Text("\(card.setCode) · \(card.cardNumber)")
-                .foregroundStyle(.secondary)
-                .font(.subheadline)
-                .padding(.horizontal, 16)
-        }
     }
 }

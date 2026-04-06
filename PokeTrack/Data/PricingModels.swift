@@ -55,6 +55,82 @@ struct ScrydexVariantPricing: Codable, Hashable {
     }
 }
 
+// MARK: - Price History
+
+/// One data point in a price history series.
+struct PriceDataPoint: Identifiable {
+    let id: String   // the label string (date / week / month)
+    let label: String
+    let price: Double
+}
+
+/// Decoded from `pricing/price-history/{setCode}.json`.
+/// Structure: `{ cardKey: { variant: { grade: { daily, weekly, monthly } } } }`
+struct CardPriceHistory {
+    struct Series {
+        let daily: [PriceDataPoint]
+        let weekly: [PriceDataPoint]
+        let monthly: [PriceDataPoint]
+    }
+    /// Keyed by "variant/grade" e.g. "holofoil/raw", "holofoil/psa10"
+    let series: [String: Series]
+
+    static func parse(from variantMap: [String: Any]) -> CardPriceHistory? {
+        func parseSeries(_ d: [String: Any]) -> Series {
+            func points(_ key: String) -> [PriceDataPoint] {
+                guard let arr = d[key] as? [[Any]] else { return [] }
+                return arr.compactMap { pair -> PriceDataPoint? in
+                    guard pair.count >= 2,
+                          let label = pair[0] as? String,
+                          let price = (pair[1] as? Double) ?? (pair[1] as? Int).map(Double.init)
+                    else { return nil }
+                    return PriceDataPoint(id: label, label: label, price: price)
+                }
+            }
+            return Series(daily: points("daily"), weekly: points("weekly"), monthly: points("monthly"))
+        }
+
+        var series: [String: Series] = [:]
+        for (variant, variantValue) in variantMap {
+            guard let gradeMap = variantValue as? [String: Any] else { continue }
+            for (grade, gradeValue) in gradeMap {
+                guard let seriesDict = gradeValue as? [String: Any] else { continue }
+                series["\(variant)/\(grade)"] = parseSeries(seriesDict)
+            }
+        }
+        guard !series.isEmpty else { return nil }
+        return CardPriceHistory(series: series)
+    }
+}
+
+
+// MARK: - Price Trends
+
+/// Decoded from `pricing/price-trends/{setCode}.json` for a single card entry.
+/// Structure: `{ variant, grade, current, daily: { changePct }, weekly: { changePct }, monthly: { changePct } }`
+struct CardPriceTrends {
+    let variant: String
+    let grade: String
+    let change1d: Double?
+    let change7d: Double?
+    let change30d: Double?
+
+    static func parse(from d: [String: Any]) -> CardPriceTrends? {
+        let variant = d["variant"] as? String ?? ""
+        let grade = d["grade"] as? String ?? "raw"
+        func changePct(_ key: String) -> Double? {
+            (d[key] as? [String: Any])?["changePct"] as? Double
+        }
+        return CardPriceTrends(
+            variant: variant,
+            grade: grade,
+            change1d: changePct("daily"),
+            change7d: changePct("weekly"),
+            change30d: changePct("monthly")
+        )
+    }
+}
+
 /// Minimal dynamic JSON for fields we do not model strongly.
 enum JSONValue: Codable, Hashable {
     case object([String: JSONValue])

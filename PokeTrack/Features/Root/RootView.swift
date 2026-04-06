@@ -25,7 +25,7 @@ private struct BrowseFullScreenHost: View {
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
             presentedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
         })
-        .fullScreenCover(item: $presentedCardPresentation) { ctx in
+        .sheet(item: $presentedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
         }
@@ -358,10 +358,19 @@ struct RootView: View {
                 searchNavigationPath = NavigationPath()
             }
         }
-        .fullScreenCover(item: $selectedCardPresentation) { ctx in
+        .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
         }
+        .overlay {
+            if selectedCardPresentation != nil {
+                Color.black
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: selectedCardPresentation != nil)
         .fullScreenCover(item: $browseFullScreen) { route in
             BrowseFullScreenHost(route: route)
                 .environment(services)

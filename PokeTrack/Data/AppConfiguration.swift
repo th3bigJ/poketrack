@@ -95,9 +95,14 @@ enum AppConfiguration {
         url(prefix: r2MarketPathPrefix, path: path)
     }
 
-    /// Fetched on demand — large time-series blobs. Path pattern under pricing prefix.
-    static func r2PricingHistoryURL(setCode: String, cardKey: String) -> URL {
-        r2PricingURL(path: "pricing-history/\(setCode)/\(cardKey).json")
+    /// Per-set price history file: `pricing/price-history/{setCode}.json`
+    static func r2PricingHistoryURL(setCode: String) -> URL {
+        r2PricingURL(path: "pricing/price-history/\(setCode).json")
+    }
+
+    /// Per-set price trends file: `pricing/price-trends/{setCode}.json`
+    static func r2PriceTrendsURL(setCode: String) -> URL {
+        r2PricingURL(path: "pricing/price-trends/\(setCode).json")
     }
 
     private static func normalizedSetLogoPath(_ logoSrc: String) -> String {

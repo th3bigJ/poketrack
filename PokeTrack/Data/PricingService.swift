@@ -138,6 +138,106 @@ final class PricingService {
         return stems
     }
 
+    /// All scrydex variant keys present for a card (used to populate the variant picker).
+    func variantKeys(for card: Card) async -> [String] {
+        guard let entry = await pricing(for: card),
+              let scrydex = entry.scrydex else { return [] }
+        return scrydex.keys.sorted()
+    }
+
+    /// GBP price for a specific variant key directly (not printing label).
+    func gbpPriceForVariant(for card: Card, variantKey: String) async -> Double? {
+        guard let entry = await pricing(for: card),
+              let scrydex = entry.scrydex,
+              let usd = scrydex[variantKey]?.marketEstimateUSD() else { return nil }
+        return usd * usdToGbp
+    }
+
+    /// GBP price for a variant + grade combination.
+    /// Grade "raw" uses the standard market estimate; "psa10" / "ace10" use their respective fields.
+    func gbpPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
+        guard let entry = await pricing(for: card),
+              let scrydex = entry.scrydex,
+              let pricing = scrydex[variantKey] else { return nil }
+        let usd: Double?
+        switch grade {
+        case "psa10": usd = pricing.psa10
+        case "ace10": usd = pricing.ace10
+        default:      usd = pricing.raw ?? pricing.market ?? pricing.avg
+        }
+        guard let usd else { return nil }
+        return usd * usdToGbp
+    }
+
+    // Per-set history/trends raw JSON cache (cardKey → raw dict), keyed by setCode.
+    private var historyCache: [String: [String: [String: Any]]] = [:]
+    private var trendsCache: [String: [String: [String: Any]]] = [:]
+
+    /// Fetches price history for a card from the per-set file, looks up by card key.
+    func priceHistory(for card: Card) async -> CardPriceHistory? {
+        let base = AppConfiguration.r2BaseURL
+        guard base.host != "invalid.local" else { return nil }
+
+        let setCode = card.setCode.lowercased()
+        let setMap = await loadSetHistoryMap(setCode: setCode)
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            if let variantMap = setMap[key] {
+                return CardPriceHistory.parse(from: variantMap)
+            }
+        }
+        return nil
+    }
+
+    /// Fetches price trends for a card from the per-set file, looks up by card key.
+    func priceTrends(for card: Card) async -> CardPriceTrends? {
+        let base = AppConfiguration.r2BaseURL
+        guard base.host != "invalid.local" else { return nil }
+
+        let setCode = card.setCode.lowercased()
+        let setMap = await loadSetTrendsMap(setCode: setCode)
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            if let entry = setMap[key] {
+                return CardPriceTrends.parse(from: entry)
+            }
+        }
+        return nil
+    }
+
+    private func loadSetHistoryMap(setCode: String) async -> [String: [String: Any]] {
+        if let cached = historyCache[setCode] { return cached }
+        let url = AppConfiguration.r2PricingHistoryURL(setCode: setCode)
+        guard let data = await fetchDataIfOK(from: url),
+              let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return [:] }
+        // root: { cardKey: { variant: { grade: { daily... } } } }
+        let typed = root.compactMapValues { $0 as? [String: Any] }
+        historyCache[setCode] = typed
+        return typed
+    }
+
+    private func loadSetTrendsMap(setCode: String) async -> [String: [String: Any]] {
+        if let cached = trendsCache[setCode] { return cached }
+        let url = AppConfiguration.r2PriceTrendsURL(setCode: setCode)
+        guard let data = await fetchDataIfOK(from: url),
+              let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return [:] }
+        let typed = root.compactMapValues { $0 as? [String: Any] }
+        trendsCache[setCode] = typed
+        return typed
+    }
+
+    private func fetchDataIfOK(from url: URL) async -> Data? {
+        do {
+            let (data, resp) = try await session.data(from: url)
+            guard let http = resp as? HTTPURLResponse,
+                  (200...299).contains(http.statusCode),
+                  !data.isEmpty else { return nil }
+            return data
+        } catch {
+            return nil
+        }
+    }
+
     func gbpPrice(for card: Card, printing: String) async -> Double? {
         guard let entry = await pricing(for: card) else { return nil }
         guard let scrydex = entry.scrydex, !scrydex.isEmpty else { return nil }
