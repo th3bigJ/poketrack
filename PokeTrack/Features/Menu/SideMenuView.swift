@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Full-height drawer: icon + title + subtitle rows, Account section. Close via the leading search-bar control.
 struct SideMenuView: View {
@@ -69,7 +70,7 @@ struct SideMenuView: View {
                 }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(Color.black)
+        .background(Color(uiColor: .systemGroupedBackground))
         // Align with `UniversalSearchBar`: main column is safe-area–inset; without this, the system adds safe area again and the title sits below the close control.
         .ignoresSafeArea(edges: .top)
     }
@@ -103,7 +104,7 @@ private struct SideMenuRow: View {
                         .multilineTextAlignment(.leading)
                     Text(subtitle)
                         .font(.caption)
-                        .foregroundStyle(Color(white: 0.55))
+                        .foregroundStyle(.secondary)
                         .multilineTextAlignment(.leading)
                 }
                 Spacer(minLength: 0)

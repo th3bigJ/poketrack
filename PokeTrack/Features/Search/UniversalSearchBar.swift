@@ -16,8 +16,8 @@ struct UniversalSearchBar: View {
     var onCamera: () -> Void
     var onFilter: () -> Void
 
-    /// Hairline edge on material fallback (Liquid Glass does not need this).
-    private let glassStroke = Color.white.opacity(0.14)
+    /// Hairline on material fallback — `primary` adapts with light/dark (old fixed white stroke looked wrong on light mode).
+    private var glassStroke: Color { Color.primary.opacity(0.1) }
 
     private var leadingSymbolName: String {
         if isSearchOpen { return "chevron.left" }

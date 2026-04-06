@@ -1,5 +1,6 @@
 import SwiftUI
 import Charts
+import UIKit
 
 // MARK: - Chart range
 
@@ -102,13 +103,13 @@ struct CardPricingPanel: View {
             // Market price / scrub date label
             Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
                 .font(.caption)
-                .foregroundStyle(.white.opacity(0.5))
+                .foregroundStyle(.secondary)
                 .padding(.top, 12)
                 .animation(.none, value: scrubPoint?.label)
 
             Text(scrubPoint != nil ? String(format: "£%.2f", scrubPoint!.price * services.pricing.usdToGbp) : currentPrice)
                 .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(.white)
+                .foregroundStyle(.primary)
                 .padding(.top, 2)
                 .animation(.none, value: scrubPoint?.price)
 
@@ -139,7 +140,7 @@ struct CardPricingPanel: View {
                 .padding(.bottom, 16)
             } else if isLoading {
                 ProgressView()
-                    .tint(.white)
+                    .tint(.primary)
                     .padding(.vertical, 24)
             } else {
                 Spacer().frame(height: 16)
@@ -160,6 +161,16 @@ struct CardPricingPanel: View {
         }
     }
 
+    // MARK: - Chip styles (system adaptive — matches Settings-style pills)
+
+    private func chipBackground(selected: Bool) -> Color {
+        selected ? Color(uiColor: .label) : Color(uiColor: .tertiarySystemFill)
+    }
+
+    private func chipForeground(selected: Bool) -> Color {
+        selected ? Color(uiColor: .systemBackground) : Color.primary.opacity(0.9)
+    }
+
     // MARK: - Chip picker
 
     @ViewBuilder
@@ -172,10 +183,8 @@ struct CardPricingPanel: View {
                             .font(.caption.weight(.semibold))
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
-                            .background(Capsule().fill(
-                                selected.wrappedValue == key ? Color.white : Color.white.opacity(0.1)
-                            ))
-                            .foregroundStyle(selected.wrappedValue == key ? Color.black : Color.white.opacity(0.7))
+                            .background(Capsule().fill(chipBackground(selected: selected.wrappedValue == key)))
+                            .foregroundStyle(chipForeground(selected: selected.wrappedValue == key))
                     }
                     .buttonStyle(.plain)
                 }
@@ -200,7 +209,7 @@ struct CardPricingPanel: View {
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(Color.white)
+            .foregroundStyle(Color.accentColor)
 
             AreaMark(
                 x: .value("Date", point.label),
@@ -209,7 +218,7 @@ struct CardPricingPanel: View {
             )
             .interpolationMethod(.catmullRom)
             .foregroundStyle(LinearGradient(
-                colors: [Color.white.opacity(0.25), Color.white.opacity(0.02)],
+                colors: [Color.accentColor.opacity(0.22), Color.accentColor.opacity(0.02)],
                 startPoint: .top, endPoint: .bottom
             ))
         }
@@ -225,66 +234,65 @@ struct CardPricingPanel: View {
                     let isFirst = label == points.first?.label
                     let isLast = label == points.last?.label
                     AxisValueLabel(truncatedLabel(label), anchor: isFirst ? .topLeading : isLast ? .topTrailing : .top)
-                        .foregroundStyle(Color.white.opacity(0.5))
+                        .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
                 AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))
-                    .foregroundStyle(Color.white.opacity(0.05))
+                    .foregroundStyle(Color(uiColor: .separator))
             }
         }
         .chartYAxis {
             AxisMarks(position: .trailing) { value in
                 if let price = value.as(Double.self) {
                     AxisValueLabel(String(format: "£%.2f", price * rate))
-                        .foregroundStyle(Color.white.opacity(0.5))
+                        .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
                 AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))
-                    .foregroundStyle(Color.white.opacity(0.1))
+                    .foregroundStyle(Color(uiColor: .separator))
             }
         }
         .chartOverlay { proxy in
             GeometryReader { geo in
-                let plotFrame = geo[proxy.plotAreaFrame]
+                if let plotAnchor = proxy.plotFrame {
+                    let plotFrame = geo[plotAnchor]
 
-                // Scrub indicator drawn directly — no chart marks so layout never changes
-                if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
-                    let x = xPos + plotFrame.origin.x
-                    // Vertical rule
-                    Rectangle()
-                        .fill(Color.white.opacity(0.5))
-                        .frame(width: 1.5)
-                        .frame(maxHeight: .infinity)
-                        .offset(x: x - 0.75)
-                        .allowsHitTesting(false)
-
-                    // Dot at price level
-                    if let yPos = proxy.position(forY: scrub.price) {
-                        Circle()
-                            .fill(Color.white)
-                            .frame(width: 8, height: 8)
-                            .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
+                    // Scrub indicator drawn directly — no chart marks so layout never changes
+                    if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
+                        let x = xPos + plotFrame.origin.x
+                        Rectangle()
+                            .fill(Color(uiColor: .label).opacity(0.35))
+                            .frame(width: 1.5)
+                            .frame(maxHeight: .infinity)
+                            .offset(x: x - 0.75)
                             .allowsHitTesting(false)
-                    }
-                }
 
-                // Gesture layer
-                Rectangle()
-                    .fill(Color.clear)
-                    .contentShape(Rectangle())
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged { value in
-                                let x = value.location.x - plotFrame.origin.x
-                                guard x >= 0, x <= plotFrame.width else { return }
-                                if let label: String = proxy.value(atX: x) {
-                                    scrubPoint = nearestPoint(to: label, in: points)
+                        if let yPos = proxy.position(forY: scrub.price) {
+                            Circle()
+                                .fill(Color.accentColor)
+                                .frame(width: 8, height: 8)
+                                .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
+                                .allowsHitTesting(false)
+                        }
+                    }
+
+                    Rectangle()
+                        .fill(Color.clear)
+                        .contentShape(Rectangle())
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { value in
+                                    let x = value.location.x - plotFrame.origin.x
+                                    guard x >= 0, x <= plotFrame.width else { return }
+                                    if let label: String = proxy.value(atX: x) {
+                                        scrubPoint = nearestPoint(to: label, in: points)
+                                    }
                                 }
-                            }
-                            .onEnded { _ in
-                                scrubPoint = nil
-                            }
-                    )
+                                .onEnded { _ in
+                                    scrubPoint = nil
+                                }
+                        )
+                }
             }
         }
         .frame(height: 160)
@@ -391,7 +399,7 @@ struct CardPricingPanel: View {
             HStack(spacing: 3) {
                 Text(label)
                     .font(.caption2.weight(.semibold))
-                    .foregroundStyle(.white.opacity(0.6))
+                    .foregroundStyle(.secondary)
                 Image(systemName: value >= 0 ? "arrow.up" : "arrow.down")
                     .font(.system(size: 9, weight: .bold))
                 Text(String(format: "%.1f%%", abs(value)))

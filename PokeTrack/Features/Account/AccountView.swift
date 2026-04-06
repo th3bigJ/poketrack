@@ -3,6 +3,7 @@ import SwiftUI
 
 struct AccountView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @State private var appleUserId: String? = KeychainStorage.readAppleUserIdentifier()
     @State private var signInError: String?
     @State private var showPaywall = false
@@ -61,6 +62,7 @@ struct AccountView: View {
             }
         }
         .toolbar(.hidden, for: .navigationBar)
+        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)

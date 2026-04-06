@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct CardBrowseDetailView: View {
     @Environment(AppServices.self) private var services
@@ -47,7 +48,7 @@ struct CardBrowseDetailView: View {
 
                 headerRow
             }
-            .background(Color.black)
+            .background(Color(uiColor: .systemBackground))
             .navigationBarHidden(true)
             .navigationDestination(for: TCGSet.self) { set in
                 SetCardsView(set: set)
@@ -56,7 +57,7 @@ struct CardBrowseDetailView: View {
                 DexCardsView(dexId: mon.nationalDexNumber, displayName: mon.displayName)
             }
         }
-        .presentationBackground(Color.black)
+        .presentationBackground(Color(uiColor: .systemBackground))
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -93,14 +94,14 @@ struct CardBrowseDetailView: View {
             VStack(spacing: 2) {
                 Text(currentCard?.cardName ?? "")
                     .font(.headline)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.primary)
                     .lineLimit(1)
                     .animation(.easeInOut(duration: 0.15), value: currentCard?.cardName)
 
                 if let setName = currentSet?.name {
                     Text(setName)
                         .font(.caption)
-                        .foregroundStyle(.white.opacity(0.55))
+                        .foregroundStyle(.secondary)
                         .lineLimit(1)
                         .animation(.easeInOut(duration: 0.15), value: setName)
                 }
@@ -129,8 +130,7 @@ struct CardBrowseDetailView: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 64)
-        .background(.ultraThinMaterial.opacity(0.85))
-        .background(Color.black.opacity(0.3))
+        .background(Material.bar)
     }
 }
 
@@ -145,7 +145,7 @@ private struct CardBrowseDetailPage: View {
                 AsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageHighSrc ?? card.imageLowSrc)) {
                     $0.resizable().scaledToFit()
                 } placeholder: {
-                    Color.gray.opacity(0.12)
+                    Color(uiColor: .tertiarySystemFill)
                         .aspectRatio(5/7, contentMode: .fit)
                 }
                 .padding(.horizontal, 16)

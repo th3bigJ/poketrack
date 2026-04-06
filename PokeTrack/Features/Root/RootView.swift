@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 private enum BrowseFullScreen: String, Identifiable, Hashable {
     case allSets
@@ -27,7 +28,7 @@ private struct BrowseFullScreenHost: View {
         })
         .overlay {
             if presentedCardPresentation != nil {
-                Color.black
+                Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
                     .allowsHitTesting(false)
                     .transition(.opacity)
@@ -42,6 +43,7 @@ private struct BrowseFullScreenHost: View {
 }
 
 struct RootView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .browse
@@ -50,17 +52,15 @@ struct RootView: View {
     @State private var showFilterComingSoon = false
     @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
-    /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar` so detail matches Browse (back + title only).
+    /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
-    /// Title shown in the search-detail header when `searchNavigationPath` is non-empty.
-    @State private var searchDetailTitle = ""
     /// Cards tab `NavigationStack` path — hide root chrome when a card detail (or other pushed screen) is showing.
     @State private var browseNavigationPath = NavigationPath()
     @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @FocusState private var searchFieldFocused: Bool
 
-    /// True when search has pushed into a detail view — swap the search bar for a back + title header.
+    /// True when search has pushed into a detail view — hide the floating `UniversalSearchBar` (detail uses system nav, same as Browse Pokémon).
     private var isSearchDetailActive: Bool {
         isSearchExperiencePresented && !searchNavigationPath.isEmpty
     }
@@ -104,13 +104,17 @@ struct RootView: View {
         GeometryReader { geo in
             let width = geo.size.width
             let menuWidth = min(width * 0.65, 300)
-            let searchBarTopInset = geo.safeAreaInsets.top + 8
-            let edgeSwipeBelowSearchBar = geo.safeAreaInsets.top + 96
+            // `GeometryReader` is already laid out inside the safe area, so only a small margin below the
+            // status bar — do not add `safeAreaInsets.top` here or the bar sits one notch-height too low.
+            let searchBarTopInset: CGFloat = 8
+            // `SideMenuView` uses `.ignoresSafeArea(edges: .top)`, so it still needs the full safe inset.
+            let sideMenuHeaderTopPadding = geo.safeAreaInsets.top + 8
+            let edgeSwipeBelowSearchBar = searchBarTopInset + RootChromeEnvironment.searchBarStackHeight + 8
             ZStack(alignment: .leading) {
             SideMenuView(
                 isPresented: $isSideMenuOpen,
                 selectedTab: $selectedTab,
-                headerTopPadding: searchBarTopInset,
+                headerTopPadding: sideMenuHeaderTopPadding,
                 onPickSearch: {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
                         searchFieldFocused = true
@@ -121,83 +125,13 @@ struct RootView: View {
             .frame(maxHeight: .infinity)
             .zIndex(0)
 
-            VStack(spacing: 0) {
-                Group {
-                    if isSearchDetailActive {
-                        // Back + title header shown when user has drilled into a search result.
-                        HStack(spacing: 4) {
-                            Button {
-                                searchNavigationPath = NavigationPath()
-                                searchFieldFocused = false
-                            } label: {
-                                HStack(spacing: 4) {
-                                    Image(systemName: "chevron.left")
-                                        .font(.system(size: 17, weight: .semibold))
-                                    Text("Search")
-                                        .font(.system(size: 17, weight: .regular))
-                                }
-                                .foregroundStyle(.primary)
-                                .padding(.leading, 8)
-                            }
-                            .buttonStyle(.plain)
+            let floatingChromeInset: CGFloat = {
+                if isSearchDetailActive { return 0 }
+                if showUniversalSearchBar { return RootChromeEnvironment.searchBarStackHeight }
+                return 0
+            }()
 
-                            Spacer()
-
-                            Text(searchDetailTitle)
-                                .font(.headline)
-                                .lineLimit(1)
-                                .padding(.trailing, 16)
-                        }
-                        .frame(height: 44)
-                        .padding(.horizontal, 8)
-                        .padding(.top, 8)
-                        .padding(.bottom, 10)
-                        .frame(maxWidth: .infinity)
-                        .transition(.move(edge: .top).combined(with: .opacity))
-                    } else if showUniversalSearchBar {
-                        UniversalSearchBar(
-                            text: $universalQuery,
-                            isFocused: $searchFieldFocused,
-                            isMenuOpen: isSideMenuOpen,
-                            isSearchOpen: isSearchExperiencePresented,
-                            onBurgerTap: {
-                                if isSearchExperiencePresented {
-                                    searchNavigationPath = NavigationPath()
-                                    universalQuery = ""
-                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                        isSearchExperiencePresented = false
-                                    }
-                                    searchFieldFocused = false
-                                    return
-                                }
-                                searchFieldFocused = false
-                                isSearchExperiencePresented = false
-                                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                    isSideMenuOpen.toggle()
-                                }
-                            },
-                            onCamera: {
-                                searchFieldFocused = false
-                                showCardScanner = true
-                            },
-                            onFilter: {
-                                searchFieldFocused = false
-                                showFilterComingSoon = true
-                            }
-                        )
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
-                        .padding(.bottom, 10)
-                        .frame(maxWidth: .infinity)
-                        .transition(.move(edge: .top).combined(with: .opacity))
-                    }
-                }
-                .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSideMenuOpen)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
-                .clipped()
-
+            ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
                     TabView(selection: $selectedTab) {
                         ForEach(AppTab.allCases) { tab in
@@ -223,7 +157,7 @@ struct RootView: View {
                     .allowsHitTesting(!isSideMenuOpen)
 
                     if isSearchExperiencePresented {
-                        Color.black.opacity(0.45)
+                        Color.black.opacity(colorScheme == .light ? 0.28 : 0.45)
                             .ignoresSafeArea(edges: .bottom)
                             .onTapGesture {
                                 searchNavigationPath = NavigationPath()
@@ -257,20 +191,10 @@ struct RootView: View {
                                 switch root {
                                 case .set(let s):
                                     SetCardsView(set: s)
-                                        .navigationBarBackButtonHidden(true)
-                                        .toolbar(.hidden, for: .navigationBar)
-                                        .onAppear {
-                                            searchDetailTitle = s.name
-                                            searchFieldFocused = false
-                                        }
+                                        .onAppear { searchFieldFocused = false }
                                 case .dex(let dexId, let displayName):
                                     DexCardsView(dexId: dexId, displayName: displayName)
-                                        .navigationBarBackButtonHidden(true)
-                                        .toolbar(.hidden, for: .navigationBar)
-                                        .onAppear {
-                                            searchDetailTitle = displayName
-                                            searchFieldFocused = false
-                                        }
+                                        .onAppear { searchFieldFocused = false }
                                 }
                             }
                         }
@@ -294,9 +218,58 @@ struct RootView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .animation(.spring(response: 0.38, dampingFraction: 0.88), value: isSearchExperiencePresented)
+                .environment(\.rootFloatingChromeInset, floatingChromeInset)
+
+                // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
+                Group {
+                    if showUniversalSearchBar, !isSearchDetailActive {
+                        UniversalSearchBar(
+                            text: $universalQuery,
+                            isFocused: $searchFieldFocused,
+                            isMenuOpen: isSideMenuOpen,
+                            isSearchOpen: isSearchExperiencePresented,
+                            onBurgerTap: {
+                                if isSearchExperiencePresented {
+                                    searchNavigationPath = NavigationPath()
+                                    universalQuery = ""
+                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                                        isSearchExperiencePresented = false
+                                    }
+                                    searchFieldFocused = false
+                                    return
+                                }
+                                searchFieldFocused = false
+                                isSearchExperiencePresented = false
+                                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                                    isSideMenuOpen.toggle()
+                                }
+                            },
+                            onCamera: {
+                                searchFieldFocused = false
+                                showCardScanner = true
+                            },
+                            onFilter: {
+                                searchFieldFocused = false
+                                showFilterComingSoon = true
+                            }
+                        )
+                        .frame(maxWidth: .infinity)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, searchBarTopInset)
+                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity, alignment: .top)
+                .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
+                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSideMenuOpen)
+                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
+                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
+                .allowsHitTesting(true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .background(Color.black)
+            // System background shows through the material where the bar is translucent.
+            .background(Color(uiColor: .systemBackground))
             .offset(x: isSideMenuOpen ? menuWidth : 0)
             .shadow(
                 color: .black.opacity(isSideMenuOpen ? 0.45 : 0),
@@ -341,7 +314,7 @@ struct RootView: View {
         }
         .overlay {
             if selectedCardPresentation != nil {
-                Color.black
+                Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
                     .allowsHitTesting(false)
                     .transition(.opacity)

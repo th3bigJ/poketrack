@@ -29,6 +29,7 @@ struct CardGridCell: View {
 struct BrowseView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @EnvironmentObject private var chromeScroll: ChromeScrollCoordinator
 
     @State private var shuffledRefs: [CardRef] = []
@@ -91,6 +92,8 @@ struct BrowseView: View {
     private var scrollTrackedCardGrid: some View {
         ScrollView {
             VStack(spacing: 0) {
+                // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
+                Color.clear.frame(height: rootFloatingChromeInset)
                 ScrollOffsetAnchor { y in chromeScroll.reportScrollOffsetY(y) }
                 browseCardGrid
                 if isLoadingMore {

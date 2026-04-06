@@ -158,6 +158,28 @@ final class CardDataService {
         sets.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
     }
 
+    /// Lookup for ordering cards: `setCode` → `releaseDate` string (ISO-ish; same compare as `sets` ordering).
+    private var releaseDateBySetCode: [String: String] {
+        Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0.releaseDate ?? "") })
+    }
+
+    /// Newest-released sets first; within one set, `cardNumber` ascending (catalog order).
+    private func sortCardsByReleaseDateNewestFirst(_ cards: [Card]) -> [Card] {
+        guard !cards.isEmpty else { return cards }
+        let dates = releaseDateBySetCode
+        return cards.sorted { a, b in
+            let da = dates[a.setCode] ?? ""
+            let db = dates[b.setCode] ?? ""
+            if da != db {
+                return da > db
+            }
+            if a.setCode != b.setCode {
+                return a.setCode.localizedStandardCompare(b.setCode) == .orderedAscending
+            }
+            return a.cardNumber.localizedStandardCompare(b.cardNumber) == .orderedAscending
+        }
+    }
+
     /// Stable shuffle order for the Browse tab for this app session. New shuffle only when `forceReshuffle` is true (pull-to-refresh) or before first load.
     private var browseFeedSessionRefs: [CardRef]?
 
@@ -231,12 +253,7 @@ final class CardDataService {
             let cards = await loadCards(forSetCode: set.setCode)
             out.append(contentsOf: cards.filter { $0.dexIds?.contains(dexId) == true })
         }
-        return out.sorted { a, b in
-            if a.setCode != b.setCode {
-                return a.setCode.localizedStandardCompare(b.setCode) == .orderedAscending
-            }
-            return a.cardNumber.localizedStandardCompare(b.cardNumber) == .orderedAscending
-        }
+        return sortCardsByReleaseDateNewestFirst(out)
     }
 
     func search(query: String) async -> [Card] {
@@ -268,9 +285,7 @@ final class CardDataService {
             let loaded = await loadCards(forSetCode: setCode)
             out.append(contentsOf: loaded.filter { ids.contains($0.masterCardId) })
         }
-        return out.sorted {
-            $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending
-        }
+        return sortCardsByReleaseDateNewestFirst(out)
     }
 
     private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
@@ -286,7 +301,7 @@ final class CardDataService {
                 }
             }
         }
-        return results
+        return sortCardsByReleaseDateNewestFirst(results)
     }
 
     private func loadCardsFromDatabase(setCode: String) async throws -> [Card] {

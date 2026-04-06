@@ -1,11 +1,13 @@
 import SwiftUI
+import UIKit
 
 struct LoadingScreen: View {
     @State private var rotation: Double = 0
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color(uiColor: .systemBackground)
+                .ignoresSafeArea()
             VStack(spacing: 24) {
                 Image("pokeball")
                     .resizable()
