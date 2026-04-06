@@ -107,7 +107,7 @@ struct CardPricingPanel: View {
                 .padding(.top, 12)
                 .animation(.none, value: scrubPoint?.label)
 
-            Text(scrubPoint != nil ? String(format: "£%.2f", scrubPoint!.price * services.pricing.usdToGbp) : currentPrice)
+            Text(scrubPoint != nil ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp) : currentPrice)
                 .font(.system(size: 28, weight: .bold))
                 .foregroundStyle(.primary)
                 .padding(.top, 2)
@@ -159,6 +159,12 @@ struct CardPricingPanel: View {
         .onChange(of: selectedGrade) { _, _ in
             Task { await refreshPrice() }
         }
+        .onChange(of: services.priceDisplay.currency) { _, _ in
+            Task { await refreshPrice() }
+        }
+        .onChange(of: services.pricing.usdToGbp) { _, _ in
+            Task { await refreshPrice() }
+        }
     }
 
     // MARK: - Chip styles (system adaptive — matches Settings-style pills)
@@ -201,8 +207,6 @@ struct CardPricingPanel: View {
         let prices = points.map(\.price)
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
-        let rate = services.pricing.usdToGbp
-
         return Chart(points) { point in
             LineMark(
                 x: .value("Date", point.label),
@@ -244,7 +248,7 @@ struct CardPricingPanel: View {
         .chartYAxis {
             AxisMarks(position: .trailing) { value in
                 if let price = value.as(Double.self) {
-                    AxisValueLabel(String(format: "£%.2f", price * rate))
+                    AxisValueLabel(services.priceDisplay.currency.formatAxisTick(usd: price, usdToGbp: services.pricing.usdToGbp))
                         .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
@@ -453,8 +457,8 @@ struct CardPricingPanel: View {
         currentPrice = "—"
         guard let variant = selectedVariant, !variant.isEmpty else { return }
         let grade = selectedGrade ?? "raw"
-        if let gbp = await services.pricing.gbpPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
-            currentPrice = String(format: "£%.2f", gbp)
+        if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
+            currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
         }
     }
 

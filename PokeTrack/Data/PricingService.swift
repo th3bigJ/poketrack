@@ -145,17 +145,23 @@ final class PricingService {
         return scrydex.keys.sorted()
     }
 
-    /// GBP price for a specific variant key directly (not printing label).
-    func gbpPriceForVariant(for card: Card, variantKey: String) async -> Double? {
+    /// USD market price for a specific variant key (not printing label).
+    func usdPriceForVariant(for card: Card, variantKey: String) async -> Double? {
         guard let entry = await pricing(for: card),
               let scrydex = entry.scrydex,
               let usd = scrydex[variantKey]?.marketEstimateUSD() else { return nil }
+        return usd
+    }
+
+    /// GBP price for a specific variant key directly (not printing label).
+    func gbpPriceForVariant(for card: Card, variantKey: String) async -> Double? {
+        guard let usd = await usdPriceForVariant(for: card, variantKey: variantKey) else { return nil }
         return usd * usdToGbp
     }
 
-    /// GBP price for a variant + grade combination.
+    /// USD price for a variant + grade combination (matches R2 / Scrydex fields).
     /// Grade "raw" uses the standard market estimate; "psa10" / "ace10" use their respective fields.
-    func gbpPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
+    func usdPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
         guard let entry = await pricing(for: card),
               let scrydex = entry.scrydex,
               let pricing = scrydex[variantKey] else { return nil }
@@ -165,7 +171,12 @@ final class PricingService {
         case "ace10": usd = pricing.ace10
         default:      usd = pricing.raw ?? pricing.market ?? pricing.avg
         }
-        guard let usd else { return nil }
+        return usd
+    }
+
+    /// GBP price for a variant + grade combination.
+    func gbpPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
+        guard let usd = await usdPriceForVariantAndGrade(for: card, variantKey: variantKey, grade: grade) else { return nil }
         return usd * usdToGbp
     }
 
@@ -252,10 +263,14 @@ final class PricingService {
         }
     }
 
-    func gbpPrice(for card: Card, printing: String) async -> Double? {
+    func usdPrice(for card: Card, printing: String) async -> Double? {
         guard let entry = await pricing(for: card) else { return nil }
         guard let scrydex = entry.scrydex, !scrydex.isEmpty else { return nil }
-        guard let usd = scrydexUSD(from: scrydex, printing: printing) else { return nil }
+        return scrydexUSD(from: scrydex, printing: printing)
+    }
+
+    func gbpPrice(for card: Card, printing: String) async -> Double? {
+        guard let usd = await usdPrice(for: card, printing: printing) else { return nil }
         return usd * usdToGbp
     }
 

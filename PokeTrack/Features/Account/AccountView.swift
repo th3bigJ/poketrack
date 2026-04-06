@@ -46,6 +46,23 @@ struct AccountView: View {
                 }
             }
 
+            Section("Pricing") {
+                Picker(
+                    "Show prices in",
+                    selection: Binding(
+                        get: { services.priceDisplay.currency },
+                        set: { services.priceDisplay.currency = $0 }
+                    )
+                ) {
+                    ForEach(PriceDisplayCurrency.allCases) { c in
+                        Text(c.pickerTitle).tag(c)
+                    }
+                }
+                Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
             Section("Premium") {
                 if services.store.isPremium {
                     Label("Premium active", systemImage: "checkmark.seal.fill")

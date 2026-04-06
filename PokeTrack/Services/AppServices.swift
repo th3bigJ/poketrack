@@ -6,6 +6,7 @@ import Observation
 final class AppServices {
     let cardData = CardDataService()
     let pricing = PricingService()
+    let priceDisplay = PriceDisplaySettings()
     let store = StoreKitService()
 
     private(set) var isReady = false
