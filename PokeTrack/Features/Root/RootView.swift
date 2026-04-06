@@ -46,7 +46,7 @@ struct RootView: View {
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .browse
     @State private var universalQuery = ""
-    @State private var showCameraComingSoon = false
+    @State private var showCardScanner = false
     @State private var showFilterComingSoon = false
     @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
@@ -178,7 +178,7 @@ struct RootView: View {
                             },
                             onCamera: {
                                 searchFieldFocused = false
-                                showCameraComingSoon = true
+                                showCardScanner = true
                             },
                             onFilter: {
                                 searchFieldFocused = false
@@ -384,10 +384,22 @@ struct RootView: View {
             BrowseFullScreenHost(route: route)
                 .environment(services)
         }
-        .alert("Camera search", isPresented: $showCameraComingSoon) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Visual search from the camera will be available in a future update.")
+        .sheet(isPresented: $showCardScanner) {
+            CardScannerView(
+                onMatch: { card in
+                    showCardScanner = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        selectedCardPresentation = CardPresentationContext(cards: [card], startIndex: 0)
+                    }
+                },
+                onDismiss: {
+                    showCardScanner = false
+                }
+            )
+            .environment(services)
+            .presentationBackground(Color.black)
+            .presentationDetents([.large])
+            .presentationCornerRadius(0)
         }
         .alert("Filters", isPresented: $showFilterComingSoon) {
             Button("OK", role: .cancel) {}
