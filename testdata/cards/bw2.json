@@ -1,0 +1,3208 @@
+[
+  {
+    "masterCardId": "2427",
+    "externalId": null,
+    "tcgdex_id": "bw2-98",
+    "localId": "098",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "098/98",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 098/98 Emerging Powers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-098-low.png",
+    "imageHighSrc": "cards/bw2-098-high.png"
+  },
+  {
+    "masterCardId": "2426",
+    "externalId": null,
+    "tcgdex_id": "bw2-97",
+    "localId": "097",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "097/98",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus 097/98 Emerging Powers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-097-low.png",
+    "imageHighSrc": "cards/bw2-097-high.png"
+  },
+  {
+    "masterCardId": "2425",
+    "externalId": null,
+    "tcgdex_id": "bw2-96",
+    "localId": "096",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "096/98",
+    "cardName": "Recycle",
+    "fullDisplayName": "Recycle 096/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-096-low.png",
+    "imageHighSrc": "cards/bw2-096-high.png"
+  },
+  {
+    "masterCardId": "2424",
+    "externalId": null,
+    "tcgdex_id": "bw2-95",
+    "localId": "095",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "095/98",
+    "cardName": "Pokémon Catcher",
+    "fullDisplayName": "Pokémon Catcher 095/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-095-low.png",
+    "imageHighSrc": "cards/bw2-095-high.png"
+  },
+  {
+    "masterCardId": "2423",
+    "externalId": null,
+    "tcgdex_id": "bw2-94",
+    "localId": "094",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "094/98",
+    "cardName": "Max Potion",
+    "fullDisplayName": "Max Potion 094/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-094-low.png",
+    "imageHighSrc": "cards/bw2-094-high.png"
+  },
+  {
+    "masterCardId": "2422",
+    "externalId": null,
+    "tcgdex_id": "bw2-93",
+    "localId": "093",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "093/98",
+    "cardName": "Great Ball",
+    "fullDisplayName": "Great Ball 093/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-093-low.png",
+    "imageHighSrc": "cards/bw2-093-high.png"
+  },
+  {
+    "masterCardId": "2421",
+    "externalId": null,
+    "tcgdex_id": "bw2-92",
+    "localId": "092",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "092/98",
+    "cardName": "Crushing Hammer",
+    "fullDisplayName": "Crushing Hammer 092/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-092-low.png",
+    "imageHighSrc": "cards/bw2-092-high.png"
+  },
+  {
+    "masterCardId": "2420",
+    "externalId": null,
+    "tcgdex_id": "bw2-91",
+    "localId": "091",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "091/98",
+    "cardName": "Cheren",
+    "fullDisplayName": "Cheren 091/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-091-low.png",
+    "imageHighSrc": "cards/bw2-091-high.png"
+  },
+  {
+    "masterCardId": "2419",
+    "externalId": null,
+    "tcgdex_id": "bw2-90",
+    "localId": "090",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "090/98",
+    "cardName": "Bianca",
+    "fullDisplayName": "Bianca 090/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-090-low.png",
+    "imageHighSrc": "cards/bw2-090-high.png"
+  },
+  {
+    "masterCardId": "2418",
+    "externalId": null,
+    "tcgdex_id": "bw2-89",
+    "localId": "089",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "089/98",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 089/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-089-low.png",
+    "imageHighSrc": "cards/bw2-089-high.png"
+  },
+  {
+    "masterCardId": "2417",
+    "externalId": null,
+    "tcgdex_id": "bw2-88",
+    "localId": "088",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "088/98",
+    "cardName": "Braviary",
+    "fullDisplayName": "Braviary 088/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      628
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rufflet",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-088-low.png",
+    "imageHighSrc": "cards/bw2-088-high.png"
+  },
+  {
+    "masterCardId": "2416",
+    "externalId": null,
+    "tcgdex_id": "bw2-87",
+    "localId": "087",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "087/98",
+    "cardName": "Rufflet",
+    "fullDisplayName": "Rufflet 087/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      627
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-087-low.png",
+    "imageHighSrc": "cards/bw2-087-high.png"
+  },
+  {
+    "masterCardId": "2415",
+    "externalId": null,
+    "tcgdex_id": "bw2-86",
+    "localId": "086",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "086/98",
+    "cardName": "Rufflet",
+    "fullDisplayName": "Rufflet 086/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      627
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-086-low.png",
+    "imageHighSrc": "cards/bw2-086-high.png"
+  },
+  {
+    "masterCardId": "2414",
+    "externalId": null,
+    "tcgdex_id": "bw2-85",
+    "localId": "085",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "085/98",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino 085/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-085-low.png",
+    "imageHighSrc": "cards/bw2-085-high.png"
+  },
+  {
+    "masterCardId": "2413",
+    "externalId": null,
+    "tcgdex_id": "bw2-84",
+    "localId": "084",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "084/98",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 084/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-084-low.png",
+    "imageHighSrc": "cards/bw2-084-high.png"
+  },
+  {
+    "masterCardId": "2412",
+    "externalId": null,
+    "tcgdex_id": "bw2-83",
+    "localId": "083",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "083/98",
+    "cardName": "Audino",
+    "fullDisplayName": "Audino 083/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-083-low.png",
+    "imageHighSrc": "cards/bw2-083-high.png"
+  },
+  {
+    "masterCardId": "2411",
+    "externalId": null,
+    "tcgdex_id": "bw2-82",
+    "localId": "082",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "082/98",
+    "cardName": "Unfezant",
+    "fullDisplayName": "Unfezant 082/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      521
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tranquill",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-082-low.png",
+    "imageHighSrc": "cards/bw2-082-high.png"
+  },
+  {
+    "masterCardId": "2410",
+    "externalId": null,
+    "tcgdex_id": "bw2-81",
+    "localId": "081",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "081/98",
+    "cardName": "Tranquill",
+    "fullDisplayName": "Tranquill 081/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      520
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidove",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-081-low.png",
+    "imageHighSrc": "cards/bw2-081-high.png"
+  },
+  {
+    "masterCardId": "2409",
+    "externalId": null,
+    "tcgdex_id": "bw2-80",
+    "localId": "080",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "080/98",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove 080/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-080-low.png",
+    "imageHighSrc": "cards/bw2-080-high.png"
+  },
+  {
+    "masterCardId": "2408",
+    "externalId": null,
+    "tcgdex_id": "bw2-79",
+    "localId": "079",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "079/98",
+    "cardName": "Watchog",
+    "fullDisplayName": "Watchog 079/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      505
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Patrat",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-079-low.png",
+    "imageHighSrc": "cards/bw2-079-high.png"
+  },
+  {
+    "masterCardId": "2407",
+    "externalId": null,
+    "tcgdex_id": "bw2-78",
+    "localId": "078",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "078/98",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 078/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-078-low.png",
+    "imageHighSrc": "cards/bw2-078-high.png"
+  },
+  {
+    "masterCardId": "2406",
+    "externalId": null,
+    "tcgdex_id": "bw2-77",
+    "localId": "077",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "077/98",
+    "cardName": "Cobalion",
+    "fullDisplayName": "Cobalion 077/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      638
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-077-low.png",
+    "imageHighSrc": "cards/bw2-077-high.png"
+  },
+  {
+    "masterCardId": "2405",
+    "externalId": null,
+    "tcgdex_id": "bw2-76",
+    "localId": "076",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "076/98",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 076/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klang",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-076-low.png",
+    "imageHighSrc": "cards/bw2-076-high.png"
+  },
+  {
+    "masterCardId": "2404",
+    "externalId": null,
+    "tcgdex_id": "bw2-75",
+    "localId": "075",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "075/98",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 075/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klink",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-075-low.png",
+    "imageHighSrc": "cards/bw2-075-high.png"
+  },
+  {
+    "masterCardId": "2403",
+    "externalId": null,
+    "tcgdex_id": "bw2-74",
+    "localId": "074",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "074/98",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 074/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-074-low.png",
+    "imageHighSrc": "cards/bw2-074-high.png"
+  },
+  {
+    "masterCardId": "2402",
+    "externalId": null,
+    "tcgdex_id": "bw2-73",
+    "localId": "073",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "073/98",
+    "cardName": "Ferrothorn",
+    "fullDisplayName": "Ferrothorn 073/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      598
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ferroseed",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-073-low.png",
+    "imageHighSrc": "cards/bw2-073-high.png"
+  },
+  {
+    "masterCardId": "2401",
+    "externalId": null,
+    "tcgdex_id": "bw2-72",
+    "localId": "072",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "072/98",
+    "cardName": "Ferrothorn",
+    "fullDisplayName": "Ferrothorn 072/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      598
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ferroseed",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-072-low.png",
+    "imageHighSrc": "cards/bw2-072-high.png"
+  },
+  {
+    "masterCardId": "2400",
+    "externalId": null,
+    "tcgdex_id": "bw2-71",
+    "localId": "071",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "071/98",
+    "cardName": "Ferroseed",
+    "fullDisplayName": "Ferroseed 071/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      597
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-071-low.png",
+    "imageHighSrc": "cards/bw2-071-high.png"
+  },
+  {
+    "masterCardId": "2399",
+    "externalId": null,
+    "tcgdex_id": "bw2-70",
+    "localId": "070",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "070/98",
+    "cardName": "Ferroseed",
+    "fullDisplayName": "Ferroseed 070/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      597
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-070-low.png",
+    "imageHighSrc": "cards/bw2-070-high.png"
+  },
+  {
+    "masterCardId": "2398",
+    "externalId": null,
+    "tcgdex_id": "bw2-69",
+    "localId": "069",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "069/98",
+    "cardName": "Mandibuzz",
+    "fullDisplayName": "Mandibuzz 069/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      630
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vullaby",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-069-low.png",
+    "imageHighSrc": "cards/bw2-069-high.png"
+  },
+  {
+    "masterCardId": "2397",
+    "externalId": null,
+    "tcgdex_id": "bw2-68",
+    "localId": "068",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "068/98",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 068/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-068-low.png",
+    "imageHighSrc": "cards/bw2-068-high.png"
+  },
+  {
+    "masterCardId": "2396",
+    "externalId": null,
+    "tcgdex_id": "bw2-67",
+    "localId": "067",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "067/98",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 067/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-067-low.png",
+    "imageHighSrc": "cards/bw2-067-high.png"
+  },
+  {
+    "masterCardId": "2395",
+    "externalId": null,
+    "tcgdex_id": "bw2-66",
+    "localId": "066",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "066/98",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 066/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-066-low.png",
+    "imageHighSrc": "cards/bw2-066-high.png"
+  },
+  {
+    "masterCardId": "2394",
+    "externalId": null,
+    "tcgdex_id": "bw2-65",
+    "localId": "065",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "065/98",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 065/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-065-low.png",
+    "imageHighSrc": "cards/bw2-065-high.png"
+  },
+  {
+    "masterCardId": "2393",
+    "externalId": null,
+    "tcgdex_id": "bw2-64",
+    "localId": "064",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "064/98",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 064/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-064-low.png",
+    "imageHighSrc": "cards/bw2-064-high.png"
+  },
+  {
+    "masterCardId": "2392",
+    "externalId": null,
+    "tcgdex_id": "bw2-63",
+    "localId": "063",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "063/98",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion 063/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-063-low.png",
+    "imageHighSrc": "cards/bw2-063-high.png"
+  },
+  {
+    "masterCardId": "2391",
+    "externalId": null,
+    "tcgdex_id": "bw2-62",
+    "localId": "062",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "062/98",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 062/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krokorok",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-062-low.png",
+    "imageHighSrc": "cards/bw2-062-high.png"
+  },
+  {
+    "masterCardId": "2390",
+    "externalId": null,
+    "tcgdex_id": "bw2-61",
+    "localId": "061",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "061/98",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 061/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandile",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-061-low.png",
+    "imageHighSrc": "cards/bw2-061-high.png"
+  },
+  {
+    "masterCardId": "2389",
+    "externalId": null,
+    "tcgdex_id": "bw2-60",
+    "localId": "060",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "060/98",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 060/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-060-low.png",
+    "imageHighSrc": "cards/bw2-060-high.png"
+  },
+  {
+    "masterCardId": "2388",
+    "externalId": null,
+    "tcgdex_id": "bw2-59",
+    "localId": "059",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "059/98",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 059/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-059-low.png",
+    "imageHighSrc": "cards/bw2-059-high.png"
+  },
+  {
+    "masterCardId": "2387",
+    "externalId": null,
+    "tcgdex_id": "bw2-58",
+    "localId": "058",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "058/98",
+    "cardName": "Throh",
+    "fullDisplayName": "Throh 058/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      538
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-058-low.png",
+    "imageHighSrc": "cards/bw2-058-high.png"
+  },
+  {
+    "masterCardId": "2386",
+    "externalId": null,
+    "tcgdex_id": "bw2-57",
+    "localId": "057",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "057/98",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 057/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-057-low.png",
+    "imageHighSrc": "cards/bw2-057-high.png"
+  },
+  {
+    "masterCardId": "2385",
+    "externalId": null,
+    "tcgdex_id": "bw2-56",
+    "localId": "056",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "056/98",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 056/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-056-low.png",
+    "imageHighSrc": "cards/bw2-056-high.png"
+  },
+  {
+    "masterCardId": "2384",
+    "externalId": null,
+    "tcgdex_id": "bw2-55",
+    "localId": "055",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "055/98",
+    "cardName": "Drilbur",
+    "fullDisplayName": "Drilbur 055/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      529
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-055-low.png",
+    "imageHighSrc": "cards/bw2-055-high.png"
+  },
+  {
+    "masterCardId": "2383",
+    "externalId": null,
+    "tcgdex_id": "bw2-54",
+    "localId": "054",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "054/98",
+    "cardName": "Drilbur",
+    "fullDisplayName": "Drilbur 054/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      529
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-054-low.png",
+    "imageHighSrc": "cards/bw2-054-high.png"
+  },
+  {
+    "masterCardId": "2382",
+    "externalId": null,
+    "tcgdex_id": "bw2-53",
+    "localId": "053",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "053/98",
+    "cardName": "Gigalith",
+    "fullDisplayName": "Gigalith 053/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      526
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Boldore",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-053-low.png",
+    "imageHighSrc": "cards/bw2-053-high.png"
+  },
+  {
+    "masterCardId": "2381",
+    "externalId": null,
+    "tcgdex_id": "bw2-52",
+    "localId": "052",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "052/98",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 052/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-052-low.png",
+    "imageHighSrc": "cards/bw2-052-high.png"
+  },
+  {
+    "masterCardId": "2380",
+    "externalId": null,
+    "tcgdex_id": "bw2-51",
+    "localId": "051",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "051/98",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 051/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-051-low.png",
+    "imageHighSrc": "cards/bw2-051-high.png"
+  },
+  {
+    "masterCardId": "2379",
+    "externalId": null,
+    "tcgdex_id": "bw2-50",
+    "localId": "050",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "050/98",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 050/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-050-low.png",
+    "imageHighSrc": "cards/bw2-050-high.png"
+  },
+  {
+    "masterCardId": "2378",
+    "externalId": null,
+    "tcgdex_id": "bw2-49",
+    "localId": "049",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "049/98",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 049/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-049-low.png",
+    "imageHighSrc": "cards/bw2-049-high.png"
+  },
+  {
+    "masterCardId": "2377",
+    "externalId": null,
+    "tcgdex_id": "bw2-48",
+    "localId": "048",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "048/98",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 048/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-048-low.png",
+    "imageHighSrc": "cards/bw2-048-high.png"
+  },
+  {
+    "masterCardId": "2376",
+    "externalId": null,
+    "tcgdex_id": "bw2-47",
+    "localId": "047",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "047/98",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 047/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-047-low.png",
+    "imageHighSrc": "cards/bw2-047-high.png"
+  },
+  {
+    "masterCardId": "2375",
+    "externalId": null,
+    "tcgdex_id": "bw2-46",
+    "localId": "046",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "046/98",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 046/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-046-low.png",
+    "imageHighSrc": "cards/bw2-046-high.png"
+  },
+  {
+    "masterCardId": "2374",
+    "externalId": null,
+    "tcgdex_id": "bw2-45",
+    "localId": "045",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "045/98",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 045/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-045-low.png",
+    "imageHighSrc": "cards/bw2-045-high.png"
+  },
+  {
+    "masterCardId": "2373",
+    "externalId": null,
+    "tcgdex_id": "bw2-44",
+    "localId": "044",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "044/98",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 044/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-044-low.png",
+    "imageHighSrc": "cards/bw2-044-high.png"
+  },
+  {
+    "masterCardId": "2372",
+    "externalId": null,
+    "tcgdex_id": "bw2-43",
+    "localId": "043",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "043/98",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 043/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-043-low.png",
+    "imageHighSrc": "cards/bw2-043-high.png"
+  },
+  {
+    "masterCardId": "2371",
+    "externalId": null,
+    "tcgdex_id": "bw2-42",
+    "localId": "042",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "042/98",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 042/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-042-low.png",
+    "imageHighSrc": "cards/bw2-042-high.png"
+  },
+  {
+    "masterCardId": "2370",
+    "externalId": null,
+    "tcgdex_id": "bw2-41",
+    "localId": "041",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "041/98",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 041/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-041-low.png",
+    "imageHighSrc": "cards/bw2-041-high.png"
+  },
+  {
+    "masterCardId": "2369",
+    "externalId": null,
+    "tcgdex_id": "bw2-40",
+    "localId": "040",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "040/98",
+    "cardName": "Scolipede",
+    "fullDisplayName": "Scolipede 040/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      545
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whirlipede",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-040-low.png",
+    "imageHighSrc": "cards/bw2-040-high.png"
+  },
+  {
+    "masterCardId": "2368",
+    "externalId": null,
+    "tcgdex_id": "bw2-39",
+    "localId": "039",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "039/98",
+    "cardName": "Whirlipede",
+    "fullDisplayName": "Whirlipede 039/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      544
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venipede",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-039-low.png",
+    "imageHighSrc": "cards/bw2-039-high.png"
+  },
+  {
+    "masterCardId": "2367",
+    "externalId": null,
+    "tcgdex_id": "bw2-38",
+    "localId": "038",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "038/98",
+    "cardName": "Venipede",
+    "fullDisplayName": "Venipede 038/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      543
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-038-low.png",
+    "imageHighSrc": "cards/bw2-038-high.png"
+  },
+  {
+    "masterCardId": "2366",
+    "externalId": null,
+    "tcgdex_id": "bw2-37",
+    "localId": "037",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "037/98",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 037/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-037-low.png",
+    "imageHighSrc": "cards/bw2-037-high.png"
+  },
+  {
+    "masterCardId": "2365",
+    "externalId": null,
+    "tcgdex_id": "bw2-36",
+    "localId": "036",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "036/98",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 036/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-036-low.png",
+    "imageHighSrc": "cards/bw2-036-high.png"
+  },
+  {
+    "masterCardId": "2364",
+    "externalId": null,
+    "tcgdex_id": "bw2-35",
+    "localId": "035",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "035/98",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus 035/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-035-low.png",
+    "imageHighSrc": "cards/bw2-035-high.png"
+  },
+  {
+    "masterCardId": "2363",
+    "externalId": null,
+    "tcgdex_id": "bw2-34",
+    "localId": "034",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "034/98",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 034/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-034-low.png",
+    "imageHighSrc": "cards/bw2-034-high.png"
+  },
+  {
+    "masterCardId": "2362",
+    "externalId": null,
+    "tcgdex_id": "bw2-33",
+    "localId": "033",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "033/98",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 033/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-033-low.png",
+    "imageHighSrc": "cards/bw2-033-high.png"
+  },
+  {
+    "masterCardId": "2361",
+    "externalId": null,
+    "tcgdex_id": "bw2-32",
+    "localId": "032",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "032/98",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga 032/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-032-low.png",
+    "imageHighSrc": "cards/bw2-032-high.png"
+  },
+  {
+    "masterCardId": "2360",
+    "externalId": null,
+    "tcgdex_id": "bw2-31",
+    "localId": "031",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "031/98",
+    "cardName": "Beartic",
+    "fullDisplayName": "Beartic 031/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      614
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubchoo",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-031-low.png",
+    "imageHighSrc": "cards/bw2-031-high.png"
+  },
+  {
+    "masterCardId": "2359",
+    "externalId": null,
+    "tcgdex_id": "bw2-30",
+    "localId": "030",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "030/98",
+    "cardName": "Beartic",
+    "fullDisplayName": "Beartic 030/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      614
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubchoo",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-030-low.png",
+    "imageHighSrc": "cards/bw2-030-high.png"
+  },
+  {
+    "masterCardId": "2358",
+    "externalId": null,
+    "tcgdex_id": "bw2-29",
+    "localId": "029",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "029/98",
+    "cardName": "Cubchoo",
+    "fullDisplayName": "Cubchoo 029/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      613
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-029-low.png",
+    "imageHighSrc": "cards/bw2-029-high.png"
+  },
+  {
+    "masterCardId": "2357",
+    "externalId": null,
+    "tcgdex_id": "bw2-28",
+    "localId": "028",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "028/98",
+    "cardName": "Cubchoo",
+    "fullDisplayName": "Cubchoo 028/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      613
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-028-low.png",
+    "imageHighSrc": "cards/bw2-028-high.png"
+  },
+  {
+    "masterCardId": "2356",
+    "externalId": null,
+    "tcgdex_id": "bw2-27",
+    "localId": "027",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "027/98",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 027/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ducklett",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-027-low.png",
+    "imageHighSrc": "cards/bw2-027-high.png"
+  },
+  {
+    "masterCardId": "2355",
+    "externalId": null,
+    "tcgdex_id": "bw2-26",
+    "localId": "026",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "026/98",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 026/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-026-low.png",
+    "imageHighSrc": "cards/bw2-026-high.png"
+  },
+  {
+    "masterCardId": "2354",
+    "externalId": null,
+    "tcgdex_id": "bw2-25",
+    "localId": "025",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "025/98",
+    "cardName": "Basculin",
+    "fullDisplayName": "Basculin 025/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-025-low.png",
+    "imageHighSrc": "cards/bw2-025-high.png"
+  },
+  {
+    "masterCardId": "2353",
+    "externalId": null,
+    "tcgdex_id": "bw2-24",
+    "localId": "024",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "024/98",
+    "cardName": "Basculin",
+    "fullDisplayName": "Basculin 024/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-024-low.png",
+    "imageHighSrc": "cards/bw2-024-high.png"
+  },
+  {
+    "masterCardId": "2352",
+    "externalId": null,
+    "tcgdex_id": "bw2-23",
+    "localId": "023",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "023/98",
+    "cardName": "Simipour",
+    "fullDisplayName": "Simipour 023/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      516
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Panpour",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-023-low.png",
+    "imageHighSrc": "cards/bw2-023-high.png"
+  },
+  {
+    "masterCardId": "2351",
+    "externalId": null,
+    "tcgdex_id": "bw2-22",
+    "localId": "022",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "022/98",
+    "cardName": "Panpour",
+    "fullDisplayName": "Panpour 022/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      515
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-022-low.png",
+    "imageHighSrc": "cards/bw2-022-high.png"
+  },
+  {
+    "masterCardId": "2350",
+    "externalId": null,
+    "tcgdex_id": "bw2-21",
+    "localId": "021",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "021/98",
+    "cardName": "Darmanitan",
+    "fullDisplayName": "Darmanitan 021/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darumaka",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-021-low.png",
+    "imageHighSrc": "cards/bw2-021-high.png"
+  },
+  {
+    "masterCardId": "2349",
+    "externalId": null,
+    "tcgdex_id": "bw2-20",
+    "localId": "020",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "020/98",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka 020/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-020-low.png",
+    "imageHighSrc": "cards/bw2-020-high.png"
+  },
+  {
+    "masterCardId": "2348",
+    "externalId": null,
+    "tcgdex_id": "bw2-19",
+    "localId": "019",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "019/98",
+    "cardName": "Simisear",
+    "fullDisplayName": "Simisear 019/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      514
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansear",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-019-low.png",
+    "imageHighSrc": "cards/bw2-019-high.png"
+  },
+  {
+    "masterCardId": "2347",
+    "externalId": null,
+    "tcgdex_id": "bw2-18",
+    "localId": "018",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "018/98",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 018/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-018-low.png",
+    "imageHighSrc": "cards/bw2-018-high.png"
+  },
+  {
+    "masterCardId": "2346",
+    "externalId": null,
+    "tcgdex_id": "bw2-17",
+    "localId": "017",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "017/98",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 017/98 Emerging Powers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-017-low.png",
+    "imageHighSrc": "cards/bw2-017-high.png"
+  },
+  {
+    "masterCardId": "2345",
+    "externalId": null,
+    "tcgdex_id": "bw2-16",
+    "localId": "016",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "016/98",
+    "cardName": "Sawsbuck",
+    "fullDisplayName": "Sawsbuck 016/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      586
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deerling",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-016-low.png",
+    "imageHighSrc": "cards/bw2-016-high.png"
+  },
+  {
+    "masterCardId": "2344",
+    "externalId": null,
+    "tcgdex_id": "bw2-15",
+    "localId": "015",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "015/98",
+    "cardName": "Deerling",
+    "fullDisplayName": "Deerling 015/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      585
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-015-low.png",
+    "imageHighSrc": "cards/bw2-015-high.png"
+  },
+  {
+    "masterCardId": "2343",
+    "externalId": null,
+    "tcgdex_id": "bw2-14",
+    "localId": "014",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "014/98",
+    "cardName": "Lilligant",
+    "fullDisplayName": "Lilligant 014/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      549
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Petilil",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-014-low.png",
+    "imageHighSrc": "cards/bw2-014-high.png"
+  },
+  {
+    "masterCardId": "2342",
+    "externalId": null,
+    "tcgdex_id": "bw2-13",
+    "localId": "013",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "013/98",
+    "cardName": "Petilil",
+    "fullDisplayName": "Petilil 013/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      548
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-013-low.png",
+    "imageHighSrc": "cards/bw2-013-high.png"
+  },
+  {
+    "masterCardId": "2341",
+    "externalId": null,
+    "tcgdex_id": "bw2-12",
+    "localId": "012",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "012/98",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 012/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-012-low.png",
+    "imageHighSrc": "cards/bw2-012-high.png"
+  },
+  {
+    "masterCardId": "2340",
+    "externalId": null,
+    "tcgdex_id": "bw2-11",
+    "localId": "011",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "011/98",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 011/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-011-low.png",
+    "imageHighSrc": "cards/bw2-011-high.png"
+  },
+  {
+    "masterCardId": "2339",
+    "externalId": null,
+    "tcgdex_id": "bw2-10",
+    "localId": "010",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "010/98",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 010/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-010-low.png",
+    "imageHighSrc": "cards/bw2-010-high.png"
+  },
+  {
+    "masterCardId": "2338",
+    "externalId": null,
+    "tcgdex_id": "bw2-9",
+    "localId": "009",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "009/98",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 009/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-009-low.png",
+    "imageHighSrc": "cards/bw2-009-high.png"
+  },
+  {
+    "masterCardId": "2337",
+    "externalId": null,
+    "tcgdex_id": "bw2-8",
+    "localId": "008",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "008/98",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 008/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-008-low.png",
+    "imageHighSrc": "cards/bw2-008-high.png"
+  },
+  {
+    "masterCardId": "2336",
+    "externalId": null,
+    "tcgdex_id": "bw2-7",
+    "localId": "007",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "007/98",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 007/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-007-low.png",
+    "imageHighSrc": "cards/bw2-007-high.png"
+  },
+  {
+    "masterCardId": "2335",
+    "externalId": null,
+    "tcgdex_id": "bw2-6",
+    "localId": "006",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "006/98",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 006/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-006-low.png",
+    "imageHighSrc": "cards/bw2-006-high.png"
+  },
+  {
+    "masterCardId": "2334",
+    "externalId": null,
+    "tcgdex_id": "bw2-5",
+    "localId": "005",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "005/98",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 005/98 Emerging Powers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-005-low.png",
+    "imageHighSrc": "cards/bw2-005-high.png"
+  },
+  {
+    "masterCardId": "2333",
+    "externalId": null,
+    "tcgdex_id": "bw2-4",
+    "localId": "004",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "004/98",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 004/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-004-low.png",
+    "imageHighSrc": "cards/bw2-004-high.png"
+  },
+  {
+    "masterCardId": "2332",
+    "externalId": null,
+    "tcgdex_id": "bw2-3",
+    "localId": "003",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "003/98",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 003/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-003-low.png",
+    "imageHighSrc": "cards/bw2-003-high.png"
+  },
+  {
+    "masterCardId": "2331",
+    "externalId": null,
+    "tcgdex_id": "bw2-2",
+    "localId": "002",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "002/98",
+    "cardName": "Simisage",
+    "fullDisplayName": "Simisage 002/98 Emerging Powers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      512
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansage",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-002-low.png",
+    "imageHighSrc": "cards/bw2-002-high.png"
+  },
+  {
+    "masterCardId": "2330",
+    "externalId": null,
+    "tcgdex_id": "bw2-1",
+    "localId": "001",
+    "setCode": "bw2",
+    "setTcgdexId": "bw2",
+    "cardNumber": "001/98",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage 001/98 Emerging Powers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw2-001-low.png",
+    "imageHighSrc": "cards/bw2-001-high.png"
+  }
+]

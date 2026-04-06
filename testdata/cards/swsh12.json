@@ -1,0 +1,7940 @@
+[
+  {
+    "masterCardId": "21118",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG30",
+    "localId": "TG30",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG30/195",
+    "cardName": "Duraludon VMAX",
+    "fullDisplayName": "Duraludon VMAX TG30/195 Silver Tempest",
+    "rarity": "Secret Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      884
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Duraludon V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG30-low.webp",
+    "imageHighSrc": "cards/swsh12-TG30-high.webp"
+  },
+  {
+    "masterCardId": "21117",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG29",
+    "localId": "TG29",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG29/195",
+    "cardName": "Rayquaza VMAX",
+    "fullDisplayName": "Rayquaza VMAX TG29/195 Silver Tempest",
+    "rarity": "Secret Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Rayquaza V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG29-low.webp",
+    "imageHighSrc": "cards/swsh12-TG29-high.webp"
+  },
+  {
+    "masterCardId": "21116",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG28",
+    "localId": "TG28",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG28/195",
+    "cardName": "Sordward & Shielbert",
+    "fullDisplayName": "Sordward & Shielbert TG28/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG28-low.webp",
+    "imageHighSrc": "cards/swsh12-TG28-high.webp"
+  },
+  {
+    "masterCardId": "21115",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG27",
+    "localId": "TG27",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG27/195",
+    "cardName": "Raihan",
+    "fullDisplayName": "Raihan TG27/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG27-low.webp",
+    "imageHighSrc": "cards/swsh12-TG27-high.webp"
+  },
+  {
+    "masterCardId": "21114",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG26",
+    "localId": "TG26",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG26/195",
+    "cardName": "Professor Burnet",
+    "fullDisplayName": "Professor Burnet TG26/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG26-low.webp",
+    "imageHighSrc": "cards/swsh12-TG26-high.webp"
+  },
+  {
+    "masterCardId": "21113",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG25",
+    "localId": "TG25",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG25/195",
+    "cardName": "Judge",
+    "fullDisplayName": "Judge TG25/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG25-low.webp",
+    "imageHighSrc": "cards/swsh12-TG25-high.webp"
+  },
+  {
+    "masterCardId": "21112",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG24",
+    "localId": "TG24",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG24/195",
+    "cardName": "Gordie",
+    "fullDisplayName": "Gordie TG24/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG24-low.webp",
+    "imageHighSrc": "cards/swsh12-TG24-high.webp"
+  },
+  {
+    "masterCardId": "21111",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG23",
+    "localId": "TG23",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG23/195",
+    "cardName": "Friends in Galar",
+    "fullDisplayName": "Friends in Galar TG23/195 Silver Tempest",
+    "rarity": "Full Art Trainer",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG23-low.webp",
+    "imageHighSrc": "cards/swsh12-TG23-high.webp"
+  },
+  {
+    "masterCardId": "21110",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG22",
+    "localId": "TG22",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG22/195",
+    "cardName": "Blissey V",
+    "fullDisplayName": "Blissey V TG22/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG22-low.webp",
+    "imageHighSrc": "cards/swsh12-TG22-high.webp"
+  },
+  {
+    "masterCardId": "21109",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG21",
+    "localId": "TG21",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG21/195",
+    "cardName": "Duraludon VMAX",
+    "fullDisplayName": "Duraludon VMAX TG21/195 Silver Tempest",
+    "rarity": "Holo Rare VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      884
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Duraludon V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG21-low.webp",
+    "imageHighSrc": "cards/swsh12-TG21-high.webp"
+  },
+  {
+    "masterCardId": "21108",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG20",
+    "localId": "TG20",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG20/195",
+    "cardName": "Rayquaza VMAX",
+    "fullDisplayName": "Rayquaza VMAX TG20/195 Silver Tempest",
+    "rarity": "Holo Rare VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Rayquaza V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG20-low.webp",
+    "imageHighSrc": "cards/swsh12-TG20-high.webp"
+  },
+  {
+    "masterCardId": "21107",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG19",
+    "localId": "TG19",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG19/195",
+    "cardName": "Corviknight VMAX",
+    "fullDisplayName": "Corviknight VMAX TG19/195 Silver Tempest",
+    "rarity": "Holo Rare VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      823
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Corviknight V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG19-low.webp",
+    "imageHighSrc": "cards/swsh12-TG19-high.webp"
+  },
+  {
+    "masterCardId": "21106",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG18",
+    "localId": "TG18",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG18/195",
+    "cardName": "Corviknight V",
+    "fullDisplayName": "Corviknight V TG18/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      823
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG18-low.webp",
+    "imageHighSrc": "cards/swsh12-TG18-high.webp"
+  },
+  {
+    "masterCardId": "21105",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG17",
+    "localId": "TG17",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG17/195",
+    "cardName": "Mawile V",
+    "fullDisplayName": "Mawile V TG17/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG17-low.webp",
+    "imageHighSrc": "cards/swsh12-TG17-high.webp"
+  },
+  {
+    "masterCardId": "21104",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG16",
+    "localId": "TG16",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG16/195",
+    "cardName": "Zeraora V",
+    "fullDisplayName": "Zeraora V TG16/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      807
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG16-low.webp",
+    "imageHighSrc": "cards/swsh12-TG16-high.webp"
+  },
+  {
+    "masterCardId": "21103",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG15",
+    "localId": "TG15",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG15/195",
+    "cardName": "Blaziken VMAX",
+    "fullDisplayName": "Blaziken VMAX TG15/195 Silver Tempest",
+    "rarity": "Holo Rare VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Blaziken V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG15-low.webp",
+    "imageHighSrc": "cards/swsh12-TG15-high.webp"
+  },
+  {
+    "masterCardId": "21102",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG14",
+    "localId": "TG14",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG14/195",
+    "cardName": "Blaziken V",
+    "fullDisplayName": "Blaziken V TG14/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG14-low.webp",
+    "imageHighSrc": "cards/swsh12-TG14-high.webp"
+  },
+  {
+    "masterCardId": "21101",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG13",
+    "localId": "TG13",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG13/195",
+    "cardName": "Serperior V",
+    "fullDisplayName": "Serperior V TG13/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG13-low.webp",
+    "imageHighSrc": "cards/swsh12-TG13-high.webp"
+  },
+  {
+    "masterCardId": "21100",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG12",
+    "localId": "TG12",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG12/195",
+    "cardName": "Kricketune V",
+    "fullDisplayName": "Kricketune V TG12/195 Silver Tempest",
+    "rarity": "Holo Rare V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      402
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG12-low.webp",
+    "imageHighSrc": "cards/swsh12-TG12-high.webp"
+  },
+  {
+    "masterCardId": "21099",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG11",
+    "localId": "TG11",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG11/195",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria TG11/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Swablu",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG11-low.webp",
+    "imageHighSrc": "cards/swsh12-TG11-high.webp"
+  },
+  {
+    "masterCardId": "21098",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG10",
+    "localId": "TG10",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG10/195",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle TG10/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG10-low.webp",
+    "imageHighSrc": "cards/swsh12-TG10-high.webp"
+  },
+  {
+    "masterCardId": "21097",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG09",
+    "localId": "TG09",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG09/195",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon TG09/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG09-low.webp",
+    "imageHighSrc": "cards/swsh12-TG09-high.webp"
+  },
+  {
+    "masterCardId": "21096",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG08",
+    "localId": "TG08",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG08/195",
+    "cardName": "Passimian",
+    "fullDisplayName": "Passimian TG08/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      766
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG08-low.webp",
+    "imageHighSrc": "cards/swsh12-TG08-high.webp"
+  },
+  {
+    "masterCardId": "21095",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG07",
+    "localId": "TG07",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG07/195",
+    "cardName": "Rockruff",
+    "fullDisplayName": "Rockruff TG07/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      744
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG07-low.webp",
+    "imageHighSrc": "cards/swsh12-TG07-high.webp"
+  },
+  {
+    "masterCardId": "21094",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG06",
+    "localId": "TG06",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG06/195",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar TG06/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Inkay",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG06-low.webp",
+    "imageHighSrc": "cards/swsh12-TG06-high.webp"
+  },
+  {
+    "masterCardId": "21093",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG05",
+    "localId": "TG05",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG05/195",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir TG05/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Kirlia",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG05-low.webp",
+    "imageHighSrc": "cards/swsh12-TG05-high.webp"
+  },
+  {
+    "masterCardId": "21092",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG04",
+    "localId": "TG04",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG04/195",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx TG04/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG04-low.webp",
+    "imageHighSrc": "cards/swsh12-TG04-high.webp"
+  },
+  {
+    "masterCardId": "21091",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG03",
+    "localId": "TG03",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG03/195",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy TG03/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Mareep",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG03-low.webp",
+    "imageHighSrc": "cards/swsh12-TG03-high.webp"
+  },
+  {
+    "masterCardId": "21090",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG02",
+    "localId": "TG02",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG02/195",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic TG02/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Feebas",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG02-low.webp",
+    "imageHighSrc": "cards/swsh12-TG02-high.webp"
+  },
+  {
+    "masterCardId": "21089",
+    "externalId": null,
+    "tcgdex_id": "swsh12-TG01",
+    "localId": "TG01",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "TG01/195",
+    "cardName": "Braixen",
+    "fullDisplayName": "Braixen TG01/195 Silver Tempest",
+    "rarity": "Holo Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      654
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Fennekin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh12-TG01-low.webp",
+    "imageHighSrc": "cards/swsh12-TG01-high.webp"
+  },
+  {
+    "masterCardId": "16365",
+    "externalId": null,
+    "tcgdex_id": "swsh12-215",
+    "localId": "215",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "215/195",
+    "cardName": "V Guard Energy",
+    "fullDisplayName": "V Guard Energy 215/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-215-low.png",
+    "imageHighSrc": "cards/swsh12-215-high.png"
+  },
+  {
+    "masterCardId": "16360",
+    "externalId": null,
+    "tcgdex_id": "swsh12-214",
+    "localId": "214",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "214/195",
+    "cardName": "Leafy Camo Poncho",
+    "fullDisplayName": "Leafy Camo Poncho 214/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-214-low.png",
+    "imageHighSrc": "cards/swsh12-214-high.png"
+  },
+  {
+    "masterCardId": "16355",
+    "externalId": null,
+    "tcgdex_id": "swsh12-213",
+    "localId": "213",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "213/195",
+    "cardName": "Gapejaw Bog",
+    "fullDisplayName": "Gapejaw Bog 213/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-213-low.png",
+    "imageHighSrc": "cards/swsh12-213-high.png"
+  },
+  {
+    "masterCardId": "16351",
+    "externalId": null,
+    "tcgdex_id": "swsh12-212",
+    "localId": "212",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "212/195",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 212/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-212-low.png",
+    "imageHighSrc": "cards/swsh12-212-high.png"
+  },
+  {
+    "masterCardId": "16346",
+    "externalId": null,
+    "tcgdex_id": "swsh12-211",
+    "localId": "211",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "211/195",
+    "cardName": "Lugia VSTAR",
+    "fullDisplayName": "Lugia VSTAR 211/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lugia V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-211-low.png",
+    "imageHighSrc": "cards/swsh12-211-high.png"
+  },
+  {
+    "masterCardId": "16341",
+    "externalId": null,
+    "tcgdex_id": "swsh12-210",
+    "localId": "210",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "210/195",
+    "cardName": "Serperior VSTAR",
+    "fullDisplayName": "Serperior VSTAR 210/195 Silver Tempest",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Serperior V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-210-low.png",
+    "imageHighSrc": "cards/swsh12-210-high.png"
+  },
+  {
+    "masterCardId": "16335",
+    "externalId": null,
+    "tcgdex_id": "swsh12-209",
+    "localId": "209",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "209/195",
+    "cardName": "Worker",
+    "fullDisplayName": "Worker 209/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-209-low.png",
+    "imageHighSrc": "cards/swsh12-209-high.png"
+  },
+  {
+    "masterCardId": "16327",
+    "externalId": null,
+    "tcgdex_id": "swsh12-208",
+    "localId": "208",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "208/195",
+    "cardName": "Wallace",
+    "fullDisplayName": "Wallace 208/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-208-low.png",
+    "imageHighSrc": "cards/swsh12-208-high.png"
+  },
+  {
+    "masterCardId": "16321",
+    "externalId": null,
+    "tcgdex_id": "swsh12-207",
+    "localId": "207",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "207/195",
+    "cardName": "Serena",
+    "fullDisplayName": "Serena 207/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-207-low.png",
+    "imageHighSrc": "cards/swsh12-207-high.png"
+  },
+  {
+    "masterCardId": "16314",
+    "externalId": null,
+    "tcgdex_id": "swsh12-206",
+    "localId": "206",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "206/195",
+    "cardName": "Lance",
+    "fullDisplayName": "Lance 206/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-206-low.png",
+    "imageHighSrc": "cards/swsh12-206-high.png"
+  },
+  {
+    "masterCardId": "16310",
+    "externalId": null,
+    "tcgdex_id": "swsh12-205",
+    "localId": "205",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "205/195",
+    "cardName": "Furisode Girl",
+    "fullDisplayName": "Furisode Girl 205/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-205-low.png",
+    "imageHighSrc": "cards/swsh12-205-high.png"
+  },
+  {
+    "masterCardId": "16305",
+    "externalId": null,
+    "tcgdex_id": "swsh12-204",
+    "localId": "204",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "204/195",
+    "cardName": "Candice",
+    "fullDisplayName": "Candice 204/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-204-low.png",
+    "imageHighSrc": "cards/swsh12-204-high.png"
+  },
+  {
+    "masterCardId": "16299",
+    "externalId": null,
+    "tcgdex_id": "swsh12-203",
+    "localId": "203",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "203/195",
+    "cardName": "Brandon",
+    "fullDisplayName": "Brandon 203/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-203-low.png",
+    "imageHighSrc": "cards/swsh12-203-high.png"
+  },
+  {
+    "masterCardId": "16294",
+    "externalId": null,
+    "tcgdex_id": "swsh12-202",
+    "localId": "202",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "202/195",
+    "cardName": "Lugia VSTAR",
+    "fullDisplayName": "Lugia VSTAR 202/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lugia V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-202-low.png",
+    "imageHighSrc": "cards/swsh12-202-high.png"
+  },
+  {
+    "masterCardId": "16289",
+    "externalId": null,
+    "tcgdex_id": "swsh12-201",
+    "localId": "201",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "201/195",
+    "cardName": "Regidrago VSTAR",
+    "fullDisplayName": "Regidrago VSTAR 201/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      895
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Regidrago V",
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-201-low.png",
+    "imageHighSrc": "cards/swsh12-201-high.png"
+  },
+  {
+    "masterCardId": "16285",
+    "externalId": null,
+    "tcgdex_id": "swsh12-200",
+    "localId": "200",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "200/195",
+    "cardName": "Mawile VSTAR",
+    "fullDisplayName": "Mawile VSTAR 200/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 260,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Mawile V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-200-low.png",
+    "imageHighSrc": "cards/swsh12-200-high.png"
+  },
+  {
+    "masterCardId": "16278",
+    "externalId": null,
+    "tcgdex_id": "swsh12-199",
+    "localId": "199",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "199/195",
+    "cardName": "Unown VSTAR",
+    "fullDisplayName": "Unown VSTAR 199/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 250,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Unown V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-199-low.png",
+    "imageHighSrc": "cards/swsh12-199-high.png"
+  },
+  {
+    "masterCardId": "16271",
+    "externalId": null,
+    "tcgdex_id": "swsh12-198",
+    "localId": "198",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "198/195",
+    "cardName": "Regieleki VMAX",
+    "fullDisplayName": "Regieleki VMAX 198/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      894
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Regieleki V",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-198-low.png",
+    "imageHighSrc": "cards/swsh12-198-high.png"
+  },
+  {
+    "masterCardId": "16265",
+    "externalId": null,
+    "tcgdex_id": "swsh12-197",
+    "localId": "197",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "197/195",
+    "cardName": "Alolan Vulpix VSTAR",
+    "fullDisplayName": "Alolan Vulpix VSTAR 197/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 240,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Alolan Vulpix V",
+    "artist": "PLANETA Hiiragi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-197-low.png",
+    "imageHighSrc": "cards/swsh12-197-high.png"
+  },
+  {
+    "masterCardId": "16260",
+    "externalId": null,
+    "tcgdex_id": "swsh12-196",
+    "localId": "196",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "196/195",
+    "cardName": "Serperior VSTAR",
+    "fullDisplayName": "Serperior VSTAR 196/195 Silver Tempest",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Serperior V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-196-low.png",
+    "imageHighSrc": "cards/swsh12-196-high.png"
+  },
+  {
+    "masterCardId": "16253",
+    "externalId": null,
+    "tcgdex_id": "swsh12-195",
+    "localId": "195",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "195/195",
+    "cardName": "Worker",
+    "fullDisplayName": "Worker 195/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-195-low.png",
+    "imageHighSrc": "cards/swsh12-195-high.png"
+  },
+  {
+    "masterCardId": "16247",
+    "externalId": null,
+    "tcgdex_id": "swsh12-194",
+    "localId": "194",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "194/195",
+    "cardName": "Wallace",
+    "fullDisplayName": "Wallace 194/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-194-low.png",
+    "imageHighSrc": "cards/swsh12-194-high.png"
+  },
+  {
+    "masterCardId": "16241",
+    "externalId": null,
+    "tcgdex_id": "swsh12-193",
+    "localId": "193",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "193/195",
+    "cardName": "Serena",
+    "fullDisplayName": "Serena 193/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-193-low.png",
+    "imageHighSrc": "cards/swsh12-193-high.png"
+  },
+  {
+    "masterCardId": "16237",
+    "externalId": null,
+    "tcgdex_id": "swsh12-192",
+    "localId": "192",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "192/195",
+    "cardName": "Lance",
+    "fullDisplayName": "Lance 192/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-192-low.png",
+    "imageHighSrc": "cards/swsh12-192-high.png"
+  },
+  {
+    "masterCardId": "16230",
+    "externalId": null,
+    "tcgdex_id": "swsh12-191",
+    "localId": "191",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "191/195",
+    "cardName": "Gym Trainer",
+    "fullDisplayName": "Gym Trainer 191/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-191-low.png",
+    "imageHighSrc": "cards/swsh12-191-high.png"
+  },
+  {
+    "masterCardId": "16226",
+    "externalId": null,
+    "tcgdex_id": "swsh12-190",
+    "localId": "190",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "190/195",
+    "cardName": "Furisode Girl",
+    "fullDisplayName": "Furisode Girl 190/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-190-low.png",
+    "imageHighSrc": "cards/swsh12-190-high.png"
+  },
+  {
+    "masterCardId": "16221",
+    "externalId": null,
+    "tcgdex_id": "swsh12-189",
+    "localId": "189",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "189/195",
+    "cardName": "Candice",
+    "fullDisplayName": "Candice 189/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-189-low.png",
+    "imageHighSrc": "cards/swsh12-189-high.png"
+  },
+  {
+    "masterCardId": "16214",
+    "externalId": null,
+    "tcgdex_id": "swsh12-188",
+    "localId": "188",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "188/195",
+    "cardName": "Brandon",
+    "fullDisplayName": "Brandon 188/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-188-low.png",
+    "imageHighSrc": "cards/swsh12-188-high.png"
+  },
+  {
+    "masterCardId": "16209",
+    "externalId": null,
+    "tcgdex_id": "swsh12-187",
+    "localId": "187",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "187/195",
+    "cardName": "Ho-Oh V",
+    "fullDisplayName": "Ho-Oh V 187/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-187-low.png",
+    "imageHighSrc": "cards/swsh12-187-high.png"
+  },
+  {
+    "masterCardId": "16201",
+    "externalId": null,
+    "tcgdex_id": "swsh12-186",
+    "localId": "186",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "186/195",
+    "cardName": "Lugia V",
+    "fullDisplayName": "Lugia V 186/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-186-low.png",
+    "imageHighSrc": "cards/swsh12-186-high.png"
+  },
+  {
+    "masterCardId": "16190",
+    "externalId": null,
+    "tcgdex_id": "swsh12-185",
+    "localId": "185",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "185/195",
+    "cardName": "Lugia V",
+    "fullDisplayName": "Lugia V 185/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-185-low.png",
+    "imageHighSrc": "cards/swsh12-185-high.png"
+  },
+  {
+    "masterCardId": "16182",
+    "externalId": null,
+    "tcgdex_id": "swsh12-184",
+    "localId": "184",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "184/195",
+    "cardName": "Regidrago V",
+    "fullDisplayName": "Regidrago V 184/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      895
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hataya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-184-low.png",
+    "imageHighSrc": "cards/swsh12-184-high.png"
+  },
+  {
+    "masterCardId": "16174",
+    "externalId": null,
+    "tcgdex_id": "swsh12-183",
+    "localId": "183",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "183/195",
+    "cardName": "Regidrago V",
+    "fullDisplayName": "Regidrago V 183/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      895
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-183-low.png",
+    "imageHighSrc": "cards/swsh12-183-high.png"
+  },
+  {
+    "masterCardId": "16167",
+    "externalId": null,
+    "tcgdex_id": "swsh12-182",
+    "localId": "182",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "182/195",
+    "cardName": "Magearna V",
+    "fullDisplayName": "Magearna V 182/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      801
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-182-low.png",
+    "imageHighSrc": "cards/swsh12-182-high.png"
+  },
+  {
+    "masterCardId": "16160",
+    "externalId": null,
+    "tcgdex_id": "swsh12-181",
+    "localId": "181",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "181/195",
+    "cardName": "Skuntank V",
+    "fullDisplayName": "Skuntank V 181/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-181-low.png",
+    "imageHighSrc": "cards/swsh12-181-high.png"
+  },
+  {
+    "masterCardId": "16154",
+    "externalId": null,
+    "tcgdex_id": "swsh12-180",
+    "localId": "180",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "180/195",
+    "cardName": "Skuntank V",
+    "fullDisplayName": "Skuntank V 180/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-180-low.png",
+    "imageHighSrc": "cards/swsh12-180-high.png"
+  },
+  {
+    "masterCardId": "16145",
+    "externalId": null,
+    "tcgdex_id": "swsh12-179",
+    "localId": "179",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "179/195",
+    "cardName": "Hisuian Arcanine V",
+    "fullDisplayName": "Hisuian Arcanine V 179/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-179-low.png",
+    "imageHighSrc": "cards/swsh12-179-high.png"
+  },
+  {
+    "masterCardId": "16138",
+    "externalId": null,
+    "tcgdex_id": "swsh12-178",
+    "localId": "178",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "178/195",
+    "cardName": "Mawile V",
+    "fullDisplayName": "Mawile V 178/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-178-low.png",
+    "imageHighSrc": "cards/swsh12-178-high.png"
+  },
+  {
+    "masterCardId": "16129",
+    "externalId": null,
+    "tcgdex_id": "swsh12-177",
+    "localId": "177",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "177/195",
+    "cardName": "Unown V",
+    "fullDisplayName": "Unown V 177/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-177-low.png",
+    "imageHighSrc": "cards/swsh12-177-high.png"
+  },
+  {
+    "masterCardId": "16122",
+    "externalId": null,
+    "tcgdex_id": "swsh12-176",
+    "localId": "176",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "176/195",
+    "cardName": "Unown V",
+    "fullDisplayName": "Unown V 176/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-176-low.png",
+    "imageHighSrc": "cards/swsh12-176-high.png"
+  },
+  {
+    "masterCardId": "16114",
+    "externalId": null,
+    "tcgdex_id": "swsh12-175",
+    "localId": "175",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "175/195",
+    "cardName": "Regieleki V",
+    "fullDisplayName": "Regieleki V 175/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      894
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-175-low.png",
+    "imageHighSrc": "cards/swsh12-175-high.png"
+  },
+  {
+    "masterCardId": "16107",
+    "externalId": null,
+    "tcgdex_id": "swsh12-174",
+    "localId": "174",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "174/195",
+    "cardName": "Omastar V",
+    "fullDisplayName": "Omastar V 174/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-174-low.png",
+    "imageHighSrc": "cards/swsh12-174-high.png"
+  },
+  {
+    "masterCardId": "16099",
+    "externalId": null,
+    "tcgdex_id": "swsh12-173",
+    "localId": "173",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "173/195",
+    "cardName": "Alolan Vulpix V",
+    "fullDisplayName": "Alolan Vulpix V 173/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-173-low.png",
+    "imageHighSrc": "cards/swsh12-173-high.png"
+  },
+  {
+    "masterCardId": "16091",
+    "externalId": null,
+    "tcgdex_id": "swsh12-172",
+    "localId": "172",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "172/195",
+    "cardName": "Reshiram V",
+    "fullDisplayName": "Reshiram V 172/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-172-low.png",
+    "imageHighSrc": "cards/swsh12-172-high.png"
+  },
+  {
+    "masterCardId": "16083",
+    "externalId": null,
+    "tcgdex_id": "swsh12-171",
+    "localId": "171",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "171/195",
+    "cardName": "Chesnaught V",
+    "fullDisplayName": "Chesnaught V 171/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      652
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-171-low.png",
+    "imageHighSrc": "cards/swsh12-171-high.png"
+  },
+  {
+    "masterCardId": "16076",
+    "externalId": null,
+    "tcgdex_id": "swsh12-170",
+    "localId": "170",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "170/195",
+    "cardName": "Serperior V",
+    "fullDisplayName": "Serperior V 170/195 Silver Tempest",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-170-low.png",
+    "imageHighSrc": "cards/swsh12-170-high.png"
+  },
+  {
+    "masterCardId": "16068",
+    "externalId": null,
+    "tcgdex_id": "swsh12-169",
+    "localId": "169",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "169/195",
+    "cardName": "V Guard Energy",
+    "fullDisplayName": "V Guard Energy 169/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-169-low.png",
+    "imageHighSrc": "cards/swsh12-169-high.png"
+  },
+  {
+    "masterCardId": "16061",
+    "externalId": null,
+    "tcgdex_id": "swsh12-168",
+    "localId": "168",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "168/195",
+    "cardName": "Regenerative Energy",
+    "fullDisplayName": "Regenerative Energy 168/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-168-low.png",
+    "imageHighSrc": "cards/swsh12-168-high.png"
+  },
+  {
+    "masterCardId": "16054",
+    "externalId": null,
+    "tcgdex_id": "swsh12-167",
+    "localId": "167",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "167/195",
+    "cardName": "Worker",
+    "fullDisplayName": "Worker 167/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-167-low.png",
+    "imageHighSrc": "cards/swsh12-167-high.png"
+  },
+  {
+    "masterCardId": "16047",
+    "externalId": null,
+    "tcgdex_id": "swsh12-166",
+    "localId": "166",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "166/195",
+    "cardName": "Wallace",
+    "fullDisplayName": "Wallace 166/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-166-low.png",
+    "imageHighSrc": "cards/swsh12-166-high.png"
+  },
+  {
+    "masterCardId": "16039",
+    "externalId": null,
+    "tcgdex_id": "swsh12-165",
+    "localId": "165",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "165/195",
+    "cardName": "Unidentified Fossil",
+    "fullDisplayName": "Unidentified Fossil 165/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-165-low.png",
+    "imageHighSrc": "cards/swsh12-165-high.png"
+  },
+  {
+    "masterCardId": "16033",
+    "externalId": null,
+    "tcgdex_id": "swsh12-164",
+    "localId": "164",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "164/195",
+    "cardName": "Serena",
+    "fullDisplayName": "Serena 164/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-164-low.png",
+    "imageHighSrc": "cards/swsh12-164-high.png"
+  },
+  {
+    "masterCardId": "16024",
+    "externalId": null,
+    "tcgdex_id": "swsh12-163",
+    "localId": "163",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "163/195",
+    "cardName": "Quad Stone",
+    "fullDisplayName": "Quad Stone 163/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-163-low.png",
+    "imageHighSrc": "cards/swsh12-163-high.png"
+  },
+  {
+    "masterCardId": "16017",
+    "externalId": null,
+    "tcgdex_id": "swsh12-162",
+    "localId": "162",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "162/195",
+    "cardName": "Professor Laventon",
+    "fullDisplayName": "Professor Laventon 162/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-162-low.png",
+    "imageHighSrc": "cards/swsh12-162-high.png"
+  },
+  {
+    "masterCardId": "16008",
+    "externalId": null,
+    "tcgdex_id": "swsh12-161",
+    "localId": "161",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "161/195",
+    "cardName": "Primordial Altar",
+    "fullDisplayName": "Primordial Altar 161/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-161-low.png",
+    "imageHighSrc": "cards/swsh12-161-high.png"
+  },
+  {
+    "masterCardId": "15999",
+    "externalId": null,
+    "tcgdex_id": "swsh12-160",
+    "localId": "160",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "160/195",
+    "cardName": "Leafy Camo Poncho",
+    "fullDisplayName": "Leafy Camo Poncho 160/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-160-low.png",
+    "imageHighSrc": "cards/swsh12-160-high.png"
+  },
+  {
+    "masterCardId": "15988",
+    "externalId": null,
+    "tcgdex_id": "swsh12-159",
+    "localId": "159",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "159/195",
+    "cardName": "Lance",
+    "fullDisplayName": "Lance 159/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-159-low.png",
+    "imageHighSrc": "cards/swsh12-159-high.png"
+  },
+  {
+    "masterCardId": "15979",
+    "externalId": null,
+    "tcgdex_id": "swsh12-158",
+    "localId": "158",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "158/195",
+    "cardName": "Gym Trainer",
+    "fullDisplayName": "Gym Trainer 158/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-158-low.png",
+    "imageHighSrc": "cards/swsh12-158-high.png"
+  },
+  {
+    "masterCardId": "15969",
+    "externalId": null,
+    "tcgdex_id": "swsh12-157",
+    "localId": "157",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "157/195",
+    "cardName": "Furisode Girl",
+    "fullDisplayName": "Furisode Girl 157/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-157-low.png",
+    "imageHighSrc": "cards/swsh12-157-high.png"
+  },
+  {
+    "masterCardId": "15961",
+    "externalId": null,
+    "tcgdex_id": "swsh12-156",
+    "localId": "156",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "156/195",
+    "cardName": "Forest Seal Stone",
+    "fullDisplayName": "Forest Seal Stone 156/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-156-low.png",
+    "imageHighSrc": "cards/swsh12-156-high.png"
+  },
+  {
+    "masterCardId": "15954",
+    "externalId": null,
+    "tcgdex_id": "swsh12-155",
+    "localId": "155",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "155/195",
+    "cardName": "Emergency Jelly",
+    "fullDisplayName": "Emergency Jelly 155/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-155-low.png",
+    "imageHighSrc": "cards/swsh12-155-high.png"
+  },
+  {
+    "masterCardId": "15945",
+    "externalId": null,
+    "tcgdex_id": "swsh12-154",
+    "localId": "154",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "154/195",
+    "cardName": "Earthen Seal Stone",
+    "fullDisplayName": "Earthen Seal Stone 154/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-154-low.png",
+    "imageHighSrc": "cards/swsh12-154-high.png"
+  },
+  {
+    "masterCardId": "15931",
+    "externalId": null,
+    "tcgdex_id": "swsh12-153",
+    "localId": "153",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "153/195",
+    "cardName": "Capturing Aroma",
+    "fullDisplayName": "Capturing Aroma 153/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-153-low.png",
+    "imageHighSrc": "cards/swsh12-153-high.png"
+  },
+  {
+    "masterCardId": "15922",
+    "externalId": null,
+    "tcgdex_id": "swsh12-152",
+    "localId": "152",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "152/195",
+    "cardName": "Candice",
+    "fullDisplayName": "Candice 152/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-152-low.png",
+    "imageHighSrc": "cards/swsh12-152-high.png"
+  },
+  {
+    "masterCardId": "15912",
+    "externalId": null,
+    "tcgdex_id": "swsh12-151",
+    "localId": "151",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "151/195",
+    "cardName": "Brandon",
+    "fullDisplayName": "Brandon 151/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-151-low.png",
+    "imageHighSrc": "cards/swsh12-151-high.png"
+  },
+  {
+    "masterCardId": "15892",
+    "externalId": null,
+    "tcgdex_id": "swsh12-150",
+    "localId": "150",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "150/195",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 150/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-150-low.png",
+    "imageHighSrc": "cards/swsh12-150-high.png"
+  },
+  {
+    "masterCardId": "15882",
+    "externalId": null,
+    "tcgdex_id": "swsh12-149",
+    "localId": "149",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "149/195",
+    "cardName": "Hisuian Braviary",
+    "fullDisplayName": "Hisuian Braviary 149/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      628
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Rufflet",
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-149-low.png",
+    "imageHighSrc": "cards/swsh12-149-high.png"
+  },
+  {
+    "masterCardId": "15874",
+    "externalId": null,
+    "tcgdex_id": "swsh12-148",
+    "localId": "148",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "148/195",
+    "cardName": "Rufflet",
+    "fullDisplayName": "Rufflet 148/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      627
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-148-low.png",
+    "imageHighSrc": "cards/swsh12-148-high.png"
+  },
+  {
+    "masterCardId": "15864",
+    "externalId": null,
+    "tcgdex_id": "swsh12-147",
+    "localId": "147",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "147/195",
+    "cardName": "Archeops",
+    "fullDisplayName": "Archeops 147/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      567
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Archen",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-147-low.png",
+    "imageHighSrc": "cards/swsh12-147-high.png"
+  },
+  {
+    "masterCardId": "15856",
+    "externalId": null,
+    "tcgdex_id": "swsh12-146",
+    "localId": "146",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "146/195",
+    "cardName": "Archen",
+    "fullDisplayName": "Archen 146/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      566
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Unidentified Fossil",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-146-low.png",
+    "imageHighSrc": "cards/swsh12-146-high.png"
+  },
+  {
+    "masterCardId": "15846",
+    "externalId": null,
+    "tcgdex_id": "swsh12-145",
+    "localId": "145",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "145/195",
+    "cardName": "Lopunny",
+    "fullDisplayName": "Lopunny 145/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Buneary",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-145-low.png",
+    "imageHighSrc": "cards/swsh12-145-high.png"
+  },
+  {
+    "masterCardId": "15835",
+    "externalId": null,
+    "tcgdex_id": "swsh12-144",
+    "localId": "144",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "144/195",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 144/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-144-low.png",
+    "imageHighSrc": "cards/swsh12-144-high.png"
+  },
+  {
+    "masterCardId": "15823",
+    "externalId": null,
+    "tcgdex_id": "swsh12-143",
+    "localId": "143",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "143/195",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 143/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Swablu",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-143-low.png",
+    "imageHighSrc": "cards/swsh12-143-high.png"
+  },
+  {
+    "masterCardId": "15813",
+    "externalId": null,
+    "tcgdex_id": "swsh12-142",
+    "localId": "142",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "142/195",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 142/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-142-low.png",
+    "imageHighSrc": "cards/swsh12-142-high.png"
+  },
+  {
+    "masterCardId": "15803",
+    "externalId": null,
+    "tcgdex_id": "swsh12-141",
+    "localId": "141",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "141/195",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 141/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-141-low.png",
+    "imageHighSrc": "cards/swsh12-141-high.png"
+  },
+  {
+    "masterCardId": "15793",
+    "externalId": null,
+    "tcgdex_id": "swsh12-140",
+    "localId": "140",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "140/195",
+    "cardName": "Ho-Oh V",
+    "fullDisplayName": "Ho-Oh V 140/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-140-low.png",
+    "imageHighSrc": "cards/swsh12-140-high.png"
+  },
+  {
+    "masterCardId": "15783",
+    "externalId": null,
+    "tcgdex_id": "swsh12-139",
+    "localId": "139",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "139/195",
+    "cardName": "Lugia VSTAR",
+    "fullDisplayName": "Lugia VSTAR 139/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lugia V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-139-low.png",
+    "imageHighSrc": "cards/swsh12-139-high.png"
+  },
+  {
+    "masterCardId": "15773",
+    "externalId": null,
+    "tcgdex_id": "swsh12-138",
+    "localId": "138",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "138/195",
+    "cardName": "Lugia V",
+    "fullDisplayName": "Lugia V 138/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-138-low.png",
+    "imageHighSrc": "cards/swsh12-138-high.png"
+  },
+  {
+    "masterCardId": "15764",
+    "externalId": null,
+    "tcgdex_id": "swsh12-137",
+    "localId": "137",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "137/195",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 137/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-137-low.png",
+    "imageHighSrc": "cards/swsh12-137-high.png"
+  },
+  {
+    "masterCardId": "15754",
+    "externalId": null,
+    "tcgdex_id": "swsh12-136",
+    "localId": "136",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "136/195",
+    "cardName": "Regidrago VSTAR",
+    "fullDisplayName": "Regidrago VSTAR 136/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      895
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Regidrago V",
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-136-low.png",
+    "imageHighSrc": "cards/swsh12-136-high.png"
+  },
+  {
+    "masterCardId": "15743",
+    "externalId": null,
+    "tcgdex_id": "swsh12-135",
+    "localId": "135",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "135/195",
+    "cardName": "Regidrago V",
+    "fullDisplayName": "Regidrago V 135/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      895
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-135-low.png",
+    "imageHighSrc": "cards/swsh12-135-high.png"
+  },
+  {
+    "masterCardId": "15727",
+    "externalId": null,
+    "tcgdex_id": "swsh12-134",
+    "localId": "134",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "134/195",
+    "cardName": "Zygarde",
+    "fullDisplayName": "Zygarde 134/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-134-low.png",
+    "imageHighSrc": "cards/swsh12-134-high.png"
+  },
+  {
+    "masterCardId": "15717",
+    "externalId": null,
+    "tcgdex_id": "swsh12-133",
+    "localId": "133",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "133/195",
+    "cardName": "Noivern",
+    "fullDisplayName": "Noivern 133/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      715
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Noibat",
+    "artist": "aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-133-low.png",
+    "imageHighSrc": "cards/swsh12-133-high.png"
+  },
+  {
+    "masterCardId": "15708",
+    "externalId": null,
+    "tcgdex_id": "swsh12-132",
+    "localId": "132",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "132/195",
+    "cardName": "Noibat",
+    "fullDisplayName": "Noibat 132/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      714
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-132-low.png",
+    "imageHighSrc": "cards/swsh12-132-high.png"
+  },
+  {
+    "masterCardId": "15700",
+    "externalId": null,
+    "tcgdex_id": "swsh12-131",
+    "localId": "131",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "131/195",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 131/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Dragonair",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-131-low.png",
+    "imageHighSrc": "cards/swsh12-131-high.png"
+  },
+  {
+    "masterCardId": "15690",
+    "externalId": null,
+    "tcgdex_id": "swsh12-130",
+    "localId": "130",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "130/195",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 130/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Dratini",
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-130-low.png",
+    "imageHighSrc": "cards/swsh12-130-high.png"
+  },
+  {
+    "masterCardId": "15680",
+    "externalId": null,
+    "tcgdex_id": "swsh12-129",
+    "localId": "129",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "129/195",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 129/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-129-low.png",
+    "imageHighSrc": "cards/swsh12-129-high.png"
+  },
+  {
+    "masterCardId": "15671",
+    "externalId": null,
+    "tcgdex_id": "swsh12-128",
+    "localId": "128",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "128/195",
+    "cardName": "Magearna V",
+    "fullDisplayName": "Magearna V 128/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      801
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-128-low.png",
+    "imageHighSrc": "cards/swsh12-128-high.png"
+  },
+  {
+    "masterCardId": "15663",
+    "externalId": null,
+    "tcgdex_id": "swsh12-127",
+    "localId": "127",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "127/195",
+    "cardName": "Togedemaru",
+    "fullDisplayName": "Togedemaru 127/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      777
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-127-low.png",
+    "imageHighSrc": "cards/swsh12-127-high.png"
+  },
+  {
+    "masterCardId": "15651",
+    "externalId": null,
+    "tcgdex_id": "swsh12-126",
+    "localId": "126",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "126/195",
+    "cardName": "Cobalion",
+    "fullDisplayName": "Cobalion 126/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      638
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-126-low.png",
+    "imageHighSrc": "cards/swsh12-126-high.png"
+  },
+  {
+    "masterCardId": "15642",
+    "externalId": null,
+    "tcgdex_id": "swsh12-125",
+    "localId": "125",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "125/195",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 125/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Klang",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-125-low.png",
+    "imageHighSrc": "cards/swsh12-125-high.png"
+  },
+  {
+    "masterCardId": "15632",
+    "externalId": null,
+    "tcgdex_id": "swsh12-124",
+    "localId": "124",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "124/195",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 124/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Klink",
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-124-low.png",
+    "imageHighSrc": "cards/swsh12-124-high.png"
+  },
+  {
+    "masterCardId": "15624",
+    "externalId": null,
+    "tcgdex_id": "swsh12-123",
+    "localId": "123",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "123/195",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 123/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-123-low.png",
+    "imageHighSrc": "cards/swsh12-123-high.png"
+  },
+  {
+    "masterCardId": "15615",
+    "externalId": null,
+    "tcgdex_id": "swsh12-122",
+    "localId": "122",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "122/195",
+    "cardName": "Ferrothorn",
+    "fullDisplayName": "Ferrothorn 122/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      598
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Ferroseed",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-122-low.png",
+    "imageHighSrc": "cards/swsh12-122-high.png"
+  },
+  {
+    "masterCardId": "15606",
+    "externalId": null,
+    "tcgdex_id": "swsh12-121",
+    "localId": "121",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "121/195",
+    "cardName": "Ferroseed",
+    "fullDisplayName": "Ferroseed 121/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      597
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-121-low.png",
+    "imageHighSrc": "cards/swsh12-121-high.png"
+  },
+  {
+    "masterCardId": "15597",
+    "externalId": null,
+    "tcgdex_id": "swsh12-120",
+    "localId": "120",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "120/195",
+    "cardName": "Radiant Jirachi",
+    "fullDisplayName": "Radiant Jirachi 120/195 Silver Tempest",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-120-low.png",
+    "imageHighSrc": "cards/swsh12-120-high.png"
+  },
+  {
+    "masterCardId": "15585",
+    "externalId": null,
+    "tcgdex_id": "swsh12-119",
+    "localId": "119",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "119/195",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 119/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Metang",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-119-low.png",
+    "imageHighSrc": "cards/swsh12-119-high.png"
+  },
+  {
+    "masterCardId": "15577",
+    "externalId": null,
+    "tcgdex_id": "swsh12-118",
+    "localId": "118",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "118/195",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 118/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Beldum",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-118-low.png",
+    "imageHighSrc": "cards/swsh12-118-high.png"
+  },
+  {
+    "masterCardId": "15569",
+    "externalId": null,
+    "tcgdex_id": "swsh12-117",
+    "localId": "117",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "117/195",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 117/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-117-low.png",
+    "imageHighSrc": "cards/swsh12-117-high.png"
+  },
+  {
+    "masterCardId": "15560",
+    "externalId": null,
+    "tcgdex_id": "swsh12-116",
+    "localId": "116",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "116/195",
+    "cardName": "Morpeko",
+    "fullDisplayName": "Morpeko 116/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      877
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-116-low.png",
+    "imageHighSrc": "cards/swsh12-116-high.png"
+  },
+  {
+    "masterCardId": "15550",
+    "externalId": null,
+    "tcgdex_id": "swsh12-115",
+    "localId": "115",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "115/195",
+    "cardName": "Toxapex",
+    "fullDisplayName": "Toxapex 115/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      748
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Mareanie",
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-115-low.png",
+    "imageHighSrc": "cards/swsh12-115-high.png"
+  },
+  {
+    "masterCardId": "15539",
+    "externalId": null,
+    "tcgdex_id": "swsh12-114",
+    "localId": "114",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "114/195",
+    "cardName": "Mareanie",
+    "fullDisplayName": "Mareanie 114/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      747
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-114-low.png",
+    "imageHighSrc": "cards/swsh12-114-high.png"
+  },
+  {
+    "masterCardId": "15529",
+    "externalId": null,
+    "tcgdex_id": "swsh12-113",
+    "localId": "113",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "113/195",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 113/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Krokorok",
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-113-low.png",
+    "imageHighSrc": "cards/swsh12-113-high.png"
+  },
+  {
+    "masterCardId": "15520",
+    "externalId": null,
+    "tcgdex_id": "swsh12-112",
+    "localId": "112",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "112/195",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 112/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Sandile",
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-112-low.png",
+    "imageHighSrc": "cards/swsh12-112-high.png"
+  },
+  {
+    "masterCardId": "15510",
+    "externalId": null,
+    "tcgdex_id": "swsh12-111",
+    "localId": "111",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "111/195",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 111/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-111-low.png",
+    "imageHighSrc": "cards/swsh12-111-high.png"
+  },
+  {
+    "masterCardId": "15500",
+    "externalId": null,
+    "tcgdex_id": "swsh12-110",
+    "localId": "110",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "110/195",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 110/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Croagunk",
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-110-low.png",
+    "imageHighSrc": "cards/swsh12-110-high.png"
+  },
+  {
+    "masterCardId": "15485",
+    "externalId": null,
+    "tcgdex_id": "swsh12-109",
+    "localId": "109",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "109/195",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 109/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-109-low.png",
+    "imageHighSrc": "cards/swsh12-109-high.png"
+  },
+  {
+    "masterCardId": "15477",
+    "externalId": null,
+    "tcgdex_id": "swsh12-108",
+    "localId": "108",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "108/195",
+    "cardName": "Skuntank V",
+    "fullDisplayName": "Skuntank V 108/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "MUGENUP",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-108-low.png",
+    "imageHighSrc": "cards/swsh12-108-high.png"
+  },
+  {
+    "masterCardId": "15470",
+    "externalId": null,
+    "tcgdex_id": "swsh12-107",
+    "localId": "107",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "107/195",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 107/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Murkrow",
+    "artist": "aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-107-low.png",
+    "imageHighSrc": "cards/swsh12-107-high.png"
+  },
+  {
+    "masterCardId": "15460",
+    "externalId": null,
+    "tcgdex_id": "swsh12-106",
+    "localId": "106",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "106/195",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 106/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-106-low.png",
+    "imageHighSrc": "cards/swsh12-106-high.png"
+  },
+  {
+    "masterCardId": "15451",
+    "externalId": null,
+    "tcgdex_id": "swsh12-105",
+    "localId": "105",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "105/195",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 105/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Golbat",
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-105-low.png",
+    "imageHighSrc": "cards/swsh12-105-high.png"
+  },
+  {
+    "masterCardId": "15441",
+    "externalId": null,
+    "tcgdex_id": "swsh12-104",
+    "localId": "104",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "104/195",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 104/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Zubat",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-104-low.png",
+    "imageHighSrc": "cards/swsh12-104-high.png"
+  },
+  {
+    "masterCardId": "15431",
+    "externalId": null,
+    "tcgdex_id": "swsh12-103",
+    "localId": "103",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "103/195",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 103/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-103-low.png",
+    "imageHighSrc": "cards/swsh12-103-high.png"
+  },
+  {
+    "masterCardId": "15423",
+    "externalId": null,
+    "tcgdex_id": "swsh12-102",
+    "localId": "102",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "102/195",
+    "cardName": "Ursaluna V",
+    "fullDisplayName": "Ursaluna V 102/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      901
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-102-low.png",
+    "imageHighSrc": "cards/swsh12-102-high.png"
+  },
+  {
+    "masterCardId": "15411",
+    "externalId": null,
+    "tcgdex_id": "swsh12-101",
+    "localId": "101",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "101/195",
+    "cardName": "Stonjourner",
+    "fullDisplayName": "Stonjourner 101/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      874
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hataya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-101-low.png",
+    "imageHighSrc": "cards/swsh12-101-high.png"
+  },
+  {
+    "masterCardId": "15402",
+    "externalId": null,
+    "tcgdex_id": "swsh12-100",
+    "localId": "100",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "100/195",
+    "cardName": "Palossand",
+    "fullDisplayName": "Palossand 100/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      770
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Sandygast",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-100-low.png",
+    "imageHighSrc": "cards/swsh12-100-high.png"
+  },
+  {
+    "masterCardId": "15393",
+    "externalId": null,
+    "tcgdex_id": "swsh12-099",
+    "localId": "099",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "099/195",
+    "cardName": "Sandygast",
+    "fullDisplayName": "Sandygast 099/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      769
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-099-low.png",
+    "imageHighSrc": "cards/swsh12-099-high.png"
+  },
+  {
+    "masterCardId": "15382",
+    "externalId": null,
+    "tcgdex_id": "swsh12-098",
+    "localId": "098",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "098/195",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 098/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-098-low.png",
+    "imageHighSrc": "cards/swsh12-098-high.png"
+  },
+  {
+    "masterCardId": "15370",
+    "externalId": null,
+    "tcgdex_id": "swsh12-097",
+    "localId": "097",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "097/195",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion 097/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-097-low.png",
+    "imageHighSrc": "cards/swsh12-097-high.png"
+  },
+  {
+    "masterCardId": "15360",
+    "externalId": null,
+    "tcgdex_id": "swsh12-096",
+    "localId": "096",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "096/195",
+    "cardName": "Armaldo",
+    "fullDisplayName": "Armaldo 096/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Anorith",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-096-low.png",
+    "imageHighSrc": "cards/swsh12-096-high.png"
+  },
+  {
+    "masterCardId": "15348",
+    "externalId": null,
+    "tcgdex_id": "swsh12-095",
+    "localId": "095",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "095/195",
+    "cardName": "Anorith",
+    "fullDisplayName": "Anorith 095/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      347
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Unidentified Fossil",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-095-low.png",
+    "imageHighSrc": "cards/swsh12-095-high.png"
+  },
+  {
+    "masterCardId": "15339",
+    "externalId": null,
+    "tcgdex_id": "swsh12-094",
+    "localId": "094",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "094/195",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 094/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Baltoy",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-094-low.png",
+    "imageHighSrc": "cards/swsh12-094-high.png"
+  },
+  {
+    "masterCardId": "15329",
+    "externalId": null,
+    "tcgdex_id": "swsh12-093",
+    "localId": "093",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "093/195",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 093/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-093-low.png",
+    "imageHighSrc": "cards/swsh12-093-high.png"
+  },
+  {
+    "masterCardId": "15321",
+    "externalId": null,
+    "tcgdex_id": "swsh12-092",
+    "localId": "092",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "092/195",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 092/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Phanpy",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-092-low.png",
+    "imageHighSrc": "cards/swsh12-092-high.png"
+  },
+  {
+    "masterCardId": "15311",
+    "externalId": null,
+    "tcgdex_id": "swsh12-091",
+    "localId": "091",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "091/195",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 091/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-091-low.png",
+    "imageHighSrc": "cards/swsh12-091-high.png"
+  },
+  {
+    "masterCardId": "15304",
+    "externalId": null,
+    "tcgdex_id": "swsh12-090",
+    "localId": "090",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "090/195",
+    "cardName": "Hisuian Arcanine V",
+    "fullDisplayName": "Hisuian Arcanine V 090/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-090-low.png",
+    "imageHighSrc": "cards/swsh12-090-high.png"
+  },
+  {
+    "masterCardId": "15294",
+    "externalId": null,
+    "tcgdex_id": "swsh12-089",
+    "localId": "089",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "089/195",
+    "cardName": "Dragapult",
+    "fullDisplayName": "Dragapult 089/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      887
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Drakloak",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-089-low.png",
+    "imageHighSrc": "cards/swsh12-089-high.png"
+  },
+  {
+    "masterCardId": "15284",
+    "externalId": null,
+    "tcgdex_id": "swsh12-088",
+    "localId": "088",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "088/195",
+    "cardName": "Drakloak",
+    "fullDisplayName": "Drakloak 088/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      886
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Dreepy",
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-088-low.png",
+    "imageHighSrc": "cards/swsh12-088-high.png"
+  },
+  {
+    "masterCardId": "15272",
+    "externalId": null,
+    "tcgdex_id": "swsh12-087",
+    "localId": "087",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "087/195",
+    "cardName": "Dreepy",
+    "fullDisplayName": "Dreepy 087/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      885
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-087-low.png",
+    "imageHighSrc": "cards/swsh12-087-high.png"
+  },
+  {
+    "masterCardId": "15265",
+    "externalId": null,
+    "tcgdex_id": "swsh12-086",
+    "localId": "086",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "086/195",
+    "cardName": "Indeedee",
+    "fullDisplayName": "Indeedee 086/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      876
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-086-low.png",
+    "imageHighSrc": "cards/swsh12-086-high.png"
+  },
+  {
+    "masterCardId": "15256",
+    "externalId": null,
+    "tcgdex_id": "swsh12-085",
+    "localId": "085",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "085/195",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 085/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-085-low.png",
+    "imageHighSrc": "cards/swsh12-085-high.png"
+  },
+  {
+    "masterCardId": "15245",
+    "externalId": null,
+    "tcgdex_id": "swsh12-084",
+    "localId": "084",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "084/195",
+    "cardName": "Slurpuff",
+    "fullDisplayName": "Slurpuff 084/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      685
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Swirlix",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-084-low.png",
+    "imageHighSrc": "cards/swsh12-084-high.png"
+  },
+  {
+    "masterCardId": "15235",
+    "externalId": null,
+    "tcgdex_id": "swsh12-083",
+    "localId": "083",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "083/195",
+    "cardName": "Swirlix",
+    "fullDisplayName": "Swirlix 083/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      684
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Asako Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-083-low.png",
+    "imageHighSrc": "cards/swsh12-083-high.png"
+  },
+  {
+    "masterCardId": "15226",
+    "externalId": null,
+    "tcgdex_id": "swsh12-082",
+    "localId": "082",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "082/195",
+    "cardName": "Meowstic",
+    "fullDisplayName": "Meowstic 082/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      678
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Espurr",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-082-low.png",
+    "imageHighSrc": "cards/swsh12-082-high.png"
+  },
+  {
+    "masterCardId": "15216",
+    "externalId": null,
+    "tcgdex_id": "swsh12-081",
+    "localId": "081",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "081/195",
+    "cardName": "Espurr",
+    "fullDisplayName": "Espurr 081/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      677
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Asako Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-081-low.png",
+    "imageHighSrc": "cards/swsh12-081-high.png"
+  },
+  {
+    "masterCardId": "15206",
+    "externalId": null,
+    "tcgdex_id": "swsh12-080",
+    "localId": "080",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "080/195",
+    "cardName": "Beheeyem",
+    "fullDisplayName": "Beheeyem 080/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      606
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Elgyem",
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-080-low.png",
+    "imageHighSrc": "cards/swsh12-080-high.png"
+  },
+  {
+    "masterCardId": "15196",
+    "externalId": null,
+    "tcgdex_id": "swsh12-079",
+    "localId": "079",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "079/195",
+    "cardName": "Elgyem",
+    "fullDisplayName": "Elgyem 079/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      605
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-079-low.png",
+    "imageHighSrc": "cards/swsh12-079-high.png"
+  },
+  {
+    "masterCardId": "15186",
+    "externalId": null,
+    "tcgdex_id": "swsh12-078",
+    "localId": "078",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "078/195",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 078/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Duosion",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-078-low.png",
+    "imageHighSrc": "cards/swsh12-078-high.png"
+  },
+  {
+    "masterCardId": "15176",
+    "externalId": null,
+    "tcgdex_id": "swsh12-077",
+    "localId": "077",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "077/195",
+    "cardName": "Duosion",
+    "fullDisplayName": "Duosion 077/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      578
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Solosis",
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-077-low.png",
+    "imageHighSrc": "cards/swsh12-077-high.png"
+  },
+  {
+    "masterCardId": "15166",
+    "externalId": null,
+    "tcgdex_id": "swsh12-076",
+    "localId": "076",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "076/195",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 076/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-076-low.png",
+    "imageHighSrc": "cards/swsh12-076-high.png"
+  },
+  {
+    "masterCardId": "15156",
+    "externalId": null,
+    "tcgdex_id": "swsh12-075",
+    "localId": "075",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "075/195",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 075/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-075-low.png",
+    "imageHighSrc": "cards/swsh12-075-high.png"
+  },
+  {
+    "masterCardId": "15146",
+    "externalId": null,
+    "tcgdex_id": "swsh12-074",
+    "localId": "074",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "074/195",
+    "cardName": "Chimecho",
+    "fullDisplayName": "Chimecho 074/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-074-low.png",
+    "imageHighSrc": "cards/swsh12-074-high.png"
+  },
+  {
+    "masterCardId": "15119",
+    "externalId": null,
+    "tcgdex_id": "swsh12-073",
+    "localId": "073",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "073/195",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 073/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Meditite",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-073-low.png",
+    "imageHighSrc": "cards/swsh12-073-high.png"
+  },
+  {
+    "masterCardId": "15109",
+    "externalId": null,
+    "tcgdex_id": "swsh12-072",
+    "localId": "072",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "072/195",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 072/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-072-low.png",
+    "imageHighSrc": "cards/swsh12-072-high.png"
+  },
+  {
+    "masterCardId": "15099",
+    "externalId": null,
+    "tcgdex_id": "swsh12-071",
+    "localId": "071",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "071/195",
+    "cardName": "Mawile VSTAR",
+    "fullDisplayName": "Mawile VSTAR 071/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 260,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Mawile V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-071-low.png",
+    "imageHighSrc": "cards/swsh12-071-high.png"
+  },
+  {
+    "masterCardId": "15089",
+    "externalId": null,
+    "tcgdex_id": "swsh12-070",
+    "localId": "070",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "070/195",
+    "cardName": "Mawile V",
+    "fullDisplayName": "Mawile V 070/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-070-low.png",
+    "imageHighSrc": "cards/swsh12-070-high.png"
+  },
+  {
+    "masterCardId": "15079",
+    "externalId": null,
+    "tcgdex_id": "swsh12-069",
+    "localId": "069",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "069/195",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 069/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Kirlia",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-069-low.png",
+    "imageHighSrc": "cards/swsh12-069-high.png"
+  },
+  {
+    "masterCardId": "15069",
+    "externalId": null,
+    "tcgdex_id": "swsh12-068",
+    "localId": "068",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "068/195",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 068/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Ralts",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-068-low.png",
+    "imageHighSrc": "cards/swsh12-068-high.png"
+  },
+  {
+    "masterCardId": "15059",
+    "externalId": null,
+    "tcgdex_id": "swsh12-067",
+    "localId": "067",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "067/195",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 067/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Nagomi Nijo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-067-low.png",
+    "imageHighSrc": "cards/swsh12-067-high.png"
+  },
+  {
+    "masterCardId": "15049",
+    "externalId": null,
+    "tcgdex_id": "swsh12-066",
+    "localId": "066",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "066/195",
+    "cardName": "Unown VSTAR",
+    "fullDisplayName": "Unown VSTAR 066/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 250,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Unown V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-066-low.png",
+    "imageHighSrc": "cards/swsh12-066-high.png"
+  },
+  {
+    "masterCardId": "15039",
+    "externalId": null,
+    "tcgdex_id": "swsh12-065",
+    "localId": "065",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "065/195",
+    "cardName": "Unown V",
+    "fullDisplayName": "Unown V 065/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-065-low.png",
+    "imageHighSrc": "cards/swsh12-065-high.png"
+  },
+  {
+    "masterCardId": "15030",
+    "externalId": null,
+    "tcgdex_id": "swsh12-064",
+    "localId": "064",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "064/195",
+    "cardName": "Mismagius",
+    "fullDisplayName": "Mismagius 064/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Misdreavus",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-064-low.png",
+    "imageHighSrc": "cards/swsh12-064-high.png"
+  },
+  {
+    "masterCardId": "15021",
+    "externalId": null,
+    "tcgdex_id": "swsh12-063",
+    "localId": "063",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "063/195",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 063/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-063-low.png",
+    "imageHighSrc": "cards/swsh12-063-high.png"
+  },
+  {
+    "masterCardId": "15011",
+    "externalId": null,
+    "tcgdex_id": "swsh12-062",
+    "localId": "062",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "062/195",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 062/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-062-low.png",
+    "imageHighSrc": "cards/swsh12-062-high.png"
+  },
+  {
+    "masterCardId": "14999",
+    "externalId": null,
+    "tcgdex_id": "swsh12-061",
+    "localId": "061",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "061/195",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 061/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Drowzee",
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-061-low.png",
+    "imageHighSrc": "cards/swsh12-061-high.png"
+  },
+  {
+    "masterCardId": "14988",
+    "externalId": null,
+    "tcgdex_id": "swsh12-060",
+    "localId": "060",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "060/195",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 060/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-060-low.png",
+    "imageHighSrc": "cards/swsh12-060-high.png"
+  },
+  {
+    "masterCardId": "14978",
+    "externalId": null,
+    "tcgdex_id": "swsh12-059",
+    "localId": "059",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "059/195",
+    "cardName": "Radiant Alakazam",
+    "fullDisplayName": "Radiant Alakazam 059/195 Silver Tempest",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-059-low.png",
+    "imageHighSrc": "cards/swsh12-059-high.png"
+  },
+  {
+    "masterCardId": "14968",
+    "externalId": null,
+    "tcgdex_id": "swsh12-058",
+    "localId": "058",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "058/195",
+    "cardName": "Regieleki VMAX",
+    "fullDisplayName": "Regieleki VMAX 058/195 Silver Tempest",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      894
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Regieleki V",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-058-low.png",
+    "imageHighSrc": "cards/swsh12-058-high.png"
+  },
+  {
+    "masterCardId": "14958",
+    "externalId": null,
+    "tcgdex_id": "swsh12-057",
+    "localId": "057",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "057/195",
+    "cardName": "Regieleki V",
+    "fullDisplayName": "Regieleki V 057/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      894
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-057-low.png",
+    "imageHighSrc": "cards/swsh12-057-high.png"
+  },
+  {
+    "masterCardId": "14950",
+    "externalId": null,
+    "tcgdex_id": "swsh12-056",
+    "localId": "056",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "056/195",
+    "cardName": "Zeraora",
+    "fullDisplayName": "Zeraora 056/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      807
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-056-low.png",
+    "imageHighSrc": "cards/swsh12-056-high.png"
+  },
+  {
+    "masterCardId": "14940",
+    "externalId": null,
+    "tcgdex_id": "swsh12-055",
+    "localId": "055",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "055/195",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 055/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-055-low.png",
+    "imageHighSrc": "cards/swsh12-055-high.png"
+  },
+  {
+    "masterCardId": "14930",
+    "externalId": null,
+    "tcgdex_id": "swsh12-054",
+    "localId": "054",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "054/195",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga 054/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-054-low.png",
+    "imageHighSrc": "cards/swsh12-054-high.png"
+  },
+  {
+    "masterCardId": "14920",
+    "externalId": null,
+    "tcgdex_id": "swsh12-053",
+    "localId": "053",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "053/195",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 053/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-053-low.png",
+    "imageHighSrc": "cards/swsh12-053-high.png"
+  },
+  {
+    "masterCardId": "14910",
+    "externalId": null,
+    "tcgdex_id": "swsh12-052",
+    "localId": "052",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "052/195",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 052/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Chinchou",
+    "artist": "aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-052-low.png",
+    "imageHighSrc": "cards/swsh12-052-high.png"
+  },
+  {
+    "masterCardId": "14901",
+    "externalId": null,
+    "tcgdex_id": "swsh12-051",
+    "localId": "051",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "051/195",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 051/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-051-low.png",
+    "imageHighSrc": "cards/swsh12-051-high.png"
+  },
+  {
+    "masterCardId": "14892",
+    "externalId": null,
+    "tcgdex_id": "swsh12-050",
+    "localId": "050",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "050/195",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 050/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Pikachu",
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-050-low.png",
+    "imageHighSrc": "cards/swsh12-050-high.png"
+  },
+  {
+    "masterCardId": "14881",
+    "externalId": null,
+    "tcgdex_id": "swsh12-049",
+    "localId": "049",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "049/195",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 049/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-049-low.png",
+    "imageHighSrc": "cards/swsh12-049-high.png"
+  },
+  {
+    "masterCardId": "14871",
+    "externalId": null,
+    "tcgdex_id": "swsh12-048",
+    "localId": "048",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "048/195",
+    "cardName": "Araquanid",
+    "fullDisplayName": "Araquanid 048/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      752
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Dewpider",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-048-low.png",
+    "imageHighSrc": "cards/swsh12-048-high.png"
+  },
+  {
+    "masterCardId": "14862",
+    "externalId": null,
+    "tcgdex_id": "swsh12-047",
+    "localId": "047",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "047/195",
+    "cardName": "Dewpider",
+    "fullDisplayName": "Dewpider 047/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      751
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-047-low.png",
+    "imageHighSrc": "cards/swsh12-047-high.png"
+  },
+  {
+    "masterCardId": "14853",
+    "externalId": null,
+    "tcgdex_id": "swsh12-046",
+    "localId": "046",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "046/195",
+    "cardName": "Keldeo",
+    "fullDisplayName": "Keldeo 046/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-046-low.png",
+    "imageHighSrc": "cards/swsh12-046-high.png"
+  },
+  {
+    "masterCardId": "14843",
+    "externalId": null,
+    "tcgdex_id": "swsh12-045",
+    "localId": "045",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "045/195",
+    "cardName": "Phione",
+    "fullDisplayName": "Phione 045/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      489
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-045-low.png",
+    "imageHighSrc": "cards/swsh12-045-high.png"
+  },
+  {
+    "masterCardId": "14829",
+    "externalId": null,
+    "tcgdex_id": "swsh12-044",
+    "localId": "044",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "044/195",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 044/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-044-low.png",
+    "imageHighSrc": "cards/swsh12-044-high.png"
+  },
+  {
+    "masterCardId": "14818",
+    "externalId": null,
+    "tcgdex_id": "swsh12-043",
+    "localId": "043",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "043/195",
+    "cardName": "Froslass",
+    "fullDisplayName": "Froslass 043/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      478
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Snorunt",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-043-low.png",
+    "imageHighSrc": "cards/swsh12-043-high.png"
+  },
+  {
+    "masterCardId": "14808",
+    "externalId": null,
+    "tcgdex_id": "swsh12-042",
+    "localId": "042",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "042/195",
+    "cardName": "Glalie",
+    "fullDisplayName": "Glalie 042/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      362
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Snorunt",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-042-low.png",
+    "imageHighSrc": "cards/swsh12-042-high.png"
+  },
+  {
+    "masterCardId": "14799",
+    "externalId": null,
+    "tcgdex_id": "swsh12-041",
+    "localId": "041",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "041/195",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 041/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-041-low.png",
+    "imageHighSrc": "cards/swsh12-041-high.png"
+  },
+  {
+    "masterCardId": "14790",
+    "externalId": null,
+    "tcgdex_id": "swsh12-040",
+    "localId": "040",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "040/195",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 040/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Feebas",
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-040-low.png",
+    "imageHighSrc": "cards/swsh12-040-high.png"
+  },
+  {
+    "masterCardId": "14781",
+    "externalId": null,
+    "tcgdex_id": "swsh12-039",
+    "localId": "039",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "039/195",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 039/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-039-low.png",
+    "imageHighSrc": "cards/swsh12-039-high.png"
+  },
+  {
+    "masterCardId": "14770",
+    "externalId": null,
+    "tcgdex_id": "swsh12-038",
+    "localId": "038",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "038/195",
+    "cardName": "Wailord",
+    "fullDisplayName": "Wailord 038/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Wailmer",
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-038-low.png",
+    "imageHighSrc": "cards/swsh12-038-high.png"
+  },
+  {
+    "masterCardId": "14761",
+    "externalId": null,
+    "tcgdex_id": "swsh12-037",
+    "localId": "037",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "037/195",
+    "cardName": "Wailmer",
+    "fullDisplayName": "Wailmer 037/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      320
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-037-low.png",
+    "imageHighSrc": "cards/swsh12-037-high.png"
+  },
+  {
+    "masterCardId": "14752",
+    "externalId": null,
+    "tcgdex_id": "swsh12-036",
+    "localId": "036",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "036/195",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 036/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-036-low.png",
+    "imageHighSrc": "cards/swsh12-036-high.png"
+  },
+  {
+    "masterCardId": "14742",
+    "externalId": null,
+    "tcgdex_id": "swsh12-035",
+    "localId": "035",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "035/195",
+    "cardName": "Omastar V",
+    "fullDisplayName": "Omastar V 035/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-035-low.png",
+    "imageHighSrc": "cards/swsh12-035-high.png"
+  },
+  {
+    "masterCardId": "14729",
+    "externalId": null,
+    "tcgdex_id": "swsh12-034",
+    "localId": "034",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "034/195",
+    "cardName": "Alolan Vulpix VSTAR",
+    "fullDisplayName": "Alolan Vulpix VSTAR 034/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 240,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Alolan Vulpix V",
+    "artist": "PLANETA Hiiragi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-034-low.png",
+    "imageHighSrc": "cards/swsh12-034-high.png"
+  },
+  {
+    "masterCardId": "14720",
+    "externalId": null,
+    "tcgdex_id": "swsh12-033",
+    "localId": "033",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "033/195",
+    "cardName": "Alolan Vulpix V",
+    "fullDisplayName": "Alolan Vulpix V 033/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-033-low.png",
+    "imageHighSrc": "cards/swsh12-033-high.png"
+  },
+  {
+    "masterCardId": "14711",
+    "externalId": null,
+    "tcgdex_id": "swsh12-032",
+    "localId": "032",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "032/195",
+    "cardName": "Incineroar",
+    "fullDisplayName": "Incineroar 032/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      727
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Torracat",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-032-low.png",
+    "imageHighSrc": "cards/swsh12-032-high.png"
+  },
+  {
+    "masterCardId": "14700",
+    "externalId": null,
+    "tcgdex_id": "swsh12-031",
+    "localId": "031",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "031/195",
+    "cardName": "Torracat",
+    "fullDisplayName": "Torracat 031/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      726
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Litten",
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-031-low.png",
+    "imageHighSrc": "cards/swsh12-031-high.png"
+  },
+  {
+    "masterCardId": "14691",
+    "externalId": null,
+    "tcgdex_id": "swsh12-030",
+    "localId": "030",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "030/195",
+    "cardName": "Litten",
+    "fullDisplayName": "Litten 030/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      725
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-030-low.png",
+    "imageHighSrc": "cards/swsh12-030-high.png"
+  },
+  {
+    "masterCardId": "14683",
+    "externalId": null,
+    "tcgdex_id": "swsh12-029",
+    "localId": "029",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "029/195",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 029/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Fletchinder",
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-029-low.png",
+    "imageHighSrc": "cards/swsh12-029-high.png"
+  },
+  {
+    "masterCardId": "14673",
+    "externalId": null,
+    "tcgdex_id": "swsh12-028",
+    "localId": "028",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "028/195",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 028/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Fletchling",
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-028-low.png",
+    "imageHighSrc": "cards/swsh12-028-high.png"
+  },
+  {
+    "masterCardId": "14665",
+    "externalId": null,
+    "tcgdex_id": "swsh12-027",
+    "localId": "027",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "027/195",
+    "cardName": "Delphox",
+    "fullDisplayName": "Delphox 027/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      655
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Braixen",
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-027-low.png",
+    "imageHighSrc": "cards/swsh12-027-high.png"
+  },
+  {
+    "masterCardId": "14656",
+    "externalId": null,
+    "tcgdex_id": "swsh12-026",
+    "localId": "026",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "026/195",
+    "cardName": "Braixen",
+    "fullDisplayName": "Braixen 026/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      654
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Fennekin",
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-026-low.png",
+    "imageHighSrc": "cards/swsh12-026-high.png"
+  },
+  {
+    "masterCardId": "14648",
+    "externalId": null,
+    "tcgdex_id": "swsh12-025",
+    "localId": "025",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "025/195",
+    "cardName": "Fennekin",
+    "fullDisplayName": "Fennekin 025/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      653
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-025-low.png",
+    "imageHighSrc": "cards/swsh12-025-high.png"
+  },
+  {
+    "masterCardId": "14635",
+    "externalId": null,
+    "tcgdex_id": "swsh12-024",
+    "localId": "024",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "024/195",
+    "cardName": "Reshiram V",
+    "fullDisplayName": "Reshiram V 024/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-024-low.png",
+    "imageHighSrc": "cards/swsh12-024-high.png"
+  },
+  {
+    "masterCardId": "14627",
+    "externalId": null,
+    "tcgdex_id": "swsh12-023",
+    "localId": "023",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "023/195",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 023/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-023-low.png",
+    "imageHighSrc": "cards/swsh12-023-high.png"
+  },
+  {
+    "masterCardId": "14617",
+    "externalId": null,
+    "tcgdex_id": "swsh12-022",
+    "localId": "022",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "022/195",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 022/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Ponyta",
+    "artist": "Megumi Higuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-022-low.png",
+    "imageHighSrc": "cards/swsh12-022-high.png"
+  },
+  {
+    "masterCardId": "14607",
+    "externalId": null,
+    "tcgdex_id": "swsh12-021",
+    "localId": "021",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "021/195",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 021/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-021-low.png",
+    "imageHighSrc": "cards/swsh12-021-high.png"
+  },
+  {
+    "masterCardId": "14598",
+    "externalId": null,
+    "tcgdex_id": "swsh12-020",
+    "localId": "020",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "020/195",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 020/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Growlithe",
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-020-low.png",
+    "imageHighSrc": "cards/swsh12-020-high.png"
+  },
+  {
+    "masterCardId": "14588",
+    "externalId": null,
+    "tcgdex_id": "swsh12-019",
+    "localId": "019",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "019/195",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 019/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-019-low.png",
+    "imageHighSrc": "cards/swsh12-019-high.png"
+  },
+  {
+    "masterCardId": "14573",
+    "externalId": null,
+    "tcgdex_id": "swsh12-018",
+    "localId": "018",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "018/195",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 018/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Vulpix",
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-018-low.png",
+    "imageHighSrc": "cards/swsh12-018-high.png"
+  },
+  {
+    "masterCardId": "14565",
+    "externalId": null,
+    "tcgdex_id": "swsh12-017",
+    "localId": "017",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "017/195",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 017/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-017-low.png",
+    "imageHighSrc": "cards/swsh12-017-high.png"
+  },
+  {
+    "masterCardId": "14554",
+    "externalId": null,
+    "tcgdex_id": "swsh12-016",
+    "localId": "016",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "016/195",
+    "cardName": "Radiant Tsareena",
+    "fullDisplayName": "Radiant Tsareena 016/195 Silver Tempest",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      763
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-016-low.png",
+    "imageHighSrc": "cards/swsh12-016-high.png"
+  },
+  {
+    "masterCardId": "14545",
+    "externalId": null,
+    "tcgdex_id": "swsh12-015",
+    "localId": "015",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "015/195",
+    "cardName": "Chesnaught V",
+    "fullDisplayName": "Chesnaught V 015/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      652
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-015-low.png",
+    "imageHighSrc": "cards/swsh12-015-high.png"
+  },
+  {
+    "masterCardId": "14536",
+    "externalId": null,
+    "tcgdex_id": "swsh12-014",
+    "localId": "014",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "014/195",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 014/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-014-low.png",
+    "imageHighSrc": "cards/swsh12-014-high.png"
+  },
+  {
+    "masterCardId": "14526",
+    "externalId": null,
+    "tcgdex_id": "swsh12-013",
+    "localId": "013",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "013/195",
+    "cardName": "Durant",
+    "fullDisplayName": "Durant 013/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      632
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-013-low.png",
+    "imageHighSrc": "cards/swsh12-013-high.png"
+  },
+  {
+    "masterCardId": "14517",
+    "externalId": null,
+    "tcgdex_id": "swsh12-012",
+    "localId": "012",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "012/195",
+    "cardName": "Amoonguss",
+    "fullDisplayName": "Amoonguss 012/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      591
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Foongus",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-012-low.png",
+    "imageHighSrc": "cards/swsh12-012-high.png"
+  },
+  {
+    "masterCardId": "14508",
+    "externalId": null,
+    "tcgdex_id": "swsh12-011",
+    "localId": "011",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "011/195",
+    "cardName": "Foongus",
+    "fullDisplayName": "Foongus 011/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      590
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-011-low.png",
+    "imageHighSrc": "cards/swsh12-011-high.png"
+  },
+  {
+    "masterCardId": "14498",
+    "externalId": null,
+    "tcgdex_id": "swsh12-010",
+    "localId": "010",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "010/195",
+    "cardName": "Hisuian Lilligant",
+    "fullDisplayName": "Hisuian Lilligant 010/195 Silver Tempest",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      549
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Petilil",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-010-low.png",
+    "imageHighSrc": "cards/swsh12-010-high.png"
+  },
+  {
+    "masterCardId": "14489",
+    "externalId": null,
+    "tcgdex_id": "swsh12-009",
+    "localId": "009",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "009/195",
+    "cardName": "Petilil",
+    "fullDisplayName": "Petilil 009/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      548
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-009-low.png",
+    "imageHighSrc": "cards/swsh12-009-high.png"
+  },
+  {
+    "masterCardId": "14477",
+    "externalId": null,
+    "tcgdex_id": "swsh12-008",
+    "localId": "008",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "008/195",
+    "cardName": "Serperior VSTAR",
+    "fullDisplayName": "Serperior VSTAR 008/195 Silver Tempest",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Serperior V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-008-low.png",
+    "imageHighSrc": "cards/swsh12-008-high.png"
+  },
+  {
+    "masterCardId": "14467",
+    "externalId": null,
+    "tcgdex_id": "swsh12-007",
+    "localId": "007",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "007/195",
+    "cardName": "Serperior V",
+    "fullDisplayName": "Serperior V 007/195 Silver Tempest",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-007-low.png",
+    "imageHighSrc": "cards/swsh12-007-high.png"
+  },
+  {
+    "masterCardId": "14458",
+    "externalId": null,
+    "tcgdex_id": "swsh12-006",
+    "localId": "006",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "006/195",
+    "cardName": "Sunflora",
+    "fullDisplayName": "Sunflora 006/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      192
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Sunkern",
+    "artist": "zig",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-006-low.png",
+    "imageHighSrc": "cards/swsh12-006-high.png"
+  },
+  {
+    "masterCardId": "14449",
+    "externalId": null,
+    "tcgdex_id": "swsh12-005",
+    "localId": "005",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "005/195",
+    "cardName": "Sunkern",
+    "fullDisplayName": "Sunkern 005/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      191
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-005-low.png",
+    "imageHighSrc": "cards/swsh12-005-high.png"
+  },
+  {
+    "masterCardId": "14442",
+    "externalId": null,
+    "tcgdex_id": "swsh12-004",
+    "localId": "004",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "004/195",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 004/195 Silver Tempest",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Spinarak",
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-004-low.png",
+    "imageHighSrc": "cards/swsh12-004-high.png"
+  },
+  {
+    "masterCardId": "14435",
+    "externalId": null,
+    "tcgdex_id": "swsh12-003",
+    "localId": "003",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "003/195",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 003/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-003-low.png",
+    "imageHighSrc": "cards/swsh12-003-high.png"
+  },
+  {
+    "masterCardId": "14424",
+    "externalId": null,
+    "tcgdex_id": "swsh12-002",
+    "localId": "002",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "002/195",
+    "cardName": "Venomoth",
+    "fullDisplayName": "Venomoth 002/195 Silver Tempest",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Venonat",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-002-low.png",
+    "imageHighSrc": "cards/swsh12-002-high.png"
+  },
+  {
+    "masterCardId": "14403",
+    "externalId": null,
+    "tcgdex_id": "swsh12-001",
+    "localId": "001",
+    "setCode": "swsh12",
+    "setTcgdexId": "swsh12",
+    "cardNumber": "001/195",
+    "cardName": "Venonat",
+    "fullDisplayName": "Venonat 001/195 Silver Tempest",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      48
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh12-001-low.png",
+    "imageHighSrc": "cards/swsh12-001-high.png"
+  }
+]

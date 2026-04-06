@@ -1,0 +1,2156 @@
+[
+  {
+    "masterCardId": "8298",
+    "externalId": null,
+    "tcgdex_id": "neo3-66",
+    "localId": "066",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "066/64",
+    "cardName": "Shining Magikarp",
+    "fullDisplayName": "Shining Magikarp 066/64 Neo Revelation",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-066-low.png",
+    "imageHighSrc": "cards/neo3-066-high.png"
+  },
+  {
+    "masterCardId": "8297",
+    "externalId": null,
+    "tcgdex_id": "neo3-65",
+    "localId": "065",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "065/64",
+    "cardName": "Shining Gyarados",
+    "fullDisplayName": "Shining Gyarados 065/64 Neo Revelation",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-065-low.png",
+    "imageHighSrc": "cards/neo3-065-high.png"
+  },
+  {
+    "masterCardId": "8296",
+    "externalId": null,
+    "tcgdex_id": "neo3-64",
+    "localId": "064",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "064/64",
+    "cardName": "Old Rod",
+    "fullDisplayName": "Old Rod 064/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-064-low.png",
+    "imageHighSrc": "cards/neo3-064-high.png"
+  },
+  {
+    "masterCardId": "8295",
+    "externalId": null,
+    "tcgdex_id": "neo3-63",
+    "localId": "063",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "063/64",
+    "cardName": "Rocket's Hideout",
+    "fullDisplayName": "Rocket's Hideout 063/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-063-low.png",
+    "imageHighSrc": "cards/neo3-063-high.png"
+  },
+  {
+    "masterCardId": "8294",
+    "externalId": null,
+    "tcgdex_id": "neo3-62",
+    "localId": "062",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "062/64",
+    "cardName": "Pokémon Breeder Fields",
+    "fullDisplayName": "Pokémon Breeder Fields 062/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-062-low.png",
+    "imageHighSrc": "cards/neo3-062-high.png"
+  },
+  {
+    "masterCardId": "8293",
+    "externalId": null,
+    "tcgdex_id": "neo3-61",
+    "localId": "061",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "061/64",
+    "cardName": "Healing Field",
+    "fullDisplayName": "Healing Field 061/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-061-low.png",
+    "imageHighSrc": "cards/neo3-061-high.png"
+  },
+  {
+    "masterCardId": "8292",
+    "externalId": null,
+    "tcgdex_id": "neo3-60",
+    "localId": "060",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "060/64",
+    "cardName": "Balloon Berry",
+    "fullDisplayName": "Balloon Berry 060/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-060-low.png",
+    "imageHighSrc": "cards/neo3-060-high.png"
+  },
+  {
+    "masterCardId": "8291",
+    "externalId": null,
+    "tcgdex_id": "neo3-59",
+    "localId": "059",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "059/64",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 059/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-059-low.png",
+    "imageHighSrc": "cards/neo3-059-high.png"
+  },
+  {
+    "masterCardId": "8290",
+    "externalId": null,
+    "tcgdex_id": "neo3-58",
+    "localId": "058",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "058/64",
+    "cardName": "Unown [K]",
+    "fullDisplayName": "Unown [K] 058/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "CR CG gangs",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-058-low.png",
+    "imageHighSrc": "cards/neo3-058-high.png"
+  },
+  {
+    "masterCardId": "8289",
+    "externalId": null,
+    "tcgdex_id": "neo3-57",
+    "localId": "057",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "057/64",
+    "cardName": "Swinub",
+    "fullDisplayName": "Swinub 057/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      220
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-057-low.png",
+    "imageHighSrc": "cards/neo3-057-high.png"
+  },
+  {
+    "masterCardId": "8288",
+    "externalId": null,
+    "tcgdex_id": "neo3-56",
+    "localId": "056",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "056/64",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 056/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-056-low.png",
+    "imageHighSrc": "cards/neo3-056-high.png"
+  },
+  {
+    "masterCardId": "8287",
+    "externalId": null,
+    "tcgdex_id": "neo3-55",
+    "localId": "055",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "055/64",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 055/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-055-low.png",
+    "imageHighSrc": "cards/neo3-055-high.png"
+  },
+  {
+    "masterCardId": "8286",
+    "externalId": null,
+    "tcgdex_id": "neo3-54",
+    "localId": "054",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "054/64",
+    "cardName": "Smoochum",
+    "fullDisplayName": "Smoochum 054/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      238
+    ],
+    "subtypes": [
+      "Baby"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-054-low.png",
+    "imageHighSrc": "cards/neo3-054-high.png"
+  },
+  {
+    "masterCardId": "8285",
+    "externalId": null,
+    "tcgdex_id": "neo3-53",
+    "localId": "053",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "053/64",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 053/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-053-low.png",
+    "imageHighSrc": "cards/neo3-053-high.png"
+  },
+  {
+    "masterCardId": "8284",
+    "externalId": null,
+    "tcgdex_id": "neo3-52",
+    "localId": "052",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "052/64",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 052/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-052-low.png",
+    "imageHighSrc": "cards/neo3-052-high.png"
+  },
+  {
+    "masterCardId": "8283",
+    "externalId": null,
+    "tcgdex_id": "neo3-51",
+    "localId": "051",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "051/64",
+    "cardName": "Shuckle",
+    "fullDisplayName": "Shuckle 051/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      213
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-051-low.png",
+    "imageHighSrc": "cards/neo3-051-high.png"
+  },
+  {
+    "masterCardId": "8282",
+    "externalId": null,
+    "tcgdex_id": "neo3-50",
+    "localId": "050",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "050/64",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 050/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-050-low.png",
+    "imageHighSrc": "cards/neo3-050-high.png"
+  },
+  {
+    "masterCardId": "8281",
+    "externalId": null,
+    "tcgdex_id": "neo3-49",
+    "localId": "049",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "049/64",
+    "cardName": "Qwilfish",
+    "fullDisplayName": "Qwilfish 049/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      211
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-049-low.png",
+    "imageHighSrc": "cards/neo3-049-high.png"
+  },
+  {
+    "masterCardId": "8280",
+    "externalId": null,
+    "tcgdex_id": "neo3-48",
+    "localId": "048",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "048/64",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 048/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-048-low.png",
+    "imageHighSrc": "cards/neo3-048-high.png"
+  },
+  {
+    "masterCardId": "8279",
+    "externalId": null,
+    "tcgdex_id": "neo3-47",
+    "localId": "047",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "047/64",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 047/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-047-low.png",
+    "imageHighSrc": "cards/neo3-047-high.png"
+  },
+  {
+    "masterCardId": "8278",
+    "externalId": null,
+    "tcgdex_id": "neo3-46",
+    "localId": "046",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "046/64",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 046/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-046-low.png",
+    "imageHighSrc": "cards/neo3-046-high.png"
+  },
+  {
+    "masterCardId": "8277",
+    "externalId": null,
+    "tcgdex_id": "neo3-45",
+    "localId": "045",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "045/64",
+    "cardName": "Goldeen",
+    "fullDisplayName": "Goldeen 045/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-045-low.png",
+    "imageHighSrc": "cards/neo3-045-high.png"
+  },
+  {
+    "masterCardId": "8276",
+    "externalId": null,
+    "tcgdex_id": "neo3-44",
+    "localId": "044",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "044/64",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 044/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masako Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-044-low.png",
+    "imageHighSrc": "cards/neo3-044-high.png"
+  },
+  {
+    "masterCardId": "8275",
+    "externalId": null,
+    "tcgdex_id": "neo3-43",
+    "localId": "043",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "043/64",
+    "cardName": "Farfetch'd",
+    "fullDisplayName": "Farfetch'd 043/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      83
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-043-low.png",
+    "imageHighSrc": "cards/neo3-043-high.png"
+  },
+  {
+    "masterCardId": "8274",
+    "externalId": null,
+    "tcgdex_id": "neo3-42",
+    "localId": "042",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "042/64",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 042/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-042-low.png",
+    "imageHighSrc": "cards/neo3-042-high.png"
+  },
+  {
+    "masterCardId": "8273",
+    "externalId": null,
+    "tcgdex_id": "neo3-41",
+    "localId": "041",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "041/64",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 041/64 Neo Revelation",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-041-low.png",
+    "imageHighSrc": "cards/neo3-041-high.png"
+  },
+  {
+    "masterCardId": "8272",
+    "externalId": null,
+    "tcgdex_id": "neo3-40",
+    "localId": "040",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "040/64",
+    "cardName": "Unown [Y]",
+    "fullDisplayName": "Unown [Y] 040/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "CR CG gangs",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-040-low.png",
+    "imageHighSrc": "cards/neo3-040-high.png"
+  },
+  {
+    "masterCardId": "8271",
+    "externalId": null,
+    "tcgdex_id": "neo3-39",
+    "localId": "039",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "039/64",
+    "cardName": "Unown [B]",
+    "fullDisplayName": "Unown [B] 039/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "CR CG gangs",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-039-low.png",
+    "imageHighSrc": "cards/neo3-039-high.png"
+  },
+  {
+    "masterCardId": "8270",
+    "externalId": null,
+    "tcgdex_id": "neo3-38",
+    "localId": "038",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "038/64",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 038/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-038-low.png",
+    "imageHighSrc": "cards/neo3-038-high.png"
+  },
+  {
+    "masterCardId": "8269",
+    "externalId": null,
+    "tcgdex_id": "neo3-37",
+    "localId": "037",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "037/64",
+    "cardName": "Seaking",
+    "fullDisplayName": "Seaking 037/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      119
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goldeen",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-037-low.png",
+    "imageHighSrc": "cards/neo3-037-high.png"
+  },
+  {
+    "masterCardId": "8268",
+    "externalId": null,
+    "tcgdex_id": "neo3-36",
+    "localId": "036",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "036/64",
+    "cardName": "Piloswine",
+    "fullDisplayName": "Piloswine 036/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      221
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swinub",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-036-low.png",
+    "imageHighSrc": "cards/neo3-036-high.png"
+  },
+  {
+    "masterCardId": "8267",
+    "externalId": null,
+    "tcgdex_id": "neo3-35",
+    "localId": "035",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "035/64",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 035/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paras",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-035-low.png",
+    "imageHighSrc": "cards/neo3-035-high.png"
+  },
+  {
+    "masterCardId": "8266",
+    "externalId": null,
+    "tcgdex_id": "neo3-34",
+    "localId": "034",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "034/64",
+    "cardName": "Octillery",
+    "fullDisplayName": "Octillery 034/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-034-low.png",
+    "imageHighSrc": "cards/neo3-034-high.png"
+  },
+  {
+    "masterCardId": "8265",
+    "externalId": null,
+    "tcgdex_id": "neo3-33",
+    "localId": "033",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "033/64",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 033/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-033-low.png",
+    "imageHighSrc": "cards/neo3-033-high.png"
+  },
+  {
+    "masterCardId": "8264",
+    "externalId": null,
+    "tcgdex_id": "neo3-32",
+    "localId": "032",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "032/64",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 032/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-032-low.png",
+    "imageHighSrc": "cards/neo3-032-high.png"
+  },
+  {
+    "masterCardId": "8263",
+    "externalId": null,
+    "tcgdex_id": "neo3-31",
+    "localId": "031",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "031/64",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 031/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-031-low.png",
+    "imageHighSrc": "cards/neo3-031-high.png"
+  },
+  {
+    "masterCardId": "8262",
+    "externalId": null,
+    "tcgdex_id": "neo3-30",
+    "localId": "030",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "030/64",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 030/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-030-low.png",
+    "imageHighSrc": "cards/neo3-030-high.png"
+  },
+  {
+    "masterCardId": "8261",
+    "externalId": null,
+    "tcgdex_id": "neo3-29",
+    "localId": "029",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "029/64",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 029/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Masako Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-029-low.png",
+    "imageHighSrc": "cards/neo3-029-high.png"
+  },
+  {
+    "masterCardId": "8260",
+    "externalId": null,
+    "tcgdex_id": "neo3-28",
+    "localId": "028",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "028/64",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 028/64 Neo Revelation",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-028-low.png",
+    "imageHighSrc": "cards/neo3-028-high.png"
+  },
+  {
+    "masterCardId": "8259",
+    "externalId": null,
+    "tcgdex_id": "neo3-27",
+    "localId": "027",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "027/64",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 027/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-027-low.png",
+    "imageHighSrc": "cards/neo3-027-high.png"
+  },
+  {
+    "masterCardId": "8258",
+    "externalId": null,
+    "tcgdex_id": "neo3-26",
+    "localId": "026",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "026/64",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 026/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-026-low.png",
+    "imageHighSrc": "cards/neo3-026-high.png"
+  },
+  {
+    "masterCardId": "8257",
+    "externalId": null,
+    "tcgdex_id": "neo3-25",
+    "localId": "025",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "025/64",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 025/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "Keita Komatsuya, CR CG gangs",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-025-low.png",
+    "imageHighSrc": "cards/neo3-025-high.png"
+  },
+  {
+    "masterCardId": "8256",
+    "externalId": null,
+    "tcgdex_id": "neo3-24",
+    "localId": "024",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "024/64",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 024/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-024-low.png",
+    "imageHighSrc": "cards/neo3-024-high.png"
+  },
+  {
+    "masterCardId": "8255",
+    "externalId": null,
+    "tcgdex_id": "neo3-23",
+    "localId": "023",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "023/64",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 023/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-023-low.png",
+    "imageHighSrc": "cards/neo3-023-high.png"
+  },
+  {
+    "masterCardId": "8254",
+    "externalId": null,
+    "tcgdex_id": "neo3-22",
+    "localId": "022",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "022/64",
+    "cardName": "Raikou",
+    "fullDisplayName": "Raikou 022/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-022-low.png",
+    "imageHighSrc": "cards/neo3-022-high.png"
+  },
+  {
+    "masterCardId": "8253",
+    "externalId": null,
+    "tcgdex_id": "neo3-21",
+    "localId": "021",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "021/64",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 021/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Masako Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-021-low.png",
+    "imageHighSrc": "cards/neo3-021-high.png"
+  },
+  {
+    "masterCardId": "8252",
+    "externalId": null,
+    "tcgdex_id": "neo3-20",
+    "localId": "020",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "020/64",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 020/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-020-low.png",
+    "imageHighSrc": "cards/neo3-020-high.png"
+  },
+  {
+    "masterCardId": "8251",
+    "externalId": null,
+    "tcgdex_id": "neo3-19",
+    "localId": "019",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "019/64",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 019/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-019-low.png",
+    "imageHighSrc": "cards/neo3-019-high.png"
+  },
+  {
+    "masterCardId": "8250",
+    "externalId": null,
+    "tcgdex_id": "neo3-18",
+    "localId": "018",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "018/64",
+    "cardName": "Ho-oh",
+    "fullDisplayName": "Ho-oh 018/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-018-low.png",
+    "imageHighSrc": "cards/neo3-018-high.png"
+  },
+  {
+    "masterCardId": "8249",
+    "externalId": null,
+    "tcgdex_id": "neo3-17",
+    "localId": "017",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "017/64",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 017/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-017-low.png",
+    "imageHighSrc": "cards/neo3-017-high.png"
+  },
+  {
+    "masterCardId": "8248",
+    "externalId": null,
+    "tcgdex_id": "neo3-16",
+    "localId": "016",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "016/64",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 016/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-016-low.png",
+    "imageHighSrc": "cards/neo3-016-high.png"
+  },
+  {
+    "masterCardId": "8247",
+    "externalId": null,
+    "tcgdex_id": "neo3-15",
+    "localId": "015",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "015/64",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 015/64 Neo Revelation",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-015-low.png",
+    "imageHighSrc": "cards/neo3-015-high.png"
+  },
+  {
+    "masterCardId": "8246",
+    "externalId": null,
+    "tcgdex_id": "neo3-14",
+    "localId": "014",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "014/64",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 014/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-014-low.png",
+    "imageHighSrc": "cards/neo3-014-high.png"
+  },
+  {
+    "masterCardId": "8245",
+    "externalId": null,
+    "tcgdex_id": "neo3-13",
+    "localId": "013",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "013/64",
+    "cardName": "Raikou",
+    "fullDisplayName": "Raikou 013/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-013-low.png",
+    "imageHighSrc": "cards/neo3-013-high.png"
+  },
+  {
+    "masterCardId": "8244",
+    "externalId": null,
+    "tcgdex_id": "neo3-12",
+    "localId": "012",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "012/64",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 012/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-012-low.png",
+    "imageHighSrc": "cards/neo3-012-high.png"
+  },
+  {
+    "masterCardId": "8243",
+    "externalId": null,
+    "tcgdex_id": "neo3-11",
+    "localId": "011",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "011/64",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 011/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-011-low.png",
+    "imageHighSrc": "cards/neo3-011-high.png"
+  },
+  {
+    "masterCardId": "8242",
+    "externalId": null,
+    "tcgdex_id": "neo3-10",
+    "localId": "010",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "010/64",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 010/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "\"Big Mama\" Tagawa, CR CG gangs",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-010-low.png",
+    "imageHighSrc": "cards/neo3-010-high.png"
+  },
+  {
+    "masterCardId": "8241",
+    "externalId": null,
+    "tcgdex_id": "neo3-9",
+    "localId": "009",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "009/64",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 009/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-009-low.png",
+    "imageHighSrc": "cards/neo3-009-high.png"
+  },
+  {
+    "masterCardId": "8240",
+    "externalId": null,
+    "tcgdex_id": "neo3-8",
+    "localId": "008",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "008/64",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 008/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-008-low.png",
+    "imageHighSrc": "cards/neo3-008-high.png"
+  },
+  {
+    "masterCardId": "8239",
+    "externalId": null,
+    "tcgdex_id": "neo3-7",
+    "localId": "007",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "007/64",
+    "cardName": "Ho-oh",
+    "fullDisplayName": "Ho-oh 007/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kimiya Masago",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-007-low.png",
+    "imageHighSrc": "cards/neo3-007-high.png"
+  },
+  {
+    "masterCardId": "8238",
+    "externalId": null,
+    "tcgdex_id": "neo3-6",
+    "localId": "006",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "006/64",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 006/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-006-low.png",
+    "imageHighSrc": "cards/neo3-006-high.png"
+  },
+  {
+    "masterCardId": "8237",
+    "externalId": null,
+    "tcgdex_id": "neo3-5",
+    "localId": "005",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "005/64",
+    "cardName": "Delibird",
+    "fullDisplayName": "Delibird 005/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      225
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-005-low.png",
+    "imageHighSrc": "cards/neo3-005-high.png"
+  },
+  {
+    "masterCardId": "8236",
+    "externalId": null,
+    "tcgdex_id": "neo3-4",
+    "localId": "004",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "004/64",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 004/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-004-low.png",
+    "imageHighSrc": "cards/neo3-004-high.png"
+  },
+  {
+    "masterCardId": "8235",
+    "externalId": null,
+    "tcgdex_id": "neo3-3",
+    "localId": "003",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "003/64",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 003/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-003-low.png",
+    "imageHighSrc": "cards/neo3-003-high.png"
+  },
+  {
+    "masterCardId": "8234",
+    "externalId": null,
+    "tcgdex_id": "neo3-2",
+    "localId": "002",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "002/64",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 002/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-002-low.png",
+    "imageHighSrc": "cards/neo3-002-high.png"
+  },
+  {
+    "masterCardId": "8233",
+    "externalId": null,
+    "tcgdex_id": "neo3-1",
+    "localId": "001",
+    "setCode": "neo3",
+    "setTcgdexId": "neo3",
+    "cardNumber": "001/64",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 001/64 Neo Revelation",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/neo3-001-low.png",
+    "imageHighSrc": "cards/neo3-001-high.png"
+  }
+]

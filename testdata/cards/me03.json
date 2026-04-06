@@ -1,0 +1,4062 @@
+[
+  {
+    "masterCardId": "21973",
+    "externalId": "me3-124",
+    "tcgdex_id": null,
+    "localId": "124",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "124/088",
+    "cardName": "Mega Zygarde ex",
+    "fullDisplayName": "Mega Zygarde ex 124/088 Perfect Order",
+    "rarity": "Mega Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 310,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-124-low.png",
+    "imageHighSrc": "cards/me3-124-high.png"
+  },
+  {
+    "masterCardId": "21972",
+    "externalId": "me3-123",
+    "tcgdex_id": null,
+    "localId": "123",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "123/088",
+    "cardName": "Rosa's Encouragement",
+    "fullDisplayName": "Rosa's Encouragement 123/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-123-low.png",
+    "imageHighSrc": "cards/me3-123-high.png"
+  },
+  {
+    "masterCardId": "21971",
+    "externalId": "me3-122",
+    "tcgdex_id": null,
+    "localId": "122",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "122/088",
+    "cardName": "Jacinthe",
+    "fullDisplayName": "Jacinthe 122/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-122-low.png",
+    "imageHighSrc": "cards/me3-122-high.png"
+  },
+  {
+    "masterCardId": "21970",
+    "externalId": "me3-121",
+    "tcgdex_id": null,
+    "localId": "121",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "121/088",
+    "cardName": "Meowth ex",
+    "fullDisplayName": "Meowth ex 121/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-121-low.png",
+    "imageHighSrc": "cards/me3-121-high.png"
+  },
+  {
+    "masterCardId": "21969",
+    "externalId": "me3-120",
+    "tcgdex_id": null,
+    "localId": "120",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "120/088",
+    "cardName": "Mega Zygarde ex",
+    "fullDisplayName": "Mega Zygarde ex 120/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 310,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-120-low.png",
+    "imageHighSrc": "cards/me3-120-high.png"
+  },
+  {
+    "masterCardId": "21968",
+    "externalId": "me3-119",
+    "tcgdex_id": null,
+    "localId": "119",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "119/088",
+    "cardName": "Mega Clefable ex",
+    "fullDisplayName": "Mega Clefable ex 119/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 320,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-119-low.png",
+    "imageHighSrc": "cards/me3-119-high.png"
+  },
+  {
+    "masterCardId": "21967",
+    "externalId": "me3-118",
+    "tcgdex_id": null,
+    "localId": "118",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "118/088",
+    "cardName": "Mega Starmie ex",
+    "fullDisplayName": "Mega Starmie ex 118/088 Perfect Order",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-118-low.png",
+    "imageHighSrc": "cards/me3-118-high.png"
+  },
+  {
+    "masterCardId": "21966",
+    "externalId": "me3-117",
+    "tcgdex_id": null,
+    "localId": "117",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "117/088",
+    "cardName": "Wondrous Patch",
+    "fullDisplayName": "Wondrous Patch 117/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-117-low.png",
+    "imageHighSrc": "cards/me3-117-high.png"
+  },
+  {
+    "masterCardId": "21965",
+    "externalId": "me3-116",
+    "tcgdex_id": null,
+    "localId": "116",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "116/088",
+    "cardName": "Tarragon",
+    "fullDisplayName": "Tarragon 116/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-116-low.png",
+    "imageHighSrc": "cards/me3-116-high.png"
+  },
+  {
+    "masterCardId": "21964",
+    "externalId": "me3-115",
+    "tcgdex_id": null,
+    "localId": "115",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "115/088",
+    "cardName": "Sacred Ash",
+    "fullDisplayName": "Sacred Ash 115/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-115-low.png",
+    "imageHighSrc": "cards/me3-115-high.png"
+  },
+  {
+    "masterCardId": "21963",
+    "externalId": "me3-114",
+    "tcgdex_id": null,
+    "localId": "114",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "114/088",
+    "cardName": "Rosa's Encouragement",
+    "fullDisplayName": "Rosa's Encouragement 114/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-114-low.png",
+    "imageHighSrc": "cards/me3-114-high.png"
+  },
+  {
+    "masterCardId": "21962",
+    "externalId": "me3-113",
+    "tcgdex_id": null,
+    "localId": "113",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "113/088",
+    "cardName": "Poké Pad",
+    "fullDisplayName": "Poké Pad 113/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-113-low.png",
+    "imageHighSrc": "cards/me3-113-high.png"
+  },
+  {
+    "masterCardId": "21961",
+    "externalId": "me3-112",
+    "tcgdex_id": null,
+    "localId": "112",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "112/088",
+    "cardName": "Naveen",
+    "fullDisplayName": "Naveen 112/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-112-low.png",
+    "imageHighSrc": "cards/me3-112-high.png"
+  },
+  {
+    "masterCardId": "21960",
+    "externalId": "me3-111",
+    "tcgdex_id": null,
+    "localId": "111",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "111/088",
+    "cardName": "Lumiose City",
+    "fullDisplayName": "Lumiose City 111/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-111-low.png",
+    "imageHighSrc": "cards/me3-111-high.png"
+  },
+  {
+    "masterCardId": "21959",
+    "externalId": "me3-110",
+    "tcgdex_id": null,
+    "localId": "110",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "110/088",
+    "cardName": "Jacinthe",
+    "fullDisplayName": "Jacinthe 110/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-110-low.png",
+    "imageHighSrc": "cards/me3-110-high.png"
+  },
+  {
+    "masterCardId": "21958",
+    "externalId": "me3-109",
+    "tcgdex_id": null,
+    "localId": "109",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "109/088",
+    "cardName": "Forest of Vitality",
+    "fullDisplayName": "Forest of Vitality 109/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-109-low.png",
+    "imageHighSrc": "cards/me3-109-high.png"
+  },
+  {
+    "masterCardId": "21957",
+    "externalId": "me3-108",
+    "tcgdex_id": null,
+    "localId": "108",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "108/088",
+    "cardName": "Energy Recycler",
+    "fullDisplayName": "Energy Recycler 108/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-108-low.png",
+    "imageHighSrc": "cards/me3-108-high.png"
+  },
+  {
+    "masterCardId": "21956",
+    "externalId": "me3-107",
+    "tcgdex_id": null,
+    "localId": "107",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "107/088",
+    "cardName": "Meowth ex",
+    "fullDisplayName": "Meowth ex 107/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-107-low.png",
+    "imageHighSrc": "cards/me3-107-high.png"
+  },
+  {
+    "masterCardId": "21955",
+    "externalId": "me3-106",
+    "tcgdex_id": null,
+    "localId": "106",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "106/088",
+    "cardName": "Mega Skarmory ex",
+    "fullDisplayName": "Mega Skarmory ex 106/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 260,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-106-low.png",
+    "imageHighSrc": "cards/me3-106-high.png"
+  },
+  {
+    "masterCardId": "21954",
+    "externalId": "me3-105",
+    "tcgdex_id": null,
+    "localId": "105",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "105/088",
+    "cardName": "Yveltal ex",
+    "fullDisplayName": "Yveltal ex 105/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-105-low.png",
+    "imageHighSrc": "cards/me3-105-high.png"
+  },
+  {
+    "masterCardId": "21953",
+    "externalId": "me3-104",
+    "tcgdex_id": null,
+    "localId": "104",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "104/088",
+    "cardName": "Mega Zygarde ex",
+    "fullDisplayName": "Mega Zygarde ex 104/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 310,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-104-low.png",
+    "imageHighSrc": "cards/me3-104-high.png"
+  },
+  {
+    "masterCardId": "21952",
+    "externalId": "me3-103",
+    "tcgdex_id": null,
+    "localId": "103",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "103/088",
+    "cardName": "Mega Clefable ex",
+    "fullDisplayName": "Mega Clefable ex 103/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 320,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-103-low.png",
+    "imageHighSrc": "cards/me3-103-high.png"
+  },
+  {
+    "masterCardId": "21951",
+    "externalId": "me3-102",
+    "tcgdex_id": null,
+    "localId": "102",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "102/088",
+    "cardName": "Mega Starmie ex",
+    "fullDisplayName": "Mega Starmie ex 102/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-102-low.png",
+    "imageHighSrc": "cards/me3-102-high.png"
+  },
+  {
+    "masterCardId": "21950",
+    "externalId": "me3-101",
+    "tcgdex_id": null,
+    "localId": "101",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "101/088",
+    "cardName": "Salazzle ex",
+    "fullDisplayName": "Salazzle ex 101/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 260,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      758
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-101-low.png",
+    "imageHighSrc": "cards/me3-101-high.png"
+  },
+  {
+    "masterCardId": "21949",
+    "externalId": "me3-100",
+    "tcgdex_id": null,
+    "localId": "100",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "100/088",
+    "cardName": "Decidueye ex",
+    "fullDisplayName": "Decidueye ex 100/088 Perfect Order",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 320,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      724
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-100-low.png",
+    "imageHighSrc": "cards/me3-100-high.png"
+  },
+  {
+    "masterCardId": "21948",
+    "externalId": "me3-99",
+    "tcgdex_id": null,
+    "localId": "99",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "099/088",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 099/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-099-low.png",
+    "imageHighSrc": "cards/me3-099-high.png"
+  },
+  {
+    "masterCardId": "21947",
+    "externalId": "me3-98",
+    "tcgdex_id": null,
+    "localId": "98",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "098/088",
+    "cardName": "Doublade",
+    "fullDisplayName": "Doublade 098/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      680
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-098-low.png",
+    "imageHighSrc": "cards/me3-098-high.png"
+  },
+  {
+    "masterCardId": "21946",
+    "externalId": "me3-97",
+    "tcgdex_id": null,
+    "localId": "97",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "097/088",
+    "cardName": "Drapion",
+    "fullDisplayName": "Drapion 097/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-097-low.png",
+    "imageHighSrc": "cards/me3-097-high.png"
+  },
+  {
+    "masterCardId": "21945",
+    "externalId": "me3-96",
+    "tcgdex_id": null,
+    "localId": "96",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "096/088",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 096/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-096-low.png",
+    "imageHighSrc": "cards/me3-096-high.png"
+  },
+  {
+    "masterCardId": "21944",
+    "externalId": "me3-95",
+    "tcgdex_id": null,
+    "localId": "95",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "095/088",
+    "cardName": "Espurr",
+    "fullDisplayName": "Espurr 095/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      677
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-095-low.png",
+    "imageHighSrc": "cards/me3-095-high.png"
+  },
+  {
+    "masterCardId": "21943",
+    "externalId": "me3-94",
+    "tcgdex_id": null,
+    "localId": "94",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "094/088",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 094/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-094-low.png",
+    "imageHighSrc": "cards/me3-094-high.png"
+  },
+  {
+    "masterCardId": "21942",
+    "externalId": "me3-93",
+    "tcgdex_id": null,
+    "localId": "93",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "093/088",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 093/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-093-low.png",
+    "imageHighSrc": "cards/me3-093-high.png"
+  },
+  {
+    "masterCardId": "21941",
+    "externalId": "me3-92",
+    "tcgdex_id": null,
+    "localId": "92",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "092/088",
+    "cardName": "Aurorus",
+    "fullDisplayName": "Aurorus 092/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      699
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-092-low.png",
+    "imageHighSrc": "cards/me3-092-high.png"
+  },
+  {
+    "masterCardId": "21940",
+    "externalId": "me3-91",
+    "tcgdex_id": null,
+    "localId": "91",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "091/088",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 091/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-091-low.png",
+    "imageHighSrc": "cards/me3-091-high.png"
+  },
+  {
+    "masterCardId": "21939",
+    "externalId": "me3-90",
+    "tcgdex_id": null,
+    "localId": "90",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "090/088",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 090/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-090-low.png",
+    "imageHighSrc": "cards/me3-090-high.png"
+  },
+  {
+    "masterCardId": "21938",
+    "externalId": "me3-89",
+    "tcgdex_id": null,
+    "localId": "89",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "089/088",
+    "cardName": "Spewpa",
+    "fullDisplayName": "Spewpa 089/088 Perfect Order",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      665
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-089-low.png",
+    "imageHighSrc": "cards/me3-089-high.png"
+  },
+  {
+    "masterCardId": "21937",
+    "externalId": "me3-88",
+    "tcgdex_id": null,
+    "localId": "88",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "088/088",
+    "cardName": "Telepathic Psychic Energy",
+    "fullDisplayName": "Telepathic Psychic Energy 088/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-088-low.png",
+    "imageHighSrc": "cards/me3-088-high.png"
+  },
+  {
+    "masterCardId": "21936",
+    "externalId": "me3-87",
+    "tcgdex_id": null,
+    "localId": "87",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "087/088",
+    "cardName": "Rocky Fighting Energy",
+    "fullDisplayName": "Rocky Fighting Energy 087/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-087-low.png",
+    "imageHighSrc": "cards/me3-087-high.png"
+  },
+  {
+    "masterCardId": "21935",
+    "externalId": "me3-86",
+    "tcgdex_id": null,
+    "localId": "86",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "086/088",
+    "cardName": "Growing Grass Energy",
+    "fullDisplayName": "Growing Grass Energy 086/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-086-low.png",
+    "imageHighSrc": "cards/me3-086-high.png"
+  },
+  {
+    "masterCardId": "21934",
+    "externalId": "me3-85",
+    "tcgdex_id": null,
+    "localId": "85",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "085/088",
+    "cardName": "Tarragon",
+    "fullDisplayName": "Tarragon 085/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-085-low.png",
+    "imageHighSrc": "cards/me3-085-high.png"
+  },
+  {
+    "masterCardId": "21933",
+    "externalId": "me3-84",
+    "tcgdex_id": null,
+    "localId": "84",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "084/088",
+    "cardName": "Rosa's Encouragement",
+    "fullDisplayName": "Rosa's Encouragement 084/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-084-low.png",
+    "imageHighSrc": "cards/me3-084-high.png"
+  },
+  {
+    "masterCardId": "21932",
+    "externalId": "me3-83",
+    "tcgdex_id": null,
+    "localId": "83",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "083/088",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 083/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-083-low.png",
+    "imageHighSrc": "cards/me3-083-high.png"
+  },
+  {
+    "masterCardId": "21931",
+    "externalId": "me3-82",
+    "tcgdex_id": null,
+    "localId": "82",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "082/088",
+    "cardName": "Pokémon Catcher",
+    "fullDisplayName": "Pokémon Catcher 082/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-082-low.png",
+    "imageHighSrc": "cards/me3-082-high.png"
+  },
+  {
+    "masterCardId": "21930",
+    "externalId": "me3-81",
+    "tcgdex_id": null,
+    "localId": "81",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "081/088",
+    "cardName": "Poké Pad",
+    "fullDisplayName": "Poké Pad 081/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-081-low.png",
+    "imageHighSrc": "cards/me3-081-high.png"
+  },
+  {
+    "masterCardId": "21929",
+    "externalId": "me3-80",
+    "tcgdex_id": null,
+    "localId": "80",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "080/088",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 080/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-080-low.png",
+    "imageHighSrc": "cards/me3-080-high.png"
+  },
+  {
+    "masterCardId": "21928",
+    "externalId": "me3-79",
+    "tcgdex_id": null,
+    "localId": "79",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "079/088",
+    "cardName": "Naveen",
+    "fullDisplayName": "Naveen 079/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-079-low.png",
+    "imageHighSrc": "cards/me3-079-high.png"
+  },
+  {
+    "masterCardId": "21927",
+    "externalId": "me3-78",
+    "tcgdex_id": null,
+    "localId": "78",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "078/088",
+    "cardName": "Lumiose Galette",
+    "fullDisplayName": "Lumiose Galette 078/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-078-low.png",
+    "imageHighSrc": "cards/me3-078-high.png"
+  },
+  {
+    "masterCardId": "21926",
+    "externalId": "me3-77",
+    "tcgdex_id": null,
+    "localId": "77",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "077/088",
+    "cardName": "Lumiose City",
+    "fullDisplayName": "Lumiose City 077/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-077-low.png",
+    "imageHighSrc": "cards/me3-077-high.png"
+  },
+  {
+    "masterCardId": "21925",
+    "externalId": "me3-76",
+    "tcgdex_id": null,
+    "localId": "76",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "076/088",
+    "cardName": "Judge",
+    "fullDisplayName": "Judge 076/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-076-low.png",
+    "imageHighSrc": "cards/me3-076-high.png"
+  },
+  {
+    "masterCardId": "21924",
+    "externalId": "me3-75",
+    "tcgdex_id": null,
+    "localId": "75",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "075/088",
+    "cardName": "Jacinthe",
+    "fullDisplayName": "Jacinthe 075/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-075-low.png",
+    "imageHighSrc": "cards/me3-075-high.png"
+  },
+  {
+    "masterCardId": "21923",
+    "externalId": "me3-74",
+    "tcgdex_id": null,
+    "localId": "74",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "074/088",
+    "cardName": "Hole-Digging Shovel",
+    "fullDisplayName": "Hole-Digging Shovel 074/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-074-low.png",
+    "imageHighSrc": "cards/me3-074-high.png"
+  },
+  {
+    "masterCardId": "21922",
+    "externalId": "me3-73",
+    "tcgdex_id": null,
+    "localId": "73",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "073/088",
+    "cardName": "Energy Swatter",
+    "fullDisplayName": "Energy Swatter 073/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-073-low.png",
+    "imageHighSrc": "cards/me3-073-high.png"
+  },
+  {
+    "masterCardId": "21921",
+    "externalId": "me3-72",
+    "tcgdex_id": null,
+    "localId": "72",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "072/088",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 072/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-072-low.png",
+    "imageHighSrc": "cards/me3-072-high.png"
+  },
+  {
+    "masterCardId": "21920",
+    "externalId": "me3-71",
+    "tcgdex_id": null,
+    "localId": "71",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "071/088",
+    "cardName": "Crushing Hammer",
+    "fullDisplayName": "Crushing Hammer 071/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-071-low.png",
+    "imageHighSrc": "cards/me3-071-high.png"
+  },
+  {
+    "masterCardId": "21919",
+    "externalId": "me3-70",
+    "tcgdex_id": null,
+    "localId": "70",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "070/088",
+    "cardName": "Core Memory",
+    "fullDisplayName": "Core Memory 070/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-070-low.png",
+    "imageHighSrc": "cards/me3-070-high.png"
+  },
+  {
+    "masterCardId": "21918",
+    "externalId": "me3-69",
+    "tcgdex_id": null,
+    "localId": "69",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "069/088",
+    "cardName": "Antique Sail Fossil",
+    "fullDisplayName": "Antique Sail Fossil 069/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 60,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-069-low.png",
+    "imageHighSrc": "cards/me3-069-high.png"
+  },
+  {
+    "masterCardId": "21917",
+    "externalId": "me3-68",
+    "tcgdex_id": null,
+    "localId": "68",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "068/088",
+    "cardName": "Antique Jaw Fossil",
+    "fullDisplayName": "Antique Jaw Fossil 068/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 60,
+    "elementTypes": [
+      "-"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-068-low.png",
+    "imageHighSrc": "cards/me3-068-high.png"
+  },
+  {
+    "masterCardId": "21916",
+    "externalId": "me3-67",
+    "tcgdex_id": null,
+    "localId": "67",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "067/088",
+    "cardName": "Furfrou",
+    "fullDisplayName": "Furfrou 067/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      676
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-067-low.png",
+    "imageHighSrc": "cards/me3-067-high.png"
+  },
+  {
+    "masterCardId": "21915",
+    "externalId": "me3-66",
+    "tcgdex_id": null,
+    "localId": "66",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "066/088",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 066/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-066-low.png",
+    "imageHighSrc": "cards/me3-066-high.png"
+  },
+  {
+    "masterCardId": "21914",
+    "externalId": "me3-65",
+    "tcgdex_id": null,
+    "localId": "65",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "065/088",
+    "cardName": "Diggersby",
+    "fullDisplayName": "Diggersby 065/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      660
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-065-low.png",
+    "imageHighSrc": "cards/me3-065-high.png"
+  },
+  {
+    "masterCardId": "21913",
+    "externalId": "me3-64",
+    "tcgdex_id": null,
+    "localId": "64",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "064/088",
+    "cardName": "Bunnelby",
+    "fullDisplayName": "Bunnelby 064/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      659
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-064-low.png",
+    "imageHighSrc": "cards/me3-064-high.png"
+  },
+  {
+    "masterCardId": "21912",
+    "externalId": "me3-63",
+    "tcgdex_id": null,
+    "localId": "63",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "063/088",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 063/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-063-low.png",
+    "imageHighSrc": "cards/me3-063-high.png"
+  },
+  {
+    "masterCardId": "21911",
+    "externalId": "me3-62",
+    "tcgdex_id": null,
+    "localId": "62",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "062/088",
+    "cardName": "Meowth ex",
+    "fullDisplayName": "Meowth ex 062/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-062-low.png",
+    "imageHighSrc": "cards/me3-062-high.png"
+  },
+  {
+    "masterCardId": "21910",
+    "externalId": "me3-61",
+    "tcgdex_id": null,
+    "localId": "61",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "061/088",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 061/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-061-low.png",
+    "imageHighSrc": "cards/me3-061-high.png"
+  },
+  {
+    "masterCardId": "21909",
+    "externalId": "me3-60",
+    "tcgdex_id": null,
+    "localId": "60",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "060/088",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 060/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-060-low.png",
+    "imageHighSrc": "cards/me3-060-high.png"
+  },
+  {
+    "masterCardId": "21908",
+    "externalId": "me3-59",
+    "tcgdex_id": null,
+    "localId": "59",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "059/088",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 059/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-059-low.png",
+    "imageHighSrc": "cards/me3-059-high.png"
+  },
+  {
+    "masterCardId": "21907",
+    "externalId": "me3-58",
+    "tcgdex_id": null,
+    "localId": "58",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "058/088",
+    "cardName": "Aegislash",
+    "fullDisplayName": "Aegislash 058/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      681
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-058-low.png",
+    "imageHighSrc": "cards/me3-058-high.png"
+  },
+  {
+    "masterCardId": "21906",
+    "externalId": "me3-57",
+    "tcgdex_id": null,
+    "localId": "57",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "057/088",
+    "cardName": "Doublade",
+    "fullDisplayName": "Doublade 057/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      680
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-057-low.png",
+    "imageHighSrc": "cards/me3-057-high.png"
+  },
+  {
+    "masterCardId": "21905",
+    "externalId": "me3-56",
+    "tcgdex_id": null,
+    "localId": "56",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "056/088",
+    "cardName": "Honedge",
+    "fullDisplayName": "Honedge 056/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      679
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-056-low.png",
+    "imageHighSrc": "cards/me3-056-high.png"
+  },
+  {
+    "masterCardId": "21904",
+    "externalId": "me3-55",
+    "tcgdex_id": null,
+    "localId": "55",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "055/088",
+    "cardName": "Mega Skarmory ex",
+    "fullDisplayName": "Mega Skarmory ex 055/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 260,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-055-low.png",
+    "imageHighSrc": "cards/me3-055-high.png"
+  },
+  {
+    "masterCardId": "21903",
+    "externalId": "me3-54",
+    "tcgdex_id": null,
+    "localId": "54",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "054/088",
+    "cardName": "Chien-Pao",
+    "fullDisplayName": "Chien-Pao 054/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1002
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-054-low.png",
+    "imageHighSrc": "cards/me3-054-high.png"
+  },
+  {
+    "masterCardId": "21902",
+    "externalId": "me3-53",
+    "tcgdex_id": null,
+    "localId": "53",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "053/088",
+    "cardName": "Yveltal ex",
+    "fullDisplayName": "Yveltal ex 053/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-053-low.png",
+    "imageHighSrc": "cards/me3-053-high.png"
+  },
+  {
+    "masterCardId": "21901",
+    "externalId": "me3-52",
+    "tcgdex_id": null,
+    "localId": "52",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "052/088",
+    "cardName": "Drapion",
+    "fullDisplayName": "Drapion 052/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-052-low.png",
+    "imageHighSrc": "cards/me3-052-high.png"
+  },
+  {
+    "masterCardId": "21900",
+    "externalId": "me3-51",
+    "tcgdex_id": null,
+    "localId": "51",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "051/088",
+    "cardName": "Skorupi",
+    "fullDisplayName": "Skorupi 051/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      451
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-051-low.png",
+    "imageHighSrc": "cards/me3-051-high.png"
+  },
+  {
+    "masterCardId": "21899",
+    "externalId": "me3-50",
+    "tcgdex_id": null,
+    "localId": "50",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "050/088",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 050/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-050-low.png",
+    "imageHighSrc": "cards/me3-050-high.png"
+  },
+  {
+    "masterCardId": "21898",
+    "externalId": "me3-49",
+    "tcgdex_id": null,
+    "localId": "49",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "049/088",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 049/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-049-low.png",
+    "imageHighSrc": "cards/me3-049-high.png"
+  },
+  {
+    "masterCardId": "21897",
+    "externalId": "me3-48",
+    "tcgdex_id": null,
+    "localId": "48",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "048/088",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 048/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-048-low.png",
+    "imageHighSrc": "cards/me3-048-high.png"
+  },
+  {
+    "masterCardId": "21896",
+    "externalId": "me3-47",
+    "tcgdex_id": null,
+    "localId": "47",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "047/088",
+    "cardName": "Mega Zygarde ex",
+    "fullDisplayName": "Mega Zygarde ex 047/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 310,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-047-low.png",
+    "imageHighSrc": "cards/me3-047-high.png"
+  },
+  {
+    "masterCardId": "21895",
+    "externalId": "me3-46",
+    "tcgdex_id": null,
+    "localId": "46",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "046/088",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 046/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-046-low.png",
+    "imageHighSrc": "cards/me3-046-high.png"
+  },
+  {
+    "masterCardId": "21894",
+    "externalId": "me3-45",
+    "tcgdex_id": null,
+    "localId": "45",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "045/088",
+    "cardName": "Tyrantrum",
+    "fullDisplayName": "Tyrantrum 045/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      697
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-045-low.png",
+    "imageHighSrc": "cards/me3-045-high.png"
+  },
+  {
+    "masterCardId": "21893",
+    "externalId": "me3-44",
+    "tcgdex_id": null,
+    "localId": "44",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "044/088",
+    "cardName": "Tyrunt",
+    "fullDisplayName": "Tyrunt 044/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      696
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-044-low.png",
+    "imageHighSrc": "cards/me3-044-high.png"
+  },
+  {
+    "masterCardId": "21892",
+    "externalId": "me3-43",
+    "tcgdex_id": null,
+    "localId": "43",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "043/088",
+    "cardName": "Barbaracle",
+    "fullDisplayName": "Barbaracle 043/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      689
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-043-low.png",
+    "imageHighSrc": "cards/me3-043-high.png"
+  },
+  {
+    "masterCardId": "21891",
+    "externalId": "me3-42",
+    "tcgdex_id": null,
+    "localId": "42",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "042/088",
+    "cardName": "Binacle",
+    "fullDisplayName": "Binacle 042/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      688
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-042-low.png",
+    "imageHighSrc": "cards/me3-042-high.png"
+  },
+  {
+    "masterCardId": "21890",
+    "externalId": "me3-41",
+    "tcgdex_id": null,
+    "localId": "41",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "041/088",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus 041/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-041-low.png",
+    "imageHighSrc": "cards/me3-041-high.png"
+  },
+  {
+    "masterCardId": "21889",
+    "externalId": "me3-40",
+    "tcgdex_id": null,
+    "localId": "40",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "040/088",
+    "cardName": "Hippowdon",
+    "fullDisplayName": "Hippowdon 040/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      450
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-040-low.png",
+    "imageHighSrc": "cards/me3-040-high.png"
+  },
+  {
+    "masterCardId": "21888",
+    "externalId": "me3-39",
+    "tcgdex_id": null,
+    "localId": "39",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "039/088",
+    "cardName": "Hippopotas",
+    "fullDisplayName": "Hippopotas 039/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      449
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-039-low.png",
+    "imageHighSrc": "cards/me3-039-high.png"
+  },
+  {
+    "masterCardId": "21887",
+    "externalId": "me3-38",
+    "tcgdex_id": null,
+    "localId": "38",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "038/088",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 038/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/me3-038-low.png",
+    "imageHighSrc": "cards/me3-038-high.png"
+  },
+  {
+    "masterCardId": "21886",
+    "externalId": "me3-37",
+    "tcgdex_id": null,
+    "localId": "37",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "037/088",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 037/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-037-low.png",
+    "imageHighSrc": "cards/me3-037-high.png"
+  },
+  {
+    "masterCardId": "21885",
+    "externalId": "me3-36",
+    "tcgdex_id": null,
+    "localId": "36",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "036/088",
+    "cardName": "Aromatisse",
+    "fullDisplayName": "Aromatisse 036/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      683
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-036-low.png",
+    "imageHighSrc": "cards/me3-036-high.png"
+  },
+  {
+    "masterCardId": "21884",
+    "externalId": "me3-35",
+    "tcgdex_id": null,
+    "localId": "35",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "035/088",
+    "cardName": "Spritzee",
+    "fullDisplayName": "Spritzee 035/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      682
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-035-low.png",
+    "imageHighSrc": "cards/me3-035-high.png"
+  },
+  {
+    "masterCardId": "21883",
+    "externalId": "me3-34",
+    "tcgdex_id": null,
+    "localId": "34",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "034/088",
+    "cardName": "Meowstic",
+    "fullDisplayName": "Meowstic 034/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      678
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-034-low.png",
+    "imageHighSrc": "cards/me3-034-high.png"
+  },
+  {
+    "masterCardId": "21882",
+    "externalId": "me3-33",
+    "tcgdex_id": null,
+    "localId": "33",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "033/088",
+    "cardName": "Espurr",
+    "fullDisplayName": "Espurr 033/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      677
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-033-low.png",
+    "imageHighSrc": "cards/me3-033-high.png"
+  },
+  {
+    "masterCardId": "21881",
+    "externalId": "me3-32",
+    "tcgdex_id": null,
+    "localId": "32",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "032/088",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 032/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-032-low.png",
+    "imageHighSrc": "cards/me3-032-high.png"
+  },
+  {
+    "masterCardId": "21880",
+    "externalId": "me3-31",
+    "tcgdex_id": null,
+    "localId": "31",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "031/088",
+    "cardName": "Mega Clefable ex",
+    "fullDisplayName": "Mega Clefable ex 031/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 320,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-031-low.png",
+    "imageHighSrc": "cards/me3-031-high.png"
+  },
+  {
+    "masterCardId": "21879",
+    "externalId": "me3-30",
+    "tcgdex_id": null,
+    "localId": "30",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "030/088",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 030/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-030-low.png",
+    "imageHighSrc": "cards/me3-030-high.png"
+  },
+  {
+    "masterCardId": "21878",
+    "externalId": "me3-29",
+    "tcgdex_id": null,
+    "localId": "29",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "029/088",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 029/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-029-low.png",
+    "imageHighSrc": "cards/me3-029-high.png"
+  },
+  {
+    "masterCardId": "21877",
+    "externalId": "me3-28",
+    "tcgdex_id": null,
+    "localId": "28",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "028/088",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 028/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-028-low.png",
+    "imageHighSrc": "cards/me3-028-high.png"
+  },
+  {
+    "masterCardId": "21876",
+    "externalId": "me3-27",
+    "tcgdex_id": null,
+    "localId": "27",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "027/088",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 027/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-027-low.png",
+    "imageHighSrc": "cards/me3-027-high.png"
+  },
+  {
+    "masterCardId": "21875",
+    "externalId": "me3-26",
+    "tcgdex_id": null,
+    "localId": "26",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "026/088",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 026/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-026-low.png",
+    "imageHighSrc": "cards/me3-026-high.png"
+  },
+  {
+    "masterCardId": "21874",
+    "externalId": "me3-25",
+    "tcgdex_id": null,
+    "localId": "25",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "025/088",
+    "cardName": "Volcanion",
+    "fullDisplayName": "Volcanion 025/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-025-low.png",
+    "imageHighSrc": "cards/me3-025-high.png"
+  },
+  {
+    "masterCardId": "21873",
+    "externalId": "me3-24",
+    "tcgdex_id": null,
+    "localId": "24",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "024/088",
+    "cardName": "Aurorus",
+    "fullDisplayName": "Aurorus 024/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      699
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-024-low.png",
+    "imageHighSrc": "cards/me3-024-high.png"
+  },
+  {
+    "masterCardId": "21872",
+    "externalId": "me3-23",
+    "tcgdex_id": null,
+    "localId": "23",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "023/088",
+    "cardName": "Amaura",
+    "fullDisplayName": "Amaura 023/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      698
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-023-low.png",
+    "imageHighSrc": "cards/me3-023-high.png"
+  },
+  {
+    "masterCardId": "21871",
+    "externalId": "me3-22",
+    "tcgdex_id": null,
+    "localId": "22",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "022/088",
+    "cardName": "Lapras ex",
+    "fullDisplayName": "Lapras ex 022/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-022-low.png",
+    "imageHighSrc": "cards/me3-022-high.png"
+  },
+  {
+    "masterCardId": "21870",
+    "externalId": "me3-21",
+    "tcgdex_id": null,
+    "localId": "21",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "021/088",
+    "cardName": "Mega Starmie ex",
+    "fullDisplayName": "Mega Starmie ex 021/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-021-low.png",
+    "imageHighSrc": "cards/me3-021-high.png"
+  },
+  {
+    "masterCardId": "21869",
+    "externalId": "me3-20",
+    "tcgdex_id": null,
+    "localId": "20",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "020/088",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 020/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-020-low.png",
+    "imageHighSrc": "cards/me3-020-high.png"
+  },
+  {
+    "masterCardId": "21868",
+    "externalId": "me3-19",
+    "tcgdex_id": null,
+    "localId": "19",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "019/088",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 019/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-019-low.png",
+    "imageHighSrc": "cards/me3-019-high.png"
+  },
+  {
+    "masterCardId": "21867",
+    "externalId": "me3-18",
+    "tcgdex_id": null,
+    "localId": "18",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "018/088",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 018/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-018-low.png",
+    "imageHighSrc": "cards/me3-018-high.png"
+  },
+  {
+    "masterCardId": "21866",
+    "externalId": "me3-17",
+    "tcgdex_id": null,
+    "localId": "17",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "017/088",
+    "cardName": "Turtonator",
+    "fullDisplayName": "Turtonator 017/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      776
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-017-low.png",
+    "imageHighSrc": "cards/me3-017-high.png"
+  },
+  {
+    "masterCardId": "21865",
+    "externalId": "me3-16",
+    "tcgdex_id": null,
+    "localId": "16",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "016/088",
+    "cardName": "Salazzle ex",
+    "fullDisplayName": "Salazzle ex 016/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 260,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      758
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-016-low.png",
+    "imageHighSrc": "cards/me3-016-high.png"
+  },
+  {
+    "masterCardId": "21864",
+    "externalId": "me3-15",
+    "tcgdex_id": null,
+    "localId": "15",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "015/088",
+    "cardName": "Salandit",
+    "fullDisplayName": "Salandit 015/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      757
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-015-low.png",
+    "imageHighSrc": "cards/me3-015-high.png"
+  },
+  {
+    "masterCardId": "21863",
+    "externalId": "me3-14",
+    "tcgdex_id": null,
+    "localId": "14",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "014/088",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 014/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-014-low.png",
+    "imageHighSrc": "cards/me3-014-high.png"
+  },
+  {
+    "masterCardId": "21862",
+    "externalId": "me3-13",
+    "tcgdex_id": null,
+    "localId": "13",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "013/088",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 013/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-013-low.png",
+    "imageHighSrc": "cards/me3-013-high.png"
+  },
+  {
+    "masterCardId": "21861",
+    "externalId": "me3-12",
+    "tcgdex_id": null,
+    "localId": "12",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "012/088",
+    "cardName": "Decidueye ex",
+    "fullDisplayName": "Decidueye ex 012/088 Perfect Order",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 320,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      724
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-012-low.png",
+    "imageHighSrc": "cards/me3-012-high.png"
+  },
+  {
+    "masterCardId": "21860",
+    "externalId": "me3-11",
+    "tcgdex_id": null,
+    "localId": "11",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "011/088",
+    "cardName": "Dartrix",
+    "fullDisplayName": "Dartrix 011/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      723
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-011-low.png",
+    "imageHighSrc": "cards/me3-011-high.png"
+  },
+  {
+    "masterCardId": "21859",
+    "externalId": "me3-10",
+    "tcgdex_id": null,
+    "localId": "10",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "010/088",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 010/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-010-low.png",
+    "imageHighSrc": "cards/me3-010-high.png"
+  },
+  {
+    "masterCardId": "21858",
+    "externalId": "me3-9",
+    "tcgdex_id": null,
+    "localId": "9",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "009/088",
+    "cardName": "Vivillon",
+    "fullDisplayName": "Vivillon 009/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      666
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-009-low.png",
+    "imageHighSrc": "cards/me3-009-high.png"
+  },
+  {
+    "masterCardId": "21857",
+    "externalId": "me3-8",
+    "tcgdex_id": null,
+    "localId": "8",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "008/088",
+    "cardName": "Spewpa",
+    "fullDisplayName": "Spewpa 008/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      665
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-008-low.png",
+    "imageHighSrc": "cards/me3-008-high.png"
+  },
+  {
+    "masterCardId": "21856",
+    "externalId": "me3-7",
+    "tcgdex_id": null,
+    "localId": "7",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "007/088",
+    "cardName": "Scatterbug",
+    "fullDisplayName": "Scatterbug 007/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      664
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-007-low.png",
+    "imageHighSrc": "cards/me3-007-high.png"
+  },
+  {
+    "masterCardId": "21855",
+    "externalId": "me3-6",
+    "tcgdex_id": null,
+    "localId": "6",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "006/088",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 006/088 Perfect Order",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-006-low.png",
+    "imageHighSrc": "cards/me3-006-high.png"
+  },
+  {
+    "masterCardId": "21854",
+    "externalId": "me3-5",
+    "tcgdex_id": null,
+    "localId": "5",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "005/088",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 005/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-005-low.png",
+    "imageHighSrc": "cards/me3-005-high.png"
+  },
+  {
+    "masterCardId": "21853",
+    "externalId": "me3-4",
+    "tcgdex_id": null,
+    "localId": "4",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "004/088",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 004/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-004-low.png",
+    "imageHighSrc": "cards/me3-004-high.png"
+  },
+  {
+    "masterCardId": "21852",
+    "externalId": "me3-3",
+    "tcgdex_id": null,
+    "localId": "3",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "003/088",
+    "cardName": "Shaymin",
+    "fullDisplayName": "Shaymin 003/088 Perfect Order",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-003-low.png",
+    "imageHighSrc": "cards/me3-003-high.png"
+  },
+  {
+    "masterCardId": "21851",
+    "externalId": "me3-2",
+    "tcgdex_id": null,
+    "localId": "2",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "002/088",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 002/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-002-low.png",
+    "imageHighSrc": "cards/me3-002-high.png"
+  },
+  {
+    "masterCardId": "21850",
+    "externalId": "me3-1",
+    "tcgdex_id": null,
+    "localId": "1",
+    "setCode": "me03",
+    "setTcgdexId": "me03",
+    "cardNumber": "001/088",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 001/088 Perfect Order",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "-",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me3-001-low.png",
+    "imageHighSrc": "cards/me3-001-high.png"
+  }
+]

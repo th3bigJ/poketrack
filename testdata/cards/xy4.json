@@ -1,0 +1,4011 @@
+[
+  {
+    "masterCardId": "20079",
+    "externalId": null,
+    "tcgdex_id": "xy4-122",
+    "localId": "122",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "122/119",
+    "cardName": "Dialga-EX",
+    "fullDisplayName": "Dialga-EX 122/119 Phantom Forces",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-122-low.png",
+    "imageHighSrc": "cards/xy4-122-high.png"
+  },
+  {
+    "masterCardId": "20075",
+    "externalId": null,
+    "tcgdex_id": "xy4-121",
+    "localId": "121",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "121/119",
+    "cardName": "M Gengar-EX",
+    "fullDisplayName": "M Gengar-EX 121/119 Phantom Forces",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gengar-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-121-low.png",
+    "imageHighSrc": "cards/xy4-121-high.png"
+  },
+  {
+    "masterCardId": "20071",
+    "externalId": null,
+    "tcgdex_id": "xy4-120",
+    "localId": "120",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "120/119",
+    "cardName": "M Manectric-EX",
+    "fullDisplayName": "M Manectric-EX 120/119 Phantom Forces",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Manectric-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-120-low.png",
+    "imageHighSrc": "cards/xy4-120-high.png"
+  },
+  {
+    "masterCardId": "20067",
+    "externalId": null,
+    "tcgdex_id": "xy4-119",
+    "localId": "119",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "119/119",
+    "cardName": "Xerosic",
+    "fullDisplayName": "Xerosic 119/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-119-low.png",
+    "imageHighSrc": "cards/xy4-119-high.png"
+  },
+  {
+    "masterCardId": "20063",
+    "externalId": null,
+    "tcgdex_id": "xy4-118",
+    "localId": "118",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "118/119",
+    "cardName": "Lysandre's Trump Card",
+    "fullDisplayName": "Lysandre's Trump Card 118/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-118-low.png",
+    "imageHighSrc": "cards/xy4-118-high.png"
+  },
+  {
+    "masterCardId": "20059",
+    "externalId": null,
+    "tcgdex_id": "xy4-117",
+    "localId": "117",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "117/119",
+    "cardName": "AZ",
+    "fullDisplayName": "AZ 117/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-117-low.png",
+    "imageHighSrc": "cards/xy4-117-high.png"
+  },
+  {
+    "masterCardId": "20056",
+    "externalId": null,
+    "tcgdex_id": "xy4-116",
+    "localId": "116",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "116/119",
+    "cardName": "Florges-EX",
+    "fullDisplayName": "Florges-EX 116/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      671
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-116-low.png",
+    "imageHighSrc": "cards/xy4-116-high.png"
+  },
+  {
+    "masterCardId": "20053",
+    "externalId": null,
+    "tcgdex_id": "xy4-115",
+    "localId": "115",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "115/119",
+    "cardName": "Malamar-EX",
+    "fullDisplayName": "Malamar-EX 115/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-115-low.png",
+    "imageHighSrc": "cards/xy4-115-high.png"
+  },
+  {
+    "masterCardId": "20049",
+    "externalId": null,
+    "tcgdex_id": "xy4-114",
+    "localId": "114",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "114/119",
+    "cardName": "Gengar-EX",
+    "fullDisplayName": "Gengar-EX 114/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-114-low.png",
+    "imageHighSrc": "cards/xy4-114-high.png"
+  },
+  {
+    "masterCardId": "20045",
+    "externalId": null,
+    "tcgdex_id": "xy4-113",
+    "localId": "113",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "113/119",
+    "cardName": "Manectric-EX",
+    "fullDisplayName": "Manectric-EX 113/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-113-low.png",
+    "imageHighSrc": "cards/xy4-113-high.png"
+  },
+  {
+    "masterCardId": "20040",
+    "externalId": null,
+    "tcgdex_id": "xy4-112",
+    "localId": "112",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "112/119",
+    "cardName": "Mystery Energy",
+    "fullDisplayName": "Mystery Energy 112/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-112-low.png",
+    "imageHighSrc": "cards/xy4-112-high.png"
+  },
+  {
+    "masterCardId": "20034",
+    "externalId": null,
+    "tcgdex_id": "xy4-111",
+    "localId": "111",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "111/119",
+    "cardName": "Double Colorless Energy",
+    "fullDisplayName": "Double Colorless Energy 111/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-111-low.png",
+    "imageHighSrc": "cards/xy4-111-high.png"
+  },
+  {
+    "masterCardId": "20026",
+    "externalId": null,
+    "tcgdex_id": "xy4-110",
+    "localId": "110",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "110/119",
+    "cardName": "Xerosic",
+    "fullDisplayName": "Xerosic 110/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-110-low.png",
+    "imageHighSrc": "cards/xy4-110-high.png"
+  },
+  {
+    "masterCardId": "20018",
+    "externalId": null,
+    "tcgdex_id": "xy4-109",
+    "localId": "109",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "109/119",
+    "cardName": "VS Seeker",
+    "fullDisplayName": "VS Seeker 109/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-109-low.png",
+    "imageHighSrc": "cards/xy4-109-high.png"
+  },
+  {
+    "masterCardId": "20009",
+    "externalId": null,
+    "tcgdex_id": "xy4-108",
+    "localId": "108",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "108/119",
+    "cardName": "Trick Coin",
+    "fullDisplayName": "Trick Coin 108/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-108-low.png",
+    "imageHighSrc": "cards/xy4-108-high.png"
+  },
+  {
+    "masterCardId": "20000",
+    "externalId": null,
+    "tcgdex_id": "xy4-107",
+    "localId": "107",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "107/119",
+    "cardName": "Tierno",
+    "fullDisplayName": "Tierno 107/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-107-low.png",
+    "imageHighSrc": "cards/xy4-107-high.png"
+  },
+  {
+    "masterCardId": "19992",
+    "externalId": null,
+    "tcgdex_id": "xy4-106",
+    "localId": "106",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "106/119",
+    "cardName": "Target Whistle Team Flare Gear",
+    "fullDisplayName": "Target Whistle Team Flare Gear 106/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-106-low.png",
+    "imageHighSrc": "cards/xy4-106-high.png"
+  },
+  {
+    "masterCardId": "19983",
+    "externalId": null,
+    "tcgdex_id": "xy4-105",
+    "localId": "105",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "105/119",
+    "cardName": "Steel Shelter",
+    "fullDisplayName": "Steel Shelter 105/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-105-low.png",
+    "imageHighSrc": "cards/xy4-105-high.png"
+  },
+  {
+    "masterCardId": "19973",
+    "externalId": null,
+    "tcgdex_id": "xy4-104",
+    "localId": "104",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "104/119",
+    "cardName": "Shauna",
+    "fullDisplayName": "Shauna 104/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-104-low.png",
+    "imageHighSrc": "cards/xy4-104-high.png"
+  },
+  {
+    "masterCardId": "19964",
+    "externalId": null,
+    "tcgdex_id": "xy4-103",
+    "localId": "103",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "103/119",
+    "cardName": "Roller Skates",
+    "fullDisplayName": "Roller Skates 103/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-103-low.png",
+    "imageHighSrc": "cards/xy4-103-high.png"
+  },
+  {
+    "masterCardId": "19956",
+    "externalId": null,
+    "tcgdex_id": "xy4-102",
+    "localId": "102",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "102/119",
+    "cardName": "Robo Substitute Team Flare Gear",
+    "fullDisplayName": "Robo Substitute Team Flare Gear 102/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-102-low.png",
+    "imageHighSrc": "cards/xy4-102-high.png"
+  },
+  {
+    "masterCardId": "19947",
+    "externalId": null,
+    "tcgdex_id": "xy4-101",
+    "localId": "101",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "101/119",
+    "cardName": "Professor Sycamore",
+    "fullDisplayName": "Professor Sycamore 101/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-101-low.png",
+    "imageHighSrc": "cards/xy4-101-high.png"
+  },
+  {
+    "masterCardId": "19938",
+    "externalId": null,
+    "tcgdex_id": "xy4-100",
+    "localId": "100",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "100/119",
+    "cardName": "Manectric Spirit Link",
+    "fullDisplayName": "Manectric Spirit Link 100/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-100-low.png",
+    "imageHighSrc": "cards/xy4-100-high.png"
+  },
+  {
+    "masterCardId": "19929",
+    "externalId": null,
+    "tcgdex_id": "xy4-99",
+    "localId": "099",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "099/119",
+    "cardName": "Lysandre's Trump Card",
+    "fullDisplayName": "Lysandre's Trump Card 099/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-099-low.png",
+    "imageHighSrc": "cards/xy4-099-high.png"
+  },
+  {
+    "masterCardId": "19920",
+    "externalId": null,
+    "tcgdex_id": "xy4-98",
+    "localId": "098",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "098/119",
+    "cardName": "Jamming Net Team Flare Hyper Gear",
+    "fullDisplayName": "Jamming Net Team Flare Hyper Gear 098/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool F"
+    ],
+    "trainerType": "Pokémon Tool F",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-098-low.png",
+    "imageHighSrc": "cards/xy4-098-high.png"
+  },
+  {
+    "masterCardId": "19911",
+    "externalId": null,
+    "tcgdex_id": "xy4-97",
+    "localId": "097",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "097/119",
+    "cardName": "Head Ringer Team Flare Hyper Gear",
+    "fullDisplayName": "Head Ringer Team Flare Hyper Gear 097/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool F"
+    ],
+    "trainerType": "Pokémon Tool F",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-097-low.png",
+    "imageHighSrc": "cards/xy4-097-high.png"
+  },
+  {
+    "masterCardId": "19903",
+    "externalId": null,
+    "tcgdex_id": "xy4-96",
+    "localId": "096",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "096/119",
+    "cardName": "Hand Scope",
+    "fullDisplayName": "Hand Scope 096/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-096-low.png",
+    "imageHighSrc": "cards/xy4-096-high.png"
+  },
+  {
+    "masterCardId": "19893",
+    "externalId": null,
+    "tcgdex_id": "xy4-95",
+    "localId": "095",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "095/119",
+    "cardName": "Gengar Spirit Link",
+    "fullDisplayName": "Gengar Spirit Link 095/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-095-low.png",
+    "imageHighSrc": "cards/xy4-095-high.png"
+  },
+  {
+    "masterCardId": "19884",
+    "externalId": null,
+    "tcgdex_id": "xy4-94",
+    "localId": "094",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "094/119",
+    "cardName": "Enhanced Hammer",
+    "fullDisplayName": "Enhanced Hammer 094/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-094-low.png",
+    "imageHighSrc": "cards/xy4-094-high.png"
+  },
+  {
+    "masterCardId": "19875",
+    "externalId": null,
+    "tcgdex_id": "xy4-93",
+    "localId": "093",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "093/119",
+    "cardName": "Dimension Valley",
+    "fullDisplayName": "Dimension Valley 093/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-093-low.png",
+    "imageHighSrc": "cards/xy4-093-high.png"
+  },
+  {
+    "masterCardId": "19866",
+    "externalId": null,
+    "tcgdex_id": "xy4-92",
+    "localId": "092",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "092/119",
+    "cardName": "Battle Compressor Team Flare Gear",
+    "fullDisplayName": "Battle Compressor Team Flare Gear 092/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-092-low.png",
+    "imageHighSrc": "cards/xy4-092-high.png"
+  },
+  {
+    "masterCardId": "19857",
+    "externalId": null,
+    "tcgdex_id": "xy4-91",
+    "localId": "091",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "091/119",
+    "cardName": "AZ",
+    "fullDisplayName": "AZ 091/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-091-low.png",
+    "imageHighSrc": "cards/xy4-091-high.png"
+  },
+  {
+    "masterCardId": "19848",
+    "externalId": null,
+    "tcgdex_id": "xy4-90",
+    "localId": "090",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "090/119",
+    "cardName": "Furfrou",
+    "fullDisplayName": "Furfrou 090/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      676
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-090-low.png",
+    "imageHighSrc": "cards/xy4-090-high.png"
+  },
+  {
+    "masterCardId": "19840",
+    "externalId": null,
+    "tcgdex_id": "xy4-89",
+    "localId": "089",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "089/119",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 089/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-089-low.png",
+    "imageHighSrc": "cards/xy4-089-high.png"
+  },
+  {
+    "masterCardId": "19831",
+    "externalId": null,
+    "tcgdex_id": "xy4-88",
+    "localId": "088",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "088/119",
+    "cardName": "Diggersby",
+    "fullDisplayName": "Diggersby 088/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      660
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bunnelby",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-088-low.png",
+    "imageHighSrc": "cards/xy4-088-high.png"
+  },
+  {
+    "masterCardId": "19822",
+    "externalId": null,
+    "tcgdex_id": "xy4-87",
+    "localId": "087",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "087/119",
+    "cardName": "Bunnelby",
+    "fullDisplayName": "Bunnelby 087/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      659
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-087-low.png",
+    "imageHighSrc": "cards/xy4-087-high.png"
+  },
+  {
+    "masterCardId": "19813",
+    "externalId": null,
+    "tcgdex_id": "xy4-86",
+    "localId": "086",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "086/119",
+    "cardName": "Regigigas",
+    "fullDisplayName": "Regigigas 086/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-086-low.png",
+    "imageHighSrc": "cards/xy4-086-high.png"
+  },
+  {
+    "masterCardId": "19804",
+    "externalId": null,
+    "tcgdex_id": "xy4-85",
+    "localId": "085",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "085/119",
+    "cardName": "Exploud",
+    "fullDisplayName": "Exploud 085/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      295
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Loudred",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-085-low.png",
+    "imageHighSrc": "cards/xy4-085-high.png"
+  },
+  {
+    "masterCardId": "19794",
+    "externalId": null,
+    "tcgdex_id": "xy4-84",
+    "localId": "084",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "084/119",
+    "cardName": "Loudred",
+    "fullDisplayName": "Loudred 084/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      294
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whismur",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-084-low.png",
+    "imageHighSrc": "cards/xy4-084-high.png"
+  },
+  {
+    "masterCardId": "19785",
+    "externalId": null,
+    "tcgdex_id": "xy4-83",
+    "localId": "083",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "083/119",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 083/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-083-low.png",
+    "imageHighSrc": "cards/xy4-083-high.png"
+  },
+  {
+    "masterCardId": "19775",
+    "externalId": null,
+    "tcgdex_id": "xy4-82",
+    "localId": "082",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "082/119",
+    "cardName": "Girafarig",
+    "fullDisplayName": "Girafarig 082/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      203
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-082-low.png",
+    "imageHighSrc": "cards/xy4-082-high.png"
+  },
+  {
+    "masterCardId": "19766",
+    "externalId": null,
+    "tcgdex_id": "xy4-81",
+    "localId": "081",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "081/119",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 081/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-081-low.png",
+    "imageHighSrc": "cards/xy4-081-high.png"
+  },
+  {
+    "masterCardId": "19756",
+    "externalId": null,
+    "tcgdex_id": "xy4-80",
+    "localId": "080",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "080/119",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 080/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-080-low.png",
+    "imageHighSrc": "cards/xy4-080-high.png"
+  },
+  {
+    "masterCardId": "19748",
+    "externalId": null,
+    "tcgdex_id": "xy4-79",
+    "localId": "079",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "079/119",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 079/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-079-low.png",
+    "imageHighSrc": "cards/xy4-079-high.png"
+  },
+  {
+    "masterCardId": "19738",
+    "externalId": null,
+    "tcgdex_id": "xy4-78",
+    "localId": "078",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "078/119",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 078/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-078-low.png",
+    "imageHighSrc": "cards/xy4-078-high.png"
+  },
+  {
+    "masterCardId": "19729",
+    "externalId": null,
+    "tcgdex_id": "xy4-77",
+    "localId": "077",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "077/119",
+    "cardName": "Goodra",
+    "fullDisplayName": "Goodra 077/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sliggoo",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-077-low.png",
+    "imageHighSrc": "cards/xy4-077-high.png"
+  },
+  {
+    "masterCardId": "19720",
+    "externalId": null,
+    "tcgdex_id": "xy4-76",
+    "localId": "076",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "076/119",
+    "cardName": "Sliggoo",
+    "fullDisplayName": "Sliggoo 076/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      705
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goomy",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-076-low.png",
+    "imageHighSrc": "cards/xy4-076-high.png"
+  },
+  {
+    "masterCardId": "19711",
+    "externalId": null,
+    "tcgdex_id": "xy4-75",
+    "localId": "075",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "075/119",
+    "cardName": "Goomy",
+    "fullDisplayName": "Goomy 075/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      704
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-075-low.png",
+    "imageHighSrc": "cards/xy4-075-high.png"
+  },
+  {
+    "masterCardId": "19702",
+    "externalId": null,
+    "tcgdex_id": "xy4-74",
+    "localId": "074",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "074/119",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 074/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-074-low.png",
+    "imageHighSrc": "cards/xy4-074-high.png"
+  },
+  {
+    "masterCardId": "19694",
+    "externalId": null,
+    "tcgdex_id": "xy4-73",
+    "localId": "073",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "073/119",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 073/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-073-low.png",
+    "imageHighSrc": "cards/xy4-073-high.png"
+  },
+  {
+    "masterCardId": "19685",
+    "externalId": null,
+    "tcgdex_id": "xy4-72",
+    "localId": "072",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "072/119",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 072/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-072-low.png",
+    "imageHighSrc": "cards/xy4-072-high.png"
+  },
+  {
+    "masterCardId": "19675",
+    "externalId": null,
+    "tcgdex_id": "xy4-71",
+    "localId": "071",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "071/119",
+    "cardName": "Diancie",
+    "fullDisplayName": "Diancie 071/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      719
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-071-low.png",
+    "imageHighSrc": "cards/xy4-071-high.png"
+  },
+  {
+    "masterCardId": "19665",
+    "externalId": null,
+    "tcgdex_id": "xy4-70",
+    "localId": "070",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "070/119",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 070/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-070-low.png",
+    "imageHighSrc": "cards/xy4-070-high.png"
+  },
+  {
+    "masterCardId": "19657",
+    "externalId": null,
+    "tcgdex_id": "xy4-69",
+    "localId": "069",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "069/119",
+    "cardName": "Slurpuff",
+    "fullDisplayName": "Slurpuff 069/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      685
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swirlix",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-069-low.png",
+    "imageHighSrc": "cards/xy4-069-high.png"
+  },
+  {
+    "masterCardId": "19647",
+    "externalId": null,
+    "tcgdex_id": "xy4-68",
+    "localId": "068",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "068/119",
+    "cardName": "Swirlix",
+    "fullDisplayName": "Swirlix 068/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      684
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-068-low.png",
+    "imageHighSrc": "cards/xy4-068-high.png"
+  },
+  {
+    "masterCardId": "19637",
+    "externalId": null,
+    "tcgdex_id": "xy4-67",
+    "localId": "067",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "067/119",
+    "cardName": "Florges-EX",
+    "fullDisplayName": "Florges-EX 067/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      671
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-067-low.png",
+    "imageHighSrc": "cards/xy4-067-high.png"
+  },
+  {
+    "masterCardId": "19631",
+    "externalId": null,
+    "tcgdex_id": "xy4-66",
+    "localId": "066",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "066/119",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 066/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-066-low.png",
+    "imageHighSrc": "cards/xy4-066-high.png"
+  },
+  {
+    "masterCardId": "19619",
+    "externalId": null,
+    "tcgdex_id": "xy4-65a",
+    "localId": "65a",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "65a/119",
+    "cardName": "Aegislash-EX",
+    "fullDisplayName": "Aegislash-EX 65a/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      681
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-65a-low.png",
+    "imageHighSrc": "cards/xy4-65a-high.png"
+  },
+  {
+    "masterCardId": "19610",
+    "externalId": null,
+    "tcgdex_id": "xy4-65",
+    "localId": "065",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "065/119",
+    "cardName": "Aegislash-EX",
+    "fullDisplayName": "Aegislash-EX 065/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      681
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-065-low.png",
+    "imageHighSrc": "cards/xy4-065-high.png"
+  },
+  {
+    "masterCardId": "19601",
+    "externalId": null,
+    "tcgdex_id": "xy4-64",
+    "localId": "064",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "064/119",
+    "cardName": "Escavalier",
+    "fullDisplayName": "Escavalier 064/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      589
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Karrablast",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-064-low.png",
+    "imageHighSrc": "cards/xy4-064-high.png"
+  },
+  {
+    "masterCardId": "19592",
+    "externalId": null,
+    "tcgdex_id": "xy4-63",
+    "localId": "063",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "063/119",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 063/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-063-low.png",
+    "imageHighSrc": "cards/xy4-063-high.png"
+  },
+  {
+    "masterCardId": "19583",
+    "externalId": null,
+    "tcgdex_id": "xy4-62",
+    "localId": "062",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "062/119",
+    "cardName": "Dialga-EX",
+    "fullDisplayName": "Dialga-EX 062/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-062-low.png",
+    "imageHighSrc": "cards/xy4-062-high.png"
+  },
+  {
+    "masterCardId": "19575",
+    "externalId": null,
+    "tcgdex_id": "xy4-61",
+    "localId": "061",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "061/119",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 061/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-061-low.png",
+    "imageHighSrc": "cards/xy4-061-high.png"
+  },
+  {
+    "masterCardId": "19565",
+    "externalId": null,
+    "tcgdex_id": "xy4-60",
+    "localId": "060",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "060/119",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 060/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-060-low.png",
+    "imageHighSrc": "cards/xy4-060-high.png"
+  },
+  {
+    "masterCardId": "19557",
+    "externalId": null,
+    "tcgdex_id": "xy4-59",
+    "localId": "059",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "059/119",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 059/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-059-low.png",
+    "imageHighSrc": "cards/xy4-059-high.png"
+  },
+  {
+    "masterCardId": "19549",
+    "externalId": null,
+    "tcgdex_id": "xy4-58",
+    "localId": "058",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "058/119",
+    "cardName": "Malamar-EX",
+    "fullDisplayName": "Malamar-EX 058/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-058-low.png",
+    "imageHighSrc": "cards/xy4-058-high.png"
+  },
+  {
+    "masterCardId": "19540",
+    "externalId": null,
+    "tcgdex_id": "xy4-57",
+    "localId": "057",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "057/119",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 057/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-057-low.png",
+    "imageHighSrc": "cards/xy4-057-high.png"
+  },
+  {
+    "masterCardId": "19532",
+    "externalId": null,
+    "tcgdex_id": "xy4-56",
+    "localId": "056",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "056/119",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 056/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-056-low.png",
+    "imageHighSrc": "cards/xy4-056-high.png"
+  },
+  {
+    "masterCardId": "19524",
+    "externalId": null,
+    "tcgdex_id": "xy4-55",
+    "localId": "055",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "055/119",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 055/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-055-low.png",
+    "imageHighSrc": "cards/xy4-055-high.png"
+  },
+  {
+    "masterCardId": "19514",
+    "externalId": null,
+    "tcgdex_id": "xy4-54",
+    "localId": "054",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "054/119",
+    "cardName": "Mightyena",
+    "fullDisplayName": "Mightyena 054/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-054-low.png",
+    "imageHighSrc": "cards/xy4-054-high.png"
+  },
+  {
+    "masterCardId": "19506",
+    "externalId": null,
+    "tcgdex_id": "xy4-53",
+    "localId": "053",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "053/119",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 053/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-053-low.png",
+    "imageHighSrc": "cards/xy4-053-high.png"
+  },
+  {
+    "masterCardId": "19498",
+    "externalId": null,
+    "tcgdex_id": "xy4-52",
+    "localId": "052",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "052/119",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 052/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Murkrow",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-052-low.png",
+    "imageHighSrc": "cards/xy4-052-high.png"
+  },
+  {
+    "masterCardId": "19489",
+    "externalId": null,
+    "tcgdex_id": "xy4-51",
+    "localId": "051",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "051/119",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 051/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-051-low.png",
+    "imageHighSrc": "cards/xy4-051-high.png"
+  },
+  {
+    "masterCardId": "19480",
+    "externalId": null,
+    "tcgdex_id": "xy4-50",
+    "localId": "050",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "050/119",
+    "cardName": "Gigalith",
+    "fullDisplayName": "Gigalith 050/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      526
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Boldore",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-050-low.png",
+    "imageHighSrc": "cards/xy4-050-high.png"
+  },
+  {
+    "masterCardId": "19471",
+    "externalId": null,
+    "tcgdex_id": "xy4-49",
+    "localId": "049",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "049/119",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 049/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-049-low.png",
+    "imageHighSrc": "cards/xy4-049-high.png"
+  },
+  {
+    "masterCardId": "19462",
+    "externalId": null,
+    "tcgdex_id": "xy4-48",
+    "localId": "048",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "048/119",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 048/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-048-low.png",
+    "imageHighSrc": "cards/xy4-048-high.png"
+  },
+  {
+    "masterCardId": "19453",
+    "externalId": null,
+    "tcgdex_id": "xy4-47",
+    "localId": "047",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "047/119",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 047/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-047-low.png",
+    "imageHighSrc": "cards/xy4-047-high.png"
+  },
+  {
+    "masterCardId": "19444",
+    "externalId": null,
+    "tcgdex_id": "xy4-46",
+    "localId": "046",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "046/119",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 046/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-046-low.png",
+    "imageHighSrc": "cards/xy4-046-high.png"
+  },
+  {
+    "masterCardId": "19435",
+    "externalId": null,
+    "tcgdex_id": "xy4-45",
+    "localId": "045",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "045/119",
+    "cardName": "Gourgeist",
+    "fullDisplayName": "Gourgeist 045/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      711
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pumpkaboo",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-045-low.png",
+    "imageHighSrc": "cards/xy4-045-high.png"
+  },
+  {
+    "masterCardId": "19425",
+    "externalId": null,
+    "tcgdex_id": "xy4-44",
+    "localId": "044",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "044/119",
+    "cardName": "Pumpkaboo",
+    "fullDisplayName": "Pumpkaboo 044/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      710
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-044-low.png",
+    "imageHighSrc": "cards/xy4-044-high.png"
+  },
+  {
+    "masterCardId": "19416",
+    "externalId": null,
+    "tcgdex_id": "xy4-43",
+    "localId": "043",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "043/119",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure 043/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lampent",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-043-low.png",
+    "imageHighSrc": "cards/xy4-043-high.png"
+  },
+  {
+    "masterCardId": "19407",
+    "externalId": null,
+    "tcgdex_id": "xy4-42",
+    "localId": "042",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "042/119",
+    "cardName": "Lampent",
+    "fullDisplayName": "Lampent 042/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      608
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litwick",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-042-low.png",
+    "imageHighSrc": "cards/xy4-042-high.png"
+  },
+  {
+    "masterCardId": "19399",
+    "externalId": null,
+    "tcgdex_id": "xy4-41",
+    "localId": "041",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "041/119",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick 041/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-041-low.png",
+    "imageHighSrc": "cards/xy4-041-high.png"
+  },
+  {
+    "masterCardId": "19389",
+    "externalId": null,
+    "tcgdex_id": "xy4-40",
+    "localId": "040",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "040/119",
+    "cardName": "Musharna",
+    "fullDisplayName": "Musharna 040/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      518
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munna",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-040-low.png",
+    "imageHighSrc": "cards/xy4-040-high.png"
+  },
+  {
+    "masterCardId": "19380",
+    "externalId": null,
+    "tcgdex_id": "xy4-39",
+    "localId": "039",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "039/119",
+    "cardName": "Munna",
+    "fullDisplayName": "Munna 039/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      517
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-039-low.png",
+    "imageHighSrc": "cards/xy4-039-high.png"
+  },
+  {
+    "masterCardId": "19370",
+    "externalId": null,
+    "tcgdex_id": "xy4-38",
+    "localId": "038",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "038/119",
+    "cardName": "Swalot",
+    "fullDisplayName": "Swalot 038/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      317
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gulpin",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-038-low.png",
+    "imageHighSrc": "cards/xy4-038-high.png"
+  },
+  {
+    "masterCardId": "19360",
+    "externalId": null,
+    "tcgdex_id": "xy4-37",
+    "localId": "037",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "037/119",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 037/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-037-low.png",
+    "imageHighSrc": "cards/xy4-037-high.png"
+  },
+  {
+    "masterCardId": "19350",
+    "externalId": null,
+    "tcgdex_id": "xy4-36",
+    "localId": "036",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "036/119",
+    "cardName": "Wobbuffet",
+    "fullDisplayName": "Wobbuffet 036/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      202
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-036-low.png",
+    "imageHighSrc": "cards/xy4-036-high.png"
+  },
+  {
+    "masterCardId": "19340",
+    "externalId": null,
+    "tcgdex_id": "xy4-35",
+    "localId": "035",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "035/119",
+    "cardName": "M Gengar-EX",
+    "fullDisplayName": "M Gengar-EX 035/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gengar-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-035-low.png",
+    "imageHighSrc": "cards/xy4-035-high.png"
+  },
+  {
+    "masterCardId": "19331",
+    "externalId": null,
+    "tcgdex_id": "xy4-34",
+    "localId": "034",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "034/119",
+    "cardName": "Gengar-EX",
+    "fullDisplayName": "Gengar-EX 034/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-034-low.png",
+    "imageHighSrc": "cards/xy4-034-high.png"
+  },
+  {
+    "masterCardId": "19321",
+    "externalId": null,
+    "tcgdex_id": "xy4-33",
+    "localId": "033",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "033/119",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 033/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-033-low.png",
+    "imageHighSrc": "cards/xy4-033-high.png"
+  },
+  {
+    "masterCardId": "19310",
+    "externalId": null,
+    "tcgdex_id": "xy4-32",
+    "localId": "032",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "032/119",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 032/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-032-low.png",
+    "imageHighSrc": "cards/xy4-032-high.png"
+  },
+  {
+    "masterCardId": "19300",
+    "externalId": null,
+    "tcgdex_id": "xy4-31",
+    "localId": "031",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "031/119",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 031/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-031-low.png",
+    "imageHighSrc": "cards/xy4-031-high.png"
+  },
+  {
+    "masterCardId": "19290",
+    "externalId": null,
+    "tcgdex_id": "xy4-30",
+    "localId": "030",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "030/119",
+    "cardName": "Heliolisk",
+    "fullDisplayName": "Heliolisk 030/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      695
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Helioptile",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-030-low.png",
+    "imageHighSrc": "cards/xy4-030-high.png"
+  },
+  {
+    "masterCardId": "19280",
+    "externalId": null,
+    "tcgdex_id": "xy4-29",
+    "localId": "029",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "029/119",
+    "cardName": "Helioptile",
+    "fullDisplayName": "Helioptile 029/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      694
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-029-low.png",
+    "imageHighSrc": "cards/xy4-029-high.png"
+  },
+  {
+    "masterCardId": "19270",
+    "externalId": null,
+    "tcgdex_id": "xy4-28",
+    "localId": "028",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "028/119",
+    "cardName": "Helioptile",
+    "fullDisplayName": "Helioptile 028/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      694
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-028-low.png",
+    "imageHighSrc": "cards/xy4-028-high.png"
+  },
+  {
+    "masterCardId": "19260",
+    "externalId": null,
+    "tcgdex_id": "xy4-27",
+    "localId": "027",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "027/119",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 027/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-027-low.png",
+    "imageHighSrc": "cards/xy4-027-high.png"
+  },
+  {
+    "masterCardId": "19250",
+    "externalId": null,
+    "tcgdex_id": "xy4-26",
+    "localId": "026",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "026/119",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 026/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-026-low.png",
+    "imageHighSrc": "cards/xy4-026-high.png"
+  },
+  {
+    "masterCardId": "19240",
+    "externalId": null,
+    "tcgdex_id": "xy4-25",
+    "localId": "025",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "025/119",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 025/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-025-low.png",
+    "imageHighSrc": "cards/xy4-025-high.png"
+  },
+  {
+    "masterCardId": "19229",
+    "externalId": null,
+    "tcgdex_id": "xy4-24a",
+    "localId": "24a",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "24a/119",
+    "cardName": "M Manectric-EX",
+    "fullDisplayName": "M Manectric-EX 24a/119 Phantom Forces",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Manectric-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy4-24a-low.png",
+    "imageHighSrc": "cards/xy4-24a-high.png"
+  },
+  {
+    "masterCardId": "19219",
+    "externalId": null,
+    "tcgdex_id": "xy4-24",
+    "localId": "024",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "024/119",
+    "cardName": "M Manectric-EX",
+    "fullDisplayName": "M Manectric-EX 024/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Manectric-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-024-low.png",
+    "imageHighSrc": "cards/xy4-024-high.png"
+  },
+  {
+    "masterCardId": "19209",
+    "externalId": null,
+    "tcgdex_id": "xy4-23",
+    "localId": "023",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "023/119",
+    "cardName": "Manectric-EX",
+    "fullDisplayName": "Manectric-EX 023/119 Phantom Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-023-low.png",
+    "imageHighSrc": "cards/xy4-023-high.png"
+  },
+  {
+    "masterCardId": "19199",
+    "externalId": null,
+    "tcgdex_id": "xy4-22",
+    "localId": "022",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "022/119",
+    "cardName": "Alomomola",
+    "fullDisplayName": "Alomomola 022/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      594
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-022-low.png",
+    "imageHighSrc": "cards/xy4-022-high.png"
+  },
+  {
+    "masterCardId": "19189",
+    "externalId": null,
+    "tcgdex_id": "xy4-21",
+    "localId": "021",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "021/119",
+    "cardName": "Jellicent",
+    "fullDisplayName": "Jellicent 021/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      593
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frillish",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-021-low.png",
+    "imageHighSrc": "cards/xy4-021-high.png"
+  },
+  {
+    "masterCardId": "19179",
+    "externalId": null,
+    "tcgdex_id": "xy4-20",
+    "localId": "020",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "020/119",
+    "cardName": "Frillish",
+    "fullDisplayName": "Frillish 020/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      592
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-020-low.png",
+    "imageHighSrc": "cards/xy4-020-high.png"
+  },
+  {
+    "masterCardId": "19169",
+    "externalId": null,
+    "tcgdex_id": "xy4-19",
+    "localId": "019",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "019/119",
+    "cardName": "Lumineon",
+    "fullDisplayName": "Lumineon 019/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      457
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finneon",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-019-low.png",
+    "imageHighSrc": "cards/xy4-019-high.png"
+  },
+  {
+    "masterCardId": "19159",
+    "externalId": null,
+    "tcgdex_id": "xy4-18",
+    "localId": "018",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "018/119",
+    "cardName": "Finneon",
+    "fullDisplayName": "Finneon 018/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      456
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-018-low.png",
+    "imageHighSrc": "cards/xy4-018-high.png"
+  },
+  {
+    "masterCardId": "19150",
+    "externalId": null,
+    "tcgdex_id": "xy4-17",
+    "localId": "017",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "017/119",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 017/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-017-low.png",
+    "imageHighSrc": "cards/xy4-017-high.png"
+  },
+  {
+    "masterCardId": "19140",
+    "externalId": null,
+    "tcgdex_id": "xy4-16",
+    "localId": "016",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "016/119",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 016/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-016-low.png",
+    "imageHighSrc": "cards/xy4-016-high.png"
+  },
+  {
+    "masterCardId": "19129",
+    "externalId": null,
+    "tcgdex_id": "xy4-15",
+    "localId": "015",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "015/119",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 015/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-015-low.png",
+    "imageHighSrc": "cards/xy4-015-high.png"
+  },
+  {
+    "masterCardId": "19120",
+    "externalId": null,
+    "tcgdex_id": "xy4-14",
+    "localId": "014",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "014/119",
+    "cardName": "Kingler",
+    "fullDisplayName": "Kingler 014/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      99
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krabby",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-014-low.png",
+    "imageHighSrc": "cards/xy4-014-high.png"
+  },
+  {
+    "masterCardId": "19110",
+    "externalId": null,
+    "tcgdex_id": "xy4-13",
+    "localId": "013",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "013/119",
+    "cardName": "Krabby",
+    "fullDisplayName": "Krabby 013/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      98
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-013-low.png",
+    "imageHighSrc": "cards/xy4-013-high.png"
+  },
+  {
+    "masterCardId": "19099",
+    "externalId": null,
+    "tcgdex_id": "xy4-12",
+    "localId": "012",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "012/119",
+    "cardName": "Pyroar",
+    "fullDisplayName": "Pyroar 012/119 Phantom Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      668
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litleo",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-012-low.png",
+    "imageHighSrc": "cards/xy4-012-high.png"
+  },
+  {
+    "masterCardId": "19090",
+    "externalId": null,
+    "tcgdex_id": "xy4-11",
+    "localId": "011",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "011/119",
+    "cardName": "Litleo",
+    "fullDisplayName": "Litleo 011/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      667
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-011-low.png",
+    "imageHighSrc": "cards/xy4-011-high.png"
+  },
+  {
+    "masterCardId": "19080",
+    "externalId": null,
+    "tcgdex_id": "xy4-10",
+    "localId": "010",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "010/119",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 010/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchinder",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-010-low.png",
+    "imageHighSrc": "cards/xy4-010-high.png"
+  },
+  {
+    "masterCardId": "19070",
+    "externalId": null,
+    "tcgdex_id": "xy4-9",
+    "localId": "009",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "009/119",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 009/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchling",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-009-low.png",
+    "imageHighSrc": "cards/xy4-009-high.png"
+  },
+  {
+    "masterCardId": "19060",
+    "externalId": null,
+    "tcgdex_id": "xy4-8",
+    "localId": "008",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "008/119",
+    "cardName": "Karrablast",
+    "fullDisplayName": "Karrablast 008/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      588
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-008-low.png",
+    "imageHighSrc": "cards/xy4-008-high.png"
+  },
+  {
+    "masterCardId": "19048",
+    "externalId": null,
+    "tcgdex_id": "xy4-7",
+    "localId": "007",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "007/119",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 007/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-007-low.png",
+    "imageHighSrc": "cards/xy4-007-high.png"
+  },
+  {
+    "masterCardId": "19039",
+    "externalId": null,
+    "tcgdex_id": "xy4-6",
+    "localId": "006",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "006/119",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 006/119 Phantom Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-006-low.png",
+    "imageHighSrc": "cards/xy4-006-high.png"
+  },
+  {
+    "masterCardId": "19028",
+    "externalId": null,
+    "tcgdex_id": "xy4-5",
+    "localId": "005",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "005/119",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 005/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-005-low.png",
+    "imageHighSrc": "cards/xy4-005-high.png"
+  },
+  {
+    "masterCardId": "19021",
+    "externalId": null,
+    "tcgdex_id": "xy4-4",
+    "localId": "004",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "004/119",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 004/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanma",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-004-low.png",
+    "imageHighSrc": "cards/xy4-004-high.png"
+  },
+  {
+    "masterCardId": "19010",
+    "externalId": null,
+    "tcgdex_id": "xy4-3",
+    "localId": "003",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "003/119",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 003/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-003-low.png",
+    "imageHighSrc": "cards/xy4-003-high.png"
+  },
+  {
+    "masterCardId": "19001",
+    "externalId": null,
+    "tcgdex_id": "xy4-2",
+    "localId": "002",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "002/119",
+    "cardName": "Venomoth",
+    "fullDisplayName": "Venomoth 002/119 Phantom Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venonat",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-002-low.png",
+    "imageHighSrc": "cards/xy4-002-high.png"
+  },
+  {
+    "masterCardId": "18985",
+    "externalId": null,
+    "tcgdex_id": "xy4-1",
+    "localId": "001",
+    "setCode": "xy4",
+    "setTcgdexId": "xy4",
+    "cardNumber": "001/119",
+    "cardName": "Venonat",
+    "fullDisplayName": "Venonat 001/119 Phantom Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      48
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy4-001-low.png",
+    "imageHighSrc": "cards/xy4-001-high.png"
+  }
+]

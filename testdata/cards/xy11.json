@@ -1,0 +1,3812 @@
+[
+  {
+    "masterCardId": "20042",
+    "externalId": null,
+    "tcgdex_id": "xy11-116",
+    "localId": "116",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "116/114",
+    "cardName": "Gardevoir-EX",
+    "fullDisplayName": "Gardevoir-EX 116/114 Steam Siege",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-116-low.png",
+    "imageHighSrc": "cards/xy11-116-high.png"
+  },
+  {
+    "masterCardId": "20037",
+    "externalId": null,
+    "tcgdex_id": "xy11-115",
+    "localId": "115",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "115/114",
+    "cardName": "Volcanion-EX",
+    "fullDisplayName": "Volcanion-EX 115/114 Steam Siege",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire",
+      "Water"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-115-low.png",
+    "imageHighSrc": "cards/xy11-115-high.png"
+  },
+  {
+    "masterCardId": "20032",
+    "externalId": null,
+    "tcgdex_id": "xy11-114",
+    "localId": "114",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "114/114",
+    "cardName": "Professor Sycamore",
+    "fullDisplayName": "Professor Sycamore 114/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-114-low.png",
+    "imageHighSrc": "cards/xy11-114-high.png"
+  },
+  {
+    "masterCardId": "20024",
+    "externalId": null,
+    "tcgdex_id": "xy11-113",
+    "localId": "113",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "113/114",
+    "cardName": "Pokémon Ranger",
+    "fullDisplayName": "Pokémon Ranger 113/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-113-low.png",
+    "imageHighSrc": "cards/xy11-113-high.png"
+  },
+  {
+    "masterCardId": "20016",
+    "externalId": null,
+    "tcgdex_id": "xy11-112",
+    "localId": "112",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "112/114",
+    "cardName": "M Gardevoir-EX",
+    "fullDisplayName": "M Gardevoir-EX 112/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Fairy",
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-112-low.png",
+    "imageHighSrc": "cards/xy11-112-high.png"
+  },
+  {
+    "masterCardId": "20008",
+    "externalId": null,
+    "tcgdex_id": "xy11-111",
+    "localId": "111",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "111/114",
+    "cardName": "Gardevoir-EX",
+    "fullDisplayName": "Gardevoir-EX 111/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-111-low.png",
+    "imageHighSrc": "cards/xy11-111-high.png"
+  },
+  {
+    "masterCardId": "19999",
+    "externalId": null,
+    "tcgdex_id": "xy11-110",
+    "localId": "110",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "110/114",
+    "cardName": "Magearna-EX",
+    "fullDisplayName": "Magearna-EX 110/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      801
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-110-low.png",
+    "imageHighSrc": "cards/xy11-110-high.png"
+  },
+  {
+    "masterCardId": "19989",
+    "externalId": null,
+    "tcgdex_id": "xy11-109",
+    "localId": "109",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "109/114",
+    "cardName": "M Steelix-EX",
+    "fullDisplayName": "M Steelix-EX 109/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Metal",
+      "Fighting"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Steelix-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-109-low.png",
+    "imageHighSrc": "cards/xy11-109-high.png"
+  },
+  {
+    "masterCardId": "19981",
+    "externalId": null,
+    "tcgdex_id": "xy11-108",
+    "localId": "108",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "108/114",
+    "cardName": "Steelix-EX",
+    "fullDisplayName": "Steelix-EX 108/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-108-low.png",
+    "imageHighSrc": "cards/xy11-108-high.png"
+  },
+  {
+    "masterCardId": "19972",
+    "externalId": null,
+    "tcgdex_id": "xy11-107",
+    "localId": "107",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "107/114",
+    "cardName": "Volcanion-EX",
+    "fullDisplayName": "Volcanion-EX 107/114 Steam Siege",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire",
+      "Water"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-107-low.png",
+    "imageHighSrc": "cards/xy11-107-high.png"
+  },
+  {
+    "masterCardId": "19963",
+    "externalId": null,
+    "tcgdex_id": "xy11-106",
+    "localId": "106",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "106/114",
+    "cardName": "Steelix Spirit Link",
+    "fullDisplayName": "Steelix Spirit Link 106/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-106-low.png",
+    "imageHighSrc": "cards/xy11-106-high.png"
+  },
+  {
+    "masterCardId": "19954",
+    "externalId": null,
+    "tcgdex_id": "xy11-105",
+    "localId": "105",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "105/114",
+    "cardName": "Special Charge",
+    "fullDisplayName": "Special Charge 105/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-105-low.png",
+    "imageHighSrc": "cards/xy11-105-high.png"
+  },
+  {
+    "masterCardId": "19946",
+    "externalId": null,
+    "tcgdex_id": "xy11-104",
+    "localId": "104",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "104/114",
+    "cardName": "Pokémon Ranger",
+    "fullDisplayName": "Pokémon Ranger 104/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-104-low.png",
+    "imageHighSrc": "cards/xy11-104-high.png"
+  },
+  {
+    "masterCardId": "19937",
+    "externalId": null,
+    "tcgdex_id": "xy11-103",
+    "localId": "103",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "103/114",
+    "cardName": "Ninja Boy",
+    "fullDisplayName": "Ninja Boy 103/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-103-low.png",
+    "imageHighSrc": "cards/xy11-103-high.png"
+  },
+  {
+    "masterCardId": "19928",
+    "externalId": null,
+    "tcgdex_id": "xy11-102",
+    "localId": "102",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "102/114",
+    "cardName": "Greedy Dice",
+    "fullDisplayName": "Greedy Dice 102/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-102-low.png",
+    "imageHighSrc": "cards/xy11-102-high.png"
+  },
+  {
+    "masterCardId": "19919",
+    "externalId": null,
+    "tcgdex_id": "xy11-101",
+    "localId": "101",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "101/114",
+    "cardName": "Gardevoir Spirit Link",
+    "fullDisplayName": "Gardevoir Spirit Link 101/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-101-low.png",
+    "imageHighSrc": "cards/xy11-101-high.png"
+  },
+  {
+    "masterCardId": "19910",
+    "externalId": null,
+    "tcgdex_id": "xy11-100",
+    "localId": "100",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "100/114",
+    "cardName": "Claw Fossil Anorith",
+    "fullDisplayName": "Claw Fossil Anorith 100/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-100-low.png",
+    "imageHighSrc": "cards/xy11-100-high.png"
+  },
+  {
+    "masterCardId": "19901",
+    "externalId": null,
+    "tcgdex_id": "xy11-99",
+    "localId": "099",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "099/114",
+    "cardName": "Captivating Poké Puff",
+    "fullDisplayName": "Captivating Poké Puff 099/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-099-low.png",
+    "imageHighSrc": "cards/xy11-099-high.png"
+  },
+  {
+    "masterCardId": "19892",
+    "externalId": null,
+    "tcgdex_id": "xy11-98",
+    "localId": "098",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "098/114",
+    "cardName": "Armor Fossil Shieldon",
+    "fullDisplayName": "Armor Fossil Shieldon 098/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-098-low.png",
+    "imageHighSrc": "cards/xy11-098-high.png"
+  },
+  {
+    "masterCardId": "19882",
+    "externalId": null,
+    "tcgdex_id": "xy11-97",
+    "localId": "097",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "097/114",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 097/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-097-low.png",
+    "imageHighSrc": "cards/xy11-097-high.png"
+  },
+  {
+    "masterCardId": "19873",
+    "externalId": null,
+    "tcgdex_id": "xy11-96",
+    "localId": "096",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "096/114",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 096/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchinder",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-096-low.png",
+    "imageHighSrc": "cards/xy11-096-high.png"
+  },
+  {
+    "masterCardId": "19864",
+    "externalId": null,
+    "tcgdex_id": "xy11-95",
+    "localId": "095",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "095/114",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 095/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchling",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-095-low.png",
+    "imageHighSrc": "cards/xy11-095-high.png"
+  },
+  {
+    "masterCardId": "19856",
+    "externalId": null,
+    "tcgdex_id": "xy11-94",
+    "localId": "094",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "094/114",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 094/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-094-low.png",
+    "imageHighSrc": "cards/xy11-094-high.png"
+  },
+  {
+    "masterCardId": "19847",
+    "externalId": null,
+    "tcgdex_id": "xy11-93",
+    "localId": "093",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "093/114",
+    "cardName": "Braviary",
+    "fullDisplayName": "Braviary 093/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      628
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rufflet",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-093-low.png",
+    "imageHighSrc": "cards/xy11-093-high.png"
+  },
+  {
+    "masterCardId": "19838",
+    "externalId": null,
+    "tcgdex_id": "xy11-92",
+    "localId": "092",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "092/114",
+    "cardName": "Rufflet",
+    "fullDisplayName": "Rufflet 092/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      627
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-092-low.png",
+    "imageHighSrc": "cards/xy11-092-high.png"
+  },
+  {
+    "masterCardId": "19830",
+    "externalId": null,
+    "tcgdex_id": "xy11-91",
+    "localId": "091",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "091/114",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 091/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-091-low.png",
+    "imageHighSrc": "cards/xy11-091-high.png"
+  },
+  {
+    "masterCardId": "19821",
+    "externalId": null,
+    "tcgdex_id": "xy11-90",
+    "localId": "090",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "090/114",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 090/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-090-low.png",
+    "imageHighSrc": "cards/xy11-090-high.png"
+  },
+  {
+    "masterCardId": "19812",
+    "externalId": null,
+    "tcgdex_id": "xy11-89",
+    "localId": "089",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "089/114",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 089/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-089-low.png",
+    "imageHighSrc": "cards/xy11-089-high.png"
+  },
+  {
+    "masterCardId": "19805",
+    "externalId": null,
+    "tcgdex_id": "xy11-88",
+    "localId": "088",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "088/114",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 088/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-088-low.png",
+    "imageHighSrc": "cards/xy11-088-high.png"
+  },
+  {
+    "masterCardId": "19796",
+    "externalId": null,
+    "tcgdex_id": "xy11-87",
+    "localId": "087",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "087/114",
+    "cardName": "Hydreigon BREAK",
+    "fullDisplayName": "Hydreigon BREAK 087/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 190,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hydreigon",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-087-low.png",
+    "imageHighSrc": "cards/xy11-087-high.png"
+  },
+  {
+    "masterCardId": "19787",
+    "externalId": null,
+    "tcgdex_id": "xy11-86",
+    "localId": "086",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "086/114",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 086/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-086-low.png",
+    "imageHighSrc": "cards/xy11-086-high.png"
+  },
+  {
+    "masterCardId": "19779",
+    "externalId": null,
+    "tcgdex_id": "xy11-85",
+    "localId": "085",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "085/114",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 085/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-085-low.png",
+    "imageHighSrc": "cards/xy11-085-high.png"
+  },
+  {
+    "masterCardId": "19770",
+    "externalId": null,
+    "tcgdex_id": "xy11-84",
+    "localId": "084",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "084/114",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 084/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-084-low.png",
+    "imageHighSrc": "cards/xy11-084-high.png"
+  },
+  {
+    "masterCardId": "19761",
+    "externalId": null,
+    "tcgdex_id": "xy11-83",
+    "localId": "083",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "083/114",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 083/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-083-low.png",
+    "imageHighSrc": "cards/xy11-083-high.png"
+  },
+  {
+    "masterCardId": "19752",
+    "externalId": null,
+    "tcgdex_id": "xy11-82",
+    "localId": "082",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "082/114",
+    "cardName": "Xerneas BREAK",
+    "fullDisplayName": "Xerneas BREAK 082/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 150,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      716
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Xerneas",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-082-low.png",
+    "imageHighSrc": "cards/xy11-082-high.png"
+  },
+  {
+    "masterCardId": "19743",
+    "externalId": null,
+    "tcgdex_id": "xy11-81",
+    "localId": "081",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "081/114",
+    "cardName": "Xerneas",
+    "fullDisplayName": "Xerneas 081/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      716
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-081-low.png",
+    "imageHighSrc": "cards/xy11-081-high.png"
+  },
+  {
+    "masterCardId": "19734",
+    "externalId": null,
+    "tcgdex_id": "xy11-80",
+    "localId": "080",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "080/114",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 080/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-080-low.png",
+    "imageHighSrc": "cards/xy11-080-high.png"
+  },
+  {
+    "masterCardId": "19725",
+    "externalId": null,
+    "tcgdex_id": "xy11-79",
+    "localId": "079",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "079/114",
+    "cardName": "M Gardevoir-EX",
+    "fullDisplayName": "M Gardevoir-EX 079/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Fairy",
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-079-low.png",
+    "imageHighSrc": "cards/xy11-079-high.png"
+  },
+  {
+    "masterCardId": "19716",
+    "externalId": null,
+    "tcgdex_id": "xy11-78",
+    "localId": "078",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "078/114",
+    "cardName": "Gardevoir-EX",
+    "fullDisplayName": "Gardevoir-EX 078/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-078-low.png",
+    "imageHighSrc": "cards/xy11-078-high.png"
+  },
+  {
+    "masterCardId": "19706",
+    "externalId": null,
+    "tcgdex_id": "xy11-77",
+    "localId": "077",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "077/114",
+    "cardName": "Azumarill",
+    "fullDisplayName": "Azumarill 077/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fairy",
+      "Water"
+    ],
+    "dexIds": [
+      184
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marill",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-077-low.png",
+    "imageHighSrc": "cards/xy11-077-high.png"
+  },
+  {
+    "masterCardId": "19697",
+    "externalId": null,
+    "tcgdex_id": "xy11-76",
+    "localId": "076",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "076/114",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 076/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-076-low.png",
+    "imageHighSrc": "cards/xy11-076-high.png"
+  },
+  {
+    "masterCardId": "19688",
+    "externalId": null,
+    "tcgdex_id": "xy11-75",
+    "localId": "075",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "075/114",
+    "cardName": "Magearna-EX",
+    "fullDisplayName": "Magearna-EX 075/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      801
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-075-low.png",
+    "imageHighSrc": "cards/xy11-075-high.png"
+  },
+  {
+    "masterCardId": "19679",
+    "externalId": null,
+    "tcgdex_id": "xy11-74",
+    "localId": "074",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "074/114",
+    "cardName": "Cobalion",
+    "fullDisplayName": "Cobalion 074/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      638
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-074-low.png",
+    "imageHighSrc": "cards/xy11-074-high.png"
+  },
+  {
+    "masterCardId": "19670",
+    "externalId": null,
+    "tcgdex_id": "xy11-73",
+    "localId": "073",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "073/114",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 073/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klang",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-073-low.png",
+    "imageHighSrc": "cards/xy11-073-high.png"
+  },
+  {
+    "masterCardId": "19661",
+    "externalId": null,
+    "tcgdex_id": "xy11-72",
+    "localId": "072",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "072/114",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 072/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klink",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-072-low.png",
+    "imageHighSrc": "cards/xy11-072-high.png"
+  },
+  {
+    "masterCardId": "19652",
+    "externalId": null,
+    "tcgdex_id": "xy11-71",
+    "localId": "071",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "071/114",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 071/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-071-low.png",
+    "imageHighSrc": "cards/xy11-071-high.png"
+  },
+  {
+    "masterCardId": "19643",
+    "externalId": null,
+    "tcgdex_id": "xy11-70",
+    "localId": "070",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "070/114",
+    "cardName": "Bastiodon",
+    "fullDisplayName": "Bastiodon 070/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      411
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shieldon",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-070-low.png",
+    "imageHighSrc": "cards/xy11-070-high.png"
+  },
+  {
+    "masterCardId": "19634",
+    "externalId": null,
+    "tcgdex_id": "xy11-69",
+    "localId": "069",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "069/114",
+    "cardName": "Shieldon",
+    "fullDisplayName": "Shieldon 069/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      410
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Armor Fossil Shieldon",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-069-low.png",
+    "imageHighSrc": "cards/xy11-069-high.png"
+  },
+  {
+    "masterCardId": "19625",
+    "externalId": null,
+    "tcgdex_id": "xy11-68",
+    "localId": "068",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "068/114",
+    "cardName": "M Steelix-EX",
+    "fullDisplayName": "M Steelix-EX 068/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Metal",
+      "Fighting"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Steelix-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-068-low.png",
+    "imageHighSrc": "cards/xy11-068-high.png"
+  },
+  {
+    "masterCardId": "19616",
+    "externalId": null,
+    "tcgdex_id": "xy11-67",
+    "localId": "067",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "067/114",
+    "cardName": "Steelix-EX",
+    "fullDisplayName": "Steelix-EX 067/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-067-low.png",
+    "imageHighSrc": "cards/xy11-067-high.png"
+  },
+  {
+    "masterCardId": "19607",
+    "externalId": null,
+    "tcgdex_id": "xy11-66",
+    "localId": "066",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "066/114",
+    "cardName": "Yveltal BREAK",
+    "fullDisplayName": "Yveltal BREAK 066/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 150,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yveltal",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-066-low.png",
+    "imageHighSrc": "cards/xy11-066-high.png"
+  },
+  {
+    "masterCardId": "19598",
+    "externalId": null,
+    "tcgdex_id": "xy11-65",
+    "localId": "065",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "065/114",
+    "cardName": "Yveltal",
+    "fullDisplayName": "Yveltal 065/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-065-low.png",
+    "imageHighSrc": "cards/xy11-065-high.png"
+  },
+  {
+    "masterCardId": "19589",
+    "externalId": null,
+    "tcgdex_id": "xy11-64",
+    "localId": "064",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "064/114",
+    "cardName": "Bisharp",
+    "fullDisplayName": "Bisharp 064/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness",
+      "Metal"
+    ],
+    "dexIds": [
+      625
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawniard",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-064-low.png",
+    "imageHighSrc": "cards/xy11-064-high.png"
+  },
+  {
+    "masterCardId": "19580",
+    "externalId": null,
+    "tcgdex_id": "xy11-63",
+    "localId": "063",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "063/114",
+    "cardName": "Pawniard",
+    "fullDisplayName": "Pawniard 063/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      624
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-063-low.png",
+    "imageHighSrc": "cards/xy11-063-high.png"
+  },
+  {
+    "masterCardId": "19571",
+    "externalId": null,
+    "tcgdex_id": "xy11-62",
+    "localId": "062",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "062/114",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 062/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-062-low.png",
+    "imageHighSrc": "cards/xy11-062-high.png"
+  },
+  {
+    "masterCardId": "19562",
+    "externalId": null,
+    "tcgdex_id": "xy11-61",
+    "localId": "061",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "061/114",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 061/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      461
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sneasel",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-061-low.png",
+    "imageHighSrc": "cards/xy11-061-high.png"
+  },
+  {
+    "masterCardId": "19553",
+    "externalId": null,
+    "tcgdex_id": "xy11-60",
+    "localId": "060",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "060/114",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 060/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-060-low.png",
+    "imageHighSrc": "cards/xy11-060-high.png"
+  },
+  {
+    "masterCardId": "19544",
+    "externalId": null,
+    "tcgdex_id": "xy11-59",
+    "localId": "059",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "059/114",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 059/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-059-low.png",
+    "imageHighSrc": "cards/xy11-059-high.png"
+  },
+  {
+    "masterCardId": "19535",
+    "externalId": null,
+    "tcgdex_id": "xy11-58",
+    "localId": "058",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "058/114",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 058/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-058-low.png",
+    "imageHighSrc": "cards/xy11-058-high.png"
+  },
+  {
+    "masterCardId": "19526",
+    "externalId": null,
+    "tcgdex_id": "xy11-57",
+    "localId": "057",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "057/114",
+    "cardName": "Armaldo",
+    "fullDisplayName": "Armaldo 057/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Anorith",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-057-low.png",
+    "imageHighSrc": "cards/xy11-057-high.png"
+  },
+  {
+    "masterCardId": "19517",
+    "externalId": null,
+    "tcgdex_id": "xy11-56",
+    "localId": "056",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "056/114",
+    "cardName": "Anorith",
+    "fullDisplayName": "Anorith 056/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      347
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Claw Fossil Anorith",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-056-low.png",
+    "imageHighSrc": "cards/xy11-056-high.png"
+  },
+  {
+    "masterCardId": "19508",
+    "externalId": null,
+    "tcgdex_id": "xy11-55",
+    "localId": "055",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "055/114",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 055/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nosepass",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-055-low.png",
+    "imageHighSrc": "cards/xy11-055-high.png"
+  },
+  {
+    "masterCardId": "19499",
+    "externalId": null,
+    "tcgdex_id": "xy11-54",
+    "localId": "054",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "054/114",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 054/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-054-low.png",
+    "imageHighSrc": "cards/xy11-054-high.png"
+  },
+  {
+    "masterCardId": "19490",
+    "externalId": null,
+    "tcgdex_id": "xy11-53",
+    "localId": "053",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "053/114",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 053/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-053-low.png",
+    "imageHighSrc": "cards/xy11-053-high.png"
+  },
+  {
+    "masterCardId": "19481",
+    "externalId": null,
+    "tcgdex_id": "xy11-52",
+    "localId": "052",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "052/114",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 052/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-052-low.png",
+    "imageHighSrc": "cards/xy11-052-high.png"
+  },
+  {
+    "masterCardId": "19472",
+    "externalId": null,
+    "tcgdex_id": "xy11-51",
+    "localId": "051",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "051/114",
+    "cardName": "Hoopa",
+    "fullDisplayName": "Hoopa 051/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshinobu Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-051-low.png",
+    "imageHighSrc": "cards/xy11-051-high.png"
+  },
+  {
+    "masterCardId": "19463",
+    "externalId": null,
+    "tcgdex_id": "xy11-50",
+    "localId": "050",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "050/114",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure 050/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lampent",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-050-low.png",
+    "imageHighSrc": "cards/xy11-050-high.png"
+  },
+  {
+    "masterCardId": "19454",
+    "externalId": null,
+    "tcgdex_id": "xy11-49",
+    "localId": "049",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "049/114",
+    "cardName": "Lampent",
+    "fullDisplayName": "Lampent 049/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      608
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litwick",
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-049-low.png",
+    "imageHighSrc": "cards/xy11-049-high.png"
+  },
+  {
+    "masterCardId": "19445",
+    "externalId": null,
+    "tcgdex_id": "xy11-48",
+    "localId": "048",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "048/114",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick 048/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-048-low.png",
+    "imageHighSrc": "cards/xy11-048-high.png"
+  },
+  {
+    "masterCardId": "19436",
+    "externalId": null,
+    "tcgdex_id": "xy11-47",
+    "localId": "047",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "047/114",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 047/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-047-low.png",
+    "imageHighSrc": "cards/xy11-047-high.png"
+  },
+  {
+    "masterCardId": "19427",
+    "externalId": null,
+    "tcgdex_id": "xy11-46",
+    "localId": "046",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "046/114",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 046/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-046-low.png",
+    "imageHighSrc": "cards/xy11-046-high.png"
+  },
+  {
+    "masterCardId": "19417",
+    "externalId": null,
+    "tcgdex_id": "xy11-45",
+    "localId": "045",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "045/114",
+    "cardName": "Nidoking",
+    "fullDisplayName": "Nidoking 045/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorino",
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-045-low.png",
+    "imageHighSrc": "cards/xy11-045-high.png"
+  },
+  {
+    "masterCardId": "19408",
+    "externalId": null,
+    "tcgdex_id": "xy11-44",
+    "localId": "044",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "044/114",
+    "cardName": "Nidorino",
+    "fullDisplayName": "Nidorino 044/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      33
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♂",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-044-low.png",
+    "imageHighSrc": "cards/xy11-044-high.png"
+  },
+  {
+    "masterCardId": "19398",
+    "externalId": null,
+    "tcgdex_id": "xy11-43",
+    "localId": "043",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "043/114",
+    "cardName": "Nidoran ♂",
+    "fullDisplayName": "Nidoran ♂ 043/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      32
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy11-043-low.png",
+    "imageHighSrc": "cards/xy11-043-high.png"
+  },
+  {
+    "masterCardId": "19390",
+    "externalId": null,
+    "tcgdex_id": "xy11-42",
+    "localId": "042",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "042/114",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 042/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning",
+      "Grass"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-042-low.png",
+    "imageHighSrc": "cards/xy11-042-high.png"
+  },
+  {
+    "masterCardId": "19381",
+    "externalId": null,
+    "tcgdex_id": "xy11-41",
+    "localId": "041",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "041/114",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 041/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-041-low.png",
+    "imageHighSrc": "cards/xy11-041-high.png"
+  },
+  {
+    "masterCardId": "19373",
+    "externalId": null,
+    "tcgdex_id": "xy11-40",
+    "localId": "040",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "040/114",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 040/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-040-low.png",
+    "imageHighSrc": "cards/xy11-040-high.png"
+  },
+  {
+    "masterCardId": "19361",
+    "externalId": null,
+    "tcgdex_id": "xy11-39",
+    "localId": "039",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "039/114",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 039/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-039-low.png",
+    "imageHighSrc": "cards/xy11-039-high.png"
+  },
+  {
+    "masterCardId": "19354",
+    "externalId": null,
+    "tcgdex_id": "xy11-38",
+    "localId": "038",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "038/114",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 038/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eri Yamaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-038-low.png",
+    "imageHighSrc": "cards/xy11-038-high.png"
+  },
+  {
+    "masterCardId": "19343",
+    "externalId": null,
+    "tcgdex_id": "xy11-37",
+    "localId": "037",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "037/114",
+    "cardName": "Avalugg",
+    "fullDisplayName": "Avalugg 037/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      713
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bergmite",
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-037-low.png",
+    "imageHighSrc": "cards/xy11-037-high.png"
+  },
+  {
+    "masterCardId": "19334",
+    "externalId": null,
+    "tcgdex_id": "xy11-36",
+    "localId": "036",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "036/114",
+    "cardName": "Bergmite",
+    "fullDisplayName": "Bergmite 036/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      712
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-036-low.png",
+    "imageHighSrc": "cards/xy11-036-high.png"
+  },
+  {
+    "masterCardId": "19325",
+    "externalId": null,
+    "tcgdex_id": "xy11-35",
+    "localId": "035",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "035/114",
+    "cardName": "Clawitzer BREAK",
+    "fullDisplayName": "Clawitzer BREAK 035/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      693
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clawitzer",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-035-low.png",
+    "imageHighSrc": "cards/xy11-035-high.png"
+  },
+  {
+    "masterCardId": "19314",
+    "externalId": null,
+    "tcgdex_id": "xy11-34",
+    "localId": "034",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "034/114",
+    "cardName": "Clawitzer",
+    "fullDisplayName": "Clawitzer 034/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      693
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clauncher",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-034-low.png",
+    "imageHighSrc": "cards/xy11-034-high.png"
+  },
+  {
+    "masterCardId": "19304",
+    "externalId": null,
+    "tcgdex_id": "xy11-33",
+    "localId": "033",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "033/114",
+    "cardName": "Clauncher",
+    "fullDisplayName": "Clauncher 033/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      692
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-033-low.png",
+    "imageHighSrc": "cards/xy11-033-high.png"
+  },
+  {
+    "masterCardId": "19295",
+    "externalId": null,
+    "tcgdex_id": "xy11-32",
+    "localId": "032",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "032/114",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 032/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-032-low.png",
+    "imageHighSrc": "cards/xy11-032-high.png"
+  },
+  {
+    "masterCardId": "19285",
+    "externalId": null,
+    "tcgdex_id": "xy11-31",
+    "localId": "031",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "031/114",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 031/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-031-low.png",
+    "imageHighSrc": "cards/xy11-031-high.png"
+  },
+  {
+    "masterCardId": "19275",
+    "externalId": null,
+    "tcgdex_id": "xy11-30",
+    "localId": "030",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "030/114",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 030/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-030-low.png",
+    "imageHighSrc": "cards/xy11-030-high.png"
+  },
+  {
+    "masterCardId": "19265",
+    "externalId": null,
+    "tcgdex_id": "xy11-29",
+    "localId": "029",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "029/114",
+    "cardName": "Gastrodon",
+    "fullDisplayName": "Gastrodon 029/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      423
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellos",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-029-low.png",
+    "imageHighSrc": "cards/xy11-029-high.png"
+  },
+  {
+    "masterCardId": "19255",
+    "externalId": null,
+    "tcgdex_id": "xy11-28",
+    "localId": "028",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "028/114",
+    "cardName": "Shellos",
+    "fullDisplayName": "Shellos 028/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      422
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-028-low.png",
+    "imageHighSrc": "cards/xy11-028-high.png"
+  },
+  {
+    "masterCardId": "19245",
+    "externalId": null,
+    "tcgdex_id": "xy11-27",
+    "localId": "027",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "027/114",
+    "cardName": "Mantine",
+    "fullDisplayName": "Mantine 027/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      226
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "DemizuPosuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-027-low.png",
+    "imageHighSrc": "cards/xy11-027-high.png"
+  },
+  {
+    "masterCardId": "19236",
+    "externalId": null,
+    "tcgdex_id": "xy11-26",
+    "localId": "026",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "026/114",
+    "cardName": "Volcanion-EX",
+    "fullDisplayName": "Volcanion-EX 026/114 Steam Siege",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire",
+      "Water"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-026-low.png",
+    "imageHighSrc": "cards/xy11-026-high.png"
+  },
+  {
+    "masterCardId": "19226",
+    "externalId": null,
+    "tcgdex_id": "xy11-25",
+    "localId": "025",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "025/114",
+    "cardName": "Volcanion",
+    "fullDisplayName": "Volcanion 025/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-025-low.png",
+    "imageHighSrc": "cards/xy11-025-high.png"
+  },
+  {
+    "masterCardId": "19217",
+    "externalId": null,
+    "tcgdex_id": "xy11-24",
+    "localId": "024",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "024/114",
+    "cardName": "Pyroar BREAK",
+    "fullDisplayName": "Pyroar BREAK 024/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      668
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pyroar",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-024-low.png",
+    "imageHighSrc": "cards/xy11-024-high.png"
+  },
+  {
+    "masterCardId": "19207",
+    "externalId": null,
+    "tcgdex_id": "xy11-23",
+    "localId": "023",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "023/114",
+    "cardName": "Pyroar",
+    "fullDisplayName": "Pyroar 023/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      668
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litleo",
+    "artist": "Yumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-023-low.png",
+    "imageHighSrc": "cards/xy11-023-high.png"
+  },
+  {
+    "masterCardId": "19197",
+    "externalId": null,
+    "tcgdex_id": "xy11-22",
+    "localId": "022",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "022/114",
+    "cardName": "Litleo",
+    "fullDisplayName": "Litleo 022/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      667
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-022-low.png",
+    "imageHighSrc": "cards/xy11-022-high.png"
+  },
+  {
+    "masterCardId": "19187",
+    "externalId": null,
+    "tcgdex_id": "xy11-21",
+    "localId": "021",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "021/114",
+    "cardName": "Talonflame BREAK",
+    "fullDisplayName": "Talonflame BREAK 021/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Talonflame",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-021-low.png",
+    "imageHighSrc": "cards/xy11-021-high.png"
+  },
+  {
+    "masterCardId": "19177",
+    "externalId": null,
+    "tcgdex_id": "xy11-20",
+    "localId": "020",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "020/114",
+    "cardName": "Infernape",
+    "fullDisplayName": "Infernape 020/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      392
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Monferno",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-020-low.png",
+    "imageHighSrc": "cards/xy11-020-high.png"
+  },
+  {
+    "masterCardId": "19166",
+    "externalId": null,
+    "tcgdex_id": "xy11-19",
+    "localId": "019",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "019/114",
+    "cardName": "Monferno",
+    "fullDisplayName": "Monferno 019/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      391
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chimchar",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-019-low.png",
+    "imageHighSrc": "cards/xy11-019-high.png"
+  },
+  {
+    "masterCardId": "19157",
+    "externalId": null,
+    "tcgdex_id": "xy11-18",
+    "localId": "018",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "018/114",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 018/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-018-low.png",
+    "imageHighSrc": "cards/xy11-018-high.png"
+  },
+  {
+    "masterCardId": "19147",
+    "externalId": null,
+    "tcgdex_id": "xy11-17",
+    "localId": "017",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "017/114",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 017/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-017-low.png",
+    "imageHighSrc": "cards/xy11-017-high.png"
+  },
+  {
+    "masterCardId": "19137",
+    "externalId": null,
+    "tcgdex_id": "xy11-16",
+    "localId": "016",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "016/114",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 016/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-016-low.png",
+    "imageHighSrc": "cards/xy11-016-high.png"
+  },
+  {
+    "masterCardId": "19127",
+    "externalId": null,
+    "tcgdex_id": "xy11-15",
+    "localId": "015",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "015/114",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 015/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire",
+      "Grass"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-015-low.png",
+    "imageHighSrc": "cards/xy11-015-high.png"
+  },
+  {
+    "masterCardId": "19117",
+    "externalId": null,
+    "tcgdex_id": "xy11-14",
+    "localId": "014",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "014/114",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 014/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-014-low.png",
+    "imageHighSrc": "cards/xy11-014-high.png"
+  },
+  {
+    "masterCardId": "19106",
+    "externalId": null,
+    "tcgdex_id": "xy11-13",
+    "localId": "013",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "013/114",
+    "cardName": "Amoonguss",
+    "fullDisplayName": "Amoonguss 013/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      591
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Foongus",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-013-low.png",
+    "imageHighSrc": "cards/xy11-013-high.png"
+  },
+  {
+    "masterCardId": "19096",
+    "externalId": null,
+    "tcgdex_id": "xy11-12",
+    "localId": "012",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "012/114",
+    "cardName": "Foongus",
+    "fullDisplayName": "Foongus 012/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      590
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-012-low.png",
+    "imageHighSrc": "cards/xy11-012-high.png"
+  },
+  {
+    "masterCardId": "19086",
+    "externalId": null,
+    "tcgdex_id": "xy11-11",
+    "localId": "011",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "011/114",
+    "cardName": "Shiftry",
+    "fullDisplayName": "Shiftry 011/114 Steam Siege",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      275
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nuzleaf",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-011-low.png",
+    "imageHighSrc": "cards/xy11-011-high.png"
+  },
+  {
+    "masterCardId": "19076",
+    "externalId": null,
+    "tcgdex_id": "xy11-10",
+    "localId": "010",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "010/114",
+    "cardName": "Nuzleaf",
+    "fullDisplayName": "Nuzleaf 010/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      274
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seedot",
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-010-low.png",
+    "imageHighSrc": "cards/xy11-010-high.png"
+  },
+  {
+    "masterCardId": "19067",
+    "externalId": null,
+    "tcgdex_id": "xy11-9",
+    "localId": "009",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "009/114",
+    "cardName": "Seedot",
+    "fullDisplayName": "Seedot 009/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      273
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-009-low.png",
+    "imageHighSrc": "cards/xy11-009-high.png"
+  },
+  {
+    "masterCardId": "19057",
+    "externalId": null,
+    "tcgdex_id": "xy11-8",
+    "localId": "008",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "008/114",
+    "cardName": "Yanmega BREAK",
+    "fullDisplayName": "Yanmega BREAK 008/114 Steam Siege",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanmega",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-008-low.png",
+    "imageHighSrc": "cards/xy11-008-high.png"
+  },
+  {
+    "masterCardId": "19047",
+    "externalId": null,
+    "tcgdex_id": "xy11-7",
+    "localId": "007",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "007/114",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 007/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanma",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-007-low.png",
+    "imageHighSrc": "cards/xy11-007-high.png"
+  },
+  {
+    "masterCardId": "19036",
+    "externalId": null,
+    "tcgdex_id": "xy11-6",
+    "localId": "006",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "006/114",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 006/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-006-low.png",
+    "imageHighSrc": "cards/xy11-006-high.png"
+  },
+  {
+    "masterCardId": "19026",
+    "externalId": null,
+    "tcgdex_id": "xy11-5",
+    "localId": "005",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "005/114",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 005/114 Steam Siege",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-005-low.png",
+    "imageHighSrc": "cards/xy11-005-high.png"
+  },
+  {
+    "masterCardId": "19016",
+    "externalId": null,
+    "tcgdex_id": "xy11-4",
+    "localId": "004",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "004/114",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 004/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Eri Yamaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-004-low.png",
+    "imageHighSrc": "cards/xy11-004-high.png"
+  },
+  {
+    "masterCardId": "19005",
+    "externalId": null,
+    "tcgdex_id": "xy11-3",
+    "localId": "003",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "003/114",
+    "cardName": "Hoppip",
+    "fullDisplayName": "Hoppip 003/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      187
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-003-low.png",
+    "imageHighSrc": "cards/xy11-003-high.png"
+  },
+  {
+    "masterCardId": "18996",
+    "externalId": null,
+    "tcgdex_id": "xy11-2",
+    "localId": "002",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "002/114",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 002/114 Steam Siege",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-002-low.png",
+    "imageHighSrc": "cards/xy11-002-high.png"
+  },
+  {
+    "masterCardId": "18986",
+    "externalId": null,
+    "tcgdex_id": "xy11-1",
+    "localId": "001",
+    "setCode": "xy11",
+    "setTcgdexId": "xy11",
+    "cardNumber": "001/114",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 001/114 Steam Siege",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OOYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy11-001-low.png",
+    "imageHighSrc": "cards/xy11-001-high.png"
+  }
+]

@@ -1,0 +1,3230 @@
+[
+  {
+    "masterCardId": "4921",
+    "externalId": null,
+    "tcgdex_id": "dp5-100",
+    "localId": "100",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "100/100",
+    "cardName": "Porygon-Z LV.X",
+    "fullDisplayName": "Porygon-Z LV.X 100/100 Majestic Dawn",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon-Z",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-100-low.png",
+    "imageHighSrc": "cards/dp5-100-high.png"
+  },
+  {
+    "masterCardId": "4910",
+    "externalId": null,
+    "tcgdex_id": "dp5-99",
+    "localId": "099",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "099/100",
+    "cardName": "Leafeon LV.X",
+    "fullDisplayName": "Leafeon LV.X 099/100 Majestic Dawn",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Leafeon",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-099-low.png",
+    "imageHighSrc": "cards/dp5-099-high.png"
+  },
+  {
+    "masterCardId": "4901",
+    "externalId": null,
+    "tcgdex_id": "dp5-98",
+    "localId": "098",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "098/100",
+    "cardName": "Glaceon LV.X",
+    "fullDisplayName": "Glaceon LV.X 098/100 Majestic Dawn",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Glaceon",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-098-low.png",
+    "imageHighSrc": "cards/dp5-098-high.png"
+  },
+  {
+    "masterCardId": "4893",
+    "externalId": null,
+    "tcgdex_id": "dp5-97",
+    "localId": "097",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "097/100",
+    "cardName": "Garchomp LV.X",
+    "fullDisplayName": "Garchomp LV.X 097/100 Majestic Dawn",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Garchomp",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-097-low.png",
+    "imageHighSrc": "cards/dp5-097-high.png"
+  },
+  {
+    "masterCardId": "4885",
+    "externalId": null,
+    "tcgdex_id": "dp5-96",
+    "localId": "096",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "096/100",
+    "cardName": "Recover Energy",
+    "fullDisplayName": "Recover Energy 096/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-096-low.png",
+    "imageHighSrc": "cards/dp5-096-high.png"
+  },
+  {
+    "masterCardId": "4877",
+    "externalId": null,
+    "tcgdex_id": "dp5-95",
+    "localId": "095",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "095/100",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 095/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-095-low.png",
+    "imageHighSrc": "cards/dp5-095-high.png"
+  },
+  {
+    "masterCardId": "4870",
+    "externalId": null,
+    "tcgdex_id": "dp5-94",
+    "localId": "094",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "094/100",
+    "cardName": "Health Energy",
+    "fullDisplayName": "Health Energy 094/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-094-low.png",
+    "imageHighSrc": "cards/dp5-094-high.png"
+  },
+  {
+    "masterCardId": "4862",
+    "externalId": null,
+    "tcgdex_id": "dp5-93",
+    "localId": "093",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "093/100",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 093/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-093-low.png",
+    "imageHighSrc": "cards/dp5-093-high.png"
+  },
+  {
+    "masterCardId": "4857",
+    "externalId": null,
+    "tcgdex_id": "dp5-92",
+    "localId": "092",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "092/100",
+    "cardName": "Call Energy",
+    "fullDisplayName": "Call Energy 092/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-092-low.png",
+    "imageHighSrc": "cards/dp5-092-high.png"
+  },
+  {
+    "masterCardId": "4849",
+    "externalId": null,
+    "tcgdex_id": "dp5-91",
+    "localId": "091",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "091/100",
+    "cardName": "Helix Fossil",
+    "fullDisplayName": "Helix Fossil 091/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-091-low.png",
+    "imageHighSrc": "cards/dp5-091-high.png"
+  },
+  {
+    "masterCardId": "4841",
+    "externalId": null,
+    "tcgdex_id": "dp5-90",
+    "localId": "090",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "090/100",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 090/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-090-low.png",
+    "imageHighSrc": "cards/dp5-090-high.png"
+  },
+  {
+    "masterCardId": "4833",
+    "externalId": null,
+    "tcgdex_id": "dp5-89",
+    "localId": "089",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "089/100",
+    "cardName": "Dome Fossil",
+    "fullDisplayName": "Dome Fossil 089/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-089-low.png",
+    "imageHighSrc": "cards/dp5-089-high.png"
+  },
+  {
+    "masterCardId": "4825",
+    "externalId": null,
+    "tcgdex_id": "dp5-88",
+    "localId": "088",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "088/100",
+    "cardName": "Warp Point",
+    "fullDisplayName": "Warp Point 088/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-088-low.png",
+    "imageHighSrc": "cards/dp5-088-high.png"
+  },
+  {
+    "masterCardId": "4817",
+    "externalId": null,
+    "tcgdex_id": "dp5-87",
+    "localId": "087",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "087/100",
+    "cardName": "Super Scoop Up",
+    "fullDisplayName": "Super Scoop Up 087/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-087-low.png",
+    "imageHighSrc": "cards/dp5-087-high.png"
+  },
+  {
+    "masterCardId": "4809",
+    "externalId": null,
+    "tcgdex_id": "dp5-86",
+    "localId": "086",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "086/100",
+    "cardName": "Quick Ball",
+    "fullDisplayName": "Quick Ball 086/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-086-low.png",
+    "imageHighSrc": "cards/dp5-086-high.png"
+  },
+  {
+    "masterCardId": "4801",
+    "externalId": null,
+    "tcgdex_id": "dp5-85",
+    "localId": "085",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "085/100",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 085/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-085-low.png",
+    "imageHighSrc": "cards/dp5-085-high.png"
+  },
+  {
+    "masterCardId": "4793",
+    "externalId": null,
+    "tcgdex_id": "dp5-84",
+    "localId": "084",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "084/100",
+    "cardName": "Old Amber",
+    "fullDisplayName": "Old Amber 084/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-084-low.png",
+    "imageHighSrc": "cards/dp5-084-high.png"
+  },
+  {
+    "masterCardId": "4785",
+    "externalId": null,
+    "tcgdex_id": "dp5-83",
+    "localId": "083",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "083/100",
+    "cardName": "Mom's Kindness",
+    "fullDisplayName": "Mom's Kindness 083/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-083-low.png",
+    "imageHighSrc": "cards/dp5-083-high.png"
+  },
+  {
+    "masterCardId": "4776",
+    "externalId": null,
+    "tcgdex_id": "dp5-82",
+    "localId": "082",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "082/100",
+    "cardName": "Fossil Excavator",
+    "fullDisplayName": "Fossil Excavator 082/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-082-low.png",
+    "imageHighSrc": "cards/dp5-082-high.png"
+  },
+  {
+    "masterCardId": "4768",
+    "externalId": null,
+    "tcgdex_id": "dp5-81",
+    "localId": "081",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "081/100",
+    "cardName": "Energy Restore",
+    "fullDisplayName": "Energy Restore 081/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideyuki Nakajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-081-low.png",
+    "imageHighSrc": "cards/dp5-081-high.png"
+  },
+  {
+    "masterCardId": "4759",
+    "externalId": null,
+    "tcgdex_id": "dp5-80",
+    "localId": "080",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "080/100",
+    "cardName": "Dusk Ball",
+    "fullDisplayName": "Dusk Ball 080/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-080-low.png",
+    "imageHighSrc": "cards/dp5-080-high.png"
+  },
+  {
+    "masterCardId": "4751",
+    "externalId": null,
+    "tcgdex_id": "dp5-79",
+    "localId": "079",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "079/100",
+    "cardName": "Dawn Stadium",
+    "fullDisplayName": "Dawn Stadium 079/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-079-low.png",
+    "imageHighSrc": "cards/dp5-079-high.png"
+  },
+  {
+    "masterCardId": "4742",
+    "externalId": null,
+    "tcgdex_id": "dp5-78",
+    "localId": "078",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "078/100",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 078/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-078-low.png",
+    "imageHighSrc": "cards/dp5-078-high.png"
+  },
+  {
+    "masterCardId": "4733",
+    "externalId": null,
+    "tcgdex_id": "dp5-77",
+    "localId": "077",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "077/100",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 077/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-077-low.png",
+    "imageHighSrc": "cards/dp5-077-high.png"
+  },
+  {
+    "masterCardId": "4726",
+    "externalId": null,
+    "tcgdex_id": "dp5-76",
+    "localId": "076",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "076/100",
+    "cardName": "Stunky",
+    "fullDisplayName": "Stunky 076/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      434
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-076-low.png",
+    "imageHighSrc": "cards/dp5-076-high.png"
+  },
+  {
+    "masterCardId": "4716",
+    "externalId": null,
+    "tcgdex_id": "dp5-75",
+    "localId": "075",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "075/100",
+    "cardName": "Starly",
+    "fullDisplayName": "Starly 075/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      396
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-075-low.png",
+    "imageHighSrc": "cards/dp5-075-high.png"
+  },
+  {
+    "masterCardId": "4711",
+    "externalId": null,
+    "tcgdex_id": "dp5-74",
+    "localId": "074",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "074/100",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 074/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-074-low.png",
+    "imageHighSrc": "cards/dp5-074-high.png"
+  },
+  {
+    "masterCardId": "4705",
+    "externalId": null,
+    "tcgdex_id": "dp5-73",
+    "localId": "073",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "073/100",
+    "cardName": "Shellos East Sea",
+    "fullDisplayName": "Shellos East Sea 073/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      422
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-073-low.png",
+    "imageHighSrc": "cards/dp5-073-high.png"
+  },
+  {
+    "masterCardId": "4697",
+    "externalId": null,
+    "tcgdex_id": "dp5-72",
+    "localId": "072",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "072/100",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 072/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-072-low.png",
+    "imageHighSrc": "cards/dp5-072-high.png"
+  },
+  {
+    "masterCardId": "4688",
+    "externalId": null,
+    "tcgdex_id": "dp5-71",
+    "localId": "071",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "071/100",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 071/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-071-low.png",
+    "imageHighSrc": "cards/dp5-071-high.png"
+  },
+  {
+    "masterCardId": "4680",
+    "externalId": null,
+    "tcgdex_id": "dp5-70",
+    "localId": "070",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "070/100",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 070/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-070-low.png",
+    "imageHighSrc": "cards/dp5-070-high.png"
+  },
+  {
+    "masterCardId": "4671",
+    "externalId": null,
+    "tcgdex_id": "dp5-69",
+    "localId": "069",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "069/100",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 069/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Helix Fossil",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-069-low.png",
+    "imageHighSrc": "cards/dp5-069-high.png"
+  },
+  {
+    "masterCardId": "4661",
+    "externalId": null,
+    "tcgdex_id": "dp5-68",
+    "localId": "068",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "068/100",
+    "cardName": "Munchlax",
+    "fullDisplayName": "Munchlax 068/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      446
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-068-low.png",
+    "imageHighSrc": "cards/dp5-068-high.png"
+  },
+  {
+    "masterCardId": "4653",
+    "externalId": null,
+    "tcgdex_id": "dp5-67",
+    "localId": "067",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "067/100",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 067/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dome Fossil",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-067-low.png",
+    "imageHighSrc": "cards/dp5-067-high.png"
+  },
+  {
+    "masterCardId": "4644",
+    "externalId": null,
+    "tcgdex_id": "dp5-66",
+    "localId": "066",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "066/100",
+    "cardName": "Hippopotas",
+    "fullDisplayName": "Hippopotas 066/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      449
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-066-low.png",
+    "imageHighSrc": "cards/dp5-066-high.png"
+  },
+  {
+    "masterCardId": "4636",
+    "externalId": null,
+    "tcgdex_id": "dp5-65",
+    "localId": "065",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "065/100",
+    "cardName": "Glameow",
+    "fullDisplayName": "Glameow 065/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      431
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-065-low.png",
+    "imageHighSrc": "cards/dp5-065-high.png"
+  },
+  {
+    "masterCardId": "4628",
+    "externalId": null,
+    "tcgdex_id": "dp5-64",
+    "localId": "064",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "064/100",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 064/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-064-low.png",
+    "imageHighSrc": "cards/dp5-064-high.png"
+  },
+  {
+    "masterCardId": "4621",
+    "externalId": null,
+    "tcgdex_id": "dp5-63",
+    "localId": "063",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "063/100",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 063/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-063-low.png",
+    "imageHighSrc": "cards/dp5-063-high.png"
+  },
+  {
+    "masterCardId": "4613",
+    "externalId": null,
+    "tcgdex_id": "dp5-62",
+    "localId": "062",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "062/100",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 062/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-062-low.png",
+    "imageHighSrc": "cards/dp5-062-high.png"
+  },
+  {
+    "masterCardId": "4605",
+    "externalId": null,
+    "tcgdex_id": "dp5-61",
+    "localId": "061",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "061/100",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 061/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-061-low.png",
+    "imageHighSrc": "cards/dp5-061-high.png"
+  },
+  {
+    "masterCardId": "4596",
+    "externalId": null,
+    "tcgdex_id": "dp5-60",
+    "localId": "060",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "060/100",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 060/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-060-low.png",
+    "imageHighSrc": "cards/dp5-060-high.png"
+  },
+  {
+    "masterCardId": "4588",
+    "externalId": null,
+    "tcgdex_id": "dp5-59",
+    "localId": "059",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "059/100",
+    "cardName": "Combee",
+    "fullDisplayName": "Combee 059/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      415
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-059-low.png",
+    "imageHighSrc": "cards/dp5-059-high.png"
+  },
+  {
+    "masterCardId": "4580",
+    "externalId": null,
+    "tcgdex_id": "dp5-58",
+    "localId": "058",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "058/100",
+    "cardName": "Chingling",
+    "fullDisplayName": "Chingling 058/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      433
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-058-low.png",
+    "imageHighSrc": "cards/dp5-058-high.png"
+  },
+  {
+    "masterCardId": "4572",
+    "externalId": null,
+    "tcgdex_id": "dp5-57",
+    "localId": "057",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "057/100",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 057/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-057-low.png",
+    "imageHighSrc": "cards/dp5-057-high.png"
+  },
+  {
+    "masterCardId": "4564",
+    "externalId": null,
+    "tcgdex_id": "dp5-56",
+    "localId": "056",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "056/100",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 056/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-056-low.png",
+    "imageHighSrc": "cards/dp5-056-high.png"
+  },
+  {
+    "masterCardId": "4555",
+    "externalId": null,
+    "tcgdex_id": "dp5-55",
+    "localId": "055",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "055/100",
+    "cardName": "Chatot",
+    "fullDisplayName": "Chatot 055/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-055-low.png",
+    "imageHighSrc": "cards/dp5-055-high.png"
+  },
+  {
+    "masterCardId": "4546",
+    "externalId": null,
+    "tcgdex_id": "dp5-54",
+    "localId": "054",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "054/100",
+    "cardName": "Burmy Sandy Cloak",
+    "fullDisplayName": "Burmy Sandy Cloak 054/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-054-low.png",
+    "imageHighSrc": "cards/dp5-054-high.png"
+  },
+  {
+    "masterCardId": "4537",
+    "externalId": null,
+    "tcgdex_id": "dp5-53",
+    "localId": "053",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "053/100",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 053/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-053-low.png",
+    "imageHighSrc": "cards/dp5-053-high.png"
+  },
+  {
+    "masterCardId": "4528",
+    "externalId": null,
+    "tcgdex_id": "dp5-52",
+    "localId": "052",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "052/100",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 052/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-052-low.png",
+    "imageHighSrc": "cards/dp5-052-high.png"
+  },
+  {
+    "masterCardId": "4519",
+    "externalId": null,
+    "tcgdex_id": "dp5-51",
+    "localId": "051",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "051/100",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 051/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-051-low.png",
+    "imageHighSrc": "cards/dp5-051-high.png"
+  },
+  {
+    "masterCardId": "4510",
+    "externalId": null,
+    "tcgdex_id": "dp5-50",
+    "localId": "050",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "050/100",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 050/100 Majestic Dawn",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-050-low.png",
+    "imageHighSrc": "cards/dp5-050-high.png"
+  },
+  {
+    "masterCardId": "4501",
+    "externalId": null,
+    "tcgdex_id": "dp5-49",
+    "localId": "049",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "049/100",
+    "cardName": "Unown [Q]",
+    "fullDisplayName": "Unown [Q] 049/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp5-049-low.png",
+    "imageHighSrc": "cards/dp5-049-high.png"
+  },
+  {
+    "masterCardId": "4490",
+    "externalId": null,
+    "tcgdex_id": "dp5-48",
+    "localId": "048",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "048/100",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 048/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-048-low.png",
+    "imageHighSrc": "cards/dp5-048-high.png"
+  },
+  {
+    "masterCardId": "4481",
+    "externalId": null,
+    "tcgdex_id": "dp5-47",
+    "localId": "047",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "047/100",
+    "cardName": "Staravia",
+    "fullDisplayName": "Staravia 047/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      397
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Starly",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-047-low.png",
+    "imageHighSrc": "cards/dp5-047-high.png"
+  },
+  {
+    "masterCardId": "4473",
+    "externalId": null,
+    "tcgdex_id": "dp5-46",
+    "localId": "046",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "046/100",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 046/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-046-low.png",
+    "imageHighSrc": "cards/dp5-046-high.png"
+  },
+  {
+    "masterCardId": "4463",
+    "externalId": null,
+    "tcgdex_id": "dp5-45",
+    "localId": "045",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "045/100",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 045/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-045-low.png",
+    "imageHighSrc": "cards/dp5-045-high.png"
+  },
+  {
+    "masterCardId": "4454",
+    "externalId": null,
+    "tcgdex_id": "dp5-44",
+    "localId": "044",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "044/100",
+    "cardName": "Prinplup",
+    "fullDisplayName": "Prinplup 044/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      394
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piplup",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-044-low.png",
+    "imageHighSrc": "cards/dp5-044-high.png"
+  },
+  {
+    "masterCardId": "4447",
+    "externalId": null,
+    "tcgdex_id": "dp5-43",
+    "localId": "043",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "043/100",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 043/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-043-low.png",
+    "imageHighSrc": "cards/dp5-043-high.png"
+  },
+  {
+    "masterCardId": "4438",
+    "externalId": null,
+    "tcgdex_id": "dp5-42",
+    "localId": "042",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "042/100",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 042/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-042-low.png",
+    "imageHighSrc": "cards/dp5-042-high.png"
+  },
+  {
+    "masterCardId": "4430",
+    "externalId": null,
+    "tcgdex_id": "dp5-41",
+    "localId": "041",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "041/100",
+    "cardName": "Monferno",
+    "fullDisplayName": "Monferno 041/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      391
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chimchar",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-041-low.png",
+    "imageHighSrc": "cards/dp5-041-high.png"
+  },
+  {
+    "masterCardId": "4421",
+    "externalId": null,
+    "tcgdex_id": "dp5-40",
+    "localId": "040",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "040/100",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 040/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-040-low.png",
+    "imageHighSrc": "cards/dp5-040-high.png"
+  },
+  {
+    "masterCardId": "4412",
+    "externalId": null,
+    "tcgdex_id": "dp5-39",
+    "localId": "039",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "039/100",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 039/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-039-low.png",
+    "imageHighSrc": "cards/dp5-039-high.png"
+  },
+  {
+    "masterCardId": "4405",
+    "externalId": null,
+    "tcgdex_id": "dp5-38",
+    "localId": "038",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "038/100",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 038/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-038-low.png",
+    "imageHighSrc": "cards/dp5-038-high.png"
+  },
+  {
+    "masterCardId": "4397",
+    "externalId": null,
+    "tcgdex_id": "dp5-37",
+    "localId": "037",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "037/100",
+    "cardName": "Grotle",
+    "fullDisplayName": "Grotle 037/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      388
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Turtwig",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-037-low.png",
+    "imageHighSrc": "cards/dp5-037-high.png"
+  },
+  {
+    "masterCardId": "4388",
+    "externalId": null,
+    "tcgdex_id": "dp5-36",
+    "localId": "036",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "036/100",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 036/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-036-low.png",
+    "imageHighSrc": "cards/dp5-036-high.png"
+  },
+  {
+    "masterCardId": "4377",
+    "externalId": null,
+    "tcgdex_id": "dp5-35",
+    "localId": "035",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "035/100",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 035/100 Majestic Dawn",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-035-low.png",
+    "imageHighSrc": "cards/dp5-035-high.png"
+  },
+  {
+    "masterCardId": "4370",
+    "externalId": null,
+    "tcgdex_id": "dp5-34",
+    "localId": "034",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "034/100",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 034/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-034-low.png",
+    "imageHighSrc": "cards/dp5-034-high.png"
+  },
+  {
+    "masterCardId": "4361",
+    "externalId": null,
+    "tcgdex_id": "dp5-33",
+    "localId": "033",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "033/100",
+    "cardName": "Unown [P]",
+    "fullDisplayName": "Unown [P] 033/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp5-033-low.png",
+    "imageHighSrc": "cards/dp5-033-high.png"
+  },
+  {
+    "masterCardId": "4352",
+    "externalId": null,
+    "tcgdex_id": "dp5-32",
+    "localId": "032",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "032/100",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 032/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-032-low.png",
+    "imageHighSrc": "cards/dp5-032-high.png"
+  },
+  {
+    "masterCardId": "4343",
+    "externalId": null,
+    "tcgdex_id": "dp5-31",
+    "localId": "031",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "031/100",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 031/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-031-low.png",
+    "imageHighSrc": "cards/dp5-031-high.png"
+  },
+  {
+    "masterCardId": "4335",
+    "externalId": null,
+    "tcgdex_id": "dp5-30",
+    "localId": "030",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "030/100",
+    "cardName": "Torterra",
+    "fullDisplayName": "Torterra 030/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      389
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grotle",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-030-low.png",
+    "imageHighSrc": "cards/dp5-030-high.png"
+  },
+  {
+    "masterCardId": "4325",
+    "externalId": null,
+    "tcgdex_id": "dp5-29",
+    "localId": "029",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "029/100",
+    "cardName": "Scizor",
+    "fullDisplayName": "Scizor 029/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-029-low.png",
+    "imageHighSrc": "cards/dp5-029-high.png"
+  },
+  {
+    "masterCardId": "4315",
+    "externalId": null,
+    "tcgdex_id": "dp5-28",
+    "localId": "028",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "028/100",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 028/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-028-low.png",
+    "imageHighSrc": "cards/dp5-028-high.png"
+  },
+  {
+    "masterCardId": "4306",
+    "externalId": null,
+    "tcgdex_id": "dp5-27",
+    "localId": "027",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "027/100",
+    "cardName": "Phione",
+    "fullDisplayName": "Phione 027/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      489
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-027-low.png",
+    "imageHighSrc": "cards/dp5-027-high.png"
+  },
+  {
+    "masterCardId": "4296",
+    "externalId": null,
+    "tcgdex_id": "dp5-26",
+    "localId": "026",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "026/100",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 026/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-026-low.png",
+    "imageHighSrc": "cards/dp5-026-high.png"
+  },
+  {
+    "masterCardId": "4287",
+    "externalId": null,
+    "tcgdex_id": "dp5-25",
+    "localId": "025",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "025/100",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 025/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-025-low.png",
+    "imageHighSrc": "cards/dp5-025-high.png"
+  },
+  {
+    "masterCardId": "4278",
+    "externalId": null,
+    "tcgdex_id": "dp5-24",
+    "localId": "024",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "024/100",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon 024/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-024-low.png",
+    "imageHighSrc": "cards/dp5-024-high.png"
+  },
+  {
+    "masterCardId": "4269",
+    "externalId": null,
+    "tcgdex_id": "dp5-23",
+    "localId": "023",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "023/100",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 023/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-023-low.png",
+    "imageHighSrc": "cards/dp5-023-high.png"
+  },
+  {
+    "masterCardId": "4260",
+    "externalId": null,
+    "tcgdex_id": "dp5-22",
+    "localId": "022",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "022/100",
+    "cardName": "Infernape",
+    "fullDisplayName": "Infernape 022/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      392
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Monferno",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-022-low.png",
+    "imageHighSrc": "cards/dp5-022-high.png"
+  },
+  {
+    "masterCardId": "4251",
+    "externalId": null,
+    "tcgdex_id": "dp5-21",
+    "localId": "021",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "021/100",
+    "cardName": "Hippowdon",
+    "fullDisplayName": "Hippowdon 021/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      450
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hippopotas",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-021-low.png",
+    "imageHighSrc": "cards/dp5-021-high.png"
+  },
+  {
+    "masterCardId": "4242",
+    "externalId": null,
+    "tcgdex_id": "dp5-20",
+    "localId": "020",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "020/100",
+    "cardName": "Glaceon",
+    "fullDisplayName": "Glaceon 020/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-020-low.png",
+    "imageHighSrc": "cards/dp5-020-high.png"
+  },
+  {
+    "masterCardId": "4233",
+    "externalId": null,
+    "tcgdex_id": "dp5-19",
+    "localId": "019",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "019/100",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 019/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-019-low.png",
+    "imageHighSrc": "cards/dp5-019-high.png"
+  },
+  {
+    "masterCardId": "4224",
+    "externalId": null,
+    "tcgdex_id": "dp5-18",
+    "localId": "018",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "018/100",
+    "cardName": "Espeon",
+    "fullDisplayName": "Espeon 018/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-018-low.png",
+    "imageHighSrc": "cards/dp5-018-high.png"
+  },
+  {
+    "masterCardId": "4215",
+    "externalId": null,
+    "tcgdex_id": "dp5-17",
+    "localId": "017",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "017/100",
+    "cardName": "Empoleon",
+    "fullDisplayName": "Empoleon 017/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-017-low.png",
+    "imageHighSrc": "cards/dp5-017-high.png"
+  },
+  {
+    "masterCardId": "4207",
+    "externalId": null,
+    "tcgdex_id": "dp5-16",
+    "localId": "016",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "016/100",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 016/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-016-low.png",
+    "imageHighSrc": "cards/dp5-016-high.png"
+  },
+  {
+    "masterCardId": "4199",
+    "externalId": null,
+    "tcgdex_id": "dp5-15",
+    "localId": "015",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "015/100",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 015/100 Majestic Dawn",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Old Amber",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-015-low.png",
+    "imageHighSrc": "cards/dp5-015-high.png"
+  },
+  {
+    "masterCardId": "4190",
+    "externalId": null,
+    "tcgdex_id": "dp5-14",
+    "localId": "014",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "014/100",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 014/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-014-low.png",
+    "imageHighSrc": "cards/dp5-014-high.png"
+  },
+  {
+    "masterCardId": "4181",
+    "externalId": null,
+    "tcgdex_id": "dp5-13",
+    "localId": "013",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "013/100",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 013/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-013-low.png",
+    "imageHighSrc": "cards/dp5-013-high.png"
+  },
+  {
+    "masterCardId": "4172",
+    "externalId": null,
+    "tcgdex_id": "dp5-12",
+    "localId": "012",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "012/100",
+    "cardName": "Phione",
+    "fullDisplayName": "Phione 012/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      489
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-012-low.png",
+    "imageHighSrc": "cards/dp5-012-high.png"
+  },
+  {
+    "masterCardId": "4164",
+    "externalId": null,
+    "tcgdex_id": "dp5-11",
+    "localId": "011",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "011/100",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia 011/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-011-low.png",
+    "imageHighSrc": "cards/dp5-011-high.png"
+  },
+  {
+    "masterCardId": "4155",
+    "externalId": null,
+    "tcgdex_id": "dp5-10",
+    "localId": "010",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "010/100",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 010/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-010-low.png",
+    "imageHighSrc": "cards/dp5-010-high.png"
+  },
+  {
+    "masterCardId": "4146",
+    "externalId": null,
+    "tcgdex_id": "dp5-9",
+    "localId": "009",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "009/100",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 009/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-009-low.png",
+    "imageHighSrc": "cards/dp5-009-high.png"
+  },
+  {
+    "masterCardId": "4137",
+    "externalId": null,
+    "tcgdex_id": "dp5-8",
+    "localId": "008",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "008/100",
+    "cardName": "Manaphy",
+    "fullDisplayName": "Manaphy 008/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      490
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-008-low.png",
+    "imageHighSrc": "cards/dp5-008-high.png"
+  },
+  {
+    "masterCardId": "4128",
+    "externalId": null,
+    "tcgdex_id": "dp5-7",
+    "localId": "007",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "007/100",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon 007/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-007-low.png",
+    "imageHighSrc": "cards/dp5-007-high.png"
+  },
+  {
+    "masterCardId": "4118",
+    "externalId": null,
+    "tcgdex_id": "dp5-6",
+    "localId": "006",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "006/100",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 006/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-006-low.png",
+    "imageHighSrc": "cards/dp5-006-high.png"
+  },
+  {
+    "masterCardId": "4109",
+    "externalId": null,
+    "tcgdex_id": "dp5-5",
+    "localId": "005",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "005/100",
+    "cardName": "Glaceon",
+    "fullDisplayName": "Glaceon 005/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-005-low.png",
+    "imageHighSrc": "cards/dp5-005-high.png"
+  },
+  {
+    "masterCardId": "4099",
+    "externalId": null,
+    "tcgdex_id": "dp5-4",
+    "localId": "004",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "004/100",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga 004/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-004-low.png",
+    "imageHighSrc": "cards/dp5-004-high.png"
+  },
+  {
+    "masterCardId": "4090",
+    "externalId": null,
+    "tcgdex_id": "dp5-3",
+    "localId": "003",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "003/100",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai 003/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-003-low.png",
+    "imageHighSrc": "cards/dp5-003-high.png"
+  },
+  {
+    "masterCardId": "4076",
+    "externalId": null,
+    "tcgdex_id": "dp5-2",
+    "localId": "002",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "002/100",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 002/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-002-low.png",
+    "imageHighSrc": "cards/dp5-002-high.png"
+  },
+  {
+    "masterCardId": "4068",
+    "externalId": null,
+    "tcgdex_id": "dp5-1",
+    "localId": "001",
+    "setCode": "dp5",
+    "setTcgdexId": "dp5",
+    "cardNumber": "001/100",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 001/100 Majestic Dawn",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp5-001-low.png",
+    "imageHighSrc": "cards/dp5-001-high.png"
+  }
+]

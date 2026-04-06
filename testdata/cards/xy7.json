@@ -1,0 +1,3284 @@
+[
+  {
+    "masterCardId": "20662",
+    "externalId": null,
+    "tcgdex_id": "xy7-100",
+    "localId": "100",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "100/98",
+    "cardName": "Trainers' Mail",
+    "fullDisplayName": "Trainers' Mail 100/98 Ancient Origins",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-100-low.png",
+    "imageHighSrc": "cards/xy7-100-high.png"
+  },
+  {
+    "masterCardId": "20657",
+    "externalId": null,
+    "tcgdex_id": "xy7-99",
+    "localId": "099",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "099/98",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 099/98 Ancient Origins",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-099-low.png",
+    "imageHighSrc": "cards/xy7-099-high.png"
+  },
+  {
+    "masterCardId": "20652",
+    "externalId": null,
+    "tcgdex_id": "xy7-98",
+    "localId": "098",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "098/98",
+    "cardName": "M Rayquaza-EX",
+    "fullDisplayName": "M Rayquaza-EX 098/98 Ancient Origins",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-098-low.png",
+    "imageHighSrc": "cards/xy7-098-high.png"
+  },
+  {
+    "masterCardId": "20647",
+    "externalId": null,
+    "tcgdex_id": "xy7-97",
+    "localId": "097",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "097/98",
+    "cardName": "Primal Groudon-EX",
+    "fullDisplayName": "Primal Groudon-EX 097/98 Ancient Origins",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Groudon-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-097-low.png",
+    "imageHighSrc": "cards/xy7-097-high.png"
+  },
+  {
+    "masterCardId": "20642",
+    "externalId": null,
+    "tcgdex_id": "xy7-96",
+    "localId": "096",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "096/98",
+    "cardName": "Primal Kyogre-EX",
+    "fullDisplayName": "Primal Kyogre-EX 096/98 Ancient Origins",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kyogre-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-096-low.png",
+    "imageHighSrc": "cards/xy7-096-high.png"
+  },
+  {
+    "masterCardId": "20637",
+    "externalId": null,
+    "tcgdex_id": "xy7-95",
+    "localId": "095",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "095/98",
+    "cardName": "Steven",
+    "fullDisplayName": "Steven 095/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-095-low.png",
+    "imageHighSrc": "cards/xy7-095-high.png"
+  },
+  {
+    "masterCardId": "20632",
+    "externalId": null,
+    "tcgdex_id": "xy7-94",
+    "localId": "094",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "094/98",
+    "cardName": "Lugia-EX",
+    "fullDisplayName": "Lugia-EX 094/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-094-low.png",
+    "imageHighSrc": "cards/xy7-094-high.png"
+  },
+  {
+    "masterCardId": "20624",
+    "externalId": null,
+    "tcgdex_id": "xy7-93",
+    "localId": "093",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "093/98",
+    "cardName": "Giratina-EX",
+    "fullDisplayName": "Giratina-EX 093/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-093-low.png",
+    "imageHighSrc": "cards/xy7-093-high.png"
+  },
+  {
+    "masterCardId": "20620",
+    "externalId": null,
+    "tcgdex_id": "xy7-92",
+    "localId": "092",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "092/98",
+    "cardName": "M Tyranitar-EX",
+    "fullDisplayName": "M Tyranitar-EX 092/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tyranitar-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-092-low.png",
+    "imageHighSrc": "cards/xy7-092-high.png"
+  },
+  {
+    "masterCardId": "20615",
+    "externalId": null,
+    "tcgdex_id": "xy7-91",
+    "localId": "091",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "091/98",
+    "cardName": "Tyranitar-EX",
+    "fullDisplayName": "Tyranitar-EX 091/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-091-low.png",
+    "imageHighSrc": "cards/xy7-091-high.png"
+  },
+  {
+    "masterCardId": "20610",
+    "externalId": null,
+    "tcgdex_id": "xy7-90",
+    "localId": "090",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "090/98",
+    "cardName": "Machamp-EX",
+    "fullDisplayName": "Machamp-EX 090/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-090-low.png",
+    "imageHighSrc": "cards/xy7-090-high.png"
+  },
+  {
+    "masterCardId": "20605",
+    "externalId": null,
+    "tcgdex_id": "xy7-89",
+    "localId": "089",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "089/98",
+    "cardName": "Hoopa-EX",
+    "fullDisplayName": "Hoopa-EX 089/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-089-low.png",
+    "imageHighSrc": "cards/xy7-089-high.png"
+  },
+  {
+    "masterCardId": "20600",
+    "externalId": null,
+    "tcgdex_id": "xy7-88",
+    "localId": "088",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "088/98",
+    "cardName": "M Ampharos-EX",
+    "fullDisplayName": "M Ampharos-EX 088/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ampharos-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-088-low.png",
+    "imageHighSrc": "cards/xy7-088-high.png"
+  },
+  {
+    "masterCardId": "20595",
+    "externalId": null,
+    "tcgdex_id": "xy7-87",
+    "localId": "087",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "087/98",
+    "cardName": "Ampharos-EX",
+    "fullDisplayName": "Ampharos-EX 087/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-087-low.png",
+    "imageHighSrc": "cards/xy7-087-high.png"
+  },
+  {
+    "masterCardId": "20589",
+    "externalId": null,
+    "tcgdex_id": "xy7-86",
+    "localId": "086",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "086/98",
+    "cardName": "Kyurem-EX",
+    "fullDisplayName": "Kyurem-EX 086/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-086-low.png",
+    "imageHighSrc": "cards/xy7-086-high.png"
+  },
+  {
+    "masterCardId": "20584",
+    "externalId": null,
+    "tcgdex_id": "xy7-85",
+    "localId": "085",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "085/98",
+    "cardName": "M Sceptile-EX",
+    "fullDisplayName": "M Sceptile-EX 085/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sceptile-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-085-low.png",
+    "imageHighSrc": "cards/xy7-085-high.png"
+  },
+  {
+    "masterCardId": "20579",
+    "externalId": null,
+    "tcgdex_id": "xy7-84",
+    "localId": "084",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "084/98",
+    "cardName": "Sceptile-EX",
+    "fullDisplayName": "Sceptile-EX 084/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-084-low.png",
+    "imageHighSrc": "cards/xy7-084-high.png"
+  },
+  {
+    "masterCardId": "20574",
+    "externalId": null,
+    "tcgdex_id": "xy7-83",
+    "localId": "083",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "083/98",
+    "cardName": "Flash Energy",
+    "fullDisplayName": "Flash Energy 083/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-083-low.png",
+    "imageHighSrc": "cards/xy7-083-high.png"
+  },
+  {
+    "masterCardId": "20569",
+    "externalId": null,
+    "tcgdex_id": "xy7-82",
+    "localId": "082",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "082/98",
+    "cardName": "Dangerous Energy",
+    "fullDisplayName": "Dangerous Energy 082/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-082-low.png",
+    "imageHighSrc": "cards/xy7-082-high.png"
+  },
+  {
+    "masterCardId": "20564",
+    "externalId": null,
+    "tcgdex_id": "xy7-81",
+    "localId": "081",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "081/98",
+    "cardName": "Tyranitar Spirit Link",
+    "fullDisplayName": "Tyranitar Spirit Link 081/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-081-low.png",
+    "imageHighSrc": "cards/xy7-081-high.png"
+  },
+  {
+    "masterCardId": "20559",
+    "externalId": null,
+    "tcgdex_id": "xy7-80",
+    "localId": "080",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "080/98",
+    "cardName": "Sceptile Spirit Link",
+    "fullDisplayName": "Sceptile Spirit Link 080/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-080-low.png",
+    "imageHighSrc": "cards/xy7-080-high.png"
+  },
+  {
+    "masterCardId": "20554",
+    "externalId": null,
+    "tcgdex_id": "xy7-79",
+    "localId": "079",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "079/98",
+    "cardName": "Paint Roller",
+    "fullDisplayName": "Paint Roller 079/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-079-low.png",
+    "imageHighSrc": "cards/xy7-079-high.png"
+  },
+  {
+    "masterCardId": "20550",
+    "externalId": null,
+    "tcgdex_id": "xy7-78",
+    "localId": "078",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "078/98",
+    "cardName": "Lysandre",
+    "fullDisplayName": "Lysandre 078/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-078-low.png",
+    "imageHighSrc": "cards/xy7-078-high.png"
+  },
+  {
+    "masterCardId": "20545",
+    "externalId": null,
+    "tcgdex_id": "xy7-77",
+    "localId": "077",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "077/98",
+    "cardName": "Lucky Helmet",
+    "fullDisplayName": "Lucky Helmet 077/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-077-low.png",
+    "imageHighSrc": "cards/xy7-077-high.png"
+  },
+  {
+    "masterCardId": "20538",
+    "externalId": null,
+    "tcgdex_id": "xy7-76",
+    "localId": "076",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "076/98",
+    "cardName": "Level Ball",
+    "fullDisplayName": "Level Ball 076/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-076-low.png",
+    "imageHighSrc": "cards/xy7-076-high.png"
+  },
+  {
+    "masterCardId": "20534",
+    "externalId": null,
+    "tcgdex_id": "xy7-75a",
+    "localId": "75a",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "75a/98",
+    "cardName": "Hex Maniac",
+    "fullDisplayName": "Hex Maniac 75a/98 Ancient Origins",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-75a-low.png",
+    "imageHighSrc": "cards/xy7-75a-high.png"
+  },
+  {
+    "masterCardId": "20528",
+    "externalId": null,
+    "tcgdex_id": "xy7-75",
+    "localId": "075",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "075/98",
+    "cardName": "Hex Maniac",
+    "fullDisplayName": "Hex Maniac 075/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-075-low.png",
+    "imageHighSrc": "cards/xy7-075-high.png"
+  },
+  {
+    "masterCardId": "20522",
+    "externalId": null,
+    "tcgdex_id": "xy7-74",
+    "localId": "074",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "074/98",
+    "cardName": "Forest of Giant Plants",
+    "fullDisplayName": "Forest of Giant Plants 074/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-074-low.png",
+    "imageHighSrc": "cards/xy7-074-high.png"
+  },
+  {
+    "masterCardId": "20518",
+    "externalId": null,
+    "tcgdex_id": "xy7-73",
+    "localId": "073",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "073/98",
+    "cardName": "Faded Town",
+    "fullDisplayName": "Faded Town 073/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-073-low.png",
+    "imageHighSrc": "cards/xy7-073-high.png"
+  },
+  {
+    "masterCardId": "20514",
+    "externalId": null,
+    "tcgdex_id": "xy7-72",
+    "localId": "072",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "072/98",
+    "cardName": "Energy Recycler",
+    "fullDisplayName": "Energy Recycler 072/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-072-low.png",
+    "imageHighSrc": "cards/xy7-072-high.png"
+  },
+  {
+    "masterCardId": "20509",
+    "externalId": null,
+    "tcgdex_id": "xy7-71",
+    "localId": "071",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "071/98",
+    "cardName": "Eco Arm",
+    "fullDisplayName": "Eco Arm 071/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-071-low.png",
+    "imageHighSrc": "cards/xy7-071-high.png"
+  },
+  {
+    "masterCardId": "20504",
+    "externalId": null,
+    "tcgdex_id": "xy7-70",
+    "localId": "070",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "070/98",
+    "cardName": "Ampharos Spirit Link",
+    "fullDisplayName": "Ampharos Spirit Link 070/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-070-low.png",
+    "imageHighSrc": "cards/xy7-070-high.png"
+  },
+  {
+    "masterCardId": "20499",
+    "externalId": null,
+    "tcgdex_id": "xy7-69",
+    "localId": "069",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "069/98",
+    "cardName": "Ace Trainer",
+    "fullDisplayName": "Ace Trainer 069/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-069-low.png",
+    "imageHighSrc": "cards/xy7-069-high.png"
+  },
+  {
+    "masterCardId": "20494",
+    "externalId": null,
+    "tcgdex_id": "xy7-68",
+    "localId": "068",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "068/98",
+    "cardName": "Lugia-EX",
+    "fullDisplayName": "Lugia-EX 068/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-068-low.png",
+    "imageHighSrc": "cards/xy7-068-high.png"
+  },
+  {
+    "masterCardId": "20488",
+    "externalId": null,
+    "tcgdex_id": "xy7-67",
+    "localId": "067",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "067/98",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z 067/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-067-low.png",
+    "imageHighSrc": "cards/xy7-067-high.png"
+  },
+  {
+    "masterCardId": "20483",
+    "externalId": null,
+    "tcgdex_id": "xy7-66",
+    "localId": "066",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "066/98",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z 066/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-066-low.png",
+    "imageHighSrc": "cards/xy7-066-high.png"
+  },
+  {
+    "masterCardId": "20479",
+    "externalId": null,
+    "tcgdex_id": "xy7-65",
+    "localId": "065",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "065/98",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 065/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-065-low.png",
+    "imageHighSrc": "cards/xy7-065-high.png"
+  },
+  {
+    "masterCardId": "20474",
+    "externalId": null,
+    "tcgdex_id": "xy7-64",
+    "localId": "064",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "064/98",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 064/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-064-low.png",
+    "imageHighSrc": "cards/xy7-064-high.png"
+  },
+  {
+    "masterCardId": "20469",
+    "externalId": null,
+    "tcgdex_id": "xy7-63",
+    "localId": "063",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "063/98",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 063/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-063-low.png",
+    "imageHighSrc": "cards/xy7-063-high.png"
+  },
+  {
+    "masterCardId": "20464",
+    "externalId": null,
+    "tcgdex_id": "xy7-62",
+    "localId": "062",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "062/98",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 062/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-062-low.png",
+    "imageHighSrc": "cards/xy7-062-high.png"
+  },
+  {
+    "masterCardId": "20459",
+    "externalId": null,
+    "tcgdex_id": "xy7-61",
+    "localId": "061",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "061/98",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 061/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-061-low.png",
+    "imageHighSrc": "cards/xy7-061-high.png"
+  },
+  {
+    "masterCardId": "20454",
+    "externalId": null,
+    "tcgdex_id": "xy7-60",
+    "localId": "060",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "060/98",
+    "cardName": "Goodra",
+    "fullDisplayName": "Goodra 060/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sliggoo",
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-060-low.png",
+    "imageHighSrc": "cards/xy7-060-high.png"
+  },
+  {
+    "masterCardId": "20449",
+    "externalId": null,
+    "tcgdex_id": "xy7-59",
+    "localId": "059",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "059/98",
+    "cardName": "Sliggoo",
+    "fullDisplayName": "Sliggoo 059/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      705
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goomy",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-059-low.png",
+    "imageHighSrc": "cards/xy7-059-high.png"
+  },
+  {
+    "masterCardId": "20444",
+    "externalId": null,
+    "tcgdex_id": "xy7-58",
+    "localId": "058",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "058/98",
+    "cardName": "Goomy",
+    "fullDisplayName": "Goomy 058/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      704
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-058-low.png",
+    "imageHighSrc": "cards/xy7-058-high.png"
+  },
+  {
+    "masterCardId": "20437",
+    "externalId": null,
+    "tcgdex_id": "xy7-57",
+    "localId": "057",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "057/98",
+    "cardName": "Giratina-EX",
+    "fullDisplayName": "Giratina-EX 057/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-057-low.png",
+    "imageHighSrc": "cards/xy7-057-high.png"
+  },
+  {
+    "masterCardId": "20432",
+    "externalId": null,
+    "tcgdex_id": "xy7-56",
+    "localId": "056",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "056/98",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 056/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-056-low.png",
+    "imageHighSrc": "cards/xy7-056-high.png"
+  },
+  {
+    "masterCardId": "20428",
+    "externalId": null,
+    "tcgdex_id": "xy7-55",
+    "localId": "055",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "055/98",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 055/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-055-low.png",
+    "imageHighSrc": "cards/xy7-055-high.png"
+  },
+  {
+    "masterCardId": "20422",
+    "externalId": null,
+    "tcgdex_id": "xy7-54",
+    "localId": "054",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "054/98",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 054/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-054-low.png",
+    "imageHighSrc": "cards/xy7-054-high.png"
+  },
+  {
+    "masterCardId": "20417",
+    "externalId": null,
+    "tcgdex_id": "xy7-53",
+    "localId": "053",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "053/98",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 053/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-053-low.png",
+    "imageHighSrc": "cards/xy7-053-high.png"
+  },
+  {
+    "masterCardId": "20410",
+    "externalId": null,
+    "tcgdex_id": "xy7-52",
+    "localId": "052",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "052/98",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 052/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-052-low.png",
+    "imageHighSrc": "cards/xy7-052-high.png"
+  },
+  {
+    "masterCardId": "20406",
+    "externalId": null,
+    "tcgdex_id": "xy7-51",
+    "localId": "051",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "051/98",
+    "cardName": "Registeel",
+    "fullDisplayName": "Registeel 051/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      379
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-051-low.png",
+    "imageHighSrc": "cards/xy7-051-high.png"
+  },
+  {
+    "masterCardId": "20401",
+    "externalId": null,
+    "tcgdex_id": "xy7-50",
+    "localId": "050",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "050/98",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 050/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-050-low.png",
+    "imageHighSrc": "cards/xy7-050-high.png"
+  },
+  {
+    "masterCardId": "20396",
+    "externalId": null,
+    "tcgdex_id": "xy7-49",
+    "localId": "049",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "049/98",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 049/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-049-low.png",
+    "imageHighSrc": "cards/xy7-049-high.png"
+  },
+  {
+    "masterCardId": "20391",
+    "externalId": null,
+    "tcgdex_id": "xy7-48",
+    "localId": "048",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "048/98",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 048/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-048-low.png",
+    "imageHighSrc": "cards/xy7-048-high.png"
+  },
+  {
+    "masterCardId": "20386",
+    "externalId": null,
+    "tcgdex_id": "xy7-47",
+    "localId": "047",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "047/98",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 047/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-047-low.png",
+    "imageHighSrc": "cards/xy7-047-high.png"
+  },
+  {
+    "masterCardId": "20380",
+    "externalId": null,
+    "tcgdex_id": "xy7-46",
+    "localId": "046",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "046/98",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar 046/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Inkay",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-046-low.png",
+    "imageHighSrc": "cards/xy7-046-high.png"
+  },
+  {
+    "masterCardId": "20375",
+    "externalId": null,
+    "tcgdex_id": "xy7-45",
+    "localId": "045",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "045/98",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 045/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-045-low.png",
+    "imageHighSrc": "cards/xy7-045-high.png"
+  },
+  {
+    "masterCardId": "20370",
+    "externalId": null,
+    "tcgdex_id": "xy7-44",
+    "localId": "044",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "044/98",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 044/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-044-low.png",
+    "imageHighSrc": "cards/xy7-044-high.png"
+  },
+  {
+    "masterCardId": "20365",
+    "externalId": null,
+    "tcgdex_id": "xy7-43",
+    "localId": "043",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "043/98",
+    "cardName": "M Tyranitar-EX",
+    "fullDisplayName": "M Tyranitar-EX 043/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tyranitar-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-043-low.png",
+    "imageHighSrc": "cards/xy7-043-high.png"
+  },
+  {
+    "masterCardId": "20360",
+    "externalId": null,
+    "tcgdex_id": "xy7-42",
+    "localId": "042",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "042/98",
+    "cardName": "Tyranitar-EX",
+    "fullDisplayName": "Tyranitar-EX 042/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-042-low.png",
+    "imageHighSrc": "cards/xy7-042-high.png"
+  },
+  {
+    "masterCardId": "20355",
+    "externalId": null,
+    "tcgdex_id": "xy7-41",
+    "localId": "041",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "041/98",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 041/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-041-low.png",
+    "imageHighSrc": "cards/xy7-041-high.png"
+  },
+  {
+    "masterCardId": "20350",
+    "externalId": null,
+    "tcgdex_id": "xy7-40",
+    "localId": "040",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "040/98",
+    "cardName": "Regirock",
+    "fullDisplayName": "Regirock 040/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      377
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-040-low.png",
+    "imageHighSrc": "cards/xy7-040-high.png"
+  },
+  {
+    "masterCardId": "20346",
+    "externalId": null,
+    "tcgdex_id": "xy7-39",
+    "localId": "039",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "039/98",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 039/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-039-low.png",
+    "imageHighSrc": "cards/xy7-039-high.png"
+  },
+  {
+    "masterCardId": "20341",
+    "externalId": null,
+    "tcgdex_id": "xy7-38",
+    "localId": "038",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "038/98",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper 038/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-038-low.png",
+    "imageHighSrc": "cards/xy7-038-high.png"
+  },
+  {
+    "masterCardId": "20337",
+    "externalId": null,
+    "tcgdex_id": "xy7-37",
+    "localId": "037",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "037/98",
+    "cardName": "Machamp-EX",
+    "fullDisplayName": "Machamp-EX 037/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-037-low.png",
+    "imageHighSrc": "cards/xy7-037-high.png"
+  },
+  {
+    "masterCardId": "20331",
+    "externalId": null,
+    "tcgdex_id": "xy7-36",
+    "localId": "036",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "036/98",
+    "cardName": "Hoopa-EX",
+    "fullDisplayName": "Hoopa-EX 036/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-036-low.png",
+    "imageHighSrc": "cards/xy7-036-high.png"
+  },
+  {
+    "masterCardId": "20326",
+    "externalId": null,
+    "tcgdex_id": "xy7-35",
+    "localId": "035",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "035/98",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 035/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-035-low.png",
+    "imageHighSrc": "cards/xy7-035-high.png"
+  },
+  {
+    "masterCardId": "20321",
+    "externalId": null,
+    "tcgdex_id": "xy7-34",
+    "localId": "034",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "034/98",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 034/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-034-low.png",
+    "imageHighSrc": "cards/xy7-034-high.png"
+  },
+  {
+    "masterCardId": "20317",
+    "externalId": null,
+    "tcgdex_id": "xy7-33",
+    "localId": "033",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "033/98",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 033/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-033-low.png",
+    "imageHighSrc": "cards/xy7-033-high.png"
+  },
+  {
+    "masterCardId": "20311",
+    "externalId": null,
+    "tcgdex_id": "xy7-32",
+    "localId": "032",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "032/98",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 032/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-032-low.png",
+    "imageHighSrc": "cards/xy7-032-high.png"
+  },
+  {
+    "masterCardId": "20306",
+    "externalId": null,
+    "tcgdex_id": "xy7-31",
+    "localId": "031",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "031/98",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 031/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-031-low.png",
+    "imageHighSrc": "cards/xy7-031-high.png"
+  },
+  {
+    "masterCardId": "20301",
+    "externalId": null,
+    "tcgdex_id": "xy7-30",
+    "localId": "030",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "030/98",
+    "cardName": "Unown",
+    "fullDisplayName": "Unown 030/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-030-low.png",
+    "imageHighSrc": "cards/xy7-030-high.png"
+  },
+  {
+    "masterCardId": "20296",
+    "externalId": null,
+    "tcgdex_id": "xy7-29",
+    "localId": "029",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "029/98",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 029/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-029-low.png",
+    "imageHighSrc": "cards/xy7-029-high.png"
+  },
+  {
+    "masterCardId": "20291",
+    "externalId": null,
+    "tcgdex_id": "xy7-28",
+    "localId": "028",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "028/98",
+    "cardName": "M Ampharos-EX",
+    "fullDisplayName": "M Ampharos-EX 028/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ampharos-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-028-low.png",
+    "imageHighSrc": "cards/xy7-028-high.png"
+  },
+  {
+    "masterCardId": "20286",
+    "externalId": null,
+    "tcgdex_id": "xy7-27",
+    "localId": "027",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "027/98",
+    "cardName": "Ampharos-EX",
+    "fullDisplayName": "Ampharos-EX 027/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-027-low.png",
+    "imageHighSrc": "cards/xy7-027-high.png"
+  },
+  {
+    "masterCardId": "20281",
+    "externalId": null,
+    "tcgdex_id": "xy7-26",
+    "localId": "026",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "026/98",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 026/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-026-low.png",
+    "imageHighSrc": "cards/xy7-026-high.png"
+  },
+  {
+    "masterCardId": "20276",
+    "externalId": null,
+    "tcgdex_id": "xy7-25",
+    "localId": "025",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "025/98",
+    "cardName": "Kyurem-EX",
+    "fullDisplayName": "Kyurem-EX 025/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-025-low.png",
+    "imageHighSrc": "cards/xy7-025-high.png"
+  },
+  {
+    "masterCardId": "20271",
+    "externalId": null,
+    "tcgdex_id": "xy7-24",
+    "localId": "024",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "024/98",
+    "cardName": "Regice",
+    "fullDisplayName": "Regice 024/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      378
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-024-low.png",
+    "imageHighSrc": "cards/xy7-024-high.png"
+  },
+  {
+    "masterCardId": "20266",
+    "externalId": null,
+    "tcgdex_id": "xy7-23",
+    "localId": "023",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "023/98",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 023/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-023-low.png",
+    "imageHighSrc": "cards/xy7-023-high.png"
+  },
+  {
+    "masterCardId": "20261",
+    "externalId": null,
+    "tcgdex_id": "xy7-22",
+    "localId": "022",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "022/98",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 022/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-022-low.png",
+    "imageHighSrc": "cards/xy7-022-high.png"
+  },
+  {
+    "masterCardId": "20256",
+    "externalId": null,
+    "tcgdex_id": "xy7-21",
+    "localId": "021",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "021/98",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 021/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-021-low.png",
+    "imageHighSrc": "cards/xy7-021-high.png"
+  },
+  {
+    "masterCardId": "20251",
+    "externalId": null,
+    "tcgdex_id": "xy7-20",
+    "localId": "020",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "020/98",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 020/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-020-low.png",
+    "imageHighSrc": "cards/xy7-020-high.png"
+  },
+  {
+    "masterCardId": "20246",
+    "externalId": null,
+    "tcgdex_id": "xy7-19",
+    "localId": "019",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "019/98",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 019/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-019-low.png",
+    "imageHighSrc": "cards/xy7-019-high.png"
+  },
+  {
+    "masterCardId": "20241",
+    "externalId": null,
+    "tcgdex_id": "xy7-18",
+    "localId": "018",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "018/98",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 018/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-018-low.png",
+    "imageHighSrc": "cards/xy7-018-high.png"
+  },
+  {
+    "masterCardId": "20236",
+    "externalId": null,
+    "tcgdex_id": "xy7-17",
+    "localId": "017",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "017/98",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 017/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-017-low.png",
+    "imageHighSrc": "cards/xy7-017-high.png"
+  },
+  {
+    "masterCardId": "20231",
+    "externalId": null,
+    "tcgdex_id": "xy7-16",
+    "localId": "016",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "016/98",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 016/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-016-low.png",
+    "imageHighSrc": "cards/xy7-016-high.png"
+  },
+  {
+    "masterCardId": "20225",
+    "externalId": null,
+    "tcgdex_id": "xy7-15",
+    "localId": "015",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "015/98",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 015/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-015-low.png",
+    "imageHighSrc": "cards/xy7-015-high.png"
+  },
+  {
+    "masterCardId": "20220",
+    "externalId": null,
+    "tcgdex_id": "xy7-14",
+    "localId": "014",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "014/98",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 014/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-014-low.png",
+    "imageHighSrc": "cards/xy7-014-high.png"
+  },
+  {
+    "masterCardId": "20214",
+    "externalId": null,
+    "tcgdex_id": "xy7-13",
+    "localId": "013",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "013/98",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 013/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-013-low.png",
+    "imageHighSrc": "cards/xy7-013-high.png"
+  },
+  {
+    "masterCardId": "20209",
+    "externalId": null,
+    "tcgdex_id": "xy7-12",
+    "localId": "012",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "012/98",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 012/98 Ancient Origins",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-012-low.png",
+    "imageHighSrc": "cards/xy7-012-high.png"
+  },
+  {
+    "masterCardId": "20205",
+    "externalId": null,
+    "tcgdex_id": "xy7-11",
+    "localId": "011",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "011/98",
+    "cardName": "Vespiquen",
+    "fullDisplayName": "Vespiquen 011/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      416
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combee",
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-011-low.png",
+    "imageHighSrc": "cards/xy7-011-high.png"
+  },
+  {
+    "masterCardId": "20199",
+    "externalId": null,
+    "tcgdex_id": "xy7-10",
+    "localId": "010",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "010/98",
+    "cardName": "Vespiquen",
+    "fullDisplayName": "Vespiquen 010/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      416
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combee",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-010-low.png",
+    "imageHighSrc": "cards/xy7-010-high.png"
+  },
+  {
+    "masterCardId": "20194",
+    "externalId": null,
+    "tcgdex_id": "xy7-9",
+    "localId": "009",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "009/98",
+    "cardName": "Combee",
+    "fullDisplayName": "Combee 009/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      415
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-009-low.png",
+    "imageHighSrc": "cards/xy7-009-high.png"
+  },
+  {
+    "masterCardId": "20188",
+    "externalId": null,
+    "tcgdex_id": "xy7-8",
+    "localId": "008",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "008/98",
+    "cardName": "M Sceptile-EX",
+    "fullDisplayName": "M Sceptile-EX 008/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sceptile-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-008-low.png",
+    "imageHighSrc": "cards/xy7-008-high.png"
+  },
+  {
+    "masterCardId": "20183",
+    "externalId": null,
+    "tcgdex_id": "xy7-7",
+    "localId": "007",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "007/98",
+    "cardName": "Sceptile-EX",
+    "fullDisplayName": "Sceptile-EX 007/98 Ancient Origins",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-007-low.png",
+    "imageHighSrc": "cards/xy7-007-high.png"
+  },
+  {
+    "masterCardId": "20178",
+    "externalId": null,
+    "tcgdex_id": "xy7-6",
+    "localId": "006",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "006/98",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 006/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spinarak",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-006-low.png",
+    "imageHighSrc": "cards/xy7-006-high.png"
+  },
+  {
+    "masterCardId": "20173",
+    "externalId": null,
+    "tcgdex_id": "xy7-5",
+    "localId": "005",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "005/98",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 005/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-005-low.png",
+    "imageHighSrc": "cards/xy7-005-high.png"
+  },
+  {
+    "masterCardId": "20168",
+    "externalId": null,
+    "tcgdex_id": "xy7-4",
+    "localId": "004",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "004/98",
+    "cardName": "Bellossom",
+    "fullDisplayName": "Bellossom 004/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      182
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-004-low.png",
+    "imageHighSrc": "cards/xy7-004-high.png"
+  },
+  {
+    "masterCardId": "20163",
+    "externalId": null,
+    "tcgdex_id": "xy7-3",
+    "localId": "003",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "003/98",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 003/98 Ancient Origins",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-003-low.png",
+    "imageHighSrc": "cards/xy7-003-high.png"
+  },
+  {
+    "masterCardId": "20159",
+    "externalId": null,
+    "tcgdex_id": "xy7-2",
+    "localId": "002",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "002/98",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 002/98 Ancient Origins",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-002-low.png",
+    "imageHighSrc": "cards/xy7-002-high.png"
+  },
+  {
+    "masterCardId": "20152",
+    "externalId": null,
+    "tcgdex_id": "xy7-1",
+    "localId": "001",
+    "setCode": "xy7",
+    "setTcgdexId": "xy7",
+    "cardNumber": "001/98",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 001/98 Ancient Origins",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy7-001-low.png",
+    "imageHighSrc": "cards/xy7-001-high.png"
+  }
+]

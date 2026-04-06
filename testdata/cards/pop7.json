@@ -1,0 +1,563 @@
+[
+  {
+    "masterCardId": "9256",
+    "externalId": null,
+    "tcgdex_id": "pop7-17",
+    "localId": "017",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "017/17",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 017/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-017-low.png",
+    "imageHighSrc": "cards/pop7-017-high.png"
+  },
+  {
+    "masterCardId": "9247",
+    "externalId": null,
+    "tcgdex_id": "pop7-16",
+    "localId": "016",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "016/17",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 016/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-016-low.png",
+    "imageHighSrc": "cards/pop7-016-high.png"
+  },
+  {
+    "masterCardId": "9238",
+    "externalId": null,
+    "tcgdex_id": "pop7-15",
+    "localId": "015",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "015/17",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 015/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-015-low.png",
+    "imageHighSrc": "cards/pop7-015-high.png"
+  },
+  {
+    "masterCardId": "9229",
+    "externalId": null,
+    "tcgdex_id": "pop7-14",
+    "localId": "014",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "014/17",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 014/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-014-low.png",
+    "imageHighSrc": "cards/pop7-014-high.png"
+  },
+  {
+    "masterCardId": "9220",
+    "externalId": null,
+    "tcgdex_id": "pop7-13",
+    "localId": "013",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "013/17",
+    "cardName": "Corsola",
+    "fullDisplayName": "Corsola 013/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      222
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-013-low.png",
+    "imageHighSrc": "cards/pop7-013-high.png"
+  },
+  {
+    "masterCardId": "9214",
+    "externalId": null,
+    "tcgdex_id": "pop7-12",
+    "localId": "012",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "012/17",
+    "cardName": "Burmy Sandy Cloak",
+    "fullDisplayName": "Burmy Sandy Cloak 012/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-012-low.png",
+    "imageHighSrc": "cards/pop7-012-high.png"
+  },
+  {
+    "masterCardId": "9206",
+    "externalId": null,
+    "tcgdex_id": "pop7-11",
+    "localId": "011",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "011/17",
+    "cardName": "Burmy Plant Cloak",
+    "fullDisplayName": "Burmy Plant Cloak 011/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-011-low.png",
+    "imageHighSrc": "cards/pop7-011-high.png"
+  },
+  {
+    "masterCardId": "9197",
+    "externalId": null,
+    "tcgdex_id": "pop7-10",
+    "localId": "010",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "010/17",
+    "cardName": "Wormadam Sandy Cloak",
+    "fullDisplayName": "Wormadam Sandy Cloak 010/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Sandy Cloak",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-010-low.png",
+    "imageHighSrc": "cards/pop7-010-high.png"
+  },
+  {
+    "masterCardId": "9189",
+    "externalId": null,
+    "tcgdex_id": "pop7-9",
+    "localId": "009",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "009/17",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 009/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-009-low.png",
+    "imageHighSrc": "cards/pop7-009-high.png"
+  },
+  {
+    "masterCardId": "9180",
+    "externalId": null,
+    "tcgdex_id": "pop7-8",
+    "localId": "008",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "008/17",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 008/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-008-low.png",
+    "imageHighSrc": "cards/pop7-008-high.png"
+  },
+  {
+    "masterCardId": "9171",
+    "externalId": null,
+    "tcgdex_id": "pop7-7",
+    "localId": "007",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "007/17",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 007/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-007-low.png",
+    "imageHighSrc": "cards/pop7-007-high.png"
+  },
+  {
+    "masterCardId": "9162",
+    "externalId": null,
+    "tcgdex_id": "pop7-6",
+    "localId": "006",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "006/17",
+    "cardName": "Delibird",
+    "fullDisplayName": "Delibird 006/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      225
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-006-low.png",
+    "imageHighSrc": "cards/pop7-006-high.png"
+  },
+  {
+    "masterCardId": "9152",
+    "externalId": null,
+    "tcgdex_id": "pop7-5",
+    "localId": "005",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "005/17",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 005/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-005-low.png",
+    "imageHighSrc": "cards/pop7-005-high.png"
+  },
+  {
+    "masterCardId": "9143",
+    "externalId": null,
+    "tcgdex_id": "pop7-4",
+    "localId": "004",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "004/17",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 004/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-004-low.png",
+    "imageHighSrc": "cards/pop7-004-high.png"
+  },
+  {
+    "masterCardId": "9133",
+    "externalId": null,
+    "tcgdex_id": "pop7-3",
+    "localId": "003",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "003/17",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 003/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-003-low.png",
+    "imageHighSrc": "cards/pop7-003-high.png"
+  },
+  {
+    "masterCardId": "9120",
+    "externalId": null,
+    "tcgdex_id": "pop7-2",
+    "localId": "002",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "002/17",
+    "cardName": "Gallade",
+    "fullDisplayName": "Gallade 002/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-002-low.png",
+    "imageHighSrc": "cards/pop7-002-high.png"
+  },
+  {
+    "masterCardId": "9113",
+    "externalId": null,
+    "tcgdex_id": "pop7-1",
+    "localId": "001",
+    "setCode": "pop7",
+    "setTcgdexId": "pop7",
+    "cardNumber": "001/17",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 001/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop7-001-low.png",
+    "imageHighSrc": "cards/pop7-001-high.png"
+  }
+]

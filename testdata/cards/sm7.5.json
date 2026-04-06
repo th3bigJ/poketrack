@@ -1,0 +1,2608 @@
+[
+  {
+    "masterCardId": "11537",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-78",
+    "localId": "78",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "078/70",
+    "cardName": "Ultra Necrozma-GX",
+    "fullDisplayName": "Ultra Necrozma-GX 078/70 Dragon Majesty",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      800
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-078-low.png",
+    "imageHighSrc": "cards/sm75-078-high.png"
+  },
+  {
+    "masterCardId": "11530",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-77",
+    "localId": "77",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "077/70",
+    "cardName": "Switch Raft",
+    "fullDisplayName": "Switch Raft 077/70 Dragon Majesty",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshinobu Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-077-low.png",
+    "imageHighSrc": "cards/sm75-077-high.png"
+  },
+  {
+    "masterCardId": "11523",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-76",
+    "localId": "76",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "076/70",
+    "cardName": "Fiery Flint",
+    "fullDisplayName": "Fiery Flint 076/70 Dragon Majesty",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-076-low.png",
+    "imageHighSrc": "cards/sm75-076-high.png"
+  },
+  {
+    "masterCardId": "11516",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-75",
+    "localId": "75",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "075/70",
+    "cardName": "Dragon Talon",
+    "fullDisplayName": "Dragon Talon 075/70 Dragon Majesty",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-075-low.png",
+    "imageHighSrc": "cards/sm75-075-high.png"
+  },
+  {
+    "masterCardId": "11510",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-74",
+    "localId": "74",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "074/70",
+    "cardName": "White Kyurem-GX",
+    "fullDisplayName": "White Kyurem-GX 074/70 Dragon Majesty",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-074-low.png",
+    "imageHighSrc": "cards/sm75-074-high.png"
+  },
+  {
+    "masterCardId": "11504",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-73",
+    "localId": "73",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "073/70",
+    "cardName": "Salamence-GX",
+    "fullDisplayName": "Salamence-GX 073/70 Dragon Majesty",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-073-low.png",
+    "imageHighSrc": "cards/sm75-073-high.png"
+  },
+  {
+    "masterCardId": "11497",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-72",
+    "localId": "72",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "072/70",
+    "cardName": "Altaria-GX",
+    "fullDisplayName": "Altaria-GX 072/70 Dragon Majesty",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-072-low.png",
+    "imageHighSrc": "cards/sm75-072-high.png"
+  },
+  {
+    "masterCardId": "11490",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-71",
+    "localId": "71",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "071/70",
+    "cardName": "Reshiram-GX",
+    "fullDisplayName": "Reshiram-GX 071/70 Dragon Majesty",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-071-low.png",
+    "imageHighSrc": "cards/sm75-071-high.png"
+  },
+  {
+    "masterCardId": "11483",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-70",
+    "localId": "70",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "070/70",
+    "cardName": "Zinnia",
+    "fullDisplayName": "Zinnia 070/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-070-low.png",
+    "imageHighSrc": "cards/sm75-070-high.png"
+  },
+  {
+    "masterCardId": "11476",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-69",
+    "localId": "69",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "069/70",
+    "cardName": "Blaine's Last Stand",
+    "fullDisplayName": "Blaine's Last Stand 069/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/sm75-069-low.png",
+    "imageHighSrc": "cards/sm75-069-high.png"
+  },
+  {
+    "masterCardId": "11469",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-68",
+    "localId": "68",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "068/70",
+    "cardName": "Altaria-GX",
+    "fullDisplayName": "Altaria-GX 068/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-068-low.png",
+    "imageHighSrc": "cards/sm75-068-high.png"
+  },
+  {
+    "masterCardId": "11462",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-67",
+    "localId": "67",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "067/70",
+    "cardName": "Dragonite-GX",
+    "fullDisplayName": "Dragonite-GX 067/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-067-low.png",
+    "imageHighSrc": "cards/sm75-067-high.png"
+  },
+  {
+    "masterCardId": "11455",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-66",
+    "localId": "66",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "066/70",
+    "cardName": "Kingdra-GX",
+    "fullDisplayName": "Kingdra-GX 066/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 230,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-066-low.png",
+    "imageHighSrc": "cards/sm75-066-high.png"
+  },
+  {
+    "masterCardId": "11448",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-65",
+    "localId": "65",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "065/70",
+    "cardName": "Reshiram-GX",
+    "fullDisplayName": "Reshiram-GX 065/70 Dragon Majesty",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-065-low.png",
+    "imageHighSrc": "cards/sm75-065-high.png"
+  },
+  {
+    "masterCardId": "11441",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-64",
+    "localId": "64",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "064/70",
+    "cardName": "Zinnia",
+    "fullDisplayName": "Zinnia 064/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-064-low.png",
+    "imageHighSrc": "cards/sm75-064-high.png"
+  },
+  {
+    "masterCardId": "11434",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-63",
+    "localId": "63",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "063/70",
+    "cardName": "Wela Volcano Park",
+    "fullDisplayName": "Wela Volcano Park 063/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-063-low.png",
+    "imageHighSrc": "cards/sm75-063-high.png"
+  },
+  {
+    "masterCardId": "11428",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-62",
+    "localId": "62",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "062/70",
+    "cardName": "Switch Raft",
+    "fullDisplayName": "Switch Raft 062/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshinobu Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-062-low.png",
+    "imageHighSrc": "cards/sm75-062-high.png"
+  },
+  {
+    "masterCardId": "11422",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-61",
+    "localId": "61",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "061/70",
+    "cardName": "Lance ◇",
+    "fullDisplayName": "Lance ◇ 061/70 Dragon Majesty",
+    "rarity": "Rare Prism Star",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter",
+      "Prism Star"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/sm75-061-low.png",
+    "imageHighSrc": "cards/sm75-061-high.png"
+  },
+  {
+    "masterCardId": "11415",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-60",
+    "localId": "60",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "60a/70",
+    "cardName": "Fiery Flint",
+    "fullDisplayName": "Fiery Flint 60a/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshinobu Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-60a-low.png",
+    "imageHighSrc": "cards/sm75-60a-high.png"
+  },
+  {
+    "masterCardId": "11408",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-60",
+    "localId": "60",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "060/70",
+    "cardName": "Fiery Flint",
+    "fullDisplayName": "Fiery Flint 060/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-060-low.png",
+    "imageHighSrc": "cards/sm75-060-high.png"
+  },
+  {
+    "masterCardId": "11401",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-59",
+    "localId": "59",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "059/70",
+    "cardName": "Dragon Talon",
+    "fullDisplayName": "Dragon Talon 059/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-059-low.png",
+    "imageHighSrc": "cards/sm75-059-high.png"
+  },
+  {
+    "masterCardId": "11394",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-58",
+    "localId": "58",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "058/70",
+    "cardName": "Blaine's Last Stand",
+    "fullDisplayName": "Blaine's Last Stand 058/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/sm75-058-low.png",
+    "imageHighSrc": "cards/sm75-058-high.png"
+  },
+  {
+    "masterCardId": "11389",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-57",
+    "localId": "57",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "057/70",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 057/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-057-low.png",
+    "imageHighSrc": "cards/sm75-057-high.png"
+  },
+  {
+    "masterCardId": "11382",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-56",
+    "localId": "56",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "056/70",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 056/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-056-low.png",
+    "imageHighSrc": "cards/sm75-056-high.png"
+  },
+  {
+    "masterCardId": "11376",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-55",
+    "localId": "55",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "055/70",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 055/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-055-low.png",
+    "imageHighSrc": "cards/sm75-055-high.png"
+  },
+  {
+    "masterCardId": "11368",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-54",
+    "localId": "54",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "054/70",
+    "cardName": "Kommo-o",
+    "fullDisplayName": "Kommo-o 054/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      784
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hakamo-o",
+    "artist": "so-taro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-054-low.png",
+    "imageHighSrc": "cards/sm75-054-high.png"
+  },
+  {
+    "masterCardId": "11361",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-53",
+    "localId": "53",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "053/70",
+    "cardName": "Hakamo-o",
+    "fullDisplayName": "Hakamo-o 053/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      783
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jangmo-o",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-053-low.png",
+    "imageHighSrc": "cards/sm75-053-high.png"
+  },
+  {
+    "masterCardId": "11354",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-52",
+    "localId": "52",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "052/70",
+    "cardName": "Jangmo-o",
+    "fullDisplayName": "Jangmo-o 052/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      782
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-052-low.png",
+    "imageHighSrc": "cards/sm75-052-high.png"
+  },
+  {
+    "masterCardId": "11349",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-51",
+    "localId": "51",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "051/70",
+    "cardName": "Drampa",
+    "fullDisplayName": "Drampa 051/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      780
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-051-low.png",
+    "imageHighSrc": "cards/sm75-051-high.png"
+  },
+  {
+    "masterCardId": "11339",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-50",
+    "localId": "50",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "050/70",
+    "cardName": "Turtonator",
+    "fullDisplayName": "Turtonator 050/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      776
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-050-low.png",
+    "imageHighSrc": "cards/sm75-050-high.png"
+  },
+  {
+    "masterCardId": "11332",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-49",
+    "localId": "49",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "049/70",
+    "cardName": "Zygarde",
+    "fullDisplayName": "Zygarde 049/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-049-low.png",
+    "imageHighSrc": "cards/sm75-049-high.png"
+  },
+  {
+    "masterCardId": "11325",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-48",
+    "localId": "48",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "048/70",
+    "cardName": "White Kyurem-GX",
+    "fullDisplayName": "White Kyurem-GX 048/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-048-low.png",
+    "imageHighSrc": "cards/sm75-048-high.png"
+  },
+  {
+    "masterCardId": "11318",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-47",
+    "localId": "47",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "047/70",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem 047/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-047-low.png",
+    "imageHighSrc": "cards/sm75-047-high.png"
+  },
+  {
+    "masterCardId": "11312",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-46",
+    "localId": "46",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "046/70",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 046/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-046-low.png",
+    "imageHighSrc": "cards/sm75-046-high.png"
+  },
+  {
+    "masterCardId": "11305",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-45",
+    "localId": "45",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "045/70",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 045/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-045-low.png",
+    "imageHighSrc": "cards/sm75-045-high.png"
+  },
+  {
+    "masterCardId": "11298",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-44",
+    "localId": "44",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "044/70",
+    "cardName": "Salamence-GX",
+    "fullDisplayName": "Salamence-GX 044/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-044-low.png",
+    "imageHighSrc": "cards/sm75-044-high.png"
+  },
+  {
+    "masterCardId": "11291",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-43",
+    "localId": "43",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "043/70",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 043/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-043-low.png",
+    "imageHighSrc": "cards/sm75-043-high.png"
+  },
+  {
+    "masterCardId": "11286",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-42",
+    "localId": "42",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "042/70",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 042/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-042-low.png",
+    "imageHighSrc": "cards/sm75-042-high.png"
+  },
+  {
+    "masterCardId": "11279",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-41",
+    "localId": "41",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "041/70",
+    "cardName": "Altaria-GX",
+    "fullDisplayName": "Altaria-GX 041/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-041-low.png",
+    "imageHighSrc": "cards/sm75-041-high.png"
+  },
+  {
+    "masterCardId": "11272",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-40",
+    "localId": "40",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "40a/70",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 40a/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-40a-low.png",
+    "imageHighSrc": "cards/sm75-40a-high.png"
+  },
+  {
+    "masterCardId": "11266",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-40",
+    "localId": "40",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "040/70",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 040/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-040-low.png",
+    "imageHighSrc": "cards/sm75-040-high.png"
+  },
+  {
+    "masterCardId": "11258",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-39",
+    "localId": "39",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "039/70",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 039/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-039-low.png",
+    "imageHighSrc": "cards/sm75-039-high.png"
+  },
+  {
+    "masterCardId": "11252",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-38",
+    "localId": "38",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "038/70",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 038/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-038-low.png",
+    "imageHighSrc": "cards/sm75-038-high.png"
+  },
+  {
+    "masterCardId": "11245",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-37",
+    "localId": "37",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "037/70",
+    "cardName": "Dragonite-GX",
+    "fullDisplayName": "Dragonite-GX 037/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-037-low.png",
+    "imageHighSrc": "cards/sm75-037-high.png"
+  },
+  {
+    "masterCardId": "11239",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-36",
+    "localId": "36",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "036/70",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 036/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-036-low.png",
+    "imageHighSrc": "cards/sm75-036-high.png"
+  },
+  {
+    "masterCardId": "11232",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-35",
+    "localId": "35",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "035/70",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 035/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-035-low.png",
+    "imageHighSrc": "cards/sm75-035-high.png"
+  },
+  {
+    "masterCardId": "11226",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-34",
+    "localId": "34",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "034/70",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 034/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-034-low.png",
+    "imageHighSrc": "cards/sm75-034-high.png"
+  },
+  {
+    "masterCardId": "11219",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-33",
+    "localId": "33",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "033/70",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 033/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-033-low.png",
+    "imageHighSrc": "cards/sm75-033-high.png"
+  },
+  {
+    "masterCardId": "11212",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-32",
+    "localId": "32",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "032/70",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 032/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-032-low.png",
+    "imageHighSrc": "cards/sm75-032-high.png"
+  },
+  {
+    "masterCardId": "11205",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-31",
+    "localId": "31",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "031/70",
+    "cardName": "Wishiwashi",
+    "fullDisplayName": "Wishiwashi 031/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      746
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-031-low.png",
+    "imageHighSrc": "cards/sm75-031-high.png"
+  },
+  {
+    "masterCardId": "11198",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-30",
+    "localId": "30",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "030/70",
+    "cardName": "Phione",
+    "fullDisplayName": "Phione 030/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      489
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-030-low.png",
+    "imageHighSrc": "cards/sm75-030-high.png"
+  },
+  {
+    "masterCardId": "11191",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-29",
+    "localId": "29",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "029/70",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 029/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-029-low.png",
+    "imageHighSrc": "cards/sm75-029-high.png"
+  },
+  {
+    "masterCardId": "11184",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-28",
+    "localId": "28",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "028/70",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 028/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-028-low.png",
+    "imageHighSrc": "cards/sm75-028-high.png"
+  },
+  {
+    "masterCardId": "11177",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-27",
+    "localId": "27",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "027/70",
+    "cardName": "Corsola",
+    "fullDisplayName": "Corsola 027/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      222
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-027-low.png",
+    "imageHighSrc": "cards/sm75-027-high.png"
+  },
+  {
+    "masterCardId": "11171",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-26",
+    "localId": "26",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "026/70",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 026/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-026-low.png",
+    "imageHighSrc": "cards/sm75-026-high.png"
+  },
+  {
+    "masterCardId": "11164",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-25",
+    "localId": "25",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "025/70",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper 025/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-025-low.png",
+    "imageHighSrc": "cards/sm75-025-high.png"
+  },
+  {
+    "masterCardId": "11156",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-24",
+    "localId": "24",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "024/70",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 024/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-024-low.png",
+    "imageHighSrc": "cards/sm75-024-high.png"
+  },
+  {
+    "masterCardId": "11150",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-23",
+    "localId": "23",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "023/70",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 023/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-023-low.png",
+    "imageHighSrc": "cards/sm75-023-high.png"
+  },
+  {
+    "masterCardId": "11144",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-22",
+    "localId": "22",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "022/70",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 022/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-022-low.png",
+    "imageHighSrc": "cards/sm75-022-high.png"
+  },
+  {
+    "masterCardId": "11137",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-21",
+    "localId": "21",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "021/70",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 021/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-021-low.png",
+    "imageHighSrc": "cards/sm75-021-high.png"
+  },
+  {
+    "masterCardId": "11130",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-20",
+    "localId": "20",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "020/70",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 020/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-020-low.png",
+    "imageHighSrc": "cards/sm75-020-high.png"
+  },
+  {
+    "masterCardId": "11123",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-19",
+    "localId": "19",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "019/70",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 019/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-019-low.png",
+    "imageHighSrc": "cards/sm75-019-high.png"
+  },
+  {
+    "masterCardId": "11116",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-18",
+    "localId": "18",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "018/70",
+    "cardName": "Kingdra-GX",
+    "fullDisplayName": "Kingdra-GX 018/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 230,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-018-low.png",
+    "imageHighSrc": "cards/sm75-018-high.png"
+  },
+  {
+    "masterCardId": "11109",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-17",
+    "localId": "17",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "017/70",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 017/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Yumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-017-low.png",
+    "imageHighSrc": "cards/sm75-017-high.png"
+  },
+  {
+    "masterCardId": "11102",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-16",
+    "localId": "16",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "016/70",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 016/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-016-low.png",
+    "imageHighSrc": "cards/sm75-016-high.png"
+  },
+  {
+    "masterCardId": "11094",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-15",
+    "localId": "15",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "015/70",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 015/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-015-low.png",
+    "imageHighSrc": "cards/sm75-015-high.png"
+  },
+  {
+    "masterCardId": "11088",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-14",
+    "localId": "14",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "014/70",
+    "cardName": "Salazzle",
+    "fullDisplayName": "Salazzle 014/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      758
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Salandit",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-014-low.png",
+    "imageHighSrc": "cards/sm75-014-high.png"
+  },
+  {
+    "masterCardId": "11080",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-13",
+    "localId": "13",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "013/70",
+    "cardName": "Salandit",
+    "fullDisplayName": "Salandit 013/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      757
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-013-low.png",
+    "imageHighSrc": "cards/sm75-013-high.png"
+  },
+  {
+    "masterCardId": "11074",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-12",
+    "localId": "12",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "012/70",
+    "cardName": "Litten",
+    "fullDisplayName": "Litten 012/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      725
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-012-low.png",
+    "imageHighSrc": "cards/sm75-012-high.png"
+  },
+  {
+    "masterCardId": "11067",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-11",
+    "localId": "11",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "011/70",
+    "cardName": "Reshiram-GX",
+    "fullDisplayName": "Reshiram-GX 011/70 Dragon Majesty",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Otani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-011-low.png",
+    "imageHighSrc": "cards/sm75-011-high.png"
+  },
+  {
+    "masterCardId": "11060",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-10",
+    "localId": "10",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "010/70",
+    "cardName": "Heatmor",
+    "fullDisplayName": "Heatmor 010/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      631
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-010-low.png",
+    "imageHighSrc": "cards/sm75-010-high.png"
+  },
+  {
+    "masterCardId": "11054",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-9",
+    "localId": "9",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "009/70",
+    "cardName": "Darmanitan",
+    "fullDisplayName": "Darmanitan 009/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darumaka",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-009-low.png",
+    "imageHighSrc": "cards/sm75-009-high.png"
+  },
+  {
+    "masterCardId": "11047",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-8",
+    "localId": "8",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "008/70",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka 008/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-008-low.png",
+    "imageHighSrc": "cards/sm75-008-high.png"
+  },
+  {
+    "masterCardId": "11041",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-7",
+    "localId": "7",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "007/70",
+    "cardName": "Victini ◇",
+    "fullDisplayName": "Victini ◇ 007/70 Dragon Majesty",
+    "rarity": "Rare Prism Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic",
+      "Prism Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-007-low.png",
+    "imageHighSrc": "cards/sm75-007-high.png"
+  },
+  {
+    "masterCardId": "11034",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-6",
+    "localId": "6",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "006/70",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 006/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-006-low.png",
+    "imageHighSrc": "cards/sm75-006-high.png"
+  },
+  {
+    "masterCardId": "11024",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-5",
+    "localId": "5",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "005/70",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 005/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-005-low.png",
+    "imageHighSrc": "cards/sm75-005-high.png"
+  },
+  {
+    "masterCardId": "11018",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-4",
+    "localId": "4",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "004/70",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 004/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-004-low.png",
+    "imageHighSrc": "cards/sm75-004-high.png"
+  },
+  {
+    "masterCardId": "11012",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-3",
+    "localId": "3",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "003/70",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 003/70 Dragon Majesty",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-003-low.png",
+    "imageHighSrc": "cards/sm75-003-high.png"
+  },
+  {
+    "masterCardId": "11006",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-2",
+    "localId": "2",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "002/70",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 002/70 Dragon Majesty",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-002-low.png",
+    "imageHighSrc": "cards/sm75-002-high.png"
+  },
+  {
+    "masterCardId": "11000",
+    "externalId": null,
+    "tcgdex_id": "sm7.5-1",
+    "localId": "1",
+    "setCode": "sm7.5",
+    "setTcgdexId": "sm7.5",
+    "cardNumber": "001/70",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 001/70 Dragon Majesty",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "tetsuya koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm75-001-low.png",
+    "imageHighSrc": "cards/sm75-001-high.png"
+  }
+]

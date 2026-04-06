@@ -1,0 +1,3600 @@
+[
+  {
+    "masterCardId": "6173",
+    "externalId": null,
+    "tcgdex_id": "ex13-111",
+    "localId": "111",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "111/110",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 111/110 Holon Phantoms",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-111-low.png",
+    "imageHighSrc": "cards/ex13-111-high.png"
+  },
+  {
+    "masterCardId": "6171",
+    "externalId": null,
+    "tcgdex_id": "ex13-110",
+    "localId": "110",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "110/110",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 110/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-110-low.png",
+    "imageHighSrc": "cards/ex13-110-high.png"
+  },
+  {
+    "masterCardId": "6169",
+    "externalId": null,
+    "tcgdex_id": "ex13-109",
+    "localId": "109",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "109/110",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 109/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-109-low.png",
+    "imageHighSrc": "cards/ex13-109-high.png"
+  },
+  {
+    "masterCardId": "6166",
+    "externalId": null,
+    "tcgdex_id": "ex13-108",
+    "localId": "108",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "108/110",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 108/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-108-low.png",
+    "imageHighSrc": "cards/ex13-108-high.png"
+  },
+  {
+    "masterCardId": "6163",
+    "externalId": null,
+    "tcgdex_id": "ex13-107",
+    "localId": "107",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "107/110",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 107/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-107-low.png",
+    "imageHighSrc": "cards/ex13-107-high.png"
+  },
+  {
+    "masterCardId": "6160",
+    "externalId": null,
+    "tcgdex_id": "ex13-106",
+    "localId": "106",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "106/110",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 106/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-106-low.png",
+    "imageHighSrc": "cards/ex13-106-high.png"
+  },
+  {
+    "masterCardId": "6157",
+    "externalId": null,
+    "tcgdex_id": "ex13-105",
+    "localId": "105",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "105/110",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 105/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-105-low.png",
+    "imageHighSrc": "cards/ex13-105-high.png"
+  },
+  {
+    "masterCardId": "6154",
+    "externalId": null,
+    "tcgdex_id": "ex13-104",
+    "localId": "104",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "104/110",
+    "cardName": "Pikachu ★",
+    "fullDisplayName": "Pikachu ★ 104/110 Holon Phantoms",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-104-low.png",
+    "imageHighSrc": "cards/ex13-104-high.png"
+  },
+  {
+    "masterCardId": "6148",
+    "externalId": null,
+    "tcgdex_id": "ex13-103",
+    "localId": "103",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "103/110",
+    "cardName": "Mewtwo ★",
+    "fullDisplayName": "Mewtwo ★ 103/110 Holon Phantoms",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-103-low.png",
+    "imageHighSrc": "cards/ex13-103-high.png"
+  },
+  {
+    "masterCardId": "6144",
+    "externalId": null,
+    "tcgdex_id": "ex13-102",
+    "localId": "102",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "102/110",
+    "cardName": "Gyarados Star δ",
+    "fullDisplayName": "Gyarados Star δ 102/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex13-102-low.png",
+    "imageHighSrc": "cards/ex13-102-high.png"
+  },
+  {
+    "masterCardId": "6139",
+    "externalId": null,
+    "tcgdex_id": "ex13-101",
+    "localId": "101",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "101/110",
+    "cardName": "Mightyena ex",
+    "fullDisplayName": "Mightyena ex 101/110 Holon Phantoms",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-101-low.png",
+    "imageHighSrc": "cards/ex13-101-high.png"
+  },
+  {
+    "masterCardId": "6132",
+    "externalId": null,
+    "tcgdex_id": "ex13-100",
+    "localId": "100",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "100/110",
+    "cardName": "Mew ex",
+    "fullDisplayName": "Mew ex 100/110 Holon Phantoms",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-100-low.png",
+    "imageHighSrc": "cards/ex13-100-high.png"
+  },
+  {
+    "masterCardId": "6124",
+    "externalId": null,
+    "tcgdex_id": "ex13-99",
+    "localId": "99",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "099/110",
+    "cardName": "Crawdaunt ex",
+    "fullDisplayName": "Crawdaunt ex 099/110 Holon Phantoms",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Corphish",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-099-low.png",
+    "imageHighSrc": "cards/ex13-099-high.png"
+  },
+  {
+    "masterCardId": "6116",
+    "externalId": null,
+    "tcgdex_id": "ex13-98",
+    "localId": "98",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "098/110",
+    "cardName": "δ Rainbow Energy",
+    "fullDisplayName": "δ Rainbow Energy 098/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex13-098-low.png",
+    "imageHighSrc": "cards/ex13-098-high.png"
+  },
+  {
+    "masterCardId": "6109",
+    "externalId": null,
+    "tcgdex_id": "ex13-97",
+    "localId": "97",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "097/110",
+    "cardName": "Dark Metal Energy",
+    "fullDisplayName": "Dark Metal Energy 097/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-097-low.png",
+    "imageHighSrc": "cards/ex13-097-high.png"
+  },
+  {
+    "masterCardId": "6103",
+    "externalId": null,
+    "tcgdex_id": "ex13-96",
+    "localId": "96",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "096/110",
+    "cardName": "Multi Energy",
+    "fullDisplayName": "Multi Energy 096/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-096-low.png",
+    "imageHighSrc": "cards/ex13-096-high.png"
+  },
+  {
+    "masterCardId": "6093",
+    "externalId": null,
+    "tcgdex_id": "ex13-95",
+    "localId": "95",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "095/110",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 095/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-095-low.png",
+    "imageHighSrc": "cards/ex13-095-high.png"
+  },
+  {
+    "masterCardId": "6085",
+    "externalId": null,
+    "tcgdex_id": "ex13-94",
+    "localId": "94",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "094/110",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 094/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-094-low.png",
+    "imageHighSrc": "cards/ex13-094-high.png"
+  },
+  {
+    "masterCardId": "6077",
+    "externalId": null,
+    "tcgdex_id": "ex13-93",
+    "localId": "93",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "093/110",
+    "cardName": "Root Fossil",
+    "fullDisplayName": "Root Fossil 093/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-093-low.png",
+    "imageHighSrc": "cards/ex13-093-high.png"
+  },
+  {
+    "masterCardId": "6068",
+    "externalId": null,
+    "tcgdex_id": "ex13-92",
+    "localId": "92",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "092/110",
+    "cardName": "Mysterious Fossil",
+    "fullDisplayName": "Mysterious Fossil 092/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-092-low.png",
+    "imageHighSrc": "cards/ex13-092-high.png"
+  },
+  {
+    "masterCardId": "6060",
+    "externalId": null,
+    "tcgdex_id": "ex13-91",
+    "localId": "91",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "091/110",
+    "cardName": "Claw Fossil",
+    "fullDisplayName": "Claw Fossil 091/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-091-low.png",
+    "imageHighSrc": "cards/ex13-091-high.png"
+  },
+  {
+    "masterCardId": "6052",
+    "externalId": null,
+    "tcgdex_id": "ex13-90",
+    "localId": "90",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "090/110",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 090/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-090-low.png",
+    "imageHighSrc": "cards/ex13-090-high.png"
+  },
+  {
+    "masterCardId": "6041",
+    "externalId": null,
+    "tcgdex_id": "ex13-89",
+    "localId": "89",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "089/110",
+    "cardName": "Professor Cozmo's Discovery",
+    "fullDisplayName": "Professor Cozmo's Discovery 089/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-089-low.png",
+    "imageHighSrc": "cards/ex13-089-high.png"
+  },
+  {
+    "masterCardId": "6032",
+    "externalId": null,
+    "tcgdex_id": "ex13-88",
+    "localId": "88",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "088/110",
+    "cardName": "Mr. Stone's Project",
+    "fullDisplayName": "Mr. Stone's Project 088/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-088-low.png",
+    "imageHighSrc": "cards/ex13-088-high.png"
+  },
+  {
+    "masterCardId": "6024",
+    "externalId": null,
+    "tcgdex_id": "ex13-87",
+    "localId": "87",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "087/110",
+    "cardName": "Holon Lake",
+    "fullDisplayName": "Holon Lake 087/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-087-low.png",
+    "imageHighSrc": "cards/ex13-087-high.png"
+  },
+  {
+    "masterCardId": "6015",
+    "externalId": null,
+    "tcgdex_id": "ex13-86",
+    "localId": "86",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "086/110",
+    "cardName": "Holon Fossil",
+    "fullDisplayName": "Holon Fossil 086/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-086-low.png",
+    "imageHighSrc": "cards/ex13-086-high.png"
+  },
+  {
+    "masterCardId": "6006",
+    "externalId": null,
+    "tcgdex_id": "ex13-85",
+    "localId": "85",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "085/110",
+    "cardName": "Holon Adventurer",
+    "fullDisplayName": "Holon Adventurer 085/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-085-low.png",
+    "imageHighSrc": "cards/ex13-085-high.png"
+  },
+  {
+    "masterCardId": "5997",
+    "externalId": null,
+    "tcgdex_id": "ex13-84",
+    "localId": "84",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "084/110",
+    "cardName": "Trapinch δ",
+    "fullDisplayName": "Trapinch δ 084/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-084-low.png",
+    "imageHighSrc": "cards/ex13-084-high.png"
+  },
+  {
+    "masterCardId": "5988",
+    "externalId": null,
+    "tcgdex_id": "ex13-83",
+    "localId": "83",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "083/110",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 083/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-083-low.png",
+    "imageHighSrc": "cards/ex13-083-high.png"
+  },
+  {
+    "masterCardId": "5979",
+    "externalId": null,
+    "tcgdex_id": "ex13-82",
+    "localId": "82",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "082/110",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 082/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-082-low.png",
+    "imageHighSrc": "cards/ex13-082-high.png"
+  },
+  {
+    "masterCardId": "5970",
+    "externalId": null,
+    "tcgdex_id": "ex13-81",
+    "localId": "81",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "081/110",
+    "cardName": "Psyduck δ",
+    "fullDisplayName": "Psyduck δ 081/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-081-low.png",
+    "imageHighSrc": "cards/ex13-081-high.png"
+  },
+  {
+    "masterCardId": "5961",
+    "externalId": null,
+    "tcgdex_id": "ex13-80",
+    "localId": "80",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "080/110",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 080/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-080-low.png",
+    "imageHighSrc": "cards/ex13-080-high.png"
+  },
+  {
+    "masterCardId": "5952",
+    "externalId": null,
+    "tcgdex_id": "ex13-79",
+    "localId": "79",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "079/110",
+    "cardName": "Pikachu δ",
+    "fullDisplayName": "Pikachu δ 079/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-079-low.png",
+    "imageHighSrc": "cards/ex13-079-high.png"
+  },
+  {
+    "masterCardId": "5943",
+    "externalId": null,
+    "tcgdex_id": "ex13-78",
+    "localId": "78",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "078/110",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 078/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-078-low.png",
+    "imageHighSrc": "cards/ex13-078-high.png"
+  },
+  {
+    "masterCardId": "5934",
+    "externalId": null,
+    "tcgdex_id": "ex13-77",
+    "localId": "77",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "077/110",
+    "cardName": "Pidgey δ",
+    "fullDisplayName": "Pidgey δ 077/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-077-low.png",
+    "imageHighSrc": "cards/ex13-077-high.png"
+  },
+  {
+    "masterCardId": "5926",
+    "externalId": null,
+    "tcgdex_id": "ex13-76",
+    "localId": "76",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "076/110",
+    "cardName": "Pichu δ",
+    "fullDisplayName": "Pichu δ 076/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-076-low.png",
+    "imageHighSrc": "cards/ex13-076-high.png"
+  },
+  {
+    "masterCardId": "5917",
+    "externalId": null,
+    "tcgdex_id": "ex13-75",
+    "localId": "75",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "075/110",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 075/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-075-low.png",
+    "imageHighSrc": "cards/ex13-075-high.png"
+  },
+  {
+    "masterCardId": "5907",
+    "externalId": null,
+    "tcgdex_id": "ex13-74",
+    "localId": "74",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "074/110",
+    "cardName": "Omanyte δ",
+    "fullDisplayName": "Omanyte δ 074/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-074-low.png",
+    "imageHighSrc": "cards/ex13-074-high.png"
+  },
+  {
+    "masterCardId": "5899",
+    "externalId": null,
+    "tcgdex_id": "ex13-73",
+    "localId": "73",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "073/110",
+    "cardName": "Oddish δ",
+    "fullDisplayName": "Oddish δ 073/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-073-low.png",
+    "imageHighSrc": "cards/ex13-073-high.png"
+  },
+  {
+    "masterCardId": "5890",
+    "externalId": null,
+    "tcgdex_id": "ex13-72",
+    "localId": "72",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "072/110",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 072/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-072-low.png",
+    "imageHighSrc": "cards/ex13-072-high.png"
+  },
+  {
+    "masterCardId": "5881",
+    "externalId": null,
+    "tcgdex_id": "ex13-71",
+    "localId": "71",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "071/110",
+    "cardName": "Meowth δ",
+    "fullDisplayName": "Meowth δ 071/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness",
+      "Metal"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-071-low.png",
+    "imageHighSrc": "cards/ex13-071-high.png"
+  },
+  {
+    "masterCardId": "5872",
+    "externalId": null,
+    "tcgdex_id": "ex13-70",
+    "localId": "70",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "070/110",
+    "cardName": "Mankey δ",
+    "fullDisplayName": "Mankey δ 070/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-070-low.png",
+    "imageHighSrc": "cards/ex13-070-high.png"
+  },
+  {
+    "masterCardId": "5864",
+    "externalId": null,
+    "tcgdex_id": "ex13-69",
+    "localId": "69",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "069/110",
+    "cardName": "Magikarp δ",
+    "fullDisplayName": "Magikarp δ 069/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-069-low.png",
+    "imageHighSrc": "cards/ex13-069-high.png"
+  },
+  {
+    "masterCardId": "5855",
+    "externalId": null,
+    "tcgdex_id": "ex13-68",
+    "localId": "68",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "068/110",
+    "cardName": "Lileep δ",
+    "fullDisplayName": "Lileep δ 068/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Root Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-068-low.png",
+    "imageHighSrc": "cards/ex13-068-high.png"
+  },
+  {
+    "masterCardId": "5845",
+    "externalId": null,
+    "tcgdex_id": "ex13-67",
+    "localId": "67",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "067/110",
+    "cardName": "Kabuto δ",
+    "fullDisplayName": "Kabuto δ 067/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-067-low.png",
+    "imageHighSrc": "cards/ex13-067-high.png"
+  },
+  {
+    "masterCardId": "5836",
+    "externalId": null,
+    "tcgdex_id": "ex13-66",
+    "localId": "66",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "066/110",
+    "cardName": "Horsea δ",
+    "fullDisplayName": "Horsea δ 066/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-066-low.png",
+    "imageHighSrc": "cards/ex13-066-high.png"
+  },
+  {
+    "masterCardId": "5827",
+    "externalId": null,
+    "tcgdex_id": "ex13-65",
+    "localId": "65",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "065/110",
+    "cardName": "Exeggcute δ",
+    "fullDisplayName": "Exeggcute δ 065/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-065-low.png",
+    "imageHighSrc": "cards/ex13-065-high.png"
+  },
+  {
+    "masterCardId": "5817",
+    "externalId": null,
+    "tcgdex_id": "ex13-64",
+    "localId": "64",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "064/110",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 064/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-064-low.png",
+    "imageHighSrc": "cards/ex13-064-high.png"
+  },
+  {
+    "masterCardId": "5808",
+    "externalId": null,
+    "tcgdex_id": "ex13-63",
+    "localId": "63",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "063/110",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 063/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-063-low.png",
+    "imageHighSrc": "cards/ex13-063-high.png"
+  },
+  {
+    "masterCardId": "5799",
+    "externalId": null,
+    "tcgdex_id": "ex13-62",
+    "localId": "62",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "062/110",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 062/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-062-low.png",
+    "imageHighSrc": "cards/ex13-062-high.png"
+  },
+  {
+    "masterCardId": "5791",
+    "externalId": null,
+    "tcgdex_id": "ex13-61",
+    "localId": "61",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "061/110",
+    "cardName": "Carvanha δ",
+    "fullDisplayName": "Carvanha δ 061/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-061-low.png",
+    "imageHighSrc": "cards/ex13-061-high.png"
+  },
+  {
+    "masterCardId": "5781",
+    "externalId": null,
+    "tcgdex_id": "ex13-60",
+    "localId": "60",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "060/110",
+    "cardName": "Barboach",
+    "fullDisplayName": "Barboach 060/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      339
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-060-low.png",
+    "imageHighSrc": "cards/ex13-060-high.png"
+  },
+  {
+    "masterCardId": "5773",
+    "externalId": null,
+    "tcgdex_id": "ex13-59",
+    "localId": "59",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "059/110",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 059/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-059-low.png",
+    "imageHighSrc": "cards/ex13-059-high.png"
+  },
+  {
+    "masterCardId": "5764",
+    "externalId": null,
+    "tcgdex_id": "ex13-58",
+    "localId": "58",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "058/110",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 058/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-058-low.png",
+    "imageHighSrc": "cards/ex13-058-high.png"
+  },
+  {
+    "masterCardId": "5755",
+    "externalId": null,
+    "tcgdex_id": "ex13-57",
+    "localId": "57",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "057/110",
+    "cardName": "Anorith δ",
+    "fullDisplayName": "Anorith δ 057/110 Holon Phantoms",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      347
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Claw Fossil",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-057-low.png",
+    "imageHighSrc": "cards/ex13-057-high.png"
+  },
+  {
+    "masterCardId": "5746",
+    "externalId": null,
+    "tcgdex_id": "ex13-56",
+    "localId": "56",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "056/110",
+    "cardName": "Wobbuffet",
+    "fullDisplayName": "Wobbuffet 056/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      202
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-056-low.png",
+    "imageHighSrc": "cards/ex13-056-high.png"
+  },
+  {
+    "masterCardId": "5737",
+    "externalId": null,
+    "tcgdex_id": "ex13-55",
+    "localId": "55",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "055/110",
+    "cardName": "Whiscash",
+    "fullDisplayName": "Whiscash 055/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      340
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Barboach",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-055-low.png",
+    "imageHighSrc": "cards/ex13-055-high.png"
+  },
+  {
+    "masterCardId": "5728",
+    "externalId": null,
+    "tcgdex_id": "ex13-54",
+    "localId": "54",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "054/110",
+    "cardName": "Vibrava δ",
+    "fullDisplayName": "Vibrava δ 054/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-054-low.png",
+    "imageHighSrc": "cards/ex13-054-high.png"
+  },
+  {
+    "masterCardId": "5719",
+    "externalId": null,
+    "tcgdex_id": "ex13-53",
+    "localId": "53",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "053/110",
+    "cardName": "Sharpedo δ",
+    "fullDisplayName": "Sharpedo δ 053/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-053-low.png",
+    "imageHighSrc": "cards/ex13-053-high.png"
+  },
+  {
+    "masterCardId": "5710",
+    "externalId": null,
+    "tcgdex_id": "ex13-52",
+    "localId": "52",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "052/110",
+    "cardName": "Seadra δ",
+    "fullDisplayName": "Seadra δ 052/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-052-low.png",
+    "imageHighSrc": "cards/ex13-052-high.png"
+  },
+  {
+    "masterCardId": "5701",
+    "externalId": null,
+    "tcgdex_id": "ex13-51",
+    "localId": "51",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "051/110",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 051/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-051-low.png",
+    "imageHighSrc": "cards/ex13-051-high.png"
+  },
+  {
+    "masterCardId": "5692",
+    "externalId": null,
+    "tcgdex_id": "ex13-50",
+    "localId": "50",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "050/110",
+    "cardName": "Primeape δ",
+    "fullDisplayName": "Primeape δ 050/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-050-low.png",
+    "imageHighSrc": "cards/ex13-050-high.png"
+  },
+  {
+    "masterCardId": "5683",
+    "externalId": null,
+    "tcgdex_id": "ex13-49",
+    "localId": "49",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "049/110",
+    "cardName": "Pidgeotto δ",
+    "fullDisplayName": "Pidgeotto δ 049/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-049-low.png",
+    "imageHighSrc": "cards/ex13-049-high.png"
+  },
+  {
+    "masterCardId": "5674",
+    "externalId": null,
+    "tcgdex_id": "ex13-48",
+    "localId": "48",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "048/110",
+    "cardName": "Persian δ",
+    "fullDisplayName": "Persian δ 048/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness",
+      "Metal"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-048-low.png",
+    "imageHighSrc": "cards/ex13-048-high.png"
+  },
+  {
+    "masterCardId": "5665",
+    "externalId": null,
+    "tcgdex_id": "ex13-47",
+    "localId": "47",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "047/110",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 047/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-047-low.png",
+    "imageHighSrc": "cards/ex13-047-high.png"
+  },
+  {
+    "masterCardId": "5656",
+    "externalId": null,
+    "tcgdex_id": "ex13-46",
+    "localId": "46",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "046/110",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 046/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-046-low.png",
+    "imageHighSrc": "cards/ex13-046-high.png"
+  },
+  {
+    "masterCardId": "5647",
+    "externalId": null,
+    "tcgdex_id": "ex13-45",
+    "localId": "45",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "045/110",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 045/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-045-low.png",
+    "imageHighSrc": "cards/ex13-045-high.png"
+  },
+  {
+    "masterCardId": "5638",
+    "externalId": null,
+    "tcgdex_id": "ex13-44",
+    "localId": "44",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "044/110",
+    "cardName": "Holon's Castform",
+    "fullDisplayName": "Holon's Castform 044/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-044-low.png",
+    "imageHighSrc": "cards/ex13-044-high.png"
+  },
+  {
+    "masterCardId": "5630",
+    "externalId": null,
+    "tcgdex_id": "ex13-43",
+    "localId": "43",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "043/110",
+    "cardName": "Golduck δ",
+    "fullDisplayName": "Golduck δ 043/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-043-low.png",
+    "imageHighSrc": "cards/ex13-043-high.png"
+  },
+  {
+    "masterCardId": "5621",
+    "externalId": null,
+    "tcgdex_id": "ex13-42",
+    "localId": "42",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "042/110",
+    "cardName": "Gloom δ",
+    "fullDisplayName": "Gloom δ 042/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-042-low.png",
+    "imageHighSrc": "cards/ex13-042-high.png"
+  },
+  {
+    "masterCardId": "5613",
+    "externalId": null,
+    "tcgdex_id": "ex13-41",
+    "localId": "41",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "041/110",
+    "cardName": "Exeggutor δ",
+    "fullDisplayName": "Exeggutor δ 041/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-041-low.png",
+    "imageHighSrc": "cards/ex13-041-high.png"
+  },
+  {
+    "masterCardId": "5603",
+    "externalId": null,
+    "tcgdex_id": "ex13-40",
+    "localId": "40",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "040/110",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 040/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Phanpy",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-040-low.png",
+    "imageHighSrc": "cards/ex13-040-high.png"
+  },
+  {
+    "masterCardId": "5595",
+    "externalId": null,
+    "tcgdex_id": "ex13-39",
+    "localId": "39",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "039/110",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 039/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-039-low.png",
+    "imageHighSrc": "cards/ex13-039-high.png"
+  },
+  {
+    "masterCardId": "5587",
+    "externalId": null,
+    "tcgdex_id": "ex13-38",
+    "localId": "38",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "038/110",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 038/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-038-low.png",
+    "imageHighSrc": "cards/ex13-038-high.png"
+  },
+  {
+    "masterCardId": "5578",
+    "externalId": null,
+    "tcgdex_id": "ex13-37",
+    "localId": "37",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "037/110",
+    "cardName": "Chimecho δ",
+    "fullDisplayName": "Chimecho δ 037/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-037-low.png",
+    "imageHighSrc": "cards/ex13-037-high.png"
+  },
+  {
+    "masterCardId": "5569",
+    "externalId": null,
+    "tcgdex_id": "ex13-36",
+    "localId": "36",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "036/110",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 036/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-036-low.png",
+    "imageHighSrc": "cards/ex13-036-high.png"
+  },
+  {
+    "masterCardId": "5560",
+    "externalId": null,
+    "tcgdex_id": "ex13-35",
+    "localId": "35",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "035/110",
+    "cardName": "Aerodactyl δ",
+    "fullDisplayName": "Aerodactyl δ 035/110 Holon Phantoms",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-035-low.png",
+    "imageHighSrc": "cards/ex13-035-high.png"
+  },
+  {
+    "masterCardId": "5550",
+    "externalId": null,
+    "tcgdex_id": "ex13-34",
+    "localId": "34",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "034/110",
+    "cardName": "Zangoose",
+    "fullDisplayName": "Zangoose 034/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-034-low.png",
+    "imageHighSrc": "cards/ex13-034-high.png"
+  },
+  {
+    "masterCardId": "5541",
+    "externalId": null,
+    "tcgdex_id": "ex13-33",
+    "localId": "33",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "033/110",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 033/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-033-low.png",
+    "imageHighSrc": "cards/ex13-033-high.png"
+  },
+  {
+    "masterCardId": "5533",
+    "externalId": null,
+    "tcgdex_id": "ex13-32",
+    "localId": "32",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "032/110",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 032/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-032-low.png",
+    "imageHighSrc": "cards/ex13-032-high.png"
+  },
+  {
+    "masterCardId": "5524",
+    "externalId": null,
+    "tcgdex_id": "ex13-31",
+    "localId": "31",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "031/110",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 031/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-031-low.png",
+    "imageHighSrc": "cards/ex13-031-high.png"
+  },
+  {
+    "masterCardId": "5515",
+    "externalId": null,
+    "tcgdex_id": "ex13-30",
+    "localId": "30",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "030/110",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 030/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-030-low.png",
+    "imageHighSrc": "cards/ex13-030-high.png"
+  },
+  {
+    "masterCardId": "5505",
+    "externalId": null,
+    "tcgdex_id": "ex13-29",
+    "localId": "29",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "029/110",
+    "cardName": "Registeel",
+    "fullDisplayName": "Registeel 029/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      379
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-029-low.png",
+    "imageHighSrc": "cards/ex13-029-high.png"
+  },
+  {
+    "masterCardId": "5497",
+    "externalId": null,
+    "tcgdex_id": "ex13-28",
+    "localId": "28",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "028/110",
+    "cardName": "Regirock",
+    "fullDisplayName": "Regirock 028/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      377
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-028-low.png",
+    "imageHighSrc": "cards/ex13-028-high.png"
+  },
+  {
+    "masterCardId": "5488",
+    "externalId": null,
+    "tcgdex_id": "ex13-27",
+    "localId": "27",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "027/110",
+    "cardName": "Regice",
+    "fullDisplayName": "Regice 027/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      378
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-027-low.png",
+    "imageHighSrc": "cards/ex13-027-high.png"
+  },
+  {
+    "masterCardId": "5478",
+    "externalId": null,
+    "tcgdex_id": "ex13-26",
+    "localId": "26",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "026/110",
+    "cardName": "Rayquaza δ",
+    "fullDisplayName": "Rayquaza δ 026/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-026-low.png",
+    "imageHighSrc": "cards/ex13-026-high.png"
+  },
+  {
+    "masterCardId": "5470",
+    "externalId": null,
+    "tcgdex_id": "ex13-25",
+    "localId": "25",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "025/110",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 025/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-025-low.png",
+    "imageHighSrc": "cards/ex13-025-high.png"
+  },
+  {
+    "masterCardId": "5460",
+    "externalId": null,
+    "tcgdex_id": "ex13-24",
+    "localId": "24",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "024/110",
+    "cardName": "Mewtwo δ",
+    "fullDisplayName": "Mewtwo δ 024/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-024-low.png",
+    "imageHighSrc": "cards/ex13-024-high.png"
+  },
+  {
+    "masterCardId": "5451",
+    "externalId": null,
+    "tcgdex_id": "ex13-23",
+    "localId": "23",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "023/110",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 023/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-023-low.png",
+    "imageHighSrc": "cards/ex13-023-high.png"
+  },
+  {
+    "masterCardId": "5443",
+    "externalId": null,
+    "tcgdex_id": "ex13-22",
+    "localId": "22",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "022/110",
+    "cardName": "Latios δ",
+    "fullDisplayName": "Latios δ 022/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-022-low.png",
+    "imageHighSrc": "cards/ex13-022-high.png"
+  },
+  {
+    "masterCardId": "5435",
+    "externalId": null,
+    "tcgdex_id": "ex13-21",
+    "localId": "21",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "021/110",
+    "cardName": "Latias δ",
+    "fullDisplayName": "Latias δ 021/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-021-low.png",
+    "imageHighSrc": "cards/ex13-021-high.png"
+  },
+  {
+    "masterCardId": "5426",
+    "externalId": null,
+    "tcgdex_id": "ex13-20",
+    "localId": "20",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "020/110",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 020/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-020-low.png",
+    "imageHighSrc": "cards/ex13-020-high.png"
+  },
+  {
+    "masterCardId": "5417",
+    "externalId": null,
+    "tcgdex_id": "ex13-19",
+    "localId": "19",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "019/110",
+    "cardName": "Bellossom δ",
+    "fullDisplayName": "Bellossom δ 019/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      182
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-019-low.png",
+    "imageHighSrc": "cards/ex13-019-high.png"
+  },
+  {
+    "masterCardId": "5407",
+    "externalId": null,
+    "tcgdex_id": "ex13-18",
+    "localId": "18",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "018/110",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 018/110 Holon Phantoms",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-018-low.png",
+    "imageHighSrc": "cards/ex13-018-high.png"
+  },
+  {
+    "masterCardId": "5399",
+    "externalId": null,
+    "tcgdex_id": "ex13-17",
+    "localId": "17",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "017/110",
+    "cardName": "Vileplume δ",
+    "fullDisplayName": "Vileplume δ 017/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic",
+      "Metal"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-017-low.png",
+    "imageHighSrc": "cards/ex13-017-high.png"
+  },
+  {
+    "masterCardId": "5389",
+    "externalId": null,
+    "tcgdex_id": "ex13-16",
+    "localId": "16",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "016/110",
+    "cardName": "Rayquaza δ",
+    "fullDisplayName": "Rayquaza δ 016/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water",
+      "Metal"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-016-low.png",
+    "imageHighSrc": "cards/ex13-016-high.png"
+  },
+  {
+    "masterCardId": "5381",
+    "externalId": null,
+    "tcgdex_id": "ex13-15",
+    "localId": "15",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "015/110",
+    "cardName": "Raichu δ",
+    "fullDisplayName": "Raichu δ 015/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-015-low.png",
+    "imageHighSrc": "cards/ex13-015-high.png"
+  },
+  {
+    "masterCardId": "5372",
+    "externalId": null,
+    "tcgdex_id": "ex13-14",
+    "localId": "14",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "014/110",
+    "cardName": "Pidgeot δ",
+    "fullDisplayName": "Pidgeot δ 014/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning",
+      "Metal"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-014-low.png",
+    "imageHighSrc": "cards/ex13-014-high.png"
+  },
+  {
+    "masterCardId": "5363",
+    "externalId": null,
+    "tcgdex_id": "ex13-13",
+    "localId": "13",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "013/110",
+    "cardName": "Omastar δ",
+    "fullDisplayName": "Omastar δ 013/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-013-low.png",
+    "imageHighSrc": "cards/ex13-013-high.png"
+  },
+  {
+    "masterCardId": "5354",
+    "externalId": null,
+    "tcgdex_id": "ex13-12",
+    "localId": "12",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "012/110",
+    "cardName": "Latios δ",
+    "fullDisplayName": "Latios δ 012/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-012-low.png",
+    "imageHighSrc": "cards/ex13-012-high.png"
+  },
+  {
+    "masterCardId": "5345",
+    "externalId": null,
+    "tcgdex_id": "ex13-11",
+    "localId": "11",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "011/110",
+    "cardName": "Latias δ",
+    "fullDisplayName": "Latias δ 011/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-011-low.png",
+    "imageHighSrc": "cards/ex13-011-high.png"
+  },
+  {
+    "masterCardId": "5336",
+    "externalId": null,
+    "tcgdex_id": "ex13-10",
+    "localId": "10",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "010/110",
+    "cardName": "Kingdra δ",
+    "fullDisplayName": "Kingdra δ 010/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire",
+      "Metal"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-010-low.png",
+    "imageHighSrc": "cards/ex13-010-high.png"
+  },
+  {
+    "masterCardId": "5322",
+    "externalId": null,
+    "tcgdex_id": "ex13-9",
+    "localId": "9",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "009/110",
+    "cardName": "Kabutops δ",
+    "fullDisplayName": "Kabutops δ 009/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-009-low.png",
+    "imageHighSrc": "cards/ex13-009-high.png"
+  },
+  {
+    "masterCardId": "5313",
+    "externalId": null,
+    "tcgdex_id": "ex13-8",
+    "localId": "8",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "008/110",
+    "cardName": "Gyarados δ",
+    "fullDisplayName": "Gyarados δ 008/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning",
+      "Metal"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-008-low.png",
+    "imageHighSrc": "cards/ex13-008-high.png"
+  },
+  {
+    "masterCardId": "5304",
+    "externalId": null,
+    "tcgdex_id": "ex13-7",
+    "localId": "7",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "007/110",
+    "cardName": "Flygon δ",
+    "fullDisplayName": "Flygon δ 007/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass",
+      "Metal"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-007-low.png",
+    "imageHighSrc": "cards/ex13-007-high.png"
+  },
+  {
+    "masterCardId": "5297",
+    "externalId": null,
+    "tcgdex_id": "ex13-6",
+    "localId": "6",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "006/110",
+    "cardName": "Deoxys δ",
+    "fullDisplayName": "Deoxys δ 006/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-006-low.png",
+    "imageHighSrc": "cards/ex13-006-high.png"
+  },
+  {
+    "masterCardId": "5288",
+    "externalId": null,
+    "tcgdex_id": "ex13-5",
+    "localId": "5",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "005/110",
+    "cardName": "Deoxys δ",
+    "fullDisplayName": "Deoxys δ 005/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-005-low.png",
+    "imageHighSrc": "cards/ex13-005-high.png"
+  },
+  {
+    "masterCardId": "5280",
+    "externalId": null,
+    "tcgdex_id": "ex13-4",
+    "localId": "4",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "004/110",
+    "cardName": "Deoxys δ",
+    "fullDisplayName": "Deoxys δ 004/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-004-low.png",
+    "imageHighSrc": "cards/ex13-004-high.png"
+  },
+  {
+    "masterCardId": "5273",
+    "externalId": null,
+    "tcgdex_id": "ex13-3",
+    "localId": "3",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "003/110",
+    "cardName": "Deoxys δ",
+    "fullDisplayName": "Deoxys δ 003/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-003-low.png",
+    "imageHighSrc": "cards/ex13-003-high.png"
+  },
+  {
+    "masterCardId": "5266",
+    "externalId": null,
+    "tcgdex_id": "ex13-2",
+    "localId": "2",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "002/110",
+    "cardName": "Cradily δ",
+    "fullDisplayName": "Cradily δ 002/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness",
+      "Metal"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-002-low.png",
+    "imageHighSrc": "cards/ex13-002-high.png"
+  },
+  {
+    "masterCardId": "5259",
+    "externalId": null,
+    "tcgdex_id": "ex13-1",
+    "localId": "1",
+    "setCode": "ex13",
+    "setTcgdexId": "ex13",
+    "cardNumber": "001/110",
+    "cardName": "Armaldo δ",
+    "fullDisplayName": "Armaldo δ 001/110 Holon Phantoms",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting",
+      "Metal"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Anorith",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex13-001-low.png",
+    "imageHighSrc": "cards/ex13-001-high.png"
+  }
+]

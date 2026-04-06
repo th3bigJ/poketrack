@@ -1,0 +1,823 @@
+[
+  {
+    "masterCardId": "3410",
+    "externalId": null,
+    "tcgdex_id": "cel25-25",
+    "localId": "25",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "025/25",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 025/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-025-low.png",
+    "imageHighSrc": "cards/cel25-025-high.png"
+  },
+  {
+    "masterCardId": "3409",
+    "externalId": null,
+    "tcgdex_id": "cel25-24",
+    "localId": "24",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "024/25",
+    "cardName": "Professor's Research (Professor Oak)",
+    "fullDisplayName": "Professor's Research (Professor Oak) 024/25 Celebrations",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-024-low.png",
+    "imageHighSrc": "cards/cel25-024-high.png"
+  },
+  {
+    "masterCardId": "3408",
+    "externalId": null,
+    "tcgdex_id": "cel25-23",
+    "localId": "23",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "023/25",
+    "cardName": "Professor's Research (Professor Oak)",
+    "fullDisplayName": "Professor's Research (Professor Oak) 023/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-023-low.png",
+    "imageHighSrc": "cards/cel25-023-high.png"
+  },
+  {
+    "masterCardId": "3407",
+    "externalId": null,
+    "tcgdex_id": "cel25-22",
+    "localId": "22",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "022/25",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 022/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-022-low.png",
+    "imageHighSrc": "cards/cel25-022-high.png"
+  },
+  {
+    "masterCardId": "3406",
+    "externalId": null,
+    "tcgdex_id": "cel25-21",
+    "localId": "21",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "021/25",
+    "cardName": "Solgaleo",
+    "fullDisplayName": "Solgaleo 021/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      791
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Cosmoem",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-021-low.png",
+    "imageHighSrc": "cards/cel25-021-high.png"
+  },
+  {
+    "masterCardId": "3405",
+    "externalId": null,
+    "tcgdex_id": "cel25-20",
+    "localId": "20",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "020/25",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga 020/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-020-low.png",
+    "imageHighSrc": "cards/cel25-020-high.png"
+  },
+  {
+    "masterCardId": "3404",
+    "externalId": null,
+    "tcgdex_id": "cel25-19",
+    "localId": "19",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "019/25",
+    "cardName": "Yveltal",
+    "fullDisplayName": "Yveltal 019/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-019-low.png",
+    "imageHighSrc": "cards/cel25-019-high.png"
+  },
+  {
+    "masterCardId": "3403",
+    "externalId": null,
+    "tcgdex_id": "cel25-18",
+    "localId": "18",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "018/25",
+    "cardName": "Zamazenta V",
+    "fullDisplayName": "Zamazenta V 018/25 Celebrations",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      889
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-018-low.png",
+    "imageHighSrc": "cards/cel25-018-high.png"
+  },
+  {
+    "masterCardId": "3402",
+    "externalId": null,
+    "tcgdex_id": "cel25-17",
+    "localId": "17",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "017/25",
+    "cardName": "Groudon",
+    "fullDisplayName": "Groudon 017/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-017-low.png",
+    "imageHighSrc": "cards/cel25-017-high.png"
+  },
+  {
+    "masterCardId": "3401",
+    "externalId": null,
+    "tcgdex_id": "cel25-16",
+    "localId": "16",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "016/25",
+    "cardName": "Zacian V",
+    "fullDisplayName": "Zacian V 016/25 Celebrations",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      888
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-016-low.png",
+    "imageHighSrc": "cards/cel25-016-high.png"
+  },
+  {
+    "masterCardId": "3400",
+    "externalId": null,
+    "tcgdex_id": "cel25-15",
+    "localId": "15",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "015/25",
+    "cardName": "Lunala",
+    "fullDisplayName": "Lunala 015/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      792
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Cosmoem",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-015-low.png",
+    "imageHighSrc": "cards/cel25-015-high.png"
+  },
+  {
+    "masterCardId": "3399",
+    "externalId": null,
+    "tcgdex_id": "cel25-14",
+    "localId": "14",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "014/25",
+    "cardName": "Cosmoem",
+    "fullDisplayName": "Cosmoem 014/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      790
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Cosmog",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-014-low.png",
+    "imageHighSrc": "cards/cel25-014-high.png"
+  },
+  {
+    "masterCardId": "3398",
+    "externalId": null,
+    "tcgdex_id": "cel25-13",
+    "localId": "13",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "013/25",
+    "cardName": "Cosmog",
+    "fullDisplayName": "Cosmog 013/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      789
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-013-low.png",
+    "imageHighSrc": "cards/cel25-013-high.png"
+  },
+  {
+    "masterCardId": "3397",
+    "externalId": null,
+    "tcgdex_id": "cel25-12",
+    "localId": "12",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "012/25",
+    "cardName": "Xerneas",
+    "fullDisplayName": "Xerneas 012/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      716
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-012-low.png",
+    "imageHighSrc": "cards/cel25-012-high.png"
+  },
+  {
+    "masterCardId": "3396",
+    "externalId": null,
+    "tcgdex_id": "cel25-11",
+    "localId": "11",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "011/25",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 011/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-011-low.png",
+    "imageHighSrc": "cards/cel25-011-high.png"
+  },
+  {
+    "masterCardId": "3395",
+    "externalId": null,
+    "tcgdex_id": "cel25-10",
+    "localId": "10",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "010/25",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 010/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-010-low.png",
+    "imageHighSrc": "cards/cel25-010-high.png"
+  },
+  {
+    "masterCardId": "3394",
+    "externalId": null,
+    "tcgdex_id": "cel25-9",
+    "localId": "9",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "009/25",
+    "cardName": "Surfing Pikachu VMAX",
+    "fullDisplayName": "Surfing Pikachu VMAX 009/25 Celebrations",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Surfing Pikachu V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-009-low.png",
+    "imageHighSrc": "cards/cel25-009-high.png"
+  },
+  {
+    "masterCardId": "3393",
+    "externalId": null,
+    "tcgdex_id": "cel25-8",
+    "localId": "8",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "008/25",
+    "cardName": "Surfing Pikachu V",
+    "fullDisplayName": "Surfing Pikachu V 008/25 Celebrations",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-008-low.png",
+    "imageHighSrc": "cards/cel25-008-high.png"
+  },
+  {
+    "masterCardId": "3392",
+    "externalId": null,
+    "tcgdex_id": "cel25-7",
+    "localId": "7",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "007/25",
+    "cardName": "Flying Pikachu VMAX",
+    "fullDisplayName": "Flying Pikachu VMAX 007/25 Celebrations",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Flying Pikachu V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-007-low.png",
+    "imageHighSrc": "cards/cel25-007-high.png"
+  },
+  {
+    "masterCardId": "3391",
+    "externalId": null,
+    "tcgdex_id": "cel25-6",
+    "localId": "6",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "006/25",
+    "cardName": "Flying Pikachu V",
+    "fullDisplayName": "Flying Pikachu V 006/25 Celebrations",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-006-low.png",
+    "imageHighSrc": "cards/cel25-006-high.png"
+  },
+  {
+    "masterCardId": "3390",
+    "externalId": null,
+    "tcgdex_id": "cel25-5",
+    "localId": "5",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "005/25",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 005/25 Celebrations",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-005-low.png",
+    "imageHighSrc": "cards/cel25-005-high.png"
+  },
+  {
+    "masterCardId": "3389",
+    "externalId": null,
+    "tcgdex_id": "cel25-4",
+    "localId": "4",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "004/25",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia 004/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-004-low.png",
+    "imageHighSrc": "cards/cel25-004-high.png"
+  },
+  {
+    "masterCardId": "3388",
+    "externalId": null,
+    "tcgdex_id": "cel25-3",
+    "localId": "3",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "003/25",
+    "cardName": "Kyogre",
+    "fullDisplayName": "Kyogre 003/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-003-low.png",
+    "imageHighSrc": "cards/cel25-003-high.png"
+  },
+  {
+    "masterCardId": "3387",
+    "externalId": null,
+    "tcgdex_id": "cel25-2",
+    "localId": "2",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "002/25",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 002/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-002-low.png",
+    "imageHighSrc": "cards/cel25-002-high.png"
+  },
+  {
+    "masterCardId": "3386",
+    "externalId": null,
+    "tcgdex_id": "cel25-1",
+    "localId": "1",
+    "setCode": "cel25",
+    "setTcgdexId": "cel25",
+    "cardNumber": "001/25",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 001/25 Celebrations",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/cel25-001-low.png",
+    "imageHighSrc": "cards/cel25-001-high.png"
+  }
+]

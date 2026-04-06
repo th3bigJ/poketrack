@@ -1,0 +1,3583 @@
+[
+  {
+    "masterCardId": "20030",
+    "externalId": null,
+    "tcgdex_id": "xy2-109",
+    "localId": "109",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "109/106",
+    "cardName": "M Kangaskhan-EX",
+    "fullDisplayName": "M Kangaskhan-EX 109/106 Flashfire",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kangaskhan-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-109-low.png",
+    "imageHighSrc": "cards/xy2-109-high.png"
+  },
+  {
+    "masterCardId": "20021",
+    "externalId": null,
+    "tcgdex_id": "xy2-108",
+    "localId": "108",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "108/106",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 108/106 Flashfire",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-108-low.png",
+    "imageHighSrc": "cards/xy2-108-high.png"
+  },
+  {
+    "masterCardId": "20012",
+    "externalId": null,
+    "tcgdex_id": "xy2-107",
+    "localId": "107",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "107/106",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 107/106 Flashfire",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-107-low.png",
+    "imageHighSrc": "cards/xy2-107-high.png"
+  },
+  {
+    "masterCardId": "20003",
+    "externalId": null,
+    "tcgdex_id": "xy2-106",
+    "localId": "106",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "106/106",
+    "cardName": "Pokémon Fan Club",
+    "fullDisplayName": "Pokémon Fan Club 106/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Ando",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-106-low.png",
+    "imageHighSrc": "cards/xy2-106-high.png"
+  },
+  {
+    "masterCardId": "19994",
+    "externalId": null,
+    "tcgdex_id": "xy2-105",
+    "localId": "105",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "105/106",
+    "cardName": "Pokémon Center Lady",
+    "fullDisplayName": "Pokémon Center Lady 105/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-105-low.png",
+    "imageHighSrc": "cards/xy2-105-high.png"
+  },
+  {
+    "masterCardId": "19985",
+    "externalId": null,
+    "tcgdex_id": "xy2-104",
+    "localId": "104",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "104/106",
+    "cardName": "Lysandre",
+    "fullDisplayName": "Lysandre 104/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-104-low.png",
+    "imageHighSrc": "cards/xy2-104-high.png"
+  },
+  {
+    "masterCardId": "19976",
+    "externalId": null,
+    "tcgdex_id": "xy2-103",
+    "localId": "103",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "103/106",
+    "cardName": "Kangaskhan-EX",
+    "fullDisplayName": "Kangaskhan-EX 103/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-103-low.png",
+    "imageHighSrc": "cards/xy2-103-high.png"
+  },
+  {
+    "masterCardId": "19967",
+    "externalId": null,
+    "tcgdex_id": "xy2-102",
+    "localId": "102",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "102/106",
+    "cardName": "Toxicroak-EX",
+    "fullDisplayName": "Toxicroak-EX 102/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-102-low.png",
+    "imageHighSrc": "cards/xy2-102-high.png"
+  },
+  {
+    "masterCardId": "19959",
+    "externalId": null,
+    "tcgdex_id": "xy2-101",
+    "localId": "101",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "101/106",
+    "cardName": "Magnezone-EX",
+    "fullDisplayName": "Magnezone-EX 101/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-101-low.png",
+    "imageHighSrc": "cards/xy2-101-high.png"
+  },
+  {
+    "masterCardId": "19949",
+    "externalId": null,
+    "tcgdex_id": "xy2-100",
+    "localId": "100",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "100/106",
+    "cardName": "Charizard-EX",
+    "fullDisplayName": "Charizard-EX 100/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-100-low.png",
+    "imageHighSrc": "cards/xy2-100-high.png"
+  },
+  {
+    "masterCardId": "19940",
+    "externalId": null,
+    "tcgdex_id": "xy2-99",
+    "localId": "099",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "099/106",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 099/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-099-low.png",
+    "imageHighSrc": "cards/xy2-099-high.png"
+  },
+  {
+    "masterCardId": "19931",
+    "externalId": null,
+    "tcgdex_id": "xy2-98",
+    "localId": "098",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "098/106",
+    "cardName": "Trick Shovel",
+    "fullDisplayName": "Trick Shovel 098/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-098-low.png",
+    "imageHighSrc": "cards/xy2-098-high.png"
+  },
+  {
+    "masterCardId": "19922",
+    "externalId": null,
+    "tcgdex_id": "xy2-97",
+    "localId": "097",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "097/106",
+    "cardName": "Startling Megaphone",
+    "fullDisplayName": "Startling Megaphone 097/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-097-low.png",
+    "imageHighSrc": "cards/xy2-097-high.png"
+  },
+  {
+    "masterCardId": "19913",
+    "externalId": null,
+    "tcgdex_id": "xy2-96",
+    "localId": "096",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "096/106",
+    "cardName": "Sacred Ash",
+    "fullDisplayName": "Sacred Ash 096/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-096-low.png",
+    "imageHighSrc": "cards/xy2-096-high.png"
+  },
+  {
+    "masterCardId": "19905",
+    "externalId": null,
+    "tcgdex_id": "xy2-95",
+    "localId": "095",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "095/106",
+    "cardName": "Protection Cube",
+    "fullDisplayName": "Protection Cube 095/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-095-low.png",
+    "imageHighSrc": "cards/xy2-095-high.png"
+  },
+  {
+    "masterCardId": "19896",
+    "externalId": null,
+    "tcgdex_id": "xy2-94",
+    "localId": "094",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "094/106",
+    "cardName": "Pokémon Fan Club",
+    "fullDisplayName": "Pokémon Fan Club 094/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-094-low.png",
+    "imageHighSrc": "cards/xy2-094-high.png"
+  },
+  {
+    "masterCardId": "19887",
+    "externalId": null,
+    "tcgdex_id": "xy2-93",
+    "localId": "093",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "093/106",
+    "cardName": "Pokémon Center Lady",
+    "fullDisplayName": "Pokémon Center Lady 093/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Maiko Fujiwara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-093-low.png",
+    "imageHighSrc": "cards/xy2-093-high.png"
+  },
+  {
+    "masterCardId": "19878",
+    "externalId": null,
+    "tcgdex_id": "xy2-92",
+    "localId": "092",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "092/106",
+    "cardName": "Pal Pad",
+    "fullDisplayName": "Pal Pad 092/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-092-low.png",
+    "imageHighSrc": "cards/xy2-092-high.png"
+  },
+  {
+    "masterCardId": "19869",
+    "externalId": null,
+    "tcgdex_id": "xy2-91",
+    "localId": "091",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "091/106",
+    "cardName": "Magnetic Storm",
+    "fullDisplayName": "Magnetic Storm 091/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-091-low.png",
+    "imageHighSrc": "cards/xy2-091-high.png"
+  },
+  {
+    "masterCardId": "19860",
+    "externalId": null,
+    "tcgdex_id": "xy2-90",
+    "localId": "090",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "090/106",
+    "cardName": "Lysandre",
+    "fullDisplayName": "Lysandre 090/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-090-low.png",
+    "imageHighSrc": "cards/xy2-090-high.png"
+  },
+  {
+    "masterCardId": "19851",
+    "externalId": null,
+    "tcgdex_id": "xy2-89",
+    "localId": "089",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "089/106",
+    "cardName": "Fiery Torch",
+    "fullDisplayName": "Fiery Torch 089/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-089-low.png",
+    "imageHighSrc": "cards/xy2-089-high.png"
+  },
+  {
+    "masterCardId": "19842",
+    "externalId": null,
+    "tcgdex_id": "xy2-88a",
+    "localId": "88a",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "88a/106",
+    "cardName": "Blacksmith",
+    "fullDisplayName": "Blacksmith 88a/106 Flashfire",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-88a-low.png",
+    "imageHighSrc": "cards/xy2-88a-high.png"
+  },
+  {
+    "masterCardId": "19833",
+    "externalId": null,
+    "tcgdex_id": "xy2-88",
+    "localId": "088",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "088/106",
+    "cardName": "Blacksmith",
+    "fullDisplayName": "Blacksmith 088/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-088-low.png",
+    "imageHighSrc": "cards/xy2-088-high.png"
+  },
+  {
+    "masterCardId": "19824",
+    "externalId": null,
+    "tcgdex_id": "xy2-87",
+    "localId": "087",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "087/106",
+    "cardName": "Furfrou",
+    "fullDisplayName": "Furfrou 087/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      676
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-087-low.png",
+    "imageHighSrc": "cards/xy2-087-high.png"
+  },
+  {
+    "masterCardId": "19815",
+    "externalId": null,
+    "tcgdex_id": "xy2-86",
+    "localId": "086",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "086/106",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 086/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-086-low.png",
+    "imageHighSrc": "cards/xy2-086-high.png"
+  },
+  {
+    "masterCardId": "19806",
+    "externalId": null,
+    "tcgdex_id": "xy2-85",
+    "localId": "085",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "085/106",
+    "cardName": "Lopunny",
+    "fullDisplayName": "Lopunny 085/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-085-low.png",
+    "imageHighSrc": "cards/xy2-085-high.png"
+  },
+  {
+    "masterCardId": "19795",
+    "externalId": null,
+    "tcgdex_id": "xy2-84",
+    "localId": "084",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "084/106",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 084/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-084-low.png",
+    "imageHighSrc": "cards/xy2-084-high.png"
+  },
+  {
+    "masterCardId": "19786",
+    "externalId": null,
+    "tcgdex_id": "xy2-83",
+    "localId": "083",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "083/106",
+    "cardName": "Miltank",
+    "fullDisplayName": "Miltank 083/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      241
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-083-low.png",
+    "imageHighSrc": "cards/xy2-083-high.png"
+  },
+  {
+    "masterCardId": "19778",
+    "externalId": null,
+    "tcgdex_id": "xy2-82",
+    "localId": "082",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "082/106",
+    "cardName": "Furret",
+    "fullDisplayName": "Furret 082/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      162
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sentret",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-082-low.png",
+    "imageHighSrc": "cards/xy2-082-high.png"
+  },
+  {
+    "masterCardId": "19769",
+    "externalId": null,
+    "tcgdex_id": "xy2-81",
+    "localId": "081",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "081/106",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 081/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-081-low.png",
+    "imageHighSrc": "cards/xy2-081-high.png"
+  },
+  {
+    "masterCardId": "19759",
+    "externalId": null,
+    "tcgdex_id": "xy2-80",
+    "localId": "080",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "080/106",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 080/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-080-low.png",
+    "imageHighSrc": "cards/xy2-080-high.png"
+  },
+  {
+    "masterCardId": "19750",
+    "externalId": null,
+    "tcgdex_id": "xy2-79",
+    "localId": "079",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "079/106",
+    "cardName": "M Kangaskhan-EX",
+    "fullDisplayName": "M Kangaskhan-EX 079/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kangaskhan-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-079-low.png",
+    "imageHighSrc": "cards/xy2-079-high.png"
+  },
+  {
+    "masterCardId": "19741",
+    "externalId": null,
+    "tcgdex_id": "xy2-78",
+    "localId": "078",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "078/106",
+    "cardName": "Kangaskhan-EX",
+    "fullDisplayName": "Kangaskhan-EX 078/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-078-low.png",
+    "imageHighSrc": "cards/xy2-078-high.png"
+  },
+  {
+    "masterCardId": "19732",
+    "externalId": null,
+    "tcgdex_id": "xy2-77",
+    "localId": "077",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "077/106",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 077/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-077-low.png",
+    "imageHighSrc": "cards/xy2-077-high.png"
+  },
+  {
+    "masterCardId": "19723",
+    "externalId": null,
+    "tcgdex_id": "xy2-76",
+    "localId": "076",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "076/106",
+    "cardName": "Pidgeotto",
+    "fullDisplayName": "Pidgeotto 076/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-076-low.png",
+    "imageHighSrc": "cards/xy2-076-high.png"
+  },
+  {
+    "masterCardId": "19713",
+    "externalId": null,
+    "tcgdex_id": "xy2-75",
+    "localId": "075",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "075/106",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 075/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-075-low.png",
+    "imageHighSrc": "cards/xy2-075-high.png"
+  },
+  {
+    "masterCardId": "19704",
+    "externalId": null,
+    "tcgdex_id": "xy2-74",
+    "localId": "074",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "074/106",
+    "cardName": "Goodra",
+    "fullDisplayName": "Goodra 074/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sliggoo",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-074-low.png",
+    "imageHighSrc": "cards/xy2-074-high.png"
+  },
+  {
+    "masterCardId": "19695",
+    "externalId": null,
+    "tcgdex_id": "xy2-73",
+    "localId": "073",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "073/106",
+    "cardName": "Sliggoo",
+    "fullDisplayName": "Sliggoo 073/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      705
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goomy",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-073-low.png",
+    "imageHighSrc": "cards/xy2-073-high.png"
+  },
+  {
+    "masterCardId": "19687",
+    "externalId": null,
+    "tcgdex_id": "xy2-72",
+    "localId": "072",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "072/106",
+    "cardName": "Goomy",
+    "fullDisplayName": "Goomy 072/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      704
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-072-low.png",
+    "imageHighSrc": "cards/xy2-072-high.png"
+  },
+  {
+    "masterCardId": "19678",
+    "externalId": null,
+    "tcgdex_id": "xy2-71",
+    "localId": "071",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "071/106",
+    "cardName": "Dragalge",
+    "fullDisplayName": "Dragalge 071/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      691
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skrelp",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-071-low.png",
+    "imageHighSrc": "cards/xy2-071-high.png"
+  },
+  {
+    "masterCardId": "19669",
+    "externalId": null,
+    "tcgdex_id": "xy2-70",
+    "localId": "070",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "070/106",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 070/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-070-low.png",
+    "imageHighSrc": "cards/xy2-070-high.png"
+  },
+  {
+    "masterCardId": "19660",
+    "externalId": null,
+    "tcgdex_id": "xy2-69",
+    "localId": "069",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "069/106",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 069/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-069-low.png",
+    "imageHighSrc": "cards/xy2-069-high.png"
+  },
+  {
+    "masterCardId": "19649",
+    "externalId": null,
+    "tcgdex_id": "xy2-68",
+    "localId": "068",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "068/106",
+    "cardName": "Carbink",
+    "fullDisplayName": "Carbink 068/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-068-low.png",
+    "imageHighSrc": "cards/xy2-068-high.png"
+  },
+  {
+    "masterCardId": "19641",
+    "externalId": null,
+    "tcgdex_id": "xy2-67",
+    "localId": "067",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "067/106",
+    "cardName": "Spritzee",
+    "fullDisplayName": "Spritzee 067/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      682
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-067-low.png",
+    "imageHighSrc": "cards/xy2-067-high.png"
+  },
+  {
+    "masterCardId": "19632",
+    "externalId": null,
+    "tcgdex_id": "xy2-66",
+    "localId": "066",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "066/106",
+    "cardName": "Florges",
+    "fullDisplayName": "Florges 066/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      671
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Floette",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-066-low.png",
+    "imageHighSrc": "cards/xy2-066-high.png"
+  },
+  {
+    "masterCardId": "19623",
+    "externalId": null,
+    "tcgdex_id": "xy2-65",
+    "localId": "065",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "065/106",
+    "cardName": "Floette",
+    "fullDisplayName": "Floette 065/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      670
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flabébé",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-065-low.png",
+    "imageHighSrc": "cards/xy2-065-high.png"
+  },
+  {
+    "masterCardId": "19614",
+    "externalId": null,
+    "tcgdex_id": "xy2-64",
+    "localId": "064",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "064/106",
+    "cardName": "Floette",
+    "fullDisplayName": "Floette 064/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      670
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flabébé",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-064-low.png",
+    "imageHighSrc": "cards/xy2-064-high.png"
+  },
+  {
+    "masterCardId": "19605",
+    "externalId": null,
+    "tcgdex_id": "xy2-63",
+    "localId": "063",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "063/106",
+    "cardName": "Flabébé",
+    "fullDisplayName": "Flabébé 063/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      669
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-063-low.png",
+    "imageHighSrc": "cards/xy2-063-high.png"
+  },
+  {
+    "masterCardId": "19594",
+    "externalId": null,
+    "tcgdex_id": "xy2-62",
+    "localId": "062",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "062/106",
+    "cardName": "Flabébé",
+    "fullDisplayName": "Flabébé 062/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      669
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-062-low.png",
+    "imageHighSrc": "cards/xy2-062-high.png"
+  },
+  {
+    "masterCardId": "19584",
+    "externalId": null,
+    "tcgdex_id": "xy2-61",
+    "localId": "061",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "061/106",
+    "cardName": "Durant",
+    "fullDisplayName": "Durant 061/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      632
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-061-low.png",
+    "imageHighSrc": "cards/xy2-061-high.png"
+  },
+  {
+    "masterCardId": "19574",
+    "externalId": null,
+    "tcgdex_id": "xy2-60",
+    "localId": "060",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "060/106",
+    "cardName": "Forretress",
+    "fullDisplayName": "Forretress 060/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-060-low.png",
+    "imageHighSrc": "cards/xy2-060-high.png"
+  },
+  {
+    "masterCardId": "19566",
+    "externalId": null,
+    "tcgdex_id": "xy2-59",
+    "localId": "059",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "059/106",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 059/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-059-low.png",
+    "imageHighSrc": "cards/xy2-059-high.png"
+  },
+  {
+    "masterCardId": "19556",
+    "externalId": null,
+    "tcgdex_id": "xy2-58",
+    "localId": "058",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "058/106",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 058/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-058-low.png",
+    "imageHighSrc": "cards/xy2-058-high.png"
+  },
+  {
+    "masterCardId": "19548",
+    "externalId": null,
+    "tcgdex_id": "xy2-57",
+    "localId": "057",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "057/106",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 057/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandile",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-057-low.png",
+    "imageHighSrc": "cards/xy2-057-high.png"
+  },
+  {
+    "masterCardId": "19538",
+    "externalId": null,
+    "tcgdex_id": "xy2-56",
+    "localId": "056",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "056/106",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 056/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-056-low.png",
+    "imageHighSrc": "cards/xy2-056-high.png"
+  },
+  {
+    "masterCardId": "19529",
+    "externalId": null,
+    "tcgdex_id": "xy2-55",
+    "localId": "055",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "055/106",
+    "cardName": "Skuntank",
+    "fullDisplayName": "Skuntank 055/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stunky",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-055-low.png",
+    "imageHighSrc": "cards/xy2-055-high.png"
+  },
+  {
+    "masterCardId": "19519",
+    "externalId": null,
+    "tcgdex_id": "xy2-54",
+    "localId": "054",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "054/106",
+    "cardName": "Stunky",
+    "fullDisplayName": "Stunky 054/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      434
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-054-low.png",
+    "imageHighSrc": "cards/xy2-054-high.png"
+  },
+  {
+    "masterCardId": "19510",
+    "externalId": null,
+    "tcgdex_id": "xy2-53",
+    "localId": "053",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "053/106",
+    "cardName": "Stunky",
+    "fullDisplayName": "Stunky 053/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      434
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-053-low.png",
+    "imageHighSrc": "cards/xy2-053-high.png"
+  },
+  {
+    "masterCardId": "19501",
+    "externalId": null,
+    "tcgdex_id": "xy2-52",
+    "localId": "052",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "052/106",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 052/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      461
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sneasel",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-052-low.png",
+    "imageHighSrc": "cards/xy2-052-high.png"
+  },
+  {
+    "masterCardId": "19492",
+    "externalId": null,
+    "tcgdex_id": "xy2-51",
+    "localId": "051",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "051/106",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 051/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-051-low.png",
+    "imageHighSrc": "cards/xy2-051-high.png"
+  },
+  {
+    "masterCardId": "19483",
+    "externalId": null,
+    "tcgdex_id": "xy2-50",
+    "localId": "050",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "050/106",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 050/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-050-low.png",
+    "imageHighSrc": "cards/xy2-050-high.png"
+  },
+  {
+    "masterCardId": "19474",
+    "externalId": null,
+    "tcgdex_id": "xy2-49",
+    "localId": "049",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "049/106",
+    "cardName": "Barbaracle",
+    "fullDisplayName": "Barbaracle 049/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      689
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Binacle",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-049-low.png",
+    "imageHighSrc": "cards/xy2-049-high.png"
+  },
+  {
+    "masterCardId": "19465",
+    "externalId": null,
+    "tcgdex_id": "xy2-48",
+    "localId": "048",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "048/106",
+    "cardName": "Binacle",
+    "fullDisplayName": "Binacle 048/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      688
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-048-low.png",
+    "imageHighSrc": "cards/xy2-048-high.png"
+  },
+  {
+    "masterCardId": "19456",
+    "externalId": null,
+    "tcgdex_id": "xy2-47",
+    "localId": "047",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "047/106",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 047/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-047-low.png",
+    "imageHighSrc": "cards/xy2-047-high.png"
+  },
+  {
+    "masterCardId": "19447",
+    "externalId": null,
+    "tcgdex_id": "xy2-46",
+    "localId": "046",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "046/106",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 046/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-046-low.png",
+    "imageHighSrc": "cards/xy2-046-high.png"
+  },
+  {
+    "masterCardId": "19438",
+    "externalId": null,
+    "tcgdex_id": "xy2-45",
+    "localId": "045",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "045/106",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 045/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-045-low.png",
+    "imageHighSrc": "cards/xy2-045-high.png"
+  },
+  {
+    "masterCardId": "19429",
+    "externalId": null,
+    "tcgdex_id": "xy2-44",
+    "localId": "044",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "044/106",
+    "cardName": "Skrelp",
+    "fullDisplayName": "Skrelp 044/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      690
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-044-low.png",
+    "imageHighSrc": "cards/xy2-044-high.png"
+  },
+  {
+    "masterCardId": "19419",
+    "externalId": null,
+    "tcgdex_id": "xy2-43",
+    "localId": "043",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "043/106",
+    "cardName": "Meowstic",
+    "fullDisplayName": "Meowstic 043/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      678
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Espurr",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-043-low.png",
+    "imageHighSrc": "cards/xy2-043-high.png"
+  },
+  {
+    "masterCardId": "19411",
+    "externalId": null,
+    "tcgdex_id": "xy2-42",
+    "localId": "042",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "042/106",
+    "cardName": "Espurr",
+    "fullDisplayName": "Espurr 042/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      677
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-042-low.png",
+    "imageHighSrc": "cards/xy2-042-high.png"
+  },
+  {
+    "masterCardId": "19401",
+    "externalId": null,
+    "tcgdex_id": "xy2-41",
+    "localId": "041",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "041/106",
+    "cardName": "Toxicroak-EX",
+    "fullDisplayName": "Toxicroak-EX 041/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-041-low.png",
+    "imageHighSrc": "cards/xy2-041-high.png"
+  },
+  {
+    "masterCardId": "19392",
+    "externalId": null,
+    "tcgdex_id": "xy2-40",
+    "localId": "040",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "040/106",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 040/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-040-low.png",
+    "imageHighSrc": "cards/xy2-040-high.png"
+  },
+  {
+    "masterCardId": "19384",
+    "externalId": null,
+    "tcgdex_id": "xy2-39",
+    "localId": "039",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "039/106",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 039/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-039-low.png",
+    "imageHighSrc": "cards/xy2-039-high.png"
+  },
+  {
+    "masterCardId": "19374",
+    "externalId": null,
+    "tcgdex_id": "xy2-38",
+    "localId": "038",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "038/106",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 038/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-038-low.png",
+    "imageHighSrc": "cards/xy2-038-high.png"
+  },
+  {
+    "masterCardId": "19364",
+    "externalId": null,
+    "tcgdex_id": "xy2-37",
+    "localId": "037",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "037/106",
+    "cardName": "Heliolisk",
+    "fullDisplayName": "Heliolisk 037/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      695
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Helioptile",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-037-low.png",
+    "imageHighSrc": "cards/xy2-037-high.png"
+  },
+  {
+    "masterCardId": "19352",
+    "externalId": null,
+    "tcgdex_id": "xy2-36",
+    "localId": "036",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "036/106",
+    "cardName": "Helioptile",
+    "fullDisplayName": "Helioptile 036/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      694
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-036-low.png",
+    "imageHighSrc": "cards/xy2-036-high.png"
+  },
+  {
+    "masterCardId": "19342",
+    "externalId": null,
+    "tcgdex_id": "xy2-35",
+    "localId": "035",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "035/106",
+    "cardName": "Magnezone-EX",
+    "fullDisplayName": "Magnezone-EX 035/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-035-low.png",
+    "imageHighSrc": "cards/xy2-035-high.png"
+  },
+  {
+    "masterCardId": "19330",
+    "externalId": null,
+    "tcgdex_id": "xy2-34",
+    "localId": "034",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "034/106",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 034/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Luxio",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-034-low.png",
+    "imageHighSrc": "cards/xy2-034-high.png"
+  },
+  {
+    "masterCardId": "19319",
+    "externalId": null,
+    "tcgdex_id": "xy2-33",
+    "localId": "033",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "033/106",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 033/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shinx",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-033-low.png",
+    "imageHighSrc": "cards/xy2-033-high.png"
+  },
+  {
+    "masterCardId": "19308",
+    "externalId": null,
+    "tcgdex_id": "xy2-32",
+    "localId": "032",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "032/106",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 032/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-032-low.png",
+    "imageHighSrc": "cards/xy2-032-high.png"
+  },
+  {
+    "masterCardId": "19297",
+    "externalId": null,
+    "tcgdex_id": "xy2-31",
+    "localId": "031",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "031/106",
+    "cardName": "Avalugg",
+    "fullDisplayName": "Avalugg 031/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      713
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bergmite",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-031-low.png",
+    "imageHighSrc": "cards/xy2-031-high.png"
+  },
+  {
+    "masterCardId": "19287",
+    "externalId": null,
+    "tcgdex_id": "xy2-30",
+    "localId": "030",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "030/106",
+    "cardName": "Bergmite",
+    "fullDisplayName": "Bergmite 030/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      712
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-030-low.png",
+    "imageHighSrc": "cards/xy2-030-high.png"
+  },
+  {
+    "masterCardId": "19277",
+    "externalId": null,
+    "tcgdex_id": "xy2-29",
+    "localId": "029",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "029/106",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 029/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-029-low.png",
+    "imageHighSrc": "cards/xy2-029-high.png"
+  },
+  {
+    "masterCardId": "19267",
+    "externalId": null,
+    "tcgdex_id": "xy2-28",
+    "localId": "028",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "028/106",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 028/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-028-low.png",
+    "imageHighSrc": "cards/xy2-028-high.png"
+  },
+  {
+    "masterCardId": "19256",
+    "externalId": null,
+    "tcgdex_id": "xy2-27",
+    "localId": "027",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "027/106",
+    "cardName": "Luvdisc",
+    "fullDisplayName": "Luvdisc 027/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      370
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-027-low.png",
+    "imageHighSrc": "cards/xy2-027-high.png"
+  },
+  {
+    "masterCardId": "19246",
+    "externalId": null,
+    "tcgdex_id": "xy2-26",
+    "localId": "026",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "026/106",
+    "cardName": "Walrein",
+    "fullDisplayName": "Walrein 026/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sealeo",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-026-low.png",
+    "imageHighSrc": "cards/xy2-026-high.png"
+  },
+  {
+    "masterCardId": "19235",
+    "externalId": null,
+    "tcgdex_id": "xy2-25",
+    "localId": "025",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "025/106",
+    "cardName": "Sealeo",
+    "fullDisplayName": "Sealeo 025/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spheal",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-025-low.png",
+    "imageHighSrc": "cards/xy2-025-high.png"
+  },
+  {
+    "masterCardId": "19225",
+    "externalId": null,
+    "tcgdex_id": "xy2-24",
+    "localId": "024",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "024/106",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 024/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-024-low.png",
+    "imageHighSrc": "cards/xy2-024-high.png"
+  },
+  {
+    "masterCardId": "19215",
+    "externalId": null,
+    "tcgdex_id": "xy2-23",
+    "localId": "023",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "023/106",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 023/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-023-low.png",
+    "imageHighSrc": "cards/xy2-023-high.png"
+  },
+  {
+    "masterCardId": "19205",
+    "externalId": null,
+    "tcgdex_id": "xy2-22",
+    "localId": "022",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "022/106",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 022/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-022-low.png",
+    "imageHighSrc": "cards/xy2-022-high.png"
+  },
+  {
+    "masterCardId": "19195",
+    "externalId": null,
+    "tcgdex_id": "xy2-21",
+    "localId": "021",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "021/106",
+    "cardName": "Qwilfish",
+    "fullDisplayName": "Qwilfish 021/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      211
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-021-low.png",
+    "imageHighSrc": "cards/xy2-021-high.png"
+  },
+  {
+    "masterCardId": "19184",
+    "externalId": null,
+    "tcgdex_id": "xy2-20",
+    "localId": "020",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "020/106",
+    "cardName": "Pyroar",
+    "fullDisplayName": "Pyroar 020/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      668
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litleo",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-020-low.png",
+    "imageHighSrc": "cards/xy2-020-high.png"
+  },
+  {
+    "masterCardId": "19173",
+    "externalId": null,
+    "tcgdex_id": "xy2-19",
+    "localId": "019",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "019/106",
+    "cardName": "Litleo",
+    "fullDisplayName": "Litleo 019/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      667
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-019-low.png",
+    "imageHighSrc": "cards/xy2-019-high.png"
+  },
+  {
+    "masterCardId": "19163",
+    "externalId": null,
+    "tcgdex_id": "xy2-18",
+    "localId": "018",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "018/106",
+    "cardName": "Litleo",
+    "fullDisplayName": "Litleo 018/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      667
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-018-low.png",
+    "imageHighSrc": "cards/xy2-018-high.png"
+  },
+  {
+    "masterCardId": "19153",
+    "externalId": null,
+    "tcgdex_id": "xy2-17",
+    "localId": "017",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "017/106",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 017/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchling",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-017-low.png",
+    "imageHighSrc": "cards/xy2-017-high.png"
+  },
+  {
+    "masterCardId": "19143",
+    "externalId": null,
+    "tcgdex_id": "xy2-16",
+    "localId": "016",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "016/106",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 016/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-016-low.png",
+    "imageHighSrc": "cards/xy2-016-high.png"
+  },
+  {
+    "masterCardId": "19133",
+    "externalId": null,
+    "tcgdex_id": "xy2-15",
+    "localId": "015",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "015/106",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 015/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-015-low.png",
+    "imageHighSrc": "cards/xy2-015-high.png"
+  },
+  {
+    "masterCardId": "19123",
+    "externalId": null,
+    "tcgdex_id": "xy2-14",
+    "localId": "014",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "014/106",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 014/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-014-low.png",
+    "imageHighSrc": "cards/xy2-014-high.png"
+  },
+  {
+    "masterCardId": "19113",
+    "externalId": null,
+    "tcgdex_id": "xy2-13",
+    "localId": "013",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "013/106",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 013/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-013-low.png",
+    "imageHighSrc": "cards/xy2-013-high.png"
+  },
+  {
+    "masterCardId": "19103",
+    "externalId": null,
+    "tcgdex_id": "xy2-12",
+    "localId": "012",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "012/106",
+    "cardName": "Charizard-EX",
+    "fullDisplayName": "Charizard-EX 012/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-012-low.png",
+    "imageHighSrc": "cards/xy2-012-high.png"
+  },
+  {
+    "masterCardId": "19093",
+    "externalId": null,
+    "tcgdex_id": "xy2-11",
+    "localId": "011",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "011/106",
+    "cardName": "Charizard-EX",
+    "fullDisplayName": "Charizard-EX 011/106 Flashfire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-011-low.png",
+    "imageHighSrc": "cards/xy2-011-high.png"
+  },
+  {
+    "masterCardId": "19082",
+    "externalId": null,
+    "tcgdex_id": "xy2-10",
+    "localId": "010",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "010/106",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 010/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-010-low.png",
+    "imageHighSrc": "cards/xy2-010-high.png"
+  },
+  {
+    "masterCardId": "19072",
+    "externalId": null,
+    "tcgdex_id": "xy2-9",
+    "localId": "009",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "009/106",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 009/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-009-low.png",
+    "imageHighSrc": "cards/xy2-009-high.png"
+  },
+  {
+    "masterCardId": "19061",
+    "externalId": null,
+    "tcgdex_id": "xy2-8",
+    "localId": "008",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "008/106",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 008/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-008-low.png",
+    "imageHighSrc": "cards/xy2-008-high.png"
+  },
+  {
+    "masterCardId": "19051",
+    "externalId": null,
+    "tcgdex_id": "xy2-7",
+    "localId": "007",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "007/106",
+    "cardName": "Shiftry",
+    "fullDisplayName": "Shiftry 007/106 Flashfire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      275
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nuzleaf",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-007-low.png",
+    "imageHighSrc": "cards/xy2-007-high.png"
+  },
+  {
+    "masterCardId": "19041",
+    "externalId": null,
+    "tcgdex_id": "xy2-6",
+    "localId": "006",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "006/106",
+    "cardName": "Nuzleaf",
+    "fullDisplayName": "Nuzleaf 006/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      274
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seedot",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-006-low.png",
+    "imageHighSrc": "cards/xy2-006-high.png"
+  },
+  {
+    "masterCardId": "19030",
+    "externalId": null,
+    "tcgdex_id": "xy2-5",
+    "localId": "005",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "005/106",
+    "cardName": "Seedot",
+    "fullDisplayName": "Seedot 005/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      273
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-005-low.png",
+    "imageHighSrc": "cards/xy2-005-high.png"
+  },
+  {
+    "masterCardId": "19018",
+    "externalId": null,
+    "tcgdex_id": "xy2-4",
+    "localId": "004",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "004/106",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 004/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-004-low.png",
+    "imageHighSrc": "cards/xy2-004-high.png"
+  },
+  {
+    "masterCardId": "19008",
+    "externalId": null,
+    "tcgdex_id": "xy2-3",
+    "localId": "003",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "003/106",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 003/106 Flashfire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-003-low.png",
+    "imageHighSrc": "cards/xy2-003-high.png"
+  },
+  {
+    "masterCardId": "18999",
+    "externalId": null,
+    "tcgdex_id": "xy2-2",
+    "localId": "002",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "002/106",
+    "cardName": "Metapod",
+    "fullDisplayName": "Metapod 002/106 Flashfire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      11
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Caterpie",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-002-low.png",
+    "imageHighSrc": "cards/xy2-002-high.png"
+  },
+  {
+    "masterCardId": "18992",
+    "externalId": null,
+    "tcgdex_id": "xy2-1",
+    "localId": "001",
+    "setCode": "xy2",
+    "setTcgdexId": "xy2",
+    "cardNumber": "001/106",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 001/106 Flashfire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy2-001-low.png",
+    "imageHighSrc": "cards/xy2-001-high.png"
+  }
+]

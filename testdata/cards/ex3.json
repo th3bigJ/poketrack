@@ -1,0 +1,3283 @@
+[
+  {
+    "masterCardId": "6140",
+    "externalId": null,
+    "tcgdex_id": "ex3-100",
+    "localId": "100",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "100/97",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 100/97 Dragon",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-100-low.png",
+    "imageHighSrc": "cards/ex3-100-high.png"
+  },
+  {
+    "masterCardId": "6133",
+    "externalId": null,
+    "tcgdex_id": "ex3-99",
+    "localId": "099",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "099/97",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 099/97 Dragon",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-099-low.png",
+    "imageHighSrc": "cards/ex3-099-high.png"
+  },
+  {
+    "masterCardId": "6126",
+    "externalId": null,
+    "tcgdex_id": "ex3-98",
+    "localId": "098",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "098/97",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 098/97 Dragon",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-098-low.png",
+    "imageHighSrc": "cards/ex3-098-high.png"
+  },
+  {
+    "masterCardId": "6119",
+    "externalId": null,
+    "tcgdex_id": "ex3-97",
+    "localId": "097",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "097/97",
+    "cardName": "Rayquaza ex",
+    "fullDisplayName": "Rayquaza ex 097/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-097-low.png",
+    "imageHighSrc": "cards/ex3-097-high.png"
+  },
+  {
+    "masterCardId": "6112",
+    "externalId": null,
+    "tcgdex_id": "ex3-96",
+    "localId": "096",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "096/97",
+    "cardName": "Muk ex",
+    "fullDisplayName": "Muk ex 096/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-096-low.png",
+    "imageHighSrc": "cards/ex3-096-high.png"
+  },
+  {
+    "masterCardId": "6105",
+    "externalId": null,
+    "tcgdex_id": "ex3-95",
+    "localId": "095",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "095/97",
+    "cardName": "Magcargo ex",
+    "fullDisplayName": "Magcargo ex 095/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-095-low.png",
+    "imageHighSrc": "cards/ex3-095-high.png"
+  },
+  {
+    "masterCardId": "6097",
+    "externalId": null,
+    "tcgdex_id": "ex3-94",
+    "localId": "094",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "094/97",
+    "cardName": "Latios ex",
+    "fullDisplayName": "Latios ex 094/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-094-low.png",
+    "imageHighSrc": "cards/ex3-094-high.png"
+  },
+  {
+    "masterCardId": "6089",
+    "externalId": null,
+    "tcgdex_id": "ex3-93",
+    "localId": "093",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "093/97",
+    "cardName": "Latias ex",
+    "fullDisplayName": "Latias ex 093/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-093-low.png",
+    "imageHighSrc": "cards/ex3-093-high.png"
+  },
+  {
+    "masterCardId": "6082",
+    "externalId": null,
+    "tcgdex_id": "ex3-92",
+    "localId": "092",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "092/97",
+    "cardName": "Kingdra ex",
+    "fullDisplayName": "Kingdra ex 092/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-092-low.png",
+    "imageHighSrc": "cards/ex3-092-high.png"
+  },
+  {
+    "masterCardId": "6073",
+    "externalId": null,
+    "tcgdex_id": "ex3-91",
+    "localId": "091",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "091/97",
+    "cardName": "Golem ex",
+    "fullDisplayName": "Golem ex 091/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-091-low.png",
+    "imageHighSrc": "cards/ex3-091-high.png"
+  },
+  {
+    "masterCardId": "6064",
+    "externalId": null,
+    "tcgdex_id": "ex3-90",
+    "localId": "090",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "090/97",
+    "cardName": "Dragonite ex",
+    "fullDisplayName": "Dragonite ex 090/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-090-low.png",
+    "imageHighSrc": "cards/ex3-090-high.png"
+  },
+  {
+    "masterCardId": "6054",
+    "externalId": null,
+    "tcgdex_id": "ex3-89",
+    "localId": "089",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "089/97",
+    "cardName": "Ampharos ex",
+    "fullDisplayName": "Ampharos ex 089/97 Dragon",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-089-low.png",
+    "imageHighSrc": "cards/ex3-089-high.png"
+  },
+  {
+    "masterCardId": "6045",
+    "externalId": null,
+    "tcgdex_id": "ex3-88",
+    "localId": "088",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "088/97",
+    "cardName": "TV Reporter",
+    "fullDisplayName": "TV Reporter 088/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-088-low.png",
+    "imageHighSrc": "cards/ex3-088-high.png"
+  },
+  {
+    "masterCardId": "6038",
+    "externalId": null,
+    "tcgdex_id": "ex3-87",
+    "localId": "087",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "087/97",
+    "cardName": "Mr. Briney's Compassion",
+    "fullDisplayName": "Mr. Briney's Compassion 087/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-087-low.png",
+    "imageHighSrc": "cards/ex3-087-high.png"
+  },
+  {
+    "masterCardId": "6029",
+    "externalId": null,
+    "tcgdex_id": "ex3-86",
+    "localId": "086",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "086/97",
+    "cardName": "Low Pressure System",
+    "fullDisplayName": "Low Pressure System 086/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-086-low.png",
+    "imageHighSrc": "cards/ex3-086-high.png"
+  },
+  {
+    "masterCardId": "6020",
+    "externalId": null,
+    "tcgdex_id": "ex3-85",
+    "localId": "085",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "085/97",
+    "cardName": "High Pressure System",
+    "fullDisplayName": "High Pressure System 085/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-085-low.png",
+    "imageHighSrc": "cards/ex3-085-high.png"
+  },
+  {
+    "masterCardId": "6011",
+    "externalId": null,
+    "tcgdex_id": "ex3-84",
+    "localId": "084",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "084/97",
+    "cardName": "Energy Recycle System",
+    "fullDisplayName": "Energy Recycle System 084/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-084-low.png",
+    "imageHighSrc": "cards/ex3-084-high.png"
+  },
+  {
+    "masterCardId": "6001",
+    "externalId": null,
+    "tcgdex_id": "ex3-83",
+    "localId": "083",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "083/97",
+    "cardName": "Buffer Piece",
+    "fullDisplayName": "Buffer Piece 083/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-083-low.png",
+    "imageHighSrc": "cards/ex3-083-high.png"
+  },
+  {
+    "masterCardId": "5992",
+    "externalId": null,
+    "tcgdex_id": "ex3-82",
+    "localId": "082",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "082/97",
+    "cardName": "Balloon Berry",
+    "fullDisplayName": "Balloon Berry 082/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-082-low.png",
+    "imageHighSrc": "cards/ex3-082-high.png"
+  },
+  {
+    "masterCardId": "5983",
+    "externalId": null,
+    "tcgdex_id": "ex3-81",
+    "localId": "081",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "081/97",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 081/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-081-low.png",
+    "imageHighSrc": "cards/ex3-081-high.png"
+  },
+  {
+    "masterCardId": "5974",
+    "externalId": null,
+    "tcgdex_id": "ex3-80",
+    "localId": "080",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "080/97",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 080/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-080-low.png",
+    "imageHighSrc": "cards/ex3-080-high.png"
+  },
+  {
+    "masterCardId": "5965",
+    "externalId": null,
+    "tcgdex_id": "ex3-79",
+    "localId": "079",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "079/97",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 079/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-079-low.png",
+    "imageHighSrc": "cards/ex3-079-high.png"
+  },
+  {
+    "masterCardId": "5956",
+    "externalId": null,
+    "tcgdex_id": "ex3-78",
+    "localId": "078",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "078/97",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 078/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-078-low.png",
+    "imageHighSrc": "cards/ex3-078-high.png"
+  },
+  {
+    "masterCardId": "5947",
+    "externalId": null,
+    "tcgdex_id": "ex3-77",
+    "localId": "077",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "077/97",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 077/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-077-low.png",
+    "imageHighSrc": "cards/ex3-077-high.png"
+  },
+  {
+    "masterCardId": "5938",
+    "externalId": null,
+    "tcgdex_id": "ex3-76",
+    "localId": "076",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "076/97",
+    "cardName": "Taillow",
+    "fullDisplayName": "Taillow 076/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      276
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-076-low.png",
+    "imageHighSrc": "cards/ex3-076-high.png"
+  },
+  {
+    "masterCardId": "5929",
+    "externalId": null,
+    "tcgdex_id": "ex3-75",
+    "localId": "075",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "075/97",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 075/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-075-low.png",
+    "imageHighSrc": "cards/ex3-075-high.png"
+  },
+  {
+    "masterCardId": "5920",
+    "externalId": null,
+    "tcgdex_id": "ex3-74",
+    "localId": "074",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "074/97",
+    "cardName": "Spoink",
+    "fullDisplayName": "Spoink 074/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      325
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-074-low.png",
+    "imageHighSrc": "cards/ex3-074-high.png"
+  },
+  {
+    "masterCardId": "5911",
+    "externalId": null,
+    "tcgdex_id": "ex3-73",
+    "localId": "073",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "073/97",
+    "cardName": "Spoink",
+    "fullDisplayName": "Spoink 073/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      325
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-073-low.png",
+    "imageHighSrc": "cards/ex3-073-high.png"
+  },
+  {
+    "masterCardId": "5902",
+    "externalId": null,
+    "tcgdex_id": "ex3-72",
+    "localId": "072",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "072/97",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 072/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-072-low.png",
+    "imageHighSrc": "cards/ex3-072-high.png"
+  },
+  {
+    "masterCardId": "5893",
+    "externalId": null,
+    "tcgdex_id": "ex3-71",
+    "localId": "071",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "071/97",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 071/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-071-low.png",
+    "imageHighSrc": "cards/ex3-071-high.png"
+  },
+  {
+    "masterCardId": "5884",
+    "externalId": null,
+    "tcgdex_id": "ex3-70",
+    "localId": "070",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "070/97",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 070/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-070-low.png",
+    "imageHighSrc": "cards/ex3-070-high.png"
+  },
+  {
+    "masterCardId": "5875",
+    "externalId": null,
+    "tcgdex_id": "ex3-69",
+    "localId": "069",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "069/97",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 069/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-069-low.png",
+    "imageHighSrc": "cards/ex3-069-high.png"
+  },
+  {
+    "masterCardId": "5866",
+    "externalId": null,
+    "tcgdex_id": "ex3-68",
+    "localId": "068",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "068/97",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 068/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-068-low.png",
+    "imageHighSrc": "cards/ex3-068-high.png"
+  },
+  {
+    "masterCardId": "5857",
+    "externalId": null,
+    "tcgdex_id": "ex3-67",
+    "localId": "067",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "067/97",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 067/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-067-low.png",
+    "imageHighSrc": "cards/ex3-067-high.png"
+  },
+  {
+    "masterCardId": "5849",
+    "externalId": null,
+    "tcgdex_id": "ex3-66",
+    "localId": "066",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "066/97",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 066/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-066-low.png",
+    "imageHighSrc": "cards/ex3-066-high.png"
+  },
+  {
+    "masterCardId": "5839",
+    "externalId": null,
+    "tcgdex_id": "ex3-65",
+    "localId": "065",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "065/97",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 065/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-065-low.png",
+    "imageHighSrc": "cards/ex3-065-high.png"
+  },
+  {
+    "masterCardId": "5832",
+    "externalId": null,
+    "tcgdex_id": "ex3-64",
+    "localId": "064",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "064/97",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 064/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-064-low.png",
+    "imageHighSrc": "cards/ex3-064-high.png"
+  },
+  {
+    "masterCardId": "5824",
+    "externalId": null,
+    "tcgdex_id": "ex3-63",
+    "localId": "063",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "063/97",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 063/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-063-low.png",
+    "imageHighSrc": "cards/ex3-063-high.png"
+  },
+  {
+    "masterCardId": "5815",
+    "externalId": null,
+    "tcgdex_id": "ex3-62",
+    "localId": "062",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "062/97",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 062/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-062-low.png",
+    "imageHighSrc": "cards/ex3-062-high.png"
+  },
+  {
+    "masterCardId": "5806",
+    "externalId": null,
+    "tcgdex_id": "ex3-61",
+    "localId": "061",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "061/97",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 061/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-061-low.png",
+    "imageHighSrc": "cards/ex3-061-high.png"
+  },
+  {
+    "masterCardId": "5797",
+    "externalId": null,
+    "tcgdex_id": "ex3-60",
+    "localId": "060",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "060/97",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 060/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-060-low.png",
+    "imageHighSrc": "cards/ex3-060-high.png"
+  },
+  {
+    "masterCardId": "5788",
+    "externalId": null,
+    "tcgdex_id": "ex3-59",
+    "localId": "059",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "059/97",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 059/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-059-low.png",
+    "imageHighSrc": "cards/ex3-059-high.png"
+  },
+  {
+    "masterCardId": "5779",
+    "externalId": null,
+    "tcgdex_id": "ex3-58",
+    "localId": "058",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "058/97",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 058/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-058-low.png",
+    "imageHighSrc": "cards/ex3-058-high.png"
+  },
+  {
+    "masterCardId": "5769",
+    "externalId": null,
+    "tcgdex_id": "ex3-57",
+    "localId": "057",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "057/97",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 057/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-057-low.png",
+    "imageHighSrc": "cards/ex3-057-high.png"
+  },
+  {
+    "masterCardId": "5760",
+    "externalId": null,
+    "tcgdex_id": "ex3-56",
+    "localId": "056",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "056/97",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 056/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-056-low.png",
+    "imageHighSrc": "cards/ex3-056-high.png"
+  },
+  {
+    "masterCardId": "5751",
+    "externalId": null,
+    "tcgdex_id": "ex3-55",
+    "localId": "055",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "055/97",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 055/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-055-low.png",
+    "imageHighSrc": "cards/ex3-055-high.png"
+  },
+  {
+    "masterCardId": "5742",
+    "externalId": null,
+    "tcgdex_id": "ex3-54",
+    "localId": "054",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "054/97",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 054/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-054-low.png",
+    "imageHighSrc": "cards/ex3-054-high.png"
+  },
+  {
+    "masterCardId": "5733",
+    "externalId": null,
+    "tcgdex_id": "ex3-53",
+    "localId": "053",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "053/97",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 053/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-053-low.png",
+    "imageHighSrc": "cards/ex3-053-high.png"
+  },
+  {
+    "masterCardId": "5725",
+    "externalId": null,
+    "tcgdex_id": "ex3-52",
+    "localId": "052",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "052/97",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 052/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-052-low.png",
+    "imageHighSrc": "cards/ex3-052-high.png"
+  },
+  {
+    "masterCardId": "5716",
+    "externalId": null,
+    "tcgdex_id": "ex3-51",
+    "localId": "051",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "051/97",
+    "cardName": "Barboach",
+    "fullDisplayName": "Barboach 051/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      339
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-051-low.png",
+    "imageHighSrc": "cards/ex3-051-high.png"
+  },
+  {
+    "masterCardId": "5707",
+    "externalId": null,
+    "tcgdex_id": "ex3-50",
+    "localId": "050",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "050/97",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 050/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-050-low.png",
+    "imageHighSrc": "cards/ex3-050-high.png"
+  },
+  {
+    "masterCardId": "5699",
+    "externalId": null,
+    "tcgdex_id": "ex3-49",
+    "localId": "049",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "049/97",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 049/97 Dragon",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-049-low.png",
+    "imageHighSrc": "cards/ex3-049-high.png"
+  },
+  {
+    "masterCardId": "5690",
+    "externalId": null,
+    "tcgdex_id": "ex3-48",
+    "localId": "048",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "048/97",
+    "cardName": "Whiscash",
+    "fullDisplayName": "Whiscash 048/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      340
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Barboach",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-048-low.png",
+    "imageHighSrc": "cards/ex3-048-high.png"
+  },
+  {
+    "masterCardId": "5681",
+    "externalId": null,
+    "tcgdex_id": "ex3-47",
+    "localId": "047",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "047/97",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 047/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-047-low.png",
+    "imageHighSrc": "cards/ex3-047-high.png"
+  },
+  {
+    "masterCardId": "5672",
+    "externalId": null,
+    "tcgdex_id": "ex3-46",
+    "localId": "046",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "046/97",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 046/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-046-low.png",
+    "imageHighSrc": "cards/ex3-046-high.png"
+  },
+  {
+    "masterCardId": "5664",
+    "externalId": null,
+    "tcgdex_id": "ex3-45",
+    "localId": "045",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "045/97",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 045/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-045-low.png",
+    "imageHighSrc": "cards/ex3-045-high.png"
+  },
+  {
+    "masterCardId": "5654",
+    "externalId": null,
+    "tcgdex_id": "ex3-44",
+    "localId": "044",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "044/97",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 044/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-044-low.png",
+    "imageHighSrc": "cards/ex3-044-high.png"
+  },
+  {
+    "masterCardId": "5646",
+    "externalId": null,
+    "tcgdex_id": "ex3-43",
+    "localId": "043",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "043/97",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 043/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-043-low.png",
+    "imageHighSrc": "cards/ex3-043-high.png"
+  },
+  {
+    "masterCardId": "5637",
+    "externalId": null,
+    "tcgdex_id": "ex3-42",
+    "localId": "042",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "042/97",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 042/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-042-low.png",
+    "imageHighSrc": "cards/ex3-042-high.png"
+  },
+  {
+    "masterCardId": "5629",
+    "externalId": null,
+    "tcgdex_id": "ex3-41",
+    "localId": "041",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "041/97",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 041/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-041-low.png",
+    "imageHighSrc": "cards/ex3-041-high.png"
+  },
+  {
+    "masterCardId": "5620",
+    "externalId": null,
+    "tcgdex_id": "ex3-40",
+    "localId": "040",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "040/97",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 040/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-040-low.png",
+    "imageHighSrc": "cards/ex3-040-high.png"
+  },
+  {
+    "masterCardId": "5612",
+    "externalId": null,
+    "tcgdex_id": "ex3-39",
+    "localId": "039",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "039/97",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 039/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-039-low.png",
+    "imageHighSrc": "cards/ex3-039-high.png"
+  },
+  {
+    "masterCardId": "5602",
+    "externalId": null,
+    "tcgdex_id": "ex3-38",
+    "localId": "038",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "038/97",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 038/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-038-low.png",
+    "imageHighSrc": "cards/ex3-038-high.png"
+  },
+  {
+    "masterCardId": "5591",
+    "externalId": null,
+    "tcgdex_id": "ex3-37",
+    "localId": "037",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "037/97",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 037/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-037-low.png",
+    "imageHighSrc": "cards/ex3-037-high.png"
+  },
+  {
+    "masterCardId": "5583",
+    "externalId": null,
+    "tcgdex_id": "ex3-36",
+    "localId": "036",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "036/97",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 036/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-036-low.png",
+    "imageHighSrc": "cards/ex3-036-high.png"
+  },
+  {
+    "masterCardId": "5574",
+    "externalId": null,
+    "tcgdex_id": "ex3-35",
+    "localId": "035",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "035/97",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 035/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-035-low.png",
+    "imageHighSrc": "cards/ex3-035-high.png"
+  },
+  {
+    "masterCardId": "5565",
+    "externalId": null,
+    "tcgdex_id": "ex3-34",
+    "localId": "034",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "034/97",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 034/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-034-low.png",
+    "imageHighSrc": "cards/ex3-034-high.png"
+  },
+  {
+    "masterCardId": "5556",
+    "externalId": null,
+    "tcgdex_id": "ex3-33",
+    "localId": "033",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "033/97",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 033/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-033-low.png",
+    "imageHighSrc": "cards/ex3-033-high.png"
+  },
+  {
+    "masterCardId": "5547",
+    "externalId": null,
+    "tcgdex_id": "ex3-32",
+    "localId": "032",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "032/97",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 032/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-032-low.png",
+    "imageHighSrc": "cards/ex3-032-high.png"
+  },
+  {
+    "masterCardId": "5538",
+    "externalId": null,
+    "tcgdex_id": "ex3-31",
+    "localId": "031",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "031/97",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 031/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-031-low.png",
+    "imageHighSrc": "cards/ex3-031-high.png"
+  },
+  {
+    "masterCardId": "5529",
+    "externalId": null,
+    "tcgdex_id": "ex3-30",
+    "localId": "030",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "030/97",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 030/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-030-low.png",
+    "imageHighSrc": "cards/ex3-030-high.png"
+  },
+  {
+    "masterCardId": "5520",
+    "externalId": null,
+    "tcgdex_id": "ex3-29",
+    "localId": "029",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "029/97",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 029/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-029-low.png",
+    "imageHighSrc": "cards/ex3-029-high.png"
+  },
+  {
+    "masterCardId": "5511",
+    "externalId": null,
+    "tcgdex_id": "ex3-28",
+    "localId": "028",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "028/97",
+    "cardName": "Forretress",
+    "fullDisplayName": "Forretress 028/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-028-low.png",
+    "imageHighSrc": "cards/ex3-028-high.png"
+  },
+  {
+    "masterCardId": "5502",
+    "externalId": null,
+    "tcgdex_id": "ex3-27",
+    "localId": "027",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "027/97",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 027/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-027-low.png",
+    "imageHighSrc": "cards/ex3-027-high.png"
+  },
+  {
+    "masterCardId": "5493",
+    "externalId": null,
+    "tcgdex_id": "ex3-26",
+    "localId": "026",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "026/97",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 026/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-026-low.png",
+    "imageHighSrc": "cards/ex3-026-high.png"
+  },
+  {
+    "masterCardId": "5485",
+    "externalId": null,
+    "tcgdex_id": "ex3-25",
+    "localId": "025",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "025/97",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 025/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-025-low.png",
+    "imageHighSrc": "cards/ex3-025-high.png"
+  },
+  {
+    "masterCardId": "5475",
+    "externalId": null,
+    "tcgdex_id": "ex3-24",
+    "localId": "024",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "024/97",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 024/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-024-low.png",
+    "imageHighSrc": "cards/ex3-024-high.png"
+  },
+  {
+    "masterCardId": "5466",
+    "externalId": null,
+    "tcgdex_id": "ex3-23",
+    "localId": "023",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "023/97",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 023/97 Dragon",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-023-low.png",
+    "imageHighSrc": "cards/ex3-023-high.png"
+  },
+  {
+    "masterCardId": "5455",
+    "externalId": null,
+    "tcgdex_id": "ex3-22",
+    "localId": "022",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "022/97",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 022/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-022-low.png",
+    "imageHighSrc": "cards/ex3-022-high.png"
+  },
+  {
+    "masterCardId": "5446",
+    "externalId": null,
+    "tcgdex_id": "ex3-21",
+    "localId": "021",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "021/97",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 021/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-021-low.png",
+    "imageHighSrc": "cards/ex3-021-high.png"
+  },
+  {
+    "masterCardId": "5437",
+    "externalId": null,
+    "tcgdex_id": "ex3-20",
+    "localId": "020",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "020/97",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 020/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-020-low.png",
+    "imageHighSrc": "cards/ex3-020-high.png"
+  },
+  {
+    "masterCardId": "5427",
+    "externalId": null,
+    "tcgdex_id": "ex3-19",
+    "localId": "019",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "019/97",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 019/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-019-low.png",
+    "imageHighSrc": "cards/ex3-019-high.png"
+  },
+  {
+    "masterCardId": "5418",
+    "externalId": null,
+    "tcgdex_id": "ex3-18",
+    "localId": "018",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "018/97",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 018/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-018-low.png",
+    "imageHighSrc": "cards/ex3-018-high.png"
+  },
+  {
+    "masterCardId": "5409",
+    "externalId": null,
+    "tcgdex_id": "ex3-17",
+    "localId": "017",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "017/97",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 017/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-017-low.png",
+    "imageHighSrc": "cards/ex3-017-high.png"
+  },
+  {
+    "masterCardId": "5400",
+    "externalId": null,
+    "tcgdex_id": "ex3-16",
+    "localId": "016",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "016/97",
+    "cardName": "Girafarig",
+    "fullDisplayName": "Girafarig 016/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      203
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-016-low.png",
+    "imageHighSrc": "cards/ex3-016-high.png"
+  },
+  {
+    "masterCardId": "5392",
+    "externalId": null,
+    "tcgdex_id": "ex3-15",
+    "localId": "015",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "015/97",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 015/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-015-low.png",
+    "imageHighSrc": "cards/ex3-015-high.png"
+  },
+  {
+    "masterCardId": "5383",
+    "externalId": null,
+    "tcgdex_id": "ex3-14",
+    "localId": "014",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "014/97",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 014/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-014-low.png",
+    "imageHighSrc": "cards/ex3-014-high.png"
+  },
+  {
+    "masterCardId": "5374",
+    "externalId": null,
+    "tcgdex_id": "ex3-13",
+    "localId": "013",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "013/97",
+    "cardName": "Crawdaunt",
+    "fullDisplayName": "Crawdaunt 013/97 Dragon",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Corphish",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-013-low.png",
+    "imageHighSrc": "cards/ex3-013-high.png"
+  },
+  {
+    "masterCardId": "5365",
+    "externalId": null,
+    "tcgdex_id": "ex3-12",
+    "localId": "012",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "012/97",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 012/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-012-low.png",
+    "imageHighSrc": "cards/ex3-012-high.png"
+  },
+  {
+    "masterCardId": "5356",
+    "externalId": null,
+    "tcgdex_id": "ex3-11",
+    "localId": "011",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "011/97",
+    "cardName": "Shedinja",
+    "fullDisplayName": "Shedinja 011/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      292
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-011-low.png",
+    "imageHighSrc": "cards/ex3-011-high.png"
+  },
+  {
+    "masterCardId": "5347",
+    "externalId": null,
+    "tcgdex_id": "ex3-10",
+    "localId": "010",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "010/97",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 010/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-010-low.png",
+    "imageHighSrc": "cards/ex3-010-high.png"
+  },
+  {
+    "masterCardId": "5338",
+    "externalId": null,
+    "tcgdex_id": "ex3-9",
+    "localId": "009",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "009/97",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 009/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-009-low.png",
+    "imageHighSrc": "cards/ex3-009-high.png"
+  },
+  {
+    "masterCardId": "5329",
+    "externalId": null,
+    "tcgdex_id": "ex3-8",
+    "localId": "008",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "008/97",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 008/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-008-low.png",
+    "imageHighSrc": "cards/ex3-008-high.png"
+  },
+  {
+    "masterCardId": "5320",
+    "externalId": null,
+    "tcgdex_id": "ex3-7",
+    "localId": "007",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "007/97",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 007/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-007-low.png",
+    "imageHighSrc": "cards/ex3-007-high.png"
+  },
+  {
+    "masterCardId": "5311",
+    "externalId": null,
+    "tcgdex_id": "ex3-6",
+    "localId": "006",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "006/97",
+    "cardName": "Grumpig",
+    "fullDisplayName": "Grumpig 006/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      326
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spoink",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-006-low.png",
+    "imageHighSrc": "cards/ex3-006-high.png"
+  },
+  {
+    "masterCardId": "5291",
+    "externalId": null,
+    "tcgdex_id": "ex3-5",
+    "localId": "005",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "005/97",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 005/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-005-low.png",
+    "imageHighSrc": "cards/ex3-005-high.png"
+  },
+  {
+    "masterCardId": "5283",
+    "externalId": null,
+    "tcgdex_id": "ex3-4",
+    "localId": "004",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "004/97",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 004/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-004-low.png",
+    "imageHighSrc": "cards/ex3-004-high.png"
+  },
+  {
+    "masterCardId": "5274",
+    "externalId": null,
+    "tcgdex_id": "ex3-3",
+    "localId": "003",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "003/97",
+    "cardName": "Crawdaunt",
+    "fullDisplayName": "Crawdaunt 003/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Corphish",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-003-low.png",
+    "imageHighSrc": "cards/ex3-003-high.png"
+  },
+  {
+    "masterCardId": "5268",
+    "externalId": null,
+    "tcgdex_id": "ex3-2",
+    "localId": "002",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "002/97",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 002/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-002-low.png",
+    "imageHighSrc": "cards/ex3-002-high.png"
+  },
+  {
+    "masterCardId": "5258",
+    "externalId": null,
+    "tcgdex_id": "ex3-1",
+    "localId": "001",
+    "setCode": "ex3",
+    "setTcgdexId": "ex3",
+    "cardNumber": "001/97",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 001/97 Dragon",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex3-001-low.png",
+    "imageHighSrc": "cards/ex3-001-high.png"
+  }
+]

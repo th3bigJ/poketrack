@@ -38,6 +38,7 @@ struct PaywallSheet: View {
                 }
             }
             .navigationTitle("PokeTrack Premium")
+            .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }

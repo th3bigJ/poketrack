@@ -1,0 +1,4042 @@
+[
+  {
+    "masterCardId": "4042",
+    "externalId": null,
+    "tcgdex_id": "dp2-124",
+    "localId": "124",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "124/122",
+    "cardName": "Time-Space Distortion",
+    "fullDisplayName": "Time-Space Distortion 124/122 Mysterious Treasures",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-124-low.png",
+    "imageHighSrc": "cards/dp2-124-high.png"
+  },
+  {
+    "masterCardId": "4038",
+    "externalId": null,
+    "tcgdex_id": "dp2-123",
+    "localId": "123",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "123/122",
+    "cardName": "Magmortar LV.X",
+    "fullDisplayName": "Magmortar LV.X 123/122 Mysterious Treasures",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmortar",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-123-low.png",
+    "imageHighSrc": "cards/dp2-123-high.png"
+  },
+  {
+    "masterCardId": "4035",
+    "externalId": null,
+    "tcgdex_id": "dp2-122",
+    "localId": "122",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "122/122",
+    "cardName": "Lucario LV.X",
+    "fullDisplayName": "Lucario LV.X 122/122 Mysterious Treasures",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lucario",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-122-low.png",
+    "imageHighSrc": "cards/dp2-122-high.png"
+  },
+  {
+    "masterCardId": "4033",
+    "externalId": null,
+    "tcgdex_id": "dp2-121",
+    "localId": "121",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "121/122",
+    "cardName": "Electivire LV.X",
+    "fullDisplayName": "Electivire LV.X 121/122 Mysterious Treasures",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electivire",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-121-low.png",
+    "imageHighSrc": "cards/dp2-121-high.png"
+  },
+  {
+    "masterCardId": "4031",
+    "externalId": null,
+    "tcgdex_id": "dp2-120",
+    "localId": "120",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "120/122",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 120/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-120-low.png",
+    "imageHighSrc": "cards/dp2-120-high.png"
+  },
+  {
+    "masterCardId": "4028",
+    "externalId": null,
+    "tcgdex_id": "dp2-119",
+    "localId": "119",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "119/122",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 119/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-119-low.png",
+    "imageHighSrc": "cards/dp2-119-high.png"
+  },
+  {
+    "masterCardId": "4025",
+    "externalId": null,
+    "tcgdex_id": "dp2-118",
+    "localId": "118",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "118/122",
+    "cardName": "Multi Energy",
+    "fullDisplayName": "Multi Energy 118/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-118-low.png",
+    "imageHighSrc": "cards/dp2-118-high.png"
+  },
+  {
+    "masterCardId": "4022",
+    "externalId": null,
+    "tcgdex_id": "dp2-117",
+    "localId": "117",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "117/122",
+    "cardName": "Skull Fossil",
+    "fullDisplayName": "Skull Fossil 117/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-117-low.png",
+    "imageHighSrc": "cards/dp2-117-high.png"
+  },
+  {
+    "masterCardId": "4019",
+    "externalId": null,
+    "tcgdex_id": "dp2-116",
+    "localId": "116",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "116/122",
+    "cardName": "Armor Fossil",
+    "fullDisplayName": "Armor Fossil 116/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-116-low.png",
+    "imageHighSrc": "cards/dp2-116-high.png"
+  },
+  {
+    "masterCardId": "4016",
+    "externalId": null,
+    "tcgdex_id": "dp2-115",
+    "localId": "115",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "115/122",
+    "cardName": "Team Galactic's Wager",
+    "fullDisplayName": "Team Galactic's Wager 115/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-115-low.png",
+    "imageHighSrc": "cards/dp2-115-high.png"
+  },
+  {
+    "masterCardId": "4013",
+    "externalId": null,
+    "tcgdex_id": "dp2-114",
+    "localId": "114",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "114/122",
+    "cardName": "Quick Ball",
+    "fullDisplayName": "Quick Ball 114/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-114-low.png",
+    "imageHighSrc": "cards/dp2-114-high.png"
+  },
+  {
+    "masterCardId": "4010",
+    "externalId": null,
+    "tcgdex_id": "dp2-113",
+    "localId": "113",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "113/122",
+    "cardName": "Night Maintenance",
+    "fullDisplayName": "Night Maintenance 113/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-113-low.png",
+    "imageHighSrc": "cards/dp2-113-high.png"
+  },
+  {
+    "masterCardId": "4007",
+    "externalId": null,
+    "tcgdex_id": "dp2-112",
+    "localId": "112",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "112/122",
+    "cardName": "Lake Boundary",
+    "fullDisplayName": "Lake Boundary 112/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-112-low.png",
+    "imageHighSrc": "cards/dp2-112-high.png"
+  },
+  {
+    "masterCardId": "4004",
+    "externalId": null,
+    "tcgdex_id": "dp2-111",
+    "localId": "111",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "111/122",
+    "cardName": "Fossil Excavator",
+    "fullDisplayName": "Fossil Excavator 111/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-111-low.png",
+    "imageHighSrc": "cards/dp2-111-high.png"
+  },
+  {
+    "masterCardId": "4001",
+    "externalId": null,
+    "tcgdex_id": "dp2-110",
+    "localId": "110",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "110/122",
+    "cardName": "Dusk Ball",
+    "fullDisplayName": "Dusk Ball 110/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-110-low.png",
+    "imageHighSrc": "cards/dp2-110-high.png"
+  },
+  {
+    "masterCardId": "3998",
+    "externalId": null,
+    "tcgdex_id": "dp2-109",
+    "localId": "109",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "109/122",
+    "cardName": "Bebe's Search",
+    "fullDisplayName": "Bebe's Search 109/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-109-low.png",
+    "imageHighSrc": "cards/dp2-109-high.png"
+  },
+  {
+    "masterCardId": "3995",
+    "externalId": null,
+    "tcgdex_id": "dp2-108",
+    "localId": "108",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "108/122",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 108/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-108-low.png",
+    "imageHighSrc": "cards/dp2-108-high.png"
+  },
+  {
+    "masterCardId": "3992",
+    "externalId": null,
+    "tcgdex_id": "dp2-107",
+    "localId": "107",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "107/122",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 107/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-107-low.png",
+    "imageHighSrc": "cards/dp2-107-high.png"
+  },
+  {
+    "masterCardId": "3988",
+    "externalId": null,
+    "tcgdex_id": "dp2-106",
+    "localId": "106",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "106/122",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 106/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-106-low.png",
+    "imageHighSrc": "cards/dp2-106-high.png"
+  },
+  {
+    "masterCardId": "3984",
+    "externalId": null,
+    "tcgdex_id": "dp2-105",
+    "localId": "105",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "105/122",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 105/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-105-low.png",
+    "imageHighSrc": "cards/dp2-105-high.png"
+  },
+  {
+    "masterCardId": "3980",
+    "externalId": null,
+    "tcgdex_id": "dp2-104",
+    "localId": "104",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "104/122",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 104/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-104-low.png",
+    "imageHighSrc": "cards/dp2-104-high.png"
+  },
+  {
+    "masterCardId": "3976",
+    "externalId": null,
+    "tcgdex_id": "dp2-103",
+    "localId": "103",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "103/122",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 103/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-103-low.png",
+    "imageHighSrc": "cards/dp2-103-high.png"
+  },
+  {
+    "masterCardId": "3972",
+    "externalId": null,
+    "tcgdex_id": "dp2-102",
+    "localId": "102",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "102/122",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 102/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-102-low.png",
+    "imageHighSrc": "cards/dp2-102-high.png"
+  },
+  {
+    "masterCardId": "3968",
+    "externalId": null,
+    "tcgdex_id": "dp2-101",
+    "localId": "101",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "101/122",
+    "cardName": "Snover",
+    "fullDisplayName": "Snover 101/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      459
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-101-low.png",
+    "imageHighSrc": "cards/dp2-101-high.png"
+  },
+  {
+    "masterCardId": "3965",
+    "externalId": null,
+    "tcgdex_id": "dp2-100",
+    "localId": "100",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "100/122",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 100/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-100-low.png",
+    "imageHighSrc": "cards/dp2-100-high.png"
+  },
+  {
+    "masterCardId": "3961",
+    "externalId": null,
+    "tcgdex_id": "dp2-99",
+    "localId": "099",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "099/122",
+    "cardName": "Slakoth",
+    "fullDisplayName": "Slakoth 099/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      287
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-099-low.png",
+    "imageHighSrc": "cards/dp2-099-high.png"
+  },
+  {
+    "masterCardId": "3957",
+    "externalId": null,
+    "tcgdex_id": "dp2-98",
+    "localId": "098",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "098/122",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 098/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-098-low.png",
+    "imageHighSrc": "cards/dp2-098-high.png"
+  },
+  {
+    "masterCardId": "3953",
+    "externalId": null,
+    "tcgdex_id": "dp2-97",
+    "localId": "097",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "097/122",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 097/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-097-low.png",
+    "imageHighSrc": "cards/dp2-097-high.png"
+  },
+  {
+    "masterCardId": "3948",
+    "externalId": null,
+    "tcgdex_id": "dp2-96",
+    "localId": "096",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "096/122",
+    "cardName": "Sandshrew",
+    "fullDisplayName": "Sandshrew 096/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-096-low.png",
+    "imageHighSrc": "cards/dp2-096-high.png"
+  },
+  {
+    "masterCardId": "3945",
+    "externalId": null,
+    "tcgdex_id": "dp2-95",
+    "localId": "095",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "095/122",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 095/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-095-low.png",
+    "imageHighSrc": "cards/dp2-095-high.png"
+  },
+  {
+    "masterCardId": "3941",
+    "externalId": null,
+    "tcgdex_id": "dp2-94",
+    "localId": "094",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "094/122",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 094/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-094-low.png",
+    "imageHighSrc": "cards/dp2-094-high.png"
+  },
+  {
+    "masterCardId": "3937",
+    "externalId": null,
+    "tcgdex_id": "dp2-93",
+    "localId": "093",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "093/122",
+    "cardName": "Pichu",
+    "fullDisplayName": "Pichu 093/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-093-low.png",
+    "imageHighSrc": "cards/dp2-093-high.png"
+  },
+  {
+    "masterCardId": "3934",
+    "externalId": null,
+    "tcgdex_id": "dp2-92",
+    "localId": "092",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "092/122",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 092/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-092-low.png",
+    "imageHighSrc": "cards/dp2-092-high.png"
+  },
+  {
+    "masterCardId": "3930",
+    "externalId": null,
+    "tcgdex_id": "dp2-91",
+    "localId": "091",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "091/122",
+    "cardName": "Nidoran ♀",
+    "fullDisplayName": "Nidoran ♀ 091/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      29
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp2-091-low.png",
+    "imageHighSrc": "cards/dp2-091-high.png"
+  },
+  {
+    "masterCardId": "3926",
+    "externalId": null,
+    "tcgdex_id": "dp2-90",
+    "localId": "090",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "090/122",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 090/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-090-low.png",
+    "imageHighSrc": "cards/dp2-090-high.png"
+  },
+  {
+    "masterCardId": "3922",
+    "externalId": null,
+    "tcgdex_id": "dp2-89",
+    "localId": "089",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "089/122",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 089/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-089-low.png",
+    "imageHighSrc": "cards/dp2-089-high.png"
+  },
+  {
+    "masterCardId": "3919",
+    "externalId": null,
+    "tcgdex_id": "dp2-88",
+    "localId": "088",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "088/122",
+    "cardName": "Magby",
+    "fullDisplayName": "Magby 088/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      240
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-088-low.png",
+    "imageHighSrc": "cards/dp2-088-high.png"
+  },
+  {
+    "masterCardId": "3915",
+    "externalId": null,
+    "tcgdex_id": "dp2-87",
+    "localId": "087",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "087/122",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 087/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-087-low.png",
+    "imageHighSrc": "cards/dp2-087-high.png"
+  },
+  {
+    "masterCardId": "3911",
+    "externalId": null,
+    "tcgdex_id": "dp2-86",
+    "localId": "086",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "086/122",
+    "cardName": "Kricketot",
+    "fullDisplayName": "Kricketot 086/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      401
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-086-low.png",
+    "imageHighSrc": "cards/dp2-086-high.png"
+  },
+  {
+    "masterCardId": "3907",
+    "externalId": null,
+    "tcgdex_id": "dp2-85",
+    "localId": "085",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "085/122",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 085/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-085-low.png",
+    "imageHighSrc": "cards/dp2-085-high.png"
+  },
+  {
+    "masterCardId": "3903",
+    "externalId": null,
+    "tcgdex_id": "dp2-84",
+    "localId": "084",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "084/122",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 084/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-084-low.png",
+    "imageHighSrc": "cards/dp2-084-high.png"
+  },
+  {
+    "masterCardId": "3898",
+    "externalId": null,
+    "tcgdex_id": "dp2-83",
+    "localId": "083",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "083/122",
+    "cardName": "Finneon",
+    "fullDisplayName": "Finneon 083/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      456
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-083-low.png",
+    "imageHighSrc": "cards/dp2-083-high.png"
+  },
+  {
+    "masterCardId": "3895",
+    "externalId": null,
+    "tcgdex_id": "dp2-82",
+    "localId": "082",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "082/122",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 082/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-082-low.png",
+    "imageHighSrc": "cards/dp2-082-high.png"
+  },
+  {
+    "masterCardId": "3891",
+    "externalId": null,
+    "tcgdex_id": "dp2-81",
+    "localId": "081",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "081/122",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 081/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-081-low.png",
+    "imageHighSrc": "cards/dp2-081-high.png"
+  },
+  {
+    "masterCardId": "3887",
+    "externalId": null,
+    "tcgdex_id": "dp2-80",
+    "localId": "080",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "080/122",
+    "cardName": "Doduo",
+    "fullDisplayName": "Doduo 080/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-080-low.png",
+    "imageHighSrc": "cards/dp2-080-high.png"
+  },
+  {
+    "masterCardId": "3883",
+    "externalId": null,
+    "tcgdex_id": "dp2-79",
+    "localId": "079",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "079/122",
+    "cardName": "Cyndaquil",
+    "fullDisplayName": "Cyndaquil 079/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      155
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-079-low.png",
+    "imageHighSrc": "cards/dp2-079-high.png"
+  },
+  {
+    "masterCardId": "3880",
+    "externalId": null,
+    "tcgdex_id": "dp2-78",
+    "localId": "078",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "078/122",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 078/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-078-low.png",
+    "imageHighSrc": "cards/dp2-078-high.png"
+  },
+  {
+    "masterCardId": "3876",
+    "externalId": null,
+    "tcgdex_id": "dp2-77",
+    "localId": "077",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "077/122",
+    "cardName": "Chikorita",
+    "fullDisplayName": "Chikorita 077/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      152
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-077-low.png",
+    "imageHighSrc": "cards/dp2-077-high.png"
+  },
+  {
+    "masterCardId": "3872",
+    "externalId": null,
+    "tcgdex_id": "dp2-76",
+    "localId": "076",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "076/122",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 076/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-076-low.png",
+    "imageHighSrc": "cards/dp2-076-high.png"
+  },
+  {
+    "masterCardId": "3868",
+    "externalId": null,
+    "tcgdex_id": "dp2-75",
+    "localId": "075",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "075/122",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 075/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kenkichi Toyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-075-low.png",
+    "imageHighSrc": "cards/dp2-075-high.png"
+  },
+  {
+    "masterCardId": "3863",
+    "externalId": null,
+    "tcgdex_id": "dp2-74",
+    "localId": "074",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "074/122",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 074/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-074-low.png",
+    "imageHighSrc": "cards/dp2-074-high.png"
+  },
+  {
+    "masterCardId": "3858",
+    "externalId": null,
+    "tcgdex_id": "dp2-73",
+    "localId": "073",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "073/122",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 073/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-073-low.png",
+    "imageHighSrc": "cards/dp2-073-high.png"
+  },
+  {
+    "masterCardId": "3854",
+    "externalId": null,
+    "tcgdex_id": "dp2-72",
+    "localId": "072",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "072/122",
+    "cardName": "Barboach",
+    "fullDisplayName": "Barboach 072/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      339
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-072-low.png",
+    "imageHighSrc": "cards/dp2-072-high.png"
+  },
+  {
+    "masterCardId": "3850",
+    "externalId": null,
+    "tcgdex_id": "dp2-71",
+    "localId": "071",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "071/122",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 071/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-071-low.png",
+    "imageHighSrc": "cards/dp2-071-high.png"
+  },
+  {
+    "masterCardId": "3846",
+    "externalId": null,
+    "tcgdex_id": "dp2-70",
+    "localId": "070",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "070/122",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 070/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-070-low.png",
+    "imageHighSrc": "cards/dp2-070-high.png"
+  },
+  {
+    "masterCardId": "3842",
+    "externalId": null,
+    "tcgdex_id": "dp2-69",
+    "localId": "069",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "069/122",
+    "cardName": "Abra",
+    "fullDisplayName": "Abra 069/122 Mysterious Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-069-low.png",
+    "imageHighSrc": "cards/dp2-069-high.png"
+  },
+  {
+    "masterCardId": "3839",
+    "externalId": null,
+    "tcgdex_id": "dp2-68",
+    "localId": "068",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "068/122",
+    "cardName": "Vigoroth",
+    "fullDisplayName": "Vigoroth 068/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      288
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slakoth",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-068-low.png",
+    "imageHighSrc": "cards/dp2-068-high.png"
+  },
+  {
+    "masterCardId": "3835",
+    "externalId": null,
+    "tcgdex_id": "dp2-67",
+    "localId": "067",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "067/122",
+    "cardName": "Unown [T]",
+    "fullDisplayName": "Unown [T] 067/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp2-067-low.png",
+    "imageHighSrc": "cards/dp2-067-high.png"
+  },
+  {
+    "masterCardId": "3830",
+    "externalId": null,
+    "tcgdex_id": "dp2-66",
+    "localId": "066",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "066/122",
+    "cardName": "Unown [M]",
+    "fullDisplayName": "Unown [M] 066/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp2-066-low.png",
+    "imageHighSrc": "cards/dp2-066-high.png"
+  },
+  {
+    "masterCardId": "3827",
+    "externalId": null,
+    "tcgdex_id": "dp2-65",
+    "localId": "065",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "065/122",
+    "cardName": "Unown [E]",
+    "fullDisplayName": "Unown [E] 065/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp2-065-low.png",
+    "imageHighSrc": "cards/dp2-065-high.png"
+  },
+  {
+    "masterCardId": "3823",
+    "externalId": null,
+    "tcgdex_id": "dp2-64",
+    "localId": "064",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "064/122",
+    "cardName": "Tropius",
+    "fullDisplayName": "Tropius 064/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      357
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-064-low.png",
+    "imageHighSrc": "cards/dp2-064-high.png"
+  },
+  {
+    "masterCardId": "3819",
+    "externalId": null,
+    "tcgdex_id": "dp2-63",
+    "localId": "063",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "063/122",
+    "cardName": "Shieldon",
+    "fullDisplayName": "Shieldon 063/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      410
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Armor Fossil",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-063-low.png",
+    "imageHighSrc": "cards/dp2-063-high.png"
+  },
+  {
+    "masterCardId": "3815",
+    "externalId": null,
+    "tcgdex_id": "dp2-62",
+    "localId": "062",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "062/122",
+    "cardName": "Sealeo",
+    "fullDisplayName": "Sealeo 062/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spheal",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-062-low.png",
+    "imageHighSrc": "cards/dp2-062-high.png"
+  },
+  {
+    "masterCardId": "3811",
+    "externalId": null,
+    "tcgdex_id": "dp2-61",
+    "localId": "061",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "061/122",
+    "cardName": "Sandslash",
+    "fullDisplayName": "Sandslash 061/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandshrew",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-061-low.png",
+    "imageHighSrc": "cards/dp2-061-high.png"
+  },
+  {
+    "masterCardId": "3807",
+    "externalId": null,
+    "tcgdex_id": "dp2-60",
+    "localId": "060",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "060/122",
+    "cardName": "Quilava",
+    "fullDisplayName": "Quilava 060/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      156
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cyndaquil",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-060-low.png",
+    "imageHighSrc": "cards/dp2-060-high.png"
+  },
+  {
+    "masterCardId": "3803",
+    "externalId": null,
+    "tcgdex_id": "dp2-59",
+    "localId": "059",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "059/122",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 059/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-059-low.png",
+    "imageHighSrc": "cards/dp2-059-high.png"
+  },
+  {
+    "masterCardId": "3799",
+    "externalId": null,
+    "tcgdex_id": "dp2-58",
+    "localId": "058",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "058/122",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 058/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paras",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-058-low.png",
+    "imageHighSrc": "cards/dp2-058-high.png"
+  },
+  {
+    "masterCardId": "3795",
+    "externalId": null,
+    "tcgdex_id": "dp2-57",
+    "localId": "057",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "057/122",
+    "cardName": "Octillery",
+    "fullDisplayName": "Octillery 057/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-057-low.png",
+    "imageHighSrc": "cards/dp2-057-high.png"
+  },
+  {
+    "masterCardId": "3791",
+    "externalId": null,
+    "tcgdex_id": "dp2-56",
+    "localId": "056",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "056/122",
+    "cardName": "Nidorina",
+    "fullDisplayName": "Nidorina 056/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      30
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♀",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-056-low.png",
+    "imageHighSrc": "cards/dp2-056-high.png"
+  },
+  {
+    "masterCardId": "3787",
+    "externalId": null,
+    "tcgdex_id": "dp2-55",
+    "localId": "055",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "055/122",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 055/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-055-low.png",
+    "imageHighSrc": "cards/dp2-055-high.png"
+  },
+  {
+    "masterCardId": "3783",
+    "externalId": null,
+    "tcgdex_id": "dp2-54",
+    "localId": "054",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "054/122",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 054/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-054-low.png",
+    "imageHighSrc": "cards/dp2-054-high.png"
+  },
+  {
+    "masterCardId": "3779",
+    "externalId": null,
+    "tcgdex_id": "dp2-53",
+    "localId": "053",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "053/122",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 053/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-053-low.png",
+    "imageHighSrc": "cards/dp2-053-high.png"
+  },
+  {
+    "masterCardId": "3775",
+    "externalId": null,
+    "tcgdex_id": "dp2-52",
+    "localId": "052",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "052/122",
+    "cardName": "Happiny",
+    "fullDisplayName": "Happiny 052/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      440
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-052-low.png",
+    "imageHighSrc": "cards/dp2-052-high.png"
+  },
+  {
+    "masterCardId": "3771",
+    "externalId": null,
+    "tcgdex_id": "dp2-51",
+    "localId": "051",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "051/122",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 051/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-051-low.png",
+    "imageHighSrc": "cards/dp2-051-high.png"
+  },
+  {
+    "masterCardId": "3766",
+    "externalId": null,
+    "tcgdex_id": "dp2-50",
+    "localId": "050",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "050/122",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 050/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-050-low.png",
+    "imageHighSrc": "cards/dp2-050-high.png"
+  },
+  {
+    "masterCardId": "3762",
+    "externalId": null,
+    "tcgdex_id": "dp2-49",
+    "localId": "049",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "049/122",
+    "cardName": "Girafarig",
+    "fullDisplayName": "Girafarig 049/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      203
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-049-low.png",
+    "imageHighSrc": "cards/dp2-049-high.png"
+  },
+  {
+    "masterCardId": "3758",
+    "externalId": null,
+    "tcgdex_id": "dp2-48",
+    "localId": "048",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "048/122",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite 048/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-048-low.png",
+    "imageHighSrc": "cards/dp2-048-high.png"
+  },
+  {
+    "masterCardId": "3755",
+    "externalId": null,
+    "tcgdex_id": "dp2-47",
+    "localId": "047",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "047/122",
+    "cardName": "Dunsparce",
+    "fullDisplayName": "Dunsparce 047/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      206
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-047-low.png",
+    "imageHighSrc": "cards/dp2-047-high.png"
+  },
+  {
+    "masterCardId": "3750",
+    "externalId": null,
+    "tcgdex_id": "dp2-46",
+    "localId": "046",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "046/122",
+    "cardName": "Dodrio",
+    "fullDisplayName": "Dodrio 046/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      85
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doduo",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-046-low.png",
+    "imageHighSrc": "cards/dp2-046-high.png"
+  },
+  {
+    "masterCardId": "3746",
+    "externalId": null,
+    "tcgdex_id": "dp2-45",
+    "localId": "045",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "045/122",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 045/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-045-low.png",
+    "imageHighSrc": "cards/dp2-045-high.png"
+  },
+  {
+    "masterCardId": "3743",
+    "externalId": null,
+    "tcgdex_id": "dp2-44",
+    "localId": "044",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "044/122",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 044/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-044-low.png",
+    "imageHighSrc": "cards/dp2-044-high.png"
+  },
+  {
+    "masterCardId": "3739",
+    "externalId": null,
+    "tcgdex_id": "dp2-43",
+    "localId": "043",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "043/122",
+    "cardName": "Cranidos",
+    "fullDisplayName": "Cranidos 043/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      408
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skull Fossil",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-043-low.png",
+    "imageHighSrc": "cards/dp2-043-high.png"
+  },
+  {
+    "masterCardId": "3735",
+    "externalId": null,
+    "tcgdex_id": "dp2-42",
+    "localId": "042",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "042/122",
+    "cardName": "Chingling",
+    "fullDisplayName": "Chingling 042/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      433
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-042-low.png",
+    "imageHighSrc": "cards/dp2-042-high.png"
+  },
+  {
+    "masterCardId": "3731",
+    "externalId": null,
+    "tcgdex_id": "dp2-41",
+    "localId": "041",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "041/122",
+    "cardName": "Bayleef",
+    "fullDisplayName": "Bayleef 041/122 Mysterious Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      153
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chikorita",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-041-low.png",
+    "imageHighSrc": "cards/dp2-041-high.png"
+  },
+  {
+    "masterCardId": "3727",
+    "externalId": null,
+    "tcgdex_id": "dp2-40",
+    "localId": "040",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "040/122",
+    "cardName": "Whiscash",
+    "fullDisplayName": "Whiscash 040/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      340
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Barboach",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-040-low.png",
+    "imageHighSrc": "cards/dp2-040-high.png"
+  },
+  {
+    "masterCardId": "3722",
+    "externalId": null,
+    "tcgdex_id": "dp2-39",
+    "localId": "039",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "039/122",
+    "cardName": "Walrein",
+    "fullDisplayName": "Walrein 039/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sealeo",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-039-low.png",
+    "imageHighSrc": "cards/dp2-039-high.png"
+  },
+  {
+    "masterCardId": "3718",
+    "externalId": null,
+    "tcgdex_id": "dp2-38",
+    "localId": "038",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "038/122",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 038/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-038-low.png",
+    "imageHighSrc": "cards/dp2-038-high.png"
+  },
+  {
+    "masterCardId": "3714",
+    "externalId": null,
+    "tcgdex_id": "dp2-37",
+    "localId": "037",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "037/122",
+    "cardName": "Unown [I]",
+    "fullDisplayName": "Unown [I] 037/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp2-037-low.png",
+    "imageHighSrc": "cards/dp2-037-high.png"
+  },
+  {
+    "masterCardId": "3710",
+    "externalId": null,
+    "tcgdex_id": "dp2-36",
+    "localId": "036",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "036/122",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 036/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-036-low.png",
+    "imageHighSrc": "cards/dp2-036-high.png"
+  },
+  {
+    "masterCardId": "3706",
+    "externalId": null,
+    "tcgdex_id": "dp2-35",
+    "localId": "035",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "035/122",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 035/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-035-low.png",
+    "imageHighSrc": "cards/dp2-035-high.png"
+  },
+  {
+    "masterCardId": "3703",
+    "externalId": null,
+    "tcgdex_id": "dp2-34",
+    "localId": "034",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "034/122",
+    "cardName": "Slaking",
+    "fullDisplayName": "Slaking 034/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vigoroth",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-034-low.png",
+    "imageHighSrc": "cards/dp2-034-high.png"
+  },
+  {
+    "masterCardId": "3698",
+    "externalId": null,
+    "tcgdex_id": "dp2-33",
+    "localId": "033",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "033/122",
+    "cardName": "Rampardos",
+    "fullDisplayName": "Rampardos 033/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      409
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cranidos",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-033-low.png",
+    "imageHighSrc": "cards/dp2-033-high.png"
+  },
+  {
+    "masterCardId": "3693",
+    "externalId": null,
+    "tcgdex_id": "dp2-32",
+    "localId": "032",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "032/122",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 032/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-032-low.png",
+    "imageHighSrc": "cards/dp2-032-high.png"
+  },
+  {
+    "masterCardId": "3688",
+    "externalId": null,
+    "tcgdex_id": "dp2-31",
+    "localId": "031",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "031/122",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 031/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-031-low.png",
+    "imageHighSrc": "cards/dp2-031-high.png"
+  },
+  {
+    "masterCardId": "3683",
+    "externalId": null,
+    "tcgdex_id": "dp2-30",
+    "localId": "030",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "030/122",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 030/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-030-low.png",
+    "imageHighSrc": "cards/dp2-030-high.png"
+  },
+  {
+    "masterCardId": "3677",
+    "externalId": null,
+    "tcgdex_id": "dp2-29",
+    "localId": "029",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "029/122",
+    "cardName": "Mantine",
+    "fullDisplayName": "Mantine 029/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      226
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-029-low.png",
+    "imageHighSrc": "cards/dp2-029-high.png"
+  },
+  {
+    "masterCardId": "3673",
+    "externalId": null,
+    "tcgdex_id": "dp2-28",
+    "localId": "028",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "028/122",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 028/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-028-low.png",
+    "imageHighSrc": "cards/dp2-028-high.png"
+  },
+  {
+    "masterCardId": "3668",
+    "externalId": null,
+    "tcgdex_id": "dp2-27",
+    "localId": "027",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "027/122",
+    "cardName": "Kricketune",
+    "fullDisplayName": "Kricketune 027/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      402
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kricketot",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-027-low.png",
+    "imageHighSrc": "cards/dp2-027-high.png"
+  },
+  {
+    "masterCardId": "3663",
+    "externalId": null,
+    "tcgdex_id": "dp2-26",
+    "localId": "026",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "026/122",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 026/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-026-low.png",
+    "imageHighSrc": "cards/dp2-026-high.png"
+  },
+  {
+    "masterCardId": "3658",
+    "externalId": null,
+    "tcgdex_id": "dp2-25",
+    "localId": "025",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "025/122",
+    "cardName": "Glalie",
+    "fullDisplayName": "Glalie 025/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      362
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-025-low.png",
+    "imageHighSrc": "cards/dp2-025-high.png"
+  },
+  {
+    "masterCardId": "3653",
+    "externalId": null,
+    "tcgdex_id": "dp2-24",
+    "localId": "024",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "024/122",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 024/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-024-low.png",
+    "imageHighSrc": "cards/dp2-024-high.png"
+  },
+  {
+    "masterCardId": "3648",
+    "externalId": null,
+    "tcgdex_id": "dp2-23",
+    "localId": "023",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "023/122",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 023/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-023-low.png",
+    "imageHighSrc": "cards/dp2-023-high.png"
+  },
+  {
+    "masterCardId": "3644",
+    "externalId": null,
+    "tcgdex_id": "dp2-22",
+    "localId": "022",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "022/122",
+    "cardName": "Chimecho",
+    "fullDisplayName": "Chimecho 022/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-022-low.png",
+    "imageHighSrc": "cards/dp2-022-high.png"
+  },
+  {
+    "masterCardId": "3637",
+    "externalId": null,
+    "tcgdex_id": "dp2-21",
+    "localId": "021",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "021/122",
+    "cardName": "Bastiodon",
+    "fullDisplayName": "Bastiodon 021/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      411
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shieldon",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-021-low.png",
+    "imageHighSrc": "cards/dp2-021-high.png"
+  },
+  {
+    "masterCardId": "3634",
+    "externalId": null,
+    "tcgdex_id": "dp2-20",
+    "localId": "020",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "020/122",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 020/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spinarak",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-020-low.png",
+    "imageHighSrc": "cards/dp2-020-high.png"
+  },
+  {
+    "masterCardId": "3629",
+    "externalId": null,
+    "tcgdex_id": "dp2-19",
+    "localId": "019",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "019/122",
+    "cardName": "Abomasnow",
+    "fullDisplayName": "Abomasnow 019/122 Mysterious Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      460
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snover",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-019-low.png",
+    "imageHighSrc": "cards/dp2-019-high.png"
+  },
+  {
+    "masterCardId": "3624",
+    "externalId": null,
+    "tcgdex_id": "dp2-18",
+    "localId": "018",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "018/122",
+    "cardName": "Uxie",
+    "fullDisplayName": "Uxie 018/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      480
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-018-low.png",
+    "imageHighSrc": "cards/dp2-018-high.png"
+  },
+  {
+    "masterCardId": "3618",
+    "externalId": null,
+    "tcgdex_id": "dp2-17",
+    "localId": "017",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "017/122",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 017/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-017-low.png",
+    "imageHighSrc": "cards/dp2-017-high.png"
+  },
+  {
+    "masterCardId": "3612",
+    "externalId": null,
+    "tcgdex_id": "dp2-16",
+    "localId": "016",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "016/122",
+    "cardName": "Typhlosion",
+    "fullDisplayName": "Typhlosion 016/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-016-low.png",
+    "imageHighSrc": "cards/dp2-016-high.png"
+  },
+  {
+    "masterCardId": "3607",
+    "externalId": null,
+    "tcgdex_id": "dp2-15",
+    "localId": "015",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "015/122",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 015/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-015-low.png",
+    "imageHighSrc": "cards/dp2-015-high.png"
+  },
+  {
+    "masterCardId": "3601",
+    "externalId": null,
+    "tcgdex_id": "dp2-14",
+    "localId": "014",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "014/122",
+    "cardName": "Mesprit",
+    "fullDisplayName": "Mesprit 014/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      481
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-014-low.png",
+    "imageHighSrc": "cards/dp2-014-high.png"
+  },
+  {
+    "masterCardId": "3595",
+    "externalId": null,
+    "tcgdex_id": "dp2-13",
+    "localId": "013",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "013/122",
+    "cardName": "Meganium",
+    "fullDisplayName": "Meganium 013/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      154
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bayleef",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-013-low.png",
+    "imageHighSrc": "cards/dp2-013-high.png"
+  },
+  {
+    "masterCardId": "3589",
+    "externalId": null,
+    "tcgdex_id": "dp2-12",
+    "localId": "012",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "012/122",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 012/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Hiroaki Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-012-low.png",
+    "imageHighSrc": "cards/dp2-012-high.png"
+  },
+  {
+    "masterCardId": "3583",
+    "externalId": null,
+    "tcgdex_id": "dp2-11",
+    "localId": "011",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "011/122",
+    "cardName": "Lumineon",
+    "fullDisplayName": "Lumineon 011/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      457
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finneon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-011-low.png",
+    "imageHighSrc": "cards/dp2-011-high.png"
+  },
+  {
+    "masterCardId": "3577",
+    "externalId": null,
+    "tcgdex_id": "dp2-10",
+    "localId": "010",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "010/122",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 010/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Murkrow",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-010-low.png",
+    "imageHighSrc": "cards/dp2-010-high.png"
+  },
+  {
+    "masterCardId": "3571",
+    "externalId": null,
+    "tcgdex_id": "dp2-9",
+    "localId": "009",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "009/122",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp 009/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-009-low.png",
+    "imageHighSrc": "cards/dp2-009-high.png"
+  },
+  {
+    "masterCardId": "3565",
+    "externalId": null,
+    "tcgdex_id": "dp2-8",
+    "localId": "008",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "008/122",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 008/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-008-low.png",
+    "imageHighSrc": "cards/dp2-008-high.png"
+  },
+  {
+    "masterCardId": "3559",
+    "externalId": null,
+    "tcgdex_id": "dp2-7",
+    "localId": "007",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "007/122",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 007/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-007-low.png",
+    "imageHighSrc": "cards/dp2-007-high.png"
+  },
+  {
+    "masterCardId": "3553",
+    "externalId": null,
+    "tcgdex_id": "dp2-6",
+    "localId": "006",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "006/122",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 006/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-006-low.png",
+    "imageHighSrc": "cards/dp2-006-high.png"
+  },
+  {
+    "masterCardId": "3547",
+    "externalId": null,
+    "tcgdex_id": "dp2-5",
+    "localId": "005",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "005/122",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 005/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-005-low.png",
+    "imageHighSrc": "cards/dp2-005-high.png"
+  },
+  {
+    "masterCardId": "3541",
+    "externalId": null,
+    "tcgdex_id": "dp2-4",
+    "localId": "004",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "004/122",
+    "cardName": "Azelf",
+    "fullDisplayName": "Azelf 004/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      482
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-004-low.png",
+    "imageHighSrc": "cards/dp2-004-high.png"
+  },
+  {
+    "masterCardId": "3535",
+    "externalId": null,
+    "tcgdex_id": "dp2-3",
+    "localId": "003",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "003/122",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 003/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-003-low.png",
+    "imageHighSrc": "cards/dp2-003-high.png"
+  },
+  {
+    "masterCardId": "3526",
+    "externalId": null,
+    "tcgdex_id": "dp2-2",
+    "localId": "002",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "002/122",
+    "cardName": "Alakazam",
+    "fullDisplayName": "Alakazam 002/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kadabra",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-002-low.png",
+    "imageHighSrc": "cards/dp2-002-high.png"
+  },
+  {
+    "masterCardId": "3520",
+    "externalId": null,
+    "tcgdex_id": "dp2-1",
+    "localId": "001",
+    "setCode": "dp2",
+    "setTcgdexId": "dp2",
+    "cardNumber": "001/122",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 001/122 Mysterious Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp2-001-low.png",
+    "imageHighSrc": "cards/dp2-001-high.png"
+  }
+]

@@ -1,0 +1,3469 @@
+[
+  {
+    "masterCardId": "6168",
+    "externalId": null,
+    "tcgdex_id": "ex16-108",
+    "localId": "108",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "108/108",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 108/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-108-low.png",
+    "imageHighSrc": "cards/ex16-108-high.png"
+  },
+  {
+    "masterCardId": "6165",
+    "externalId": null,
+    "tcgdex_id": "ex16-107",
+    "localId": "107",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "107/108",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 107/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-107-low.png",
+    "imageHighSrc": "cards/ex16-107-high.png"
+  },
+  {
+    "masterCardId": "6162",
+    "externalId": null,
+    "tcgdex_id": "ex16-106",
+    "localId": "106",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "106/108",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 106/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-106-low.png",
+    "imageHighSrc": "cards/ex16-106-high.png"
+  },
+  {
+    "masterCardId": "6159",
+    "externalId": null,
+    "tcgdex_id": "ex16-105",
+    "localId": "105",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "105/108",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 105/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-105-low.png",
+    "imageHighSrc": "cards/ex16-105-high.png"
+  },
+  {
+    "masterCardId": "6156",
+    "externalId": null,
+    "tcgdex_id": "ex16-104",
+    "localId": "104",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "104/108",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 104/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-104-low.png",
+    "imageHighSrc": "cards/ex16-104-high.png"
+  },
+  {
+    "masterCardId": "6152",
+    "externalId": null,
+    "tcgdex_id": "ex16-103",
+    "localId": "103",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "103/108",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 103/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-103-low.png",
+    "imageHighSrc": "cards/ex16-103-high.png"
+  },
+  {
+    "masterCardId": "6150",
+    "externalId": null,
+    "tcgdex_id": "ex16-102",
+    "localId": "102",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "102/108",
+    "cardName": "Vaporeon ★",
+    "fullDisplayName": "Vaporeon ★ 102/108 Power Keepers",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-102-low.png",
+    "imageHighSrc": "cards/ex16-102-high.png"
+  },
+  {
+    "masterCardId": "6146",
+    "externalId": null,
+    "tcgdex_id": "ex16-101",
+    "localId": "101",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "101/108",
+    "cardName": "Jolteon ★",
+    "fullDisplayName": "Jolteon ★ 101/108 Power Keepers",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-101-low.png",
+    "imageHighSrc": "cards/ex16-101-high.png"
+  },
+  {
+    "masterCardId": "6141",
+    "externalId": null,
+    "tcgdex_id": "ex16-100",
+    "localId": "100",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "100/108",
+    "cardName": "Flareon ★",
+    "fullDisplayName": "Flareon ★ 100/108 Power Keepers",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-100-low.png",
+    "imageHighSrc": "cards/ex16-100-high.png"
+  },
+  {
+    "masterCardId": "6134",
+    "externalId": null,
+    "tcgdex_id": "ex16-99",
+    "localId": "099",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "099/108",
+    "cardName": "Walrein ex",
+    "fullDisplayName": "Walrein ex 099/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sealeo",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-099-low.png",
+    "imageHighSrc": "cards/ex16-099-high.png"
+  },
+  {
+    "masterCardId": "6127",
+    "externalId": null,
+    "tcgdex_id": "ex16-98",
+    "localId": "098",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "098/108",
+    "cardName": "Skarmory ex",
+    "fullDisplayName": "Skarmory ex 098/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-098-low.png",
+    "imageHighSrc": "cards/ex16-098-high.png"
+  },
+  {
+    "masterCardId": "6120",
+    "externalId": null,
+    "tcgdex_id": "ex16-97",
+    "localId": "097",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "097/108",
+    "cardName": "Shiftry ex",
+    "fullDisplayName": "Shiftry ex 097/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      275
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nuzleaf",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-097-low.png",
+    "imageHighSrc": "cards/ex16-097-high.png"
+  },
+  {
+    "masterCardId": "6113",
+    "externalId": null,
+    "tcgdex_id": "ex16-96",
+    "localId": "096",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "096/108",
+    "cardName": "Salamence ex",
+    "fullDisplayName": "Salamence ex 096/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-096-low.png",
+    "imageHighSrc": "cards/ex16-096-high.png"
+  },
+  {
+    "masterCardId": "6106",
+    "externalId": null,
+    "tcgdex_id": "ex16-95",
+    "localId": "095",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "095/108",
+    "cardName": "Metagross ex",
+    "fullDisplayName": "Metagross ex 095/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-095-low.png",
+    "imageHighSrc": "cards/ex16-095-high.png"
+  },
+  {
+    "masterCardId": "6098",
+    "externalId": null,
+    "tcgdex_id": "ex16-94",
+    "localId": "094",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "094/108",
+    "cardName": "Flygon ex",
+    "fullDisplayName": "Flygon ex 094/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-094-low.png",
+    "imageHighSrc": "cards/ex16-094-high.png"
+  },
+  {
+    "masterCardId": "6090",
+    "externalId": null,
+    "tcgdex_id": "ex16-93",
+    "localId": "093",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "093/108",
+    "cardName": "Claydol ex",
+    "fullDisplayName": "Claydol ex 093/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-093-low.png",
+    "imageHighSrc": "cards/ex16-093-high.png"
+  },
+  {
+    "masterCardId": "6078",
+    "externalId": null,
+    "tcgdex_id": "ex16-92",
+    "localId": "092",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "092/108",
+    "cardName": "Absol ex",
+    "fullDisplayName": "Absol ex 092/108 Power Keepers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-092-low.png",
+    "imageHighSrc": "cards/ex16-092-high.png"
+  },
+  {
+    "masterCardId": "6069",
+    "externalId": null,
+    "tcgdex_id": "ex16-91",
+    "localId": "091",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "091/108",
+    "cardName": "Warp Energy",
+    "fullDisplayName": "Warp Energy 091/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-091-low.png",
+    "imageHighSrc": "cards/ex16-091-high.png"
+  },
+  {
+    "masterCardId": "6059",
+    "externalId": null,
+    "tcgdex_id": "ex16-90",
+    "localId": "090",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "090/108",
+    "cardName": "Cyclone Energy",
+    "fullDisplayName": "Cyclone Energy 090/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-090-low.png",
+    "imageHighSrc": "cards/ex16-090-high.png"
+  },
+  {
+    "masterCardId": "6050",
+    "externalId": null,
+    "tcgdex_id": "ex16-89",
+    "localId": "089",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "089/108",
+    "cardName": "Multi Energy",
+    "fullDisplayName": "Multi Energy 089/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-089-low.png",
+    "imageHighSrc": "cards/ex16-089-high.png"
+  },
+  {
+    "masterCardId": "6042",
+    "externalId": null,
+    "tcgdex_id": "ex16-88",
+    "localId": "088",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "088/108",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 088/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-088-low.png",
+    "imageHighSrc": "cards/ex16-088-high.png"
+  },
+  {
+    "masterCardId": "6033",
+    "externalId": null,
+    "tcgdex_id": "ex16-87",
+    "localId": "087",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "087/108",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 087/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-087-low.png",
+    "imageHighSrc": "cards/ex16-087-high.png"
+  },
+  {
+    "masterCardId": "6023",
+    "externalId": null,
+    "tcgdex_id": "ex16-86",
+    "localId": "086",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "086/108",
+    "cardName": "Root Fossil",
+    "fullDisplayName": "Root Fossil 086/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-086-low.png",
+    "imageHighSrc": "cards/ex16-086-high.png"
+  },
+  {
+    "masterCardId": "6014",
+    "externalId": null,
+    "tcgdex_id": "ex16-85",
+    "localId": "085",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "085/108",
+    "cardName": "Mysterious Fossil",
+    "fullDisplayName": "Mysterious Fossil 085/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-085-low.png",
+    "imageHighSrc": "cards/ex16-085-high.png"
+  },
+  {
+    "masterCardId": "6005",
+    "externalId": null,
+    "tcgdex_id": "ex16-84",
+    "localId": "084",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "084/108",
+    "cardName": "Claw Fossil",
+    "fullDisplayName": "Claw Fossil 084/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-084-low.png",
+    "imageHighSrc": "cards/ex16-084-high.png"
+  },
+  {
+    "masterCardId": "5996",
+    "externalId": null,
+    "tcgdex_id": "ex16-83",
+    "localId": "083",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "083/108",
+    "cardName": "Steven's Advice",
+    "fullDisplayName": "Steven's Advice 083/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-083-low.png",
+    "imageHighSrc": "cards/ex16-083-high.png"
+  },
+  {
+    "masterCardId": "5987",
+    "externalId": null,
+    "tcgdex_id": "ex16-82",
+    "localId": "082",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "082/108",
+    "cardName": "Sidney's Stadium",
+    "fullDisplayName": "Sidney's Stadium 082/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-082-low.png",
+    "imageHighSrc": "cards/ex16-082-high.png"
+  },
+  {
+    "masterCardId": "5976",
+    "externalId": null,
+    "tcgdex_id": "ex16-81",
+    "localId": "081",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "081/108",
+    "cardName": "Scott",
+    "fullDisplayName": "Scott 081/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-081-low.png",
+    "imageHighSrc": "cards/ex16-081-high.png"
+  },
+  {
+    "masterCardId": "5966",
+    "externalId": null,
+    "tcgdex_id": "ex16-80",
+    "localId": "080",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "080/108",
+    "cardName": "Professor Birch",
+    "fullDisplayName": "Professor Birch 080/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-080-low.png",
+    "imageHighSrc": "cards/ex16-080-high.png"
+  },
+  {
+    "masterCardId": "5957",
+    "externalId": null,
+    "tcgdex_id": "ex16-79",
+    "localId": "079",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "079/108",
+    "cardName": "Phoebe's Stadium",
+    "fullDisplayName": "Phoebe's Stadium 079/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-079-low.png",
+    "imageHighSrc": "cards/ex16-079-high.png"
+  },
+  {
+    "masterCardId": "5948",
+    "externalId": null,
+    "tcgdex_id": "ex16-78",
+    "localId": "078",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "078/108",
+    "cardName": "Master Ball",
+    "fullDisplayName": "Master Ball 078/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-078-low.png",
+    "imageHighSrc": "cards/ex16-078-high.png"
+  },
+  {
+    "masterCardId": "5939",
+    "externalId": null,
+    "tcgdex_id": "ex16-77",
+    "localId": "077",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "077/108",
+    "cardName": "Great Ball",
+    "fullDisplayName": "Great Ball 077/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-077-low.png",
+    "imageHighSrc": "cards/ex16-077-high.png"
+  },
+  {
+    "masterCardId": "5930",
+    "externalId": null,
+    "tcgdex_id": "ex16-76",
+    "localId": "076",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "076/108",
+    "cardName": "Glacia's Stadium",
+    "fullDisplayName": "Glacia's Stadium 076/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-076-low.png",
+    "imageHighSrc": "cards/ex16-076-high.png"
+  },
+  {
+    "masterCardId": "5922",
+    "externalId": null,
+    "tcgdex_id": "ex16-75",
+    "localId": "075",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "075/108",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 075/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-075-low.png",
+    "imageHighSrc": "cards/ex16-075-high.png"
+  },
+  {
+    "masterCardId": "5912",
+    "externalId": null,
+    "tcgdex_id": "ex16-74",
+    "localId": "074",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "074/108",
+    "cardName": "Energy Removal 2",
+    "fullDisplayName": "Energy Removal 2 074/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-074-low.png",
+    "imageHighSrc": "cards/ex16-074-high.png"
+  },
+  {
+    "masterCardId": "5903",
+    "externalId": null,
+    "tcgdex_id": "ex16-73",
+    "localId": "073",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "073/108",
+    "cardName": "Energy Recycle System",
+    "fullDisplayName": "Energy Recycle System 073/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-073-low.png",
+    "imageHighSrc": "cards/ex16-073-high.png"
+  },
+  {
+    "masterCardId": "5894",
+    "externalId": null,
+    "tcgdex_id": "ex16-72",
+    "localId": "072",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "072/108",
+    "cardName": "Drake's Stadium",
+    "fullDisplayName": "Drake's Stadium 072/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-072-low.png",
+    "imageHighSrc": "cards/ex16-072-high.png"
+  },
+  {
+    "masterCardId": "5885",
+    "externalId": null,
+    "tcgdex_id": "ex16-71",
+    "localId": "071",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "071/108",
+    "cardName": "Battle Frontier",
+    "fullDisplayName": "Battle Frontier 071/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-071-low.png",
+    "imageHighSrc": "cards/ex16-071-high.png"
+  },
+  {
+    "masterCardId": "5876",
+    "externalId": null,
+    "tcgdex_id": "ex16-70",
+    "localId": "070",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "070/108",
+    "cardName": "Wynaut",
+    "fullDisplayName": "Wynaut 070/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      360
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-070-low.png",
+    "imageHighSrc": "cards/ex16-070-high.png"
+  },
+  {
+    "masterCardId": "5867",
+    "externalId": null,
+    "tcgdex_id": "ex16-69",
+    "localId": "069",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "069/108",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 069/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-069-low.png",
+    "imageHighSrc": "cards/ex16-069-high.png"
+  },
+  {
+    "masterCardId": "5858",
+    "externalId": null,
+    "tcgdex_id": "ex16-68",
+    "localId": "068",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "068/108",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 068/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-068-low.png",
+    "imageHighSrc": "cards/ex16-068-high.png"
+  },
+  {
+    "masterCardId": "5850",
+    "externalId": null,
+    "tcgdex_id": "ex16-67",
+    "localId": "067",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "067/108",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 067/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-067-low.png",
+    "imageHighSrc": "cards/ex16-067-high.png"
+  },
+  {
+    "masterCardId": "5840",
+    "externalId": null,
+    "tcgdex_id": "ex16-66",
+    "localId": "066",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "066/108",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 066/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-066-low.png",
+    "imageHighSrc": "cards/ex16-066-high.png"
+  },
+  {
+    "masterCardId": "5831",
+    "externalId": null,
+    "tcgdex_id": "ex16-65",
+    "localId": "065",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "065/108",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 065/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-065-low.png",
+    "imageHighSrc": "cards/ex16-065-high.png"
+  },
+  {
+    "masterCardId": "5822",
+    "externalId": null,
+    "tcgdex_id": "ex16-64",
+    "localId": "064",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "064/108",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 064/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-064-low.png",
+    "imageHighSrc": "cards/ex16-064-high.png"
+  },
+  {
+    "masterCardId": "5813",
+    "externalId": null,
+    "tcgdex_id": "ex16-63",
+    "localId": "063",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "063/108",
+    "cardName": "Slakoth",
+    "fullDisplayName": "Slakoth 063/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      287
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-063-low.png",
+    "imageHighSrc": "cards/ex16-063-high.png"
+  },
+  {
+    "masterCardId": "5803",
+    "externalId": null,
+    "tcgdex_id": "ex16-62",
+    "localId": "062",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "062/108",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 062/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-062-low.png",
+    "imageHighSrc": "cards/ex16-062-high.png"
+  },
+  {
+    "masterCardId": "5794",
+    "externalId": null,
+    "tcgdex_id": "ex16-61",
+    "localId": "061",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "061/108",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 061/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-061-low.png",
+    "imageHighSrc": "cards/ex16-061-high.png"
+  },
+  {
+    "masterCardId": "5785",
+    "externalId": null,
+    "tcgdex_id": "ex16-60",
+    "localId": "060",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "060/108",
+    "cardName": "Seedot",
+    "fullDisplayName": "Seedot 060/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      273
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-060-low.png",
+    "imageHighSrc": "cards/ex16-060-high.png"
+  },
+  {
+    "masterCardId": "5776",
+    "externalId": null,
+    "tcgdex_id": "ex16-59",
+    "localId": "059",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "059/108",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 059/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-059-low.png",
+    "imageHighSrc": "cards/ex16-059-high.png"
+  },
+  {
+    "masterCardId": "5767",
+    "externalId": null,
+    "tcgdex_id": "ex16-58",
+    "localId": "058",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "058/108",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 058/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-058-low.png",
+    "imageHighSrc": "cards/ex16-058-high.png"
+  },
+  {
+    "masterCardId": "5758",
+    "externalId": null,
+    "tcgdex_id": "ex16-57",
+    "localId": "057",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "057/108",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 057/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-057-low.png",
+    "imageHighSrc": "cards/ex16-057-high.png"
+  },
+  {
+    "masterCardId": "5749",
+    "externalId": null,
+    "tcgdex_id": "ex16-56",
+    "localId": "056",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "056/108",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 056/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-056-low.png",
+    "imageHighSrc": "cards/ex16-056-high.png"
+  },
+  {
+    "masterCardId": "5740",
+    "externalId": null,
+    "tcgdex_id": "ex16-55",
+    "localId": "055",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "055/108",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 055/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-055-low.png",
+    "imageHighSrc": "cards/ex16-055-high.png"
+  },
+  {
+    "masterCardId": "5731",
+    "externalId": null,
+    "tcgdex_id": "ex16-54",
+    "localId": "054",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "054/108",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 054/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-054-low.png",
+    "imageHighSrc": "cards/ex16-054-high.png"
+  },
+  {
+    "masterCardId": "5721",
+    "externalId": null,
+    "tcgdex_id": "ex16-53",
+    "localId": "053",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "053/108",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 053/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-053-low.png",
+    "imageHighSrc": "cards/ex16-053-high.png"
+  },
+  {
+    "masterCardId": "5713",
+    "externalId": null,
+    "tcgdex_id": "ex16-52",
+    "localId": "052",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "052/108",
+    "cardName": "Lileep",
+    "fullDisplayName": "Lileep 052/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Root Fossil",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-052-low.png",
+    "imageHighSrc": "cards/ex16-052-high.png"
+  },
+  {
+    "masterCardId": "5703",
+    "externalId": null,
+    "tcgdex_id": "ex16-51",
+    "localId": "051",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "051/108",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 051/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-051-low.png",
+    "imageHighSrc": "cards/ex16-051-high.png"
+  },
+  {
+    "masterCardId": "5693",
+    "externalId": null,
+    "tcgdex_id": "ex16-50",
+    "localId": "050",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "050/108",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 050/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-050-low.png",
+    "imageHighSrc": "cards/ex16-050-high.png"
+  },
+  {
+    "masterCardId": "5684",
+    "externalId": null,
+    "tcgdex_id": "ex16-49",
+    "localId": "049",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "049/108",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 049/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-049-low.png",
+    "imageHighSrc": "cards/ex16-049-high.png"
+  },
+  {
+    "masterCardId": "5675",
+    "externalId": null,
+    "tcgdex_id": "ex16-48",
+    "localId": "048",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "048/108",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 048/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-048-low.png",
+    "imageHighSrc": "cards/ex16-048-high.png"
+  },
+  {
+    "masterCardId": "5666",
+    "externalId": null,
+    "tcgdex_id": "ex16-47",
+    "localId": "047",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "047/108",
+    "cardName": "Carvanha",
+    "fullDisplayName": "Carvanha 047/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-047-low.png",
+    "imageHighSrc": "cards/ex16-047-high.png"
+  },
+  {
+    "masterCardId": "5657",
+    "externalId": null,
+    "tcgdex_id": "ex16-46",
+    "localId": "046",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "046/108",
+    "cardName": "Cacnea",
+    "fullDisplayName": "Cacnea 046/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      331
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-046-low.png",
+    "imageHighSrc": "cards/ex16-046-high.png"
+  },
+  {
+    "masterCardId": "5648",
+    "externalId": null,
+    "tcgdex_id": "ex16-45",
+    "localId": "045",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "045/108",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 045/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-045-low.png",
+    "imageHighSrc": "cards/ex16-045-high.png"
+  },
+  {
+    "masterCardId": "5639",
+    "externalId": null,
+    "tcgdex_id": "ex16-44",
+    "localId": "044",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "044/108",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 044/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-044-low.png",
+    "imageHighSrc": "cards/ex16-044-high.png"
+  },
+  {
+    "masterCardId": "5628",
+    "externalId": null,
+    "tcgdex_id": "ex16-43",
+    "localId": "043",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "043/108",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 043/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-043-low.png",
+    "imageHighSrc": "cards/ex16-043-high.png"
+  },
+  {
+    "masterCardId": "5619",
+    "externalId": null,
+    "tcgdex_id": "ex16-42",
+    "localId": "042",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "042/108",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 042/108 Power Keepers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-042-low.png",
+    "imageHighSrc": "cards/ex16-042-high.png"
+  },
+  {
+    "masterCardId": "5610",
+    "externalId": null,
+    "tcgdex_id": "ex16-41",
+    "localId": "041",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "041/108",
+    "cardName": "Vigoroth",
+    "fullDisplayName": "Vigoroth 041/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      288
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slakoth",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-041-low.png",
+    "imageHighSrc": "cards/ex16-041-high.png"
+  },
+  {
+    "masterCardId": "5601",
+    "externalId": null,
+    "tcgdex_id": "ex16-40",
+    "localId": "040",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "040/108",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 040/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-040-low.png",
+    "imageHighSrc": "cards/ex16-040-high.png"
+  },
+  {
+    "masterCardId": "5592",
+    "externalId": null,
+    "tcgdex_id": "ex16-39",
+    "localId": "039",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "039/108",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 039/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-039-low.png",
+    "imageHighSrc": "cards/ex16-039-high.png"
+  },
+  {
+    "masterCardId": "5582",
+    "externalId": null,
+    "tcgdex_id": "ex16-38",
+    "localId": "038",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "038/108",
+    "cardName": "Sharpedo",
+    "fullDisplayName": "Sharpedo 038/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-038-low.png",
+    "imageHighSrc": "cards/ex16-038-high.png"
+  },
+  {
+    "masterCardId": "5575",
+    "externalId": null,
+    "tcgdex_id": "ex16-37",
+    "localId": "037",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "037/108",
+    "cardName": "Sealeo",
+    "fullDisplayName": "Sealeo 037/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spheal",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-037-low.png",
+    "imageHighSrc": "cards/ex16-037-high.png"
+  },
+  {
+    "masterCardId": "5566",
+    "externalId": null,
+    "tcgdex_id": "ex16-36",
+    "localId": "036",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "036/108",
+    "cardName": "Nuzleaf",
+    "fullDisplayName": "Nuzleaf 036/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      274
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seedot",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-036-low.png",
+    "imageHighSrc": "cards/ex16-036-high.png"
+  },
+  {
+    "masterCardId": "5557",
+    "externalId": null,
+    "tcgdex_id": "ex16-35",
+    "localId": "035",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "035/108",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 035/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-035-low.png",
+    "imageHighSrc": "cards/ex16-035-high.png"
+  },
+  {
+    "masterCardId": "5548",
+    "externalId": null,
+    "tcgdex_id": "ex16-34",
+    "localId": "034",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "034/108",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 034/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-034-low.png",
+    "imageHighSrc": "cards/ex16-034-high.png"
+  },
+  {
+    "masterCardId": "5539",
+    "externalId": null,
+    "tcgdex_id": "ex16-33",
+    "localId": "033",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "033/108",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 033/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-033-low.png",
+    "imageHighSrc": "cards/ex16-033-high.png"
+  },
+  {
+    "masterCardId": "5530",
+    "externalId": null,
+    "tcgdex_id": "ex16-32",
+    "localId": "032",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "032/108",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 032/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-032-low.png",
+    "imageHighSrc": "cards/ex16-032-high.png"
+  },
+  {
+    "masterCardId": "5521",
+    "externalId": null,
+    "tcgdex_id": "ex16-31",
+    "localId": "031",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "031/108",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 031/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-031-low.png",
+    "imageHighSrc": "cards/ex16-031-high.png"
+  },
+  {
+    "masterCardId": "5513",
+    "externalId": null,
+    "tcgdex_id": "ex16-30",
+    "localId": "030",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "030/108",
+    "cardName": "Glalie",
+    "fullDisplayName": "Glalie 030/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      362
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-030-low.png",
+    "imageHighSrc": "cards/ex16-030-high.png"
+  },
+  {
+    "masterCardId": "5504",
+    "externalId": null,
+    "tcgdex_id": "ex16-29",
+    "localId": "029",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "029/108",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 029/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-029-low.png",
+    "imageHighSrc": "cards/ex16-029-high.png"
+  },
+  {
+    "masterCardId": "5495",
+    "externalId": null,
+    "tcgdex_id": "ex16-28",
+    "localId": "028",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "028/108",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 028/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-028-low.png",
+    "imageHighSrc": "cards/ex16-028-high.png"
+  },
+  {
+    "masterCardId": "5484",
+    "externalId": null,
+    "tcgdex_id": "ex16-27",
+    "localId": "027",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "027/108",
+    "cardName": "Cacturne",
+    "fullDisplayName": "Cacturne 027/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      332
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cacnea",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-027-low.png",
+    "imageHighSrc": "cards/ex16-027-high.png"
+  },
+  {
+    "masterCardId": "5476",
+    "externalId": null,
+    "tcgdex_id": "ex16-26",
+    "localId": "026",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "026/108",
+    "cardName": "Anorith",
+    "fullDisplayName": "Anorith 026/108 Power Keepers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      347
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Claw Fossil",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-026-low.png",
+    "imageHighSrc": "cards/ex16-026-high.png"
+  },
+  {
+    "masterCardId": "5467",
+    "externalId": null,
+    "tcgdex_id": "ex16-25",
+    "localId": "025",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "025/108",
+    "cardName": "Zangoose",
+    "fullDisplayName": "Zangoose 025/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-025-low.png",
+    "imageHighSrc": "cards/ex16-025-high.png"
+  },
+  {
+    "masterCardId": "5458",
+    "externalId": null,
+    "tcgdex_id": "ex16-24",
+    "localId": "024",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "024/108",
+    "cardName": "Wobbuffet",
+    "fullDisplayName": "Wobbuffet 024/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      202
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-024-low.png",
+    "imageHighSrc": "cards/ex16-024-high.png"
+  },
+  {
+    "masterCardId": "5449",
+    "externalId": null,
+    "tcgdex_id": "ex16-23",
+    "localId": "023",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "023/108",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 023/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-023-low.png",
+    "imageHighSrc": "cards/ex16-023-high.png"
+  },
+  {
+    "masterCardId": "5441",
+    "externalId": null,
+    "tcgdex_id": "ex16-22",
+    "localId": "022",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "022/108",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 022/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-022-low.png",
+    "imageHighSrc": "cards/ex16-022-high.png"
+  },
+  {
+    "masterCardId": "5430",
+    "externalId": null,
+    "tcgdex_id": "ex16-21",
+    "localId": "021",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "021/108",
+    "cardName": "Pichu",
+    "fullDisplayName": "Pichu 021/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-021-low.png",
+    "imageHighSrc": "cards/ex16-021-high.png"
+  },
+  {
+    "masterCardId": "5422",
+    "externalId": null,
+    "tcgdex_id": "ex16-20",
+    "localId": "020",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "020/108",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 020/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-020-low.png",
+    "imageHighSrc": "cards/ex16-020-high.png"
+  },
+  {
+    "masterCardId": "5413",
+    "externalId": null,
+    "tcgdex_id": "ex16-19",
+    "localId": "019",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "019/108",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 019/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-019-low.png",
+    "imageHighSrc": "cards/ex16-019-high.png"
+  },
+  {
+    "masterCardId": "5405",
+    "externalId": null,
+    "tcgdex_id": "ex16-18",
+    "localId": "018",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "018/108",
+    "cardName": "Mightyena",
+    "fullDisplayName": "Mightyena 018/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-018-low.png",
+    "imageHighSrc": "cards/ex16-018-high.png"
+  },
+  {
+    "masterCardId": "5396",
+    "externalId": null,
+    "tcgdex_id": "ex16-17",
+    "localId": "017",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "017/108",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 017/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-017-low.png",
+    "imageHighSrc": "cards/ex16-017-high.png"
+  },
+  {
+    "masterCardId": "5388",
+    "externalId": null,
+    "tcgdex_id": "ex16-16",
+    "localId": "016",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "016/108",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 016/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-016-low.png",
+    "imageHighSrc": "cards/ex16-016-high.png"
+  },
+  {
+    "masterCardId": "5379",
+    "externalId": null,
+    "tcgdex_id": "ex16-15",
+    "localId": "015",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "015/108",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 015/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-015-low.png",
+    "imageHighSrc": "cards/ex16-015-high.png"
+  },
+  {
+    "masterCardId": "5370",
+    "externalId": null,
+    "tcgdex_id": "ex16-14",
+    "localId": "014",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "014/108",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 014/108 Power Keepers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-014-low.png",
+    "imageHighSrc": "cards/ex16-014-high.png"
+  },
+  {
+    "masterCardId": "5361",
+    "externalId": null,
+    "tcgdex_id": "ex16-13",
+    "localId": "013",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "013/108",
+    "cardName": "Slaking",
+    "fullDisplayName": "Slaking 013/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vigoroth",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-013-low.png",
+    "imageHighSrc": "cards/ex16-013-high.png"
+  },
+  {
+    "masterCardId": "5350",
+    "externalId": null,
+    "tcgdex_id": "ex16-12",
+    "localId": "012",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "012/108",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 012/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-012-low.png",
+    "imageHighSrc": "cards/ex16-012-high.png"
+  },
+  {
+    "masterCardId": "5340",
+    "externalId": null,
+    "tcgdex_id": "ex16-11",
+    "localId": "011",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "011/108",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 011/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-011-low.png",
+    "imageHighSrc": "cards/ex16-011-high.png"
+  },
+  {
+    "masterCardId": "5331",
+    "externalId": null,
+    "tcgdex_id": "ex16-10",
+    "localId": "010",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "010/108",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 010/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-010-low.png",
+    "imageHighSrc": "cards/ex16-010-high.png"
+  },
+  {
+    "masterCardId": "5323",
+    "externalId": null,
+    "tcgdex_id": "ex16-9",
+    "localId": "009",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "009/108",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 009/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-009-low.png",
+    "imageHighSrc": "cards/ex16-009-high.png"
+  },
+  {
+    "masterCardId": "5314",
+    "externalId": null,
+    "tcgdex_id": "ex16-8",
+    "localId": "008",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "008/108",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 008/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-008-low.png",
+    "imageHighSrc": "cards/ex16-008-high.png"
+  },
+  {
+    "masterCardId": "5306",
+    "externalId": null,
+    "tcgdex_id": "ex16-7",
+    "localId": "007",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "007/108",
+    "cardName": "Cradily",
+    "fullDisplayName": "Cradily 007/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-007-low.png",
+    "imageHighSrc": "cards/ex16-007-high.png"
+  },
+  {
+    "masterCardId": "5299",
+    "externalId": null,
+    "tcgdex_id": "ex16-6",
+    "localId": "006",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "006/108",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 006/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-006-low.png",
+    "imageHighSrc": "cards/ex16-006-high.png"
+  },
+  {
+    "masterCardId": "5290",
+    "externalId": null,
+    "tcgdex_id": "ex16-5",
+    "localId": "005",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "005/108",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 005/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-005-low.png",
+    "imageHighSrc": "cards/ex16-005-high.png"
+  },
+  {
+    "masterCardId": "5282",
+    "externalId": null,
+    "tcgdex_id": "ex16-4",
+    "localId": "004",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "004/108",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 004/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-004-low.png",
+    "imageHighSrc": "cards/ex16-004-high.png"
+  },
+  {
+    "masterCardId": "5272",
+    "externalId": null,
+    "tcgdex_id": "ex16-3",
+    "localId": "003",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "003/108",
+    "cardName": "Armaldo",
+    "fullDisplayName": "Armaldo 003/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Anorith",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-003-low.png",
+    "imageHighSrc": "cards/ex16-003-high.png"
+  },
+  {
+    "masterCardId": "5262",
+    "externalId": null,
+    "tcgdex_id": "ex16-2",
+    "localId": "002",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "002/108",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 002/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-002-low.png",
+    "imageHighSrc": "cards/ex16-002-high.png"
+  },
+  {
+    "masterCardId": "5260",
+    "externalId": null,
+    "tcgdex_id": "ex16-1",
+    "localId": "001",
+    "setCode": "ex16",
+    "setTcgdexId": "ex16",
+    "cardNumber": "001/108",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 001/108 Power Keepers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex16-001-low.png",
+    "imageHighSrc": "cards/ex16-001-high.png"
+  }
+]

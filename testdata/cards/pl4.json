@@ -1,0 +1,3620 @@
+[
+  {
+    "masterCardId": "9041",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR9",
+    "localId": "AR9",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR9/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR9/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR9-low.png",
+    "imageHighSrc": "cards/pl4-AR9-high.png"
+  },
+  {
+    "masterCardId": "9037",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR8",
+    "localId": "AR8",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR8/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR8/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR8-low.png",
+    "imageHighSrc": "cards/pl4-AR8-high.png"
+  },
+  {
+    "masterCardId": "9033",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR7",
+    "localId": "AR7",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR7/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR7/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR7-low.png",
+    "imageHighSrc": "cards/pl4-AR7-high.png"
+  },
+  {
+    "masterCardId": "9029",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR6",
+    "localId": "AR6",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR6/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR6/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR6-low.png",
+    "imageHighSrc": "cards/pl4-AR6-high.png"
+  },
+  {
+    "masterCardId": "9024",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR5",
+    "localId": "AR5",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR5/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR5/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR5-low.png",
+    "imageHighSrc": "cards/pl4-AR5-high.png"
+  },
+  {
+    "masterCardId": "9021",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR4",
+    "localId": "AR4",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR4/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR4/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR4-low.png",
+    "imageHighSrc": "cards/pl4-AR4-high.png"
+  },
+  {
+    "masterCardId": "9016",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR3",
+    "localId": "AR3",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR3/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR3/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR3-low.png",
+    "imageHighSrc": "cards/pl4-AR3-high.png"
+  },
+  {
+    "masterCardId": "9010",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR2",
+    "localId": "AR2",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR2/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR2/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR2-low.png",
+    "imageHighSrc": "cards/pl4-AR2-high.png"
+  },
+  {
+    "masterCardId": "9006",
+    "externalId": null,
+    "tcgdex_id": "pl4-AR1",
+    "localId": "AR1",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "AR1/99",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus AR1/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-AR1-low.png",
+    "imageHighSrc": "cards/pl4-AR1-high.png"
+  },
+  {
+    "masterCardId": "9001",
+    "externalId": null,
+    "tcgdex_id": "pl4-SH12",
+    "localId": "SH12",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "SH12/99",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx SH12/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-SH12-low.png",
+    "imageHighSrc": "cards/pl4-SH12-high.png"
+  },
+  {
+    "masterCardId": "8996",
+    "externalId": null,
+    "tcgdex_id": "pl4-SH11",
+    "localId": "SH11",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "SH11/99",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta SH11/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-SH11-low.png",
+    "imageHighSrc": "cards/pl4-SH11-high.png"
+  },
+  {
+    "masterCardId": "8992",
+    "externalId": null,
+    "tcgdex_id": "pl4-SH10",
+    "localId": "SH10",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "SH10/99",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon SH10/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-SH10-low.png",
+    "imageHighSrc": "cards/pl4-SH10-high.png"
+  },
+  {
+    "masterCardId": "8987",
+    "externalId": null,
+    "tcgdex_id": "pl4-99",
+    "localId": "099",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "099/99",
+    "cardName": "Tangrowth LV.X",
+    "fullDisplayName": "Tangrowth LV.X 099/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangrowth",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-099-low.png",
+    "imageHighSrc": "cards/pl4-099-high.png"
+  },
+  {
+    "masterCardId": "8982",
+    "externalId": null,
+    "tcgdex_id": "pl4-98",
+    "localId": "098",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "098/99",
+    "cardName": "Salamence LV.X",
+    "fullDisplayName": "Salamence LV.X 098/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Salamence",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-098-low.png",
+    "imageHighSrc": "cards/pl4-098-high.png"
+  },
+  {
+    "masterCardId": "8977",
+    "externalId": null,
+    "tcgdex_id": "pl4-97",
+    "localId": "097",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "097/99",
+    "cardName": "Gengar LV.X",
+    "fullDisplayName": "Gengar LV.X 097/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gengar",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-097-low.png",
+    "imageHighSrc": "cards/pl4-097-high.png"
+  },
+  {
+    "masterCardId": "8972",
+    "externalId": null,
+    "tcgdex_id": "pl4-96",
+    "localId": "096",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "096/99",
+    "cardName": "Arceus LV.X",
+    "fullDisplayName": "Arceus LV.X 096/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arceus",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-096-low.png",
+    "imageHighSrc": "cards/pl4-096-high.png"
+  },
+  {
+    "masterCardId": "8965",
+    "externalId": null,
+    "tcgdex_id": "pl4-95",
+    "localId": "095",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "095/99",
+    "cardName": "Arceus LV.X",
+    "fullDisplayName": "Arceus LV.X 095/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arceus",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-095-low.png",
+    "imageHighSrc": "cards/pl4-095-high.png"
+  },
+  {
+    "masterCardId": "8960",
+    "externalId": null,
+    "tcgdex_id": "pl4-94",
+    "localId": "094",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "094/99",
+    "cardName": "Arceus LV.X",
+    "fullDisplayName": "Arceus LV.X 094/99 Arceus",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arceus",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl4-094-low.png",
+    "imageHighSrc": "cards/pl4-094-high.png"
+  },
+  {
+    "masterCardId": "8956",
+    "externalId": null,
+    "tcgdex_id": "pl4-93",
+    "localId": "093",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "093/99",
+    "cardName": "Helix Fossil",
+    "fullDisplayName": "Helix Fossil 093/99 Arceus",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-093-low.png",
+    "imageHighSrc": "cards/pl4-093-high.png"
+  },
+  {
+    "masterCardId": "8952",
+    "externalId": null,
+    "tcgdex_id": "pl4-92",
+    "localId": "092",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "092/99",
+    "cardName": "Dome Fossil",
+    "fullDisplayName": "Dome Fossil 092/99 Arceus",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-092-low.png",
+    "imageHighSrc": "cards/pl4-092-high.png"
+  },
+  {
+    "masterCardId": "8947",
+    "externalId": null,
+    "tcgdex_id": "pl4-91",
+    "localId": "091",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "091/99",
+    "cardName": "Ultimate Zone",
+    "fullDisplayName": "Ultimate Zone 091/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-091-low.png",
+    "imageHighSrc": "cards/pl4-091-high.png"
+  },
+  {
+    "masterCardId": "8942",
+    "externalId": null,
+    "tcgdex_id": "pl4-90",
+    "localId": "090",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "090/99",
+    "cardName": "Professor Oak's Visit",
+    "fullDisplayName": "Professor Oak's Visit 090/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-090-low.png",
+    "imageHighSrc": "cards/pl4-090-high.png"
+  },
+  {
+    "masterCardId": "8937",
+    "externalId": null,
+    "tcgdex_id": "pl4-89",
+    "localId": "089",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "089/99",
+    "cardName": "Old Amber",
+    "fullDisplayName": "Old Amber 089/99 Arceus",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 50,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-089-low.png",
+    "imageHighSrc": "cards/pl4-089-high.png"
+  },
+  {
+    "masterCardId": "8932",
+    "externalId": null,
+    "tcgdex_id": "pl4-88",
+    "localId": "088",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "088/99",
+    "cardName": "Lucky Egg",
+    "fullDisplayName": "Lucky Egg 088/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nobuyuki Fujimoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-088-low.png",
+    "imageHighSrc": "cards/pl4-088-high.png"
+  },
+  {
+    "masterCardId": "8927",
+    "externalId": null,
+    "tcgdex_id": "pl4-87",
+    "localId": "087",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "087/99",
+    "cardName": "Expert Belt",
+    "fullDisplayName": "Expert Belt 087/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-087-low.png",
+    "imageHighSrc": "cards/pl4-087-high.png"
+  },
+  {
+    "masterCardId": "8922",
+    "externalId": null,
+    "tcgdex_id": "pl4-86",
+    "localId": "086",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "086/99",
+    "cardName": "Energy Restore",
+    "fullDisplayName": "Energy Restore 086/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-086-low.png",
+    "imageHighSrc": "cards/pl4-086-high.png"
+  },
+  {
+    "masterCardId": "8917",
+    "externalId": null,
+    "tcgdex_id": "pl4-85",
+    "localId": "085",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "085/99",
+    "cardName": "Department Store Girl",
+    "fullDisplayName": "Department Store Girl 085/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-085-low.png",
+    "imageHighSrc": "cards/pl4-085-high.png"
+  },
+  {
+    "masterCardId": "8912",
+    "externalId": null,
+    "tcgdex_id": "pl4-84",
+    "localId": "084",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "084/99",
+    "cardName": "Buffer Piece",
+    "fullDisplayName": "Buffer Piece 084/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-084-low.png",
+    "imageHighSrc": "cards/pl4-084-high.png"
+  },
+  {
+    "masterCardId": "8908",
+    "externalId": null,
+    "tcgdex_id": "pl4-83",
+    "localId": "083",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "083/99",
+    "cardName": "Bench Shield",
+    "fullDisplayName": "Bench Shield 083/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-083-low.png",
+    "imageHighSrc": "cards/pl4-083-high.png"
+  },
+  {
+    "masterCardId": "8902",
+    "externalId": null,
+    "tcgdex_id": "pl4-82",
+    "localId": "082",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "082/99",
+    "cardName": "Beginning Door",
+    "fullDisplayName": "Beginning Door 082/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-082-low.png",
+    "imageHighSrc": "cards/pl4-082-high.png"
+  },
+  {
+    "masterCardId": "8896",
+    "externalId": null,
+    "tcgdex_id": "pl4-81",
+    "localId": "081",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "081/99",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 081/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-081-low.png",
+    "imageHighSrc": "cards/pl4-081-high.png"
+  },
+  {
+    "masterCardId": "8890",
+    "externalId": null,
+    "tcgdex_id": "pl4-80",
+    "localId": "080",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "080/99",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 080/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-080-low.png",
+    "imageHighSrc": "cards/pl4-080-high.png"
+  },
+  {
+    "masterCardId": "8884",
+    "externalId": null,
+    "tcgdex_id": "pl4-79",
+    "localId": "079",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "079/99",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 079/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-079-low.png",
+    "imageHighSrc": "cards/pl4-079-high.png"
+  },
+  {
+    "masterCardId": "8878",
+    "externalId": null,
+    "tcgdex_id": "pl4-78",
+    "localId": "078",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "078/99",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 078/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-078-low.png",
+    "imageHighSrc": "cards/pl4-078-high.png"
+  },
+  {
+    "masterCardId": "8872",
+    "externalId": null,
+    "tcgdex_id": "pl4-77",
+    "localId": "077",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "077/99",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 077/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-077-low.png",
+    "imageHighSrc": "cards/pl4-077-high.png"
+  },
+  {
+    "masterCardId": "8866",
+    "externalId": null,
+    "tcgdex_id": "pl4-76",
+    "localId": "076",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "076/99",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 076/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-076-low.png",
+    "imageHighSrc": "cards/pl4-076-high.png"
+  },
+  {
+    "masterCardId": "8861",
+    "externalId": null,
+    "tcgdex_id": "pl4-75",
+    "localId": "075",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "075/99",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 075/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-075-low.png",
+    "imageHighSrc": "cards/pl4-075-high.png"
+  },
+  {
+    "masterCardId": "8855",
+    "externalId": null,
+    "tcgdex_id": "pl4-74",
+    "localId": "074",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "074/99",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 074/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-074-low.png",
+    "imageHighSrc": "cards/pl4-074-high.png"
+  },
+  {
+    "masterCardId": "8849",
+    "externalId": null,
+    "tcgdex_id": "pl4-73",
+    "localId": "073",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "073/99",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 073/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-073-low.png",
+    "imageHighSrc": "cards/pl4-073-high.png"
+  },
+  {
+    "masterCardId": "8844",
+    "externalId": null,
+    "tcgdex_id": "pl4-72",
+    "localId": "072",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "072/99",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 072/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-072-low.png",
+    "imageHighSrc": "cards/pl4-072-high.png"
+  },
+  {
+    "masterCardId": "8837",
+    "externalId": null,
+    "tcgdex_id": "pl4-71",
+    "localId": "071",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "071/99",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 071/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-071-low.png",
+    "imageHighSrc": "cards/pl4-071-high.png"
+  },
+  {
+    "masterCardId": "8831",
+    "externalId": null,
+    "tcgdex_id": "pl4-70",
+    "localId": "070",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "070/99",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 070/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Helix Fossil",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-070-low.png",
+    "imageHighSrc": "cards/pl4-070-high.png"
+  },
+  {
+    "masterCardId": "8826",
+    "externalId": null,
+    "tcgdex_id": "pl4-69",
+    "localId": "069",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "069/99",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 069/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-069-low.png",
+    "imageHighSrc": "cards/pl4-069-high.png"
+  },
+  {
+    "masterCardId": "8820",
+    "externalId": null,
+    "tcgdex_id": "pl4-68",
+    "localId": "068",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "068/99",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 068/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-068-low.png",
+    "imageHighSrc": "cards/pl4-068-high.png"
+  },
+  {
+    "masterCardId": "8814",
+    "externalId": null,
+    "tcgdex_id": "pl4-67",
+    "localId": "067",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "067/99",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 067/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dome Fossil",
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-067-low.png",
+    "imageHighSrc": "cards/pl4-067-high.png"
+  },
+  {
+    "masterCardId": "8808",
+    "externalId": null,
+    "tcgdex_id": "pl4-66",
+    "localId": "066",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "066/99",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 066/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-066-low.png",
+    "imageHighSrc": "cards/pl4-066-high.png"
+  },
+  {
+    "masterCardId": "8802",
+    "externalId": null,
+    "tcgdex_id": "pl4-65",
+    "localId": "065",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "065/99",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 065/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-065-low.png",
+    "imageHighSrc": "cards/pl4-065-high.png"
+  },
+  {
+    "masterCardId": "8796",
+    "externalId": null,
+    "tcgdex_id": "pl4-64",
+    "localId": "064",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "064/99",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 064/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-064-low.png",
+    "imageHighSrc": "cards/pl4-064-high.png"
+  },
+  {
+    "masterCardId": "8790",
+    "externalId": null,
+    "tcgdex_id": "pl4-63",
+    "localId": "063",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "063/99",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 063/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-063-low.png",
+    "imageHighSrc": "cards/pl4-063-high.png"
+  },
+  {
+    "masterCardId": "8785",
+    "externalId": null,
+    "tcgdex_id": "pl4-62",
+    "localId": "062",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "062/99",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 062/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-062-low.png",
+    "imageHighSrc": "cards/pl4-062-high.png"
+  },
+  {
+    "masterCardId": "8779",
+    "externalId": null,
+    "tcgdex_id": "pl4-61",
+    "localId": "061",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "061/99",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 061/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-061-low.png",
+    "imageHighSrc": "cards/pl4-061-high.png"
+  },
+  {
+    "masterCardId": "8774",
+    "externalId": null,
+    "tcgdex_id": "pl4-60",
+    "localId": "060",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "060/99",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 060/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-060-low.png",
+    "imageHighSrc": "cards/pl4-060-high.png"
+  },
+  {
+    "masterCardId": "8768",
+    "externalId": null,
+    "tcgdex_id": "pl4-59",
+    "localId": "059",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "059/99",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 059/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-059-low.png",
+    "imageHighSrc": "cards/pl4-059-high.png"
+  },
+  {
+    "masterCardId": "8763",
+    "externalId": null,
+    "tcgdex_id": "pl4-58",
+    "localId": "058",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "058/99",
+    "cardName": "Burmy Trash Cloak",
+    "fullDisplayName": "Burmy Trash Cloak 058/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-058-low.png",
+    "imageHighSrc": "cards/pl4-058-high.png"
+  },
+  {
+    "masterCardId": "8756",
+    "externalId": null,
+    "tcgdex_id": "pl4-57",
+    "localId": "057",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "057/99",
+    "cardName": "Burmy Sandy Cloak",
+    "fullDisplayName": "Burmy Sandy Cloak 057/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-057-low.png",
+    "imageHighSrc": "cards/pl4-057-high.png"
+  },
+  {
+    "masterCardId": "8747",
+    "externalId": null,
+    "tcgdex_id": "pl4-56",
+    "localId": "056",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "056/99",
+    "cardName": "Burmy Plant Cloak",
+    "fullDisplayName": "Burmy Plant Cloak 056/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-056-low.png",
+    "imageHighSrc": "cards/pl4-056-high.png"
+  },
+  {
+    "masterCardId": "8744",
+    "externalId": null,
+    "tcgdex_id": "pl4-55",
+    "localId": "055",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "055/99",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 055/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-055-low.png",
+    "imageHighSrc": "cards/pl4-055-high.png"
+  },
+  {
+    "masterCardId": "8736",
+    "externalId": null,
+    "tcgdex_id": "pl4-54",
+    "localId": "054",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "054/99",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 054/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-054-low.png",
+    "imageHighSrc": "cards/pl4-054-high.png"
+  },
+  {
+    "masterCardId": "8732",
+    "externalId": null,
+    "tcgdex_id": "pl4-53",
+    "localId": "053",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "053/99",
+    "cardName": "Beedrill G",
+    "fullDisplayName": "Beedrill G 053/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-053-low.png",
+    "imageHighSrc": "cards/pl4-053-high.png"
+  },
+  {
+    "masterCardId": "8726",
+    "externalId": null,
+    "tcgdex_id": "pl4-52",
+    "localId": "052",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "052/99",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 052/99 Arceus",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-052-low.png",
+    "imageHighSrc": "cards/pl4-052-high.png"
+  },
+  {
+    "masterCardId": "8720",
+    "externalId": null,
+    "tcgdex_id": "pl4-51",
+    "localId": "051",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "051/99",
+    "cardName": "Wormadam Trash Cloak",
+    "fullDisplayName": "Wormadam Trash Cloak 051/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Trash Cloak",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-051-low.png",
+    "imageHighSrc": "cards/pl4-051-high.png"
+  },
+  {
+    "masterCardId": "8715",
+    "externalId": null,
+    "tcgdex_id": "pl4-50",
+    "localId": "050",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "050/99",
+    "cardName": "Wormadam Sandy Cloak",
+    "fullDisplayName": "Wormadam Sandy Cloak 050/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Sandy Cloak",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-050-low.png",
+    "imageHighSrc": "cards/pl4-050-high.png"
+  },
+  {
+    "masterCardId": "8708",
+    "externalId": null,
+    "tcgdex_id": "pl4-49",
+    "localId": "049",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "049/99",
+    "cardName": "Wormadam Plant Cloak",
+    "fullDisplayName": "Wormadam Plant Cloak 049/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Plant Cloak",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-049-low.png",
+    "imageHighSrc": "cards/pl4-049-high.png"
+  },
+  {
+    "masterCardId": "8703",
+    "externalId": null,
+    "tcgdex_id": "pl4-48",
+    "localId": "048",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "048/99",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 048/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-048-low.png",
+    "imageHighSrc": "cards/pl4-048-high.png"
+  },
+  {
+    "masterCardId": "8698",
+    "externalId": null,
+    "tcgdex_id": "pl4-47",
+    "localId": "047",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "047/99",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 047/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-047-low.png",
+    "imageHighSrc": "cards/pl4-047-high.png"
+  },
+  {
+    "masterCardId": "8692",
+    "externalId": null,
+    "tcgdex_id": "pl4-46",
+    "localId": "046",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "046/99",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 046/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-046-low.png",
+    "imageHighSrc": "cards/pl4-046-high.png"
+  },
+  {
+    "masterCardId": "8677",
+    "externalId": null,
+    "tcgdex_id": "pl4-45",
+    "localId": "045",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "045/99",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 045/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-045-low.png",
+    "imageHighSrc": "cards/pl4-045-high.png"
+  },
+  {
+    "masterCardId": "8672",
+    "externalId": null,
+    "tcgdex_id": "pl4-44",
+    "localId": "044",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "044/99",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 044/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-044-low.png",
+    "imageHighSrc": "cards/pl4-044-high.png"
+  },
+  {
+    "masterCardId": "8666",
+    "externalId": null,
+    "tcgdex_id": "pl4-43",
+    "localId": "043",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "043/99",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 043/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shinx",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-043-low.png",
+    "imageHighSrc": "cards/pl4-043-high.png"
+  },
+  {
+    "masterCardId": "8659",
+    "externalId": null,
+    "tcgdex_id": "pl4-42",
+    "localId": "042",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "042/99",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 042/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-042-low.png",
+    "imageHighSrc": "cards/pl4-042-high.png"
+  },
+  {
+    "masterCardId": "8646",
+    "externalId": null,
+    "tcgdex_id": "pl4-41",
+    "localId": "041",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "041/99",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 041/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-041-low.png",
+    "imageHighSrc": "cards/pl4-041-high.png"
+  },
+  {
+    "masterCardId": "8632",
+    "externalId": null,
+    "tcgdex_id": "pl4-40",
+    "localId": "040",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "040/99",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 040/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-040-low.png",
+    "imageHighSrc": "cards/pl4-040-high.png"
+  },
+  {
+    "masterCardId": "8626",
+    "externalId": null,
+    "tcgdex_id": "pl4-39",
+    "localId": "039",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "039/99",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 039/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-039-low.png",
+    "imageHighSrc": "cards/pl4-039-high.png"
+  },
+  {
+    "masterCardId": "8618",
+    "externalId": null,
+    "tcgdex_id": "pl4-38",
+    "localId": "038",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "038/99",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 038/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-038-low.png",
+    "imageHighSrc": "cards/pl4-038-high.png"
+  },
+  {
+    "masterCardId": "8612",
+    "externalId": null,
+    "tcgdex_id": "pl4-37",
+    "localId": "037",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "037/99",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 037/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-037-low.png",
+    "imageHighSrc": "cards/pl4-037-high.png"
+  },
+  {
+    "masterCardId": "8605",
+    "externalId": null,
+    "tcgdex_id": "pl4-36",
+    "localId": "036",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "036/99",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 036/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-036-low.png",
+    "imageHighSrc": "cards/pl4-036-high.png"
+  },
+  {
+    "masterCardId": "8599",
+    "externalId": null,
+    "tcgdex_id": "pl4-35",
+    "localId": "035",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "035/99",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 035/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-035-low.png",
+    "imageHighSrc": "cards/pl4-035-high.png"
+  },
+  {
+    "masterCardId": "8590",
+    "externalId": null,
+    "tcgdex_id": "pl4-34",
+    "localId": "034",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "034/99",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 034/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-034-low.png",
+    "imageHighSrc": "cards/pl4-034-high.png"
+  },
+  {
+    "masterCardId": "8584",
+    "externalId": null,
+    "tcgdex_id": "pl4-33",
+    "localId": "033",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "033/99",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 033/99 Arceus",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-033-low.png",
+    "imageHighSrc": "cards/pl4-033-high.png"
+  },
+  {
+    "masterCardId": "8578",
+    "externalId": null,
+    "tcgdex_id": "pl4-32",
+    "localId": "032",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "032/99",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 032/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-032-low.png",
+    "imageHighSrc": "cards/pl4-032-high.png"
+  },
+  {
+    "masterCardId": "8571",
+    "externalId": null,
+    "tcgdex_id": "pl4-31",
+    "localId": "031",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "031/99",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 031/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-031-low.png",
+    "imageHighSrc": "cards/pl4-031-high.png"
+  },
+  {
+    "masterCardId": "8565",
+    "externalId": null,
+    "tcgdex_id": "pl4-30",
+    "localId": "030",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "030/99",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 030/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Reiko Tanoue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-030-low.png",
+    "imageHighSrc": "cards/pl4-030-high.png"
+  },
+  {
+    "masterCardId": "8558",
+    "externalId": null,
+    "tcgdex_id": "pl4-29",
+    "localId": "029",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "029/99",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 029/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-029-low.png",
+    "imageHighSrc": "cards/pl4-029-high.png"
+  },
+  {
+    "masterCardId": "8552",
+    "externalId": null,
+    "tcgdex_id": "pl4-28",
+    "localId": "028",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "028/99",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 028/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-028-low.png",
+    "imageHighSrc": "cards/pl4-028-high.png"
+  },
+  {
+    "masterCardId": "8546",
+    "externalId": null,
+    "tcgdex_id": "pl4-27",
+    "localId": "027",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "027/99",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 027/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-027-low.png",
+    "imageHighSrc": "cards/pl4-027-high.png"
+  },
+  {
+    "masterCardId": "8541",
+    "externalId": null,
+    "tcgdex_id": "pl4-26",
+    "localId": "026",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "026/99",
+    "cardName": "Porygon-Z G",
+    "fullDisplayName": "Porygon-Z G 026/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nobuyuki Fujimoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-026-low.png",
+    "imageHighSrc": "cards/pl4-026-high.png"
+  },
+  {
+    "masterCardId": "8533",
+    "externalId": null,
+    "tcgdex_id": "pl4-25",
+    "localId": "025",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "025/99",
+    "cardName": "Pichu",
+    "fullDisplayName": "Pichu 025/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-025-low.png",
+    "imageHighSrc": "cards/pl4-025-high.png"
+  },
+  {
+    "masterCardId": "8526",
+    "externalId": null,
+    "tcgdex_id": "pl4-24",
+    "localId": "024",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "024/99",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 024/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-024-low.png",
+    "imageHighSrc": "cards/pl4-024-high.png"
+  },
+  {
+    "masterCardId": "8519",
+    "externalId": null,
+    "tcgdex_id": "pl4-23",
+    "localId": "023",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "023/99",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 023/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-023-low.png",
+    "imageHighSrc": "cards/pl4-023-high.png"
+  },
+  {
+    "masterCardId": "8513",
+    "externalId": null,
+    "tcgdex_id": "pl4-22",
+    "localId": "022",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "022/99",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 022/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Mana Ibe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-022-low.png",
+    "imageHighSrc": "cards/pl4-022-high.png"
+  },
+  {
+    "masterCardId": "8506",
+    "externalId": null,
+    "tcgdex_id": "pl4-21",
+    "localId": "021",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "021/99",
+    "cardName": "Lopunny",
+    "fullDisplayName": "Lopunny 021/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-021-low.png",
+    "imageHighSrc": "cards/pl4-021-high.png"
+  },
+  {
+    "masterCardId": "8501",
+    "externalId": null,
+    "tcgdex_id": "pl4-20",
+    "localId": "020",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "020/99",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 020/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Makuhita",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-020-low.png",
+    "imageHighSrc": "cards/pl4-020-high.png"
+  },
+  {
+    "masterCardId": "8495",
+    "externalId": null,
+    "tcgdex_id": "pl4-19",
+    "localId": "019",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "019/99",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 019/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-019-low.png",
+    "imageHighSrc": "cards/pl4-019-high.png"
+  },
+  {
+    "masterCardId": "8489",
+    "externalId": null,
+    "tcgdex_id": "pl4-18",
+    "localId": "018",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "018/99",
+    "cardName": "Glalie",
+    "fullDisplayName": "Glalie 018/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      362
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-018-low.png",
+    "imageHighSrc": "cards/pl4-018-high.png"
+  },
+  {
+    "masterCardId": "8478",
+    "externalId": null,
+    "tcgdex_id": "pl4-17",
+    "localId": "017",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "017/99",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 017/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-017-low.png",
+    "imageHighSrc": "cards/pl4-017-high.png"
+  },
+  {
+    "masterCardId": "8470",
+    "externalId": null,
+    "tcgdex_id": "pl4-16",
+    "localId": "016",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "016/99",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 016/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-016-low.png",
+    "imageHighSrc": "cards/pl4-016-high.png"
+  },
+  {
+    "masterCardId": "8465",
+    "externalId": null,
+    "tcgdex_id": "pl4-15",
+    "localId": "015",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "015/99",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 015/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cherubi",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-015-low.png",
+    "imageHighSrc": "cards/pl4-015-high.png"
+  },
+  {
+    "masterCardId": "8451",
+    "externalId": null,
+    "tcgdex_id": "pl4-14",
+    "localId": "014",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "014/99",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 014/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-014-low.png",
+    "imageHighSrc": "cards/pl4-014-high.png"
+  },
+  {
+    "masterCardId": "8442",
+    "externalId": null,
+    "tcgdex_id": "pl4-13",
+    "localId": "013",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "013/99",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 013/99 Arceus",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Old Amber",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-013-low.png",
+    "imageHighSrc": "cards/pl4-013-high.png"
+  },
+  {
+    "masterCardId": "8421",
+    "externalId": null,
+    "tcgdex_id": "pl4-12",
+    "localId": "012",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "012/99",
+    "cardName": "Zapdos G",
+    "fullDisplayName": "Zapdos G 012/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-012-low.png",
+    "imageHighSrc": "cards/pl4-012-high.png"
+  },
+  {
+    "masterCardId": "8414",
+    "externalId": null,
+    "tcgdex_id": "pl4-11",
+    "localId": "011",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "011/99",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 011/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-011-low.png",
+    "imageHighSrc": "cards/pl4-011-high.png"
+  },
+  {
+    "masterCardId": "8405",
+    "externalId": null,
+    "tcgdex_id": "pl4-10",
+    "localId": "010",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "010/99",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 010/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-010-low.png",
+    "imageHighSrc": "cards/pl4-010-high.png"
+  },
+  {
+    "masterCardId": "8391",
+    "externalId": null,
+    "tcgdex_id": "pl4-9",
+    "localId": "009",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "009/99",
+    "cardName": "Swalot",
+    "fullDisplayName": "Swalot 009/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      317
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gulpin",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-009-low.png",
+    "imageHighSrc": "cards/pl4-009-high.png"
+  },
+  {
+    "masterCardId": "8372",
+    "externalId": null,
+    "tcgdex_id": "pl4-8",
+    "localId": "008",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "008/99",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 008/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-008-low.png",
+    "imageHighSrc": "cards/pl4-008-high.png"
+  },
+  {
+    "masterCardId": "8364",
+    "externalId": null,
+    "tcgdex_id": "pl4-7",
+    "localId": "007",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "007/99",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 007/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nosepass",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-007-low.png",
+    "imageHighSrc": "cards/pl4-007-high.png"
+  },
+  {
+    "masterCardId": "8353",
+    "externalId": null,
+    "tcgdex_id": "pl4-6",
+    "localId": "006",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "006/99",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 006/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-006-low.png",
+    "imageHighSrc": "cards/pl4-006-high.png"
+  },
+  {
+    "masterCardId": "8344",
+    "externalId": null,
+    "tcgdex_id": "pl4-5",
+    "localId": "005",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "005/99",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 005/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Luxio",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-005-low.png",
+    "imageHighSrc": "cards/pl4-005-high.png"
+  },
+  {
+    "masterCardId": "8334",
+    "externalId": null,
+    "tcgdex_id": "pl4-4",
+    "localId": "004",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "004/99",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 004/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-004-low.png",
+    "imageHighSrc": "cards/pl4-004-high.png"
+  },
+  {
+    "masterCardId": "8325",
+    "externalId": null,
+    "tcgdex_id": "pl4-3",
+    "localId": "003",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "003/99",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 003/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Moritsugu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-003-low.png",
+    "imageHighSrc": "cards/pl4-003-high.png"
+  },
+  {
+    "masterCardId": "8317",
+    "externalId": null,
+    "tcgdex_id": "pl4-2",
+    "localId": "002",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "002/99",
+    "cardName": "Froslass",
+    "fullDisplayName": "Froslass 002/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      478
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-002-low.png",
+    "imageHighSrc": "cards/pl4-002-high.png"
+  },
+  {
+    "masterCardId": "8300",
+    "externalId": null,
+    "tcgdex_id": "pl4-1",
+    "localId": "001",
+    "setCode": "pl4",
+    "setTcgdexId": "pl4",
+    "cardNumber": "001/99",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 001/99 Arceus",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl4-001-low.png",
+    "imageHighSrc": "cards/pl4-001-high.png"
+  }
+]

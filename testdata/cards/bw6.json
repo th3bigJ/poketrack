@@ -1,0 +1,4214 @@
+[
+  {
+    "masterCardId": "2871",
+    "externalId": null,
+    "tcgdex_id": "bw6-128",
+    "localId": "128",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "128/124",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 128/124 Dragons Exalted",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-128-low.png",
+    "imageHighSrc": "cards/bw6-128-high.png"
+  },
+  {
+    "masterCardId": "2870",
+    "externalId": null,
+    "tcgdex_id": "bw6-127",
+    "localId": "127",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "127/124",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 127/124 Dragons Exalted",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krokorok",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-127-low.png",
+    "imageHighSrc": "cards/bw6-127-high.png"
+  },
+  {
+    "masterCardId": "2869",
+    "externalId": null,
+    "tcgdex_id": "bw6-126",
+    "localId": "126",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "126/124",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 126/124 Dragons Exalted",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duosion",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-126-low.png",
+    "imageHighSrc": "cards/bw6-126-high.png"
+  },
+  {
+    "masterCardId": "2868",
+    "externalId": null,
+    "tcgdex_id": "bw6-125",
+    "localId": "125",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "125/124",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 125/124 Dragons Exalted",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-125-low.png",
+    "imageHighSrc": "cards/bw6-125-high.png"
+  },
+  {
+    "masterCardId": "2867",
+    "externalId": null,
+    "tcgdex_id": "bw6-124",
+    "localId": "124",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "124/124",
+    "cardName": "Giratina-EX",
+    "fullDisplayName": "Giratina-EX 124/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-124-low.png",
+    "imageHighSrc": "cards/bw6-124-high.png"
+  },
+  {
+    "masterCardId": "2866",
+    "externalId": null,
+    "tcgdex_id": "bw6-123",
+    "localId": "123",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "123/124",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX 123/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-123-low.png",
+    "imageHighSrc": "cards/bw6-123-high.png"
+  },
+  {
+    "masterCardId": "2865",
+    "externalId": null,
+    "tcgdex_id": "bw6-122",
+    "localId": "122",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "122/124",
+    "cardName": "Registeel-EX",
+    "fullDisplayName": "Registeel-EX 122/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      379
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-122-low.png",
+    "imageHighSrc": "cards/bw6-122-high.png"
+  },
+  {
+    "masterCardId": "2864",
+    "externalId": null,
+    "tcgdex_id": "bw6-121",
+    "localId": "121",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "121/124",
+    "cardName": "Terrakion-EX",
+    "fullDisplayName": "Terrakion-EX 121/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-121-low.png",
+    "imageHighSrc": "cards/bw6-121-high.png"
+  },
+  {
+    "masterCardId": "2863",
+    "externalId": null,
+    "tcgdex_id": "bw6-120",
+    "localId": "120",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "120/124",
+    "cardName": "Mew-EX",
+    "fullDisplayName": "Mew-EX 120/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-120-low.png",
+    "imageHighSrc": "cards/bw6-120-high.png"
+  },
+  {
+    "masterCardId": "2862",
+    "externalId": null,
+    "tcgdex_id": "bw6-119",
+    "localId": "119",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "119/124",
+    "cardName": "Ho-Oh-EX",
+    "fullDisplayName": "Ho-Oh-EX 119/124 Dragons Exalted",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-119-low.png",
+    "imageHighSrc": "cards/bw6-119-high.png"
+  },
+  {
+    "masterCardId": "2861",
+    "externalId": null,
+    "tcgdex_id": "bw6-118",
+    "localId": "118",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "118/124",
+    "cardName": "Blend Energy WaterLightningFightingMetal",
+    "fullDisplayName": "Blend Energy WaterLightningFightingMetal 118/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-118-low.png",
+    "imageHighSrc": "cards/bw6-118-high.png"
+  },
+  {
+    "masterCardId": "2860",
+    "externalId": null,
+    "tcgdex_id": "bw6-117",
+    "localId": "117",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "117/124",
+    "cardName": "Blend Energy GrassFirePsychicDarkness",
+    "fullDisplayName": "Blend Energy GrassFirePsychicDarkness 117/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-117-low.png",
+    "imageHighSrc": "cards/bw6-117-high.png"
+  },
+  {
+    "masterCardId": "2859",
+    "externalId": null,
+    "tcgdex_id": "bw6-116",
+    "localId": "116",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "116/124",
+    "cardName": "Tool Scrapper",
+    "fullDisplayName": "Tool Scrapper 116/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-116-low.png",
+    "imageHighSrc": "cards/bw6-116-high.png"
+  },
+  {
+    "masterCardId": "2858",
+    "externalId": null,
+    "tcgdex_id": "bw6-115",
+    "localId": "115",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "115/124",
+    "cardName": "Rescue Scarf",
+    "fullDisplayName": "Rescue Scarf 115/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-115-low.png",
+    "imageHighSrc": "cards/bw6-115-high.png"
+  },
+  {
+    "masterCardId": "2857",
+    "externalId": null,
+    "tcgdex_id": "bw6-114",
+    "localId": "114",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "114/124",
+    "cardName": "Giant Cape",
+    "fullDisplayName": "Giant Cape 114/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-114-low.png",
+    "imageHighSrc": "cards/bw6-114-high.png"
+  },
+  {
+    "masterCardId": "2856",
+    "externalId": null,
+    "tcgdex_id": "bw6-113",
+    "localId": "113",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "113/124",
+    "cardName": "Devolution Spray",
+    "fullDisplayName": "Devolution Spray 113/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-113-low.png",
+    "imageHighSrc": "cards/bw6-113-high.png"
+  },
+  {
+    "masterCardId": "2855",
+    "externalId": null,
+    "tcgdex_id": "bw6-112",
+    "localId": "112",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "112/124",
+    "cardName": "Braviary",
+    "fullDisplayName": "Braviary 112/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      628
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rufflet",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-112-low.png",
+    "imageHighSrc": "cards/bw6-112-high.png"
+  },
+  {
+    "masterCardId": "2854",
+    "externalId": null,
+    "tcgdex_id": "bw6-111",
+    "localId": "111",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "111/124",
+    "cardName": "Rufflet",
+    "fullDisplayName": "Rufflet 111/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      627
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-111-low.png",
+    "imageHighSrc": "cards/bw6-111-high.png"
+  },
+  {
+    "masterCardId": "2853",
+    "externalId": null,
+    "tcgdex_id": "bw6-110",
+    "localId": "110",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "110/124",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 110/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-110-low.png",
+    "imageHighSrc": "cards/bw6-110-high.png"
+  },
+  {
+    "masterCardId": "2852",
+    "externalId": null,
+    "tcgdex_id": "bw6-109",
+    "localId": "109",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "109/124",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 109/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-109-low.png",
+    "imageHighSrc": "cards/bw6-109-high.png"
+  },
+  {
+    "masterCardId": "2851",
+    "externalId": null,
+    "tcgdex_id": "bw6-108",
+    "localId": "108",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "108/124",
+    "cardName": "Audino",
+    "fullDisplayName": "Audino 108/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-108-low.png",
+    "imageHighSrc": "cards/bw6-108-high.png"
+  },
+  {
+    "masterCardId": "2850",
+    "externalId": null,
+    "tcgdex_id": "bw6-107",
+    "localId": "107",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "107/124",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 107/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-107-low.png",
+    "imageHighSrc": "cards/bw6-107-high.png"
+  },
+  {
+    "masterCardId": "2849",
+    "externalId": null,
+    "tcgdex_id": "bw6-106",
+    "localId": "106",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "106/124",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 106/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-106-low.png",
+    "imageHighSrc": "cards/bw6-106-high.png"
+  },
+  {
+    "masterCardId": "2848",
+    "externalId": null,
+    "tcgdex_id": "bw6-105",
+    "localId": "105",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "105/124",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 105/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-105-low.png",
+    "imageHighSrc": "cards/bw6-105-high.png"
+  },
+  {
+    "masterCardId": "2847",
+    "externalId": null,
+    "tcgdex_id": "bw6-104",
+    "localId": "104",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "104/124",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 104/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-104-low.png",
+    "imageHighSrc": "cards/bw6-104-high.png"
+  },
+  {
+    "masterCardId": "2846",
+    "externalId": null,
+    "tcgdex_id": "bw6-103",
+    "localId": "103",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "103/124",
+    "cardName": "Slaking",
+    "fullDisplayName": "Slaking 103/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vigoroth",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-103-low.png",
+    "imageHighSrc": "cards/bw6-103-high.png"
+  },
+  {
+    "masterCardId": "2845",
+    "externalId": null,
+    "tcgdex_id": "bw6-102",
+    "localId": "102",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "102/124",
+    "cardName": "Vigoroth",
+    "fullDisplayName": "Vigoroth 102/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      288
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slakoth",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-102-low.png",
+    "imageHighSrc": "cards/bw6-102-high.png"
+  },
+  {
+    "masterCardId": "2844",
+    "externalId": null,
+    "tcgdex_id": "bw6-101",
+    "localId": "101",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "101/124",
+    "cardName": "Slakoth",
+    "fullDisplayName": "Slakoth 101/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      287
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-101-low.png",
+    "imageHighSrc": "cards/bw6-101-high.png"
+  },
+  {
+    "masterCardId": "2843",
+    "externalId": null,
+    "tcgdex_id": "bw6-100",
+    "localId": "100",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "100/124",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 100/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-100-low.png",
+    "imageHighSrc": "cards/bw6-100-high.png"
+  },
+  {
+    "masterCardId": "2842",
+    "externalId": null,
+    "tcgdex_id": "bw6-99",
+    "localId": "099",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "099/124",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 099/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-099-low.png",
+    "imageHighSrc": "cards/bw6-099-high.png"
+  },
+  {
+    "masterCardId": "2841",
+    "externalId": null,
+    "tcgdex_id": "bw6-98",
+    "localId": "098",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "098/124",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 098/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-098-low.png",
+    "imageHighSrc": "cards/bw6-098-high.png"
+  },
+  {
+    "masterCardId": "2840",
+    "externalId": null,
+    "tcgdex_id": "bw6-97",
+    "localId": "097",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "097/124",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 097/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-097-low.png",
+    "imageHighSrc": "cards/bw6-097-high.png"
+  },
+  {
+    "masterCardId": "2839",
+    "externalId": null,
+    "tcgdex_id": "bw6-96",
+    "localId": "096",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "096/124",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 096/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-096-low.png",
+    "imageHighSrc": "cards/bw6-096-high.png"
+  },
+  {
+    "masterCardId": "2838",
+    "externalId": null,
+    "tcgdex_id": "bw6-95",
+    "localId": "095",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "095/124",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 095/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-095-low.png",
+    "imageHighSrc": "cards/bw6-095-high.png"
+  },
+  {
+    "masterCardId": "2837",
+    "externalId": null,
+    "tcgdex_id": "bw6-94",
+    "localId": "094",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "094/124",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 094/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-094-low.png",
+    "imageHighSrc": "cards/bw6-094-high.png"
+  },
+  {
+    "masterCardId": "2836",
+    "externalId": null,
+    "tcgdex_id": "bw6-93",
+    "localId": "093",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "093/124",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 093/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-093-low.png",
+    "imageHighSrc": "cards/bw6-093-high.png"
+  },
+  {
+    "masterCardId": "2835",
+    "externalId": null,
+    "tcgdex_id": "bw6-92",
+    "localId": "092",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "092/124",
+    "cardName": "Giratina-EX",
+    "fullDisplayName": "Giratina-EX 092/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-092-low.png",
+    "imageHighSrc": "cards/bw6-092-high.png"
+  },
+  {
+    "masterCardId": "2834",
+    "externalId": null,
+    "tcgdex_id": "bw6-91",
+    "localId": "091",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "091/124",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp 091/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-091-low.png",
+    "imageHighSrc": "cards/bw6-091-high.png"
+  },
+  {
+    "masterCardId": "2833",
+    "externalId": null,
+    "tcgdex_id": "bw6-90",
+    "localId": "090",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "090/124",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp 090/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-090-low.png",
+    "imageHighSrc": "cards/bw6-090-high.png"
+  },
+  {
+    "masterCardId": "2832",
+    "externalId": null,
+    "tcgdex_id": "bw6-89",
+    "localId": "089",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "089/124",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite 089/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-089-low.png",
+    "imageHighSrc": "cards/bw6-089-high.png"
+  },
+  {
+    "masterCardId": "2831",
+    "externalId": null,
+    "tcgdex_id": "bw6-88",
+    "localId": "088",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "088/124",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite 088/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-088-low.png",
+    "imageHighSrc": "cards/bw6-088-high.png"
+  },
+  {
+    "masterCardId": "2830",
+    "externalId": null,
+    "tcgdex_id": "bw6-87",
+    "localId": "087",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "087/124",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 087/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-087-low.png",
+    "imageHighSrc": "cards/bw6-087-high.png"
+  },
+  {
+    "masterCardId": "2829",
+    "externalId": null,
+    "tcgdex_id": "bw6-86",
+    "localId": "086",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "086/124",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 086/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-086-low.png",
+    "imageHighSrc": "cards/bw6-086-high.png"
+  },
+  {
+    "masterCardId": "2828",
+    "externalId": null,
+    "tcgdex_id": "bw6-85",
+    "localId": "085",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "085/124",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX 085/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-085-low.png",
+    "imageHighSrc": "cards/bw6-085-high.png"
+  },
+  {
+    "masterCardId": "2827",
+    "externalId": null,
+    "tcgdex_id": "bw6-84",
+    "localId": "084",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "084/124",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 084/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-084-low.png",
+    "imageHighSrc": "cards/bw6-084-high.png"
+  },
+  {
+    "masterCardId": "2826",
+    "externalId": null,
+    "tcgdex_id": "bw6-83",
+    "localId": "083",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "083/124",
+    "cardName": "Durant",
+    "fullDisplayName": "Durant 083/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      632
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-083-low.png",
+    "imageHighSrc": "cards/bw6-083-high.png"
+  },
+  {
+    "masterCardId": "2825",
+    "externalId": null,
+    "tcgdex_id": "bw6-82",
+    "localId": "082",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "082/124",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 082/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nosepass",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-082-low.png",
+    "imageHighSrc": "cards/bw6-082-high.png"
+  },
+  {
+    "masterCardId": "2824",
+    "externalId": null,
+    "tcgdex_id": "bw6-81",
+    "localId": "081",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "081/124",
+    "cardName": "Registeel-EX",
+    "fullDisplayName": "Registeel-EX 081/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      379
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-081-low.png",
+    "imageHighSrc": "cards/bw6-081-high.png"
+  },
+  {
+    "masterCardId": "2823",
+    "externalId": null,
+    "tcgdex_id": "bw6-80",
+    "localId": "080",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "080/124",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 080/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-080-low.png",
+    "imageHighSrc": "cards/bw6-080-high.png"
+  },
+  {
+    "masterCardId": "2822",
+    "externalId": null,
+    "tcgdex_id": "bw6-79",
+    "localId": "079",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "079/124",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 079/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-079-low.png",
+    "imageHighSrc": "cards/bw6-079-high.png"
+  },
+  {
+    "masterCardId": "2821",
+    "externalId": null,
+    "tcgdex_id": "bw6-78",
+    "localId": "078",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "078/124",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 078/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-078-low.png",
+    "imageHighSrc": "cards/bw6-078-high.png"
+  },
+  {
+    "masterCardId": "2820",
+    "externalId": null,
+    "tcgdex_id": "bw6-77",
+    "localId": "077",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "077/124",
+    "cardName": "Skuntank",
+    "fullDisplayName": "Skuntank 077/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stunky",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-077-low.png",
+    "imageHighSrc": "cards/bw6-077-high.png"
+  },
+  {
+    "masterCardId": "2819",
+    "externalId": null,
+    "tcgdex_id": "bw6-76",
+    "localId": "076",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "076/124",
+    "cardName": "Stunky",
+    "fullDisplayName": "Stunky 076/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      434
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-076-low.png",
+    "imageHighSrc": "cards/bw6-076-high.png"
+  },
+  {
+    "masterCardId": "2818",
+    "externalId": null,
+    "tcgdex_id": "bw6-75",
+    "localId": "075",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "075/124",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 075/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-075-low.png",
+    "imageHighSrc": "cards/bw6-075-high.png"
+  },
+  {
+    "masterCardId": "2817",
+    "externalId": null,
+    "tcgdex_id": "bw6-74",
+    "localId": "074",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "074/124",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 074/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-074-low.png",
+    "imageHighSrc": "cards/bw6-074-high.png"
+  },
+  {
+    "masterCardId": "2816",
+    "externalId": null,
+    "tcgdex_id": "bw6-73",
+    "localId": "073",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "073/124",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 073/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Murkrow",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-073-low.png",
+    "imageHighSrc": "cards/bw6-073-high.png"
+  },
+  {
+    "masterCardId": "2815",
+    "externalId": null,
+    "tcgdex_id": "bw6-72",
+    "localId": "072",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "072/124",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 072/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-072-low.png",
+    "imageHighSrc": "cards/bw6-072-high.png"
+  },
+  {
+    "masterCardId": "2814",
+    "externalId": null,
+    "tcgdex_id": "bw6-71",
+    "localId": "071",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "071/124",
+    "cardName": "Terrakion-EX",
+    "fullDisplayName": "Terrakion-EX 071/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-071-low.png",
+    "imageHighSrc": "cards/bw6-071-high.png"
+  },
+  {
+    "masterCardId": "2813",
+    "externalId": null,
+    "tcgdex_id": "bw6-70",
+    "localId": "070",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "070/124",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 070/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-070-low.png",
+    "imageHighSrc": "cards/bw6-070-high.png"
+  },
+  {
+    "masterCardId": "2812",
+    "externalId": null,
+    "tcgdex_id": "bw6-69",
+    "localId": "069",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "069/124",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 069/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-069-low.png",
+    "imageHighSrc": "cards/bw6-069-high.png"
+  },
+  {
+    "masterCardId": "2811",
+    "externalId": null,
+    "tcgdex_id": "bw6-68",
+    "localId": "068",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "068/124",
+    "cardName": "Throh",
+    "fullDisplayName": "Throh 068/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      538
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-068-low.png",
+    "imageHighSrc": "cards/bw6-068-high.png"
+  },
+  {
+    "masterCardId": "2810",
+    "externalId": null,
+    "tcgdex_id": "bw6-67",
+    "localId": "067",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "067/124",
+    "cardName": "Gigalith",
+    "fullDisplayName": "Gigalith 067/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      526
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Boldore",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-067-low.png",
+    "imageHighSrc": "cards/bw6-067-high.png"
+  },
+  {
+    "masterCardId": "2809",
+    "externalId": null,
+    "tcgdex_id": "bw6-66",
+    "localId": "066",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "066/124",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 066/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-066-low.png",
+    "imageHighSrc": "cards/bw6-066-high.png"
+  },
+  {
+    "masterCardId": "2808",
+    "externalId": null,
+    "tcgdex_id": "bw6-65",
+    "localId": "065",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "065/124",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 065/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-065-low.png",
+    "imageHighSrc": "cards/bw6-065-high.png"
+  },
+  {
+    "masterCardId": "2807",
+    "externalId": null,
+    "tcgdex_id": "bw6-64",
+    "localId": "064",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "064/124",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 064/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-064-low.png",
+    "imageHighSrc": "cards/bw6-064-high.png"
+  },
+  {
+    "masterCardId": "2806",
+    "externalId": null,
+    "tcgdex_id": "bw6-63",
+    "localId": "063",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "063/124",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 063/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-063-low.png",
+    "imageHighSrc": "cards/bw6-063-high.png"
+  },
+  {
+    "masterCardId": "2805",
+    "externalId": null,
+    "tcgdex_id": "bw6-62",
+    "localId": "062",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "062/124",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 062/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-062-low.png",
+    "imageHighSrc": "cards/bw6-062-high.png"
+  },
+  {
+    "masterCardId": "2804",
+    "externalId": null,
+    "tcgdex_id": "bw6-61",
+    "localId": "061",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "061/124",
+    "cardName": "Marowak",
+    "fullDisplayName": "Marowak 061/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-061-low.png",
+    "imageHighSrc": "cards/bw6-061-high.png"
+  },
+  {
+    "masterCardId": "2803",
+    "externalId": null,
+    "tcgdex_id": "bw6-60",
+    "localId": "060",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "060/124",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 060/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-060-low.png",
+    "imageHighSrc": "cards/bw6-060-high.png"
+  },
+  {
+    "masterCardId": "2802",
+    "externalId": null,
+    "tcgdex_id": "bw6-59",
+    "localId": "059",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "059/124",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 059/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-059-low.png",
+    "imageHighSrc": "cards/bw6-059-high.png"
+  },
+  {
+    "masterCardId": "2801",
+    "externalId": null,
+    "tcgdex_id": "bw6-58",
+    "localId": "058",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "058/124",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 058/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-058-low.png",
+    "imageHighSrc": "cards/bw6-058-high.png"
+  },
+  {
+    "masterCardId": "2800",
+    "externalId": null,
+    "tcgdex_id": "bw6-57",
+    "localId": "057",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "057/124",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 057/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-057-low.png",
+    "imageHighSrc": "cards/bw6-057-high.png"
+  },
+  {
+    "masterCardId": "2799",
+    "externalId": null,
+    "tcgdex_id": "bw6-56",
+    "localId": "056",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "056/124",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 056/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-056-low.png",
+    "imageHighSrc": "cards/bw6-056-high.png"
+  },
+  {
+    "masterCardId": "2798",
+    "externalId": null,
+    "tcgdex_id": "bw6-55",
+    "localId": "055",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "055/124",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 055/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-055-low.png",
+    "imageHighSrc": "cards/bw6-055-high.png"
+  },
+  {
+    "masterCardId": "2797",
+    "externalId": null,
+    "tcgdex_id": "bw6-54",
+    "localId": "054",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "054/124",
+    "cardName": "Garbodor",
+    "fullDisplayName": "Garbodor 054/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      569
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trubbish",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-054-low.png",
+    "imageHighSrc": "cards/bw6-054-high.png"
+  },
+  {
+    "masterCardId": "2796",
+    "externalId": null,
+    "tcgdex_id": "bw6-53",
+    "localId": "053",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "053/124",
+    "cardName": "Trubbish",
+    "fullDisplayName": "Trubbish 053/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      568
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-053-low.png",
+    "imageHighSrc": "cards/bw6-053-high.png"
+  },
+  {
+    "masterCardId": "2795",
+    "externalId": null,
+    "tcgdex_id": "bw6-52",
+    "localId": "052",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "052/124",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 052/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-052-low.png",
+    "imageHighSrc": "cards/bw6-052-high.png"
+  },
+  {
+    "masterCardId": "2794",
+    "externalId": null,
+    "tcgdex_id": "bw6-51",
+    "localId": "051",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "051/124",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 051/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-051-low.png",
+    "imageHighSrc": "cards/bw6-051-high.png"
+  },
+  {
+    "masterCardId": "2793",
+    "externalId": null,
+    "tcgdex_id": "bw6-50",
+    "localId": "050",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "050/124",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 050/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-050-low.png",
+    "imageHighSrc": "cards/bw6-050-high.png"
+  },
+  {
+    "masterCardId": "2792",
+    "externalId": null,
+    "tcgdex_id": "bw6-49",
+    "localId": "049",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "049/124",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 049/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-049-low.png",
+    "imageHighSrc": "cards/bw6-049-high.png"
+  },
+  {
+    "masterCardId": "2791",
+    "externalId": null,
+    "tcgdex_id": "bw6-48",
+    "localId": "048",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "048/124",
+    "cardName": "Shedinja",
+    "fullDisplayName": "Shedinja 048/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      292
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-048-low.png",
+    "imageHighSrc": "cards/bw6-048-high.png"
+  },
+  {
+    "masterCardId": "2790",
+    "externalId": null,
+    "tcgdex_id": "bw6-47",
+    "localId": "047",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "047/124",
+    "cardName": "Dustox",
+    "fullDisplayName": "Dustox 047/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      269
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cascoon",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-047-low.png",
+    "imageHighSrc": "cards/bw6-047-high.png"
+  },
+  {
+    "masterCardId": "2789",
+    "externalId": null,
+    "tcgdex_id": "bw6-46",
+    "localId": "046",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "046/124",
+    "cardName": "Mew-EX",
+    "fullDisplayName": "Mew-EX 046/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-046-low.png",
+    "imageHighSrc": "cards/bw6-046-high.png"
+  },
+  {
+    "masterCardId": "2788",
+    "externalId": null,
+    "tcgdex_id": "bw6-45",
+    "localId": "045",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "045/124",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga 045/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-045-low.png",
+    "imageHighSrc": "cards/bw6-045-high.png"
+  },
+  {
+    "masterCardId": "2787",
+    "externalId": null,
+    "tcgdex_id": "bw6-44",
+    "localId": "044",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "044/124",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 044/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-044-low.png",
+    "imageHighSrc": "cards/bw6-044-high.png"
+  },
+  {
+    "masterCardId": "2786",
+    "externalId": null,
+    "tcgdex_id": "bw6-43",
+    "localId": "043",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "043/124",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 043/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-043-low.png",
+    "imageHighSrc": "cards/bw6-043-high.png"
+  },
+  {
+    "masterCardId": "2785",
+    "externalId": null,
+    "tcgdex_id": "bw6-42",
+    "localId": "042",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "042/124",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 042/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-042-low.png",
+    "imageHighSrc": "cards/bw6-042-high.png"
+  },
+  {
+    "masterCardId": "2784",
+    "externalId": null,
+    "tcgdex_id": "bw6-41",
+    "localId": "041",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "041/124",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 041/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-041-low.png",
+    "imageHighSrc": "cards/bw6-041-high.png"
+  },
+  {
+    "masterCardId": "2783",
+    "externalId": null,
+    "tcgdex_id": "bw6-40",
+    "localId": "040",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "040/124",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 040/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-040-low.png",
+    "imageHighSrc": "cards/bw6-040-high.png"
+  },
+  {
+    "masterCardId": "2782",
+    "externalId": null,
+    "tcgdex_id": "bw6-39",
+    "localId": "039",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "039/124",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 039/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-039-low.png",
+    "imageHighSrc": "cards/bw6-039-high.png"
+  },
+  {
+    "masterCardId": "2781",
+    "externalId": null,
+    "tcgdex_id": "bw6-38",
+    "localId": "038",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "038/124",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 038/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-038-low.png",
+    "imageHighSrc": "cards/bw6-038-high.png"
+  },
+  {
+    "masterCardId": "2780",
+    "externalId": null,
+    "tcgdex_id": "bw6-37",
+    "localId": "037",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "037/124",
+    "cardName": "Alomomola",
+    "fullDisplayName": "Alomomola 037/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      594
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-037-low.png",
+    "imageHighSrc": "cards/bw6-037-high.png"
+  },
+  {
+    "masterCardId": "2779",
+    "externalId": null,
+    "tcgdex_id": "bw6-36",
+    "localId": "036",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "036/124",
+    "cardName": "Seismitoad",
+    "fullDisplayName": "Seismitoad 036/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      537
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Palpitoad",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-036-low.png",
+    "imageHighSrc": "cards/bw6-036-high.png"
+  },
+  {
+    "masterCardId": "2778",
+    "externalId": null,
+    "tcgdex_id": "bw6-35",
+    "localId": "035",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "035/124",
+    "cardName": "Palpitoad",
+    "fullDisplayName": "Palpitoad 035/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      536
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tympole",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-035-low.png",
+    "imageHighSrc": "cards/bw6-035-high.png"
+  },
+  {
+    "masterCardId": "2777",
+    "externalId": null,
+    "tcgdex_id": "bw6-34",
+    "localId": "034",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "034/124",
+    "cardName": "Tympole",
+    "fullDisplayName": "Tympole 034/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      535
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-034-low.png",
+    "imageHighSrc": "cards/bw6-034-high.png"
+  },
+  {
+    "masterCardId": "2776",
+    "externalId": null,
+    "tcgdex_id": "bw6-33",
+    "localId": "033",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "033/124",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 033/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-033-low.png",
+    "imageHighSrc": "cards/bw6-033-high.png"
+  },
+  {
+    "masterCardId": "2775",
+    "externalId": null,
+    "tcgdex_id": "bw6-32",
+    "localId": "032",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "032/124",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 032/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-032-low.png",
+    "imageHighSrc": "cards/bw6-032-high.png"
+  },
+  {
+    "masterCardId": "2774",
+    "externalId": null,
+    "tcgdex_id": "bw6-31",
+    "localId": "031",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "031/124",
+    "cardName": "Walrein",
+    "fullDisplayName": "Walrein 031/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sealeo",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-031-low.png",
+    "imageHighSrc": "cards/bw6-031-high.png"
+  },
+  {
+    "masterCardId": "2773",
+    "externalId": null,
+    "tcgdex_id": "bw6-30",
+    "localId": "030",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "030/124",
+    "cardName": "Sealeo",
+    "fullDisplayName": "Sealeo 030/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spheal",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-030-low.png",
+    "imageHighSrc": "cards/bw6-030-high.png"
+  },
+  {
+    "masterCardId": "2772",
+    "externalId": null,
+    "tcgdex_id": "bw6-29",
+    "localId": "029",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "029/124",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 029/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-029-low.png",
+    "imageHighSrc": "cards/bw6-029-high.png"
+  },
+  {
+    "masterCardId": "2771",
+    "externalId": null,
+    "tcgdex_id": "bw6-28",
+    "localId": "028",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "028/124",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 028/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-028-low.png",
+    "imageHighSrc": "cards/bw6-028-high.png"
+  },
+  {
+    "masterCardId": "2770",
+    "externalId": null,
+    "tcgdex_id": "bw6-27",
+    "localId": "027",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "027/124",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 027/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-027-low.png",
+    "imageHighSrc": "cards/bw6-027-high.png"
+  },
+  {
+    "masterCardId": "2769",
+    "externalId": null,
+    "tcgdex_id": "bw6-26",
+    "localId": "026",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "026/124",
+    "cardName": "Wailord",
+    "fullDisplayName": "Wailord 026/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wailmer",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-026-low.png",
+    "imageHighSrc": "cards/bw6-026-high.png"
+  },
+  {
+    "masterCardId": "2768",
+    "externalId": null,
+    "tcgdex_id": "bw6-25",
+    "localId": "025",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "025/124",
+    "cardName": "Wailmer",
+    "fullDisplayName": "Wailmer 025/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      320
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-025-low.png",
+    "imageHighSrc": "cards/bw6-025-high.png"
+  },
+  {
+    "masterCardId": "2767",
+    "externalId": null,
+    "tcgdex_id": "bw6-24",
+    "localId": "024",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "024/124",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 024/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-024-low.png",
+    "imageHighSrc": "cards/bw6-024-high.png"
+  },
+  {
+    "masterCardId": "2766",
+    "externalId": null,
+    "tcgdex_id": "bw6-23",
+    "localId": "023",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "023/124",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 023/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-023-low.png",
+    "imageHighSrc": "cards/bw6-023-high.png"
+  },
+  {
+    "masterCardId": "2765",
+    "externalId": null,
+    "tcgdex_id": "bw6-22",
+    "localId": "022",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "022/124",
+    "cardName": "Ho-Oh-EX",
+    "fullDisplayName": "Ho-Oh-EX 022/124 Dragons Exalted",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw6-022-low.png",
+    "imageHighSrc": "cards/bw6-022-high.png"
+  },
+  {
+    "masterCardId": "2764",
+    "externalId": null,
+    "tcgdex_id": "bw6-21",
+    "localId": "021",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "021/124",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 021/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-021-low.png",
+    "imageHighSrc": "cards/bw6-021-high.png"
+  },
+  {
+    "masterCardId": "2763",
+    "externalId": null,
+    "tcgdex_id": "bw6-20",
+    "localId": "020",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "020/124",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 020/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-020-low.png",
+    "imageHighSrc": "cards/bw6-020-high.png"
+  },
+  {
+    "masterCardId": "2762",
+    "externalId": null,
+    "tcgdex_id": "bw6-19",
+    "localId": "019",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "019/124",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 019/124 Dragons Exalted",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-019-low.png",
+    "imageHighSrc": "cards/bw6-019-high.png"
+  },
+  {
+    "masterCardId": "2761",
+    "externalId": null,
+    "tcgdex_id": "bw6-18",
+    "localId": "018",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "018/124",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 018/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-018-low.png",
+    "imageHighSrc": "cards/bw6-018-high.png"
+  },
+  {
+    "masterCardId": "2760",
+    "externalId": null,
+    "tcgdex_id": "bw6-17",
+    "localId": "017",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "017/124",
+    "cardName": "Foongus",
+    "fullDisplayName": "Foongus 017/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      590
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-017-low.png",
+    "imageHighSrc": "cards/bw6-017-high.png"
+  },
+  {
+    "masterCardId": "2759",
+    "externalId": null,
+    "tcgdex_id": "bw6-16",
+    "localId": "016",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "016/124",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 016/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-016-low.png",
+    "imageHighSrc": "cards/bw6-016-high.png"
+  },
+  {
+    "masterCardId": "2758",
+    "externalId": null,
+    "tcgdex_id": "bw6-15",
+    "localId": "015",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "015/124",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 015/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-015-low.png",
+    "imageHighSrc": "cards/bw6-015-high.png"
+  },
+  {
+    "masterCardId": "2757",
+    "externalId": null,
+    "tcgdex_id": "bw6-14",
+    "localId": "014",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "014/124",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 014/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-014-low.png",
+    "imageHighSrc": "cards/bw6-014-high.png"
+  },
+  {
+    "masterCardId": "2756",
+    "externalId": null,
+    "tcgdex_id": "bw6-13",
+    "localId": "013",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "013/124",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 013/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-013-low.png",
+    "imageHighSrc": "cards/bw6-013-high.png"
+  },
+  {
+    "masterCardId": "2755",
+    "externalId": null,
+    "tcgdex_id": "bw6-12",
+    "localId": "012",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "012/124",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 012/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-012-low.png",
+    "imageHighSrc": "cards/bw6-012-high.png"
+  },
+  {
+    "masterCardId": "2754",
+    "externalId": null,
+    "tcgdex_id": "bw6-11",
+    "localId": "011",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "011/124",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 011/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-011-low.png",
+    "imageHighSrc": "cards/bw6-011-high.png"
+  },
+  {
+    "masterCardId": "2753",
+    "externalId": null,
+    "tcgdex_id": "bw6-10",
+    "localId": "010",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "010/124",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 010/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-010-low.png",
+    "imageHighSrc": "cards/bw6-010-high.png"
+  },
+  {
+    "masterCardId": "2752",
+    "externalId": null,
+    "tcgdex_id": "bw6-9",
+    "localId": "009",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "009/124",
+    "cardName": "Cascoon",
+    "fullDisplayName": "Cascoon 009/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      268
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-009-low.png",
+    "imageHighSrc": "cards/bw6-009-high.png"
+  },
+  {
+    "masterCardId": "2751",
+    "externalId": null,
+    "tcgdex_id": "bw6-8",
+    "localId": "008",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "008/124",
+    "cardName": "Beautifly",
+    "fullDisplayName": "Beautifly 008/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      267
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Silcoon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-008-low.png",
+    "imageHighSrc": "cards/bw6-008-high.png"
+  },
+  {
+    "masterCardId": "2750",
+    "externalId": null,
+    "tcgdex_id": "bw6-7",
+    "localId": "007",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "007/124",
+    "cardName": "Silcoon",
+    "fullDisplayName": "Silcoon 007/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      266
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-007-low.png",
+    "imageHighSrc": "cards/bw6-007-high.png"
+  },
+  {
+    "masterCardId": "2749",
+    "externalId": null,
+    "tcgdex_id": "bw6-6",
+    "localId": "006",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "006/124",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 006/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-006-low.png",
+    "imageHighSrc": "cards/bw6-006-high.png"
+  },
+  {
+    "masterCardId": "2748",
+    "externalId": null,
+    "tcgdex_id": "bw6-5",
+    "localId": "005",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "005/124",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 005/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanma",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-005-low.png",
+    "imageHighSrc": "cards/bw6-005-high.png"
+  },
+  {
+    "masterCardId": "2747",
+    "externalId": null,
+    "tcgdex_id": "bw6-4",
+    "localId": "004",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "004/124",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 004/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-004-low.png",
+    "imageHighSrc": "cards/bw6-004-high.png"
+  },
+  {
+    "masterCardId": "2746",
+    "externalId": null,
+    "tcgdex_id": "bw6-3",
+    "localId": "003",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "003/124",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 003/124 Dragons Exalted",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-003-low.png",
+    "imageHighSrc": "cards/bw6-003-high.png"
+  },
+  {
+    "masterCardId": "2745",
+    "externalId": null,
+    "tcgdex_id": "bw6-2",
+    "localId": "002",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "002/124",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 002/124 Dragons Exalted",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-002-low.png",
+    "imageHighSrc": "cards/bw6-002-high.png"
+  },
+  {
+    "masterCardId": "2744",
+    "externalId": null,
+    "tcgdex_id": "bw6-1",
+    "localId": "001",
+    "setCode": "bw6",
+    "setTcgdexId": "bw6",
+    "cardNumber": "001/124",
+    "cardName": "Hoppip",
+    "fullDisplayName": "Hoppip 001/124 Dragons Exalted",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      187
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw6-001-low.png",
+    "imageHighSrc": "cards/bw6-001-high.png"
+  }
+]

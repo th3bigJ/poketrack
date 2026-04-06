@@ -1,0 +1,3519 @@
+[
+  {
+    "masterCardId": "4953",
+    "externalId": null,
+    "tcgdex_id": "ex1-109",
+    "localId": "109",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "109/109",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 109/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-109-low.png",
+    "imageHighSrc": "cards/ex1-109-high.png"
+  },
+  {
+    "masterCardId": "4946",
+    "externalId": null,
+    "tcgdex_id": "ex1-108",
+    "localId": "108",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "108/109",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 108/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-108-low.png",
+    "imageHighSrc": "cards/ex1-108-high.png"
+  },
+  {
+    "masterCardId": "4939",
+    "externalId": null,
+    "tcgdex_id": "ex1-107",
+    "localId": "107",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "107/109",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 107/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-107-low.png",
+    "imageHighSrc": "cards/ex1-107-high.png"
+  },
+  {
+    "masterCardId": "4932",
+    "externalId": null,
+    "tcgdex_id": "ex1-106",
+    "localId": "106",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "106/109",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 106/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-106-low.png",
+    "imageHighSrc": "cards/ex1-106-high.png"
+  },
+  {
+    "masterCardId": "4925",
+    "externalId": null,
+    "tcgdex_id": "ex1-105",
+    "localId": "105",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "105/109",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 105/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-105-low.png",
+    "imageHighSrc": "cards/ex1-105-high.png"
+  },
+  {
+    "masterCardId": "4917",
+    "externalId": null,
+    "tcgdex_id": "ex1-104",
+    "localId": "104",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "104/109",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 104/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-104-low.png",
+    "imageHighSrc": "cards/ex1-104-high.png"
+  },
+  {
+    "masterCardId": "4909",
+    "externalId": null,
+    "tcgdex_id": "ex1-103",
+    "localId": "103",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "103/109",
+    "cardName": "Sneasel ex",
+    "fullDisplayName": "Sneasel ex 103/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-103-low.png",
+    "imageHighSrc": "cards/ex1-103-high.png"
+  },
+  {
+    "masterCardId": "4902",
+    "externalId": null,
+    "tcgdex_id": "ex1-102",
+    "localId": "102",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "102/109",
+    "cardName": "Scyther ex",
+    "fullDisplayName": "Scyther ex 102/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-102-low.png",
+    "imageHighSrc": "cards/ex1-102-high.png"
+  },
+  {
+    "masterCardId": "4894",
+    "externalId": null,
+    "tcgdex_id": "ex1-101",
+    "localId": "101",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "101/109",
+    "cardName": "Mewtwo ex",
+    "fullDisplayName": "Mewtwo ex 101/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-101-low.png",
+    "imageHighSrc": "cards/ex1-101-high.png"
+  },
+  {
+    "masterCardId": "4887",
+    "externalId": null,
+    "tcgdex_id": "ex1-100",
+    "localId": "100",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "100/109",
+    "cardName": "Magmar ex",
+    "fullDisplayName": "Magmar ex 100/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-100-low.png",
+    "imageHighSrc": "cards/ex1-100-high.png"
+  },
+  {
+    "masterCardId": "4878",
+    "externalId": null,
+    "tcgdex_id": "ex1-99",
+    "localId": "099",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "099/109",
+    "cardName": "Lapras ex",
+    "fullDisplayName": "Lapras ex 099/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-099-low.png",
+    "imageHighSrc": "cards/ex1-099-high.png"
+  },
+  {
+    "masterCardId": "4872",
+    "externalId": null,
+    "tcgdex_id": "ex1-98",
+    "localId": "098",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "098/109",
+    "cardName": "Hitmonchan ex",
+    "fullDisplayName": "Hitmonchan ex 098/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-098-low.png",
+    "imageHighSrc": "cards/ex1-098-high.png"
+  },
+  {
+    "masterCardId": "4865",
+    "externalId": null,
+    "tcgdex_id": "ex1-97",
+    "localId": "097",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "097/109",
+    "cardName": "Electabuzz ex",
+    "fullDisplayName": "Electabuzz ex 097/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-097-low.png",
+    "imageHighSrc": "cards/ex1-097-high.png"
+  },
+  {
+    "masterCardId": "4858",
+    "externalId": null,
+    "tcgdex_id": "ex1-96",
+    "localId": "096",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "096/109",
+    "cardName": "Chansey ex",
+    "fullDisplayName": "Chansey ex 096/109 Ruby & Sapphire",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-096-low.png",
+    "imageHighSrc": "cards/ex1-096-high.png"
+  },
+  {
+    "masterCardId": "4850",
+    "externalId": null,
+    "tcgdex_id": "ex1-95",
+    "localId": "095",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "095/109",
+    "cardName": "Rainbow Energy",
+    "fullDisplayName": "Rainbow Energy 095/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-095-low.png",
+    "imageHighSrc": "cards/ex1-095-high.png"
+  },
+  {
+    "masterCardId": "4842",
+    "externalId": null,
+    "tcgdex_id": "ex1-94",
+    "localId": "094",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "094/109",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 094/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-094-low.png",
+    "imageHighSrc": "cards/ex1-094-high.png"
+  },
+  {
+    "masterCardId": "4835",
+    "externalId": null,
+    "tcgdex_id": "ex1-93",
+    "localId": "093",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "093/109",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 093/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-093-low.png",
+    "imageHighSrc": "cards/ex1-093-high.png"
+  },
+  {
+    "masterCardId": "4827",
+    "externalId": null,
+    "tcgdex_id": "ex1-92",
+    "localId": "092",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "092/109",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 092/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-092-low.png",
+    "imageHighSrc": "cards/ex1-092-high.png"
+  },
+  {
+    "masterCardId": "4819",
+    "externalId": null,
+    "tcgdex_id": "ex1-91",
+    "localId": "091",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "091/109",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 091/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-091-low.png",
+    "imageHighSrc": "cards/ex1-091-high.png"
+  },
+  {
+    "masterCardId": "4812",
+    "externalId": null,
+    "tcgdex_id": "ex1-90",
+    "localId": "090",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "090/109",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 090/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kai Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-090-low.png",
+    "imageHighSrc": "cards/ex1-090-high.png"
+  },
+  {
+    "masterCardId": "4804",
+    "externalId": null,
+    "tcgdex_id": "ex1-89",
+    "localId": "089",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "089/109",
+    "cardName": "Professor Birch",
+    "fullDisplayName": "Professor Birch 089/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-089-low.png",
+    "imageHighSrc": "cards/ex1-089-high.png"
+  },
+  {
+    "masterCardId": "4794",
+    "externalId": null,
+    "tcgdex_id": "ex1-88",
+    "localId": "088",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "088/109",
+    "cardName": "PokéNav",
+    "fullDisplayName": "PokéNav 088/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-088-low.png",
+    "imageHighSrc": "cards/ex1-088-high.png"
+  },
+  {
+    "masterCardId": "4787",
+    "externalId": null,
+    "tcgdex_id": "ex1-87",
+    "localId": "087",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "087/109",
+    "cardName": "Pokémon Reversal",
+    "fullDisplayName": "Pokémon Reversal 087/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-087-low.png",
+    "imageHighSrc": "cards/ex1-087-high.png"
+  },
+  {
+    "masterCardId": "4780",
+    "externalId": null,
+    "tcgdex_id": "ex1-86",
+    "localId": "086",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "086/109",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 086/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K. Hoshiba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-086-low.png",
+    "imageHighSrc": "cards/ex1-086-high.png"
+  },
+  {
+    "masterCardId": "4773",
+    "externalId": null,
+    "tcgdex_id": "ex1-85",
+    "localId": "085",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "085/109",
+    "cardName": "Oran Berry",
+    "fullDisplayName": "Oran Berry 085/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuo Yazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-085-low.png",
+    "imageHighSrc": "cards/ex1-085-high.png"
+  },
+  {
+    "masterCardId": "4766",
+    "externalId": null,
+    "tcgdex_id": "ex1-84",
+    "localId": "084",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "084/109",
+    "cardName": "Lum Berry",
+    "fullDisplayName": "Lum Berry 084/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuo Yazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-084-low.png",
+    "imageHighSrc": "cards/ex1-084-high.png"
+  },
+  {
+    "masterCardId": "4755",
+    "externalId": null,
+    "tcgdex_id": "ex1-83",
+    "localId": "083",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "083/109",
+    "cardName": "Lady Outing",
+    "fullDisplayName": "Lady Outing 083/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-083-low.png",
+    "imageHighSrc": "cards/ex1-083-high.png"
+  },
+  {
+    "masterCardId": "4748",
+    "externalId": null,
+    "tcgdex_id": "ex1-82",
+    "localId": "082",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "082/109",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 082/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-082-low.png",
+    "imageHighSrc": "cards/ex1-082-high.png"
+  },
+  {
+    "masterCardId": "4739",
+    "externalId": null,
+    "tcgdex_id": "ex1-81",
+    "localId": "081",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "081/109",
+    "cardName": "Energy Restore",
+    "fullDisplayName": "Energy Restore 081/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideyuki Nakajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-081-low.png",
+    "imageHighSrc": "cards/ex1-081-high.png"
+  },
+  {
+    "masterCardId": "4734",
+    "externalId": null,
+    "tcgdex_id": "ex1-80",
+    "localId": "080",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "080/109",
+    "cardName": "Energy Removal 2",
+    "fullDisplayName": "Energy Removal 2 080/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-080-low.png",
+    "imageHighSrc": "cards/ex1-080-high.png"
+  },
+  {
+    "masterCardId": "4724",
+    "externalId": null,
+    "tcgdex_id": "ex1-79",
+    "localId": "079",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "079/109",
+    "cardName": "Zigzagoon",
+    "fullDisplayName": "Zigzagoon 079/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      263
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-079-low.png",
+    "imageHighSrc": "cards/ex1-079-high.png"
+  },
+  {
+    "masterCardId": "4718",
+    "externalId": null,
+    "tcgdex_id": "ex1-78",
+    "localId": "078",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "078/109",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 078/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-078-low.png",
+    "imageHighSrc": "cards/ex1-078-high.png"
+  },
+  {
+    "masterCardId": "4713",
+    "externalId": null,
+    "tcgdex_id": "ex1-77",
+    "localId": "077",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "077/109",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 077/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-077-low.png",
+    "imageHighSrc": "cards/ex1-077-high.png"
+  },
+  {
+    "masterCardId": "4706",
+    "externalId": null,
+    "tcgdex_id": "ex1-76",
+    "localId": "076",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "076/109",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 076/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-076-low.png",
+    "imageHighSrc": "cards/ex1-076-high.png"
+  },
+  {
+    "masterCardId": "4699",
+    "externalId": null,
+    "tcgdex_id": "ex1-75",
+    "localId": "075",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "075/109",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 075/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-075-low.png",
+    "imageHighSrc": "cards/ex1-075-high.png"
+  },
+  {
+    "masterCardId": "4690",
+    "externalId": null,
+    "tcgdex_id": "ex1-74",
+    "localId": "074",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "074/109",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 074/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-074-low.png",
+    "imageHighSrc": "cards/ex1-074-high.png"
+  },
+  {
+    "masterCardId": "4682",
+    "externalId": null,
+    "tcgdex_id": "ex1-73",
+    "localId": "073",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "073/109",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 073/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-073-low.png",
+    "imageHighSrc": "cards/ex1-073-high.png"
+  },
+  {
+    "masterCardId": "4674",
+    "externalId": null,
+    "tcgdex_id": "ex1-72",
+    "localId": "072",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "072/109",
+    "cardName": "Taillow",
+    "fullDisplayName": "Taillow 072/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      276
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-072-low.png",
+    "imageHighSrc": "cards/ex1-072-high.png"
+  },
+  {
+    "masterCardId": "4666",
+    "externalId": null,
+    "tcgdex_id": "ex1-71",
+    "localId": "071",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "071/109",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 071/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-071-low.png",
+    "imageHighSrc": "cards/ex1-071-high.png"
+  },
+  {
+    "masterCardId": "4659",
+    "externalId": null,
+    "tcgdex_id": "ex1-70",
+    "localId": "070",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "070/109",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 070/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-070-low.png",
+    "imageHighSrc": "cards/ex1-070-high.png"
+  },
+  {
+    "masterCardId": "4651",
+    "externalId": null,
+    "tcgdex_id": "ex1-69",
+    "localId": "069",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "069/109",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 069/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-069-low.png",
+    "imageHighSrc": "cards/ex1-069-high.png"
+  },
+  {
+    "masterCardId": "4642",
+    "externalId": null,
+    "tcgdex_id": "ex1-68",
+    "localId": "068",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "068/109",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 068/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-068-low.png",
+    "imageHighSrc": "cards/ex1-068-high.png"
+  },
+  {
+    "masterCardId": "4635",
+    "externalId": null,
+    "tcgdex_id": "ex1-67",
+    "localId": "067",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "067/109",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 067/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-067-low.png",
+    "imageHighSrc": "cards/ex1-067-high.png"
+  },
+  {
+    "masterCardId": "4627",
+    "externalId": null,
+    "tcgdex_id": "ex1-66",
+    "localId": "066",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "066/109",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 066/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-066-low.png",
+    "imageHighSrc": "cards/ex1-066-high.png"
+  },
+  {
+    "masterCardId": "4619",
+    "externalId": null,
+    "tcgdex_id": "ex1-65",
+    "localId": "065",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "065/109",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 065/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-065-low.png",
+    "imageHighSrc": "cards/ex1-065-high.png"
+  },
+  {
+    "masterCardId": "4611",
+    "externalId": null,
+    "tcgdex_id": "ex1-64",
+    "localId": "064",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "064/109",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 064/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-064-low.png",
+    "imageHighSrc": "cards/ex1-064-high.png"
+  },
+  {
+    "masterCardId": "4603",
+    "externalId": null,
+    "tcgdex_id": "ex1-63",
+    "localId": "063",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "063/109",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 063/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-063-low.png",
+    "imageHighSrc": "cards/ex1-063-high.png"
+  },
+  {
+    "masterCardId": "4597",
+    "externalId": null,
+    "tcgdex_id": "ex1-62",
+    "localId": "062",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "062/109",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 062/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-062-low.png",
+    "imageHighSrc": "cards/ex1-062-high.png"
+  },
+  {
+    "masterCardId": "4589",
+    "externalId": null,
+    "tcgdex_id": "ex1-61",
+    "localId": "061",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "061/109",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 061/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-061-low.png",
+    "imageHighSrc": "cards/ex1-061-high.png"
+  },
+  {
+    "masterCardId": "4581",
+    "externalId": null,
+    "tcgdex_id": "ex1-60",
+    "localId": "060",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "060/109",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 060/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-060-low.png",
+    "imageHighSrc": "cards/ex1-060-high.png"
+  },
+  {
+    "masterCardId": "4573",
+    "externalId": null,
+    "tcgdex_id": "ex1-59",
+    "localId": "059",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "059/109",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 059/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-059-low.png",
+    "imageHighSrc": "cards/ex1-059-high.png"
+  },
+  {
+    "masterCardId": "4565",
+    "externalId": null,
+    "tcgdex_id": "ex1-58",
+    "localId": "058",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "058/109",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 058/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-058-low.png",
+    "imageHighSrc": "cards/ex1-058-high.png"
+  },
+  {
+    "masterCardId": "4556",
+    "externalId": null,
+    "tcgdex_id": "ex1-57",
+    "localId": "057",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "057/109",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 057/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-057-low.png",
+    "imageHighSrc": "cards/ex1-057-high.png"
+  },
+  {
+    "masterCardId": "4547",
+    "externalId": null,
+    "tcgdex_id": "ex1-56",
+    "localId": "056",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "056/109",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 056/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-056-low.png",
+    "imageHighSrc": "cards/ex1-056-high.png"
+  },
+  {
+    "masterCardId": "4538",
+    "externalId": null,
+    "tcgdex_id": "ex1-55",
+    "localId": "055",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "055/109",
+    "cardName": "Goldeen",
+    "fullDisplayName": "Goldeen 055/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-055-low.png",
+    "imageHighSrc": "cards/ex1-055-high.png"
+  },
+  {
+    "masterCardId": "4529",
+    "externalId": null,
+    "tcgdex_id": "ex1-54",
+    "localId": "054",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "054/109",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 054/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-054-low.png",
+    "imageHighSrc": "cards/ex1-054-high.png"
+  },
+  {
+    "masterCardId": "4520",
+    "externalId": null,
+    "tcgdex_id": "ex1-53",
+    "localId": "053",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "053/109",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 053/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-053-low.png",
+    "imageHighSrc": "cards/ex1-053-high.png"
+  },
+  {
+    "masterCardId": "4511",
+    "externalId": null,
+    "tcgdex_id": "ex1-52",
+    "localId": "052",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "052/109",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 052/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-052-low.png",
+    "imageHighSrc": "cards/ex1-052-high.png"
+  },
+  {
+    "masterCardId": "4502",
+    "externalId": null,
+    "tcgdex_id": "ex1-51",
+    "localId": "051",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "051/109",
+    "cardName": "Carvanha",
+    "fullDisplayName": "Carvanha 051/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-051-low.png",
+    "imageHighSrc": "cards/ex1-051-high.png"
+  },
+  {
+    "masterCardId": "4495",
+    "externalId": null,
+    "tcgdex_id": "ex1-50",
+    "localId": "050",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "050/109",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 050/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-050-low.png",
+    "imageHighSrc": "cards/ex1-050-high.png"
+  },
+  {
+    "masterCardId": "4485",
+    "externalId": null,
+    "tcgdex_id": "ex1-49",
+    "localId": "049",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "049/109",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 049/109 Ruby & Sapphire",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-049-low.png",
+    "imageHighSrc": "cards/ex1-049-high.png"
+  },
+  {
+    "masterCardId": "4476",
+    "externalId": null,
+    "tcgdex_id": "ex1-48",
+    "localId": "048",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "048/109",
+    "cardName": "Wailmer",
+    "fullDisplayName": "Wailmer 048/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      320
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-048-low.png",
+    "imageHighSrc": "cards/ex1-048-high.png"
+  },
+  {
+    "masterCardId": "4466",
+    "externalId": null,
+    "tcgdex_id": "ex1-47",
+    "localId": "047",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "047/109",
+    "cardName": "Vigoroth",
+    "fullDisplayName": "Vigoroth 047/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      288
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slakoth",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-047-low.png",
+    "imageHighSrc": "cards/ex1-047-high.png"
+  },
+  {
+    "masterCardId": "4457",
+    "externalId": null,
+    "tcgdex_id": "ex1-46",
+    "localId": "046",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "046/109",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 046/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-046-low.png",
+    "imageHighSrc": "cards/ex1-046-high.png"
+  },
+  {
+    "masterCardId": "4449",
+    "externalId": null,
+    "tcgdex_id": "ex1-45",
+    "localId": "045",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "045/109",
+    "cardName": "Slakoth",
+    "fullDisplayName": "Slakoth 045/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      287
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-045-low.png",
+    "imageHighSrc": "cards/ex1-045-high.png"
+  },
+  {
+    "masterCardId": "4440",
+    "externalId": null,
+    "tcgdex_id": "ex1-44",
+    "localId": "044",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "044/109",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 044/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-044-low.png",
+    "imageHighSrc": "cards/ex1-044-high.png"
+  },
+  {
+    "masterCardId": "4432",
+    "externalId": null,
+    "tcgdex_id": "ex1-43",
+    "localId": "043",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "043/109",
+    "cardName": "Silcoon",
+    "fullDisplayName": "Silcoon 043/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      266
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-043-low.png",
+    "imageHighSrc": "cards/ex1-043-high.png"
+  },
+  {
+    "masterCardId": "4423",
+    "externalId": null,
+    "tcgdex_id": "ex1-42",
+    "localId": "042",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "042/109",
+    "cardName": "Mightyena",
+    "fullDisplayName": "Mightyena 042/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-042-low.png",
+    "imageHighSrc": "cards/ex1-042-high.png"
+  },
+  {
+    "masterCardId": "4414",
+    "externalId": null,
+    "tcgdex_id": "ex1-41",
+    "localId": "041",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "041/109",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 041/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-041-low.png",
+    "imageHighSrc": "cards/ex1-041-high.png"
+  },
+  {
+    "masterCardId": "4407",
+    "externalId": null,
+    "tcgdex_id": "ex1-40",
+    "localId": "040",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "040/109",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 040/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-040-low.png",
+    "imageHighSrc": "cards/ex1-040-high.png"
+  },
+  {
+    "masterCardId": "4398",
+    "externalId": null,
+    "tcgdex_id": "ex1-39",
+    "localId": "039",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "039/109",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 039/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-039-low.png",
+    "imageHighSrc": "cards/ex1-039-high.png"
+  },
+  {
+    "masterCardId": "4389",
+    "externalId": null,
+    "tcgdex_id": "ex1-38",
+    "localId": "038",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "038/109",
+    "cardName": "Linoone",
+    "fullDisplayName": "Linoone 038/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      264
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zigzagoon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-038-low.png",
+    "imageHighSrc": "cards/ex1-038-high.png"
+  },
+  {
+    "masterCardId": "4381",
+    "externalId": null,
+    "tcgdex_id": "ex1-37",
+    "localId": "037",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "037/109",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 037/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-037-low.png",
+    "imageHighSrc": "cards/ex1-037-high.png"
+  },
+  {
+    "masterCardId": "4372",
+    "externalId": null,
+    "tcgdex_id": "ex1-36",
+    "localId": "036",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "036/109",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 036/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-036-low.png",
+    "imageHighSrc": "cards/ex1-036-high.png"
+  },
+  {
+    "masterCardId": "4363",
+    "externalId": null,
+    "tcgdex_id": "ex1-35",
+    "localId": "035",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "035/109",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 035/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-035-low.png",
+    "imageHighSrc": "cards/ex1-035-high.png"
+  },
+  {
+    "masterCardId": "4354",
+    "externalId": null,
+    "tcgdex_id": "ex1-34",
+    "localId": "034",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "034/109",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 034/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-034-low.png",
+    "imageHighSrc": "cards/ex1-034-high.png"
+  },
+  {
+    "masterCardId": "4347",
+    "externalId": null,
+    "tcgdex_id": "ex1-33",
+    "localId": "033",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "033/109",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 033/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Makuhita",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-033-low.png",
+    "imageHighSrc": "cards/ex1-033-high.png"
+  },
+  {
+    "masterCardId": "4337",
+    "externalId": null,
+    "tcgdex_id": "ex1-32",
+    "localId": "032",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "032/109",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 032/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-032-low.png",
+    "imageHighSrc": "cards/ex1-032-high.png"
+  },
+  {
+    "masterCardId": "4329",
+    "externalId": null,
+    "tcgdex_id": "ex1-31",
+    "localId": "031",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "031/109",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 031/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-031-low.png",
+    "imageHighSrc": "cards/ex1-031-high.png"
+  },
+  {
+    "masterCardId": "4318",
+    "externalId": null,
+    "tcgdex_id": "ex1-30",
+    "localId": "030",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "030/109",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 030/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-030-low.png",
+    "imageHighSrc": "cards/ex1-030-high.png"
+  },
+  {
+    "masterCardId": "4309",
+    "externalId": null,
+    "tcgdex_id": "ex1-29",
+    "localId": "029",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "029/109",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 029/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-029-low.png",
+    "imageHighSrc": "cards/ex1-029-high.png"
+  },
+  {
+    "masterCardId": "4300",
+    "externalId": null,
+    "tcgdex_id": "ex1-28",
+    "localId": "028",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "028/109",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 028/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-028-low.png",
+    "imageHighSrc": "cards/ex1-028-high.png"
+  },
+  {
+    "masterCardId": "4293",
+    "externalId": null,
+    "tcgdex_id": "ex1-27",
+    "localId": "027",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "027/109",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 027/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-027-low.png",
+    "imageHighSrc": "cards/ex1-027-high.png"
+  },
+  {
+    "masterCardId": "4284",
+    "externalId": null,
+    "tcgdex_id": "ex1-26",
+    "localId": "026",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "026/109",
+    "cardName": "Cascoon",
+    "fullDisplayName": "Cascoon 026/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      268
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-026-low.png",
+    "imageHighSrc": "cards/ex1-026-high.png"
+  },
+  {
+    "masterCardId": "4275",
+    "externalId": null,
+    "tcgdex_id": "ex1-25",
+    "localId": "025",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "025/109",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 025/109 Ruby & Sapphire",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-025-low.png",
+    "imageHighSrc": "cards/ex1-025-high.png"
+  },
+  {
+    "masterCardId": "4267",
+    "externalId": null,
+    "tcgdex_id": "ex1-24",
+    "localId": "024",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "024/109",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 024/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-024-low.png",
+    "imageHighSrc": "cards/ex1-024-high.png"
+  },
+  {
+    "masterCardId": "4258",
+    "externalId": null,
+    "tcgdex_id": "ex1-23",
+    "localId": "023",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "023/109",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 023/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-023-low.png",
+    "imageHighSrc": "cards/ex1-023-high.png"
+  },
+  {
+    "masterCardId": "4249",
+    "externalId": null,
+    "tcgdex_id": "ex1-22",
+    "localId": "022",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "022/109",
+    "cardName": "Sharpedo",
+    "fullDisplayName": "Sharpedo 022/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-022-low.png",
+    "imageHighSrc": "cards/ex1-022-high.png"
+  },
+  {
+    "masterCardId": "4240",
+    "externalId": null,
+    "tcgdex_id": "ex1-21",
+    "localId": "021",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "021/109",
+    "cardName": "Seaking",
+    "fullDisplayName": "Seaking 021/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      119
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goldeen",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-021-low.png",
+    "imageHighSrc": "cards/ex1-021-high.png"
+  },
+  {
+    "masterCardId": "4231",
+    "externalId": null,
+    "tcgdex_id": "ex1-20",
+    "localId": "020",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "020/109",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 020/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-020-low.png",
+    "imageHighSrc": "cards/ex1-020-high.png"
+  },
+  {
+    "masterCardId": "4220",
+    "externalId": null,
+    "tcgdex_id": "ex1-19",
+    "localId": "019",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "019/109",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 019/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-019-low.png",
+    "imageHighSrc": "cards/ex1-019-high.png"
+  },
+  {
+    "masterCardId": "4212",
+    "externalId": null,
+    "tcgdex_id": "ex1-18",
+    "localId": "018",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "018/109",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 018/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-018-low.png",
+    "imageHighSrc": "cards/ex1-018-high.png"
+  },
+  {
+    "masterCardId": "4203",
+    "externalId": null,
+    "tcgdex_id": "ex1-17",
+    "localId": "017",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "017/109",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 017/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Phanpy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-017-low.png",
+    "imageHighSrc": "cards/ex1-017-high.png"
+  },
+  {
+    "masterCardId": "4195",
+    "externalId": null,
+    "tcgdex_id": "ex1-16",
+    "localId": "016",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "016/109",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 016/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-016-low.png",
+    "imageHighSrc": "cards/ex1-016-high.png"
+  },
+  {
+    "masterCardId": "4185",
+    "externalId": null,
+    "tcgdex_id": "ex1-15",
+    "localId": "015",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "015/109",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 015/109 Ruby & Sapphire",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-015-low.png",
+    "imageHighSrc": "cards/ex1-015-high.png"
+  },
+  {
+    "masterCardId": "4176",
+    "externalId": null,
+    "tcgdex_id": "ex1-14",
+    "localId": "014",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "014/109",
+    "cardName": "Wailord",
+    "fullDisplayName": "Wailord 014/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wailmer",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-014-low.png",
+    "imageHighSrc": "cards/ex1-014-high.png"
+  },
+  {
+    "masterCardId": "4168",
+    "externalId": null,
+    "tcgdex_id": "ex1-13",
+    "localId": "013",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "013/109",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 013/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-013-low.png",
+    "imageHighSrc": "cards/ex1-013-high.png"
+  },
+  {
+    "masterCardId": "4160",
+    "externalId": null,
+    "tcgdex_id": "ex1-12",
+    "localId": "012",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "012/109",
+    "cardName": "Slaking",
+    "fullDisplayName": "Slaking 012/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vigoroth",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-012-low.png",
+    "imageHighSrc": "cards/ex1-012-high.png"
+  },
+  {
+    "masterCardId": "4149",
+    "externalId": null,
+    "tcgdex_id": "ex1-11",
+    "localId": "011",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "011/109",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 011/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-011-low.png",
+    "imageHighSrc": "cards/ex1-011-high.png"
+  },
+  {
+    "masterCardId": "4139",
+    "externalId": null,
+    "tcgdex_id": "ex1-10",
+    "localId": "010",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "010/109",
+    "cardName": "Mightyena",
+    "fullDisplayName": "Mightyena 010/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-010-low.png",
+    "imageHighSrc": "cards/ex1-010-high.png"
+  },
+  {
+    "masterCardId": "4130",
+    "externalId": null,
+    "tcgdex_id": "ex1-9",
+    "localId": "009",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "009/109",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 009/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-009-low.png",
+    "imageHighSrc": "cards/ex1-009-high.png"
+  },
+  {
+    "masterCardId": "4123",
+    "externalId": null,
+    "tcgdex_id": "ex1-8",
+    "localId": "008",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "008/109",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 008/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Makuhita",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-008-low.png",
+    "imageHighSrc": "cards/ex1-008-high.png"
+  },
+  {
+    "masterCardId": "4114",
+    "externalId": null,
+    "tcgdex_id": "ex1-7",
+    "localId": "007",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "007/109",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 007/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-007-low.png",
+    "imageHighSrc": "cards/ex1-007-high.png"
+  },
+  {
+    "masterCardId": "4106",
+    "externalId": null,
+    "tcgdex_id": "ex1-6",
+    "localId": "006",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "006/109",
+    "cardName": "Dustox",
+    "fullDisplayName": "Dustox 006/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      269
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cascoon",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-006-low.png",
+    "imageHighSrc": "cards/ex1-006-high.png"
+  },
+  {
+    "masterCardId": "4095",
+    "externalId": null,
+    "tcgdex_id": "ex1-5",
+    "localId": "005",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "005/109",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 005/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-005-low.png",
+    "imageHighSrc": "cards/ex1-005-high.png"
+  },
+  {
+    "masterCardId": "4087",
+    "externalId": null,
+    "tcgdex_id": "ex1-4",
+    "localId": "004",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "004/109",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 004/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-004-low.png",
+    "imageHighSrc": "cards/ex1-004-high.png"
+  },
+  {
+    "masterCardId": "4079",
+    "externalId": null,
+    "tcgdex_id": "ex1-3",
+    "localId": "003",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "003/109",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 003/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-003-low.png",
+    "imageHighSrc": "cards/ex1-003-high.png"
+  },
+  {
+    "masterCardId": "4071",
+    "externalId": null,
+    "tcgdex_id": "ex1-2",
+    "localId": "002",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "002/109",
+    "cardName": "Beautifly",
+    "fullDisplayName": "Beautifly 002/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      267
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Silcoon",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-002-low.png",
+    "imageHighSrc": "cards/ex1-002-high.png"
+  },
+  {
+    "masterCardId": "4066",
+    "externalId": null,
+    "tcgdex_id": "ex1-1",
+    "localId": "001",
+    "setCode": "ex1",
+    "setTcgdexId": "ex1",
+    "cardNumber": "001/109",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 001/109 Ruby & Sapphire",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex1-001-low.png",
+    "imageHighSrc": "cards/ex1-001-high.png"
+  }
+]

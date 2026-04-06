@@ -1,0 +1,6542 @@
+[
+  {
+    "masterCardId": "17724",
+    "externalId": null,
+    "tcgdex_id": "swsh3-201",
+    "localId": "201",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "201/189",
+    "cardName": "Capture Energy",
+    "fullDisplayName": "Capture Energy 201/189 Darkness Ablaze",
+    "rarity": "Rare Secret",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-201-low.png",
+    "imageHighSrc": "cards/swsh3-201-high.png"
+  },
+  {
+    "masterCardId": "17720",
+    "externalId": null,
+    "tcgdex_id": "swsh3-200",
+    "localId": "200",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "200/189",
+    "cardName": "Turbo Patch",
+    "fullDisplayName": "Turbo Patch 200/189 Darkness Ablaze",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-200-low.png",
+    "imageHighSrc": "cards/swsh3-200-high.png"
+  },
+  {
+    "masterCardId": "17715",
+    "externalId": null,
+    "tcgdex_id": "swsh3-199",
+    "localId": "199",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "199/189",
+    "cardName": "Big Parasol",
+    "fullDisplayName": "Big Parasol 199/189 Darkness Ablaze",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-199-low.png",
+    "imageHighSrc": "cards/swsh3-199-high.png"
+  },
+  {
+    "masterCardId": "17711",
+    "externalId": null,
+    "tcgdex_id": "swsh3-198",
+    "localId": "198",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "198/189",
+    "cardName": "Coalossal",
+    "fullDisplayName": "Coalossal 198/189 Darkness Ablaze",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      839
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Carkol",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-198-low.png",
+    "imageHighSrc": "cards/swsh3-198-high.png"
+  },
+  {
+    "masterCardId": "17707",
+    "externalId": null,
+    "tcgdex_id": "swsh3-197",
+    "localId": "197",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "197/189",
+    "cardName": "Rillaboom",
+    "fullDisplayName": "Rillaboom 197/189 Darkness Ablaze",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      812
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Thwackey",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-197-low.png",
+    "imageHighSrc": "cards/swsh3-197-high.png"
+  },
+  {
+    "masterCardId": "17704",
+    "externalId": null,
+    "tcgdex_id": "swsh3-196",
+    "localId": "196",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "196/189",
+    "cardName": "Rose",
+    "fullDisplayName": "Rose 196/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-196-low.png",
+    "imageHighSrc": "cards/swsh3-196-high.png"
+  },
+  {
+    "masterCardId": "17700",
+    "externalId": null,
+    "tcgdex_id": "swsh3-195",
+    "localId": "195",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "195/189",
+    "cardName": "Pokémon Breeder's Nurturing",
+    "fullDisplayName": "Pokémon Breeder's Nurturing 195/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-195-low.png",
+    "imageHighSrc": "cards/swsh3-195-high.png"
+  },
+  {
+    "masterCardId": "17696",
+    "externalId": null,
+    "tcgdex_id": "swsh3-194",
+    "localId": "194",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "194/189",
+    "cardName": "Salamence VMAX",
+    "fullDisplayName": "Salamence VMAX 194/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Salamence V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-194-low.png",
+    "imageHighSrc": "cards/swsh3-194-high.png"
+  },
+  {
+    "masterCardId": "17692",
+    "externalId": null,
+    "tcgdex_id": "swsh3-193",
+    "localId": "193",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "193/189",
+    "cardName": "Scizor VMAX",
+    "fullDisplayName": "Scizor VMAX 193/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Scizor V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-193-low.png",
+    "imageHighSrc": "cards/swsh3-193-high.png"
+  },
+  {
+    "masterCardId": "17689",
+    "externalId": null,
+    "tcgdex_id": "swsh3-192",
+    "localId": "192",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "192/189",
+    "cardName": "Eternatus VMAX",
+    "fullDisplayName": "Eternatus VMAX 192/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 340,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Eternatus V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-192-low.png",
+    "imageHighSrc": "cards/swsh3-192-high.png"
+  },
+  {
+    "masterCardId": "17684",
+    "externalId": null,
+    "tcgdex_id": "swsh3-191",
+    "localId": "191",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "191/189",
+    "cardName": "Centiskorch VMAX",
+    "fullDisplayName": "Centiskorch VMAX 191/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Centiskorch V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-191-low.png",
+    "imageHighSrc": "cards/swsh3-191-high.png"
+  },
+  {
+    "masterCardId": "17680",
+    "externalId": null,
+    "tcgdex_id": "swsh3-190",
+    "localId": "190",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "190/189",
+    "cardName": "Butterfree VMAX",
+    "fullDisplayName": "Butterfree VMAX 190/189 Darkness Ablaze",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 300,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Butterfree V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-190-low.png",
+    "imageHighSrc": "cards/swsh3-190-high.png"
+  },
+  {
+    "masterCardId": "17676",
+    "externalId": null,
+    "tcgdex_id": "swsh3-189",
+    "localId": "189",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "189/189",
+    "cardName": "Rose",
+    "fullDisplayName": "Rose 189/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-189-low.png",
+    "imageHighSrc": "cards/swsh3-189-high.png"
+  },
+  {
+    "masterCardId": "17673",
+    "externalId": null,
+    "tcgdex_id": "swsh3-188",
+    "localId": "188",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "188/189",
+    "cardName": "Pokémon Breeder's Nurturing",
+    "fullDisplayName": "Pokémon Breeder's Nurturing 188/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-188-low.png",
+    "imageHighSrc": "cards/swsh3-188-high.png"
+  },
+  {
+    "masterCardId": "17669",
+    "externalId": null,
+    "tcgdex_id": "swsh3-187",
+    "localId": "187",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "187/189",
+    "cardName": "Piers",
+    "fullDisplayName": "Piers 187/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-187-low.png",
+    "imageHighSrc": "cards/swsh3-187-high.png"
+  },
+  {
+    "masterCardId": "17665",
+    "externalId": null,
+    "tcgdex_id": "swsh3-186",
+    "localId": "186",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "186/189",
+    "cardName": "Kabu",
+    "fullDisplayName": "Kabu 186/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-186-low.png",
+    "imageHighSrc": "cards/swsh3-186-high.png"
+  },
+  {
+    "masterCardId": "17661",
+    "externalId": null,
+    "tcgdex_id": "swsh3-185",
+    "localId": "185",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "185/189",
+    "cardName": "Salamence V",
+    "fullDisplayName": "Salamence V 185/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-185-low.png",
+    "imageHighSrc": "cards/swsh3-185-high.png"
+  },
+  {
+    "masterCardId": "17657",
+    "externalId": null,
+    "tcgdex_id": "swsh3-184",
+    "localId": "184",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "184/189",
+    "cardName": "Galarian Stunfisk V",
+    "fullDisplayName": "Galarian Stunfisk V 184/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-184-low.png",
+    "imageHighSrc": "cards/swsh3-184-high.png"
+  },
+  {
+    "masterCardId": "17652",
+    "externalId": null,
+    "tcgdex_id": "swsh3-183",
+    "localId": "183",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "183/189",
+    "cardName": "Scizor V",
+    "fullDisplayName": "Scizor V 183/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-183-low.png",
+    "imageHighSrc": "cards/swsh3-183-high.png"
+  },
+  {
+    "masterCardId": "17647",
+    "externalId": null,
+    "tcgdex_id": "swsh3-182",
+    "localId": "182",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "182/189",
+    "cardName": "Crobat V",
+    "fullDisplayName": "Crobat V 182/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-182-low.png",
+    "imageHighSrc": "cards/swsh3-182-high.png"
+  },
+  {
+    "masterCardId": "17640",
+    "externalId": null,
+    "tcgdex_id": "swsh3-181",
+    "localId": "181",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "181/189",
+    "cardName": "Rhyperior V",
+    "fullDisplayName": "Rhyperior V 181/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-181-low.png",
+    "imageHighSrc": "cards/swsh3-181-high.png"
+  },
+  {
+    "masterCardId": "17634",
+    "externalId": null,
+    "tcgdex_id": "swsh3-180",
+    "localId": "180",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "180/189",
+    "cardName": "Vikavolt V",
+    "fullDisplayName": "Vikavolt V 180/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      738
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-180-low.png",
+    "imageHighSrc": "cards/swsh3-180-high.png"
+  },
+  {
+    "masterCardId": "17629",
+    "externalId": null,
+    "tcgdex_id": "swsh3-179",
+    "localId": "179",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "179/189",
+    "cardName": "Centiskorch V",
+    "fullDisplayName": "Centiskorch V 179/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-179-low.png",
+    "imageHighSrc": "cards/swsh3-179-high.png"
+  },
+  {
+    "masterCardId": "17624",
+    "externalId": null,
+    "tcgdex_id": "swsh3-178",
+    "localId": "178",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "178/189",
+    "cardName": "Houndoom V",
+    "fullDisplayName": "Houndoom V 178/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-178-low.png",
+    "imageHighSrc": "cards/swsh3-178-high.png"
+  },
+  {
+    "masterCardId": "17620",
+    "externalId": null,
+    "tcgdex_id": "swsh3-177",
+    "localId": "177",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "177/189",
+    "cardName": "Butterfree V",
+    "fullDisplayName": "Butterfree V 177/189 Darkness Ablaze",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-177-low.png",
+    "imageHighSrc": "cards/swsh3-177-high.png"
+  },
+  {
+    "masterCardId": "17613",
+    "externalId": null,
+    "tcgdex_id": "swsh3-176",
+    "localId": "176",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "176/189",
+    "cardName": "Powerful Colorless Energy",
+    "fullDisplayName": "Powerful Colorless Energy 176/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-176-low.png",
+    "imageHighSrc": "cards/swsh3-176-high.png"
+  },
+  {
+    "masterCardId": "17607",
+    "externalId": null,
+    "tcgdex_id": "swsh3-175",
+    "localId": "175",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "175/189",
+    "cardName": "Hiding Darkness Energy",
+    "fullDisplayName": "Hiding Darkness Energy 175/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-175-low.png",
+    "imageHighSrc": "cards/swsh3-175-high.png"
+  },
+  {
+    "masterCardId": "17603",
+    "externalId": null,
+    "tcgdex_id": "swsh3-174",
+    "localId": "174",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "174/189",
+    "cardName": "Heat Fire Energy",
+    "fullDisplayName": "Heat Fire Energy 174/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-174-low.png",
+    "imageHighSrc": "cards/swsh3-174-high.png"
+  },
+  {
+    "masterCardId": "17596",
+    "externalId": null,
+    "tcgdex_id": "swsh3-173",
+    "localId": "173",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "173/189",
+    "cardName": "Yell Horn",
+    "fullDisplayName": "Yell Horn 173/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-173-low.png",
+    "imageHighSrc": "cards/swsh3-173-high.png"
+  },
+  {
+    "masterCardId": "17590",
+    "externalId": null,
+    "tcgdex_id": "swsh3-172",
+    "localId": "172",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "172/189",
+    "cardName": "Turbo Patch",
+    "fullDisplayName": "Turbo Patch 172/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-172-low.png",
+    "imageHighSrc": "cards/swsh3-172-high.png"
+  },
+  {
+    "masterCardId": "17584",
+    "externalId": null,
+    "tcgdex_id": "swsh3-171",
+    "localId": "171",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "171/189",
+    "cardName": "Struggle Gloves",
+    "fullDisplayName": "Struggle Gloves 171/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-171-low.png",
+    "imageHighSrc": "cards/swsh3-171-high.png"
+  },
+  {
+    "masterCardId": "17579",
+    "externalId": null,
+    "tcgdex_id": "swsh3-170",
+    "localId": "170",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "170/189",
+    "cardName": "Spikemuth",
+    "fullDisplayName": "Spikemuth 170/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-170-low.png",
+    "imageHighSrc": "cards/swsh3-170-high.png"
+  },
+  {
+    "masterCardId": "17571",
+    "externalId": null,
+    "tcgdex_id": "swsh3-169",
+    "localId": "169",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "169/189",
+    "cardName": "Rose Tower",
+    "fullDisplayName": "Rose Tower 169/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-169-low.png",
+    "imageHighSrc": "cards/swsh3-169-high.png"
+  },
+  {
+    "masterCardId": "17567",
+    "externalId": null,
+    "tcgdex_id": "swsh3-168",
+    "localId": "168",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "168/189",
+    "cardName": "Rose",
+    "fullDisplayName": "Rose 168/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-168-low.png",
+    "imageHighSrc": "cards/swsh3-168-high.png"
+  },
+  {
+    "masterCardId": "17560",
+    "externalId": null,
+    "tcgdex_id": "swsh3-167",
+    "localId": "167",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "167/189",
+    "cardName": "Rare Fossil",
+    "fullDisplayName": "Rare Fossil 167/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 70,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-167-low.png",
+    "imageHighSrc": "cards/swsh3-167-high.png"
+  },
+  {
+    "masterCardId": "17554",
+    "externalId": null,
+    "tcgdex_id": "swsh3-166",
+    "localId": "166",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "166/189",
+    "cardName": "Pokémon Breeder's Nurturing",
+    "fullDisplayName": "Pokémon Breeder's Nurturing 166/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-166-low.png",
+    "imageHighSrc": "cards/swsh3-166-high.png"
+  },
+  {
+    "masterCardId": "17548",
+    "externalId": null,
+    "tcgdex_id": "swsh3-165",
+    "localId": "165",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "165/189",
+    "cardName": "Piers",
+    "fullDisplayName": "Piers 165/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-165-low.png",
+    "imageHighSrc": "cards/swsh3-165-high.png"
+  },
+  {
+    "masterCardId": "17544",
+    "externalId": null,
+    "tcgdex_id": "swsh3-164",
+    "localId": "164",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "164/189",
+    "cardName": "Old PC",
+    "fullDisplayName": "Old PC 164/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-164-low.png",
+    "imageHighSrc": "cards/swsh3-164-high.png"
+  },
+  {
+    "masterCardId": "17538",
+    "externalId": null,
+    "tcgdex_id": "swsh3-163",
+    "localId": "163",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "163/189",
+    "cardName": "Kabu",
+    "fullDisplayName": "Kabu 163/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-163-low.png",
+    "imageHighSrc": "cards/swsh3-163-high.png"
+  },
+  {
+    "masterCardId": "17532",
+    "externalId": null,
+    "tcgdex_id": "swsh3-162",
+    "localId": "162",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "162/189",
+    "cardName": "Glimwood Tangle",
+    "fullDisplayName": "Glimwood Tangle 162/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-162-low.png",
+    "imageHighSrc": "cards/swsh3-162-high.png"
+  },
+  {
+    "masterCardId": "17525",
+    "externalId": null,
+    "tcgdex_id": "swsh3-161",
+    "localId": "161",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "161/189",
+    "cardName": "Familiar Bell",
+    "fullDisplayName": "Familiar Bell 161/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-161-low.png",
+    "imageHighSrc": "cards/swsh3-161-high.png"
+  },
+  {
+    "masterCardId": "17519",
+    "externalId": null,
+    "tcgdex_id": "swsh3-160",
+    "localId": "160",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "160/189",
+    "cardName": "Cape of Toughness",
+    "fullDisplayName": "Cape of Toughness 160/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "inose yukie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-160-low.png",
+    "imageHighSrc": "cards/swsh3-160-high.png"
+  },
+  {
+    "masterCardId": "17514",
+    "externalId": null,
+    "tcgdex_id": "swsh3-159",
+    "localId": "159",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "159/189",
+    "cardName": "Bird Keeper",
+    "fullDisplayName": "Bird Keeper 159/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-159-low.png",
+    "imageHighSrc": "cards/swsh3-159-high.png"
+  },
+  {
+    "masterCardId": "17509",
+    "externalId": null,
+    "tcgdex_id": "swsh3-158",
+    "localId": "158",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "158/189",
+    "cardName": "Billowing Smoke",
+    "fullDisplayName": "Billowing Smoke 158/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-158-low.png",
+    "imageHighSrc": "cards/swsh3-158-high.png"
+  },
+  {
+    "masterCardId": "17503",
+    "externalId": null,
+    "tcgdex_id": "swsh3-157",
+    "localId": "157",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "157/189",
+    "cardName": "Big Parasol",
+    "fullDisplayName": "Big Parasol 157/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-157-low.png",
+    "imageHighSrc": "cards/swsh3-157-high.png"
+  },
+  {
+    "masterCardId": "17497",
+    "externalId": null,
+    "tcgdex_id": "swsh3-156",
+    "localId": "156",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "156/189",
+    "cardName": "Corviknight",
+    "fullDisplayName": "Corviknight 156/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      823
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Corvisquire",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-156-low.png",
+    "imageHighSrc": "cards/swsh3-156-high.png"
+  },
+  {
+    "masterCardId": "17491",
+    "externalId": null,
+    "tcgdex_id": "swsh3-155",
+    "localId": "155",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "155/189",
+    "cardName": "Corvisquire",
+    "fullDisplayName": "Corvisquire 155/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      822
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rookidee",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-155-low.png",
+    "imageHighSrc": "cards/swsh3-155-high.png"
+  },
+  {
+    "masterCardId": "17485",
+    "externalId": null,
+    "tcgdex_id": "swsh3-154",
+    "localId": "154",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "154/189",
+    "cardName": "Rookidee",
+    "fullDisplayName": "Rookidee 154/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      821
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-154-low.png",
+    "imageHighSrc": "cards/swsh3-154-high.png"
+  },
+  {
+    "masterCardId": "17479",
+    "externalId": null,
+    "tcgdex_id": "swsh3-153",
+    "localId": "153",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "153/189",
+    "cardName": "Greedent",
+    "fullDisplayName": "Greedent 153/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      820
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Skwovet",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-153-low.png",
+    "imageHighSrc": "cards/swsh3-153-high.png"
+  },
+  {
+    "masterCardId": "17473",
+    "externalId": null,
+    "tcgdex_id": "swsh3-152",
+    "localId": "152",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "152/189",
+    "cardName": "Skwovet",
+    "fullDisplayName": "Skwovet 152/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      819
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-152-low.png",
+    "imageHighSrc": "cards/swsh3-152-high.png"
+  },
+  {
+    "masterCardId": "17467",
+    "externalId": null,
+    "tcgdex_id": "swsh3-151",
+    "localId": "151",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "151/189",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 151/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-151-low.png",
+    "imageHighSrc": "cards/swsh3-151-high.png"
+  },
+  {
+    "masterCardId": "17461",
+    "externalId": null,
+    "tcgdex_id": "swsh3-150",
+    "localId": "150",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "150/189",
+    "cardName": "Bunnelby",
+    "fullDisplayName": "Bunnelby 150/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      659
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-150-low.png",
+    "imageHighSrc": "cards/swsh3-150-high.png"
+  },
+  {
+    "masterCardId": "17455",
+    "externalId": null,
+    "tcgdex_id": "swsh3-149",
+    "localId": "149",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "149/189",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 149/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Ducklett",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-149-low.png",
+    "imageHighSrc": "cards/swsh3-149-high.png"
+  },
+  {
+    "masterCardId": "17449",
+    "externalId": null,
+    "tcgdex_id": "swsh3-148",
+    "localId": "148",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "148/189",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 148/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-148-low.png",
+    "imageHighSrc": "cards/swsh3-148-high.png"
+  },
+  {
+    "masterCardId": "17443",
+    "externalId": null,
+    "tcgdex_id": "swsh3-147",
+    "localId": "147",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "147/189",
+    "cardName": "Staraptor",
+    "fullDisplayName": "Staraptor 147/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      398
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Staravia",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-147-low.png",
+    "imageHighSrc": "cards/swsh3-147-high.png"
+  },
+  {
+    "masterCardId": "17437",
+    "externalId": null,
+    "tcgdex_id": "swsh3-146",
+    "localId": "146",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "146/189",
+    "cardName": "Staravia",
+    "fullDisplayName": "Staravia 146/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      397
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Starly",
+    "artist": "chibi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-146-low.png",
+    "imageHighSrc": "cards/swsh3-146-high.png"
+  },
+  {
+    "masterCardId": "17431",
+    "externalId": null,
+    "tcgdex_id": "swsh3-145",
+    "localId": "145",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "145/189",
+    "cardName": "Starly",
+    "fullDisplayName": "Starly 145/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      396
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-145-low.png",
+    "imageHighSrc": "cards/swsh3-145-high.png"
+  },
+  {
+    "masterCardId": "17425",
+    "externalId": null,
+    "tcgdex_id": "swsh3-144",
+    "localId": "144",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "144/189",
+    "cardName": "Salamence VMAX",
+    "fullDisplayName": "Salamence VMAX 144/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Salamence V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-144-low.png",
+    "imageHighSrc": "cards/swsh3-144-high.png"
+  },
+  {
+    "masterCardId": "17418",
+    "externalId": null,
+    "tcgdex_id": "swsh3-143",
+    "localId": "143",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "143/189",
+    "cardName": "Salamence V",
+    "fullDisplayName": "Salamence V 143/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-143-low.png",
+    "imageHighSrc": "cards/swsh3-143-high.png"
+  },
+  {
+    "masterCardId": "17412",
+    "externalId": null,
+    "tcgdex_id": "swsh3-142",
+    "localId": "142",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "142/189",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 142/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Skitty",
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-142-low.png",
+    "imageHighSrc": "cards/swsh3-142-high.png"
+  },
+  {
+    "masterCardId": "17406",
+    "externalId": null,
+    "tcgdex_id": "swsh3-141",
+    "localId": "141",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "141/189",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 141/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-141-low.png",
+    "imageHighSrc": "cards/swsh3-141-high.png"
+  },
+  {
+    "masterCardId": "17400",
+    "externalId": null,
+    "tcgdex_id": "swsh3-140",
+    "localId": "140",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "140/189",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 140/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-140-low.png",
+    "imageHighSrc": "cards/swsh3-140-high.png"
+  },
+  {
+    "masterCardId": "17394",
+    "externalId": null,
+    "tcgdex_id": "swsh3-139",
+    "localId": "139",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "139/189",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 139/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Teddiursa",
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-139-low.png",
+    "imageHighSrc": "cards/swsh3-139-high.png"
+  },
+  {
+    "masterCardId": "17387",
+    "externalId": null,
+    "tcgdex_id": "swsh3-138",
+    "localId": "138",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "138/189",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 138/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-138-low.png",
+    "imageHighSrc": "cards/swsh3-138-high.png"
+  },
+  {
+    "masterCardId": "17382",
+    "externalId": null,
+    "tcgdex_id": "swsh3-137",
+    "localId": "137",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "137/189",
+    "cardName": "Dunsparce",
+    "fullDisplayName": "Dunsparce 137/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      206
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Kazuma Koda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-137-low.png",
+    "imageHighSrc": "cards/swsh3-137-high.png"
+  },
+  {
+    "masterCardId": "17376",
+    "externalId": null,
+    "tcgdex_id": "swsh3-136",
+    "localId": "136",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "136/189",
+    "cardName": "Furret",
+    "fullDisplayName": "Furret 136/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      162
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Sentret",
+    "artist": "tetsuya koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-136-low.png",
+    "imageHighSrc": "cards/swsh3-136-high.png"
+  },
+  {
+    "masterCardId": "17370",
+    "externalId": null,
+    "tcgdex_id": "swsh3-135",
+    "localId": "135",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "135/189",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 135/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-135-low.png",
+    "imageHighSrc": "cards/swsh3-135-high.png"
+  },
+  {
+    "masterCardId": "17364",
+    "externalId": null,
+    "tcgdex_id": "swsh3-134",
+    "localId": "134",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "134/189",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 134/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-134-low.png",
+    "imageHighSrc": "cards/swsh3-134-high.png"
+  },
+  {
+    "masterCardId": "17358",
+    "externalId": null,
+    "tcgdex_id": "swsh3-133",
+    "localId": "133",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "133/189",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 133/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-133-low.png",
+    "imageHighSrc": "cards/swsh3-133-high.png"
+  },
+  {
+    "masterCardId": "17352",
+    "externalId": null,
+    "tcgdex_id": "swsh3-132",
+    "localId": "132",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "132/189",
+    "cardName": "Copperajah",
+    "fullDisplayName": "Copperajah 132/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 190,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      879
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Cufant",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-132-low.png",
+    "imageHighSrc": "cards/swsh3-132-high.png"
+  },
+  {
+    "masterCardId": "17346",
+    "externalId": null,
+    "tcgdex_id": "swsh3-131",
+    "localId": "131",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "131/189",
+    "cardName": "Cufant",
+    "fullDisplayName": "Cufant 131/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      878
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-131-low.png",
+    "imageHighSrc": "cards/swsh3-131-high.png"
+  },
+  {
+    "masterCardId": "17340",
+    "externalId": null,
+    "tcgdex_id": "swsh3-130",
+    "localId": "130",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "130/189",
+    "cardName": "Melmetal",
+    "fullDisplayName": "Melmetal 130/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Meltan",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-130-low.png",
+    "imageHighSrc": "cards/swsh3-130-high.png"
+  },
+  {
+    "masterCardId": "17334",
+    "externalId": null,
+    "tcgdex_id": "swsh3-129",
+    "localId": "129",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "129/189",
+    "cardName": "Meltan",
+    "fullDisplayName": "Meltan 129/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      808
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-129-low.png",
+    "imageHighSrc": "cards/swsh3-129-high.png"
+  },
+  {
+    "masterCardId": "17328",
+    "externalId": null,
+    "tcgdex_id": "swsh3-128",
+    "localId": "128",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "128/189",
+    "cardName": "Galarian Stunfisk V",
+    "fullDisplayName": "Galarian Stunfisk V 128/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-128-low.png",
+    "imageHighSrc": "cards/swsh3-128-high.png"
+  },
+  {
+    "masterCardId": "17322",
+    "externalId": null,
+    "tcgdex_id": "swsh3-127",
+    "localId": "127",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "127/189",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 127/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Klang",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-127-low.png",
+    "imageHighSrc": "cards/swsh3-127-high.png"
+  },
+  {
+    "masterCardId": "17314",
+    "externalId": null,
+    "tcgdex_id": "swsh3-126",
+    "localId": "126",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "126/189",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 126/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Klink",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-126-low.png",
+    "imageHighSrc": "cards/swsh3-126-high.png"
+  },
+  {
+    "masterCardId": "17308",
+    "externalId": null,
+    "tcgdex_id": "swsh3-125",
+    "localId": "125",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "125/189",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 125/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-125-low.png",
+    "imageHighSrc": "cards/swsh3-125-high.png"
+  },
+  {
+    "masterCardId": "17302",
+    "externalId": null,
+    "tcgdex_id": "swsh3-124",
+    "localId": "124",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "124/189",
+    "cardName": "Escavalier",
+    "fullDisplayName": "Escavalier 124/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      589
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Karrablast",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-124-low.png",
+    "imageHighSrc": "cards/swsh3-124-high.png"
+  },
+  {
+    "masterCardId": "17296",
+    "externalId": null,
+    "tcgdex_id": "swsh3-123",
+    "localId": "123",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "123/189",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 123/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Lairon",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-123-low.png",
+    "imageHighSrc": "cards/swsh3-123-high.png"
+  },
+  {
+    "masterCardId": "17292",
+    "externalId": null,
+    "tcgdex_id": "swsh3-122",
+    "localId": "122",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "122/189",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 122/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Aron",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-122-low.png",
+    "imageHighSrc": "cards/swsh3-122-high.png"
+  },
+  {
+    "masterCardId": "17286",
+    "externalId": null,
+    "tcgdex_id": "swsh3-121",
+    "localId": "121",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "121/189",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 121/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-121-low.png",
+    "imageHighSrc": "cards/swsh3-121-high.png"
+  },
+  {
+    "masterCardId": "17279",
+    "externalId": null,
+    "tcgdex_id": "swsh3-120",
+    "localId": "120",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "120/189",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 120/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-120-low.png",
+    "imageHighSrc": "cards/swsh3-120-high.png"
+  },
+  {
+    "masterCardId": "17274",
+    "externalId": null,
+    "tcgdex_id": "swsh3-119",
+    "localId": "119",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "119/189",
+    "cardName": "Scizor VMAX",
+    "fullDisplayName": "Scizor VMAX 119/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Scizor V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-119-low.png",
+    "imageHighSrc": "cards/swsh3-119-high.png"
+  },
+  {
+    "masterCardId": "17268",
+    "externalId": null,
+    "tcgdex_id": "swsh3-118",
+    "localId": "118",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "118/189",
+    "cardName": "Scizor V",
+    "fullDisplayName": "Scizor V 118/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-118-low.png",
+    "imageHighSrc": "cards/swsh3-118-high.png"
+  },
+  {
+    "masterCardId": "17262",
+    "externalId": null,
+    "tcgdex_id": "swsh3-117",
+    "localId": "117",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "117/189",
+    "cardName": "Eternatus VMAX",
+    "fullDisplayName": "Eternatus VMAX 117/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 340,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Eternatus V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-117-low.png",
+    "imageHighSrc": "cards/swsh3-117-high.png"
+  },
+  {
+    "masterCardId": "17257",
+    "externalId": null,
+    "tcgdex_id": "swsh3-116",
+    "localId": "116",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "116/189",
+    "cardName": "Eternatus V",
+    "fullDisplayName": "Eternatus V 116/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-116-low.png",
+    "imageHighSrc": "cards/swsh3-116-high.png"
+  },
+  {
+    "masterCardId": "17251",
+    "externalId": null,
+    "tcgdex_id": "swsh3-115",
+    "localId": "115",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "115/189",
+    "cardName": "Grimmsnarl VMAX",
+    "fullDisplayName": "Grimmsnarl VMAX 115/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      861
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Grimmsnarl V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-115-low.png",
+    "imageHighSrc": "cards/swsh3-115-high.png"
+  },
+  {
+    "masterCardId": "17245",
+    "externalId": null,
+    "tcgdex_id": "swsh3-114",
+    "localId": "114",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "114/189",
+    "cardName": "Grimmsnarl V",
+    "fullDisplayName": "Grimmsnarl V 114/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      861
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-114-low.png",
+    "imageHighSrc": "cards/swsh3-114-high.png"
+  },
+  {
+    "masterCardId": "17238",
+    "externalId": null,
+    "tcgdex_id": "swsh3-113",
+    "localId": "113",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "113/189",
+    "cardName": "Thievul",
+    "fullDisplayName": "Thievul 113/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      828
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Nickit",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-113-low.png",
+    "imageHighSrc": "cards/swsh3-113-high.png"
+  },
+  {
+    "masterCardId": "17230",
+    "externalId": null,
+    "tcgdex_id": "swsh3-112",
+    "localId": "112",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "112/189",
+    "cardName": "Nickit",
+    "fullDisplayName": "Nickit 112/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      827
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-112-low.png",
+    "imageHighSrc": "cards/swsh3-112-high.png"
+  },
+  {
+    "masterCardId": "17223",
+    "externalId": null,
+    "tcgdex_id": "swsh3-111",
+    "localId": "111",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "111/189",
+    "cardName": "Hoopa",
+    "fullDisplayName": "Hoopa 111/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "so-taro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-111-low.png",
+    "imageHighSrc": "cards/swsh3-111-high.png"
+  },
+  {
+    "masterCardId": "17218",
+    "externalId": null,
+    "tcgdex_id": "swsh3-110",
+    "localId": "110",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "110/189",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 110/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Zweilous",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-110-low.png",
+    "imageHighSrc": "cards/swsh3-110-high.png"
+  },
+  {
+    "masterCardId": "17213",
+    "externalId": null,
+    "tcgdex_id": "swsh3-109",
+    "localId": "109",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "109/189",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 109/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Deino",
+    "artist": "tetsuya koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-109-low.png",
+    "imageHighSrc": "cards/swsh3-109-high.png"
+  },
+  {
+    "masterCardId": "17207",
+    "externalId": null,
+    "tcgdex_id": "swsh3-108",
+    "localId": "108",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "108/189",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 108/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-108-low.png",
+    "imageHighSrc": "cards/swsh3-108-high.png"
+  },
+  {
+    "masterCardId": "17202",
+    "externalId": null,
+    "tcgdex_id": "swsh3-107",
+    "localId": "107",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "107/189",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 107/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Purrloin",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-107-low.png",
+    "imageHighSrc": "cards/swsh3-107-high.png"
+  },
+  {
+    "masterCardId": "17196",
+    "externalId": null,
+    "tcgdex_id": "swsh3-106",
+    "localId": "106",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "106/189",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 106/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-106-low.png",
+    "imageHighSrc": "cards/swsh3-106-high.png"
+  },
+  {
+    "masterCardId": "17190",
+    "externalId": null,
+    "tcgdex_id": "swsh3-105",
+    "localId": "105",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "105/189",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai 105/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-105-low.png",
+    "imageHighSrc": "cards/swsh3-105-high.png"
+  },
+  {
+    "masterCardId": "17185",
+    "externalId": null,
+    "tcgdex_id": "swsh3-104",
+    "localId": "104",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "104/189",
+    "cardName": "Crobat V",
+    "fullDisplayName": "Crobat V 104/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-104-low.png",
+    "imageHighSrc": "cards/swsh3-104-high.png"
+  },
+  {
+    "masterCardId": "17179",
+    "externalId": null,
+    "tcgdex_id": "swsh3-103",
+    "localId": "103",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "103/189",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 103/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Spinarak",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-103-low.png",
+    "imageHighSrc": "cards/swsh3-103-high.png"
+  },
+  {
+    "masterCardId": "17173",
+    "externalId": null,
+    "tcgdex_id": "swsh3-102",
+    "localId": "102",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "102/189",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 102/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-102-low.png",
+    "imageHighSrc": "cards/swsh3-102-high.png"
+  },
+  {
+    "masterCardId": "17168",
+    "externalId": null,
+    "tcgdex_id": "swsh3-101",
+    "localId": "101",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "101/189",
+    "cardName": "Muk",
+    "fullDisplayName": "Muk 101/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Grimer",
+    "artist": "Eri Yamaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-101-low.png",
+    "imageHighSrc": "cards/swsh3-101-high.png"
+  },
+  {
+    "masterCardId": "17162",
+    "externalId": null,
+    "tcgdex_id": "swsh3-100",
+    "localId": "100",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "100/189",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 100/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-100-low.png",
+    "imageHighSrc": "cards/swsh3-100-high.png"
+  },
+  {
+    "masterCardId": "17156",
+    "externalId": null,
+    "tcgdex_id": "swsh3-99",
+    "localId": "099",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "099/189",
+    "cardName": "Galarian Slowbro V",
+    "fullDisplayName": "Galarian Slowbro V 099/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-099-low.png",
+    "imageHighSrc": "cards/swsh3-099-high.png"
+  },
+  {
+    "masterCardId": "17150",
+    "externalId": null,
+    "tcgdex_id": "swsh3-98",
+    "localId": "098",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "098/189",
+    "cardName": "Galarian Sirfetch'd",
+    "fullDisplayName": "Galarian Sirfetch'd 098/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      865
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Galarian Farfetch'd",
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-098-low.png",
+    "imageHighSrc": "cards/swsh3-098-high.png"
+  },
+  {
+    "masterCardId": "17143",
+    "externalId": null,
+    "tcgdex_id": "swsh3-97",
+    "localId": "097",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "097/189",
+    "cardName": "Passimian",
+    "fullDisplayName": "Passimian 097/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      766
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-097-low.png",
+    "imageHighSrc": "cards/swsh3-097-high.png"
+  },
+  {
+    "masterCardId": "17137",
+    "externalId": null,
+    "tcgdex_id": "swsh3-96",
+    "localId": "096",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "096/189",
+    "cardName": "Diggersby",
+    "fullDisplayName": "Diggersby 096/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      660
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Bunnelby",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-096-low.png",
+    "imageHighSrc": "cards/swsh3-096-high.png"
+  },
+  {
+    "masterCardId": "17131",
+    "externalId": null,
+    "tcgdex_id": "swsh3-95",
+    "localId": "095",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "095/189",
+    "cardName": "Rhyperior V",
+    "fullDisplayName": "Rhyperior V 095/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-095-low.png",
+    "imageHighSrc": "cards/swsh3-095-high.png"
+  },
+  {
+    "masterCardId": "17125",
+    "externalId": null,
+    "tcgdex_id": "swsh3-94",
+    "localId": "094",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "094/189",
+    "cardName": "Hippowdon",
+    "fullDisplayName": "Hippowdon 094/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      450
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Hippopotas",
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-094-low.png",
+    "imageHighSrc": "cards/swsh3-094-high.png"
+  },
+  {
+    "masterCardId": "17120",
+    "externalId": null,
+    "tcgdex_id": "swsh3-93",
+    "localId": "093",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "093/189",
+    "cardName": "Hippopotas",
+    "fullDisplayName": "Hippopotas 093/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      449
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-093-low.png",
+    "imageHighSrc": "cards/swsh3-093-high.png"
+  },
+  {
+    "masterCardId": "17114",
+    "externalId": null,
+    "tcgdex_id": "swsh3-92",
+    "localId": "092",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "092/189",
+    "cardName": "Solrock",
+    "fullDisplayName": "Solrock 092/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      338
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-092-low.png",
+    "imageHighSrc": "cards/swsh3-092-high.png"
+  },
+  {
+    "masterCardId": "17108",
+    "externalId": null,
+    "tcgdex_id": "swsh3-91",
+    "localId": "091",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "091/189",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 091/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Vibrava",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-091-low.png",
+    "imageHighSrc": "cards/swsh3-091-high.png"
+  },
+  {
+    "masterCardId": "17103",
+    "externalId": null,
+    "tcgdex_id": "swsh3-90",
+    "localId": "090",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "090/189",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 090/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Trapinch",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-090-low.png",
+    "imageHighSrc": "cards/swsh3-090-high.png"
+  },
+  {
+    "masterCardId": "17096",
+    "externalId": null,
+    "tcgdex_id": "swsh3-89",
+    "localId": "089",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "089/189",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 089/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Asako Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-089-low.png",
+    "imageHighSrc": "cards/swsh3-089-high.png"
+  },
+  {
+    "masterCardId": "17091",
+    "externalId": null,
+    "tcgdex_id": "swsh3-88",
+    "localId": "088",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "088/189",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 088/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Pupitar",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-088-low.png",
+    "imageHighSrc": "cards/swsh3-088-high.png"
+  },
+  {
+    "masterCardId": "17083",
+    "externalId": null,
+    "tcgdex_id": "swsh3-87",
+    "localId": "087",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "087/189",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 087/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Larvitar",
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-087-low.png",
+    "imageHighSrc": "cards/swsh3-087-high.png"
+  },
+  {
+    "masterCardId": "17077",
+    "externalId": null,
+    "tcgdex_id": "swsh3-86",
+    "localId": "086",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "086/189",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 086/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-086-low.png",
+    "imageHighSrc": "cards/swsh3-086-high.png"
+  },
+  {
+    "masterCardId": "17071",
+    "externalId": null,
+    "tcgdex_id": "swsh3-85",
+    "localId": "085",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "085/189",
+    "cardName": "Dugtrio",
+    "fullDisplayName": "Dugtrio 085/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Diglett",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-085-low.png",
+    "imageHighSrc": "cards/swsh3-085-high.png"
+  },
+  {
+    "masterCardId": "17066",
+    "externalId": null,
+    "tcgdex_id": "swsh3-84",
+    "localId": "084",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "084/189",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 084/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-084-low.png",
+    "imageHighSrc": "cards/swsh3-084-high.png"
+  },
+  {
+    "masterCardId": "17060",
+    "externalId": null,
+    "tcgdex_id": "swsh3-83",
+    "localId": "083",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "083/189",
+    "cardName": "Polteageist",
+    "fullDisplayName": "Polteageist 083/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      855
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Sinistea",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-083-low.png",
+    "imageHighSrc": "cards/swsh3-083-high.png"
+  },
+  {
+    "masterCardId": "17054",
+    "externalId": null,
+    "tcgdex_id": "swsh3-82",
+    "localId": "082",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "082/189",
+    "cardName": "Sinistea",
+    "fullDisplayName": "Sinistea 082/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      854
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-082-low.png",
+    "imageHighSrc": "cards/swsh3-082-high.png"
+  },
+  {
+    "masterCardId": "17048",
+    "externalId": null,
+    "tcgdex_id": "swsh3-81",
+    "localId": "081",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "081/189",
+    "cardName": "Mimikyu",
+    "fullDisplayName": "Mimikyu 081/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      778
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-081-low.png",
+    "imageHighSrc": "cards/swsh3-081-high.png"
+  },
+  {
+    "masterCardId": "17044",
+    "externalId": null,
+    "tcgdex_id": "swsh3-80",
+    "localId": "080",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "080/189",
+    "cardName": "Shiinotic",
+    "fullDisplayName": "Shiinotic 080/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      756
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Morelull",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-080-low.png",
+    "imageHighSrc": "cards/swsh3-080-high.png"
+  },
+  {
+    "masterCardId": "17036",
+    "externalId": null,
+    "tcgdex_id": "swsh3-79",
+    "localId": "079",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "079/189",
+    "cardName": "Morelull",
+    "fullDisplayName": "Morelull 079/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      755
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-079-low.png",
+    "imageHighSrc": "cards/swsh3-079-high.png"
+  },
+  {
+    "masterCardId": "17030",
+    "externalId": null,
+    "tcgdex_id": "swsh3-78",
+    "localId": "078",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "078/189",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 078/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-078-low.png",
+    "imageHighSrc": "cards/swsh3-078-high.png"
+  },
+  {
+    "masterCardId": "17023",
+    "externalId": null,
+    "tcgdex_id": "swsh3-77",
+    "localId": "077",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "077/189",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 077/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Golett",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-077-low.png",
+    "imageHighSrc": "cards/swsh3-077-high.png"
+  },
+  {
+    "masterCardId": "17016",
+    "externalId": null,
+    "tcgdex_id": "swsh3-76",
+    "localId": "076",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "076/189",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 076/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-076-low.png",
+    "imageHighSrc": "cards/swsh3-076-high.png"
+  },
+  {
+    "masterCardId": "17010",
+    "externalId": null,
+    "tcgdex_id": "swsh3-75",
+    "localId": "075",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "075/189",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 075/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Gothorita",
+    "artist": "Eri Yamaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-075-low.png",
+    "imageHighSrc": "cards/swsh3-075-high.png"
+  },
+  {
+    "masterCardId": "17004",
+    "externalId": null,
+    "tcgdex_id": "swsh3-74",
+    "localId": "074",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "074/189",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 074/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Gothita",
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-074-low.png",
+    "imageHighSrc": "cards/swsh3-074-high.png"
+  },
+  {
+    "masterCardId": "17000",
+    "externalId": null,
+    "tcgdex_id": "swsh3-73",
+    "localId": "073",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "073/189",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 073/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-073-low.png",
+    "imageHighSrc": "cards/swsh3-073-high.png"
+  },
+  {
+    "masterCardId": "16990",
+    "externalId": null,
+    "tcgdex_id": "swsh3-72",
+    "localId": "072",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "072/189",
+    "cardName": "Lunatone",
+    "fullDisplayName": "Lunatone 072/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      337
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-072-low.png",
+    "imageHighSrc": "cards/swsh3-072-high.png"
+  },
+  {
+    "masterCardId": "16984",
+    "externalId": null,
+    "tcgdex_id": "swsh3-71",
+    "localId": "071",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "071/189",
+    "cardName": "Granbull",
+    "fullDisplayName": "Granbull 071/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      210
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Snubbull",
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-071-low.png",
+    "imageHighSrc": "cards/swsh3-071-high.png"
+  },
+  {
+    "masterCardId": "16977",
+    "externalId": null,
+    "tcgdex_id": "swsh3-70",
+    "localId": "070",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "070/189",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 070/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-070-low.png",
+    "imageHighSrc": "cards/swsh3-070-high.png"
+  },
+  {
+    "masterCardId": "16971",
+    "externalId": null,
+    "tcgdex_id": "swsh3-69",
+    "localId": "069",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "069/189",
+    "cardName": "Mew V",
+    "fullDisplayName": "Mew V 069/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-069-low.png",
+    "imageHighSrc": "cards/swsh3-069-high.png"
+  },
+  {
+    "masterCardId": "16960",
+    "externalId": null,
+    "tcgdex_id": "swsh3-68",
+    "localId": "068",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "068/189",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 068/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Jigglypuff",
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-068-low.png",
+    "imageHighSrc": "cards/swsh3-068-high.png"
+  },
+  {
+    "masterCardId": "16954",
+    "externalId": null,
+    "tcgdex_id": "swsh3-67",
+    "localId": "067",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "067/189",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 067/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-067-low.png",
+    "imageHighSrc": "cards/swsh3-067-high.png"
+  },
+  {
+    "masterCardId": "16947",
+    "externalId": null,
+    "tcgdex_id": "swsh3-66",
+    "localId": "066",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "066/189",
+    "cardName": "Arctozolt",
+    "fullDisplayName": "Arctozolt 066/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      881
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rare Fossil",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-066-low.png",
+    "imageHighSrc": "cards/swsh3-066-high.png"
+  },
+  {
+    "masterCardId": "16940",
+    "externalId": null,
+    "tcgdex_id": "swsh3-65",
+    "localId": "065",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "065/189",
+    "cardName": "Dracozolt",
+    "fullDisplayName": "Dracozolt 065/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      880
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rare Fossil",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-065-low.png",
+    "imageHighSrc": "cards/swsh3-065-high.png"
+  },
+  {
+    "masterCardId": "16932",
+    "externalId": null,
+    "tcgdex_id": "swsh3-64",
+    "localId": "064",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "064/189",
+    "cardName": "Pincurchin",
+    "fullDisplayName": "Pincurchin 064/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      871
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-064-low.png",
+    "imageHighSrc": "cards/swsh3-064-high.png"
+  },
+  {
+    "masterCardId": "16924",
+    "externalId": null,
+    "tcgdex_id": "swsh3-63",
+    "localId": "063",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "063/189",
+    "cardName": "Toxtricity",
+    "fullDisplayName": "Toxtricity 063/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      849
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Toxel",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-063-low.png",
+    "imageHighSrc": "cards/swsh3-063-high.png"
+  },
+  {
+    "masterCardId": "16917",
+    "externalId": null,
+    "tcgdex_id": "swsh3-62",
+    "localId": "062",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "062/189",
+    "cardName": "Toxel",
+    "fullDisplayName": "Toxel 062/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      848
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-062-low.png",
+    "imageHighSrc": "cards/swsh3-062-high.png"
+  },
+  {
+    "masterCardId": "16909",
+    "externalId": null,
+    "tcgdex_id": "swsh3-61",
+    "localId": "061",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "061/189",
+    "cardName": "Tapu Koko",
+    "fullDisplayName": "Tapu Koko 061/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      785
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-061-low.png",
+    "imageHighSrc": "cards/swsh3-061-high.png"
+  },
+  {
+    "masterCardId": "16901",
+    "externalId": null,
+    "tcgdex_id": "swsh3-60",
+    "localId": "060",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "060/189",
+    "cardName": "Vikavolt V",
+    "fullDisplayName": "Vikavolt V 060/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      738
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-060-low.png",
+    "imageHighSrc": "cards/swsh3-060-high.png"
+  },
+  {
+    "masterCardId": "16892",
+    "externalId": null,
+    "tcgdex_id": "swsh3-59",
+    "localId": "059",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "059/189",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 059/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Electrike",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-059-low.png",
+    "imageHighSrc": "cards/swsh3-059-high.png"
+  },
+  {
+    "masterCardId": "16884",
+    "externalId": null,
+    "tcgdex_id": "swsh3-58",
+    "localId": "058",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "058/189",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 058/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Yumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-058-low.png",
+    "imageHighSrc": "cards/swsh3-058-high.png"
+  },
+  {
+    "masterCardId": "16877",
+    "externalId": null,
+    "tcgdex_id": "swsh3-57",
+    "localId": "057",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "057/189",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 057/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Flaaffy",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-057-low.png",
+    "imageHighSrc": "cards/swsh3-057-high.png"
+  },
+  {
+    "masterCardId": "16869",
+    "externalId": null,
+    "tcgdex_id": "swsh3-56",
+    "localId": "056",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "056/189",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 056/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Mareep",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-056-low.png",
+    "imageHighSrc": "cards/swsh3-056-high.png"
+  },
+  {
+    "masterCardId": "16863",
+    "externalId": null,
+    "tcgdex_id": "swsh3-55",
+    "localId": "055",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "055/189",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 055/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-055-low.png",
+    "imageHighSrc": "cards/swsh3-055-high.png"
+  },
+  {
+    "masterCardId": "16856",
+    "externalId": null,
+    "tcgdex_id": "swsh3-54",
+    "localId": "054",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "054/189",
+    "cardName": "Arctovish",
+    "fullDisplayName": "Arctovish 054/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      883
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rare Fossil",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-054-low.png",
+    "imageHighSrc": "cards/swsh3-054-high.png"
+  },
+  {
+    "masterCardId": "16846",
+    "externalId": null,
+    "tcgdex_id": "swsh3-53",
+    "localId": "053",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "053/189",
+    "cardName": "Dracovish",
+    "fullDisplayName": "Dracovish 053/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      882
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rare Fossil",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-053-low.png",
+    "imageHighSrc": "cards/swsh3-053-high.png"
+  },
+  {
+    "masterCardId": "16838",
+    "externalId": null,
+    "tcgdex_id": "swsh3-52",
+    "localId": "052",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "052/189",
+    "cardName": "Toxapex",
+    "fullDisplayName": "Toxapex 052/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      748
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Mareanie",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-052-low.png",
+    "imageHighSrc": "cards/swsh3-052-high.png"
+  },
+  {
+    "masterCardId": "16833",
+    "externalId": null,
+    "tcgdex_id": "swsh3-51",
+    "localId": "051",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "051/189",
+    "cardName": "Mareanie",
+    "fullDisplayName": "Mareanie 051/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      747
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-051-low.png",
+    "imageHighSrc": "cards/swsh3-051-high.png"
+  },
+  {
+    "masterCardId": "16824",
+    "externalId": null,
+    "tcgdex_id": "swsh3-50",
+    "localId": "050",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "050/189",
+    "cardName": "Wishiwashi",
+    "fullDisplayName": "Wishiwashi 050/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      746
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-050-low.png",
+    "imageHighSrc": "cards/swsh3-050-high.png"
+  },
+  {
+    "masterCardId": "16818",
+    "externalId": null,
+    "tcgdex_id": "swsh3-49",
+    "localId": "049",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "049/189",
+    "cardName": "Beartic",
+    "fullDisplayName": "Beartic 049/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      614
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Cubchoo",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-049-low.png",
+    "imageHighSrc": "cards/swsh3-049-high.png"
+  },
+  {
+    "masterCardId": "16811",
+    "externalId": null,
+    "tcgdex_id": "swsh3-48",
+    "localId": "048",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "048/189",
+    "cardName": "Cubchoo",
+    "fullDisplayName": "Cubchoo 048/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      613
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-048-low.png",
+    "imageHighSrc": "cards/swsh3-048-high.png"
+  },
+  {
+    "masterCardId": "16802",
+    "externalId": null,
+    "tcgdex_id": "swsh3-47",
+    "localId": "047",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "047/189",
+    "cardName": "Vanilluxe",
+    "fullDisplayName": "Vanilluxe 047/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      584
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Vanillish",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-047-low.png",
+    "imageHighSrc": "cards/swsh3-047-high.png"
+  },
+  {
+    "masterCardId": "16793",
+    "externalId": null,
+    "tcgdex_id": "swsh3-46",
+    "localId": "046",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "046/189",
+    "cardName": "Vanillish",
+    "fullDisplayName": "Vanillish 046/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      583
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Vanillite",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-046-low.png",
+    "imageHighSrc": "cards/swsh3-046-high.png"
+  },
+  {
+    "masterCardId": "16785",
+    "externalId": null,
+    "tcgdex_id": "swsh3-45",
+    "localId": "045",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "045/189",
+    "cardName": "Vanillite",
+    "fullDisplayName": "Vanillite 045/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      582
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-045-low.png",
+    "imageHighSrc": "cards/swsh3-045-high.png"
+  },
+  {
+    "masterCardId": "16779",
+    "externalId": null,
+    "tcgdex_id": "swsh3-44",
+    "localId": "044",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "044/189",
+    "cardName": "Galarian Darmanitan",
+    "fullDisplayName": "Galarian Darmanitan 044/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Galarian Darumaka",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-044-low.png",
+    "imageHighSrc": "cards/swsh3-044-high.png"
+  },
+  {
+    "masterCardId": "16766",
+    "externalId": null,
+    "tcgdex_id": "swsh3-43",
+    "localId": "043",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "043/189",
+    "cardName": "Galarian Darumaka",
+    "fullDisplayName": "Galarian Darumaka 043/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-043-low.png",
+    "imageHighSrc": "cards/swsh3-043-high.png"
+  },
+  {
+    "masterCardId": "16758",
+    "externalId": null,
+    "tcgdex_id": "swsh3-42",
+    "localId": "042",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "042/189",
+    "cardName": "Simipour",
+    "fullDisplayName": "Simipour 042/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      516
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Panpour",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-042-low.png",
+    "imageHighSrc": "cards/swsh3-042-high.png"
+  },
+  {
+    "masterCardId": "16749",
+    "externalId": null,
+    "tcgdex_id": "swsh3-41",
+    "localId": "041",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "041/189",
+    "cardName": "Panpour",
+    "fullDisplayName": "Panpour 041/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      515
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-041-low.png",
+    "imageHighSrc": "cards/swsh3-041-high.png"
+  },
+  {
+    "masterCardId": "16742",
+    "externalId": null,
+    "tcgdex_id": "swsh3-40",
+    "localId": "040",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "040/189",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 040/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-040-low.png",
+    "imageHighSrc": "cards/swsh3-040-high.png"
+  },
+  {
+    "masterCardId": "16735",
+    "externalId": null,
+    "tcgdex_id": "swsh3-39",
+    "localId": "039",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "039/189",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 039/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Feebas",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-039-low.png",
+    "imageHighSrc": "cards/swsh3-039-high.png"
+  },
+  {
+    "masterCardId": "16721",
+    "externalId": null,
+    "tcgdex_id": "swsh3-38",
+    "localId": "038",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "038/189",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 038/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-038-low.png",
+    "imageHighSrc": "cards/swsh3-038-high.png"
+  },
+  {
+    "masterCardId": "16713",
+    "externalId": null,
+    "tcgdex_id": "swsh3-37",
+    "localId": "037",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "037/189",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 037/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "so-taro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-037-low.png",
+    "imageHighSrc": "cards/swsh3-037-high.png"
+  },
+  {
+    "masterCardId": "16705",
+    "externalId": null,
+    "tcgdex_id": "swsh3-36",
+    "localId": "036",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "036/189",
+    "cardName": "Galarian Mr. Rime",
+    "fullDisplayName": "Galarian Mr. Rime 036/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      866
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Galarian Mr. Mime",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-036-low.png",
+    "imageHighSrc": "cards/swsh3-036-high.png"
+  },
+  {
+    "masterCardId": "16697",
+    "externalId": null,
+    "tcgdex_id": "swsh3-35",
+    "localId": "035",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "035/189",
+    "cardName": "Galarian Mr. Mime",
+    "fullDisplayName": "Galarian Mr. Mime 035/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-035-low.png",
+    "imageHighSrc": "cards/swsh3-035-high.png"
+  },
+  {
+    "masterCardId": "16689",
+    "externalId": null,
+    "tcgdex_id": "swsh3-34",
+    "localId": "034",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "034/189",
+    "cardName": "Centiskorch VMAX",
+    "fullDisplayName": "Centiskorch VMAX 034/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Centiskorch V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-034-low.png",
+    "imageHighSrc": "cards/swsh3-034-high.png"
+  },
+  {
+    "masterCardId": "16681",
+    "externalId": null,
+    "tcgdex_id": "swsh3-33",
+    "localId": "033",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "033/189",
+    "cardName": "Centiskorch V",
+    "fullDisplayName": "Centiskorch V 033/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-033-low.png",
+    "imageHighSrc": "cards/swsh3-033-high.png"
+  },
+  {
+    "masterCardId": "16674",
+    "externalId": null,
+    "tcgdex_id": "swsh3-32",
+    "localId": "032",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "032/189",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 032/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Fletchinder",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-032-low.png",
+    "imageHighSrc": "cards/swsh3-032-high.png"
+  },
+  {
+    "masterCardId": "16666",
+    "externalId": null,
+    "tcgdex_id": "swsh3-31",
+    "localId": "031",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "031/189",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 031/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Fletchling",
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-031-low.png",
+    "imageHighSrc": "cards/swsh3-031-high.png"
+  },
+  {
+    "masterCardId": "16657",
+    "externalId": null,
+    "tcgdex_id": "swsh3-30",
+    "localId": "030",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "030/189",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 030/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Larvesta",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-030-low.png",
+    "imageHighSrc": "cards/swsh3-030-high.png"
+  },
+  {
+    "masterCardId": "16646",
+    "externalId": null,
+    "tcgdex_id": "swsh3-29",
+    "localId": "029",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "029/189",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 029/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-029-low.png",
+    "imageHighSrc": "cards/swsh3-029-high.png"
+  },
+  {
+    "masterCardId": "16639",
+    "externalId": null,
+    "tcgdex_id": "swsh3-28",
+    "localId": "028",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "028/189",
+    "cardName": "Galarian Darmanitan",
+    "fullDisplayName": "Galarian Darmanitan 028/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Galarian Darumaka",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-028-low.png",
+    "imageHighSrc": "cards/swsh3-028-high.png"
+  },
+  {
+    "masterCardId": "16631",
+    "externalId": null,
+    "tcgdex_id": "swsh3-27",
+    "localId": "027",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "027/189",
+    "cardName": "Simisear",
+    "fullDisplayName": "Simisear 027/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      514
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Pansear",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-027-low.png",
+    "imageHighSrc": "cards/swsh3-027-high.png"
+  },
+  {
+    "masterCardId": "16622",
+    "externalId": null,
+    "tcgdex_id": "swsh3-26",
+    "localId": "026",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "026/189",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 026/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Megumi Higuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-026-low.png",
+    "imageHighSrc": "cards/swsh3-026-high.png"
+  },
+  {
+    "masterCardId": "16613",
+    "externalId": null,
+    "tcgdex_id": "swsh3-25",
+    "localId": "025",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "025/189",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 025/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-025-low.png",
+    "imageHighSrc": "cards/swsh3-025-high.png"
+  },
+  {
+    "masterCardId": "16604",
+    "externalId": null,
+    "tcgdex_id": "swsh3-24",
+    "localId": "024",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "024/189",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 024/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Combusken",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-024-low.png",
+    "imageHighSrc": "cards/swsh3-024-high.png"
+  },
+  {
+    "masterCardId": "16595",
+    "externalId": null,
+    "tcgdex_id": "swsh3-23",
+    "localId": "023",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "023/189",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 023/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Torchic",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-023-low.png",
+    "imageHighSrc": "cards/swsh3-023-high.png"
+  },
+  {
+    "masterCardId": "16587",
+    "externalId": null,
+    "tcgdex_id": "swsh3-22",
+    "localId": "022",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "022/189",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 022/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-022-low.png",
+    "imageHighSrc": "cards/swsh3-022-high.png"
+  },
+  {
+    "masterCardId": "16579",
+    "externalId": null,
+    "tcgdex_id": "swsh3-21",
+    "localId": "021",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "021/189",
+    "cardName": "Houndoom V",
+    "fullDisplayName": "Houndoom V 021/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-021-low.png",
+    "imageHighSrc": "cards/swsh3-021-high.png"
+  },
+  {
+    "masterCardId": "16571",
+    "externalId": null,
+    "tcgdex_id": "swsh3-20",
+    "localId": "020",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "020/189",
+    "cardName": "Charizard VMAX",
+    "fullDisplayName": "Charizard VMAX 020/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Charizard V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-020-low.png",
+    "imageHighSrc": "cards/swsh3-020-high.png"
+  },
+  {
+    "masterCardId": "16563",
+    "externalId": null,
+    "tcgdex_id": "swsh3-19",
+    "localId": "019",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "019/189",
+    "cardName": "Charizard V",
+    "fullDisplayName": "Charizard V 019/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-019-low.png",
+    "imageHighSrc": "cards/swsh3-019-high.png"
+  },
+  {
+    "masterCardId": "16555",
+    "externalId": null,
+    "tcgdex_id": "swsh3-18",
+    "localId": "018",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "018/189",
+    "cardName": "Golisopod",
+    "fullDisplayName": "Golisopod 018/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      768
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Wimpod",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-018-low.png",
+    "imageHighSrc": "cards/swsh3-018-high.png"
+  },
+  {
+    "masterCardId": "16547",
+    "externalId": null,
+    "tcgdex_id": "swsh3-17",
+    "localId": "017",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "017/189",
+    "cardName": "Wimpod",
+    "fullDisplayName": "Wimpod 017/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      767
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-017-low.png",
+    "imageHighSrc": "cards/swsh3-017-high.png"
+  },
+  {
+    "masterCardId": "16539",
+    "externalId": null,
+    "tcgdex_id": "swsh3-16",
+    "localId": "016",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "016/189",
+    "cardName": "Tsareena",
+    "fullDisplayName": "Tsareena 016/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      763
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Steenee",
+    "artist": "so-taro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-016-low.png",
+    "imageHighSrc": "cards/swsh3-016-high.png"
+  },
+  {
+    "masterCardId": "16531",
+    "externalId": null,
+    "tcgdex_id": "swsh3-15",
+    "localId": "015",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "015/189",
+    "cardName": "Steenee",
+    "fullDisplayName": "Steenee 015/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      762
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Bounsweet",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-015-low.png",
+    "imageHighSrc": "cards/swsh3-015-high.png"
+  },
+  {
+    "masterCardId": "16523",
+    "externalId": null,
+    "tcgdex_id": "swsh3-14",
+    "localId": "014",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "014/189",
+    "cardName": "Bounsweet",
+    "fullDisplayName": "Bounsweet 014/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      761
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-014-low.png",
+    "imageHighSrc": "cards/swsh3-014-high.png"
+  },
+  {
+    "masterCardId": "16515",
+    "externalId": null,
+    "tcgdex_id": "swsh3-13",
+    "localId": "013",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "013/189",
+    "cardName": "Decidueye",
+    "fullDisplayName": "Decidueye 013/189 Darkness Ablaze",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      724
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Dartrix",
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-013-low.png",
+    "imageHighSrc": "cards/swsh3-013-high.png"
+  },
+  {
+    "masterCardId": "16508",
+    "externalId": null,
+    "tcgdex_id": "swsh3-12",
+    "localId": "012",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "012/189",
+    "cardName": "Dartrix",
+    "fullDisplayName": "Dartrix 012/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      723
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Rowlet",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-012-low.png",
+    "imageHighSrc": "cards/swsh3-012-high.png"
+  },
+  {
+    "masterCardId": "16499",
+    "externalId": null,
+    "tcgdex_id": "swsh3-11",
+    "localId": "011",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "011/189",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 011/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-011-low.png",
+    "imageHighSrc": "cards/swsh3-011-high.png"
+  },
+  {
+    "masterCardId": "16491",
+    "externalId": null,
+    "tcgdex_id": "swsh3-10",
+    "localId": "010",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "010/189",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 010/189 Darkness Ablaze",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Shelmet",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-010-low.png",
+    "imageHighSrc": "cards/swsh3-010-high.png"
+  },
+  {
+    "masterCardId": "16483",
+    "externalId": null,
+    "tcgdex_id": "swsh3-9",
+    "localId": "009",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "009/189",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 009/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-009-low.png",
+    "imageHighSrc": "cards/swsh3-009-high.png"
+  },
+  {
+    "masterCardId": "16476",
+    "externalId": null,
+    "tcgdex_id": "swsh3-8",
+    "localId": "008",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "008/189",
+    "cardName": "Karrablast",
+    "fullDisplayName": "Karrablast 008/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      588
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-008-low.png",
+    "imageHighSrc": "cards/swsh3-008-high.png"
+  },
+  {
+    "masterCardId": "16468",
+    "externalId": null,
+    "tcgdex_id": "swsh3-7",
+    "localId": "007",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "007/189",
+    "cardName": "Simisage",
+    "fullDisplayName": "Simisage 007/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      512
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Pansage",
+    "artist": "Hasegawa Saki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-007-low.png",
+    "imageHighSrc": "cards/swsh3-007-high.png"
+  },
+  {
+    "masterCardId": "16460",
+    "externalId": null,
+    "tcgdex_id": "swsh3-6",
+    "localId": "006",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "006/189",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage 006/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-006-low.png",
+    "imageHighSrc": "cards/swsh3-006-high.png"
+  },
+  {
+    "masterCardId": "16454",
+    "externalId": null,
+    "tcgdex_id": "swsh3-5",
+    "localId": "005",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "005/189",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 005/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-005-low.png",
+    "imageHighSrc": "cards/swsh3-005-high.png"
+  },
+  {
+    "masterCardId": "16447",
+    "externalId": null,
+    "tcgdex_id": "swsh3-4",
+    "localId": "004",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "004/189",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 004/189 Darkness Ablaze",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Paras",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-004-low.png",
+    "imageHighSrc": "cards/swsh3-004-high.png"
+  },
+  {
+    "masterCardId": "16439",
+    "externalId": null,
+    "tcgdex_id": "swsh3-3",
+    "localId": "003",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "003/189",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 003/189 Darkness Ablaze",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-003-low.png",
+    "imageHighSrc": "cards/swsh3-003-high.png"
+  },
+  {
+    "masterCardId": "16431",
+    "externalId": null,
+    "tcgdex_id": "swsh3-2",
+    "localId": "002",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "002/189",
+    "cardName": "Butterfree VMAX",
+    "fullDisplayName": "Butterfree VMAX 002/189 Darkness Ablaze",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 300,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Butterfree V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-002-low.png",
+    "imageHighSrc": "cards/swsh3-002-high.png"
+  },
+  {
+    "masterCardId": "16419",
+    "externalId": null,
+    "tcgdex_id": "swsh3-1",
+    "localId": "001",
+    "setCode": "swsh3",
+    "setTcgdexId": "swsh3",
+    "cardNumber": "001/189",
+    "cardName": "Butterfree V",
+    "fullDisplayName": "Butterfree V 001/189 Darkness Ablaze",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh3-001-low.png",
+    "imageHighSrc": "cards/swsh3-001-high.png"
+  }
+]

@@ -1,0 +1,4167 @@
+[
+  {
+    "masterCardId": "20099",
+    "externalId": null,
+    "tcgdex_id": "xy10-125",
+    "localId": "125",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "125/124",
+    "cardName": "Alakazam-EX",
+    "fullDisplayName": "Alakazam-EX 125/124 Fates Collide",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-125-low.png",
+    "imageHighSrc": "cards/xy10-125-high.png"
+  },
+  {
+    "masterCardId": "20096",
+    "externalId": null,
+    "tcgdex_id": "xy10-124",
+    "localId": "124",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "124/124",
+    "cardName": "Team Rocket's Handiwork",
+    "fullDisplayName": "Team Rocket's Handiwork 124/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-124-low.png",
+    "imageHighSrc": "cards/xy10-124-high.png"
+  },
+  {
+    "masterCardId": "20093",
+    "externalId": null,
+    "tcgdex_id": "xy10-123",
+    "localId": "123",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "123/124",
+    "cardName": "Altaria-EX",
+    "fullDisplayName": "Altaria-EX 123/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-123-low.png",
+    "imageHighSrc": "cards/xy10-123-high.png"
+  },
+  {
+    "masterCardId": "20090",
+    "externalId": null,
+    "tcgdex_id": "xy10-122",
+    "localId": "122",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "122/124",
+    "cardName": "Kingdra-EX",
+    "fullDisplayName": "Kingdra-EX 122/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-122-low.png",
+    "imageHighSrc": "cards/xy10-122-high.png"
+  },
+  {
+    "masterCardId": "20087",
+    "externalId": null,
+    "tcgdex_id": "xy10-121",
+    "localId": "121",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "121/124",
+    "cardName": "M Altaria-EX",
+    "fullDisplayName": "M Altaria-EX 121/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Altaria-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-121-low.png",
+    "imageHighSrc": "cards/xy10-121-high.png"
+  },
+  {
+    "masterCardId": "20084",
+    "externalId": null,
+    "tcgdex_id": "xy10-120",
+    "localId": "120",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "120/124",
+    "cardName": "Genesect-EX",
+    "fullDisplayName": "Genesect-EX 120/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-120-low.png",
+    "imageHighSrc": "cards/xy10-120-high.png"
+  },
+  {
+    "masterCardId": "20081",
+    "externalId": null,
+    "tcgdex_id": "xy10-119",
+    "localId": "119",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "119/124",
+    "cardName": "Umbreon-EX",
+    "fullDisplayName": "Umbreon-EX 119/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-119-low.png",
+    "imageHighSrc": "cards/xy10-119-high.png"
+  },
+  {
+    "masterCardId": "20077",
+    "externalId": null,
+    "tcgdex_id": "xy10-118",
+    "localId": "118",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "118/124",
+    "cardName": "M Alakazam-EX",
+    "fullDisplayName": "M Alakazam-EX 118/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Alakazam-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-118-low.png",
+    "imageHighSrc": "cards/xy10-118-high.png"
+  },
+  {
+    "masterCardId": "20072",
+    "externalId": null,
+    "tcgdex_id": "xy10-117",
+    "localId": "117",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "117/124",
+    "cardName": "Alakazam-EX",
+    "fullDisplayName": "Alakazam-EX 117/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-117-low.png",
+    "imageHighSrc": "cards/xy10-117-high.png"
+  },
+  {
+    "masterCardId": "20068",
+    "externalId": null,
+    "tcgdex_id": "xy10-116",
+    "localId": "116",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "116/124",
+    "cardName": "Glaceon-EX",
+    "fullDisplayName": "Glaceon-EX 116/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-116-low.png",
+    "imageHighSrc": "cards/xy10-116-high.png"
+  },
+  {
+    "masterCardId": "20064",
+    "externalId": null,
+    "tcgdex_id": "xy10-115",
+    "localId": "115",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "115/124",
+    "cardName": "Strong Energy",
+    "fullDisplayName": "Strong Energy 115/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-115-low.png",
+    "imageHighSrc": "cards/xy10-115-high.png"
+  },
+  {
+    "masterCardId": "20060",
+    "externalId": null,
+    "tcgdex_id": "xy10-114",
+    "localId": "114",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "114/124",
+    "cardName": "Double Colorless Energy",
+    "fullDisplayName": "Double Colorless Energy 114/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-114-low.png",
+    "imageHighSrc": "cards/xy10-114-high.png"
+  },
+  {
+    "masterCardId": "20055",
+    "externalId": null,
+    "tcgdex_id": "xy10-113",
+    "localId": "113",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "113/124",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 113/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-113-low.png",
+    "imageHighSrc": "cards/xy10-113-high.png"
+  },
+  {
+    "masterCardId": "20051",
+    "externalId": null,
+    "tcgdex_id": "xy10-112",
+    "localId": "112",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "112/124",
+    "cardName": "Team Rocket's Handiwork",
+    "fullDisplayName": "Team Rocket's Handiwork 112/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-112-low.png",
+    "imageHighSrc": "cards/xy10-112-high.png"
+  },
+  {
+    "masterCardId": "20047",
+    "externalId": null,
+    "tcgdex_id": "xy10-111a",
+    "localId": "111a",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "111a/124",
+    "cardName": "Shauna",
+    "fullDisplayName": "Shauna 111a/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-111a-low.png",
+    "imageHighSrc": "cards/xy10-111a-high.png"
+  },
+  {
+    "masterCardId": "20043",
+    "externalId": null,
+    "tcgdex_id": "xy10-111",
+    "localId": "111",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "111/124",
+    "cardName": "Shauna",
+    "fullDisplayName": "Shauna 111/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-111-low.png",
+    "imageHighSrc": "cards/xy10-111-high.png"
+  },
+  {
+    "masterCardId": "20038",
+    "externalId": null,
+    "tcgdex_id": "xy10-110",
+    "localId": "110",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "110/124",
+    "cardName": "Scorched Earth",
+    "fullDisplayName": "Scorched Earth 110/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-110-low.png",
+    "imageHighSrc": "cards/xy10-110-high.png"
+  },
+  {
+    "masterCardId": "20031",
+    "externalId": null,
+    "tcgdex_id": "xy10-109",
+    "localId": "109",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "109/124",
+    "cardName": "Random Receiver",
+    "fullDisplayName": "Random Receiver 109/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-109-low.png",
+    "imageHighSrc": "cards/xy10-109-high.png"
+  },
+  {
+    "masterCardId": "20023",
+    "externalId": null,
+    "tcgdex_id": "xy10-108",
+    "localId": "108",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "108/124",
+    "cardName": "Power Memory",
+    "fullDisplayName": "Power Memory 108/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-108-low.png",
+    "imageHighSrc": "cards/xy10-108-high.png"
+  },
+  {
+    "masterCardId": "20015",
+    "externalId": null,
+    "tcgdex_id": "xy10-107",
+    "localId": "107",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "107/124",
+    "cardName": "Pokémon Fan Club",
+    "fullDisplayName": "Pokémon Fan Club 107/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-107-low.png",
+    "imageHighSrc": "cards/xy10-107-high.png"
+  },
+  {
+    "masterCardId": "20006",
+    "externalId": null,
+    "tcgdex_id": "xy10-106",
+    "localId": "106",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "106/124",
+    "cardName": "Old Amber Aerodactyl",
+    "fullDisplayName": "Old Amber Aerodactyl 106/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-106-low.png",
+    "imageHighSrc": "cards/xy10-106-high.png"
+  },
+  {
+    "masterCardId": "19997",
+    "externalId": null,
+    "tcgdex_id": "xy10-105a",
+    "localId": "105a",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "105a/124",
+    "cardName": "N",
+    "fullDisplayName": "N 105a/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-105a-low.png",
+    "imageHighSrc": "cards/xy10-105a-high.png"
+  },
+  {
+    "masterCardId": "19988",
+    "externalId": null,
+    "tcgdex_id": "xy10-105",
+    "localId": "105",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "105/124",
+    "cardName": "N",
+    "fullDisplayName": "N 105/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-105-low.png",
+    "imageHighSrc": "cards/xy10-105-high.png"
+  },
+  {
+    "masterCardId": "19979",
+    "externalId": null,
+    "tcgdex_id": "xy10-104",
+    "localId": "104",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "104/124",
+    "cardName": "Mega Catcher",
+    "fullDisplayName": "Mega Catcher 104/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-104-low.png",
+    "imageHighSrc": "cards/xy10-104-high.png"
+  },
+  {
+    "masterCardId": "19971",
+    "externalId": null,
+    "tcgdex_id": "xy10-103",
+    "localId": "103",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "103/124",
+    "cardName": "Lass's Special",
+    "fullDisplayName": "Lass's Special 103/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-103-low.png",
+    "imageHighSrc": "cards/xy10-103-high.png"
+  },
+  {
+    "masterCardId": "19962",
+    "externalId": null,
+    "tcgdex_id": "xy10-102",
+    "localId": "102",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "102/124",
+    "cardName": "Helix Fossil Omanyte",
+    "fullDisplayName": "Helix Fossil Omanyte 102/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-102-low.png",
+    "imageHighSrc": "cards/xy10-102-high.png"
+  },
+  {
+    "masterCardId": "19955",
+    "externalId": null,
+    "tcgdex_id": "xy10-101",
+    "localId": "101",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "101/124",
+    "cardName": "Fossil Excavation Kit",
+    "fullDisplayName": "Fossil Excavation Kit 101/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-101-low.png",
+    "imageHighSrc": "cards/xy10-101-high.png"
+  },
+  {
+    "masterCardId": "19945",
+    "externalId": null,
+    "tcgdex_id": "xy10-100",
+    "localId": "100",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "100/124",
+    "cardName": "Fairy Garden",
+    "fullDisplayName": "Fairy Garden 100/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-100-low.png",
+    "imageHighSrc": "cards/xy10-100-high.png"
+  },
+  {
+    "masterCardId": "19936",
+    "externalId": null,
+    "tcgdex_id": "xy10-99",
+    "localId": "099",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "099/124",
+    "cardName": "Fairy Drop",
+    "fullDisplayName": "Fairy Drop 099/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-099-low.png",
+    "imageHighSrc": "cards/xy10-099-high.png"
+  },
+  {
+    "masterCardId": "19927",
+    "externalId": null,
+    "tcgdex_id": "xy10-98",
+    "localId": "098",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "098/124",
+    "cardName": "Energy Reset",
+    "fullDisplayName": "Energy Reset 098/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-098-low.png",
+    "imageHighSrc": "cards/xy10-098-high.png"
+  },
+  {
+    "masterCardId": "19918",
+    "externalId": null,
+    "tcgdex_id": "xy10-97",
+    "localId": "097",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "097/124",
+    "cardName": "Energy Pouch",
+    "fullDisplayName": "Energy Pouch 097/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-097-low.png",
+    "imageHighSrc": "cards/xy10-097-high.png"
+  },
+  {
+    "masterCardId": "19909",
+    "externalId": null,
+    "tcgdex_id": "xy10-96",
+    "localId": "096",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "096/124",
+    "cardName": "Dome Fossil Kabuto",
+    "fullDisplayName": "Dome Fossil Kabuto 096/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-096-low.png",
+    "imageHighSrc": "cards/xy10-096-high.png"
+  },
+  {
+    "masterCardId": "19900",
+    "externalId": null,
+    "tcgdex_id": "xy10-95",
+    "localId": "095",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "095/124",
+    "cardName": "Devolution Spray",
+    "fullDisplayName": "Devolution Spray 095/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-095-low.png",
+    "imageHighSrc": "cards/xy10-095-high.png"
+  },
+  {
+    "masterCardId": "19891",
+    "externalId": null,
+    "tcgdex_id": "xy10-94",
+    "localId": "094",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "094/124",
+    "cardName": "Chaos Tower",
+    "fullDisplayName": "Chaos Tower 094/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-094-low.png",
+    "imageHighSrc": "cards/xy10-094-high.png"
+  },
+  {
+    "masterCardId": "19883",
+    "externalId": null,
+    "tcgdex_id": "xy10-93",
+    "localId": "093",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "093/124",
+    "cardName": "Bent Spoon",
+    "fullDisplayName": "Bent Spoon 093/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-093-low.png",
+    "imageHighSrc": "cards/xy10-093-high.png"
+  },
+  {
+    "masterCardId": "19874",
+    "externalId": null,
+    "tcgdex_id": "xy10-92",
+    "localId": "092",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "092/124",
+    "cardName": "Audino Spirit Link",
+    "fullDisplayName": "Audino Spirit Link 092/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-092-low.png",
+    "imageHighSrc": "cards/xy10-092-high.png"
+  },
+  {
+    "masterCardId": "19865",
+    "externalId": null,
+    "tcgdex_id": "xy10-91",
+    "localId": "091",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "091/124",
+    "cardName": "Altaria Spirit Link",
+    "fullDisplayName": "Altaria Spirit Link 091/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-091-low.png",
+    "imageHighSrc": "cards/xy10-091-high.png"
+  },
+  {
+    "masterCardId": "19855",
+    "externalId": null,
+    "tcgdex_id": "xy10-90",
+    "localId": "090",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "090/124",
+    "cardName": "Alakazam Spirit Link",
+    "fullDisplayName": "Alakazam Spirit Link 090/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-090-low.png",
+    "imageHighSrc": "cards/xy10-090-high.png"
+  },
+  {
+    "masterCardId": "19846",
+    "externalId": null,
+    "tcgdex_id": "xy10-89",
+    "localId": "089",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "089/124",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino 089/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-089-low.png",
+    "imageHighSrc": "cards/xy10-089-high.png"
+  },
+  {
+    "masterCardId": "19837",
+    "externalId": null,
+    "tcgdex_id": "xy10-88",
+    "localId": "088",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "088/124",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino 088/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-088-low.png",
+    "imageHighSrc": "cards/xy10-088-high.png"
+  },
+  {
+    "masterCardId": "19828",
+    "externalId": null,
+    "tcgdex_id": "xy10-87",
+    "localId": "087",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "087/124",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 087/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-087-low.png",
+    "imageHighSrc": "cards/xy10-087-high.png"
+  },
+  {
+    "masterCardId": "19819",
+    "externalId": null,
+    "tcgdex_id": "xy10-86",
+    "localId": "086",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "086/124",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 086/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-086-low.png",
+    "imageHighSrc": "cards/xy10-086-high.png"
+  },
+  {
+    "masterCardId": "19810",
+    "externalId": null,
+    "tcgdex_id": "xy10-85",
+    "localId": "085",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "085/124",
+    "cardName": "M Audino-EX",
+    "fullDisplayName": "M Audino-EX 085/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Audino-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-085-low.png",
+    "imageHighSrc": "cards/xy10-085-high.png"
+  },
+  {
+    "masterCardId": "19802",
+    "externalId": null,
+    "tcgdex_id": "xy10-84",
+    "localId": "084",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "084/124",
+    "cardName": "Audino-EX",
+    "fullDisplayName": "Audino-EX 084/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-084-low.png",
+    "imageHighSrc": "cards/xy10-084-high.png"
+  },
+  {
+    "masterCardId": "19793",
+    "externalId": null,
+    "tcgdex_id": "xy10-83",
+    "localId": "083",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "083/124",
+    "cardName": "Altaria-EX",
+    "fullDisplayName": "Altaria-EX 083/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-083-low.png",
+    "imageHighSrc": "cards/xy10-083-high.png"
+  },
+  {
+    "masterCardId": "19784",
+    "externalId": null,
+    "tcgdex_id": "xy10-82",
+    "localId": "082",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "082/124",
+    "cardName": "Exploud",
+    "fullDisplayName": "Exploud 082/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      295
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Loudred",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-082-low.png",
+    "imageHighSrc": "cards/xy10-082-high.png"
+  },
+  {
+    "masterCardId": "19776",
+    "externalId": null,
+    "tcgdex_id": "xy10-81",
+    "localId": "081",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "081/124",
+    "cardName": "Loudred",
+    "fullDisplayName": "Loudred 081/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      294
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whismur",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-081-low.png",
+    "imageHighSrc": "cards/xy10-081-high.png"
+  },
+  {
+    "masterCardId": "19768",
+    "externalId": null,
+    "tcgdex_id": "xy10-80",
+    "localId": "080",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "080/124",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 080/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-080-low.png",
+    "imageHighSrc": "cards/xy10-080-high.png"
+  },
+  {
+    "masterCardId": "19760",
+    "externalId": null,
+    "tcgdex_id": "xy10-79",
+    "localId": "079",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "079/124",
+    "cardName": "Lugia BREAK",
+    "fullDisplayName": "Lugia BREAK 079/124 Fates Collide",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lugia",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-079-low.png",
+    "imageHighSrc": "cards/xy10-079-high.png"
+  },
+  {
+    "masterCardId": "19751",
+    "externalId": null,
+    "tcgdex_id": "xy10-78",
+    "localId": "078",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "078/124",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 078/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-078-low.png",
+    "imageHighSrc": "cards/xy10-078-high.png"
+  },
+  {
+    "masterCardId": "19742",
+    "externalId": null,
+    "tcgdex_id": "xy10-77",
+    "localId": "077",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "077/124",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 077/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-077-low.png",
+    "imageHighSrc": "cards/xy10-077-high.png"
+  },
+  {
+    "masterCardId": "19733",
+    "externalId": null,
+    "tcgdex_id": "xy10-76",
+    "localId": "076",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "076/124",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 076/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Old Amber Aerodactyl",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-076-low.png",
+    "imageHighSrc": "cards/xy10-076-high.png"
+  },
+  {
+    "masterCardId": "19724",
+    "externalId": null,
+    "tcgdex_id": "xy10-75",
+    "localId": "075",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "075/124",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 075/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-075-low.png",
+    "imageHighSrc": "cards/xy10-075-high.png"
+  },
+  {
+    "masterCardId": "19715",
+    "externalId": null,
+    "tcgdex_id": "xy10-74",
+    "localId": "074",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "074/124",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 074/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-074-low.png",
+    "imageHighSrc": "cards/xy10-074-high.png"
+  },
+  {
+    "masterCardId": "19705",
+    "externalId": null,
+    "tcgdex_id": "xy10-73",
+    "localId": "073",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "073/124",
+    "cardName": "Kingdra-EX",
+    "fullDisplayName": "Kingdra-EX 073/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-073-low.png",
+    "imageHighSrc": "cards/xy10-073-high.png"
+  },
+  {
+    "masterCardId": "19696",
+    "externalId": null,
+    "tcgdex_id": "xy10-72",
+    "localId": "072",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "072/124",
+    "cardName": "Diancie-EX",
+    "fullDisplayName": "Diancie-EX 072/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      719
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-072-low.png",
+    "imageHighSrc": "cards/xy10-072-high.png"
+  },
+  {
+    "masterCardId": "19686",
+    "externalId": null,
+    "tcgdex_id": "xy10-71",
+    "localId": "071",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "071/124",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 071/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-071-low.png",
+    "imageHighSrc": "cards/xy10-071-high.png"
+  },
+  {
+    "masterCardId": "19677",
+    "externalId": null,
+    "tcgdex_id": "xy10-70",
+    "localId": "070",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "070/124",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 070/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-070-low.png",
+    "imageHighSrc": "cards/xy10-070-high.png"
+  },
+  {
+    "masterCardId": "19668",
+    "externalId": null,
+    "tcgdex_id": "xy10-69",
+    "localId": "069",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "069/124",
+    "cardName": "M Altaria-EX",
+    "fullDisplayName": "M Altaria-EX 069/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Altaria-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-069-low.png",
+    "imageHighSrc": "cards/xy10-069-high.png"
+  },
+  {
+    "masterCardId": "19658",
+    "externalId": null,
+    "tcgdex_id": "xy10-68",
+    "localId": "068",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "068/124",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 068/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-068-low.png",
+    "imageHighSrc": "cards/xy10-068-high.png"
+  },
+  {
+    "masterCardId": "19650",
+    "externalId": null,
+    "tcgdex_id": "xy10-67",
+    "localId": "067",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "067/124",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 067/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-067-low.png",
+    "imageHighSrc": "cards/xy10-067-high.png"
+  },
+  {
+    "masterCardId": "19639",
+    "externalId": null,
+    "tcgdex_id": "xy10-66",
+    "localId": "066",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "066/124",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 066/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-066-low.png",
+    "imageHighSrc": "cards/xy10-066-high.png"
+  },
+  {
+    "masterCardId": "19629",
+    "externalId": null,
+    "tcgdex_id": "xy10-65",
+    "localId": "065",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "065/124",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 065/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-065-low.png",
+    "imageHighSrc": "cards/xy10-065-high.png"
+  },
+  {
+    "masterCardId": "19620",
+    "externalId": null,
+    "tcgdex_id": "xy10-64",
+    "localId": "064",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "064/124",
+    "cardName": "Genesect-EX",
+    "fullDisplayName": "Genesect-EX 064/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-064-low.png",
+    "imageHighSrc": "cards/xy10-064-high.png"
+  },
+  {
+    "masterCardId": "19613",
+    "externalId": null,
+    "tcgdex_id": "xy10-63",
+    "localId": "063",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "063/124",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 063/124 Fates Collide",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-063-low.png",
+    "imageHighSrc": "cards/xy10-063-high.png"
+  },
+  {
+    "masterCardId": "19604",
+    "externalId": null,
+    "tcgdex_id": "xy10-62",
+    "localId": "062",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "062/124",
+    "cardName": "Bronzong BREAK",
+    "fullDisplayName": "Bronzong BREAK 062/124 Fates Collide",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzong",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-062-low.png",
+    "imageHighSrc": "cards/xy10-062-high.png"
+  },
+  {
+    "masterCardId": "19596",
+    "externalId": null,
+    "tcgdex_id": "xy10-61",
+    "localId": "061",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "061/124",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 061/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-061-low.png",
+    "imageHighSrc": "cards/xy10-061-high.png"
+  },
+  {
+    "masterCardId": "19586",
+    "externalId": null,
+    "tcgdex_id": "xy10-60",
+    "localId": "060",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "060/124",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 060/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-060-low.png",
+    "imageHighSrc": "cards/xy10-060-high.png"
+  },
+  {
+    "masterCardId": "19577",
+    "externalId": null,
+    "tcgdex_id": "xy10-59",
+    "localId": "059",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "059/124",
+    "cardName": "Wormadam",
+    "fullDisplayName": "Wormadam 059/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-059-low.png",
+    "imageHighSrc": "cards/xy10-059-high.png"
+  },
+  {
+    "masterCardId": "19568",
+    "externalId": null,
+    "tcgdex_id": "xy10-58",
+    "localId": "058",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "058/124",
+    "cardName": "Mandibuzz",
+    "fullDisplayName": "Mandibuzz 058/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      630
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vullaby",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-058-low.png",
+    "imageHighSrc": "cards/xy10-058-high.png"
+  },
+  {
+    "masterCardId": "19559",
+    "externalId": null,
+    "tcgdex_id": "xy10-57",
+    "localId": "057",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "057/124",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 057/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-057-low.png",
+    "imageHighSrc": "cards/xy10-057-high.png"
+  },
+  {
+    "masterCardId": "19550",
+    "externalId": null,
+    "tcgdex_id": "xy10-56",
+    "localId": "056",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "056/124",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 056/124 Fates Collide",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-056-low.png",
+    "imageHighSrc": "cards/xy10-056-high.png"
+  },
+  {
+    "masterCardId": "19541",
+    "externalId": null,
+    "tcgdex_id": "xy10-55",
+    "localId": "055",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "055/124",
+    "cardName": "Umbreon-EX",
+    "fullDisplayName": "Umbreon-EX 055/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-055-low.png",
+    "imageHighSrc": "cards/xy10-055-high.png"
+  },
+  {
+    "masterCardId": "19533",
+    "externalId": null,
+    "tcgdex_id": "xy10-54a",
+    "localId": "54a",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "54a/124",
+    "cardName": "Zygarde-EX",
+    "fullDisplayName": "Zygarde-EX 54a/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-54a-low.png",
+    "imageHighSrc": "cards/xy10-54a-high.png"
+  },
+  {
+    "masterCardId": "19523",
+    "externalId": null,
+    "tcgdex_id": "xy10-54",
+    "localId": "054",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "054/124",
+    "cardName": "Zygarde-EX",
+    "fullDisplayName": "Zygarde-EX 054/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-054-low.png",
+    "imageHighSrc": "cards/xy10-054-high.png"
+  },
+  {
+    "masterCardId": "19513",
+    "externalId": null,
+    "tcgdex_id": "xy10-53",
+    "localId": "053",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "053/124",
+    "cardName": "Zygarde",
+    "fullDisplayName": "Zygarde 053/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-053-low.png",
+    "imageHighSrc": "cards/xy10-053-high.png"
+  },
+  {
+    "masterCardId": "19504",
+    "externalId": null,
+    "tcgdex_id": "xy10-52",
+    "localId": "052",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "052/124",
+    "cardName": "Zygarde",
+    "fullDisplayName": "Zygarde 052/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-052-low.png",
+    "imageHighSrc": "cards/xy10-052-high.png"
+  },
+  {
+    "masterCardId": "19495",
+    "externalId": null,
+    "tcgdex_id": "xy10-51",
+    "localId": "051",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "051/124",
+    "cardName": "Carbink BREAK",
+    "fullDisplayName": "Carbink BREAK 051/124 Fates Collide",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carbink",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-051-low.png",
+    "imageHighSrc": "cards/xy10-051-high.png"
+  },
+  {
+    "masterCardId": "19486",
+    "externalId": null,
+    "tcgdex_id": "xy10-50",
+    "localId": "050",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "050/124",
+    "cardName": "Carbink",
+    "fullDisplayName": "Carbink 050/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-050-low.png",
+    "imageHighSrc": "cards/xy10-050-high.png"
+  },
+  {
+    "masterCardId": "19477",
+    "externalId": null,
+    "tcgdex_id": "xy10-49",
+    "localId": "049",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "049/124",
+    "cardName": "Carbink",
+    "fullDisplayName": "Carbink 049/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-049-low.png",
+    "imageHighSrc": "cards/xy10-049-high.png"
+  },
+  {
+    "masterCardId": "19467",
+    "externalId": null,
+    "tcgdex_id": "xy10-48",
+    "localId": "048",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "048/124",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 048/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-048-low.png",
+    "imageHighSrc": "cards/xy10-048-high.png"
+  },
+  {
+    "masterCardId": "19458",
+    "externalId": null,
+    "tcgdex_id": "xy10-47",
+    "localId": "047",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "047/124",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 047/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-047-low.png",
+    "imageHighSrc": "cards/xy10-047-high.png"
+  },
+  {
+    "masterCardId": "19450",
+    "externalId": null,
+    "tcgdex_id": "xy10-46",
+    "localId": "046",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "046/124",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 046/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-046-low.png",
+    "imageHighSrc": "cards/xy10-046-high.png"
+  },
+  {
+    "masterCardId": "19440",
+    "externalId": null,
+    "tcgdex_id": "xy10-45",
+    "localId": "045",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "045/124",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 045/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-045-low.png",
+    "imageHighSrc": "cards/xy10-045-high.png"
+  },
+  {
+    "masterCardId": "19432",
+    "externalId": null,
+    "tcgdex_id": "xy10-44",
+    "localId": "044",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "044/124",
+    "cardName": "Wormadam",
+    "fullDisplayName": "Wormadam 044/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-044-low.png",
+    "imageHighSrc": "cards/xy10-044-high.png"
+  },
+  {
+    "masterCardId": "19422",
+    "externalId": null,
+    "tcgdex_id": "xy10-43a",
+    "localId": "43a",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "43a/124",
+    "cardName": "Regirock-EX",
+    "fullDisplayName": "Regirock-EX 43a/124 Fates Collide",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      377
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-43a-low.png",
+    "imageHighSrc": "cards/xy10-43a-high.png"
+  },
+  {
+    "masterCardId": "19413",
+    "externalId": null,
+    "tcgdex_id": "xy10-43",
+    "localId": "043",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "043/124",
+    "cardName": "Regirock-EX",
+    "fullDisplayName": "Regirock-EX 043/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      377
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-043-low.png",
+    "imageHighSrc": "cards/xy10-043-high.png"
+  },
+  {
+    "masterCardId": "19404",
+    "externalId": null,
+    "tcgdex_id": "xy10-42",
+    "localId": "042",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "042/124",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 042/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-042-low.png",
+    "imageHighSrc": "cards/xy10-042-high.png"
+  },
+  {
+    "masterCardId": "19395",
+    "externalId": null,
+    "tcgdex_id": "xy10-41",
+    "localId": "041",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "041/124",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 041/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-041-low.png",
+    "imageHighSrc": "cards/xy10-041-high.png"
+  },
+  {
+    "masterCardId": "19386",
+    "externalId": null,
+    "tcgdex_id": "xy10-40",
+    "localId": "040",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "040/124",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 040/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-040-low.png",
+    "imageHighSrc": "cards/xy10-040-high.png"
+  },
+  {
+    "masterCardId": "19377",
+    "externalId": null,
+    "tcgdex_id": "xy10-39",
+    "localId": "039",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "039/124",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 039/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-039-low.png",
+    "imageHighSrc": "cards/xy10-039-high.png"
+  },
+  {
+    "masterCardId": "19367",
+    "externalId": null,
+    "tcgdex_id": "xy10-38",
+    "localId": "038",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "038/124",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 038/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dome Fossil Kabuto",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-038-low.png",
+    "imageHighSrc": "cards/xy10-038-high.png"
+  },
+  {
+    "masterCardId": "19356",
+    "externalId": null,
+    "tcgdex_id": "xy10-37",
+    "localId": "037",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "037/124",
+    "cardName": "Marowak",
+    "fullDisplayName": "Marowak 037/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-037-low.png",
+    "imageHighSrc": "cards/xy10-037-high.png"
+  },
+  {
+    "masterCardId": "19346",
+    "externalId": null,
+    "tcgdex_id": "xy10-36",
+    "localId": "036",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "036/124",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 036/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-036-low.png",
+    "imageHighSrc": "cards/xy10-036-high.png"
+  },
+  {
+    "masterCardId": "19336",
+    "externalId": null,
+    "tcgdex_id": "xy10-35",
+    "localId": "035",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "035/124",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 035/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duosion",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-035-low.png",
+    "imageHighSrc": "cards/xy10-035-high.png"
+  },
+  {
+    "masterCardId": "19326",
+    "externalId": null,
+    "tcgdex_id": "xy10-34",
+    "localId": "034",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "034/124",
+    "cardName": "Duosion",
+    "fullDisplayName": "Duosion 034/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      578
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Solosis",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-034-low.png",
+    "imageHighSrc": "cards/xy10-034-high.png"
+  },
+  {
+    "masterCardId": "19316",
+    "externalId": null,
+    "tcgdex_id": "xy10-33",
+    "localId": "033",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "033/124",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 033/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-033-low.png",
+    "imageHighSrc": "cards/xy10-033-high.png"
+  },
+  {
+    "masterCardId": "19306",
+    "externalId": null,
+    "tcgdex_id": "xy10-32",
+    "localId": "032",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "032/124",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 032/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-032-low.png",
+    "imageHighSrc": "cards/xy10-032-high.png"
+  },
+  {
+    "masterCardId": "19296",
+    "externalId": null,
+    "tcgdex_id": "xy10-31",
+    "localId": "031",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "031/124",
+    "cardName": "Grumpig",
+    "fullDisplayName": "Grumpig 031/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      326
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spoink",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-031-low.png",
+    "imageHighSrc": "cards/xy10-031-high.png"
+  },
+  {
+    "masterCardId": "19286",
+    "externalId": null,
+    "tcgdex_id": "xy10-30",
+    "localId": "030",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "030/124",
+    "cardName": "Spoink",
+    "fullDisplayName": "Spoink 030/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      325
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-030-low.png",
+    "imageHighSrc": "cards/xy10-030-high.png"
+  },
+  {
+    "masterCardId": "19276",
+    "externalId": null,
+    "tcgdex_id": "xy10-29",
+    "localId": "029",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "029/124",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 029/124 Fates Collide",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-029-low.png",
+    "imageHighSrc": "cards/xy10-029-high.png"
+  },
+  {
+    "masterCardId": "19266",
+    "externalId": null,
+    "tcgdex_id": "xy10-28",
+    "localId": "028",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "028/124",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 028/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-028-low.png",
+    "imageHighSrc": "cards/xy10-028-high.png"
+  },
+  {
+    "masterCardId": "19257",
+    "externalId": null,
+    "tcgdex_id": "xy10-27",
+    "localId": "027",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "027/124",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 027/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-027-low.png",
+    "imageHighSrc": "cards/xy10-027-high.png"
+  },
+  {
+    "masterCardId": "19247",
+    "externalId": null,
+    "tcgdex_id": "xy10-26",
+    "localId": "026",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "026/124",
+    "cardName": "M Alakazam-EX",
+    "fullDisplayName": "M Alakazam-EX 026/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Alakazam-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-026-low.png",
+    "imageHighSrc": "cards/xy10-026-high.png"
+  },
+  {
+    "masterCardId": "19237",
+    "externalId": null,
+    "tcgdex_id": "xy10-25",
+    "localId": "025",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "025/124",
+    "cardName": "Alakazam-EX",
+    "fullDisplayName": "Alakazam-EX 025/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-025-low.png",
+    "imageHighSrc": "cards/xy10-025-high.png"
+  },
+  {
+    "masterCardId": "19227",
+    "externalId": null,
+    "tcgdex_id": "xy10-24",
+    "localId": "024",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "024/124",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 024/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-024-low.png",
+    "imageHighSrc": "cards/xy10-024-high.png"
+  },
+  {
+    "masterCardId": "19216",
+    "externalId": null,
+    "tcgdex_id": "xy10-23",
+    "localId": "023",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "023/124",
+    "cardName": "Barbaracle",
+    "fullDisplayName": "Barbaracle 023/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      689
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Binacle",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-023-low.png",
+    "imageHighSrc": "cards/xy10-023-high.png"
+  },
+  {
+    "masterCardId": "19206",
+    "externalId": null,
+    "tcgdex_id": "xy10-22",
+    "localId": "022",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "022/124",
+    "cardName": "Binacle",
+    "fullDisplayName": "Binacle 022/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      688
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-022-low.png",
+    "imageHighSrc": "cards/xy10-022-high.png"
+  },
+  {
+    "masterCardId": "19196",
+    "externalId": null,
+    "tcgdex_id": "xy10-21",
+    "localId": "021",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "021/124",
+    "cardName": "White Kyurem",
+    "fullDisplayName": "White Kyurem 021/124 Fates Collide",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-021-low.png",
+    "imageHighSrc": "cards/xy10-021-high.png"
+  },
+  {
+    "masterCardId": "19186",
+    "externalId": null,
+    "tcgdex_id": "xy10-20",
+    "localId": "020",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "020/124",
+    "cardName": "Glaceon-EX",
+    "fullDisplayName": "Glaceon-EX 020/124 Fates Collide",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-020-low.png",
+    "imageHighSrc": "cards/xy10-020-high.png"
+  },
+  {
+    "masterCardId": "19176",
+    "externalId": null,
+    "tcgdex_id": "xy10-19",
+    "localId": "019",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "019/124",
+    "cardName": "Omastar BREAK",
+    "fullDisplayName": "Omastar BREAK 019/124 Fates Collide",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omastar",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-019-low.png",
+    "imageHighSrc": "cards/xy10-019-high.png"
+  },
+  {
+    "masterCardId": "19167",
+    "externalId": null,
+    "tcgdex_id": "xy10-18",
+    "localId": "018",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "018/124",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 018/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-018-low.png",
+    "imageHighSrc": "cards/xy10-018-high.png"
+  },
+  {
+    "masterCardId": "19156",
+    "externalId": null,
+    "tcgdex_id": "xy10-17",
+    "localId": "017",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "017/124",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 017/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Helix Fossil Omanyte",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-017-low.png",
+    "imageHighSrc": "cards/xy10-017-high.png"
+  },
+  {
+    "masterCardId": "19145",
+    "externalId": null,
+    "tcgdex_id": "xy10-16",
+    "localId": "016",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "016/124",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 016/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-016-low.png",
+    "imageHighSrc": "cards/xy10-016-high.png"
+  },
+  {
+    "masterCardId": "19135",
+    "externalId": null,
+    "tcgdex_id": "xy10-15",
+    "localId": "015",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "015/124",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 015/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-015-low.png",
+    "imageHighSrc": "cards/xy10-015-high.png"
+  },
+  {
+    "masterCardId": "19124",
+    "externalId": null,
+    "tcgdex_id": "xy10-14",
+    "localId": "014",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "014/124",
+    "cardName": "Delphox BREAK",
+    "fullDisplayName": "Delphox BREAK 014/124 Fates Collide",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      655
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Delphox",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-014-low.png",
+    "imageHighSrc": "cards/xy10-014-high.png"
+  },
+  {
+    "masterCardId": "19114",
+    "externalId": null,
+    "tcgdex_id": "xy10-13",
+    "localId": "013",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "013/124",
+    "cardName": "Delphox",
+    "fullDisplayName": "Delphox 013/124 Fates Collide",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      655
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Braixen",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-013-low.png",
+    "imageHighSrc": "cards/xy10-013-high.png"
+  },
+  {
+    "masterCardId": "19104",
+    "externalId": null,
+    "tcgdex_id": "xy10-12",
+    "localId": "012",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "012/124",
+    "cardName": "Braixen",
+    "fullDisplayName": "Braixen 012/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      654
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fennekin",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-012-low.png",
+    "imageHighSrc": "cards/xy10-012-high.png"
+  },
+  {
+    "masterCardId": "19094",
+    "externalId": null,
+    "tcgdex_id": "xy10-11",
+    "localId": "011",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "011/124",
+    "cardName": "Fennekin",
+    "fullDisplayName": "Fennekin 011/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      653
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-011-low.png",
+    "imageHighSrc": "cards/xy10-011-high.png"
+  },
+  {
+    "masterCardId": "19084",
+    "externalId": null,
+    "tcgdex_id": "xy10-10",
+    "localId": "010",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "010/124",
+    "cardName": "Fennekin",
+    "fullDisplayName": "Fennekin 010/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      653
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-010-low.png",
+    "imageHighSrc": "cards/xy10-010-high.png"
+  },
+  {
+    "masterCardId": "19074",
+    "externalId": null,
+    "tcgdex_id": "xy10-9",
+    "localId": "009",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "009/124",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 009/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OOYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-009-low.png",
+    "imageHighSrc": "cards/xy10-009-high.png"
+  },
+  {
+    "masterCardId": "19064",
+    "externalId": null,
+    "tcgdex_id": "xy10-8",
+    "localId": "008",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "008/124",
+    "cardName": "Deerling",
+    "fullDisplayName": "Deerling 008/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      585
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-008-low.png",
+    "imageHighSrc": "cards/xy10-008-high.png"
+  },
+  {
+    "masterCardId": "19054",
+    "externalId": null,
+    "tcgdex_id": "xy10-7",
+    "localId": "007",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "007/124",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 007/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-007-low.png",
+    "imageHighSrc": "cards/xy10-007-high.png"
+  },
+  {
+    "masterCardId": "19044",
+    "externalId": null,
+    "tcgdex_id": "xy10-6",
+    "localId": "006",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "006/124",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 006/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snivy",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-006-low.png",
+    "imageHighSrc": "cards/xy10-006-high.png"
+  },
+  {
+    "masterCardId": "19034",
+    "externalId": null,
+    "tcgdex_id": "xy10-5",
+    "localId": "005",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "005/124",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 005/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-005-low.png",
+    "imageHighSrc": "cards/xy10-005-high.png"
+  },
+  {
+    "masterCardId": "19024",
+    "externalId": null,
+    "tcgdex_id": "xy10-4",
+    "localId": "004",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "004/124",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 004/124 Fates Collide",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-004-low.png",
+    "imageHighSrc": "cards/xy10-004-high.png"
+  },
+  {
+    "masterCardId": "19014",
+    "externalId": null,
+    "tcgdex_id": "xy10-3",
+    "localId": "003",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "003/124",
+    "cardName": "Wormadam",
+    "fullDisplayName": "Wormadam 003/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-003-low.png",
+    "imageHighSrc": "cards/xy10-003-high.png"
+  },
+  {
+    "masterCardId": "19004",
+    "externalId": null,
+    "tcgdex_id": "xy10-2",
+    "localId": "002",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "002/124",
+    "cardName": "Burmy",
+    "fullDisplayName": "Burmy 002/124 Fates Collide",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-002-low.png",
+    "imageHighSrc": "cards/xy10-002-high.png"
+  },
+  {
+    "masterCardId": "18994",
+    "externalId": null,
+    "tcgdex_id": "xy10-1",
+    "localId": "001",
+    "setCode": "xy10",
+    "setTcgdexId": "xy10",
+    "cardNumber": "001/124",
+    "cardName": "Shuckle",
+    "fullDisplayName": "Shuckle 001/124 Fates Collide",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      213
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy10-001-low.png",
+    "imageHighSrc": "cards/xy10-001-high.png"
+  }
+]

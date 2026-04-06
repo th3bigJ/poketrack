@@ -1,0 +1,3117 @@
+[
+  {
+    "masterCardId": "11644",
+    "externalId": null,
+    "tcgdex_id": "sma-SV94",
+    "localId": "SV94",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV94/94",
+    "cardName": "Tapu Lele-GX",
+    "fullDisplayName": "Tapu Lele-GX SV94/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      786
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV94-low.png",
+    "imageHighSrc": "cards/sma-SV94-high.png"
+  },
+  {
+    "masterCardId": "11638",
+    "externalId": null,
+    "tcgdex_id": "sma-SV93",
+    "localId": "SV93",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV93/94",
+    "cardName": "Tapu Koko-GX",
+    "fullDisplayName": "Tapu Koko-GX SV93/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      785
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV93-low.png",
+    "imageHighSrc": "cards/sma-SV93-high.png"
+  },
+  {
+    "masterCardId": "11631",
+    "externalId": null,
+    "tcgdex_id": "sma-SV92",
+    "localId": "SV92",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV92/94",
+    "cardName": "Tapu Fini-GX",
+    "fullDisplayName": "Tapu Fini-GX SV92/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      788
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV92-low.png",
+    "imageHighSrc": "cards/sma-SV92-high.png"
+  },
+  {
+    "masterCardId": "11625",
+    "externalId": null,
+    "tcgdex_id": "sma-SV91",
+    "localId": "SV91",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV91/94",
+    "cardName": "Tapu Bulu-GX",
+    "fullDisplayName": "Tapu Bulu-GX SV91/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      787
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV91-low.png",
+    "imageHighSrc": "cards/sma-SV91-high.png"
+  },
+  {
+    "masterCardId": "11619",
+    "externalId": null,
+    "tcgdex_id": "sma-SV90",
+    "localId": "SV90",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV90/94",
+    "cardName": "Shrine of Punishment",
+    "fullDisplayName": "Shrine of Punishment SV90/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV90-low.png",
+    "imageHighSrc": "cards/sma-SV90-high.png"
+  },
+  {
+    "masterCardId": "11613",
+    "externalId": null,
+    "tcgdex_id": "sma-SV89",
+    "localId": "SV89",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV89/94",
+    "cardName": "Mt. Coronet",
+    "fullDisplayName": "Mt. Coronet SV89/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV89-low.png",
+    "imageHighSrc": "cards/sma-SV89-high.png"
+  },
+  {
+    "masterCardId": "11607",
+    "externalId": null,
+    "tcgdex_id": "sma-SV88",
+    "localId": "SV88",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV88/94",
+    "cardName": "Brooklet Hill",
+    "fullDisplayName": "Brooklet Hill SV88/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV88-low.png",
+    "imageHighSrc": "cards/sma-SV88-high.png"
+  },
+  {
+    "masterCardId": "11602",
+    "externalId": null,
+    "tcgdex_id": "sma-SV87",
+    "localId": "SV87",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV87/94",
+    "cardName": "Aether Paradise Conservation Area",
+    "fullDisplayName": "Aether Paradise Conservation Area SV87/94 Yellow A Alternate",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV87-low.png",
+    "imageHighSrc": "cards/sma-SV87-high.png"
+  },
+  {
+    "masterCardId": "11593",
+    "externalId": null,
+    "tcgdex_id": "sma-SV86",
+    "localId": "SV86",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV86/94",
+    "cardName": "Lady",
+    "fullDisplayName": "Lady SV86/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV86-low.png",
+    "imageHighSrc": "cards/sma-SV86-high.png"
+  },
+  {
+    "masterCardId": "11587",
+    "externalId": null,
+    "tcgdex_id": "sma-SV85",
+    "localId": "SV85",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV85/94",
+    "cardName": "Hiker",
+    "fullDisplayName": "Hiker SV85/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV85-low.png",
+    "imageHighSrc": "cards/sma-SV85-high.png"
+  },
+  {
+    "masterCardId": "11580",
+    "externalId": null,
+    "tcgdex_id": "sma-SV84",
+    "localId": "SV84",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV84/94",
+    "cardName": "Guzma",
+    "fullDisplayName": "Guzma SV84/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV84-low.png",
+    "imageHighSrc": "cards/sma-SV84-high.png"
+  },
+  {
+    "masterCardId": "11575",
+    "externalId": null,
+    "tcgdex_id": "sma-SV83",
+    "localId": "SV83",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV83/94",
+    "cardName": "Fisherman",
+    "fullDisplayName": "Fisherman SV83/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV83-low.png",
+    "imageHighSrc": "cards/sma-SV83-high.png"
+  },
+  {
+    "masterCardId": "11569",
+    "externalId": null,
+    "tcgdex_id": "sma-SV82",
+    "localId": "SV82",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV82/94",
+    "cardName": "Cynthia",
+    "fullDisplayName": "Cynthia SV82/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV82-low.png",
+    "imageHighSrc": "cards/sma-SV82-high.png"
+  },
+  {
+    "masterCardId": "11563",
+    "externalId": null,
+    "tcgdex_id": "sma-SV81",
+    "localId": "SV81",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV81/94",
+    "cardName": "Aether Foundation Employee",
+    "fullDisplayName": "Aether Foundation Employee SV81/94 Yellow A Alternate",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV81-low.png",
+    "imageHighSrc": "cards/sma-SV81-high.png"
+  },
+  {
+    "masterCardId": "11557",
+    "externalId": null,
+    "tcgdex_id": "sma-SV80",
+    "localId": "SV80",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV80/94",
+    "cardName": "Drampa-GX",
+    "fullDisplayName": "Drampa-GX SV80/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      780
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV80-low.png",
+    "imageHighSrc": "cards/sma-SV80-high.png"
+  },
+  {
+    "masterCardId": "11551",
+    "externalId": null,
+    "tcgdex_id": "sma-SV79",
+    "localId": "SV79",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV79/94",
+    "cardName": "Silvally-GX",
+    "fullDisplayName": "Silvally-GX SV79/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      773
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Type: Null",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV79-low.png",
+    "imageHighSrc": "cards/sma-SV79-high.png"
+  },
+  {
+    "masterCardId": "11545",
+    "externalId": null,
+    "tcgdex_id": "sma-SV78",
+    "localId": "SV78",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV78/94",
+    "cardName": "Noivern-GX",
+    "fullDisplayName": "Noivern-GX SV78/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      715
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Noibat",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV78-low.png",
+    "imageHighSrc": "cards/sma-SV78-high.png"
+  },
+  {
+    "masterCardId": "11539",
+    "externalId": null,
+    "tcgdex_id": "sma-SV77",
+    "localId": "SV77",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV77/94",
+    "cardName": "Altaria-GX",
+    "fullDisplayName": "Altaria-GX SV77/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV77-low.png",
+    "imageHighSrc": "cards/sma-SV77-high.png"
+  },
+  {
+    "masterCardId": "11532",
+    "externalId": null,
+    "tcgdex_id": "sma-SV76",
+    "localId": "SV76",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV76/94",
+    "cardName": "Sylveon-GX",
+    "fullDisplayName": "Sylveon-GX SV76/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      700
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV76-low.png",
+    "imageHighSrc": "cards/sma-SV76-high.png"
+  },
+  {
+    "masterCardId": "11525",
+    "externalId": null,
+    "tcgdex_id": "sma-SV75",
+    "localId": "SV75",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV75/94",
+    "cardName": "Gardevoir-GX",
+    "fullDisplayName": "Gardevoir-GX SV75/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 230,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV75-low.png",
+    "imageHighSrc": "cards/sma-SV75-high.png"
+  },
+  {
+    "masterCardId": "11518",
+    "externalId": null,
+    "tcgdex_id": "sma-SV74",
+    "localId": "SV74",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV74/94",
+    "cardName": "Stakataka-GX",
+    "fullDisplayName": "Stakataka-GX SV74/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      805
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV74-low.png",
+    "imageHighSrc": "cards/sma-SV74-high.png"
+  },
+  {
+    "masterCardId": "11512",
+    "externalId": null,
+    "tcgdex_id": "sma-SV73",
+    "localId": "SV73",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV73/94",
+    "cardName": "Kartana-GX",
+    "fullDisplayName": "Kartana-GX SV73/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      798
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV73-low.png",
+    "imageHighSrc": "cards/sma-SV73-high.png"
+  },
+  {
+    "masterCardId": "11505",
+    "externalId": null,
+    "tcgdex_id": "sma-SV72",
+    "localId": "SV72",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV72/94",
+    "cardName": "Scizor-GX",
+    "fullDisplayName": "Scizor-GX SV72/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV72-low.png",
+    "imageHighSrc": "cards/sma-SV72-high.png"
+  },
+  {
+    "masterCardId": "11498",
+    "externalId": null,
+    "tcgdex_id": "sma-SV71",
+    "localId": "SV71",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV71/94",
+    "cardName": "Guzzlord-GX",
+    "fullDisplayName": "Guzzlord-GX SV71/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      799
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV71-low.png",
+    "imageHighSrc": "cards/sma-SV71-high.png"
+  },
+  {
+    "masterCardId": "11491",
+    "externalId": null,
+    "tcgdex_id": "sma-SV70",
+    "localId": "SV70",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV70/94",
+    "cardName": "Darkrai-GX",
+    "fullDisplayName": "Darkrai-GX SV70/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV70-low.png",
+    "imageHighSrc": "cards/sma-SV70-high.png"
+  },
+  {
+    "masterCardId": "11484",
+    "externalId": null,
+    "tcgdex_id": "sma-SV69",
+    "localId": "SV69",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV69/94",
+    "cardName": "Umbreon-GX",
+    "fullDisplayName": "Umbreon-GX SV69/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV69-low.png",
+    "imageHighSrc": "cards/sma-SV69-high.png"
+  },
+  {
+    "masterCardId": "11477",
+    "externalId": null,
+    "tcgdex_id": "sma-SV68",
+    "localId": "SV68",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV68/94",
+    "cardName": "Buzzwole-GX",
+    "fullDisplayName": "Buzzwole-GX SV68/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      794
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV68-low.png",
+    "imageHighSrc": "cards/sma-SV68-high.png"
+  },
+  {
+    "masterCardId": "11470",
+    "externalId": null,
+    "tcgdex_id": "sma-SV67",
+    "localId": "SV67",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV67/94",
+    "cardName": "Lycanroc-GX",
+    "fullDisplayName": "Lycanroc-GX SV67/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      745
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rockruff",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV67-low.png",
+    "imageHighSrc": "cards/sma-SV67-high.png"
+  },
+  {
+    "masterCardId": "11463",
+    "externalId": null,
+    "tcgdex_id": "sma-SV66",
+    "localId": "SV66",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV66/94",
+    "cardName": "Lycanroc-GX",
+    "fullDisplayName": "Lycanroc-GX SV66/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      745
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rockruff",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV66-low.png",
+    "imageHighSrc": "cards/sma-SV66-high.png"
+  },
+  {
+    "masterCardId": "11456",
+    "externalId": null,
+    "tcgdex_id": "sma-SV65",
+    "localId": "SV65",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV65/94",
+    "cardName": "Zygarde-GX",
+    "fullDisplayName": "Zygarde-GX SV65/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV65-low.png",
+    "imageHighSrc": "cards/sma-SV65-high.png"
+  },
+  {
+    "masterCardId": "11449",
+    "externalId": null,
+    "tcgdex_id": "sma-SV64",
+    "localId": "SV64",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV64/94",
+    "cardName": "Lucario-GX",
+    "fullDisplayName": "Lucario-GX SV64/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV64-low.png",
+    "imageHighSrc": "cards/sma-SV64-high.png"
+  },
+  {
+    "masterCardId": "11442",
+    "externalId": null,
+    "tcgdex_id": "sma-SV63",
+    "localId": "SV63",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV63/94",
+    "cardName": "Naganadel-GX",
+    "fullDisplayName": "Naganadel-GX SV63/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      804
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poipole",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV63-low.png",
+    "imageHighSrc": "cards/sma-SV63-high.png"
+  },
+  {
+    "masterCardId": "11436",
+    "externalId": null,
+    "tcgdex_id": "sma-SV62",
+    "localId": "SV62",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV62/94",
+    "cardName": "Nihilego-GX",
+    "fullDisplayName": "Nihilego-GX SV62/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      793
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV62-low.png",
+    "imageHighSrc": "cards/sma-SV62-high.png"
+  },
+  {
+    "masterCardId": "11429",
+    "externalId": null,
+    "tcgdex_id": "sma-SV61",
+    "localId": "SV61",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV61/94",
+    "cardName": "Banette-GX",
+    "fullDisplayName": "Banette-GX SV61/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV61-low.png",
+    "imageHighSrc": "cards/sma-SV61-high.png"
+  },
+  {
+    "masterCardId": "11423",
+    "externalId": null,
+    "tcgdex_id": "sma-SV60",
+    "localId": "SV60",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV60/94",
+    "cardName": "Espeon-GX",
+    "fullDisplayName": "Espeon-GX SV60/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV60-low.png",
+    "imageHighSrc": "cards/sma-SV60-high.png"
+  },
+  {
+    "masterCardId": "11417",
+    "externalId": null,
+    "tcgdex_id": "sma-SV59",
+    "localId": "SV59",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV59/94",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX SV59/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV59-low.png",
+    "imageHighSrc": "cards/sma-SV59-high.png"
+  },
+  {
+    "masterCardId": "11410",
+    "externalId": null,
+    "tcgdex_id": "sma-SV58",
+    "localId": "SV58",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV58/94",
+    "cardName": "Xurkitree-GX",
+    "fullDisplayName": "Xurkitree-GX SV58/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      796
+    ],
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV58-low.png",
+    "imageHighSrc": "cards/sma-SV58-high.png"
+  },
+  {
+    "masterCardId": "11403",
+    "externalId": null,
+    "tcgdex_id": "sma-SV57",
+    "localId": "SV57",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV57/94",
+    "cardName": "Electrode-GX",
+    "fullDisplayName": "Electrode-GX SV57/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV57-low.png",
+    "imageHighSrc": "cards/sma-SV57-high.png"
+  },
+  {
+    "masterCardId": "11396",
+    "externalId": null,
+    "tcgdex_id": "sma-SV56",
+    "localId": "SV56",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV56/94",
+    "cardName": "Greninja-GX",
+    "fullDisplayName": "Greninja-GX SV56/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 230,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      658
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frogadier",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV56-low.png",
+    "imageHighSrc": "cards/sma-SV56-high.png"
+  },
+  {
+    "masterCardId": "11390",
+    "externalId": null,
+    "tcgdex_id": "sma-SV55",
+    "localId": "SV55",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV55/94",
+    "cardName": "Glaceon-GX",
+    "fullDisplayName": "Glaceon-GX SV55/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV55-low.png",
+    "imageHighSrc": "cards/sma-SV55-high.png"
+  },
+  {
+    "masterCardId": "11383",
+    "externalId": null,
+    "tcgdex_id": "sma-SV54",
+    "localId": "SV54",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV54/94",
+    "cardName": "Articuno-GX",
+    "fullDisplayName": "Articuno-GX SV54/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV54-low.png",
+    "imageHighSrc": "cards/sma-SV54-high.png"
+  },
+  {
+    "masterCardId": "11375",
+    "externalId": null,
+    "tcgdex_id": "sma-SV53",
+    "localId": "SV53",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV53/94",
+    "cardName": "Alolan Ninetales-GX",
+    "fullDisplayName": "Alolan Ninetales-GX SV53/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Alolan Vulpix",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV53-low.png",
+    "imageHighSrc": "cards/sma-SV53-high.png"
+  },
+  {
+    "masterCardId": "11365",
+    "externalId": null,
+    "tcgdex_id": "sma-SV52",
+    "localId": "SV52",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV52/94",
+    "cardName": "Turtonator-GX",
+    "fullDisplayName": "Turtonator-GX SV52/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      776
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV52-low.png",
+    "imageHighSrc": "cards/sma-SV52-high.png"
+  },
+  {
+    "masterCardId": "11358",
+    "externalId": null,
+    "tcgdex_id": "sma-SV51",
+    "localId": "SV51",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV51/94",
+    "cardName": "Reshiram-GX",
+    "fullDisplayName": "Reshiram-GX SV51/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV51-low.png",
+    "imageHighSrc": "cards/sma-SV51-high.png"
+  },
+  {
+    "masterCardId": "11347",
+    "externalId": null,
+    "tcgdex_id": "sma-SV50",
+    "localId": "SV50",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV50/94",
+    "cardName": "Ho-Oh-GX",
+    "fullDisplayName": "Ho-Oh-GX SV50/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV50-low.png",
+    "imageHighSrc": "cards/sma-SV50-high.png"
+  },
+  {
+    "masterCardId": "11341",
+    "externalId": null,
+    "tcgdex_id": "sma-SV49",
+    "localId": "SV49",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV49/94",
+    "cardName": "Charizard-GX",
+    "fullDisplayName": "Charizard-GX SV49/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV49-low.png",
+    "imageHighSrc": "cards/sma-SV49-high.png"
+  },
+  {
+    "masterCardId": "11334",
+    "externalId": null,
+    "tcgdex_id": "sma-SV48",
+    "localId": "SV48",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV48/94",
+    "cardName": "Golisopod-GX",
+    "fullDisplayName": "Golisopod-GX SV48/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      768
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wimpod",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV48-low.png",
+    "imageHighSrc": "cards/sma-SV48-high.png"
+  },
+  {
+    "masterCardId": "11326",
+    "externalId": null,
+    "tcgdex_id": "sma-SV47",
+    "localId": "SV47",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV47/94",
+    "cardName": "Decidueye-GX",
+    "fullDisplayName": "Decidueye-GX SV47/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 240,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      724
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dartrix",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV47-low.png",
+    "imageHighSrc": "cards/sma-SV47-high.png"
+  },
+  {
+    "masterCardId": "11320",
+    "externalId": null,
+    "tcgdex_id": "sma-SV46",
+    "localId": "SV46",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV46/94",
+    "cardName": "Leafeon-GX",
+    "fullDisplayName": "Leafeon-GX SV46/94 Yellow A Alternate",
+    "rarity": "Rare Shiny GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV46-low.png",
+    "imageHighSrc": "cards/sma-SV46-high.png"
+  },
+  {
+    "masterCardId": "11310",
+    "externalId": null,
+    "tcgdex_id": "sma-SV45",
+    "localId": "SV45",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV45/94",
+    "cardName": "Type: Null",
+    "fullDisplayName": "Type: Null SV45/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      772
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV45-low.png",
+    "imageHighSrc": "cards/sma-SV45-high.png"
+  },
+  {
+    "masterCardId": "11304",
+    "externalId": null,
+    "tcgdex_id": "sma-SV44",
+    "localId": "SV44",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV44/94",
+    "cardName": "Oranguru",
+    "fullDisplayName": "Oranguru SV44/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      765
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV44-low.png",
+    "imageHighSrc": "cards/sma-SV44-high.png"
+  },
+  {
+    "masterCardId": "11297",
+    "externalId": null,
+    "tcgdex_id": "sma-SV43",
+    "localId": "SV43",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV43/94",
+    "cardName": "Noibat",
+    "fullDisplayName": "Noibat SV43/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      714
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV43-low.png",
+    "imageHighSrc": "cards/sma-SV43-high.png"
+  },
+  {
+    "masterCardId": "11290",
+    "externalId": null,
+    "tcgdex_id": "sma-SV42",
+    "localId": "SV42",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV42/94",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu SV42/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV42-low.png",
+    "imageHighSrc": "cards/sma-SV42-high.png"
+  },
+  {
+    "masterCardId": "11283",
+    "externalId": null,
+    "tcgdex_id": "sma-SV41",
+    "localId": "SV41",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV41/94",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee SV41/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV41-low.png",
+    "imageHighSrc": "cards/sma-SV41-high.png"
+  },
+  {
+    "masterCardId": "11276",
+    "externalId": null,
+    "tcgdex_id": "sma-SV40",
+    "localId": "SV40",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV40/94",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp SV40/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV40-low.png",
+    "imageHighSrc": "cards/sma-SV40-high.png"
+  },
+  {
+    "masterCardId": "11269",
+    "externalId": null,
+    "tcgdex_id": "sma-SV39",
+    "localId": "SV39",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV39/94",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite SV39/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV39-low.png",
+    "imageHighSrc": "cards/sma-SV39-high.png"
+  },
+  {
+    "masterCardId": "11262",
+    "externalId": null,
+    "tcgdex_id": "sma-SV38",
+    "localId": "SV38",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV38/94",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible SV38/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV38-low.png",
+    "imageHighSrc": "cards/sma-SV38-high.png"
+  },
+  {
+    "masterCardId": "11255",
+    "externalId": null,
+    "tcgdex_id": "sma-SV37",
+    "localId": "SV37",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV37/94",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria SV37/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV37-low.png",
+    "imageHighSrc": "cards/sma-SV37-high.png"
+  },
+  {
+    "masterCardId": "11248",
+    "externalId": null,
+    "tcgdex_id": "sma-SV36",
+    "localId": "SV36",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV36/94",
+    "cardName": "Diancie",
+    "fullDisplayName": "Diancie SV36/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      719
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV36-low.png",
+    "imageHighSrc": "cards/sma-SV36-high.png"
+  },
+  {
+    "masterCardId": "11241",
+    "externalId": null,
+    "tcgdex_id": "sma-SV35",
+    "localId": "SV35",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV35/94",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia SV35/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV35-low.png",
+    "imageHighSrc": "cards/sma-SV35-high.png"
+  },
+  {
+    "masterCardId": "11234",
+    "externalId": null,
+    "tcgdex_id": "sma-SV34",
+    "localId": "SV34",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV34/94",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts SV34/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV34-low.png",
+    "imageHighSrc": "cards/sma-SV34-high.png"
+  },
+  {
+    "masterCardId": "11227",
+    "externalId": null,
+    "tcgdex_id": "sma-SV33",
+    "localId": "SV33",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV33/94",
+    "cardName": "Kartana",
+    "fullDisplayName": "Kartana SV33/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      798
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV33-low.png",
+    "imageHighSrc": "cards/sma-SV33-high.png"
+  },
+  {
+    "masterCardId": "11220",
+    "externalId": null,
+    "tcgdex_id": "sma-SV32",
+    "localId": "SV32",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV32/94",
+    "cardName": "Celesteela",
+    "fullDisplayName": "Celesteela SV32/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      797
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV32-low.png",
+    "imageHighSrc": "cards/sma-SV32-high.png"
+  },
+  {
+    "masterCardId": "11213",
+    "externalId": null,
+    "tcgdex_id": "sma-SV31",
+    "localId": "SV31",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV31/94",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang SV31/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV31-low.png",
+    "imageHighSrc": "cards/sma-SV31-high.png"
+  },
+  {
+    "masterCardId": "11206",
+    "externalId": null,
+    "tcgdex_id": "sma-SV30",
+    "localId": "SV30",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV30/94",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum SV30/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV30-low.png",
+    "imageHighSrc": "cards/sma-SV30-high.png"
+  },
+  {
+    "masterCardId": "11199",
+    "externalId": null,
+    "tcgdex_id": "sma-SV29",
+    "localId": "SV29",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV29/94",
+    "cardName": "Magnezone",
+    "fullDisplayName": "Magnezone SV29/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magneton",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV29-low.png",
+    "imageHighSrc": "cards/sma-SV29-high.png"
+  },
+  {
+    "masterCardId": "11192",
+    "externalId": null,
+    "tcgdex_id": "sma-SV28",
+    "localId": "SV28",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV28/94",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton SV28/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV28-low.png",
+    "imageHighSrc": "cards/sma-SV28-high.png"
+  },
+  {
+    "masterCardId": "11185",
+    "externalId": null,
+    "tcgdex_id": "sma-SV27",
+    "localId": "SV27",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV27/94",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite SV27/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV27-low.png",
+    "imageHighSrc": "cards/sma-SV27-high.png"
+  },
+  {
+    "masterCardId": "11178",
+    "externalId": null,
+    "tcgdex_id": "sma-SV26",
+    "localId": "SV26",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV26/94",
+    "cardName": "Guzzlord",
+    "fullDisplayName": "Guzzlord SV26/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      799
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV26-low.png",
+    "imageHighSrc": "cards/sma-SV26-high.png"
+  },
+  {
+    "masterCardId": "11167",
+    "externalId": null,
+    "tcgdex_id": "sma-SV25",
+    "localId": "SV25",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV25/94",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua SV25/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV25-low.png",
+    "imageHighSrc": "cards/sma-SV25-high.png"
+  },
+  {
+    "masterCardId": "11159",
+    "externalId": null,
+    "tcgdex_id": "sma-SV24",
+    "localId": "SV24",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV24/94",
+    "cardName": "Buzzwole",
+    "fullDisplayName": "Buzzwole SV24/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      794
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV24-low.png",
+    "imageHighSrc": "cards/sma-SV24-high.png"
+  },
+  {
+    "masterCardId": "11152",
+    "externalId": null,
+    "tcgdex_id": "sma-SV23",
+    "localId": "SV23",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV23/94",
+    "cardName": "Rockruff",
+    "fullDisplayName": "Rockruff SV23/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      744
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV23-low.png",
+    "imageHighSrc": "cards/sma-SV23-high.png"
+  },
+  {
+    "masterCardId": "11145",
+    "externalId": null,
+    "tcgdex_id": "sma-SV22",
+    "localId": "SV22",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV22/94",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario SV22/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV22-low.png",
+    "imageHighSrc": "cards/sma-SV22-high.png"
+  },
+  {
+    "masterCardId": "11138",
+    "externalId": null,
+    "tcgdex_id": "sma-SV21",
+    "localId": "SV21",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV21/94",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu SV21/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV21-low.png",
+    "imageHighSrc": "cards/sma-SV21-high.png"
+  },
+  {
+    "masterCardId": "11131",
+    "externalId": null,
+    "tcgdex_id": "sma-SV20",
+    "localId": "SV20",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV20/94",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo SV20/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV20-low.png",
+    "imageHighSrc": "cards/sma-SV20-high.png"
+  },
+  {
+    "masterCardId": "11124",
+    "externalId": null,
+    "tcgdex_id": "sma-SV19",
+    "localId": "SV19",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV19/94",
+    "cardName": "Poipole",
+    "fullDisplayName": "Poipole SV19/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      803
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV19-low.png",
+    "imageHighSrc": "cards/sma-SV19-high.png"
+  },
+  {
+    "masterCardId": "11117",
+    "externalId": null,
+    "tcgdex_id": "sma-SV18",
+    "localId": "SV18",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV18/94",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar SV18/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Inkay",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV18-low.png",
+    "imageHighSrc": "cards/sma-SV18-high.png"
+  },
+  {
+    "masterCardId": "11110",
+    "externalId": null,
+    "tcgdex_id": "sma-SV17",
+    "localId": "SV17",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV17/94",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay SV17/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV17-low.png",
+    "imageHighSrc": "cards/sma-SV17-high.png"
+  },
+  {
+    "masterCardId": "11103",
+    "externalId": null,
+    "tcgdex_id": "sma-SV16",
+    "localId": "SV16",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV16/94",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet SV16/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV16-low.png",
+    "imageHighSrc": "cards/sma-SV16-high.png"
+  },
+  {
+    "masterCardId": "11096",
+    "externalId": null,
+    "tcgdex_id": "sma-SV15",
+    "localId": "SV15",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV15/94",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper SV15/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV15-low.png",
+    "imageHighSrc": "cards/sma-SV15-high.png"
+  },
+  {
+    "masterCardId": "11090",
+    "externalId": null,
+    "tcgdex_id": "sma-SV14",
+    "localId": "SV14",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV14/94",
+    "cardName": "Xurkitree",
+    "fullDisplayName": "Xurkitree SV14/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      796
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV14-low.png",
+    "imageHighSrc": "cards/sma-SV14-high.png"
+  },
+  {
+    "masterCardId": "11083",
+    "externalId": null,
+    "tcgdex_id": "sma-SV13",
+    "localId": "SV13",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV13/94",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb SV13/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV13-low.png",
+    "imageHighSrc": "cards/sma-SV13-high.png"
+  },
+  {
+    "masterCardId": "11076",
+    "externalId": null,
+    "tcgdex_id": "sma-SV12",
+    "localId": "SV12",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV12/94",
+    "cardName": "Frogadier",
+    "fullDisplayName": "Frogadier SV12/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      657
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Froakie",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV12-low.png",
+    "imageHighSrc": "cards/sma-SV12-high.png"
+  },
+  {
+    "masterCardId": "11069",
+    "externalId": null,
+    "tcgdex_id": "sma-SV11",
+    "localId": "SV11",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV11/94",
+    "cardName": "Froakie",
+    "fullDisplayName": "Froakie SV11/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      656
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV11-low.png",
+    "imageHighSrc": "cards/sma-SV11-high.png"
+  },
+  {
+    "masterCardId": "11062",
+    "externalId": null,
+    "tcgdex_id": "sma-SV10",
+    "localId": "SV10",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV10/94",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire SV10/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV10-low.png",
+    "imageHighSrc": "cards/sma-SV10-high.png"
+  },
+  {
+    "masterCardId": "11055",
+    "externalId": null,
+    "tcgdex_id": "sma-SV9",
+    "localId": "SV9",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV9/94",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper SV9/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV9-low.png",
+    "imageHighSrc": "cards/sma-SV9-high.png"
+  },
+  {
+    "masterCardId": "11048",
+    "externalId": null,
+    "tcgdex_id": "sma-SV8",
+    "localId": "SV8",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV8/94",
+    "cardName": "Alolan Vulpix",
+    "fullDisplayName": "Alolan Vulpix SV8/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV8-low.png",
+    "imageHighSrc": "cards/sma-SV8-high.png"
+  },
+  {
+    "masterCardId": "11042",
+    "externalId": null,
+    "tcgdex_id": "sma-SV7",
+    "localId": "SV7",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV7/94",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon SV7/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV7-low.png",
+    "imageHighSrc": "cards/sma-SV7-high.png"
+  },
+  {
+    "masterCardId": "11035",
+    "externalId": null,
+    "tcgdex_id": "sma-SV6",
+    "localId": "SV6",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV6/94",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander SV6/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV6-low.png",
+    "imageHighSrc": "cards/sma-SV6-high.png"
+  },
+  {
+    "masterCardId": "11028",
+    "externalId": null,
+    "tcgdex_id": "sma-SV5",
+    "localId": "SV5",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV5/94",
+    "cardName": "Pheromosa",
+    "fullDisplayName": "Pheromosa SV5/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      795
+    ],
+    "subtypes": [
+      "Basic",
+      "Ultra Beast"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV5-low.png",
+    "imageHighSrc": "cards/sma-SV5-high.png"
+  },
+  {
+    "masterCardId": "11021",
+    "externalId": null,
+    "tcgdex_id": "sma-SV4",
+    "localId": "SV4",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV4/94",
+    "cardName": "Wimpod",
+    "fullDisplayName": "Wimpod SV4/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      767
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV4-low.png",
+    "imageHighSrc": "cards/sma-SV4-high.png"
+  },
+  {
+    "masterCardId": "11014",
+    "externalId": null,
+    "tcgdex_id": "sma-SV3",
+    "localId": "SV3",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV3/94",
+    "cardName": "Dartrix",
+    "fullDisplayName": "Dartrix SV3/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      723
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rowlet",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV3-low.png",
+    "imageHighSrc": "cards/sma-SV3-high.png"
+  },
+  {
+    "masterCardId": "11003",
+    "externalId": null,
+    "tcgdex_id": "sma-SV2",
+    "localId": "SV2",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV2/94",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet SV2/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV2-low.png",
+    "imageHighSrc": "cards/sma-SV2-high.png"
+  },
+  {
+    "masterCardId": "10999",
+    "externalId": null,
+    "tcgdex_id": "sma-SV1",
+    "localId": "SV1",
+    "setCode": "sma",
+    "setTcgdexId": "sma",
+    "cardNumber": "SV1/94",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther SV1/94 Yellow A Alternate",
+    "rarity": "Rare Shiny",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sma-SV1-low.png",
+    "imageHighSrc": "cards/sma-SV1-high.png"
+  }
+]

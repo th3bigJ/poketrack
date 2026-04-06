@@ -1,0 +1,3424 @@
+[
+  {
+    "masterCardId": "2189",
+    "externalId": null,
+    "tcgdex_id": "bw10-105",
+    "localId": "105",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "105/101",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 105/101 Plasma Blast",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-105-low.png",
+    "imageHighSrc": "cards/bw10-105-high.png"
+  },
+  {
+    "masterCardId": "2188",
+    "externalId": null,
+    "tcgdex_id": "bw10-104",
+    "localId": "104",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "104/101",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 104/101 Plasma Blast",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-104-low.png",
+    "imageHighSrc": "cards/bw10-104-high.png"
+  },
+  {
+    "masterCardId": "2187",
+    "externalId": null,
+    "tcgdex_id": "bw10-103",
+    "localId": "103",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "103/101",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 103/101 Plasma Blast",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-103-low.png",
+    "imageHighSrc": "cards/bw10-103-high.png"
+  },
+  {
+    "masterCardId": "2186",
+    "externalId": null,
+    "tcgdex_id": "bw10-102",
+    "localId": "102",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "102/101",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 102/101 Plasma Blast",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-102-low.png",
+    "imageHighSrc": "cards/bw10-102-high.png"
+  },
+  {
+    "masterCardId": "2185",
+    "externalId": null,
+    "tcgdex_id": "bw10-101",
+    "localId": "101",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "101/101",
+    "cardName": "Iris",
+    "fullDisplayName": "Iris 101/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-101-low.png",
+    "imageHighSrc": "cards/bw10-101-high.png"
+  },
+  {
+    "masterCardId": "2184",
+    "externalId": null,
+    "tcgdex_id": "bw10-100",
+    "localId": "100",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "100/101",
+    "cardName": "Palkia-EX",
+    "fullDisplayName": "Palkia-EX 100/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-100-low.png",
+    "imageHighSrc": "cards/bw10-100-high.png"
+  },
+  {
+    "masterCardId": "2183",
+    "externalId": null,
+    "tcgdex_id": "bw10-99",
+    "localId": "099",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "099/101",
+    "cardName": "Dialga-EX",
+    "fullDisplayName": "Dialga-EX 099/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-099-low.png",
+    "imageHighSrc": "cards/bw10-099-high.png"
+  },
+  {
+    "masterCardId": "2182",
+    "externalId": null,
+    "tcgdex_id": "bw10-98",
+    "localId": "098",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "098/101",
+    "cardName": "Jirachi-EX",
+    "fullDisplayName": "Jirachi-EX 098/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-098-low.png",
+    "imageHighSrc": "cards/bw10-098-high.png"
+  },
+  {
+    "masterCardId": "2181",
+    "externalId": null,
+    "tcgdex_id": "bw10-97",
+    "localId": "097",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "097/101",
+    "cardName": "Genesect-EX",
+    "fullDisplayName": "Genesect-EX 097/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-097-low.png",
+    "imageHighSrc": "cards/bw10-097-high.png"
+  },
+  {
+    "masterCardId": "2180",
+    "externalId": null,
+    "tcgdex_id": "bw10-96",
+    "localId": "096",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "096/101",
+    "cardName": "Virizion-EX",
+    "fullDisplayName": "Virizion-EX 096/101 Plasma Blast",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-096-low.png",
+    "imageHighSrc": "cards/bw10-096-high.png"
+  },
+  {
+    "masterCardId": "2179",
+    "externalId": null,
+    "tcgdex_id": "bw10-95",
+    "localId": "095",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "095/101",
+    "cardName": "Scoop Up Cyclone",
+    "fullDisplayName": "Scoop Up Cyclone 095/101 Plasma Blast",
+    "rarity": "Rare ACE",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "ACE SPEC"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-095-low.png",
+    "imageHighSrc": "cards/bw10-095-high.png"
+  },
+  {
+    "masterCardId": "2178",
+    "externalId": null,
+    "tcgdex_id": "bw10-94",
+    "localId": "094",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "094/101",
+    "cardName": "Master Ball",
+    "fullDisplayName": "Master Ball 094/101 Plasma Blast",
+    "rarity": "Rare ACE",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "ACE SPEC"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-094-low.png",
+    "imageHighSrc": "cards/bw10-094-high.png"
+  },
+  {
+    "masterCardId": "2177",
+    "externalId": null,
+    "tcgdex_id": "bw10-93",
+    "localId": "093",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "093/101",
+    "cardName": "G Scope",
+    "fullDisplayName": "G Scope 093/101 Plasma Blast",
+    "rarity": "Rare ACE",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool",
+      "ACE SPEC",
+      "Team Plasma"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-093-low.png",
+    "imageHighSrc": "cards/bw10-093-high.png"
+  },
+  {
+    "masterCardId": "2176",
+    "externalId": null,
+    "tcgdex_id": "bw10-92",
+    "localId": "092",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "092/101",
+    "cardName": "G Booster",
+    "fullDisplayName": "G Booster 092/101 Plasma Blast",
+    "rarity": "Rare ACE",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool",
+      "ACE SPEC",
+      "Team Plasma"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-092-low.png",
+    "imageHighSrc": "cards/bw10-092-high.png"
+  },
+  {
+    "masterCardId": "2175",
+    "externalId": null,
+    "tcgdex_id": "bw10-91",
+    "localId": "091",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "091/101",
+    "cardName": "Plasma Energy",
+    "fullDisplayName": "Plasma Energy 091/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-091-low.png",
+    "imageHighSrc": "cards/bw10-091-high.png"
+  },
+  {
+    "masterCardId": "2174",
+    "externalId": null,
+    "tcgdex_id": "bw10-90",
+    "localId": "090",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "090/101",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 090/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-090-low.png",
+    "imageHighSrc": "cards/bw10-090-high.png"
+  },
+  {
+    "masterCardId": "2173",
+    "externalId": null,
+    "tcgdex_id": "bw10-89",
+    "localId": "089",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "089/101",
+    "cardName": "Silver Mirror",
+    "fullDisplayName": "Silver Mirror 089/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-089-low.png",
+    "imageHighSrc": "cards/bw10-089-high.png"
+  },
+  {
+    "masterCardId": "2172",
+    "externalId": null,
+    "tcgdex_id": "bw10-88",
+    "localId": "088",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "088/101",
+    "cardName": "Silver Bangle",
+    "fullDisplayName": "Silver Bangle 088/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-088-low.png",
+    "imageHighSrc": "cards/bw10-088-high.png"
+  },
+  {
+    "masterCardId": "2171",
+    "externalId": null,
+    "tcgdex_id": "bw10-87",
+    "localId": "087",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "087/101",
+    "cardName": "Root Fossil Lileep",
+    "fullDisplayName": "Root Fossil Lileep 087/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-087-low.png",
+    "imageHighSrc": "cards/bw10-087-high.png"
+  },
+  {
+    "masterCardId": "2170",
+    "externalId": null,
+    "tcgdex_id": "bw10-86",
+    "localId": "086",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "086/101",
+    "cardName": "Reversal Trigger",
+    "fullDisplayName": "Reversal Trigger 086/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool",
+      "Team Plasma"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-086-low.png",
+    "imageHighSrc": "cards/bw10-086-high.png"
+  },
+  {
+    "masterCardId": "2169",
+    "externalId": null,
+    "tcgdex_id": "bw10-85",
+    "localId": "085",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "085/101",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 085/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-085-low.png",
+    "imageHighSrc": "cards/bw10-085-high.png"
+  },
+  {
+    "masterCardId": "2168",
+    "externalId": null,
+    "tcgdex_id": "bw10-84",
+    "localId": "084",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "084/101",
+    "cardName": "Professor Juniper",
+    "fullDisplayName": "Professor Juniper 084/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-084-low.png",
+    "imageHighSrc": "cards/bw10-084-high.png"
+  },
+  {
+    "masterCardId": "2167",
+    "externalId": null,
+    "tcgdex_id": "bw10-83",
+    "localId": "083",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "083/101",
+    "cardName": "Pokémon Catcher",
+    "fullDisplayName": "Pokémon Catcher 083/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-083-low.png",
+    "imageHighSrc": "cards/bw10-083-high.png"
+  },
+  {
+    "masterCardId": "2166",
+    "externalId": null,
+    "tcgdex_id": "bw10-82",
+    "localId": "082",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "082/101",
+    "cardName": "Plume Fossil",
+    "fullDisplayName": "Plume Fossil 082/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-082-low.png",
+    "imageHighSrc": "cards/bw10-082-high.png"
+  },
+  {
+    "masterCardId": "2165",
+    "externalId": null,
+    "tcgdex_id": "bw10-81",
+    "localId": "081",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "081/101",
+    "cardName": "Iris",
+    "fullDisplayName": "Iris 081/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-081-low.png",
+    "imageHighSrc": "cards/bw10-081-high.png"
+  },
+  {
+    "masterCardId": "2164",
+    "externalId": null,
+    "tcgdex_id": "bw10-80",
+    "localId": "080",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "080/101",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 080/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-080-low.png",
+    "imageHighSrc": "cards/bw10-080-high.png"
+  },
+  {
+    "masterCardId": "2163",
+    "externalId": null,
+    "tcgdex_id": "bw10-79",
+    "localId": "079",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "079/101",
+    "cardName": "Cover Fossil",
+    "fullDisplayName": "Cover Fossil 079/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-079-low.png",
+    "imageHighSrc": "cards/bw10-079-high.png"
+  },
+  {
+    "masterCardId": "2162",
+    "externalId": null,
+    "tcgdex_id": "bw10-78",
+    "localId": "078",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "078/101",
+    "cardName": "Caitlin",
+    "fullDisplayName": "Caitlin 078/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-078-low.png",
+    "imageHighSrc": "cards/bw10-078-high.png"
+  },
+  {
+    "masterCardId": "2161",
+    "externalId": null,
+    "tcgdex_id": "bw10-77",
+    "localId": "077",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "077/101",
+    "cardName": "Chatot",
+    "fullDisplayName": "Chatot 077/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-077-low.png",
+    "imageHighSrc": "cards/bw10-077-high.png"
+  },
+  {
+    "masterCardId": "2160",
+    "externalId": null,
+    "tcgdex_id": "bw10-76",
+    "localId": "076",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "076/101",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 076/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-076-low.png",
+    "imageHighSrc": "cards/bw10-076-high.png"
+  },
+  {
+    "masterCardId": "2159",
+    "externalId": null,
+    "tcgdex_id": "bw10-75",
+    "localId": "075",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "075/101",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 075/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-075-low.png",
+    "imageHighSrc": "cards/bw10-075-high.png"
+  },
+  {
+    "masterCardId": "2158",
+    "externalId": null,
+    "tcgdex_id": "bw10-74",
+    "localId": "074",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "074/101",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z 074/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-074-low.png",
+    "imageHighSrc": "cards/bw10-074-high.png"
+  },
+  {
+    "masterCardId": "2157",
+    "externalId": null,
+    "tcgdex_id": "bw10-73",
+    "localId": "073",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "073/101",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 073/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon",
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-073-low.png",
+    "imageHighSrc": "cards/bw10-073-high.png"
+  },
+  {
+    "masterCardId": "2156",
+    "externalId": null,
+    "tcgdex_id": "bw10-72",
+    "localId": "072",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "072/101",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 072/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-072-low.png",
+    "imageHighSrc": "cards/bw10-072-high.png"
+  },
+  {
+    "masterCardId": "2155",
+    "externalId": null,
+    "tcgdex_id": "bw10-71",
+    "localId": "071",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "071/101",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 071/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-071-low.png",
+    "imageHighSrc": "cards/bw10-071-high.png"
+  },
+  {
+    "masterCardId": "2154",
+    "externalId": null,
+    "tcgdex_id": "bw10-70",
+    "localId": "070",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "070/101",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 070/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-070-low.png",
+    "imageHighSrc": "cards/bw10-070-high.png"
+  },
+  {
+    "masterCardId": "2153",
+    "externalId": null,
+    "tcgdex_id": "bw10-69",
+    "localId": "069",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "069/101",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus 069/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      612
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fraxure",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-069-low.png",
+    "imageHighSrc": "cards/bw10-069-high.png"
+  },
+  {
+    "masterCardId": "2152",
+    "externalId": null,
+    "tcgdex_id": "bw10-68",
+    "localId": "068",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "068/101",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 068/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Axew",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-068-low.png",
+    "imageHighSrc": "cards/bw10-068-high.png"
+  },
+  {
+    "masterCardId": "2151",
+    "externalId": null,
+    "tcgdex_id": "bw10-67",
+    "localId": "067",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "067/101",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 067/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-067-low.png",
+    "imageHighSrc": "cards/bw10-067-high.png"
+  },
+  {
+    "masterCardId": "2150",
+    "externalId": null,
+    "tcgdex_id": "bw10-66",
+    "localId": "066",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "066/101",
+    "cardName": "Palkia-EX",
+    "fullDisplayName": "Palkia-EX 066/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-066-low.png",
+    "imageHighSrc": "cards/bw10-066-high.png"
+  },
+  {
+    "masterCardId": "2149",
+    "externalId": null,
+    "tcgdex_id": "bw10-65",
+    "localId": "065",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "065/101",
+    "cardName": "Dialga-EX",
+    "fullDisplayName": "Dialga-EX 065/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-065-low.png",
+    "imageHighSrc": "cards/bw10-065-high.png"
+  },
+  {
+    "masterCardId": "2148",
+    "externalId": null,
+    "tcgdex_id": "bw10-64",
+    "localId": "064",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "064/101",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 064/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-064-low.png",
+    "imageHighSrc": "cards/bw10-064-high.png"
+  },
+  {
+    "masterCardId": "2147",
+    "externalId": null,
+    "tcgdex_id": "bw10-63",
+    "localId": "063",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "063/101",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 063/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-063-low.png",
+    "imageHighSrc": "cards/bw10-063-high.png"
+  },
+  {
+    "masterCardId": "2146",
+    "externalId": null,
+    "tcgdex_id": "bw10-62",
+    "localId": "062",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "062/101",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 062/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-062-low.png",
+    "imageHighSrc": "cards/bw10-062-high.png"
+  },
+  {
+    "masterCardId": "2145",
+    "externalId": null,
+    "tcgdex_id": "bw10-61",
+    "localId": "061",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "061/101",
+    "cardName": "Escavalier",
+    "fullDisplayName": "Escavalier 061/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      589
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Karrablast",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-061-low.png",
+    "imageHighSrc": "cards/bw10-061-high.png"
+  },
+  {
+    "masterCardId": "2144",
+    "externalId": null,
+    "tcgdex_id": "bw10-60",
+    "localId": "060",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "060/101",
+    "cardName": "Jirachi-EX",
+    "fullDisplayName": "Jirachi-EX 060/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-060-low.png",
+    "imageHighSrc": "cards/bw10-060-high.png"
+  },
+  {
+    "masterCardId": "2143",
+    "externalId": null,
+    "tcgdex_id": "bw10-59",
+    "localId": "059",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "059/101",
+    "cardName": "Aggron",
+    "fullDisplayName": "Aggron 059/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-059-low.png",
+    "imageHighSrc": "cards/bw10-059-high.png"
+  },
+  {
+    "masterCardId": "2142",
+    "externalId": null,
+    "tcgdex_id": "bw10-58",
+    "localId": "058",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "058/101",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 058/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-058-low.png",
+    "imageHighSrc": "cards/bw10-058-high.png"
+  },
+  {
+    "masterCardId": "2141",
+    "externalId": null,
+    "tcgdex_id": "bw10-57",
+    "localId": "057",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "057/101",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 057/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-057-low.png",
+    "imageHighSrc": "cards/bw10-057-high.png"
+  },
+  {
+    "masterCardId": "2140",
+    "externalId": null,
+    "tcgdex_id": "bw10-56",
+    "localId": "056",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "056/101",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 056/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-056-low.png",
+    "imageHighSrc": "cards/bw10-056-high.png"
+  },
+  {
+    "masterCardId": "2139",
+    "externalId": null,
+    "tcgdex_id": "bw10-55",
+    "localId": "055",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "055/101",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 055/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-055-low.png",
+    "imageHighSrc": "cards/bw10-055-high.png"
+  },
+  {
+    "masterCardId": "2138",
+    "externalId": null,
+    "tcgdex_id": "bw10-54",
+    "localId": "054",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "054/101",
+    "cardName": "Archeops",
+    "fullDisplayName": "Archeops 054/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      567
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Archen",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-054-low.png",
+    "imageHighSrc": "cards/bw10-054-high.png"
+  },
+  {
+    "masterCardId": "2137",
+    "externalId": null,
+    "tcgdex_id": "bw10-53",
+    "localId": "053",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "053/101",
+    "cardName": "Archen",
+    "fullDisplayName": "Archen 053/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      566
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Plume Fossil",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-053-low.png",
+    "imageHighSrc": "cards/bw10-053-high.png"
+  },
+  {
+    "masterCardId": "2136",
+    "externalId": null,
+    "tcgdex_id": "bw10-52",
+    "localId": "052",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "052/101",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 052/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-052-low.png",
+    "imageHighSrc": "cards/bw10-052-high.png"
+  },
+  {
+    "masterCardId": "2135",
+    "externalId": null,
+    "tcgdex_id": "bw10-51",
+    "localId": "051",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "051/101",
+    "cardName": "Throh",
+    "fullDisplayName": "Throh 051/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      538
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-051-low.png",
+    "imageHighSrc": "cards/bw10-051-high.png"
+  },
+  {
+    "masterCardId": "2134",
+    "externalId": null,
+    "tcgdex_id": "bw10-50",
+    "localId": "050",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "050/101",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 050/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-050-low.png",
+    "imageHighSrc": "cards/bw10-050-high.png"
+  },
+  {
+    "masterCardId": "2133",
+    "externalId": null,
+    "tcgdex_id": "bw10-49",
+    "localId": "049",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "049/101",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 049/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-049-low.png",
+    "imageHighSrc": "cards/bw10-049-high.png"
+  },
+  {
+    "masterCardId": "2132",
+    "externalId": null,
+    "tcgdex_id": "bw10-48",
+    "localId": "048",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "048/101",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 048/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-048-low.png",
+    "imageHighSrc": "cards/bw10-048-high.png"
+  },
+  {
+    "masterCardId": "2131",
+    "externalId": null,
+    "tcgdex_id": "bw10-47",
+    "localId": "047",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "047/101",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 047/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-047-low.png",
+    "imageHighSrc": "cards/bw10-047-high.png"
+  },
+  {
+    "masterCardId": "2130",
+    "externalId": null,
+    "tcgdex_id": "bw10-46",
+    "localId": "046",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "046/101",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 046/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-046-low.png",
+    "imageHighSrc": "cards/bw10-046-high.png"
+  },
+  {
+    "masterCardId": "2129",
+    "externalId": null,
+    "tcgdex_id": "bw10-45",
+    "localId": "045",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "045/101",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 045/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-045-low.png",
+    "imageHighSrc": "cards/bw10-045-high.png"
+  },
+  {
+    "masterCardId": "2128",
+    "externalId": null,
+    "tcgdex_id": "bw10-44",
+    "localId": "044",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "044/101",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 044/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duosion",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-044-low.png",
+    "imageHighSrc": "cards/bw10-044-high.png"
+  },
+  {
+    "masterCardId": "2127",
+    "externalId": null,
+    "tcgdex_id": "bw10-43",
+    "localId": "043",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "043/101",
+    "cardName": "Duosion",
+    "fullDisplayName": "Duosion 043/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      578
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Solosis",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-043-low.png",
+    "imageHighSrc": "cards/bw10-043-high.png"
+  },
+  {
+    "masterCardId": "2126",
+    "externalId": null,
+    "tcgdex_id": "bw10-42",
+    "localId": "042",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "042/101",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 042/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-042-low.png",
+    "imageHighSrc": "cards/bw10-042-high.png"
+  },
+  {
+    "masterCardId": "2125",
+    "externalId": null,
+    "tcgdex_id": "bw10-41",
+    "localId": "041",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "041/101",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 041/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-041-low.png",
+    "imageHighSrc": "cards/bw10-041-high.png"
+  },
+  {
+    "masterCardId": "2124",
+    "externalId": null,
+    "tcgdex_id": "bw10-40",
+    "localId": "040",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "040/101",
+    "cardName": "Musharna",
+    "fullDisplayName": "Musharna 040/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      518
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munna",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-040-low.png",
+    "imageHighSrc": "cards/bw10-040-high.png"
+  },
+  {
+    "masterCardId": "2123",
+    "externalId": null,
+    "tcgdex_id": "bw10-39",
+    "localId": "039",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "039/101",
+    "cardName": "Munna",
+    "fullDisplayName": "Munna 039/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      517
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-039-low.png",
+    "imageHighSrc": "cards/bw10-039-high.png"
+  },
+  {
+    "masterCardId": "2122",
+    "externalId": null,
+    "tcgdex_id": "bw10-38",
+    "localId": "038",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "038/101",
+    "cardName": "Azelf",
+    "fullDisplayName": "Azelf 038/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      482
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-038-low.png",
+    "imageHighSrc": "cards/bw10-038-high.png"
+  },
+  {
+    "masterCardId": "2121",
+    "externalId": null,
+    "tcgdex_id": "bw10-37",
+    "localId": "037",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "037/101",
+    "cardName": "Mesprit",
+    "fullDisplayName": "Mesprit 037/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      481
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-037-low.png",
+    "imageHighSrc": "cards/bw10-037-high.png"
+  },
+  {
+    "masterCardId": "2120",
+    "externalId": null,
+    "tcgdex_id": "bw10-36",
+    "localId": "036",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "036/101",
+    "cardName": "Uxie",
+    "fullDisplayName": "Uxie 036/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      480
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-036-low.png",
+    "imageHighSrc": "cards/bw10-036-high.png"
+  },
+  {
+    "masterCardId": "2119",
+    "externalId": null,
+    "tcgdex_id": "bw10-35",
+    "localId": "035",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "035/101",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 035/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-035-low.png",
+    "imageHighSrc": "cards/bw10-035-high.png"
+  },
+  {
+    "masterCardId": "2118",
+    "externalId": null,
+    "tcgdex_id": "bw10-34",
+    "localId": "034",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "034/101",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 034/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-034-low.png",
+    "imageHighSrc": "cards/bw10-034-high.png"
+  },
+  {
+    "masterCardId": "2117",
+    "externalId": null,
+    "tcgdex_id": "bw10-33",
+    "localId": "033",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "033/101",
+    "cardName": "Eelektross",
+    "fullDisplayName": "Eelektross 033/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      604
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eelektrik",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-033-low.png",
+    "imageHighSrc": "cards/bw10-033-high.png"
+  },
+  {
+    "masterCardId": "2116",
+    "externalId": null,
+    "tcgdex_id": "bw10-32",
+    "localId": "032",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "032/101",
+    "cardName": "Eelektrik",
+    "fullDisplayName": "Eelektrik 032/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      603
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tynamo",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-032-low.png",
+    "imageHighSrc": "cards/bw10-032-high.png"
+  },
+  {
+    "masterCardId": "2115",
+    "externalId": null,
+    "tcgdex_id": "bw10-31",
+    "localId": "031",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "031/101",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 031/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-031-low.png",
+    "imageHighSrc": "cards/bw10-031-high.png"
+  },
+  {
+    "masterCardId": "2114",
+    "externalId": null,
+    "tcgdex_id": "bw10-30",
+    "localId": "030",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "030/101",
+    "cardName": "Kyurem-EX",
+    "fullDisplayName": "Kyurem-EX 030/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-030-low.png",
+    "imageHighSrc": "cards/bw10-030-high.png"
+  },
+  {
+    "masterCardId": "2113",
+    "externalId": null,
+    "tcgdex_id": "bw10-29",
+    "localId": "029",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "029/101",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 029/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-029-low.png",
+    "imageHighSrc": "cards/bw10-029-high.png"
+  },
+  {
+    "masterCardId": "2112",
+    "externalId": null,
+    "tcgdex_id": "bw10-28",
+    "localId": "028",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "028/101",
+    "cardName": "Carracosta",
+    "fullDisplayName": "Carracosta 028/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      565
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tirtouga",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-028-low.png",
+    "imageHighSrc": "cards/bw10-028-high.png"
+  },
+  {
+    "masterCardId": "2111",
+    "externalId": null,
+    "tcgdex_id": "bw10-27",
+    "localId": "027",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "027/101",
+    "cardName": "Tirtouga",
+    "fullDisplayName": "Tirtouga 027/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      564
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cover Fossil",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-027-low.png",
+    "imageHighSrc": "cards/bw10-027-high.png"
+  },
+  {
+    "masterCardId": "2110",
+    "externalId": null,
+    "tcgdex_id": "bw10-26",
+    "localId": "026",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "026/101",
+    "cardName": "Abomasnow",
+    "fullDisplayName": "Abomasnow 026/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      460
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snover",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-026-low.png",
+    "imageHighSrc": "cards/bw10-026-high.png"
+  },
+  {
+    "masterCardId": "2109",
+    "externalId": null,
+    "tcgdex_id": "bw10-25",
+    "localId": "025",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "025/101",
+    "cardName": "Snover",
+    "fullDisplayName": "Snover 025/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      459
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-025-low.png",
+    "imageHighSrc": "cards/bw10-025-high.png"
+  },
+  {
+    "masterCardId": "2108",
+    "externalId": null,
+    "tcgdex_id": "bw10-24",
+    "localId": "024",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "024/101",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 024/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-024-low.png",
+    "imageHighSrc": "cards/bw10-024-high.png"
+  },
+  {
+    "masterCardId": "2107",
+    "externalId": null,
+    "tcgdex_id": "bw10-23",
+    "localId": "023",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "023/101",
+    "cardName": "Froslass",
+    "fullDisplayName": "Froslass 023/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      478
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-023-low.png",
+    "imageHighSrc": "cards/bw10-023-high.png"
+  },
+  {
+    "masterCardId": "2106",
+    "externalId": null,
+    "tcgdex_id": "bw10-22",
+    "localId": "022",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "022/101",
+    "cardName": "Glalie",
+    "fullDisplayName": "Glalie 022/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      362
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-022-low.png",
+    "imageHighSrc": "cards/bw10-022-high.png"
+  },
+  {
+    "masterCardId": "2105",
+    "externalId": null,
+    "tcgdex_id": "bw10-21",
+    "localId": "021",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "021/101",
+    "cardName": "Snorunt",
+    "fullDisplayName": "Snorunt 021/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      361
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-021-low.png",
+    "imageHighSrc": "cards/bw10-021-high.png"
+  },
+  {
+    "masterCardId": "2104",
+    "externalId": null,
+    "tcgdex_id": "bw10-20",
+    "localId": "020",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "020/101",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 020/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-020-low.png",
+    "imageHighSrc": "cards/bw10-020-high.png"
+  },
+  {
+    "masterCardId": "2103",
+    "externalId": null,
+    "tcgdex_id": "bw10-19",
+    "localId": "019",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "019/101",
+    "cardName": "Octillery",
+    "fullDisplayName": "Octillery 019/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-019-low.png",
+    "imageHighSrc": "cards/bw10-019-high.png"
+  },
+  {
+    "masterCardId": "2102",
+    "externalId": null,
+    "tcgdex_id": "bw10-18",
+    "localId": "018",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "018/101",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 018/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-018-low.png",
+    "imageHighSrc": "cards/bw10-018-high.png"
+  },
+  {
+    "masterCardId": "2101",
+    "externalId": null,
+    "tcgdex_id": "bw10-17",
+    "localId": "017",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "017/101",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 017/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-017-low.png",
+    "imageHighSrc": "cards/bw10-017-high.png"
+  },
+  {
+    "masterCardId": "2100",
+    "externalId": null,
+    "tcgdex_id": "bw10-16",
+    "localId": "016",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "016/101",
+    "cardName": "Blastoise",
+    "fullDisplayName": "Blastoise 016/101 Plasma Blast",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-016-low.png",
+    "imageHighSrc": "cards/bw10-016-high.png"
+  },
+  {
+    "masterCardId": "2099",
+    "externalId": null,
+    "tcgdex_id": "bw10-15",
+    "localId": "015",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "015/101",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 015/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-015-low.png",
+    "imageHighSrc": "cards/bw10-015-high.png"
+  },
+  {
+    "masterCardId": "2098",
+    "externalId": null,
+    "tcgdex_id": "bw10-14",
+    "localId": "014",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "014/101",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 014/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-014-low.png",
+    "imageHighSrc": "cards/bw10-014-high.png"
+  },
+  {
+    "masterCardId": "2097",
+    "externalId": null,
+    "tcgdex_id": "bw10-13",
+    "localId": "013",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "013/101",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 013/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-013-low.png",
+    "imageHighSrc": "cards/bw10-013-high.png"
+  },
+  {
+    "masterCardId": "2096",
+    "externalId": null,
+    "tcgdex_id": "bw10-12",
+    "localId": "012",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "012/101",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 012/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-012-low.png",
+    "imageHighSrc": "cards/bw10-012-high.png"
+  },
+  {
+    "masterCardId": "2095",
+    "externalId": null,
+    "tcgdex_id": "bw10-11",
+    "localId": "011",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "011/101",
+    "cardName": "Genesect-EX",
+    "fullDisplayName": "Genesect-EX 011/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-011-low.png",
+    "imageHighSrc": "cards/bw10-011-high.png"
+  },
+  {
+    "masterCardId": "2094",
+    "externalId": null,
+    "tcgdex_id": "bw10-10",
+    "localId": "010",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "010/101",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect 010/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-010-low.png",
+    "imageHighSrc": "cards/bw10-010-high.png"
+  },
+  {
+    "masterCardId": "2093",
+    "externalId": null,
+    "tcgdex_id": "bw10-9",
+    "localId": "009",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "009/101",
+    "cardName": "Virizion-EX",
+    "fullDisplayName": "Virizion-EX 009/101 Plasma Blast",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw10-009-low.png",
+    "imageHighSrc": "cards/bw10-009-high.png"
+  },
+  {
+    "masterCardId": "2092",
+    "externalId": null,
+    "tcgdex_id": "bw10-8",
+    "localId": "008",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "008/101",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 008/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelmet",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-008-low.png",
+    "imageHighSrc": "cards/bw10-008-high.png"
+  },
+  {
+    "masterCardId": "2091",
+    "externalId": null,
+    "tcgdex_id": "bw10-7",
+    "localId": "007",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "007/101",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 007/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-007-low.png",
+    "imageHighSrc": "cards/bw10-007-high.png"
+  },
+  {
+    "masterCardId": "2090",
+    "externalId": null,
+    "tcgdex_id": "bw10-6",
+    "localId": "006",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "006/101",
+    "cardName": "Karrablast",
+    "fullDisplayName": "Karrablast 006/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      588
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-006-low.png",
+    "imageHighSrc": "cards/bw10-006-high.png"
+  },
+  {
+    "masterCardId": "2089",
+    "externalId": null,
+    "tcgdex_id": "bw10-5",
+    "localId": "005",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "005/101",
+    "cardName": "Tropius",
+    "fullDisplayName": "Tropius 005/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      357
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-005-low.png",
+    "imageHighSrc": "cards/bw10-005-high.png"
+  },
+  {
+    "masterCardId": "2088",
+    "externalId": null,
+    "tcgdex_id": "bw10-4",
+    "localId": "004",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "004/101",
+    "cardName": "Cradily",
+    "fullDisplayName": "Cradily 004/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-004-low.png",
+    "imageHighSrc": "cards/bw10-004-high.png"
+  },
+  {
+    "masterCardId": "2087",
+    "externalId": null,
+    "tcgdex_id": "bw10-3",
+    "localId": "003",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "003/101",
+    "cardName": "Lileep",
+    "fullDisplayName": "Lileep 003/101 Plasma Blast",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Root Fossil Lileep",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-003-low.png",
+    "imageHighSrc": "cards/bw10-003-high.png"
+  },
+  {
+    "masterCardId": "2086",
+    "externalId": null,
+    "tcgdex_id": "bw10-2",
+    "localId": "002",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "002/101",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 002/101 Plasma Blast",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-002-low.png",
+    "imageHighSrc": "cards/bw10-002-high.png"
+  },
+  {
+    "masterCardId": "2085",
+    "externalId": null,
+    "tcgdex_id": "bw10-1",
+    "localId": "001",
+    "setCode": "bw10",
+    "setTcgdexId": "bw10",
+    "cardNumber": "001/101",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 001/101 Plasma Blast",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw10-001-low.png",
+    "imageHighSrc": "cards/bw10-001-high.png"
+  }
+]

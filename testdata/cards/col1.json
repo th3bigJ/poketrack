@@ -1,0 +1,3420 @@
+[
+  {
+    "masterCardId": "3516",
+    "externalId": null,
+    "tcgdex_id": "col1-SL11",
+    "localId": "SL11",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL11/95",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune SL11/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL11-low.png",
+    "imageHighSrc": "cards/col1-SL11-high.png"
+  },
+  {
+    "masterCardId": "3515",
+    "externalId": null,
+    "tcgdex_id": "col1-SL10",
+    "localId": "SL10",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL10/95",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza SL10/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL10-low.png",
+    "imageHighSrc": "cards/col1-SL10-high.png"
+  },
+  {
+    "masterCardId": "3514",
+    "externalId": null,
+    "tcgdex_id": "col1-SL9",
+    "localId": "SL9",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL9/95",
+    "cardName": "Raikou",
+    "fullDisplayName": "Raikou SL9/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL9-low.png",
+    "imageHighSrc": "cards/col1-SL9-high.png"
+  },
+  {
+    "masterCardId": "3513",
+    "externalId": null,
+    "tcgdex_id": "col1-SL8",
+    "localId": "SL8",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL8/95",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia SL8/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL8-low.png",
+    "imageHighSrc": "cards/col1-SL8-high.png"
+  },
+  {
+    "masterCardId": "3512",
+    "externalId": null,
+    "tcgdex_id": "col1-SL7",
+    "localId": "SL7",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL7/95",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia SL7/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL7-low.png",
+    "imageHighSrc": "cards/col1-SL7-high.png"
+  },
+  {
+    "masterCardId": "3511",
+    "externalId": null,
+    "tcgdex_id": "col1-SL6",
+    "localId": "SL6",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL6/95",
+    "cardName": "Kyogre",
+    "fullDisplayName": "Kyogre SL6/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuri Umemura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL6-low.png",
+    "imageHighSrc": "cards/col1-SL6-high.png"
+  },
+  {
+    "masterCardId": "3510",
+    "externalId": null,
+    "tcgdex_id": "col1-SL5",
+    "localId": "SL5",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL5/95",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh SL5/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL5-low.png",
+    "imageHighSrc": "cards/col1-SL5-high.png"
+  },
+  {
+    "masterCardId": "3509",
+    "externalId": null,
+    "tcgdex_id": "col1-SL4",
+    "localId": "SL4",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL4/95",
+    "cardName": "Groudon",
+    "fullDisplayName": "Groudon SL4/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuri Umemura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL4-low.png",
+    "imageHighSrc": "cards/col1-SL4-high.png"
+  },
+  {
+    "masterCardId": "3508",
+    "externalId": null,
+    "tcgdex_id": "col1-SL3",
+    "localId": "SL3",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL3/95",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei SL3/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuri Umemura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL3-low.png",
+    "imageHighSrc": "cards/col1-SL3-high.png"
+  },
+  {
+    "masterCardId": "3507",
+    "externalId": null,
+    "tcgdex_id": "col1-SL2",
+    "localId": "SL2",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL2/95",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga SL2/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL2-low.png",
+    "imageHighSrc": "cards/col1-SL2-high.png"
+  },
+  {
+    "masterCardId": "3506",
+    "externalId": null,
+    "tcgdex_id": "col1-SL1",
+    "localId": "SL1",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "SL1/95",
+    "cardName": "Deoxys",
+    "fullDisplayName": "Deoxys SL1/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-SL1-low.png",
+    "imageHighSrc": "cards/col1-SL1-high.png"
+  },
+  {
+    "masterCardId": "3505",
+    "externalId": null,
+    "tcgdex_id": "col1-95",
+    "localId": "095",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "095/95",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 095/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-095-low.png",
+    "imageHighSrc": "cards/col1-095-high.png"
+  },
+  {
+    "masterCardId": "3504",
+    "externalId": null,
+    "tcgdex_id": "col1-94",
+    "localId": "094",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "094/95",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 094/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-094-low.png",
+    "imageHighSrc": "cards/col1-094-high.png"
+  },
+  {
+    "masterCardId": "3503",
+    "externalId": null,
+    "tcgdex_id": "col1-93",
+    "localId": "093",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "093/95",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 093/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-093-low.png",
+    "imageHighSrc": "cards/col1-093-high.png"
+  },
+  {
+    "masterCardId": "3502",
+    "externalId": null,
+    "tcgdex_id": "col1-92",
+    "localId": "092",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "092/95",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 092/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-092-low.png",
+    "imageHighSrc": "cards/col1-092-high.png"
+  },
+  {
+    "masterCardId": "3501",
+    "externalId": null,
+    "tcgdex_id": "col1-91",
+    "localId": "091",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "091/95",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 091/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-091-low.png",
+    "imageHighSrc": "cards/col1-091-high.png"
+  },
+  {
+    "masterCardId": "3500",
+    "externalId": null,
+    "tcgdex_id": "col1-90",
+    "localId": "090",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "090/95",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 090/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-090-low.png",
+    "imageHighSrc": "cards/col1-090-high.png"
+  },
+  {
+    "masterCardId": "3499",
+    "externalId": null,
+    "tcgdex_id": "col1-89",
+    "localId": "089",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "089/95",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 089/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-089-low.png",
+    "imageHighSrc": "cards/col1-089-high.png"
+  },
+  {
+    "masterCardId": "3498",
+    "externalId": null,
+    "tcgdex_id": "col1-88",
+    "localId": "088",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "088/95",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 088/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-088-low.png",
+    "imageHighSrc": "cards/col1-088-high.png"
+  },
+  {
+    "masterCardId": "3497",
+    "externalId": null,
+    "tcgdex_id": "col1-87",
+    "localId": "087",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "087/95",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 087/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-087-low.png",
+    "imageHighSrc": "cards/col1-087-high.png"
+  },
+  {
+    "masterCardId": "3496",
+    "externalId": null,
+    "tcgdex_id": "col1-86",
+    "localId": "086",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "086/95",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 086/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-086-low.png",
+    "imageHighSrc": "cards/col1-086-high.png"
+  },
+  {
+    "masterCardId": "3495",
+    "externalId": null,
+    "tcgdex_id": "col1-85",
+    "localId": "085",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "085/95",
+    "cardName": "Sage's Training",
+    "fullDisplayName": "Sage's Training 085/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-085-low.png",
+    "imageHighSrc": "cards/col1-085-high.png"
+  },
+  {
+    "masterCardId": "3494",
+    "externalId": null,
+    "tcgdex_id": "col1-84",
+    "localId": "084",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "084/95",
+    "cardName": "Research Record",
+    "fullDisplayName": "Research Record 084/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-084-low.png",
+    "imageHighSrc": "cards/col1-084-high.png"
+  },
+  {
+    "masterCardId": "3493",
+    "externalId": null,
+    "tcgdex_id": "col1-83",
+    "localId": "083",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "083/95",
+    "cardName": "Professor Oak's New Theory",
+    "fullDisplayName": "Professor Oak's New Theory 083/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-083-low.png",
+    "imageHighSrc": "cards/col1-083-high.png"
+  },
+  {
+    "masterCardId": "3492",
+    "externalId": null,
+    "tcgdex_id": "col1-82",
+    "localId": "082",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "082/95",
+    "cardName": "Professor Elm's Training Method",
+    "fullDisplayName": "Professor Elm's Training Method 082/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-082-low.png",
+    "imageHighSrc": "cards/col1-082-high.png"
+  },
+  {
+    "masterCardId": "3491",
+    "externalId": null,
+    "tcgdex_id": "col1-81",
+    "localId": "081",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "081/95",
+    "cardName": "Lost World",
+    "fullDisplayName": "Lost World 081/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-081-low.png",
+    "imageHighSrc": "cards/col1-081-high.png"
+  },
+  {
+    "masterCardId": "3490",
+    "externalId": null,
+    "tcgdex_id": "col1-80",
+    "localId": "080",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "080/95",
+    "cardName": "Lost Remover",
+    "fullDisplayName": "Lost Remover 080/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-080-low.png",
+    "imageHighSrc": "cards/col1-080-high.png"
+  },
+  {
+    "masterCardId": "3489",
+    "externalId": null,
+    "tcgdex_id": "col1-79",
+    "localId": "079",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "079/95",
+    "cardName": "Interviewer's Questions",
+    "fullDisplayName": "Interviewer's Questions 079/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-079-low.png",
+    "imageHighSrc": "cards/col1-079-high.png"
+  },
+  {
+    "masterCardId": "3488",
+    "externalId": null,
+    "tcgdex_id": "col1-78",
+    "localId": "078",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "078/95",
+    "cardName": "Dual Ball",
+    "fullDisplayName": "Dual Ball 078/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-078-low.png",
+    "imageHighSrc": "cards/col1-078-high.png"
+  },
+  {
+    "masterCardId": "3487",
+    "externalId": null,
+    "tcgdex_id": "col1-77",
+    "localId": "077",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "077/95",
+    "cardName": "Copycat",
+    "fullDisplayName": "Copycat 077/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-077-low.png",
+    "imageHighSrc": "cards/col1-077-high.png"
+  },
+  {
+    "masterCardId": "3486",
+    "externalId": null,
+    "tcgdex_id": "col1-76",
+    "localId": "076",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "076/95",
+    "cardName": "Cheerleader's Cheer",
+    "fullDisplayName": "Cheerleader's Cheer 076/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-076-low.png",
+    "imageHighSrc": "cards/col1-076-high.png"
+  },
+  {
+    "masterCardId": "3485",
+    "externalId": null,
+    "tcgdex_id": "col1-75",
+    "localId": "075",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "075/95",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 075/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-075-low.png",
+    "imageHighSrc": "cards/col1-075-high.png"
+  },
+  {
+    "masterCardId": "3484",
+    "externalId": null,
+    "tcgdex_id": "col1-74",
+    "localId": "074",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "074/95",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 074/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-074-low.png",
+    "imageHighSrc": "cards/col1-074-high.png"
+  },
+  {
+    "masterCardId": "3483",
+    "externalId": null,
+    "tcgdex_id": "col1-73",
+    "localId": "073",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "073/95",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 073/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-073-low.png",
+    "imageHighSrc": "cards/col1-073-high.png"
+  },
+  {
+    "masterCardId": "3482",
+    "externalId": null,
+    "tcgdex_id": "col1-72",
+    "localId": "072",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "072/95",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 072/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-072-low.png",
+    "imageHighSrc": "cards/col1-072-high.png"
+  },
+  {
+    "masterCardId": "3481",
+    "externalId": null,
+    "tcgdex_id": "col1-71",
+    "localId": "071",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "071/95",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 071/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-071-low.png",
+    "imageHighSrc": "cards/col1-071-high.png"
+  },
+  {
+    "masterCardId": "3480",
+    "externalId": null,
+    "tcgdex_id": "col1-70",
+    "localId": "070",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "070/95",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 070/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-070-low.png",
+    "imageHighSrc": "cards/col1-070-high.png"
+  },
+  {
+    "masterCardId": "3479",
+    "externalId": null,
+    "tcgdex_id": "col1-69",
+    "localId": "069",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "069/95",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 069/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-069-low.png",
+    "imageHighSrc": "cards/col1-069-high.png"
+  },
+  {
+    "masterCardId": "3478",
+    "externalId": null,
+    "tcgdex_id": "col1-68",
+    "localId": "068",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "068/95",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 068/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-068-low.png",
+    "imageHighSrc": "cards/col1-068-high.png"
+  },
+  {
+    "masterCardId": "3477",
+    "externalId": null,
+    "tcgdex_id": "col1-67",
+    "localId": "067",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "067/95",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 067/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-067-low.png",
+    "imageHighSrc": "cards/col1-067-high.png"
+  },
+  {
+    "masterCardId": "3476",
+    "externalId": null,
+    "tcgdex_id": "col1-66",
+    "localId": "066",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "066/95",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 066/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-066-low.png",
+    "imageHighSrc": "cards/col1-066-high.png"
+  },
+  {
+    "masterCardId": "3475",
+    "externalId": null,
+    "tcgdex_id": "col1-65",
+    "localId": "065",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "065/95",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 065/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-065-low.png",
+    "imageHighSrc": "cards/col1-065-high.png"
+  },
+  {
+    "masterCardId": "3474",
+    "externalId": null,
+    "tcgdex_id": "col1-64",
+    "localId": "064",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "064/95",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 064/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-064-low.png",
+    "imageHighSrc": "cards/col1-064-high.png"
+  },
+  {
+    "masterCardId": "3473",
+    "externalId": null,
+    "tcgdex_id": "col1-63",
+    "localId": "063",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "063/95",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 063/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-063-low.png",
+    "imageHighSrc": "cards/col1-063-high.png"
+  },
+  {
+    "masterCardId": "3472",
+    "externalId": null,
+    "tcgdex_id": "col1-62",
+    "localId": "062",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "062/95",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 062/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-062-low.png",
+    "imageHighSrc": "cards/col1-062-high.png"
+  },
+  {
+    "masterCardId": "3471",
+    "externalId": null,
+    "tcgdex_id": "col1-61",
+    "localId": "061",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "061/95",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 061/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-061-low.png",
+    "imageHighSrc": "cards/col1-061-high.png"
+  },
+  {
+    "masterCardId": "3470",
+    "externalId": null,
+    "tcgdex_id": "col1-60",
+    "localId": "060",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "060/95",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 060/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-060-low.png",
+    "imageHighSrc": "cards/col1-060-high.png"
+  },
+  {
+    "masterCardId": "3469",
+    "externalId": null,
+    "tcgdex_id": "col1-59",
+    "localId": "059",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "059/95",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 059/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-059-low.png",
+    "imageHighSrc": "cards/col1-059-high.png"
+  },
+  {
+    "masterCardId": "3468",
+    "externalId": null,
+    "tcgdex_id": "col1-58",
+    "localId": "058",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "058/95",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 058/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-058-low.png",
+    "imageHighSrc": "cards/col1-058-high.png"
+  },
+  {
+    "masterCardId": "3467",
+    "externalId": null,
+    "tcgdex_id": "col1-57",
+    "localId": "057",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "057/95",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 057/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-057-low.png",
+    "imageHighSrc": "cards/col1-057-high.png"
+  },
+  {
+    "masterCardId": "3466",
+    "externalId": null,
+    "tcgdex_id": "col1-56",
+    "localId": "056",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "056/95",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 056/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-056-low.png",
+    "imageHighSrc": "cards/col1-056-high.png"
+  },
+  {
+    "masterCardId": "3465",
+    "externalId": null,
+    "tcgdex_id": "col1-55",
+    "localId": "055",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "055/95",
+    "cardName": "Cyndaquil",
+    "fullDisplayName": "Cyndaquil 055/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      155
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-055-low.png",
+    "imageHighSrc": "cards/col1-055-high.png"
+  },
+  {
+    "masterCardId": "3464",
+    "externalId": null,
+    "tcgdex_id": "col1-54",
+    "localId": "054",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "054/95",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 054/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-054-low.png",
+    "imageHighSrc": "cards/col1-054-high.png"
+  },
+  {
+    "masterCardId": "3463",
+    "externalId": null,
+    "tcgdex_id": "col1-53",
+    "localId": "053",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "053/95",
+    "cardName": "Chikorita",
+    "fullDisplayName": "Chikorita 053/95 Call of Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      152
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-053-low.png",
+    "imageHighSrc": "cards/col1-053-high.png"
+  },
+  {
+    "masterCardId": "3462",
+    "externalId": null,
+    "tcgdex_id": "col1-52",
+    "localId": "052",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "052/95",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 052/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-052-low.png",
+    "imageHighSrc": "cards/col1-052-high.png"
+  },
+  {
+    "masterCardId": "3461",
+    "externalId": null,
+    "tcgdex_id": "col1-51",
+    "localId": "051",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "051/95",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 051/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-051-low.png",
+    "imageHighSrc": "cards/col1-051-high.png"
+  },
+  {
+    "masterCardId": "3460",
+    "externalId": null,
+    "tcgdex_id": "col1-50",
+    "localId": "050",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "050/95",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 050/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-050-low.png",
+    "imageHighSrc": "cards/col1-050-high.png"
+  },
+  {
+    "masterCardId": "3459",
+    "externalId": null,
+    "tcgdex_id": "col1-49",
+    "localId": "049",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "049/95",
+    "cardName": "Quilava",
+    "fullDisplayName": "Quilava 049/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      156
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cyndaquil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-049-low.png",
+    "imageHighSrc": "cards/col1-049-high.png"
+  },
+  {
+    "masterCardId": "3458",
+    "externalId": null,
+    "tcgdex_id": "col1-48",
+    "localId": "048",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "048/95",
+    "cardName": "Pidgeotto",
+    "fullDisplayName": "Pidgeotto 048/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-048-low.png",
+    "imageHighSrc": "cards/col1-048-high.png"
+  },
+  {
+    "masterCardId": "3457",
+    "externalId": null,
+    "tcgdex_id": "col1-47",
+    "localId": "047",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "047/95",
+    "cardName": "Mime Jr.",
+    "fullDisplayName": "Mime Jr. 047/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      439
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-047-low.png",
+    "imageHighSrc": "cards/col1-047-high.png"
+  },
+  {
+    "masterCardId": "3456",
+    "externalId": null,
+    "tcgdex_id": "col1-46",
+    "localId": "046",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "046/95",
+    "cardName": "Magby",
+    "fullDisplayName": "Magby 046/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      240
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-046-low.png",
+    "imageHighSrc": "cards/col1-046-high.png"
+  },
+  {
+    "masterCardId": "3455",
+    "externalId": null,
+    "tcgdex_id": "col1-45",
+    "localId": "045",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "045/95",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 045/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-045-low.png",
+    "imageHighSrc": "cards/col1-045-high.png"
+  },
+  {
+    "masterCardId": "3454",
+    "externalId": null,
+    "tcgdex_id": "col1-44",
+    "localId": "044",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "044/95",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 044/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-044-low.png",
+    "imageHighSrc": "cards/col1-044-high.png"
+  },
+  {
+    "masterCardId": "3453",
+    "externalId": null,
+    "tcgdex_id": "col1-43",
+    "localId": "043",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "043/95",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 043/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-043-low.png",
+    "imageHighSrc": "cards/col1-043-high.png"
+  },
+  {
+    "masterCardId": "3452",
+    "externalId": null,
+    "tcgdex_id": "col1-42",
+    "localId": "042",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "042/95",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 042/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Phanpy",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-042-low.png",
+    "imageHighSrc": "cards/col1-042-high.png"
+  },
+  {
+    "masterCardId": "3451",
+    "externalId": null,
+    "tcgdex_id": "col1-41",
+    "localId": "041",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "041/95",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 041/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-041-low.png",
+    "imageHighSrc": "cards/col1-041-high.png"
+  },
+  {
+    "masterCardId": "3450",
+    "externalId": null,
+    "tcgdex_id": "col1-40",
+    "localId": "040",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "040/95",
+    "cardName": "Bayleef",
+    "fullDisplayName": "Bayleef 040/95 Call of Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      153
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chikorita",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-040-low.png",
+    "imageHighSrc": "cards/col1-040-high.png"
+  },
+  {
+    "masterCardId": "3449",
+    "externalId": null,
+    "tcgdex_id": "col1-39",
+    "localId": "039",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "039/95",
+    "cardName": "Zangoose",
+    "fullDisplayName": "Zangoose 039/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-039-low.png",
+    "imageHighSrc": "cards/col1-039-high.png"
+  },
+  {
+    "masterCardId": "3448",
+    "externalId": null,
+    "tcgdex_id": "col1-38",
+    "localId": "038",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "038/95",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 038/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-038-low.png",
+    "imageHighSrc": "cards/col1-038-high.png"
+  },
+  {
+    "masterCardId": "3447",
+    "externalId": null,
+    "tcgdex_id": "col1-37",
+    "localId": "037",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "037/95",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 037/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-037-low.png",
+    "imageHighSrc": "cards/col1-037-high.png"
+  },
+  {
+    "masterCardId": "3446",
+    "externalId": null,
+    "tcgdex_id": "col1-36",
+    "localId": "036",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "036/95",
+    "cardName": "Tyrogue",
+    "fullDisplayName": "Tyrogue 036/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      236
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-036-low.png",
+    "imageHighSrc": "cards/col1-036-high.png"
+  },
+  {
+    "masterCardId": "3445",
+    "externalId": null,
+    "tcgdex_id": "col1-35",
+    "localId": "035",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "035/95",
+    "cardName": "Typhlosion",
+    "fullDisplayName": "Typhlosion 035/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-035-low.png",
+    "imageHighSrc": "cards/col1-035-high.png"
+  },
+  {
+    "masterCardId": "3444",
+    "externalId": null,
+    "tcgdex_id": "col1-34",
+    "localId": "034",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "034/95",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 034/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-034-low.png",
+    "imageHighSrc": "cards/col1-034-high.png"
+  },
+  {
+    "masterCardId": "3443",
+    "externalId": null,
+    "tcgdex_id": "col1-33",
+    "localId": "033",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "033/95",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 033/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-033-low.png",
+    "imageHighSrc": "cards/col1-033-high.png"
+  },
+  {
+    "masterCardId": "3442",
+    "externalId": null,
+    "tcgdex_id": "col1-32",
+    "localId": "032",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "032/95",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 032/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-032-low.png",
+    "imageHighSrc": "cards/col1-032-high.png"
+  },
+  {
+    "masterCardId": "3441",
+    "externalId": null,
+    "tcgdex_id": "col1-31",
+    "localId": "031",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "031/95",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 031/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-031-low.png",
+    "imageHighSrc": "cards/col1-031-high.png"
+  },
+  {
+    "masterCardId": "3440",
+    "externalId": null,
+    "tcgdex_id": "col1-30",
+    "localId": "030",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "030/95",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 030/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-030-low.png",
+    "imageHighSrc": "cards/col1-030-high.png"
+  },
+  {
+    "masterCardId": "3439",
+    "externalId": null,
+    "tcgdex_id": "col1-29",
+    "localId": "029",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "029/95",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 029/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-029-low.png",
+    "imageHighSrc": "cards/col1-029-high.png"
+  },
+  {
+    "masterCardId": "3438",
+    "externalId": null,
+    "tcgdex_id": "col1-28",
+    "localId": "028",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "028/95",
+    "cardName": "Mismagius",
+    "fullDisplayName": "Mismagius 028/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-028-low.png",
+    "imageHighSrc": "cards/col1-028-high.png"
+  },
+  {
+    "masterCardId": "3437",
+    "externalId": null,
+    "tcgdex_id": "col1-27",
+    "localId": "027",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "027/95",
+    "cardName": "Meganium",
+    "fullDisplayName": "Meganium 027/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      154
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bayleef",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-027-low.png",
+    "imageHighSrc": "cards/col1-027-high.png"
+  },
+  {
+    "masterCardId": "3436",
+    "externalId": null,
+    "tcgdex_id": "col1-26",
+    "localId": "026",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "026/95",
+    "cardName": "Granbull",
+    "fullDisplayName": "Granbull 026/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      210
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snubbull",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-026-low.png",
+    "imageHighSrc": "cards/col1-026-high.png"
+  },
+  {
+    "masterCardId": "3435",
+    "externalId": null,
+    "tcgdex_id": "col1-25",
+    "localId": "025",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "025/95",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 025/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-025-low.png",
+    "imageHighSrc": "cards/col1-025-high.png"
+  },
+  {
+    "masterCardId": "3434",
+    "externalId": null,
+    "tcgdex_id": "col1-24",
+    "localId": "024",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "024/95",
+    "cardName": "Cleffa",
+    "fullDisplayName": "Cleffa 024/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      173
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-024-low.png",
+    "imageHighSrc": "cards/col1-024-high.png"
+  },
+  {
+    "masterCardId": "3433",
+    "externalId": null,
+    "tcgdex_id": "col1-23",
+    "localId": "023",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "023/95",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 023/95 Call of Legends",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-023-low.png",
+    "imageHighSrc": "cards/col1-023-high.png"
+  },
+  {
+    "masterCardId": "3432",
+    "externalId": null,
+    "tcgdex_id": "col1-22",
+    "localId": "022",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "022/95",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 022/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-022-low.png",
+    "imageHighSrc": "cards/col1-022-high.png"
+  },
+  {
+    "masterCardId": "3431",
+    "externalId": null,
+    "tcgdex_id": "col1-21",
+    "localId": "021",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "021/95",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 021/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-021-low.png",
+    "imageHighSrc": "cards/col1-021-high.png"
+  },
+  {
+    "masterCardId": "3430",
+    "externalId": null,
+    "tcgdex_id": "col1-20",
+    "localId": "020",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "020/95",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 020/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-020-low.png",
+    "imageHighSrc": "cards/col1-020-high.png"
+  },
+  {
+    "masterCardId": "3429",
+    "externalId": null,
+    "tcgdex_id": "col1-19",
+    "localId": "019",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "019/95",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia 019/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Iwamoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-019-low.png",
+    "imageHighSrc": "cards/col1-019-high.png"
+  },
+  {
+    "masterCardId": "3428",
+    "externalId": null,
+    "tcgdex_id": "col1-18",
+    "localId": "018",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "018/95",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 018/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-018-low.png",
+    "imageHighSrc": "cards/col1-018-high.png"
+  },
+  {
+    "masterCardId": "3427",
+    "externalId": null,
+    "tcgdex_id": "col1-17",
+    "localId": "017",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "017/95",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 017/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-017-low.png",
+    "imageHighSrc": "cards/col1-017-high.png"
+  },
+  {
+    "masterCardId": "3426",
+    "externalId": null,
+    "tcgdex_id": "col1-16",
+    "localId": "016",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "016/95",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 016/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-016-low.png",
+    "imageHighSrc": "cards/col1-016-high.png"
+  },
+  {
+    "masterCardId": "3425",
+    "externalId": null,
+    "tcgdex_id": "col1-15",
+    "localId": "015",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "015/95",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 015/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-015-low.png",
+    "imageHighSrc": "cards/col1-015-high.png"
+  },
+  {
+    "masterCardId": "3424",
+    "externalId": null,
+    "tcgdex_id": "col1-14",
+    "localId": "014",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "014/95",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 014/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-014-low.png",
+    "imageHighSrc": "cards/col1-014-high.png"
+  },
+  {
+    "masterCardId": "3423",
+    "externalId": null,
+    "tcgdex_id": "col1-13",
+    "localId": "013",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "013/95",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon 013/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-013-low.png",
+    "imageHighSrc": "cards/col1-013-high.png"
+  },
+  {
+    "masterCardId": "3422",
+    "externalId": null,
+    "tcgdex_id": "col1-12",
+    "localId": "012",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "012/95",
+    "cardName": "Kyogre",
+    "fullDisplayName": "Kyogre 012/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-012-low.png",
+    "imageHighSrc": "cards/col1-012-high.png"
+  },
+  {
+    "masterCardId": "3421",
+    "externalId": null,
+    "tcgdex_id": "col1-11",
+    "localId": "011",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "011/95",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 011/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-011-low.png",
+    "imageHighSrc": "cards/col1-011-high.png"
+  },
+  {
+    "masterCardId": "3420",
+    "externalId": null,
+    "tcgdex_id": "col1-10",
+    "localId": "010",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "010/95",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 010/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-010-low.png",
+    "imageHighSrc": "cards/col1-010-high.png"
+  },
+  {
+    "masterCardId": "3419",
+    "externalId": null,
+    "tcgdex_id": "col1-9",
+    "localId": "009",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "009/95",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 009/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-009-low.png",
+    "imageHighSrc": "cards/col1-009-high.png"
+  },
+  {
+    "masterCardId": "3418",
+    "externalId": null,
+    "tcgdex_id": "col1-8",
+    "localId": "008",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "008/95",
+    "cardName": "Hitmontop",
+    "fullDisplayName": "Hitmontop 008/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      237
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-008-low.png",
+    "imageHighSrc": "cards/col1-008-high.png"
+  },
+  {
+    "masterCardId": "3417",
+    "externalId": null,
+    "tcgdex_id": "col1-7",
+    "localId": "007",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "007/95",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 007/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-007-low.png",
+    "imageHighSrc": "cards/col1-007-high.png"
+  },
+  {
+    "masterCardId": "3416",
+    "externalId": null,
+    "tcgdex_id": "col1-6",
+    "localId": "006",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "006/95",
+    "cardName": "Groudon",
+    "fullDisplayName": "Groudon 006/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-006-low.png",
+    "imageHighSrc": "cards/col1-006-high.png"
+  },
+  {
+    "masterCardId": "3415",
+    "externalId": null,
+    "tcgdex_id": "col1-5",
+    "localId": "005",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "005/95",
+    "cardName": "Forretress",
+    "fullDisplayName": "Forretress 005/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-005-low.png",
+    "imageHighSrc": "cards/col1-005-high.png"
+  },
+  {
+    "masterCardId": "3414",
+    "externalId": null,
+    "tcgdex_id": "col1-4",
+    "localId": "004",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "004/95",
+    "cardName": "Espeon",
+    "fullDisplayName": "Espeon 004/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-004-low.png",
+    "imageHighSrc": "cards/col1-004-high.png"
+  },
+  {
+    "masterCardId": "3413",
+    "externalId": null,
+    "tcgdex_id": "col1-3",
+    "localId": "003",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "003/95",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga 003/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-003-low.png",
+    "imageHighSrc": "cards/col1-003-high.png"
+  },
+  {
+    "masterCardId": "3412",
+    "externalId": null,
+    "tcgdex_id": "col1-2",
+    "localId": "002",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "002/95",
+    "cardName": "Deoxys",
+    "fullDisplayName": "Deoxys 002/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-002-low.png",
+    "imageHighSrc": "cards/col1-002-high.png"
+  },
+  {
+    "masterCardId": "3411",
+    "externalId": null,
+    "tcgdex_id": "col1-1",
+    "localId": "001",
+    "setCode": "col1",
+    "setTcgdexId": "col1",
+    "cardNumber": "001/95",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 001/95 Call of Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/col1-001-low.png",
+    "imageHighSrc": "cards/col1-001-high.png"
+  }
+]

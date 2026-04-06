@@ -1,0 +1,4140 @@
+[
+  {
+    "masterCardId": "8185",
+    "externalId": null,
+    "tcgdex_id": "gym1-132",
+    "localId": "132",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "132/132",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 132/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-132-low.png",
+    "imageHighSrc": "cards/gym1-132-high.png"
+  },
+  {
+    "masterCardId": "8184",
+    "externalId": null,
+    "tcgdex_id": "gym1-131",
+    "localId": "131",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "131/132",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 131/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-131-low.png",
+    "imageHighSrc": "cards/gym1-131-high.png"
+  },
+  {
+    "masterCardId": "8183",
+    "externalId": null,
+    "tcgdex_id": "gym1-130",
+    "localId": "130",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "130/132",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 130/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-130-low.png",
+    "imageHighSrc": "cards/gym1-130-high.png"
+  },
+  {
+    "masterCardId": "8182",
+    "externalId": null,
+    "tcgdex_id": "gym1-129",
+    "localId": "129",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "129/132",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 129/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-129-low.png",
+    "imageHighSrc": "cards/gym1-129-high.png"
+  },
+  {
+    "masterCardId": "8181",
+    "externalId": null,
+    "tcgdex_id": "gym1-128",
+    "localId": "128",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "128/132",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 128/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-128-low.png",
+    "imageHighSrc": "cards/gym1-128-high.png"
+  },
+  {
+    "masterCardId": "8180",
+    "externalId": null,
+    "tcgdex_id": "gym1-127",
+    "localId": "127",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "127/132",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 127/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-127-low.png",
+    "imageHighSrc": "cards/gym1-127-high.png"
+  },
+  {
+    "masterCardId": "8178",
+    "externalId": null,
+    "tcgdex_id": "gym1-126",
+    "localId": "126",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "126/132",
+    "cardName": "Trash Exchange",
+    "fullDisplayName": "Trash Exchange 126/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-126-low.png",
+    "imageHighSrc": "cards/gym1-126-high.png"
+  },
+  {
+    "masterCardId": "8176",
+    "externalId": null,
+    "tcgdex_id": "gym1-125",
+    "localId": "125",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "125/132",
+    "cardName": "Sabrina's Gaze",
+    "fullDisplayName": "Sabrina's Gaze 125/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-125-low.png",
+    "imageHighSrc": "cards/gym1-125-high.png"
+  },
+  {
+    "masterCardId": "8174",
+    "externalId": null,
+    "tcgdex_id": "gym1-124",
+    "localId": "124",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "124/132",
+    "cardName": "Narrow Gym",
+    "fullDisplayName": "Narrow Gym 124/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-124-low.png",
+    "imageHighSrc": "cards/gym1-124-high.png"
+  },
+  {
+    "masterCardId": "8172",
+    "externalId": null,
+    "tcgdex_id": "gym1-123",
+    "localId": "123",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "123/132",
+    "cardName": "Misty's Duel",
+    "fullDisplayName": "Misty's Duel 123/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-123-low.png",
+    "imageHighSrc": "cards/gym1-123-high.png"
+  },
+  {
+    "masterCardId": "8170",
+    "externalId": null,
+    "tcgdex_id": "gym1-122",
+    "localId": "122",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "122/132",
+    "cardName": "Energy Flow",
+    "fullDisplayName": "Energy Flow 122/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-122-low.png",
+    "imageHighSrc": "cards/gym1-122-high.png"
+  },
+  {
+    "masterCardId": "8167",
+    "externalId": null,
+    "tcgdex_id": "gym1-121",
+    "localId": "121",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "121/132",
+    "cardName": "Blaine's Gamble",
+    "fullDisplayName": "Blaine's Gamble 121/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-121-low.png",
+    "imageHighSrc": "cards/gym1-121-high.png"
+  },
+  {
+    "masterCardId": "8165",
+    "externalId": null,
+    "tcgdex_id": "gym1-120",
+    "localId": "120",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "120/132",
+    "cardName": "Vermilion City Gym",
+    "fullDisplayName": "Vermilion City Gym 120/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-120-low.png",
+    "imageHighSrc": "cards/gym1-120-high.png"
+  },
+  {
+    "masterCardId": "8163",
+    "externalId": null,
+    "tcgdex_id": "gym1-119",
+    "localId": "119",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "119/132",
+    "cardName": "Tickling Machine",
+    "fullDisplayName": "Tickling Machine 119/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-119-low.png",
+    "imageHighSrc": "cards/gym1-119-high.png"
+  },
+  {
+    "masterCardId": "8161",
+    "externalId": null,
+    "tcgdex_id": "gym1-118",
+    "localId": "118",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "118/132",
+    "cardName": "Secret Mission",
+    "fullDisplayName": "Secret Mission 118/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-118-low.png",
+    "imageHighSrc": "cards/gym1-118-high.png"
+  },
+  {
+    "masterCardId": "8159",
+    "externalId": null,
+    "tcgdex_id": "gym1-117",
+    "localId": "117",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "117/132",
+    "cardName": "Sabrina's ESP",
+    "fullDisplayName": "Sabrina's ESP 117/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-117-low.png",
+    "imageHighSrc": "cards/gym1-117-high.png"
+  },
+  {
+    "masterCardId": "8157",
+    "externalId": null,
+    "tcgdex_id": "gym1-116",
+    "localId": "116",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "116/132",
+    "cardName": "Recall",
+    "fullDisplayName": "Recall 116/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-116-low.png",
+    "imageHighSrc": "cards/gym1-116-high.png"
+  },
+  {
+    "masterCardId": "8155",
+    "externalId": null,
+    "tcgdex_id": "gym1-115",
+    "localId": "115",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "115/132",
+    "cardName": "Pewter City Gym",
+    "fullDisplayName": "Pewter City Gym 115/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-115-low.png",
+    "imageHighSrc": "cards/gym1-115-high.png"
+  },
+  {
+    "masterCardId": "8153",
+    "externalId": null,
+    "tcgdex_id": "gym1-114",
+    "localId": "114",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "114/132",
+    "cardName": "Misty's Wrath",
+    "fullDisplayName": "Misty's Wrath 114/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-114-low.png",
+    "imageHighSrc": "cards/gym1-114-high.png"
+  },
+  {
+    "masterCardId": "8151",
+    "externalId": null,
+    "tcgdex_id": "gym1-113",
+    "localId": "113",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "113/132",
+    "cardName": "Minion of Team Rocket",
+    "fullDisplayName": "Minion of Team Rocket 113/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-113-low.png",
+    "imageHighSrc": "cards/gym1-113-high.png"
+  },
+  {
+    "masterCardId": "8149",
+    "externalId": null,
+    "tcgdex_id": "gym1-112",
+    "localId": "112",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "112/132",
+    "cardName": "Lt. Surge's Treaty",
+    "fullDisplayName": "Lt. Surge's Treaty 112/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-112-low.png",
+    "imageHighSrc": "cards/gym1-112-high.png"
+  },
+  {
+    "masterCardId": "8147",
+    "externalId": null,
+    "tcgdex_id": "gym1-111",
+    "localId": "111",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "111/132",
+    "cardName": "Good Manners",
+    "fullDisplayName": "Good Manners 111/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-111-low.png",
+    "imageHighSrc": "cards/gym1-111-high.png"
+  },
+  {
+    "masterCardId": "8145",
+    "externalId": null,
+    "tcgdex_id": "gym1-110",
+    "localId": "110",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "110/132",
+    "cardName": "Erika's Perfume",
+    "fullDisplayName": "Erika's Perfume 110/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-110-low.png",
+    "imageHighSrc": "cards/gym1-110-high.png"
+  },
+  {
+    "masterCardId": "8143",
+    "externalId": null,
+    "tcgdex_id": "gym1-109",
+    "localId": "109",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "109/132",
+    "cardName": "Erika's Maids",
+    "fullDisplayName": "Erika's Maids 109/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-109-low.png",
+    "imageHighSrc": "cards/gym1-109-high.png"
+  },
+  {
+    "masterCardId": "8141",
+    "externalId": null,
+    "tcgdex_id": "gym1-108",
+    "localId": "108",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "108/132",
+    "cardName": "Cerulean City Gym",
+    "fullDisplayName": "Cerulean City Gym 108/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-108-low.png",
+    "imageHighSrc": "cards/gym1-108-high.png"
+  },
+  {
+    "masterCardId": "8139",
+    "externalId": null,
+    "tcgdex_id": "gym1-107",
+    "localId": "107",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "107/132",
+    "cardName": "Celadon City Gym",
+    "fullDisplayName": "Celadon City Gym 107/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-107-low.png",
+    "imageHighSrc": "cards/gym1-107-high.png"
+  },
+  {
+    "masterCardId": "8136",
+    "externalId": null,
+    "tcgdex_id": "gym1-106",
+    "localId": "106",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "106/132",
+    "cardName": "Brock's Training Method",
+    "fullDisplayName": "Brock's Training Method 106/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-106-low.png",
+    "imageHighSrc": "cards/gym1-106-high.png"
+  },
+  {
+    "masterCardId": "8133",
+    "externalId": null,
+    "tcgdex_id": "gym1-105",
+    "localId": "105",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "105/132",
+    "cardName": "Blaine's Last Resort",
+    "fullDisplayName": "Blaine's Last Resort 105/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-105-low.png",
+    "imageHighSrc": "cards/gym1-105-high.png"
+  },
+  {
+    "masterCardId": "8130",
+    "externalId": null,
+    "tcgdex_id": "gym1-104",
+    "localId": "104",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "104/132",
+    "cardName": "The Rocket's Training Gym",
+    "fullDisplayName": "The Rocket's Training Gym 104/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-104-low.png",
+    "imageHighSrc": "cards/gym1-104-high.png"
+  },
+  {
+    "masterCardId": "8127",
+    "externalId": null,
+    "tcgdex_id": "gym1-103",
+    "localId": "103",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "103/132",
+    "cardName": "No Removal Gym",
+    "fullDisplayName": "No Removal Gym 103/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-103-low.png",
+    "imageHighSrc": "cards/gym1-103-high.png"
+  },
+  {
+    "masterCardId": "8124",
+    "externalId": null,
+    "tcgdex_id": "gym1-102",
+    "localId": "102",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "102/132",
+    "cardName": "Misty",
+    "fullDisplayName": "Misty 102/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-102-low.png",
+    "imageHighSrc": "cards/gym1-102-high.png"
+  },
+  {
+    "masterCardId": "8121",
+    "externalId": null,
+    "tcgdex_id": "gym1-101",
+    "localId": "101",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "101/132",
+    "cardName": "Lt. Surge",
+    "fullDisplayName": "Lt. Surge 101/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-101-low.png",
+    "imageHighSrc": "cards/gym1-101-high.png"
+  },
+  {
+    "masterCardId": "8118",
+    "externalId": null,
+    "tcgdex_id": "gym1-100",
+    "localId": "100",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "100/132",
+    "cardName": "Erika",
+    "fullDisplayName": "Erika 100/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-100-low.png",
+    "imageHighSrc": "cards/gym1-100-high.png"
+  },
+  {
+    "masterCardId": "8115",
+    "externalId": null,
+    "tcgdex_id": "gym1-99",
+    "localId": "099",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "099/132",
+    "cardName": "Charity",
+    "fullDisplayName": "Charity 099/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-099-low.png",
+    "imageHighSrc": "cards/gym1-099-high.png"
+  },
+  {
+    "masterCardId": "8112",
+    "externalId": null,
+    "tcgdex_id": "gym1-98",
+    "localId": "098",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "098/132",
+    "cardName": "Brock",
+    "fullDisplayName": "Brock 098/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-098-low.png",
+    "imageHighSrc": "cards/gym1-098-high.png"
+  },
+  {
+    "masterCardId": "8109",
+    "externalId": null,
+    "tcgdex_id": "gym1-97",
+    "localId": "097",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "097/132",
+    "cardName": "Blaine's Quiz #1",
+    "fullDisplayName": "Blaine's Quiz #1 097/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-097-low.png",
+    "imageHighSrc": "cards/gym1-097-high.png"
+  },
+  {
+    "masterCardId": "8106",
+    "externalId": null,
+    "tcgdex_id": "gym1-96",
+    "localId": "096",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "096/132",
+    "cardName": "Sabrina's Venonat",
+    "fullDisplayName": "Sabrina's Venonat 096/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      48
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-096-low.png",
+    "imageHighSrc": "cards/gym1-096-high.png"
+  },
+  {
+    "masterCardId": "8103",
+    "externalId": null,
+    "tcgdex_id": "gym1-95",
+    "localId": "095",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "095/132",
+    "cardName": "Sabrina's Slowpoke",
+    "fullDisplayName": "Sabrina's Slowpoke 095/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-095-low.png",
+    "imageHighSrc": "cards/gym1-095-high.png"
+  },
+  {
+    "masterCardId": "8100",
+    "externalId": null,
+    "tcgdex_id": "gym1-94",
+    "localId": "094",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "094/132",
+    "cardName": "Sabrina's Mr. Mime",
+    "fullDisplayName": "Sabrina's Mr. Mime 094/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mime Jr.",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-094-low.png",
+    "imageHighSrc": "cards/gym1-094-high.png"
+  },
+  {
+    "masterCardId": "8096",
+    "externalId": null,
+    "tcgdex_id": "gym1-93",
+    "localId": "093",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "093/132",
+    "cardName": "Sabrina's Gastly",
+    "fullDisplayName": "Sabrina's Gastly 093/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-093-low.png",
+    "imageHighSrc": "cards/gym1-093-high.png"
+  },
+  {
+    "masterCardId": "8092",
+    "externalId": null,
+    "tcgdex_id": "gym1-92",
+    "localId": "092",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "092/132",
+    "cardName": "Sabrina's Drowzee",
+    "fullDisplayName": "Sabrina's Drowzee 092/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-092-low.png",
+    "imageHighSrc": "cards/gym1-092-high.png"
+  },
+  {
+    "masterCardId": "8087",
+    "externalId": null,
+    "tcgdex_id": "gym1-91",
+    "localId": "091",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "091/132",
+    "cardName": "Sabrina's Abra",
+    "fullDisplayName": "Sabrina's Abra 091/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-091-low.png",
+    "imageHighSrc": "cards/gym1-091-high.png"
+  },
+  {
+    "masterCardId": "8084",
+    "externalId": null,
+    "tcgdex_id": "gym1-90",
+    "localId": "090",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "090/132",
+    "cardName": "Misty's Staryu",
+    "fullDisplayName": "Misty's Staryu 090/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-090-low.png",
+    "imageHighSrc": "cards/gym1-090-high.png"
+  },
+  {
+    "masterCardId": "8080",
+    "externalId": null,
+    "tcgdex_id": "gym1-89",
+    "localId": "089",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "089/132",
+    "cardName": "Misty's Shellder",
+    "fullDisplayName": "Misty's Shellder 089/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      90
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-089-low.png",
+    "imageHighSrc": "cards/gym1-089-high.png"
+  },
+  {
+    "masterCardId": "8076",
+    "externalId": null,
+    "tcgdex_id": "gym1-88",
+    "localId": "088",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "088/132",
+    "cardName": "Misty's Seel",
+    "fullDisplayName": "Misty's Seel 088/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-088-low.png",
+    "imageHighSrc": "cards/gym1-088-high.png"
+  },
+  {
+    "masterCardId": "8072",
+    "externalId": null,
+    "tcgdex_id": "gym1-87",
+    "localId": "087",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "087/132",
+    "cardName": "Misty's Poliwag",
+    "fullDisplayName": "Misty's Poliwag 087/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-087-low.png",
+    "imageHighSrc": "cards/gym1-087-high.png"
+  },
+  {
+    "masterCardId": "8064",
+    "externalId": null,
+    "tcgdex_id": "gym1-86",
+    "localId": "086",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "086/132",
+    "cardName": "Misty's Horsea",
+    "fullDisplayName": "Misty's Horsea 086/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-086-low.png",
+    "imageHighSrc": "cards/gym1-086-high.png"
+  },
+  {
+    "masterCardId": "8060",
+    "externalId": null,
+    "tcgdex_id": "gym1-85",
+    "localId": "085",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "085/132",
+    "cardName": "Misty's Goldeen",
+    "fullDisplayName": "Misty's Goldeen 085/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-085-low.png",
+    "imageHighSrc": "cards/gym1-085-high.png"
+  },
+  {
+    "masterCardId": "8056",
+    "externalId": null,
+    "tcgdex_id": "gym1-84",
+    "localId": "084",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "084/132",
+    "cardName": "Lt. Surge's Voltorb",
+    "fullDisplayName": "Lt. Surge's Voltorb 084/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-084-low.png",
+    "imageHighSrc": "cards/gym1-084-high.png"
+  },
+  {
+    "masterCardId": "8051",
+    "externalId": null,
+    "tcgdex_id": "gym1-83",
+    "localId": "083",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "083/132",
+    "cardName": "Lt. Surge's Spearow",
+    "fullDisplayName": "Lt. Surge's Spearow 083/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-083-low.png",
+    "imageHighSrc": "cards/gym1-083-high.png"
+  },
+  {
+    "masterCardId": "8047",
+    "externalId": null,
+    "tcgdex_id": "gym1-82",
+    "localId": "082",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "082/132",
+    "cardName": "Lt. Surge's Rattata",
+    "fullDisplayName": "Lt. Surge's Rattata 082/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-082-low.png",
+    "imageHighSrc": "cards/gym1-082-high.png"
+  },
+  {
+    "masterCardId": "8043",
+    "externalId": null,
+    "tcgdex_id": "gym1-81",
+    "localId": "081",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "081/132",
+    "cardName": "Lt. Surge's Pikachu",
+    "fullDisplayName": "Lt. Surge's Pikachu 081/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pichu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-081-low.png",
+    "imageHighSrc": "cards/gym1-081-high.png"
+  },
+  {
+    "masterCardId": "8039",
+    "externalId": null,
+    "tcgdex_id": "gym1-80",
+    "localId": "080",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "080/132",
+    "cardName": "Lt. Surge's Magnemite",
+    "fullDisplayName": "Lt. Surge's Magnemite 080/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-080-low.png",
+    "imageHighSrc": "cards/gym1-080-high.png"
+  },
+  {
+    "masterCardId": "8035",
+    "externalId": null,
+    "tcgdex_id": "gym1-79",
+    "localId": "079",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "079/132",
+    "cardName": "Erika's Tangela",
+    "fullDisplayName": "Erika's Tangela 079/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-079-low.png",
+    "imageHighSrc": "cards/gym1-079-high.png"
+  },
+  {
+    "masterCardId": "8031",
+    "externalId": null,
+    "tcgdex_id": "gym1-78",
+    "localId": "078",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "078/132",
+    "cardName": "Erika's Oddish",
+    "fullDisplayName": "Erika's Oddish 078/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-078-low.png",
+    "imageHighSrc": "cards/gym1-078-high.png"
+  },
+  {
+    "masterCardId": "8027",
+    "externalId": null,
+    "tcgdex_id": "gym1-77",
+    "localId": "077",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "077/132",
+    "cardName": "Erika's Exeggcute",
+    "fullDisplayName": "Erika's Exeggcute 077/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-077-low.png",
+    "imageHighSrc": "cards/gym1-077-high.png"
+  },
+  {
+    "masterCardId": "8023",
+    "externalId": null,
+    "tcgdex_id": "gym1-76",
+    "localId": "076",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "076/132",
+    "cardName": "Erika's Bellsprout",
+    "fullDisplayName": "Erika's Bellsprout 076/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      69
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-076-low.png",
+    "imageHighSrc": "cards/gym1-076-high.png"
+  },
+  {
+    "masterCardId": "8019",
+    "externalId": null,
+    "tcgdex_id": "gym1-75",
+    "localId": "075",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "075/132",
+    "cardName": "Erika's Bellsprout",
+    "fullDisplayName": "Erika's Bellsprout 075/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      69
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-075-low.png",
+    "imageHighSrc": "cards/gym1-075-high.png"
+  },
+  {
+    "masterCardId": "8015",
+    "externalId": null,
+    "tcgdex_id": "gym1-74",
+    "localId": "074",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "074/132",
+    "cardName": "Brock's Zubat",
+    "fullDisplayName": "Brock's Zubat 074/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-074-low.png",
+    "imageHighSrc": "cards/gym1-074-high.png"
+  },
+  {
+    "masterCardId": "8010",
+    "externalId": null,
+    "tcgdex_id": "gym1-73",
+    "localId": "073",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "073/132",
+    "cardName": "Brock's Vulpix",
+    "fullDisplayName": "Brock's Vulpix 073/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-073-low.png",
+    "imageHighSrc": "cards/gym1-073-high.png"
+  },
+  {
+    "masterCardId": "8006",
+    "externalId": null,
+    "tcgdex_id": "gym1-72",
+    "localId": "072",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "072/132",
+    "cardName": "Brock's Sandshrew",
+    "fullDisplayName": "Brock's Sandshrew 072/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-072-low.png",
+    "imageHighSrc": "cards/gym1-072-high.png"
+  },
+  {
+    "masterCardId": "8002",
+    "externalId": null,
+    "tcgdex_id": "gym1-71",
+    "localId": "071",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "071/132",
+    "cardName": "Brock's Sandshrew",
+    "fullDisplayName": "Brock's Sandshrew 071/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-071-low.png",
+    "imageHighSrc": "cards/gym1-071-high.png"
+  },
+  {
+    "masterCardId": "7997",
+    "externalId": null,
+    "tcgdex_id": "gym1-70",
+    "localId": "070",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "070/132",
+    "cardName": "Brock's Rhyhorn",
+    "fullDisplayName": "Brock's Rhyhorn 070/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-070-low.png",
+    "imageHighSrc": "cards/gym1-070-high.png"
+  },
+  {
+    "masterCardId": "7992",
+    "externalId": null,
+    "tcgdex_id": "gym1-69",
+    "localId": "069",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "069/132",
+    "cardName": "Brock's Onix",
+    "fullDisplayName": "Brock's Onix 069/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-069-low.png",
+    "imageHighSrc": "cards/gym1-069-high.png"
+  },
+  {
+    "masterCardId": "7986",
+    "externalId": null,
+    "tcgdex_id": "gym1-68",
+    "localId": "068",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "068/132",
+    "cardName": "Brock's Mankey",
+    "fullDisplayName": "Brock's Mankey 068/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-068-low.png",
+    "imageHighSrc": "cards/gym1-068-high.png"
+  },
+  {
+    "masterCardId": "7980",
+    "externalId": null,
+    "tcgdex_id": "gym1-67",
+    "localId": "067",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "067/132",
+    "cardName": "Brock's Mankey",
+    "fullDisplayName": "Brock's Mankey 067/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-067-low.png",
+    "imageHighSrc": "cards/gym1-067-high.png"
+  },
+  {
+    "masterCardId": "7975",
+    "externalId": null,
+    "tcgdex_id": "gym1-66",
+    "localId": "066",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "066/132",
+    "cardName": "Brock's Geodude",
+    "fullDisplayName": "Brock's Geodude 066/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-066-low.png",
+    "imageHighSrc": "cards/gym1-066-high.png"
+  },
+  {
+    "masterCardId": "7970",
+    "externalId": null,
+    "tcgdex_id": "gym1-65",
+    "localId": "065",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "065/132",
+    "cardName": "Blaine's Vulpix",
+    "fullDisplayName": "Blaine's Vulpix 065/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-065-low.png",
+    "imageHighSrc": "cards/gym1-065-high.png"
+  },
+  {
+    "masterCardId": "7964",
+    "externalId": null,
+    "tcgdex_id": "gym1-64",
+    "localId": "064",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "064/132",
+    "cardName": "Blaine's Tauros",
+    "fullDisplayName": "Blaine's Tauros 064/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-064-low.png",
+    "imageHighSrc": "cards/gym1-064-high.png"
+  },
+  {
+    "masterCardId": "7959",
+    "externalId": null,
+    "tcgdex_id": "gym1-63",
+    "localId": "063",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "063/132",
+    "cardName": "Blaine's Ponyta",
+    "fullDisplayName": "Blaine's Ponyta 063/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-063-low.png",
+    "imageHighSrc": "cards/gym1-063-high.png"
+  },
+  {
+    "masterCardId": "7954",
+    "externalId": null,
+    "tcgdex_id": "gym1-62",
+    "localId": "062",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "062/132",
+    "cardName": "Blaine's Growlithe",
+    "fullDisplayName": "Blaine's Growlithe 062/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-062-low.png",
+    "imageHighSrc": "cards/gym1-062-high.png"
+  },
+  {
+    "masterCardId": "7949",
+    "externalId": null,
+    "tcgdex_id": "gym1-61",
+    "localId": "061",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "061/132",
+    "cardName": "Blaine's Charmander",
+    "fullDisplayName": "Blaine's Charmander 061/132 Gym Heroes",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-061-low.png",
+    "imageHighSrc": "cards/gym1-061-high.png"
+  },
+  {
+    "masterCardId": "7944",
+    "externalId": null,
+    "tcgdex_id": "gym1-60",
+    "localId": "060",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "060/132",
+    "cardName": "Sabrina's Slowbro",
+    "fullDisplayName": "Sabrina's Slowbro 060/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sabrina's Slowpoke",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-060-low.png",
+    "imageHighSrc": "cards/gym1-060-high.png"
+  },
+  {
+    "masterCardId": "7938",
+    "externalId": null,
+    "tcgdex_id": "gym1-59",
+    "localId": "059",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "059/132",
+    "cardName": "Sabrina's Jynx",
+    "fullDisplayName": "Sabrina's Jynx 059/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Smoochum",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-059-low.png",
+    "imageHighSrc": "cards/gym1-059-high.png"
+  },
+  {
+    "masterCardId": "7931",
+    "externalId": null,
+    "tcgdex_id": "gym1-58",
+    "localId": "058",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "058/132",
+    "cardName": "Sabrina's Haunter",
+    "fullDisplayName": "Sabrina's Haunter 058/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sabrina's Gastly",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-058-low.png",
+    "imageHighSrc": "cards/gym1-058-high.png"
+  },
+  {
+    "masterCardId": "7926",
+    "externalId": null,
+    "tcgdex_id": "gym1-57",
+    "localId": "057",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "057/132",
+    "cardName": "Misty's Tentacool",
+    "fullDisplayName": "Misty's Tentacool 057/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-057-low.png",
+    "imageHighSrc": "cards/gym1-057-high.png"
+  },
+  {
+    "masterCardId": "7921",
+    "externalId": null,
+    "tcgdex_id": "gym1-56",
+    "localId": "056",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "056/132",
+    "cardName": "Misty's Starmie",
+    "fullDisplayName": "Misty's Starmie 056/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Staryu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-056-low.png",
+    "imageHighSrc": "cards/gym1-056-high.png"
+  },
+  {
+    "masterCardId": "7915",
+    "externalId": null,
+    "tcgdex_id": "gym1-55",
+    "localId": "055",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "055/132",
+    "cardName": "Misty's Seaking",
+    "fullDisplayName": "Misty's Seaking 055/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      119
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Goldeen",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-055-low.png",
+    "imageHighSrc": "cards/gym1-055-high.png"
+  },
+  {
+    "masterCardId": "7910",
+    "externalId": null,
+    "tcgdex_id": "gym1-54",
+    "localId": "054",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "054/132",
+    "cardName": "Misty's Psyduck",
+    "fullDisplayName": "Misty's Psyduck 054/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-054-low.png",
+    "imageHighSrc": "cards/gym1-054-high.png"
+  },
+  {
+    "masterCardId": "7904",
+    "externalId": null,
+    "tcgdex_id": "gym1-53",
+    "localId": "053",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "053/132",
+    "cardName": "Misty's Poliwhirl",
+    "fullDisplayName": "Misty's Poliwhirl 053/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Poliwag",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-053-low.png",
+    "imageHighSrc": "cards/gym1-053-high.png"
+  },
+  {
+    "masterCardId": "7900",
+    "externalId": null,
+    "tcgdex_id": "gym1-52",
+    "localId": "052",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "052/132",
+    "cardName": "Lt. Surge's Spearow",
+    "fullDisplayName": "Lt. Surge's Spearow 052/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-052-low.png",
+    "imageHighSrc": "cards/gym1-052-high.png"
+  },
+  {
+    "masterCardId": "7895",
+    "externalId": null,
+    "tcgdex_id": "gym1-51",
+    "localId": "051",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "051/132",
+    "cardName": "Lt. Surge's Raticate",
+    "fullDisplayName": "Lt. Surge's Raticate 051/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lt. Surge's Rattata",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-051-low.png",
+    "imageHighSrc": "cards/gym1-051-high.png"
+  },
+  {
+    "masterCardId": "7890",
+    "externalId": null,
+    "tcgdex_id": "gym1-50",
+    "localId": "050",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "050/132",
+    "cardName": "Lt. Surge's Magnemite",
+    "fullDisplayName": "Lt. Surge's Magnemite 050/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-050-low.png",
+    "imageHighSrc": "cards/gym1-050-high.png"
+  },
+  {
+    "masterCardId": "7885",
+    "externalId": null,
+    "tcgdex_id": "gym1-49",
+    "localId": "049",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "049/132",
+    "cardName": "Erika's Weepinbell",
+    "fullDisplayName": "Erika's Weepinbell 049/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      70
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Bellsprout",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-049-low.png",
+    "imageHighSrc": "cards/gym1-049-high.png"
+  },
+  {
+    "masterCardId": "7880",
+    "externalId": null,
+    "tcgdex_id": "gym1-48",
+    "localId": "048",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "048/132",
+    "cardName": "Erika's Weepinbell",
+    "fullDisplayName": "Erika's Weepinbell 048/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      70
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Bellsprout",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-048-low.png",
+    "imageHighSrc": "cards/gym1-048-high.png"
+  },
+  {
+    "masterCardId": "7874",
+    "externalId": null,
+    "tcgdex_id": "gym1-47",
+    "localId": "047",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "047/132",
+    "cardName": "Erika's Oddish",
+    "fullDisplayName": "Erika's Oddish 047/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-047-low.png",
+    "imageHighSrc": "cards/gym1-047-high.png"
+  },
+  {
+    "masterCardId": "7868",
+    "externalId": null,
+    "tcgdex_id": "gym1-46",
+    "localId": "046",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "046/132",
+    "cardName": "Erika's Gloom",
+    "fullDisplayName": "Erika's Gloom 046/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Oddish",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-046-low.png",
+    "imageHighSrc": "cards/gym1-046-high.png"
+  },
+  {
+    "masterCardId": "7863",
+    "externalId": null,
+    "tcgdex_id": "gym1-45",
+    "localId": "045",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "045/132",
+    "cardName": "Erika's Gloom",
+    "fullDisplayName": "Erika's Gloom 045/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Oddish",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-045-low.png",
+    "imageHighSrc": "cards/gym1-045-high.png"
+  },
+  {
+    "masterCardId": "7857",
+    "externalId": null,
+    "tcgdex_id": "gym1-44",
+    "localId": "044",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "044/132",
+    "cardName": "Erika's Exeggutor",
+    "fullDisplayName": "Erika's Exeggutor 044/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Exeggcute",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-044-low.png",
+    "imageHighSrc": "cards/gym1-044-high.png"
+  },
+  {
+    "masterCardId": "7852",
+    "externalId": null,
+    "tcgdex_id": "gym1-43",
+    "localId": "043",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "043/132",
+    "cardName": "Erika's Exeggcute",
+    "fullDisplayName": "Erika's Exeggcute 043/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-043-low.png",
+    "imageHighSrc": "cards/gym1-043-high.png"
+  },
+  {
+    "masterCardId": "7847",
+    "externalId": null,
+    "tcgdex_id": "gym1-42",
+    "localId": "042",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "042/132",
+    "cardName": "Erika's Dratini",
+    "fullDisplayName": "Erika's Dratini 042/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-042-low.png",
+    "imageHighSrc": "cards/gym1-042-high.png"
+  },
+  {
+    "masterCardId": "7842",
+    "externalId": null,
+    "tcgdex_id": "gym1-41",
+    "localId": "041",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "041/132",
+    "cardName": "Brock's Lickitung",
+    "fullDisplayName": "Brock's Lickitung 041/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-041-low.png",
+    "imageHighSrc": "cards/gym1-041-high.png"
+  },
+  {
+    "masterCardId": "7837",
+    "externalId": null,
+    "tcgdex_id": "gym1-40",
+    "localId": "040",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "040/132",
+    "cardName": "Brock's Graveler",
+    "fullDisplayName": "Brock's Graveler 040/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Brock's Geodude",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-040-low.png",
+    "imageHighSrc": "cards/gym1-040-high.png"
+  },
+  {
+    "masterCardId": "7832",
+    "externalId": null,
+    "tcgdex_id": "gym1-39",
+    "localId": "039",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "039/132",
+    "cardName": "Brock's Golbat",
+    "fullDisplayName": "Brock's Golbat 039/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Brock's Zubat",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-039-low.png",
+    "imageHighSrc": "cards/gym1-039-high.png"
+  },
+  {
+    "masterCardId": "7827",
+    "externalId": null,
+    "tcgdex_id": "gym1-38",
+    "localId": "038",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "038/132",
+    "cardName": "Brock's Geodude",
+    "fullDisplayName": "Brock's Geodude 038/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-038-low.png",
+    "imageHighSrc": "cards/gym1-038-high.png"
+  },
+  {
+    "masterCardId": "7822",
+    "externalId": null,
+    "tcgdex_id": "gym1-37",
+    "localId": "037",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "037/132",
+    "cardName": "Blaine's Magmar",
+    "fullDisplayName": "Blaine's Magmar 037/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magby",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-037-low.png",
+    "imageHighSrc": "cards/gym1-037-high.png"
+  },
+  {
+    "masterCardId": "7817",
+    "externalId": null,
+    "tcgdex_id": "gym1-36",
+    "localId": "036",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "036/132",
+    "cardName": "Blaine's Kangaskhan",
+    "fullDisplayName": "Blaine's Kangaskhan 036/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-036-low.png",
+    "imageHighSrc": "cards/gym1-036-high.png"
+  },
+  {
+    "masterCardId": "7812",
+    "externalId": null,
+    "tcgdex_id": "gym1-35",
+    "localId": "035",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "035/132",
+    "cardName": "Blaine's Growlithe",
+    "fullDisplayName": "Blaine's Growlithe 035/132 Gym Heroes",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-035-low.png",
+    "imageHighSrc": "cards/gym1-035-high.png"
+  },
+  {
+    "masterCardId": "7807",
+    "externalId": null,
+    "tcgdex_id": "gym1-34",
+    "localId": "034",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "034/132",
+    "cardName": "Sabrina's Venomoth",
+    "fullDisplayName": "Sabrina's Venomoth 034/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sabrina's Venonat",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-034-low.png",
+    "imageHighSrc": "cards/gym1-034-high.png"
+  },
+  {
+    "masterCardId": "7802",
+    "externalId": null,
+    "tcgdex_id": "gym1-33",
+    "localId": "033",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "033/132",
+    "cardName": "Rocket's Snorlax",
+    "fullDisplayName": "Rocket's Snorlax 033/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munchlax",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-033-low.png",
+    "imageHighSrc": "cards/gym1-033-high.png"
+  },
+  {
+    "masterCardId": "7797",
+    "externalId": null,
+    "tcgdex_id": "gym1-32",
+    "localId": "032",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "032/132",
+    "cardName": "Misty's Tentacool",
+    "fullDisplayName": "Misty's Tentacool 032/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-032-low.png",
+    "imageHighSrc": "cards/gym1-032-high.png"
+  },
+  {
+    "masterCardId": "7792",
+    "externalId": null,
+    "tcgdex_id": "gym1-31",
+    "localId": "031",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "031/132",
+    "cardName": "Misty's Poliwrath",
+    "fullDisplayName": "Misty's Poliwrath 031/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Poliwhirl",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-031-low.png",
+    "imageHighSrc": "cards/gym1-031-high.png"
+  },
+  {
+    "masterCardId": "7787",
+    "externalId": null,
+    "tcgdex_id": "gym1-30",
+    "localId": "030",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "030/132",
+    "cardName": "Misty's Goldeen",
+    "fullDisplayName": "Misty's Goldeen 030/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-030-low.png",
+    "imageHighSrc": "cards/gym1-030-high.png"
+  },
+  {
+    "masterCardId": "7779",
+    "externalId": null,
+    "tcgdex_id": "gym1-29",
+    "localId": "029",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "029/132",
+    "cardName": "Misty's Cloyster",
+    "fullDisplayName": "Misty's Cloyster 029/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      91
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Shellder",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-029-low.png",
+    "imageHighSrc": "cards/gym1-029-high.png"
+  },
+  {
+    "masterCardId": "7774",
+    "externalId": null,
+    "tcgdex_id": "gym1-28",
+    "localId": "028",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "028/132",
+    "cardName": "Lt. Surge's Raichu",
+    "fullDisplayName": "Lt. Surge's Raichu 028/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lt. Surge's Pikachu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-028-low.png",
+    "imageHighSrc": "cards/gym1-028-high.png"
+  },
+  {
+    "masterCardId": "7769",
+    "externalId": null,
+    "tcgdex_id": "gym1-27",
+    "localId": "027",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "027/132",
+    "cardName": "Lt. Surge's Electabuzz",
+    "fullDisplayName": "Lt. Surge's Electabuzz 027/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Elekid",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-027-low.png",
+    "imageHighSrc": "cards/gym1-027-high.png"
+  },
+  {
+    "masterCardId": "7764",
+    "externalId": null,
+    "tcgdex_id": "gym1-26",
+    "localId": "026",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "026/132",
+    "cardName": "Erika's Victreebel",
+    "fullDisplayName": "Erika's Victreebel 026/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      71
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Weepinbell",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-026-low.png",
+    "imageHighSrc": "cards/gym1-026-high.png"
+  },
+  {
+    "masterCardId": "7759",
+    "externalId": null,
+    "tcgdex_id": "gym1-25",
+    "localId": "025",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "025/132",
+    "cardName": "Erika's Clefairy",
+    "fullDisplayName": "Erika's Clefairy 025/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cleffa",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-025-low.png",
+    "imageHighSrc": "cards/gym1-025-high.png"
+  },
+  {
+    "masterCardId": "7754",
+    "externalId": null,
+    "tcgdex_id": "gym1-24",
+    "localId": "024",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "024/132",
+    "cardName": "Brock's Zubat",
+    "fullDisplayName": "Brock's Zubat 024/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-024-low.png",
+    "imageHighSrc": "cards/gym1-024-high.png"
+  },
+  {
+    "masterCardId": "7749",
+    "externalId": null,
+    "tcgdex_id": "gym1-23",
+    "localId": "023",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "023/132",
+    "cardName": "Brock's Sandslash",
+    "fullDisplayName": "Brock's Sandslash 023/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Brock's Sandshrew",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-023-low.png",
+    "imageHighSrc": "cards/gym1-023-high.png"
+  },
+  {
+    "masterCardId": "7745",
+    "externalId": null,
+    "tcgdex_id": "gym1-22",
+    "localId": "022",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "022/132",
+    "cardName": "Brock's Rhyhorn",
+    "fullDisplayName": "Brock's Rhyhorn 022/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-022-low.png",
+    "imageHighSrc": "cards/gym1-022-high.png"
+  },
+  {
+    "masterCardId": "7740",
+    "externalId": null,
+    "tcgdex_id": "gym1-21",
+    "localId": "021",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "021/132",
+    "cardName": "Brock's Onix",
+    "fullDisplayName": "Brock's Onix 021/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Benimaru Itoh",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-021-low.png",
+    "imageHighSrc": "cards/gym1-021-high.png"
+  },
+  {
+    "masterCardId": "7734",
+    "externalId": null,
+    "tcgdex_id": "gym1-20",
+    "localId": "020",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "020/132",
+    "cardName": "Brock's Golem",
+    "fullDisplayName": "Brock's Golem 020/132 Gym Heroes",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Brock's Graveler",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-020-low.png",
+    "imageHighSrc": "cards/gym1-020-high.png"
+  },
+  {
+    "masterCardId": "7728",
+    "externalId": null,
+    "tcgdex_id": "gym1-19",
+    "localId": "019",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "019/132",
+    "cardName": "The Rocket's Trap",
+    "fullDisplayName": "The Rocket's Trap 019/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-019-low.png",
+    "imageHighSrc": "cards/gym1-019-high.png"
+  },
+  {
+    "masterCardId": "7722",
+    "externalId": null,
+    "tcgdex_id": "gym1-18",
+    "localId": "018",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "018/132",
+    "cardName": "Misty",
+    "fullDisplayName": "Misty 018/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-018-low.png",
+    "imageHighSrc": "cards/gym1-018-high.png"
+  },
+  {
+    "masterCardId": "7716",
+    "externalId": null,
+    "tcgdex_id": "gym1-17",
+    "localId": "017",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "017/132",
+    "cardName": "Lt. Surge",
+    "fullDisplayName": "Lt. Surge 017/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-017-low.png",
+    "imageHighSrc": "cards/gym1-017-high.png"
+  },
+  {
+    "masterCardId": "7710",
+    "externalId": null,
+    "tcgdex_id": "gym1-16",
+    "localId": "016",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "016/132",
+    "cardName": "Erika",
+    "fullDisplayName": "Erika 016/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-016-low.png",
+    "imageHighSrc": "cards/gym1-016-high.png"
+  },
+  {
+    "masterCardId": "7702",
+    "externalId": null,
+    "tcgdex_id": "gym1-15",
+    "localId": "015",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "015/132",
+    "cardName": "Brock",
+    "fullDisplayName": "Brock 015/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-015-low.png",
+    "imageHighSrc": "cards/gym1-015-high.png"
+  },
+  {
+    "masterCardId": "7696",
+    "externalId": null,
+    "tcgdex_id": "gym1-14",
+    "localId": "014",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "014/132",
+    "cardName": "Sabrina's Gengar",
+    "fullDisplayName": "Sabrina's Gengar 014/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sabrina's Haunter",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-014-low.png",
+    "imageHighSrc": "cards/gym1-014-high.png"
+  },
+  {
+    "masterCardId": "7689",
+    "externalId": null,
+    "tcgdex_id": "gym1-13",
+    "localId": "013",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "013/132",
+    "cardName": "Rocket's Scyther",
+    "fullDisplayName": "Rocket's Scyther 013/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-013-low.png",
+    "imageHighSrc": "cards/gym1-013-high.png"
+  },
+  {
+    "masterCardId": "7683",
+    "externalId": null,
+    "tcgdex_id": "gym1-12",
+    "localId": "012",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "012/132",
+    "cardName": "Rocket's Moltres",
+    "fullDisplayName": "Rocket's Moltres 012/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-012-low.png",
+    "imageHighSrc": "cards/gym1-012-high.png"
+  },
+  {
+    "masterCardId": "7678",
+    "externalId": null,
+    "tcgdex_id": "gym1-11",
+    "localId": "011",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "011/132",
+    "cardName": "Rocket's Hitmonchan",
+    "fullDisplayName": "Rocket's Hitmonchan 011/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tyrogue",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-011-low.png",
+    "imageHighSrc": "cards/gym1-011-high.png"
+  },
+  {
+    "masterCardId": "7672",
+    "externalId": null,
+    "tcgdex_id": "gym1-10",
+    "localId": "010",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "010/132",
+    "cardName": "Misty's Tentacruel",
+    "fullDisplayName": "Misty's Tentacruel 010/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Tentacool",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-010-low.png",
+    "imageHighSrc": "cards/gym1-010-high.png"
+  },
+  {
+    "masterCardId": "7665",
+    "externalId": null,
+    "tcgdex_id": "gym1-9",
+    "localId": "009",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "009/132",
+    "cardName": "Misty's Seadra",
+    "fullDisplayName": "Misty's Seadra 009/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misty's Horsea",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-009-low.png",
+    "imageHighSrc": "cards/gym1-009-high.png"
+  },
+  {
+    "masterCardId": "7659",
+    "externalId": null,
+    "tcgdex_id": "gym1-8",
+    "localId": "008",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "008/132",
+    "cardName": "Lt. Surge's Magneton",
+    "fullDisplayName": "Lt. Surge's Magneton 008/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lt. Surge's Magnemite",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-008-low.png",
+    "imageHighSrc": "cards/gym1-008-high.png"
+  },
+  {
+    "masterCardId": "7654",
+    "externalId": null,
+    "tcgdex_id": "gym1-7",
+    "localId": "007",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "007/132",
+    "cardName": "Lt. Surge's Fearow",
+    "fullDisplayName": "Lt. Surge's Fearow 007/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lt. Surge's Spearow",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-007-low.png",
+    "imageHighSrc": "cards/gym1-007-high.png"
+  },
+  {
+    "masterCardId": "7648",
+    "externalId": null,
+    "tcgdex_id": "gym1-6",
+    "localId": "006",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "006/132",
+    "cardName": "Lt. Surge's Electabuzz",
+    "fullDisplayName": "Lt. Surge's Electabuzz 006/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Elekid",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-006-low.png",
+    "imageHighSrc": "cards/gym1-006-high.png"
+  },
+  {
+    "masterCardId": "7642",
+    "externalId": null,
+    "tcgdex_id": "gym1-5",
+    "localId": "005",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "005/132",
+    "cardName": "Erika's Vileplume",
+    "fullDisplayName": "Erika's Vileplume 005/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Gloom",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-005-low.png",
+    "imageHighSrc": "cards/gym1-005-high.png"
+  },
+  {
+    "masterCardId": "7635",
+    "externalId": null,
+    "tcgdex_id": "gym1-4",
+    "localId": "004",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "004/132",
+    "cardName": "Erika's Dragonair",
+    "fullDisplayName": "Erika's Dragonair 004/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Dratini",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-004-low.png",
+    "imageHighSrc": "cards/gym1-004-high.png"
+  },
+  {
+    "masterCardId": "7627",
+    "externalId": null,
+    "tcgdex_id": "gym1-3",
+    "localId": "003",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "003/132",
+    "cardName": "Erika's Clefable",
+    "fullDisplayName": "Erika's Clefable 003/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Erika's Clefairy",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-003-low.png",
+    "imageHighSrc": "cards/gym1-003-high.png"
+  },
+  {
+    "masterCardId": "7624",
+    "externalId": null,
+    "tcgdex_id": "gym1-2",
+    "localId": "002",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "002/132",
+    "cardName": "Brock's Rhydon",
+    "fullDisplayName": "Brock's Rhydon 002/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Brock's Rhyhorn",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-002-low.png",
+    "imageHighSrc": "cards/gym1-002-high.png"
+  },
+  {
+    "masterCardId": "7618",
+    "externalId": null,
+    "tcgdex_id": "gym1-1",
+    "localId": "001",
+    "setCode": "gym1",
+    "setTcgdexId": "gym1",
+    "cardNumber": "001/132",
+    "cardName": "Blaine's Moltres",
+    "fullDisplayName": "Blaine's Moltres 001/132 Gym Heroes",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/gym1-001-low.png",
+    "imageHighSrc": "cards/gym1-001-high.png"
+  }
+]

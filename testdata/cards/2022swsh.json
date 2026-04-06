@@ -1,0 +1,497 @@
+[
+  {
+    "masterCardId": "22345",
+    "externalId": "mcd22-15",
+    "tcgdex_id": "2022swsh-15",
+    "localId": "015",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "015/15",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 015/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-015-low.jpg",
+    "imageHighSrc": "cards/2022swsh-015-low.jpg"
+  },
+  {
+    "masterCardId": "22344",
+    "externalId": "mcd22-14",
+    "tcgdex_id": "2022swsh-14",
+    "localId": "014",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "014/15",
+    "cardName": "Drampa",
+    "fullDisplayName": "Drampa 014/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      780
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-014-low.jpg",
+    "imageHighSrc": "cards/2022swsh-014-low.jpg"
+  },
+  {
+    "masterCardId": "22343",
+    "externalId": "mcd22-13",
+    "tcgdex_id": "2022swsh-13",
+    "localId": "013",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "013/15",
+    "cardName": "Pangoro",
+    "fullDisplayName": "Pangoro 013/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      675
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pancham",
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-013-low.jpg",
+    "imageHighSrc": "cards/2022swsh-013-low.jpg"
+  },
+  {
+    "masterCardId": "22342",
+    "externalId": "mcd22-12",
+    "tcgdex_id": "2022swsh-12",
+    "localId": "012",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "012/15",
+    "cardName": "Bewear",
+    "fullDisplayName": "Bewear 012/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      760
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stufful",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-012-low.jpg",
+    "imageHighSrc": "cards/2022swsh-012-low.jpg"
+  },
+  {
+    "masterCardId": "22341",
+    "externalId": "mcd22-11",
+    "tcgdex_id": "2022swsh-11",
+    "localId": "011",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "011/15",
+    "cardName": "Cutiefly",
+    "fullDisplayName": "Cutiefly 011/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      742
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-011-low.jpg",
+    "imageHighSrc": "cards/2022swsh-011-low.jpg"
+  },
+  {
+    "masterCardId": "22340",
+    "externalId": "mcd22-10",
+    "tcgdex_id": "2022swsh-10",
+    "localId": "010",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "010/15",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 010/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-010-low.jpg",
+    "imageHighSrc": "cards/2022swsh-010-low.jpg"
+  },
+  {
+    "masterCardId": "22339",
+    "externalId": "mcd22-9",
+    "tcgdex_id": "2022swsh-9",
+    "localId": "009",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "009/15",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 009/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-009-low.jpg",
+    "imageHighSrc": "cards/2022swsh-009-low.jpg"
+  },
+  {
+    "masterCardId": "22338",
+    "externalId": "mcd22-8",
+    "tcgdex_id": "2022swsh-8",
+    "localId": "008",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "008/15",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 008/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-008-low.jpg",
+    "imageHighSrc": "cards/2022swsh-008-low.jpg"
+  },
+  {
+    "masterCardId": "22337",
+    "externalId": "mcd22-7",
+    "tcgdex_id": "2022swsh-7",
+    "localId": "007",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "007/15",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 007/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "chibi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-007-low.jpg",
+    "imageHighSrc": "cards/2022swsh-007-low.jpg"
+  },
+  {
+    "masterCardId": "22336",
+    "externalId": "mcd22-6",
+    "tcgdex_id": "2022swsh-6",
+    "localId": "006",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "006/15",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 006/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-006-low.jpg",
+    "imageHighSrc": "cards/2022swsh-006-low.jpg"
+  },
+  {
+    "masterCardId": "22335",
+    "externalId": "mcd22-5",
+    "tcgdex_id": "2022swsh-5",
+    "localId": "005",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "005/15",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 005/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-005-low.jpg",
+    "imageHighSrc": "cards/2022swsh-005-low.jpg"
+  },
+  {
+    "masterCardId": "22334",
+    "externalId": "mcd22-4",
+    "tcgdex_id": "2022swsh-4",
+    "localId": "004",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "004/15",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 004/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-004-low.jpg",
+    "imageHighSrc": "cards/2022swsh-004-low.jpg"
+  },
+  {
+    "masterCardId": "22333",
+    "externalId": "mcd22-3",
+    "tcgdex_id": "2022swsh-3",
+    "localId": "003",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "003/15",
+    "cardName": "Gossifleur",
+    "fullDisplayName": "Gossifleur 003/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      829
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-003-low.jpg",
+    "imageHighSrc": "cards/2022swsh-003-low.jpg"
+  },
+  {
+    "masterCardId": "22332",
+    "externalId": "mcd22-2",
+    "tcgdex_id": "2022swsh-2",
+    "localId": "002",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "002/15",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 002/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-002-low.jpg",
+    "imageHighSrc": "cards/2022swsh-002-low.jpg"
+  },
+  {
+    "masterCardId": "22331",
+    "externalId": "mcd22-1",
+    "tcgdex_id": "2022swsh-1",
+    "localId": "001",
+    "setCode": "2022swsh",
+    "setTcgdexId": "2022swsh",
+    "cardNumber": "001/15",
+    "cardName": "Ledyba",
+    "fullDisplayName": "Ledyba 001/15 McDonald's Collection 2022",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2022swsh-001-low.jpg",
+    "imageHighSrc": "cards/2022swsh-001-low.jpg"
+  }
+]

@@ -1,0 +1,2628 @@
+[
+  {
+    "masterCardId": "10121",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-78",
+    "localId": "78",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "078/73",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX 078/73 Shining Legends",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-078-low.png",
+    "imageHighSrc": "cards/sm35-078-high.png"
+  },
+  {
+    "masterCardId": "10114",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-77",
+    "localId": "77",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "77a/73",
+    "cardName": "Zoroark-GX",
+    "fullDisplayName": "Zoroark-GX 77a/73 Shining Legends",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-77a-low.png",
+    "imageHighSrc": "cards/sm35-77a-high.png"
+  },
+  {
+    "masterCardId": "10106",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-77",
+    "localId": "77",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "077/73",
+    "cardName": "Zoroark-GX",
+    "fullDisplayName": "Zoroark-GX 077/73 Shining Legends",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-077-low.png",
+    "imageHighSrc": "cards/sm35-077-high.png"
+  },
+  {
+    "masterCardId": "10097",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-76",
+    "localId": "76",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "076/73",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX 076/73 Shining Legends",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-076-low.png",
+    "imageHighSrc": "cards/sm35-076-high.png"
+  },
+  {
+    "masterCardId": "10092",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-75",
+    "localId": "75",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "075/73",
+    "cardName": "Raichu-GX",
+    "fullDisplayName": "Raichu-GX 075/73 Shining Legends",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-075-low.png",
+    "imageHighSrc": "cards/sm35-075-high.png"
+  },
+  {
+    "masterCardId": "10085",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-74",
+    "localId": "74",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "074/73",
+    "cardName": "Entei-GX",
+    "fullDisplayName": "Entei-GX 074/73 Shining Legends",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-074-low.png",
+    "imageHighSrc": "cards/sm35-074-high.png"
+  },
+  {
+    "masterCardId": "10078",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-73",
+    "localId": "73",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "073/73",
+    "cardName": "Pokémon Breeder",
+    "fullDisplayName": "Pokémon Breeder 073/73 Shining Legends",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-073-low.png",
+    "imageHighSrc": "cards/sm35-073-high.png"
+  },
+  {
+    "masterCardId": "10071",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-72",
+    "localId": "72",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "072/73",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX 072/73 Shining Legends",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-072-low.png",
+    "imageHighSrc": "cards/sm35-072-high.png"
+  },
+  {
+    "masterCardId": "10064",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-71",
+    "localId": "71",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "071/73",
+    "cardName": "Entei-GX",
+    "fullDisplayName": "Entei-GX 071/73 Shining Legends",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-071-low.png",
+    "imageHighSrc": "cards/sm35-071-high.png"
+  },
+  {
+    "masterCardId": "10057",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-70",
+    "localId": "70",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "070/73",
+    "cardName": "Warp Energy",
+    "fullDisplayName": "Warp Energy 070/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-070-low.png",
+    "imageHighSrc": "cards/sm35-070-high.png"
+  },
+  {
+    "masterCardId": "10050",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-69",
+    "localId": "69",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "069/73",
+    "cardName": "Double Colorless Energy",
+    "fullDisplayName": "Double Colorless Energy 069/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-069-low.png",
+    "imageHighSrc": "cards/sm35-069-high.png"
+  },
+  {
+    "masterCardId": "10042",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-68",
+    "localId": "68",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "68a/73",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 68a/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-68a-low.png",
+    "imageHighSrc": "cards/sm35-68a-high.png"
+  },
+  {
+    "masterCardId": "10033",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-68",
+    "localId": "68",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "068/73",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 068/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-068-low.png",
+    "imageHighSrc": "cards/sm35-068-high.png"
+  },
+  {
+    "masterCardId": "10025",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-67",
+    "localId": "67",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "067/73",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 067/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-067-low.png",
+    "imageHighSrc": "cards/sm35-067-high.png"
+  },
+  {
+    "masterCardId": "10018",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-66",
+    "localId": "66",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "066/73",
+    "cardName": "Super Scoop Up",
+    "fullDisplayName": "Super Scoop Up 066/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-066-low.png",
+    "imageHighSrc": "cards/sm35-066-high.png"
+  },
+  {
+    "masterCardId": "10010",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-65",
+    "localId": "65",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "065/73",
+    "cardName": "Sophocles",
+    "fullDisplayName": "Sophocles 065/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-065-low.png",
+    "imageHighSrc": "cards/sm35-065-high.png"
+  },
+  {
+    "masterCardId": "10003",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-64",
+    "localId": "64",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "064/73",
+    "cardName": "Pokémon Catcher",
+    "fullDisplayName": "Pokémon Catcher 064/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-064-low.png",
+    "imageHighSrc": "cards/sm35-064-high.png"
+  },
+  {
+    "masterCardId": "9995",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-63",
+    "localId": "63",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "063/73",
+    "cardName": "Pokémon Breeder",
+    "fullDisplayName": "Pokémon Breeder 063/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-063-low.png",
+    "imageHighSrc": "cards/sm35-063-high.png"
+  },
+  {
+    "masterCardId": "9987",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-62",
+    "localId": "62",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "062/73",
+    "cardName": "Lillie",
+    "fullDisplayName": "Lillie 062/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-062-low.png",
+    "imageHighSrc": "cards/sm35-062-high.png"
+  },
+  {
+    "masterCardId": "9979",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-61",
+    "localId": "61",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "061/73",
+    "cardName": "Hau",
+    "fullDisplayName": "Hau 061/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-061-low.png",
+    "imageHighSrc": "cards/sm35-061-high.png"
+  },
+  {
+    "masterCardId": "9970",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-60",
+    "localId": "60",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "060/73",
+    "cardName": "Great Ball",
+    "fullDisplayName": "Great Ball 060/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-060-low.png",
+    "imageHighSrc": "cards/sm35-060-high.png"
+  },
+  {
+    "masterCardId": "9962",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-59",
+    "localId": "59",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "059/73",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 059/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-059-low.png",
+    "imageHighSrc": "cards/sm35-059-high.png"
+  },
+  {
+    "masterCardId": "9952",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-58",
+    "localId": "58",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "058/73",
+    "cardName": "Damage Mover",
+    "fullDisplayName": "Damage Mover 058/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-058-low.png",
+    "imageHighSrc": "cards/sm35-058-high.png"
+  },
+  {
+    "masterCardId": "9943",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-57",
+    "localId": "57",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "057/73",
+    "cardName": "Shining Arceus",
+    "fullDisplayName": "Shining Arceus 057/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-057-low.png",
+    "imageHighSrc": "cards/sm35-057-high.png"
+  },
+  {
+    "masterCardId": "9934",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-56",
+    "localId": "56",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "056/73",
+    "cardName": "Shining Rayquaza",
+    "fullDisplayName": "Shining Rayquaza 056/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-056-low.png",
+    "imageHighSrc": "cards/sm35-056-high.png"
+  },
+  {
+    "masterCardId": "9924",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-55",
+    "localId": "55",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "055/73",
+    "cardName": "Hoopa",
+    "fullDisplayName": "Hoopa 055/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-055-low.png",
+    "imageHighSrc": "cards/sm35-055-high.png"
+  },
+  {
+    "masterCardId": "9918",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-54",
+    "localId": "54",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "054/73",
+    "cardName": "Yveltal",
+    "fullDisplayName": "Yveltal 054/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-054-low.png",
+    "imageHighSrc": "cards/sm35-054-high.png"
+  },
+  {
+    "masterCardId": "9902",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-53",
+    "localId": "53",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "053/73",
+    "cardName": "Zoroark-GX",
+    "fullDisplayName": "Zoroark-GX 053/73 Shining Legends",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-053-low.png",
+    "imageHighSrc": "cards/sm35-053-high.png"
+  },
+  {
+    "masterCardId": "9886",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-52",
+    "localId": "52",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "052/73",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 052/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-052-low.png",
+    "imageHighSrc": "cards/sm35-052-high.png"
+  },
+  {
+    "masterCardId": "9877",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-51",
+    "localId": "51",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "051/73",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 051/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-051-low.png",
+    "imageHighSrc": "cards/sm35-051-high.png"
+  },
+  {
+    "masterCardId": "9869",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-50",
+    "localId": "50",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "050/73",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 050/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-050-low.png",
+    "imageHighSrc": "cards/sm35-050-high.png"
+  },
+  {
+    "masterCardId": "9861",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-49",
+    "localId": "49",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "049/73",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 049/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-049-low.png",
+    "imageHighSrc": "cards/sm35-049-high.png"
+  },
+  {
+    "masterCardId": "9852",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-48",
+    "localId": "48",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "048/73",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 048/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-048-low.png",
+    "imageHighSrc": "cards/sm35-048-high.png"
+  },
+  {
+    "masterCardId": "9843",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-47",
+    "localId": "47",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "047/73",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 047/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-047-low.png",
+    "imageHighSrc": "cards/sm35-047-high.png"
+  },
+  {
+    "masterCardId": "9835",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-46",
+    "localId": "46",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "046/73",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 046/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-046-low.png",
+    "imageHighSrc": "cards/sm35-046-high.png"
+  },
+  {
+    "masterCardId": "9826",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-45",
+    "localId": "45",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "045/73",
+    "cardName": "Marshadow",
+    "fullDisplayName": "Marshadow 045/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      802
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Ando",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-045-low.png",
+    "imageHighSrc": "cards/sm35-045-high.png"
+  },
+  {
+    "masterCardId": "9818",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-44",
+    "localId": "44",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "044/73",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 044/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-044-low.png",
+    "imageHighSrc": "cards/sm35-044-high.png"
+  },
+  {
+    "masterCardId": "9809",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-43",
+    "localId": "43",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "043/73",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 043/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-043-low.png",
+    "imageHighSrc": "cards/sm35-043-high.png"
+  },
+  {
+    "masterCardId": "9801",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-42",
+    "localId": "42",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "042/73",
+    "cardName": "Shining Jirachi",
+    "fullDisplayName": "Shining Jirachi 042/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-042-low.png",
+    "imageHighSrc": "cards/sm35-042-high.png"
+  },
+  {
+    "masterCardId": "9790",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-41",
+    "localId": "41",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "041/73",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 041/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-041-low.png",
+    "imageHighSrc": "cards/sm35-041-high.png"
+  },
+  {
+    "masterCardId": "9779",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-40",
+    "localId": "40",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "040/73",
+    "cardName": "Shining Mew",
+    "fullDisplayName": "Shining Mew 040/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-040-low.png",
+    "imageHighSrc": "cards/sm35-040-high.png"
+  },
+  {
+    "masterCardId": "9770",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-39",
+    "localId": "39",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "039/73",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX 039/73 Shining Legends",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-039-low.png",
+    "imageHighSrc": "cards/sm35-039-high.png"
+  },
+  {
+    "masterCardId": "9761",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-38",
+    "localId": "38",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "038/73",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 038/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-038-low.png",
+    "imageHighSrc": "cards/sm35-038-high.png"
+  },
+  {
+    "masterCardId": "9754",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-37",
+    "localId": "37",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "037/73",
+    "cardName": "Arbok",
+    "fullDisplayName": "Arbok 037/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-037-low.png",
+    "imageHighSrc": "cards/sm35-037-high.png"
+  },
+  {
+    "masterCardId": "9746",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-36",
+    "localId": "36",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "036/73",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 036/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "DemizuPosuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-036-low.png",
+    "imageHighSrc": "cards/sm35-036-high.png"
+  },
+  {
+    "masterCardId": "9738",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-35",
+    "localId": "35",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "035/73",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 035/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-035-low.png",
+    "imageHighSrc": "cards/sm35-035-high.png"
+  },
+  {
+    "masterCardId": "9729",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-34",
+    "localId": "34",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "034/73",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 034/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-034-low.png",
+    "imageHighSrc": "cards/sm35-034-high.png"
+  },
+  {
+    "masterCardId": "9724",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-33",
+    "localId": "33",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "033/73",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 033/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-033-low.png",
+    "imageHighSrc": "cards/sm35-033-high.png"
+  },
+  {
+    "masterCardId": "9716",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-32",
+    "localId": "32",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "032/73",
+    "cardName": "Raikou",
+    "fullDisplayName": "Raikou 032/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-032-low.png",
+    "imageHighSrc": "cards/sm35-032-high.png"
+  },
+  {
+    "masterCardId": "9708",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-31",
+    "localId": "31",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "031/73",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 031/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-031-low.png",
+    "imageHighSrc": "cards/sm35-031-high.png"
+  },
+  {
+    "masterCardId": "9698",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-30",
+    "localId": "30",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "030/73",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 030/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-030-low.png",
+    "imageHighSrc": "cards/sm35-030-high.png"
+  },
+  {
+    "masterCardId": "9691",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-29",
+    "localId": "29",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "029/73",
+    "cardName": "Raichu-GX",
+    "fullDisplayName": "Raichu-GX 029/73 Shining Legends",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-029-low.png",
+    "imageHighSrc": "cards/sm35-029-high.png"
+  },
+  {
+    "masterCardId": "9680",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-28",
+    "localId": "28",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "028/73",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 028/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-028-low.png",
+    "imageHighSrc": "cards/sm35-028-high.png"
+  },
+  {
+    "masterCardId": "9671",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-27",
+    "localId": "27",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "027/73",
+    "cardName": "Shining Volcanion",
+    "fullDisplayName": "Shining Volcanion 027/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      721
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-027-low.png",
+    "imageHighSrc": "cards/sm35-027-high.png"
+  },
+  {
+    "masterCardId": "9662",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-26",
+    "localId": "26",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "026/73",
+    "cardName": "Keldeo",
+    "fullDisplayName": "Keldeo 026/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-026-low.png",
+    "imageHighSrc": "cards/sm35-026-high.png"
+  },
+  {
+    "masterCardId": "9653",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-25",
+    "localId": "25",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "025/73",
+    "cardName": "Manaphy",
+    "fullDisplayName": "Manaphy 025/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      490
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-025-low.png",
+    "imageHighSrc": "cards/sm35-025-high.png"
+  },
+  {
+    "masterCardId": "9645",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-24",
+    "localId": "24",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "024/73",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia 024/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-024-low.png",
+    "imageHighSrc": "cards/sm35-024-high.png"
+  },
+  {
+    "masterCardId": "9639",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-23",
+    "localId": "23",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "023/73",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 023/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-023-low.png",
+    "imageHighSrc": "cards/sm35-023-high.png"
+  },
+  {
+    "masterCardId": "9630",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-22",
+    "localId": "22",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "022/73",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 022/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-022-low.png",
+    "imageHighSrc": "cards/sm35-022-high.png"
+  },
+  {
+    "masterCardId": "9622",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-21",
+    "localId": "21",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "021/73",
+    "cardName": "Qwilfish",
+    "fullDisplayName": "Qwilfish 021/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      211
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-021-low.png",
+    "imageHighSrc": "cards/sm35-021-high.png"
+  },
+  {
+    "masterCardId": "9603",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-20",
+    "localId": "20",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "020/73",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 020/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-020-low.png",
+    "imageHighSrc": "cards/sm35-020-high.png"
+  },
+  {
+    "masterCardId": "9595",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-19",
+    "localId": "19",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "019/73",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 019/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-019-low.png",
+    "imageHighSrc": "cards/sm35-019-high.png"
+  },
+  {
+    "masterCardId": "9586",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-18",
+    "localId": "18",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "018/73",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 018/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-018-low.png",
+    "imageHighSrc": "cards/sm35-018-high.png"
+  },
+  {
+    "masterCardId": "9577",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-17",
+    "localId": "17",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "017/73",
+    "cardName": "Incineroar",
+    "fullDisplayName": "Incineroar 017/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      727
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torracat",
+    "artist": "Emi Ando",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-017-low.png",
+    "imageHighSrc": "cards/sm35-017-high.png"
+  },
+  {
+    "masterCardId": "9569",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-16",
+    "localId": "16",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "016/73",
+    "cardName": "Torracat",
+    "fullDisplayName": "Torracat 016/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      726
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litten",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-016-low.png",
+    "imageHighSrc": "cards/sm35-016-high.png"
+  },
+  {
+    "masterCardId": "9559",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-15",
+    "localId": "15",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "015/73",
+    "cardName": "Litten",
+    "fullDisplayName": "Litten 015/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      725
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-015-low.png",
+    "imageHighSrc": "cards/sm35-015-high.png"
+  },
+  {
+    "masterCardId": "9549",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-14",
+    "localId": "14",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "014/73",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 014/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-014-low.png",
+    "imageHighSrc": "cards/sm35-014-high.png"
+  },
+  {
+    "masterCardId": "9531",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-13",
+    "localId": "13",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "013/73",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 013/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-013-low.png",
+    "imageHighSrc": "cards/sm35-013-high.png"
+  },
+  {
+    "masterCardId": "9524",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-12",
+    "localId": "12",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "012/73",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 012/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-012-low.png",
+    "imageHighSrc": "cards/sm35-012-high.png"
+  },
+  {
+    "masterCardId": "9516",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-11",
+    "localId": "11",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "011/73",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 011/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-011-low.png",
+    "imageHighSrc": "cards/sm35-011-high.png"
+  },
+  {
+    "masterCardId": "9509",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-10",
+    "localId": "10",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "10a/73",
+    "cardName": "Entei-GX",
+    "fullDisplayName": "Entei-GX 10a/73 Shining Legends",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-10a-low.png",
+    "imageHighSrc": "cards/sm35-10a-high.png"
+  },
+  {
+    "masterCardId": "9502",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-10",
+    "localId": "10",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "010/73",
+    "cardName": "Entei-GX",
+    "fullDisplayName": "Entei-GX 010/73 Shining Legends",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-010-low.png",
+    "imageHighSrc": "cards/sm35-010-high.png"
+  },
+  {
+    "masterCardId": "9494",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-9",
+    "localId": "9",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "009/73",
+    "cardName": "Shining Genesect",
+    "fullDisplayName": "Shining Genesect 009/73 Shining Legends",
+    "rarity": "Rare Shining",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-009-low.png",
+    "imageHighSrc": "cards/sm35-009-high.png"
+  },
+  {
+    "masterCardId": "9477",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-8",
+    "localId": "8",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "008/73",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 008/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-008-low.png",
+    "imageHighSrc": "cards/sm35-008-high.png"
+  },
+  {
+    "masterCardId": "9469",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-7",
+    "localId": "7",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "007/73",
+    "cardName": "Shaymin",
+    "fullDisplayName": "Shaymin 007/73 Shining Legends",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-007-low.png",
+    "imageHighSrc": "cards/sm35-007-high.png"
+  },
+  {
+    "masterCardId": "9461",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-6",
+    "localId": "6",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "006/73",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 006/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-006-low.png",
+    "imageHighSrc": "cards/sm35-006-high.png"
+  },
+  {
+    "masterCardId": "9452",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-5",
+    "localId": "5",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "005/73",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 005/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-005-low.png",
+    "imageHighSrc": "cards/sm35-005-high.png"
+  },
+  {
+    "masterCardId": "9443",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-4",
+    "localId": "4",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "004/73",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 004/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-004-low.png",
+    "imageHighSrc": "cards/sm35-004-high.png"
+  },
+  {
+    "masterCardId": "9435",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-3",
+    "localId": "3",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "003/73",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 003/73 Shining Legends",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-003-low.png",
+    "imageHighSrc": "cards/sm35-003-high.png"
+  },
+  {
+    "masterCardId": "9426",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-2",
+    "localId": "2",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "002/73",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 002/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-002-low.png",
+    "imageHighSrc": "cards/sm35-002-high.png"
+  },
+  {
+    "masterCardId": "9422",
+    "externalId": null,
+    "tcgdex_id": "sm3.5-1",
+    "localId": "1",
+    "setCode": "sm3.5",
+    "setTcgdexId": "sm3.5",
+    "cardNumber": "001/73",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 001/73 Shining Legends",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm35-001-low.png",
+    "imageHighSrc": "cards/sm35-001-high.png"
+  }
+]

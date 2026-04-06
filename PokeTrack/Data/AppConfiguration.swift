@@ -1,5 +1,12 @@
 import Foundation
 
+/// Builds URLs for your public R2 (or other) CDN. Intended layout when **catalog prefix** is `data`:
+/// - `…/data/sets.json`
+/// - `…/data/pokemon.json` (National Dex browse: `nationalDexNumber`, `name`, `imageUrl`, optional `generation`)
+/// - `…/data/cards/{setCode}.json`
+/// - `…/data/tcg/pricing/card-pricing/{setCode}.json` (per-set card pricing; see `r2CardPricingSetJSONURL`)
+/// - Card images in JSON as `cards/…` resolve under **assets prefix** (default: bucket root → `…/cards/…`).
+/// - Set logos: try exact `logoSrc` path first, then `tcg/…` mirrors — see `setLogoURLCandidates`.
 enum AppConfiguration {
     /// Single non-consumable premium product — create the same ID in App Store Connect.
     static let premiumProductID = "app1xy.PokeTrack.premium"
@@ -31,12 +38,30 @@ enum AppConfiguration {
         return "data"
     }
 
-    /// `pricing/{setCode}.json` — empty = bucket root. Key: `POKETRACK_R2_PRICING_PREFIX`.
+    /// Prefix for URLs built with `r2PricingURL` (e.g. per-set card pricing under `tcg/pricing/card-pricing/`). Key: `POKETRACK_R2_PRICING_PREFIX`.
+    /// If omitted, defaults to **`r2CatalogPathPrefix`** (e.g. `data/…`).
+    /// Set the plist key to an **empty string** to use bucket root.
     static var r2PricingPathPrefix: String {
         if hasPlistOrEnv("POKETRACK_R2_PRICING_PREFIX") {
             return plistOrEnvTrimmed("POKETRACK_R2_PRICING_PREFIX") ?? ""
         }
-        return ""
+        return r2CatalogPathPrefix
+    }
+
+    /// Directory under `r2PricingPathPrefix` containing `me03.json`, etc. Default `pricing/card-pricing`. Override: `POKETRACK_R2_CARD_PRICING_DIR`.
+    static var r2CardPricingRelativeDirectory: String {
+        if hasPlistOrEnv("POKETRACK_R2_CARD_PRICING_DIR") {
+            let s = plistOrEnvTrimmed("POKETRACK_R2_CARD_PRICING_DIR") ?? ""
+            return s.isEmpty ? "pricing/card-pricing" : s
+        }
+        return "pricing/card-pricing"
+    }
+
+    /// Per-set card pricing JSON: `{prefix}/tcg/pricing/card-pricing/{setCode}.json` (prefix is usually `data`).
+    static func r2CardPricingSetJSONURL(setCodeStem: String) -> URL {
+        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
+        let dir = r2CardPricingRelativeDirectory.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        return r2PricingURL(path: "\(dir)/\(stem).json")
     }
 
     /// Card/set images (`cards/…`, `sets/logo/…`) — usually bucket root. Key: `POKETRACK_R2_ASSETS_PREFIX`.
@@ -56,6 +81,133 @@ enum AppConfiguration {
 
     static func r2PricingURL(path: String) -> URL {
         url(prefix: r2PricingPathPrefix, path: path)
+    }
+
+    /// Sealed / Pokedata / price-trends JSON (paths under this prefix). Key: `POKETRACK_R2_MARKET_PREFIX`; default root.
+    static var r2MarketPathPrefix: String {
+        if hasPlistOrEnv("POKETRACK_R2_MARKET_PREFIX") {
+            return plistOrEnvTrimmed("POKETRACK_R2_MARKET_PREFIX") ?? ""
+        }
+        return ""
+    }
+
+    static func r2MarketURL(path: String) -> URL {
+        url(prefix: r2MarketPathPrefix, path: path)
+    }
+
+    /// Fetched on demand — large time-series blobs. Path pattern under pricing prefix.
+    static func r2PricingHistoryURL(setCode: String, cardKey: String) -> URL {
+        r2PricingURL(path: "pricing-history/\(setCode)/\(cardKey).json")
+    }
+
+    private static func normalizedSetLogoPath(_ logoSrc: String) -> String {
+        let t = logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        if t.hasPrefix("/") { return String(t.dropFirst()) }
+        return t
+    }
+
+    /// Set logos from `sets.json` (`logoSrc`, e.g. `images/sets/logo/….jpg`). Empty `logoSrc` yields `nil`.
+    static func setLogoURL(logoSrc: String) -> URL? {
+        setLogoURLCandidates(logoSrc: logoSrc).first
+    }
+
+    /// Tries paths most likely to exist first: **exact `logoSrc` under assets + catalog**, then `tcg/images/sets/logo/…` and other mirrors (bucket layouts differ).
+    static func setLogoURLCandidates(logoSrc: String) -> [URL] {
+        let path = normalizedSetLogoPath(logoSrc)
+        guard !path.isEmpty else { return [] }
+
+        var urls: [URL] = []
+        func appendUnique(_ url: URL) {
+            if !urls.contains(url) { urls.append(url) }
+        }
+
+        let fileName = path.split(separator: "/").last.map(String.init)
+
+        // 1. Exact path from `sets.json`.
+        appendUnique(imageURL(relativePath: path))
+
+        // 2. `images/` prefix — live sets.json uses `sets/logo/…` but files live at `images/sets/logo/…`.
+        if path.hasPrefix("sets/logo/") {
+            appendUnique(imageURL(relativePath: "images/" + path))
+        }
+
+        // 3. Catalog-prefixed exact path.
+        appendUnique(r2CatalogURL(path: path))
+
+        // 4. `tcg/images/sets/logo/<file>` (alternate layout).
+        if let fileName, !fileName.isEmpty {
+            appendUnique(imageURL(relativePath: "tcg/images/sets/logo/\(fileName)"))
+            appendUnique(r2CatalogURL(path: "tcg/images/sets/logo/\(fileName)"))
+        }
+
+        // 5. `tcg/` + full path when JSON uses `images/sets/…`.
+        if path.hasPrefix("images/sets/") {
+            appendUnique(imageURL(relativePath: "tcg/" + path))
+            appendUnique(r2CatalogURL(path: "tcg/" + path))
+        }
+
+        // 6. `sets/logo/<file>` only.
+        if let fileName, !fileName.isEmpty {
+            appendUnique(imageURL(relativePath: "sets/logo/\(fileName)"))
+            appendUnique(r2CatalogURL(path: "sets/logo/\(fileName)"))
+        }
+
+        return urls
+    }
+
+    /// Paths from `sets.json` `symbolSrc` (e.g. `images/sets/symbol/me02.5.webp`). Empty yields `[]`.
+    static func setSymbolURLCandidates(symbolSrc: String) -> [URL] {
+        let path = normalizedSetLogoPath(symbolSrc)
+        guard !path.isEmpty else { return [] }
+
+        var urls: [URL] = []
+        func appendUnique(_ url: URL) {
+            if !urls.contains(url) { urls.append(url) }
+        }
+
+        let fileName = path.split(separator: "/").last.map(String.init)
+
+        appendUnique(imageURL(relativePath: path))
+
+        if path.hasPrefix("sets/symbol/") {
+            appendUnique(imageURL(relativePath: "images/" + path))
+        }
+
+        appendUnique(r2CatalogURL(path: path))
+
+        if let fileName, !fileName.isEmpty {
+            appendUnique(imageURL(relativePath: "tcg/images/sets/symbol/\(fileName)"))
+            appendUnique(r2CatalogURL(path: "tcg/images/sets/symbol/\(fileName)"))
+        }
+
+        if path.hasPrefix("images/sets/") {
+            appendUnique(imageURL(relativePath: "tcg/" + path))
+            appendUnique(r2CatalogURL(path: "tcg/" + path))
+        }
+
+        if let fileName, !fileName.isEmpty {
+            appendUnique(imageURL(relativePath: "sets/symbol/\(fileName)"))
+            appendUnique(r2CatalogURL(path: "sets/symbol/\(fileName)"))
+        }
+
+        return urls
+    }
+
+    /// Art for `pokemon.json` rows: `imageUrl` is usually a filename like `1-1.png`.
+    /// Default folder `images/pokemon` (alongside `images/sets/…`). Override with `POKETRACK_R2_POKEMON_IMAGE_PREFIX` (empty = assets root + filename only).
+    static func pokemonArtURL(imageFileName: String) -> URL {
+        let trimmed = imageFileName.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.hasPrefix("http") {
+            return URL(string: trimmed)!
+        }
+        if trimmed.contains("/") {
+            return imageURL(relativePath: trimmed)
+        }
+        let folder = plistOrEnvTrimmed("POKETRACK_R2_POKEMON_IMAGE_PREFIX") ?? "images/pokemon"
+        if folder.isEmpty {
+            return imageURL(relativePath: trimmed)
+        }
+        return imageURL(relativePath: "\(folder)/\(trimmed)")
     }
 
     /// Images and logos from JSON relative paths (`cards/foo.png`, `sets/logo/...`).

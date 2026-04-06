@@ -1,0 +1,5058 @@
+[
+  {
+    "masterCardId": "9107",
+    "externalId": null,
+    "tcgdex_id": "pl3-SH9",
+    "localId": "SH9",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "SH9/147",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma SH9/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-SH9-low.png",
+    "imageHighSrc": "cards/pl3-SH9-high.png"
+  },
+  {
+    "masterCardId": "9106",
+    "externalId": null,
+    "tcgdex_id": "pl3-SH8",
+    "localId": "SH8",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "SH8/147",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth SH8/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-SH8-low.png",
+    "imageHighSrc": "cards/pl3-SH8-high.png"
+  },
+  {
+    "masterCardId": "9105",
+    "externalId": null,
+    "tcgdex_id": "pl3-SH7",
+    "localId": "SH7",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "SH7/147",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic SH7/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-SH7-low.png",
+    "imageHighSrc": "cards/pl3-SH7-high.png"
+  },
+  {
+    "masterCardId": "9104",
+    "externalId": null,
+    "tcgdex_id": "pl3-150",
+    "localId": "150",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "150/147",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 150/147 Supreme Victors",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-150-low.png",
+    "imageHighSrc": "cards/pl3-150-high.png"
+  },
+  {
+    "masterCardId": "9103",
+    "externalId": null,
+    "tcgdex_id": "pl3-149",
+    "localId": "149",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "149/147",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 149/147 Supreme Victors",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-149-low.png",
+    "imageHighSrc": "cards/pl3-149-high.png"
+  },
+  {
+    "masterCardId": "9102",
+    "externalId": null,
+    "tcgdex_id": "pl3-148",
+    "localId": "148",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "148/147",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 148/147 Supreme Victors",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-148-low.png",
+    "imageHighSrc": "cards/pl3-148-high.png"
+  },
+  {
+    "masterCardId": "9101",
+    "externalId": null,
+    "tcgdex_id": "pl3-147",
+    "localId": "147",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "147/147",
+    "cardName": "Staraptor FB LV.X",
+    "fullDisplayName": "Staraptor FB LV.X 147/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      398
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staraptor FB",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-147-low.png",
+    "imageHighSrc": "cards/pl3-147-high.png"
+  },
+  {
+    "masterCardId": "9100",
+    "externalId": null,
+    "tcgdex_id": "pl3-146",
+    "localId": "146",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "146/147",
+    "cardName": "Rayquaza C LV.X",
+    "fullDisplayName": "Rayquaza C LV.X 146/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza C",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-146-low.png",
+    "imageHighSrc": "cards/pl3-146-high.png"
+  },
+  {
+    "masterCardId": "9099",
+    "externalId": null,
+    "tcgdex_id": "pl3-145",
+    "localId": "145",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "145/147",
+    "cardName": "Garchomp C LV.X",
+    "fullDisplayName": "Garchomp C LV.X 145/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Garchomp C",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-145-low.png",
+    "imageHighSrc": "cards/pl3-145-high.png"
+  },
+  {
+    "masterCardId": "9098",
+    "externalId": null,
+    "tcgdex_id": "pl3-144",
+    "localId": "144",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "144/147",
+    "cardName": "Electivire FB LV.X",
+    "fullDisplayName": "Electivire FB LV.X 144/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electivire FB",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-144-low.png",
+    "imageHighSrc": "cards/pl3-144-high.png"
+  },
+  {
+    "masterCardId": "9097",
+    "externalId": null,
+    "tcgdex_id": "pl3-143",
+    "localId": "143",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "143/147",
+    "cardName": "Charizard G LV.X",
+    "fullDisplayName": "Charizard G LV.X 143/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard G",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-143-low.png",
+    "imageHighSrc": "cards/pl3-143-high.png"
+  },
+  {
+    "masterCardId": "9096",
+    "externalId": null,
+    "tcgdex_id": "pl3-142",
+    "localId": "142",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "142/147",
+    "cardName": "Blaziken FB LV.X",
+    "fullDisplayName": "Blaziken FB LV.X 142/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blaziken FB",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-142-low.png",
+    "imageHighSrc": "cards/pl3-142-high.png"
+  },
+  {
+    "masterCardId": "9095",
+    "externalId": null,
+    "tcgdex_id": "pl3-141",
+    "localId": "141",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "141/147",
+    "cardName": "Absol G LV.X",
+    "fullDisplayName": "Absol G LV.X 141/147 Supreme Victors",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Absol G",
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-141-low.png",
+    "imageHighSrc": "cards/pl3-141-high.png"
+  },
+  {
+    "masterCardId": "9094",
+    "externalId": null,
+    "tcgdex_id": "pl3-140",
+    "localId": "140",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "140/147",
+    "cardName": "VS Seeker",
+    "fullDisplayName": "VS Seeker 140/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-140-low.png",
+    "imageHighSrc": "cards/pl3-140-high.png"
+  },
+  {
+    "masterCardId": "9093",
+    "externalId": null,
+    "tcgdex_id": "pl3-139",
+    "localId": "139",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "139/147",
+    "cardName": "Palmer's Contribution",
+    "fullDisplayName": "Palmer's Contribution 139/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-139-low.png",
+    "imageHighSrc": "cards/pl3-139-high.png"
+  },
+  {
+    "masterCardId": "9092",
+    "externalId": null,
+    "tcgdex_id": "pl3-138",
+    "localId": "138",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "138/147",
+    "cardName": "Night Teleporter",
+    "fullDisplayName": "Night Teleporter 138/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-138-low.png",
+    "imageHighSrc": "cards/pl3-138-high.png"
+  },
+  {
+    "masterCardId": "9091",
+    "externalId": null,
+    "tcgdex_id": "pl3-137",
+    "localId": "137",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "137/147",
+    "cardName": "Cyrus's Initiative",
+    "fullDisplayName": "Cyrus's Initiative 137/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-137-low.png",
+    "imageHighSrc": "cards/pl3-137-high.png"
+  },
+  {
+    "masterCardId": "9089",
+    "externalId": null,
+    "tcgdex_id": "pl3-136",
+    "localId": "136",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "136/147",
+    "cardName": "Cynthia's Guidance",
+    "fullDisplayName": "Cynthia's Guidance 136/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-136-low.png",
+    "imageHighSrc": "cards/pl3-136-high.png"
+  },
+  {
+    "masterCardId": "9088",
+    "externalId": null,
+    "tcgdex_id": "pl3-135",
+    "localId": "135",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "135/147",
+    "cardName": "Champion's Room",
+    "fullDisplayName": "Champion's Room 135/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-135-low.png",
+    "imageHighSrc": "cards/pl3-135-high.png"
+  },
+  {
+    "masterCardId": "9086",
+    "externalId": null,
+    "tcgdex_id": "pl3-134",
+    "localId": "134",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "134/147",
+    "cardName": "Battle Tower",
+    "fullDisplayName": "Battle Tower 134/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-134-low.png",
+    "imageHighSrc": "cards/pl3-134-high.png"
+  },
+  {
+    "masterCardId": "9084",
+    "externalId": null,
+    "tcgdex_id": "pl3-133",
+    "localId": "133",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "133/147",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 133/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-133-low.png",
+    "imageHighSrc": "cards/pl3-133-high.png"
+  },
+  {
+    "masterCardId": "9082",
+    "externalId": null,
+    "tcgdex_id": "pl3-132",
+    "localId": "132",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "132/147",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 132/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-132-low.png",
+    "imageHighSrc": "cards/pl3-132-high.png"
+  },
+  {
+    "masterCardId": "9079",
+    "externalId": null,
+    "tcgdex_id": "pl3-131",
+    "localId": "131",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "131/147",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 131/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-131-low.png",
+    "imageHighSrc": "cards/pl3-131-high.png"
+  },
+  {
+    "masterCardId": "9077",
+    "externalId": null,
+    "tcgdex_id": "pl3-130",
+    "localId": "130",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "130/147",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 130/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-130-low.png",
+    "imageHighSrc": "cards/pl3-130-high.png"
+  },
+  {
+    "masterCardId": "9075",
+    "externalId": null,
+    "tcgdex_id": "pl3-129",
+    "localId": "129",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "129/147",
+    "cardName": "Starly",
+    "fullDisplayName": "Starly 129/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      396
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-129-low.png",
+    "imageHighSrc": "cards/pl3-129-high.png"
+  },
+  {
+    "masterCardId": "9073",
+    "externalId": null,
+    "tcgdex_id": "pl3-128",
+    "localId": "128",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "128/147",
+    "cardName": "Skorupi",
+    "fullDisplayName": "Skorupi 128/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      451
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-128-low.png",
+    "imageHighSrc": "cards/pl3-128-high.png"
+  },
+  {
+    "masterCardId": "9071",
+    "externalId": null,
+    "tcgdex_id": "pl3-127",
+    "localId": "127",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "127/147",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 127/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-127-low.png",
+    "imageHighSrc": "cards/pl3-127-high.png"
+  },
+  {
+    "masterCardId": "9069",
+    "externalId": null,
+    "tcgdex_id": "pl3-126",
+    "localId": "126",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "126/147",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 126/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-126-low.png",
+    "imageHighSrc": "cards/pl3-126-high.png"
+  },
+  {
+    "masterCardId": "9067",
+    "externalId": null,
+    "tcgdex_id": "pl3-125",
+    "localId": "125",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "125/147",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 125/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-125-low.png",
+    "imageHighSrc": "cards/pl3-125-high.png"
+  },
+  {
+    "masterCardId": "9065",
+    "externalId": null,
+    "tcgdex_id": "pl3-124",
+    "localId": "124",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "124/147",
+    "cardName": "Sandshrew",
+    "fullDisplayName": "Sandshrew 124/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-124-low.png",
+    "imageHighSrc": "cards/pl3-124-high.png"
+  },
+  {
+    "masterCardId": "9063",
+    "externalId": null,
+    "tcgdex_id": "pl3-123",
+    "localId": "123",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "123/147",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 123/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-123-low.png",
+    "imageHighSrc": "cards/pl3-123-high.png"
+  },
+  {
+    "masterCardId": "9061",
+    "externalId": null,
+    "tcgdex_id": "pl3-122",
+    "localId": "122",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "122/147",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 122/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-122-low.png",
+    "imageHighSrc": "cards/pl3-122-high.png"
+  },
+  {
+    "masterCardId": "9059",
+    "externalId": null,
+    "tcgdex_id": "pl3-121",
+    "localId": "121",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "121/147",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 121/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-121-low.png",
+    "imageHighSrc": "cards/pl3-121-high.png"
+  },
+  {
+    "masterCardId": "9057",
+    "externalId": null,
+    "tcgdex_id": "pl3-120",
+    "localId": "120",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "120/147",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 120/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takao Unno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-120-low.png",
+    "imageHighSrc": "cards/pl3-120-high.png"
+  },
+  {
+    "masterCardId": "9055",
+    "externalId": null,
+    "tcgdex_id": "pl3-119",
+    "localId": "119",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "119/147",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 119/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-119-low.png",
+    "imageHighSrc": "cards/pl3-119-high.png"
+  },
+  {
+    "masterCardId": "9053",
+    "externalId": null,
+    "tcgdex_id": "pl3-118",
+    "localId": "118",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "118/147",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 118/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-118-low.png",
+    "imageHighSrc": "cards/pl3-118-high.png"
+  },
+  {
+    "masterCardId": "9051",
+    "externalId": null,
+    "tcgdex_id": "pl3-117",
+    "localId": "117",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "117/147",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 117/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-117-low.png",
+    "imageHighSrc": "cards/pl3-117-high.png"
+  },
+  {
+    "masterCardId": "9048",
+    "externalId": null,
+    "tcgdex_id": "pl3-116",
+    "localId": "116",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "116/147",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 116/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-116-low.png",
+    "imageHighSrc": "cards/pl3-116-high.png"
+  },
+  {
+    "masterCardId": "9045",
+    "externalId": null,
+    "tcgdex_id": "pl3-115",
+    "localId": "115",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "115/147",
+    "cardName": "Mime Jr.",
+    "fullDisplayName": "Mime Jr. 115/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      439
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-115-low.png",
+    "imageHighSrc": "cards/pl3-115-high.png"
+  },
+  {
+    "masterCardId": "9042",
+    "externalId": null,
+    "tcgdex_id": "pl3-114",
+    "localId": "114",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "114/147",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 114/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-114-low.png",
+    "imageHighSrc": "cards/pl3-114-high.png"
+  },
+  {
+    "masterCardId": "9038",
+    "externalId": null,
+    "tcgdex_id": "pl3-113",
+    "localId": "113",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "113/147",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 113/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-113-low.png",
+    "imageHighSrc": "cards/pl3-113-high.png"
+  },
+  {
+    "masterCardId": "9034",
+    "externalId": null,
+    "tcgdex_id": "pl3-112",
+    "localId": "112",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "112/147",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 112/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-112-low.png",
+    "imageHighSrc": "cards/pl3-112-high.png"
+  },
+  {
+    "masterCardId": "9030",
+    "externalId": null,
+    "tcgdex_id": "pl3-111",
+    "localId": "111",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "111/147",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 111/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-111-low.png",
+    "imageHighSrc": "cards/pl3-111-high.png"
+  },
+  {
+    "masterCardId": "9026",
+    "externalId": null,
+    "tcgdex_id": "pl3-110",
+    "localId": "110",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "110/147",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 110/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-110-low.png",
+    "imageHighSrc": "cards/pl3-110-high.png"
+  },
+  {
+    "masterCardId": "9022",
+    "externalId": null,
+    "tcgdex_id": "pl3-109",
+    "localId": "109",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "109/147",
+    "cardName": "Kricketot",
+    "fullDisplayName": "Kricketot 109/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      401
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-109-low.png",
+    "imageHighSrc": "cards/pl3-109-high.png"
+  },
+  {
+    "masterCardId": "9017",
+    "externalId": null,
+    "tcgdex_id": "pl3-108",
+    "localId": "108",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "108/147",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 108/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-108-low.png",
+    "imageHighSrc": "cards/pl3-108-high.png"
+  },
+  {
+    "masterCardId": "9012",
+    "externalId": null,
+    "tcgdex_id": "pl3-107",
+    "localId": "107",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "107/147",
+    "cardName": "Goldeen",
+    "fullDisplayName": "Goldeen 107/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-107-low.png",
+    "imageHighSrc": "cards/pl3-107-high.png"
+  },
+  {
+    "masterCardId": "9007",
+    "externalId": null,
+    "tcgdex_id": "pl3-106",
+    "localId": "106",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "106/147",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 106/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-106-low.png",
+    "imageHighSrc": "cards/pl3-106-high.png"
+  },
+  {
+    "masterCardId": "9002",
+    "externalId": null,
+    "tcgdex_id": "pl3-105",
+    "localId": "105",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "105/147",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 105/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-105-low.png",
+    "imageHighSrc": "cards/pl3-105-high.png"
+  },
+  {
+    "masterCardId": "8997",
+    "externalId": null,
+    "tcgdex_id": "pl3-104",
+    "localId": "104",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "104/147",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 104/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-104-low.png",
+    "imageHighSrc": "cards/pl3-104-high.png"
+  },
+  {
+    "masterCardId": "8991",
+    "externalId": null,
+    "tcgdex_id": "pl3-103",
+    "localId": "103",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "103/147",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 103/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-103-low.png",
+    "imageHighSrc": "cards/pl3-103-high.png"
+  },
+  {
+    "masterCardId": "8986",
+    "externalId": null,
+    "tcgdex_id": "pl3-102",
+    "localId": "102",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "102/147",
+    "cardName": "Doduo",
+    "fullDisplayName": "Doduo 102/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-102-low.png",
+    "imageHighSrc": "cards/pl3-102-high.png"
+  },
+  {
+    "masterCardId": "8981",
+    "externalId": null,
+    "tcgdex_id": "pl3-101",
+    "localId": "101",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "101/147",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 101/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-101-low.png",
+    "imageHighSrc": "cards/pl3-101-high.png"
+  },
+  {
+    "masterCardId": "8976",
+    "externalId": null,
+    "tcgdex_id": "pl3-100",
+    "localId": "100",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "100/147",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 100/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-100-low.png",
+    "imageHighSrc": "cards/pl3-100-high.png"
+  },
+  {
+    "masterCardId": "8971",
+    "externalId": null,
+    "tcgdex_id": "pl3-99",
+    "localId": "099",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "099/147",
+    "cardName": "Combee",
+    "fullDisplayName": "Combee 099/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      415
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-099-low.png",
+    "imageHighSrc": "cards/pl3-099-high.png"
+  },
+  {
+    "masterCardId": "8966",
+    "externalId": null,
+    "tcgdex_id": "pl3-98",
+    "localId": "098",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "098/147",
+    "cardName": "Chingling",
+    "fullDisplayName": "Chingling 098/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      433
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-098-low.png",
+    "imageHighSrc": "cards/pl3-098-high.png"
+  },
+  {
+    "masterCardId": "8961",
+    "externalId": null,
+    "tcgdex_id": "pl3-97",
+    "localId": "097",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "097/147",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 097/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-097-low.png",
+    "imageHighSrc": "cards/pl3-097-high.png"
+  },
+  {
+    "masterCardId": "8955",
+    "externalId": null,
+    "tcgdex_id": "pl3-96",
+    "localId": "096",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "096/147",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 096/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-096-low.png",
+    "imageHighSrc": "cards/pl3-096-high.png"
+  },
+  {
+    "masterCardId": "8950",
+    "externalId": null,
+    "tcgdex_id": "pl3-95",
+    "localId": "095",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "095/147",
+    "cardName": "Chatot",
+    "fullDisplayName": "Chatot 095/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Ohta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-095-low.png",
+    "imageHighSrc": "cards/pl3-095-high.png"
+  },
+  {
+    "masterCardId": "8945",
+    "externalId": null,
+    "tcgdex_id": "pl3-94",
+    "localId": "094",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "094/147",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 094/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-094-low.png",
+    "imageHighSrc": "cards/pl3-094-high.png"
+  },
+  {
+    "masterCardId": "8941",
+    "externalId": null,
+    "tcgdex_id": "pl3-93",
+    "localId": "093",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "093/147",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 093/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-093-low.png",
+    "imageHighSrc": "cards/pl3-093-high.png"
+  },
+  {
+    "masterCardId": "8936",
+    "externalId": null,
+    "tcgdex_id": "pl3-92",
+    "localId": "092",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "092/147",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 092/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-092-low.png",
+    "imageHighSrc": "cards/pl3-092-high.png"
+  },
+  {
+    "masterCardId": "8931",
+    "externalId": null,
+    "tcgdex_id": "pl3-91",
+    "localId": "091",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "091/147",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 091/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-091-low.png",
+    "imageHighSrc": "cards/pl3-091-high.png"
+  },
+  {
+    "masterCardId": "8926",
+    "externalId": null,
+    "tcgdex_id": "pl3-90",
+    "localId": "090",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "090/147",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 090/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-090-low.png",
+    "imageHighSrc": "cards/pl3-090-high.png"
+  },
+  {
+    "masterCardId": "8920",
+    "externalId": null,
+    "tcgdex_id": "pl3-89",
+    "localId": "089",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "089/147",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 089/147 Supreme Victors",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-089-low.png",
+    "imageHighSrc": "cards/pl3-089-high.png"
+  },
+  {
+    "masterCardId": "8915",
+    "externalId": null,
+    "tcgdex_id": "pl3-88",
+    "localId": "088",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "088/147",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 088/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-088-low.png",
+    "imageHighSrc": "cards/pl3-088-high.png"
+  },
+  {
+    "masterCardId": "8910",
+    "externalId": null,
+    "tcgdex_id": "pl3-87",
+    "localId": "087",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "087/147",
+    "cardName": "Wailmer",
+    "fullDisplayName": "Wailmer 087/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      320
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-087-low.png",
+    "imageHighSrc": "cards/pl3-087-high.png"
+  },
+  {
+    "masterCardId": "8904",
+    "externalId": null,
+    "tcgdex_id": "pl3-86",
+    "localId": "086",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "086/147",
+    "cardName": "Togekiss C",
+    "fullDisplayName": "Togekiss C 086/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      468
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-086-low.png",
+    "imageHighSrc": "cards/pl3-086-high.png"
+  },
+  {
+    "masterCardId": "8899",
+    "externalId": null,
+    "tcgdex_id": "pl3-85",
+    "localId": "085",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "085/147",
+    "cardName": "Staravia",
+    "fullDisplayName": "Staravia 085/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      397
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Starly",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-085-low.png",
+    "imageHighSrc": "cards/pl3-085-high.png"
+  },
+  {
+    "masterCardId": "8895",
+    "externalId": null,
+    "tcgdex_id": "pl3-84",
+    "localId": "084",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "084/147",
+    "cardName": "Spiritomb C",
+    "fullDisplayName": "Spiritomb C 084/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-084-low.png",
+    "imageHighSrc": "cards/pl3-084-high.png"
+  },
+  {
+    "masterCardId": "8889",
+    "externalId": null,
+    "tcgdex_id": "pl3-83",
+    "localId": "083",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "083/147",
+    "cardName": "Skarmory FB",
+    "fullDisplayName": "Skarmory FB 083/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-083-low.png",
+    "imageHighSrc": "cards/pl3-083-high.png"
+  },
+  {
+    "masterCardId": "8883",
+    "externalId": null,
+    "tcgdex_id": "pl3-82",
+    "localId": "082",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "082/147",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 082/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-082-low.png",
+    "imageHighSrc": "cards/pl3-082-high.png"
+  },
+  {
+    "masterCardId": "8877",
+    "externalId": null,
+    "tcgdex_id": "pl3-81",
+    "localId": "081",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "081/147",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 081/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-081-low.png",
+    "imageHighSrc": "cards/pl3-081-high.png"
+  },
+  {
+    "masterCardId": "8871",
+    "externalId": null,
+    "tcgdex_id": "pl3-80",
+    "localId": "080",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "080/147",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 080/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyhorn",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-080-low.png",
+    "imageHighSrc": "cards/pl3-080-high.png"
+  },
+  {
+    "masterCardId": "8865",
+    "externalId": null,
+    "tcgdex_id": "pl3-79",
+    "localId": "079",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "079/147",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 079/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-079-low.png",
+    "imageHighSrc": "cards/pl3-079-high.png"
+  },
+  {
+    "masterCardId": "8860",
+    "externalId": null,
+    "tcgdex_id": "pl3-78",
+    "localId": "078",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "078/147",
+    "cardName": "Raticate G",
+    "fullDisplayName": "Raticate G 078/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-078-low.png",
+    "imageHighSrc": "cards/pl3-078-high.png"
+  },
+  {
+    "masterCardId": "8854",
+    "externalId": null,
+    "tcgdex_id": "pl3-77",
+    "localId": "077",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "077/147",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 077/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Takao Unno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-077-low.png",
+    "imageHighSrc": "cards/pl3-077-high.png"
+  },
+  {
+    "masterCardId": "8848",
+    "externalId": null,
+    "tcgdex_id": "pl3-76",
+    "localId": "076",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "076/147",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 076/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-076-low.png",
+    "imageHighSrc": "cards/pl3-076-high.png"
+  },
+  {
+    "masterCardId": "8842",
+    "externalId": null,
+    "tcgdex_id": "pl3-75",
+    "localId": "075",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "075/147",
+    "cardName": "Pinsir",
+    "fullDisplayName": "Pinsir 075/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-075-low.png",
+    "imageHighSrc": "cards/pl3-075-high.png"
+  },
+  {
+    "masterCardId": "8836",
+    "externalId": null,
+    "tcgdex_id": "pl3-74",
+    "localId": "074",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "074/147",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 074/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-074-low.png",
+    "imageHighSrc": "cards/pl3-074-high.png"
+  },
+  {
+    "masterCardId": "8830",
+    "externalId": null,
+    "tcgdex_id": "pl3-73",
+    "localId": "073",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "073/147",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 073/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-073-low.png",
+    "imageHighSrc": "cards/pl3-073-high.png"
+  },
+  {
+    "masterCardId": "8824",
+    "externalId": null,
+    "tcgdex_id": "pl3-72",
+    "localId": "072",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "072/147",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 072/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-072-low.png",
+    "imageHighSrc": "cards/pl3-072-high.png"
+  },
+  {
+    "masterCardId": "8818",
+    "externalId": null,
+    "tcgdex_id": "pl3-71",
+    "localId": "071",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "071/147",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 071/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-071-low.png",
+    "imageHighSrc": "cards/pl3-071-high.png"
+  },
+  {
+    "masterCardId": "8812",
+    "externalId": null,
+    "tcgdex_id": "pl3-70",
+    "localId": "070",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "070/147",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 070/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-070-low.png",
+    "imageHighSrc": "cards/pl3-070-high.png"
+  },
+  {
+    "masterCardId": "8807",
+    "externalId": null,
+    "tcgdex_id": "pl3-69",
+    "localId": "069",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "069/147",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 069/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-069-low.png",
+    "imageHighSrc": "cards/pl3-069-high.png"
+  },
+  {
+    "masterCardId": "8801",
+    "externalId": null,
+    "tcgdex_id": "pl3-68",
+    "localId": "068",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "068/147",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 068/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-068-low.png",
+    "imageHighSrc": "cards/pl3-068-high.png"
+  },
+  {
+    "masterCardId": "8795",
+    "externalId": null,
+    "tcgdex_id": "pl3-67",
+    "localId": "067",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "067/147",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 067/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-067-low.png",
+    "imageHighSrc": "cards/pl3-067-high.png"
+  },
+  {
+    "masterCardId": "8789",
+    "externalId": null,
+    "tcgdex_id": "pl3-66",
+    "localId": "066",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "066/147",
+    "cardName": "Manectric G",
+    "fullDisplayName": "Manectric G 066/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-066-low.png",
+    "imageHighSrc": "cards/pl3-066-high.png"
+  },
+  {
+    "masterCardId": "8783",
+    "externalId": null,
+    "tcgdex_id": "pl3-65",
+    "localId": "065",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "065/147",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 065/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-065-low.png",
+    "imageHighSrc": "cards/pl3-065-high.png"
+  },
+  {
+    "masterCardId": "8777",
+    "externalId": null,
+    "tcgdex_id": "pl3-64",
+    "localId": "064",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "064/147",
+    "cardName": "Loudred",
+    "fullDisplayName": "Loudred 064/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      294
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whismur",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-064-low.png",
+    "imageHighSrc": "cards/pl3-064-high.png"
+  },
+  {
+    "masterCardId": "8771",
+    "externalId": null,
+    "tcgdex_id": "pl3-63",
+    "localId": "063",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "063/147",
+    "cardName": "Lopunny",
+    "fullDisplayName": "Lopunny 063/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-063-low.png",
+    "imageHighSrc": "cards/pl3-063-high.png"
+  },
+  {
+    "masterCardId": "8767",
+    "externalId": null,
+    "tcgdex_id": "pl3-62",
+    "localId": "062",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "062/147",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 062/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-062-low.png",
+    "imageHighSrc": "cards/pl3-062-high.png"
+  },
+  {
+    "masterCardId": "8761",
+    "externalId": null,
+    "tcgdex_id": "pl3-61",
+    "localId": "061",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "061/147",
+    "cardName": "Hippopotas",
+    "fullDisplayName": "Hippopotas 061/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      449
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-061-low.png",
+    "imageHighSrc": "cards/pl3-061-high.png"
+  },
+  {
+    "masterCardId": "8757",
+    "externalId": null,
+    "tcgdex_id": "pl3-60",
+    "localId": "060",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "060/147",
+    "cardName": "Garchomp C",
+    "fullDisplayName": "Garchomp C 060/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-060-low.png",
+    "imageHighSrc": "cards/pl3-060-high.png"
+  },
+  {
+    "masterCardId": "8751",
+    "externalId": null,
+    "tcgdex_id": "pl3-59",
+    "localId": "059",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "059/147",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite 059/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-059-low.png",
+    "imageHighSrc": "cards/pl3-059-high.png"
+  },
+  {
+    "masterCardId": "8741",
+    "externalId": null,
+    "tcgdex_id": "pl3-58",
+    "localId": "058",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "058/147",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 058/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-058-low.png",
+    "imageHighSrc": "cards/pl3-058-high.png"
+  },
+  {
+    "masterCardId": "8735",
+    "externalId": null,
+    "tcgdex_id": "pl3-57",
+    "localId": "057",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "057/147",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 057/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-057-low.png",
+    "imageHighSrc": "cards/pl3-057-high.png"
+  },
+  {
+    "masterCardId": "8731",
+    "externalId": null,
+    "tcgdex_id": "pl3-56",
+    "localId": "056",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "056/147",
+    "cardName": "Dragonite FB",
+    "fullDisplayName": "Dragonite FB 056/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-056-low.png",
+    "imageHighSrc": "cards/pl3-056-high.png"
+  },
+  {
+    "masterCardId": "8725",
+    "externalId": null,
+    "tcgdex_id": "pl3-55",
+    "localId": "055",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "055/147",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 055/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cherubi",
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-055-low.png",
+    "imageHighSrc": "cards/pl3-055-high.png"
+  },
+  {
+    "masterCardId": "8719",
+    "externalId": null,
+    "tcgdex_id": "pl3-54",
+    "localId": "054",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "054/147",
+    "cardName": "Chatot G",
+    "fullDisplayName": "Chatot G 054/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-054-low.png",
+    "imageHighSrc": "cards/pl3-054-high.png"
+  },
+  {
+    "masterCardId": "8713",
+    "externalId": null,
+    "tcgdex_id": "pl3-53",
+    "localId": "053",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "053/147",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 053/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Ohta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-053-low.png",
+    "imageHighSrc": "cards/pl3-053-high.png"
+  },
+  {
+    "masterCardId": "8705",
+    "externalId": null,
+    "tcgdex_id": "pl3-52",
+    "localId": "052",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "052/147",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 052/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-052-low.png",
+    "imageHighSrc": "cards/pl3-052-high.png"
+  },
+  {
+    "masterCardId": "8695",
+    "externalId": null,
+    "tcgdex_id": "pl3-51",
+    "localId": "051",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "051/147",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 051/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-051-low.png",
+    "imageHighSrc": "cards/pl3-051-high.png"
+  },
+  {
+    "masterCardId": "8690",
+    "externalId": null,
+    "tcgdex_id": "pl3-50",
+    "localId": "050",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "050/147",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 050/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-050-low.png",
+    "imageHighSrc": "cards/pl3-050-high.png"
+  },
+  {
+    "masterCardId": "8685",
+    "externalId": null,
+    "tcgdex_id": "pl3-49",
+    "localId": "049",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "049/147",
+    "cardName": "Altaria C",
+    "fullDisplayName": "Altaria C 049/147 Supreme Victors",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-049-low.png",
+    "imageHighSrc": "cards/pl3-049-high.png"
+  },
+  {
+    "masterCardId": "8680",
+    "externalId": null,
+    "tcgdex_id": "pl3-48",
+    "localId": "048",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "048/147",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 048/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-048-low.png",
+    "imageHighSrc": "cards/pl3-048-high.png"
+  },
+  {
+    "masterCardId": "8674",
+    "externalId": null,
+    "tcgdex_id": "pl3-47",
+    "localId": "047",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "047/147",
+    "cardName": "Wailord",
+    "fullDisplayName": "Wailord 047/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wailmer",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-047-low.png",
+    "imageHighSrc": "cards/pl3-047-high.png"
+  },
+  {
+    "masterCardId": "8669",
+    "externalId": null,
+    "tcgdex_id": "pl3-46",
+    "localId": "046",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "046/147",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 046/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-046-low.png",
+    "imageHighSrc": "cards/pl3-046-high.png"
+  },
+  {
+    "masterCardId": "8657",
+    "externalId": null,
+    "tcgdex_id": "pl3-45",
+    "localId": "045",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "045/147",
+    "cardName": "Solrock",
+    "fullDisplayName": "Solrock 045/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      338
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-045-low.png",
+    "imageHighSrc": "cards/pl3-045-high.png"
+  },
+  {
+    "masterCardId": "8652",
+    "externalId": null,
+    "tcgdex_id": "pl3-44",
+    "localId": "044",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "044/147",
+    "cardName": "Shedinja",
+    "fullDisplayName": "Shedinja 044/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      292
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-044-low.png",
+    "imageHighSrc": "cards/pl3-044-high.png"
+  },
+  {
+    "masterCardId": "8638",
+    "externalId": null,
+    "tcgdex_id": "pl3-43",
+    "localId": "043",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "043/147",
+    "cardName": "Seaking",
+    "fullDisplayName": "Seaking 043/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      119
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goldeen",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-043-low.png",
+    "imageHighSrc": "cards/pl3-043-high.png"
+  },
+  {
+    "masterCardId": "8631",
+    "externalId": null,
+    "tcgdex_id": "pl3-42",
+    "localId": "042",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "042/147",
+    "cardName": "Sandslash",
+    "fullDisplayName": "Sandslash 042/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandshrew",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-042-low.png",
+    "imageHighSrc": "cards/pl3-042-high.png"
+  },
+  {
+    "masterCardId": "8624",
+    "externalId": null,
+    "tcgdex_id": "pl3-41",
+    "localId": "041",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "041/147",
+    "cardName": "Sableye G",
+    "fullDisplayName": "Sableye G 041/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-041-low.png",
+    "imageHighSrc": "cards/pl3-041-high.png"
+  },
+  {
+    "masterCardId": "8619",
+    "externalId": null,
+    "tcgdex_id": "pl3-40",
+    "localId": "040",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "040/147",
+    "cardName": "Roserade C",
+    "fullDisplayName": "Roserade C 040/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-040-low.png",
+    "imageHighSrc": "cards/pl3-040-high.png"
+  },
+  {
+    "masterCardId": "8613",
+    "externalId": null,
+    "tcgdex_id": "pl3-39",
+    "localId": "039",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "039/147",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 039/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-039-low.png",
+    "imageHighSrc": "cards/pl3-039-high.png"
+  },
+  {
+    "masterCardId": "8606",
+    "externalId": null,
+    "tcgdex_id": "pl3-38",
+    "localId": "038",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "038/147",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 038/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paras",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-038-low.png",
+    "imageHighSrc": "cards/pl3-038-high.png"
+  },
+  {
+    "masterCardId": "8598",
+    "externalId": null,
+    "tcgdex_id": "pl3-37",
+    "localId": "037",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "037/147",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 037/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-037-low.png",
+    "imageHighSrc": "cards/pl3-037-high.png"
+  },
+  {
+    "masterCardId": "8592",
+    "externalId": null,
+    "tcgdex_id": "pl3-36",
+    "localId": "036",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "036/147",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 036/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-036-low.png",
+    "imageHighSrc": "cards/pl3-036-high.png"
+  },
+  {
+    "masterCardId": "8583",
+    "externalId": null,
+    "tcgdex_id": "pl3-35",
+    "localId": "035",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "035/147",
+    "cardName": "Milotic C",
+    "fullDisplayName": "Milotic C 035/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-035-low.png",
+    "imageHighSrc": "cards/pl3-035-high.png"
+  },
+  {
+    "masterCardId": "8576",
+    "externalId": null,
+    "tcgdex_id": "pl3-34",
+    "localId": "034",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "034/147",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 034/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-034-low.png",
+    "imageHighSrc": "cards/pl3-034-high.png"
+  },
+  {
+    "masterCardId": "8570",
+    "externalId": null,
+    "tcgdex_id": "pl3-33",
+    "localId": "033",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "033/147",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 033/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-033-low.png",
+    "imageHighSrc": "cards/pl3-033-high.png"
+  },
+  {
+    "masterCardId": "8564",
+    "externalId": null,
+    "tcgdex_id": "pl3-32",
+    "localId": "032",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "032/147",
+    "cardName": "Lunatone",
+    "fullDisplayName": "Lunatone 032/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      337
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-032-low.png",
+    "imageHighSrc": "cards/pl3-032-high.png"
+  },
+  {
+    "masterCardId": "8555",
+    "externalId": null,
+    "tcgdex_id": "pl3-31",
+    "localId": "031",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "031/147",
+    "cardName": "Lucario C",
+    "fullDisplayName": "Lucario C 031/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-031-low.png",
+    "imageHighSrc": "cards/pl3-031-high.png"
+  },
+  {
+    "masterCardId": "8549",
+    "externalId": null,
+    "tcgdex_id": "pl3-30",
+    "localId": "030",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "030/147",
+    "cardName": "Lickilicky C",
+    "fullDisplayName": "Lickilicky C 030/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      463
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-030-low.png",
+    "imageHighSrc": "cards/pl3-030-high.png"
+  },
+  {
+    "masterCardId": "8544",
+    "externalId": null,
+    "tcgdex_id": "pl3-29",
+    "localId": "029",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "029/147",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 029/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Murkrow",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-029-low.png",
+    "imageHighSrc": "cards/pl3-029-high.png"
+  },
+  {
+    "masterCardId": "8538",
+    "externalId": null,
+    "tcgdex_id": "pl3-28",
+    "localId": "028",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "028/147",
+    "cardName": "Exploud",
+    "fullDisplayName": "Exploud 028/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      295
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Loudred",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-028-low.png",
+    "imageHighSrc": "cards/pl3-028-high.png"
+  },
+  {
+    "masterCardId": "8532",
+    "externalId": null,
+    "tcgdex_id": "pl3-27",
+    "localId": "027",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "027/147",
+    "cardName": "Empoleon FB",
+    "fullDisplayName": "Empoleon FB 027/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-027-low.png",
+    "imageHighSrc": "cards/pl3-027-high.png"
+  },
+  {
+    "masterCardId": "8525",
+    "externalId": null,
+    "tcgdex_id": "pl3-26",
+    "localId": "026",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "026/147",
+    "cardName": "Dusknoir FB",
+    "fullDisplayName": "Dusknoir FB 026/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-026-low.png",
+    "imageHighSrc": "cards/pl3-026-high.png"
+  },
+  {
+    "masterCardId": "8518",
+    "externalId": null,
+    "tcgdex_id": "pl3-25",
+    "localId": "025",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "025/147",
+    "cardName": "Dodrio",
+    "fullDisplayName": "Dodrio 025/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      85
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doduo",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-025-low.png",
+    "imageHighSrc": "cards/pl3-025-high.png"
+  },
+  {
+    "masterCardId": "8512",
+    "externalId": null,
+    "tcgdex_id": "pl3-24",
+    "localId": "024",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "024/147",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 024/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-024-low.png",
+    "imageHighSrc": "cards/pl3-024-high.png"
+  },
+  {
+    "masterCardId": "8505",
+    "externalId": null,
+    "tcgdex_id": "pl3-23",
+    "localId": "023",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "023/147",
+    "cardName": "Crawdaunt G",
+    "fullDisplayName": "Crawdaunt G 023/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-023-low.png",
+    "imageHighSrc": "cards/pl3-023-high.png"
+  },
+  {
+    "masterCardId": "8496",
+    "externalId": null,
+    "tcgdex_id": "pl3-22",
+    "localId": "022",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "022/147",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 022/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-022-low.png",
+    "imageHighSrc": "cards/pl3-022-high.png"
+  },
+  {
+    "masterCardId": "8491",
+    "externalId": null,
+    "tcgdex_id": "pl3-21",
+    "localId": "021",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "021/147",
+    "cardName": "Chimecho",
+    "fullDisplayName": "Chimecho 021/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-021-low.png",
+    "imageHighSrc": "cards/pl3-021-high.png"
+  },
+  {
+    "masterCardId": "8484",
+    "externalId": null,
+    "tcgdex_id": "pl3-20",
+    "localId": "020",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "020/147",
+    "cardName": "Charizard G",
+    "fullDisplayName": "Charizard G 020/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-020-low.png",
+    "imageHighSrc": "cards/pl3-020-high.png"
+  },
+  {
+    "masterCardId": "8472",
+    "externalId": null,
+    "tcgdex_id": "pl3-19",
+    "localId": "019",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "019/147",
+    "cardName": "Camerupt G",
+    "fullDisplayName": "Camerupt G 019/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-019-low.png",
+    "imageHighSrc": "cards/pl3-019-high.png"
+  },
+  {
+    "masterCardId": "8469",
+    "externalId": null,
+    "tcgdex_id": "pl3-18",
+    "localId": "018",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "018/147",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 018/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-018-low.png",
+    "imageHighSrc": "cards/pl3-018-high.png"
+  },
+  {
+    "masterCardId": "8462",
+    "externalId": null,
+    "tcgdex_id": "pl3-17",
+    "localId": "017",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "017/147",
+    "cardName": "Butterfree FB",
+    "fullDisplayName": "Butterfree FB 017/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-017-low.png",
+    "imageHighSrc": "cards/pl3-017-high.png"
+  },
+  {
+    "masterCardId": "8453",
+    "externalId": null,
+    "tcgdex_id": "pl3-16",
+    "localId": "016",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "016/147",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 016/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-016-low.png",
+    "imageHighSrc": "cards/pl3-016-high.png"
+  },
+  {
+    "masterCardId": "8441",
+    "externalId": null,
+    "tcgdex_id": "pl3-15",
+    "localId": "015",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "015/147",
+    "cardName": "Arcanine G",
+    "fullDisplayName": "Arcanine G 015/147 Supreme Victors",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-015-low.png",
+    "imageHighSrc": "cards/pl3-015-high.png"
+  },
+  {
+    "masterCardId": "8433",
+    "externalId": null,
+    "tcgdex_id": "pl3-14",
+    "localId": "014",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "014/147",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 014/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanma",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-014-low.png",
+    "imageHighSrc": "cards/pl3-014-high.png"
+  },
+  {
+    "masterCardId": "8415",
+    "externalId": null,
+    "tcgdex_id": "pl3-13",
+    "localId": "013",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "013/147",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 013/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-013-low.png",
+    "imageHighSrc": "cards/pl3-013-high.png"
+  },
+  {
+    "masterCardId": "8406",
+    "externalId": null,
+    "tcgdex_id": "pl3-12",
+    "localId": "012",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "012/147",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 012/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-012-low.png",
+    "imageHighSrc": "cards/pl3-012-high.png"
+  },
+  {
+    "masterCardId": "8397",
+    "externalId": null,
+    "tcgdex_id": "pl3-11",
+    "localId": "011",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "011/147",
+    "cardName": "Staraptor FB",
+    "fullDisplayName": "Staraptor FB 011/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      398
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-011-low.png",
+    "imageHighSrc": "cards/pl3-011-high.png"
+  },
+  {
+    "masterCardId": "8388",
+    "externalId": null,
+    "tcgdex_id": "pl3-10",
+    "localId": "010",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "010/147",
+    "cardName": "Rhyperior",
+    "fullDisplayName": "Rhyperior 010/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhydon",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-010-low.png",
+    "imageHighSrc": "cards/pl3-010-high.png"
+  },
+  {
+    "masterCardId": "8379",
+    "externalId": null,
+    "tcgdex_id": "pl3-9",
+    "localId": "009",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "009/147",
+    "cardName": "Regigigas FB",
+    "fullDisplayName": "Regigigas FB 009/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-009-low.png",
+    "imageHighSrc": "cards/pl3-009-high.png"
+  },
+  {
+    "masterCardId": "8373",
+    "externalId": null,
+    "tcgdex_id": "pl3-8",
+    "localId": "008",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "008/147",
+    "cardName": "Rayquaza C",
+    "fullDisplayName": "Rayquaza C 008/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-008-low.png",
+    "imageHighSrc": "cards/pl3-008-high.png"
+  },
+  {
+    "masterCardId": "8365",
+    "externalId": null,
+    "tcgdex_id": "pl3-7",
+    "localId": "007",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "007/147",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 007/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-007-low.png",
+    "imageHighSrc": "cards/pl3-007-high.png"
+  },
+  {
+    "masterCardId": "8355",
+    "externalId": null,
+    "tcgdex_id": "pl3-6",
+    "localId": "006",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "006/147",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 006/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-006-low.png",
+    "imageHighSrc": "cards/pl3-006-high.png"
+  },
+  {
+    "masterCardId": "8345",
+    "externalId": null,
+    "tcgdex_id": "pl3-5",
+    "localId": "005",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "005/147",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp 005/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pl3-005-low.png",
+    "imageHighSrc": "cards/pl3-005-high.png"
+  },
+  {
+    "masterCardId": "8335",
+    "externalId": null,
+    "tcgdex_id": "pl3-4",
+    "localId": "004",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "004/147",
+    "cardName": "Electivire FB",
+    "fullDisplayName": "Electivire FB 004/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-004-low.png",
+    "imageHighSrc": "cards/pl3-004-high.png"
+  },
+  {
+    "masterCardId": "8326",
+    "externalId": null,
+    "tcgdex_id": "pl3-3",
+    "localId": "003",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "003/147",
+    "cardName": "Drifblim FB",
+    "fullDisplayName": "Drifblim FB 003/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-003-low.png",
+    "imageHighSrc": "cards/pl3-003-high.png"
+  },
+  {
+    "masterCardId": "8315",
+    "externalId": null,
+    "tcgdex_id": "pl3-2",
+    "localId": "002",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "002/147",
+    "cardName": "Blaziken FB",
+    "fullDisplayName": "Blaziken FB 002/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-002-low.png",
+    "imageHighSrc": "cards/pl3-002-high.png"
+  },
+  {
+    "masterCardId": "8308",
+    "externalId": null,
+    "tcgdex_id": "pl3-1",
+    "localId": "001",
+    "setCode": "pl3",
+    "setTcgdexId": "pl3",
+    "cardNumber": "001/147",
+    "cardName": "Absol G",
+    "fullDisplayName": "Absol G 001/147 Supreme Victors",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pl3-001-low.png",
+    "imageHighSrc": "cards/pl3-001-high.png"
+  }
+]

@@ -1,0 +1,1078 @@
+[
+  {
+    "masterCardId": "3700",
+    "externalId": null,
+    "tcgdex_id": "dc1-34",
+    "localId": "034",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "034/34",
+    "cardName": "Double Magma Energy",
+    "fullDisplayName": "Double Magma Energy 034/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-034-low.png",
+    "imageHighSrc": "cards/dc1-034-high.png"
+  },
+  {
+    "masterCardId": "3695",
+    "externalId": null,
+    "tcgdex_id": "dc1-33",
+    "localId": "033",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "033/34",
+    "cardName": "Double Aqua Energy",
+    "fullDisplayName": "Double Aqua Energy 033/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-033-low.png",
+    "imageHighSrc": "cards/dc1-033-high.png"
+  },
+  {
+    "masterCardId": "3690",
+    "externalId": null,
+    "tcgdex_id": "dc1-32",
+    "localId": "032",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "032/34",
+    "cardName": "Team Magma's Secret Base",
+    "fullDisplayName": "Team Magma's Secret Base 032/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-032-low.png",
+    "imageHighSrc": "cards/dc1-032-high.png"
+  },
+  {
+    "masterCardId": "3685",
+    "externalId": null,
+    "tcgdex_id": "dc1-31",
+    "localId": "031",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "031/34",
+    "cardName": "Team Magma's Great Ball",
+    "fullDisplayName": "Team Magma's Great Ball 031/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-031-low.png",
+    "imageHighSrc": "cards/dc1-031-high.png"
+  },
+  {
+    "masterCardId": "3681",
+    "externalId": null,
+    "tcgdex_id": "dc1-30",
+    "localId": "030",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "030/34",
+    "cardName": "Team Magma Grunt",
+    "fullDisplayName": "Team Magma Grunt 030/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GAME FREAK inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-030-low.png",
+    "imageHighSrc": "cards/dc1-030-high.png"
+  },
+  {
+    "masterCardId": "3675",
+    "externalId": null,
+    "tcgdex_id": "dc1-29",
+    "localId": "029",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "029/34",
+    "cardName": "Team Magma Admin",
+    "fullDisplayName": "Team Magma Admin 029/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GAME FREAK inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-029-low.png",
+    "imageHighSrc": "cards/dc1-029-high.png"
+  },
+  {
+    "masterCardId": "3670",
+    "externalId": null,
+    "tcgdex_id": "dc1-28",
+    "localId": "028",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "028/34",
+    "cardName": "Team Aqua's Secret Base",
+    "fullDisplayName": "Team Aqua's Secret Base 028/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-028-low.png",
+    "imageHighSrc": "cards/dc1-028-high.png"
+  },
+  {
+    "masterCardId": "3665",
+    "externalId": null,
+    "tcgdex_id": "dc1-27",
+    "localId": "027",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "027/34",
+    "cardName": "Team Aqua's Great Ball",
+    "fullDisplayName": "Team Aqua's Great Ball 027/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-027-low.png",
+    "imageHighSrc": "cards/dc1-027-high.png"
+  },
+  {
+    "masterCardId": "3660",
+    "externalId": null,
+    "tcgdex_id": "dc1-26",
+    "localId": "026",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "026/34",
+    "cardName": "Team Aqua Grunt",
+    "fullDisplayName": "Team Aqua Grunt 026/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GAME FREAK inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-026-low.png",
+    "imageHighSrc": "cards/dc1-026-high.png"
+  },
+  {
+    "masterCardId": "3655",
+    "externalId": null,
+    "tcgdex_id": "dc1-25",
+    "localId": "025",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "025/34",
+    "cardName": "Team Aqua Admin",
+    "fullDisplayName": "Team Aqua Admin 025/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GAME FREAK inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-025-low.png",
+    "imageHighSrc": "cards/dc1-025-high.png"
+  },
+  {
+    "masterCardId": "3650",
+    "externalId": null,
+    "tcgdex_id": "dc1-24",
+    "localId": "024",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "024/34",
+    "cardName": "Magma Pointer",
+    "fullDisplayName": "Magma Pointer 024/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-024-low.png",
+    "imageHighSrc": "cards/dc1-024-high.png"
+  },
+  {
+    "masterCardId": "3642",
+    "externalId": null,
+    "tcgdex_id": "dc1-23",
+    "localId": "023",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "023/34",
+    "cardName": "Aqua Diffuser",
+    "fullDisplayName": "Aqua Diffuser 023/34 Double Crisis",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-023-low.png",
+    "imageHighSrc": "cards/dc1-023-high.png"
+  },
+  {
+    "masterCardId": "3639",
+    "externalId": null,
+    "tcgdex_id": "dc1-22",
+    "localId": "022",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "022/34",
+    "cardName": "Team Magma's Zangoose",
+    "fullDisplayName": "Team Magma's Zangoose 022/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-022-low.png",
+    "imageHighSrc": "cards/dc1-022-high.png"
+  },
+  {
+    "masterCardId": "3633",
+    "externalId": null,
+    "tcgdex_id": "dc1-21",
+    "localId": "021",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "021/34",
+    "cardName": "Team Aqua's Sharpedo",
+    "fullDisplayName": "Team Aqua's Sharpedo 021/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Carvanha",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-021-low.png",
+    "imageHighSrc": "cards/dc1-021-high.png"
+  },
+  {
+    "masterCardId": "3626",
+    "externalId": null,
+    "tcgdex_id": "dc1-20",
+    "localId": "020",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "020/34",
+    "cardName": "Team Aqua's Carvanha",
+    "fullDisplayName": "Team Aqua's Carvanha 020/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-020-low.png",
+    "imageHighSrc": "cards/dc1-020-high.png"
+  },
+  {
+    "masterCardId": "3621",
+    "externalId": null,
+    "tcgdex_id": "dc1-19",
+    "localId": "019",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "019/34",
+    "cardName": "Team Magma's Mightyena",
+    "fullDisplayName": "Team Magma's Mightyena 019/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Poochyena",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-019-low.png",
+    "imageHighSrc": "cards/dc1-019-high.png"
+  },
+  {
+    "masterCardId": "3615",
+    "externalId": null,
+    "tcgdex_id": "dc1-18",
+    "localId": "018",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "018/34",
+    "cardName": "Team Aqua's Mightyena",
+    "fullDisplayName": "Team Aqua's Mightyena 018/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Poochyena",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-018-low.png",
+    "imageHighSrc": "cards/dc1-018-high.png"
+  },
+  {
+    "masterCardId": "3610",
+    "externalId": null,
+    "tcgdex_id": "dc1-17",
+    "localId": "017",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "017/34",
+    "cardName": "Team Magma's Poochyena",
+    "fullDisplayName": "Team Magma's Poochyena 017/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-017-low.png",
+    "imageHighSrc": "cards/dc1-017-high.png"
+  },
+  {
+    "masterCardId": "3605",
+    "externalId": null,
+    "tcgdex_id": "dc1-16",
+    "localId": "016",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "016/34",
+    "cardName": "Team Aqua's Poochyena",
+    "fullDisplayName": "Team Aqua's Poochyena 016/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-016-low.png",
+    "imageHighSrc": "cards/dc1-016-high.png"
+  },
+  {
+    "masterCardId": "3598",
+    "externalId": null,
+    "tcgdex_id": "dc1-15",
+    "localId": "015",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "015/34",
+    "cardName": "Team Magma's Groudon-EX",
+    "fullDisplayName": "Team Magma's Groudon-EX 015/34 Double Crisis",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-015-low.png",
+    "imageHighSrc": "cards/dc1-015-high.png"
+  },
+  {
+    "masterCardId": "3590",
+    "externalId": null,
+    "tcgdex_id": "dc1-14",
+    "localId": "014",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "014/34",
+    "cardName": "Team Magma's Aggron",
+    "fullDisplayName": "Team Magma's Aggron 014/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Lairon",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-014-low.png",
+    "imageHighSrc": "cards/dc1-014-high.png"
+  },
+  {
+    "masterCardId": "3584",
+    "externalId": null,
+    "tcgdex_id": "dc1-13",
+    "localId": "013",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "013/34",
+    "cardName": "Team Magma's Lairon",
+    "fullDisplayName": "Team Magma's Lairon 013/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Aron",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-013-low.png",
+    "imageHighSrc": "cards/dc1-013-high.png"
+  },
+  {
+    "masterCardId": "3579",
+    "externalId": null,
+    "tcgdex_id": "dc1-12",
+    "localId": "012",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "012/34",
+    "cardName": "Team Magma's Aron",
+    "fullDisplayName": "Team Magma's Aron 012/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-012-low.png",
+    "imageHighSrc": "cards/dc1-012-high.png"
+  },
+  {
+    "masterCardId": "3572",
+    "externalId": null,
+    "tcgdex_id": "dc1-11",
+    "localId": "011",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "011/34",
+    "cardName": "Team Magma's Claydol",
+    "fullDisplayName": "Team Magma's Claydol 011/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Baltoy",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-011-low.png",
+    "imageHighSrc": "cards/dc1-011-high.png"
+  },
+  {
+    "masterCardId": "3566",
+    "externalId": null,
+    "tcgdex_id": "dc1-10",
+    "localId": "010",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "010/34",
+    "cardName": "Team Magma's Baltoy",
+    "fullDisplayName": "Team Magma's Baltoy 010/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-010-low.png",
+    "imageHighSrc": "cards/dc1-010-high.png"
+  },
+  {
+    "masterCardId": "3560",
+    "externalId": null,
+    "tcgdex_id": "dc1-9",
+    "localId": "009",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "009/34",
+    "cardName": "Team Aqua's Seviper",
+    "fullDisplayName": "Team Aqua's Seviper 009/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-009-low.png",
+    "imageHighSrc": "cards/dc1-009-high.png"
+  },
+  {
+    "masterCardId": "3554",
+    "externalId": null,
+    "tcgdex_id": "dc1-8",
+    "localId": "008",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "008/34",
+    "cardName": "Team Aqua's Muk",
+    "fullDisplayName": "Team Aqua's Muk 008/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Grimer",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-008-low.png",
+    "imageHighSrc": "cards/dc1-008-high.png"
+  },
+  {
+    "masterCardId": "3548",
+    "externalId": null,
+    "tcgdex_id": "dc1-7",
+    "localId": "007",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "007/34",
+    "cardName": "Team Aqua's Grimer",
+    "fullDisplayName": "Team Aqua's Grimer 007/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-007-low.png",
+    "imageHighSrc": "cards/dc1-007-high.png"
+  },
+  {
+    "masterCardId": "3543",
+    "externalId": null,
+    "tcgdex_id": "dc1-6",
+    "localId": "006",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "006/34",
+    "cardName": "Team Aqua's Kyogre-EX",
+    "fullDisplayName": "Team Aqua's Kyogre-EX 006/34 Double Crisis",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-006-low.png",
+    "imageHighSrc": "cards/dc1-006-high.png"
+  },
+  {
+    "masterCardId": "3538",
+    "externalId": null,
+    "tcgdex_id": "dc1-5",
+    "localId": "005",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "005/34",
+    "cardName": "Team Aqua's Walrein",
+    "fullDisplayName": "Team Aqua's Walrein 005/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Sealeo",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-005-low.png",
+    "imageHighSrc": "cards/dc1-005-high.png"
+  },
+  {
+    "masterCardId": "3532",
+    "externalId": null,
+    "tcgdex_id": "dc1-4",
+    "localId": "004",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "004/34",
+    "cardName": "Team Aqua's Sealeo",
+    "fullDisplayName": "Team Aqua's Sealeo 004/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Spheal",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-004-low.png",
+    "imageHighSrc": "cards/dc1-004-high.png"
+  },
+  {
+    "masterCardId": "3525",
+    "externalId": null,
+    "tcgdex_id": "dc1-3",
+    "localId": "003",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "003/34",
+    "cardName": "Team Aqua's Spheal",
+    "fullDisplayName": "Team Aqua's Spheal 003/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-003-low.png",
+    "imageHighSrc": "cards/dc1-003-high.png"
+  },
+  {
+    "masterCardId": "3521",
+    "externalId": null,
+    "tcgdex_id": "dc1-2",
+    "localId": "002",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "002/34",
+    "cardName": "Team Magma's Camerupt",
+    "fullDisplayName": "Team Magma's Camerupt 002/34 Double Crisis",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Numel",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-002-low.png",
+    "imageHighSrc": "cards/dc1-002-high.png"
+  },
+  {
+    "masterCardId": "3517",
+    "externalId": null,
+    "tcgdex_id": "dc1-1",
+    "localId": "001",
+    "setCode": "dc1",
+    "setTcgdexId": "dc1",
+    "cardNumber": "001/34",
+    "cardName": "Team Magma's Numel",
+    "fullDisplayName": "Team Magma's Numel 001/34 Double Crisis",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dc1-001-low.png",
+    "imageHighSrc": "cards/dc1-001-high.png"
+  }
+]

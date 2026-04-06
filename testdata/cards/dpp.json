@@ -1,0 +1,1836 @@
+[
+  {
+    "masterCardId": "4563",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP56",
+    "localId": "DP56",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP56/56",
+    "cardName": "Arceus LV.X",
+    "fullDisplayName": "Arceus LV.X DP56/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arceus",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP56-low.png",
+    "imageHighSrc": "cards/dpp-DP56-high.png"
+  },
+  {
+    "masterCardId": "4553",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP55",
+    "localId": "DP55",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP55/56",
+    "cardName": "Ultimate Zone",
+    "fullDisplayName": "Ultimate Zone DP55/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP55-low.png",
+    "imageHighSrc": "cards/dpp-DP55-high.png"
+  },
+  {
+    "masterCardId": "4541",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP54",
+    "localId": "DP54",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP54/56",
+    "cardName": "Beginning Door",
+    "fullDisplayName": "Beginning Door DP54/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP54-low.png",
+    "imageHighSrc": "cards/dpp-DP54-high.png"
+  },
+  {
+    "masterCardId": "4533",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP53",
+    "localId": "DP53",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP53/56",
+    "cardName": "Arceus LV.X",
+    "fullDisplayName": "Arceus LV.X DP53/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arceus",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP53-low.png",
+    "imageHighSrc": "cards/dpp-DP53-high.png"
+  },
+  {
+    "masterCardId": "4522",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP52",
+    "localId": "DP52",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP52/56",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai DP52/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP52-low.png",
+    "imageHighSrc": "cards/dpp-DP52-high.png"
+  },
+  {
+    "masterCardId": "4512",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP51",
+    "localId": "DP51",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP51/56",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia DP51/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP51-low.png",
+    "imageHighSrc": "cards/dpp-DP51-high.png"
+  },
+  {
+    "masterCardId": "4504",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP50",
+    "localId": "DP50",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP50/56",
+    "cardName": "Arceus",
+    "fullDisplayName": "Arceus DP50/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      493
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kunihiko Yuyama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP50-low.png",
+    "imageHighSrc": "cards/dpp-DP50-high.png"
+  },
+  {
+    "masterCardId": "4497",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP49",
+    "localId": "DP49",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP49/56",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga DP49/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP49-low.png",
+    "imageHighSrc": "cards/dpp-DP49-high.png"
+  },
+  {
+    "masterCardId": "4492",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP48",
+    "localId": "DP48",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP48/56",
+    "cardName": "Tropical Wind",
+    "fullDisplayName": "Tropical Wind DP48/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP48-low.png",
+    "imageHighSrc": "cards/dpp-DP48-high.png"
+  },
+  {
+    "masterCardId": "4482",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP47",
+    "localId": "DP47",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP47/56",
+    "cardName": "Rayquaza C LV.X",
+    "fullDisplayName": "Rayquaza C LV.X DP47/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza C",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP47-low.png",
+    "imageHighSrc": "cards/dpp-DP47-high.png"
+  },
+  {
+    "masterCardId": "4474",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP46",
+    "localId": "DP46",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP46/56",
+    "cardName": "Garchomp C LV.X",
+    "fullDisplayName": "Garchomp C LV.X DP46/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Garchomp C",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP46-low.png",
+    "imageHighSrc": "cards/dpp-DP46-high.png"
+  },
+  {
+    "masterCardId": "4465",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP45",
+    "localId": "DP45",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP45/56",
+    "cardName": "Charizard G LV.X",
+    "fullDisplayName": "Charizard G LV.X DP45/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Level-Up",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard G",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP45-low.png",
+    "imageHighSrc": "cards/dpp-DP45-high.png"
+  },
+  {
+    "masterCardId": "4456",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP44",
+    "localId": "DP44",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP44/56",
+    "cardName": "Magnezone",
+    "fullDisplayName": "Magnezone DP44/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magneton",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP44-low.png",
+    "imageHighSrc": "cards/dpp-DP44-high.png"
+  },
+  {
+    "masterCardId": "4446",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP43",
+    "localId": "DP43",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP43/56",
+    "cardName": "Probopass G",
+    "fullDisplayName": "Probopass G DP43/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP43-low.png",
+    "imageHighSrc": "cards/dpp-DP43-high.png"
+  },
+  {
+    "masterCardId": "4437",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP42",
+    "localId": "DP42",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP42/56",
+    "cardName": "Carnivine G",
+    "fullDisplayName": "Carnivine G DP42/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Makoto Imai",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP42-low.png",
+    "imageHighSrc": "cards/dpp-DP42-high.png"
+  },
+  {
+    "masterCardId": "4429",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP41",
+    "localId": "DP41",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP41/56",
+    "cardName": "Toxicroak G",
+    "fullDisplayName": "Toxicroak G DP41/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Basic",
+      "SP"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP41-low.png",
+    "imageHighSrc": "cards/dpp-DP41-high.png"
+  },
+  {
+    "masterCardId": "4419",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP40",
+    "localId": "DP40",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP40/56",
+    "cardName": "Regigigas",
+    "fullDisplayName": "Regigigas DP40/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP40-low.png",
+    "imageHighSrc": "cards/dpp-DP40-high.png"
+  },
+  {
+    "masterCardId": "4410",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP39",
+    "localId": "DP39",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP39/56",
+    "cardName": "Shaymin LV.X",
+    "fullDisplayName": "Shaymin LV.X DP39/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shaymin",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP39-low.png",
+    "imageHighSrc": "cards/dpp-DP39-high.png"
+  },
+  {
+    "masterCardId": "4401",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP38",
+    "localId": "DP38",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP38/56",
+    "cardName": "Giratina LV.X",
+    "fullDisplayName": "Giratina LV.X DP38/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Giratina",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP38-low.png",
+    "imageHighSrc": "cards/dpp-DP38-high.png"
+  },
+  {
+    "masterCardId": "4391",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP37",
+    "localId": "DP37",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP37/56",
+    "cardName": "Dialga LV.X",
+    "fullDisplayName": "Dialga LV.X DP37/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dialga",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP37-low.png",
+    "imageHighSrc": "cards/dpp-DP37-high.png"
+  },
+  {
+    "masterCardId": "4382",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP36",
+    "localId": "DP36",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP36/56",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor DP36/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP36-low.png",
+    "imageHighSrc": "cards/dpp-DP36-high.png"
+  },
+  {
+    "masterCardId": "4373",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP35",
+    "localId": "DP35",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP35/56",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z DP35/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP35-low.png",
+    "imageHighSrc": "cards/dpp-DP35-high.png"
+  },
+  {
+    "masterCardId": "4364",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP34",
+    "localId": "DP34",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP34/56",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim DP34/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP34-low.png",
+    "imageHighSrc": "cards/dpp-DP34-high.png"
+  },
+  {
+    "masterCardId": "4355",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP33",
+    "localId": "DP33",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP33/56",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir DP33/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP33-low.png",
+    "imageHighSrc": "cards/dpp-DP33-high.png"
+  },
+  {
+    "masterCardId": "4346",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP32",
+    "localId": "DP32",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP32/56",
+    "cardName": "Magnezone",
+    "fullDisplayName": "Magnezone DP32/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magneton",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP32-low.png",
+    "imageHighSrc": "cards/dpp-DP32-high.png"
+  },
+  {
+    "masterCardId": "4338",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP31",
+    "localId": "DP31",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP31/56",
+    "cardName": "Heatran LV.X",
+    "fullDisplayName": "Heatran LV.X DP31/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Heatran",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP31-low.png",
+    "imageHighSrc": "cards/dpp-DP31-high.png"
+  },
+  {
+    "masterCardId": "4327",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP30",
+    "localId": "DP30",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP30/56",
+    "cardName": "Regigigas LV.X",
+    "fullDisplayName": "Regigigas LV.X DP30/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Regigigas",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP30-low.png",
+    "imageHighSrc": "cards/dpp-DP30-high.png"
+  },
+  {
+    "masterCardId": "4319",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP29",
+    "localId": "DP29",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP29/56",
+    "cardName": "Rhyperior LV.X",
+    "fullDisplayName": "Rhyperior LV.X DP29/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyperior",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP29-low.png",
+    "imageHighSrc": "cards/dpp-DP29-high.png"
+  },
+  {
+    "masterCardId": "4312",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP28",
+    "localId": "DP28",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP28/56",
+    "cardName": "Mewtwo LV.X",
+    "fullDisplayName": "Mewtwo LV.X DP28/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mewtwo",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP28-low.png",
+    "imageHighSrc": "cards/dpp-DP28-high.png"
+  },
+  {
+    "masterCardId": "4302",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP27",
+    "localId": "DP27",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP27/56",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia DP27/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP27-low.png",
+    "imageHighSrc": "cards/dpp-DP27-high.png"
+  },
+  {
+    "masterCardId": "4294",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP26",
+    "localId": "DP26",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP26/56",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga DP26/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP26-low.png",
+    "imageHighSrc": "cards/dpp-DP26-high.png"
+  },
+  {
+    "masterCardId": "4285",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP25",
+    "localId": "DP25",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP25/56",
+    "cardName": "Tropical Wind",
+    "fullDisplayName": "Tropical Wind DP25/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP25-low.png",
+    "imageHighSrc": "cards/dpp-DP25-high.png"
+  },
+  {
+    "masterCardId": "4276",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP24",
+    "localId": "DP24",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP24/56",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai DP24/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP24-low.png",
+    "imageHighSrc": "cards/dpp-DP24-high.png"
+  },
+  {
+    "masterCardId": "4266",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP23",
+    "localId": "DP23",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP23/56",
+    "cardName": "Glameow",
+    "fullDisplayName": "Glameow DP23/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      431
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP23-low.png",
+    "imageHighSrc": "cards/dpp-DP23-high.png"
+  },
+  {
+    "masterCardId": "4254",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP22",
+    "localId": "DP22",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP22/56",
+    "cardName": "Mime Jr.",
+    "fullDisplayName": "Mime Jr. DP22/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      439
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP22-low.png",
+    "imageHighSrc": "cards/dpp-DP22-high.png"
+  },
+  {
+    "masterCardId": "4245",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP21",
+    "localId": "DP21",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP21/56",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu DP21/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP21-low.png",
+    "imageHighSrc": "cards/dpp-DP21-high.png"
+  },
+  {
+    "masterCardId": "4236",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP20",
+    "localId": "DP20",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP20/56",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar DP20/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP20-low.png",
+    "imageHighSrc": "cards/dpp-DP20-high.png"
+  },
+  {
+    "masterCardId": "4227",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP19",
+    "localId": "DP19",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP19/56",
+    "cardName": "Darkrai LV.X",
+    "fullDisplayName": "Darkrai LV.X DP19/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darkrai",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP19-low.png",
+    "imageHighSrc": "cards/dpp-DP19-high.png"
+  },
+  {
+    "masterCardId": "4221",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP18",
+    "localId": "DP18",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP18/56",
+    "cardName": "Palkia LV.X",
+    "fullDisplayName": "Palkia LV.X DP18/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Palkia",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP18-low.png",
+    "imageHighSrc": "cards/dpp-DP18-high.png"
+  },
+  {
+    "masterCardId": "4210",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP17",
+    "localId": "DP17",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP17/56",
+    "cardName": "Dialga LV.X",
+    "fullDisplayName": "Dialga LV.X DP17/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dialga",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP17-low.png",
+    "imageHighSrc": "cards/dpp-DP17-high.png"
+  },
+  {
+    "masterCardId": "4202",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP16",
+    "localId": "DP16",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP16/56",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu DP16/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP16-low.png",
+    "imageHighSrc": "cards/dpp-DP16-high.png"
+  },
+  {
+    "masterCardId": "4191",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP15",
+    "localId": "DP15",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP15/56",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx DP15/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP15-low.png",
+    "imageHighSrc": "cards/dpp-DP15-high.png"
+  },
+  {
+    "masterCardId": "4182",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP14",
+    "localId": "DP14",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP14/56",
+    "cardName": "Chatot",
+    "fullDisplayName": "Chatot DP14/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP14-low.png",
+    "imageHighSrc": "cards/dpp-DP14-high.png"
+  },
+  {
+    "masterCardId": "4173",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP13",
+    "localId": "DP13",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP13/56",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel DP13/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP13-low.png",
+    "imageHighSrc": "cards/dpp-DP13-high.png"
+  },
+  {
+    "masterCardId": "4163",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP12",
+    "localId": "DP12",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP12/56",
+    "cardName": "Lucario LV.X",
+    "fullDisplayName": "Lucario LV.X DP12/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lucario",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP12-low.png",
+    "imageHighSrc": "cards/dpp-DP12-high.png"
+  },
+  {
+    "masterCardId": "4154",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP11",
+    "localId": "DP11",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP11/56",
+    "cardName": "Empoleon LV.X",
+    "fullDisplayName": "Empoleon LV.X DP11/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Empoleon",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP11-low.png",
+    "imageHighSrc": "cards/dpp-DP11-high.png"
+  },
+  {
+    "masterCardId": "4145",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP10",
+    "localId": "DP10",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP10/56",
+    "cardName": "Infernape LV.X",
+    "fullDisplayName": "Infernape LV.X DP10/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      392
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Infernape",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP10-low.png",
+    "imageHighSrc": "cards/dpp-DP10-high.png"
+  },
+  {
+    "masterCardId": "4135",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP09",
+    "localId": "DP09",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP09/56",
+    "cardName": "Torterra LV.X",
+    "fullDisplayName": "Torterra LV.X DP09/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      389
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torterra",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP09-low.png",
+    "imageHighSrc": "cards/dpp-DP09-high.png"
+  },
+  {
+    "masterCardId": "4126",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP08",
+    "localId": "DP08",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP08/56",
+    "cardName": "Shieldon",
+    "fullDisplayName": "Shieldon DP08/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      410
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Armor Fossil",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP08-low.png",
+    "imageHighSrc": "cards/dpp-DP08-high.png"
+  },
+  {
+    "masterCardId": "4116",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP07",
+    "localId": "DP07",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP07/56",
+    "cardName": "Cranidos",
+    "fullDisplayName": "Cranidos DP07/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      408
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skull Fossil",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP07-low.png",
+    "imageHighSrc": "cards/dpp-DP07-high.png"
+  },
+  {
+    "masterCardId": "4108",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP06",
+    "localId": "DP06",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP06/56",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary DP06/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP06-low.png",
+    "imageHighSrc": "cards/dpp-DP06-high.png"
+  },
+  {
+    "masterCardId": "4100",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP05",
+    "localId": "DP05",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP05/56",
+    "cardName": "Tropical Wind",
+    "fullDisplayName": "Tropical Wind DP05/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP05-low.png",
+    "imageHighSrc": "cards/dpp-DP05-high.png"
+  },
+  {
+    "masterCardId": "4092",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP04",
+    "localId": "DP04",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP04/56",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu DP04/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP04-low.png",
+    "imageHighSrc": "cards/dpp-DP04-high.png"
+  },
+  {
+    "masterCardId": "4084",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP03",
+    "localId": "DP03",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP03/56",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup DP03/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP03-low.png",
+    "imageHighSrc": "cards/dpp-DP03-high.png"
+  },
+  {
+    "masterCardId": "4074",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP02",
+    "localId": "DP02",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP02/56",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar DP02/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP02-low.png",
+    "imageHighSrc": "cards/dpp-DP02-high.png"
+  },
+  {
+    "masterCardId": "4064",
+    "externalId": null,
+    "tcgdex_id": "dpp-DP01",
+    "localId": "DP01",
+    "setCode": "dpp",
+    "setTcgdexId": "dpp",
+    "cardNumber": "DP01/56",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig DP01/56 DP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dpp-DP01-low.png",
+    "imageHighSrc": "cards/dpp-DP01-high.png"
+  }
+]

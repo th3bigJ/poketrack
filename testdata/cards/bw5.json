@@ -1,0 +1,3625 @@
+[
+  {
+    "masterCardId": "2743",
+    "externalId": null,
+    "tcgdex_id": "bw5-111",
+    "localId": "111",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "111/108",
+    "cardName": "Pokémon Catcher",
+    "fullDisplayName": "Pokémon Catcher 111/108 Dark Explorers",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-111-low.png",
+    "imageHighSrc": "cards/bw5-111-high.png"
+  },
+  {
+    "masterCardId": "2742",
+    "externalId": null,
+    "tcgdex_id": "bw5-110",
+    "localId": "110",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "110/108",
+    "cardName": "Archeops",
+    "fullDisplayName": "Archeops 110/108 Dark Explorers",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      567
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Archen",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-110-low.png",
+    "imageHighSrc": "cards/bw5-110-high.png"
+  },
+  {
+    "masterCardId": "2741",
+    "externalId": null,
+    "tcgdex_id": "bw5-109",
+    "localId": "109",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "109/108",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 109/108 Dark Explorers",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-109-low.png",
+    "imageHighSrc": "cards/bw5-109-high.png"
+  },
+  {
+    "masterCardId": "2740",
+    "externalId": null,
+    "tcgdex_id": "bw5-108",
+    "localId": "108",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "108/108",
+    "cardName": "Tornadus-EX",
+    "fullDisplayName": "Tornadus-EX 108/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-108-low.png",
+    "imageHighSrc": "cards/bw5-108-high.png"
+  },
+  {
+    "masterCardId": "2739",
+    "externalId": null,
+    "tcgdex_id": "bw5-107",
+    "localId": "107",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "107/108",
+    "cardName": "Darkrai-EX",
+    "fullDisplayName": "Darkrai-EX 107/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-107-low.png",
+    "imageHighSrc": "cards/bw5-107-high.png"
+  },
+  {
+    "masterCardId": "2738",
+    "externalId": null,
+    "tcgdex_id": "bw5-106",
+    "localId": "106",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "106/108",
+    "cardName": "Groudon-EX",
+    "fullDisplayName": "Groudon-EX 106/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-106-low.png",
+    "imageHighSrc": "cards/bw5-106-high.png"
+  },
+  {
+    "masterCardId": "2737",
+    "externalId": null,
+    "tcgdex_id": "bw5-105",
+    "localId": "105",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "105/108",
+    "cardName": "Raikou-EX",
+    "fullDisplayName": "Raikou-EX 105/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-105-low.png",
+    "imageHighSrc": "cards/bw5-105-high.png"
+  },
+  {
+    "masterCardId": "2736",
+    "externalId": null,
+    "tcgdex_id": "bw5-104",
+    "localId": "104",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "104/108",
+    "cardName": "Kyogre-EX",
+    "fullDisplayName": "Kyogre-EX 104/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-104-low.png",
+    "imageHighSrc": "cards/bw5-104-high.png"
+  },
+  {
+    "masterCardId": "2735",
+    "externalId": null,
+    "tcgdex_id": "bw5-103",
+    "localId": "103",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "103/108",
+    "cardName": "Entei-EX",
+    "fullDisplayName": "Entei-EX 103/108 Dark Explorers",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-103-low.png",
+    "imageHighSrc": "cards/bw5-103-high.png"
+  },
+  {
+    "masterCardId": "2734",
+    "externalId": null,
+    "tcgdex_id": "bw5-102",
+    "localId": "102",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "102/108",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 102/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-102-low.png",
+    "imageHighSrc": "cards/bw5-102-high.png"
+  },
+  {
+    "masterCardId": "2733",
+    "externalId": null,
+    "tcgdex_id": "bw5-101",
+    "localId": "101",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "101/108",
+    "cardName": "Twist Mountain",
+    "fullDisplayName": "Twist Mountain 101/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-101-low.png",
+    "imageHighSrc": "cards/bw5-101-high.png"
+  },
+  {
+    "masterCardId": "2732",
+    "externalId": null,
+    "tcgdex_id": "bw5-100",
+    "localId": "100",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "100/108",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 100/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-100-low.png",
+    "imageHighSrc": "cards/bw5-100-high.png"
+  },
+  {
+    "masterCardId": "2731",
+    "externalId": null,
+    "tcgdex_id": "bw5-99",
+    "localId": "099",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "099/108",
+    "cardName": "Random Receiver",
+    "fullDisplayName": "Random Receiver 099/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-099-low.png",
+    "imageHighSrc": "cards/bw5-099-high.png"
+  },
+  {
+    "masterCardId": "2730",
+    "externalId": null,
+    "tcgdex_id": "bw5-98",
+    "localId": "098",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "098/108",
+    "cardName": "Professor Juniper",
+    "fullDisplayName": "Professor Juniper 098/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-098-low.png",
+    "imageHighSrc": "cards/bw5-098-high.png"
+  },
+  {
+    "masterCardId": "2729",
+    "externalId": null,
+    "tcgdex_id": "bw5-97",
+    "localId": "097",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "097/108",
+    "cardName": "Old Amber Aerodactyl",
+    "fullDisplayName": "Old Amber Aerodactyl 097/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-097-low.png",
+    "imageHighSrc": "cards/bw5-097-high.png"
+  },
+  {
+    "masterCardId": "2728",
+    "externalId": null,
+    "tcgdex_id": "bw5-96",
+    "localId": "096",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "096/108",
+    "cardName": "N",
+    "fullDisplayName": "N 096/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-096-low.png",
+    "imageHighSrc": "cards/bw5-096-high.png"
+  },
+  {
+    "masterCardId": "2727",
+    "externalId": null,
+    "tcgdex_id": "bw5-95",
+    "localId": "095",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "095/108",
+    "cardName": "Hooligans Jim & Cas",
+    "fullDisplayName": "Hooligans Jim & Cas 095/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-095-low.png",
+    "imageHighSrc": "cards/bw5-095-high.png"
+  },
+  {
+    "masterCardId": "2726",
+    "externalId": null,
+    "tcgdex_id": "bw5-94",
+    "localId": "094",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "094/108",
+    "cardName": "Enhanced Hammer",
+    "fullDisplayName": "Enhanced Hammer 094/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-094-low.png",
+    "imageHighSrc": "cards/bw5-094-high.png"
+  },
+  {
+    "masterCardId": "2725",
+    "externalId": null,
+    "tcgdex_id": "bw5-93",
+    "localId": "093",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "093/108",
+    "cardName": "Dark Patch",
+    "fullDisplayName": "Dark Patch 093/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-093-low.png",
+    "imageHighSrc": "cards/bw5-093-high.png"
+  },
+  {
+    "masterCardId": "2724",
+    "externalId": null,
+    "tcgdex_id": "bw5-92",
+    "localId": "092",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "092/108",
+    "cardName": "Dark Claw",
+    "fullDisplayName": "Dark Claw 092/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-092-low.png",
+    "imageHighSrc": "cards/bw5-092-high.png"
+  },
+  {
+    "masterCardId": "2723",
+    "externalId": null,
+    "tcgdex_id": "bw5-91",
+    "localId": "091",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "091/108",
+    "cardName": "Cheren",
+    "fullDisplayName": "Cheren 091/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-091-low.png",
+    "imageHighSrc": "cards/bw5-091-high.png"
+  },
+  {
+    "masterCardId": "2722",
+    "externalId": null,
+    "tcgdex_id": "bw5-90",
+    "localId": "090",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "090/108",
+    "cardName": "Tornadus-EX",
+    "fullDisplayName": "Tornadus-EX 090/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-090-low.png",
+    "imageHighSrc": "cards/bw5-090-high.png"
+  },
+  {
+    "masterCardId": "2721",
+    "externalId": null,
+    "tcgdex_id": "bw5-89",
+    "localId": "089",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "089/108",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus 089/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      612
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fraxure",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-089-low.png",
+    "imageHighSrc": "cards/bw5-089-high.png"
+  },
+  {
+    "masterCardId": "2720",
+    "externalId": null,
+    "tcgdex_id": "bw5-88",
+    "localId": "088",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "088/108",
+    "cardName": "Stoutland",
+    "fullDisplayName": "Stoutland 088/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      508
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Herdier",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-088-low.png",
+    "imageHighSrc": "cards/bw5-088-high.png"
+  },
+  {
+    "masterCardId": "2719",
+    "externalId": null,
+    "tcgdex_id": "bw5-87",
+    "localId": "087",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "087/108",
+    "cardName": "Herdier",
+    "fullDisplayName": "Herdier 087/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      507
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lillipup",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-087-low.png",
+    "imageHighSrc": "cards/bw5-087-high.png"
+  },
+  {
+    "masterCardId": "2718",
+    "externalId": null,
+    "tcgdex_id": "bw5-86",
+    "localId": "086",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "086/108",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup 086/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-086-low.png",
+    "imageHighSrc": "cards/bw5-086-high.png"
+  },
+  {
+    "masterCardId": "2717",
+    "externalId": null,
+    "tcgdex_id": "bw5-85",
+    "localId": "085",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "085/108",
+    "cardName": "Chatot",
+    "fullDisplayName": "Chatot 085/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      441
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-085-low.png",
+    "imageHighSrc": "cards/bw5-085-high.png"
+  },
+  {
+    "masterCardId": "2716",
+    "externalId": null,
+    "tcgdex_id": "bw5-84",
+    "localId": "084",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "084/108",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 084/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-084-low.png",
+    "imageHighSrc": "cards/bw5-084-high.png"
+  },
+  {
+    "masterCardId": "2715",
+    "externalId": null,
+    "tcgdex_id": "bw5-83",
+    "localId": "083",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "083/108",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 083/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-083-low.png",
+    "imageHighSrc": "cards/bw5-083-high.png"
+  },
+  {
+    "masterCardId": "2714",
+    "externalId": null,
+    "tcgdex_id": "bw5-82",
+    "localId": "082",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "082/108",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 082/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-082-low.png",
+    "imageHighSrc": "cards/bw5-082-high.png"
+  },
+  {
+    "masterCardId": "2713",
+    "externalId": null,
+    "tcgdex_id": "bw5-81",
+    "localId": "081",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "081/108",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 081/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-081-low.png",
+    "imageHighSrc": "cards/bw5-081-high.png"
+  },
+  {
+    "masterCardId": "2712",
+    "externalId": null,
+    "tcgdex_id": "bw5-80",
+    "localId": "080",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "080/108",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 080/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-080-low.png",
+    "imageHighSrc": "cards/bw5-080-high.png"
+  },
+  {
+    "masterCardId": "2711",
+    "externalId": null,
+    "tcgdex_id": "bw5-79",
+    "localId": "079",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "079/108",
+    "cardName": "Bisharp",
+    "fullDisplayName": "Bisharp 079/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      625
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawniard",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-079-low.png",
+    "imageHighSrc": "cards/bw5-079-high.png"
+  },
+  {
+    "masterCardId": "2710",
+    "externalId": null,
+    "tcgdex_id": "bw5-78",
+    "localId": "078",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "078/108",
+    "cardName": "Pawniard",
+    "fullDisplayName": "Pawniard 078/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      624
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-078-low.png",
+    "imageHighSrc": "cards/bw5-078-high.png"
+  },
+  {
+    "masterCardId": "2709",
+    "externalId": null,
+    "tcgdex_id": "bw5-77",
+    "localId": "077",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "077/108",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 077/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klang",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-077-low.png",
+    "imageHighSrc": "cards/bw5-077-high.png"
+  },
+  {
+    "masterCardId": "2708",
+    "externalId": null,
+    "tcgdex_id": "bw5-76",
+    "localId": "076",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "076/108",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 076/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klink",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-076-low.png",
+    "imageHighSrc": "cards/bw5-076-high.png"
+  },
+  {
+    "masterCardId": "2707",
+    "externalId": null,
+    "tcgdex_id": "bw5-75",
+    "localId": "075",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "075/108",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 075/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-075-low.png",
+    "imageHighSrc": "cards/bw5-075-high.png"
+  },
+  {
+    "masterCardId": "2706",
+    "externalId": null,
+    "tcgdex_id": "bw5-74",
+    "localId": "074",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "074/108",
+    "cardName": "Escavalier",
+    "fullDisplayName": "Escavalier 074/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      589
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Karrablast",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-074-low.png",
+    "imageHighSrc": "cards/bw5-074-high.png"
+  },
+  {
+    "masterCardId": "2705",
+    "externalId": null,
+    "tcgdex_id": "bw5-73",
+    "localId": "073",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "073/108",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 073/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-073-low.png",
+    "imageHighSrc": "cards/bw5-073-high.png"
+  },
+  {
+    "masterCardId": "2704",
+    "externalId": null,
+    "tcgdex_id": "bw5-72",
+    "localId": "072",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "072/108",
+    "cardName": "Bisharp",
+    "fullDisplayName": "Bisharp 072/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      625
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawniard",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-072-low.png",
+    "imageHighSrc": "cards/bw5-072-high.png"
+  },
+  {
+    "masterCardId": "2703",
+    "externalId": null,
+    "tcgdex_id": "bw5-71",
+    "localId": "071",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "071/108",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 071/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-071-low.png",
+    "imageHighSrc": "cards/bw5-071-high.png"
+  },
+  {
+    "masterCardId": "2702",
+    "externalId": null,
+    "tcgdex_id": "bw5-70",
+    "localId": "070",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "070/108",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 070/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-070-low.png",
+    "imageHighSrc": "cards/bw5-070-high.png"
+  },
+  {
+    "masterCardId": "2701",
+    "externalId": null,
+    "tcgdex_id": "bw5-69",
+    "localId": "069",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "069/108",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 069/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-069-low.png",
+    "imageHighSrc": "cards/bw5-069-high.png"
+  },
+  {
+    "masterCardId": "2700",
+    "externalId": null,
+    "tcgdex_id": "bw5-68",
+    "localId": "068",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "068/108",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 068/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-068-low.png",
+    "imageHighSrc": "cards/bw5-068-high.png"
+  },
+  {
+    "masterCardId": "2699",
+    "externalId": null,
+    "tcgdex_id": "bw5-67",
+    "localId": "067",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "067/108",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 067/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-067-low.png",
+    "imageHighSrc": "cards/bw5-067-high.png"
+  },
+  {
+    "masterCardId": "2698",
+    "externalId": null,
+    "tcgdex_id": "bw5-66",
+    "localId": "066",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "066/108",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 066/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krokorok",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-066-low.png",
+    "imageHighSrc": "cards/bw5-066-high.png"
+  },
+  {
+    "masterCardId": "2697",
+    "externalId": null,
+    "tcgdex_id": "bw5-65",
+    "localId": "065",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "065/108",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 065/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandile",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-065-low.png",
+    "imageHighSrc": "cards/bw5-065-high.png"
+  },
+  {
+    "masterCardId": "2696",
+    "externalId": null,
+    "tcgdex_id": "bw5-64",
+    "localId": "064",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "064/108",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 064/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-064-low.png",
+    "imageHighSrc": "cards/bw5-064-high.png"
+  },
+  {
+    "masterCardId": "2695",
+    "externalId": null,
+    "tcgdex_id": "bw5-63",
+    "localId": "063",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "063/108",
+    "cardName": "Darkrai-EX",
+    "fullDisplayName": "Darkrai-EX 063/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-063-low.png",
+    "imageHighSrc": "cards/bw5-063-high.png"
+  },
+  {
+    "masterCardId": "2694",
+    "externalId": null,
+    "tcgdex_id": "bw5-62",
+    "localId": "062",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "062/108",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 062/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-062-low.png",
+    "imageHighSrc": "cards/bw5-062-high.png"
+  },
+  {
+    "masterCardId": "2693",
+    "externalId": null,
+    "tcgdex_id": "bw5-61",
+    "localId": "061",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "061/108",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 061/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-061-low.png",
+    "imageHighSrc": "cards/bw5-061-high.png"
+  },
+  {
+    "masterCardId": "2692",
+    "externalId": null,
+    "tcgdex_id": "bw5-60",
+    "localId": "060",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "060/108",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 060/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-060-low.png",
+    "imageHighSrc": "cards/bw5-060-high.png"
+  },
+  {
+    "masterCardId": "2691",
+    "externalId": null,
+    "tcgdex_id": "bw5-59",
+    "localId": "059",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "059/108",
+    "cardName": "Gurdurr",
+    "fullDisplayName": "Gurdurr 059/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      533
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Timburr",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-059-low.png",
+    "imageHighSrc": "cards/bw5-059-high.png"
+  },
+  {
+    "masterCardId": "2690",
+    "externalId": null,
+    "tcgdex_id": "bw5-58",
+    "localId": "058",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "058/108",
+    "cardName": "Timburr",
+    "fullDisplayName": "Timburr 058/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      532
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-058-low.png",
+    "imageHighSrc": "cards/bw5-058-high.png"
+  },
+  {
+    "masterCardId": "2689",
+    "externalId": null,
+    "tcgdex_id": "bw5-57",
+    "localId": "057",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "057/108",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 057/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-057-low.png",
+    "imageHighSrc": "cards/bw5-057-high.png"
+  },
+  {
+    "masterCardId": "2688",
+    "externalId": null,
+    "tcgdex_id": "bw5-56",
+    "localId": "056",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "056/108",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 056/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-056-low.png",
+    "imageHighSrc": "cards/bw5-056-high.png"
+  },
+  {
+    "masterCardId": "2687",
+    "externalId": null,
+    "tcgdex_id": "bw5-55",
+    "localId": "055",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "055/108",
+    "cardName": "Drilbur",
+    "fullDisplayName": "Drilbur 055/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      529
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-055-low.png",
+    "imageHighSrc": "cards/bw5-055-high.png"
+  },
+  {
+    "masterCardId": "2686",
+    "externalId": null,
+    "tcgdex_id": "bw5-54",
+    "localId": "054",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "054/108",
+    "cardName": "Groudon-EX",
+    "fullDisplayName": "Groudon-EX 054/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-054-low.png",
+    "imageHighSrc": "cards/bw5-054-high.png"
+  },
+  {
+    "masterCardId": "2685",
+    "externalId": null,
+    "tcgdex_id": "bw5-53",
+    "localId": "053",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "053/108",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 053/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Old Amber Aerodactyl",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-053-low.png",
+    "imageHighSrc": "cards/bw5-053-high.png"
+  },
+  {
+    "masterCardId": "2684",
+    "externalId": null,
+    "tcgdex_id": "bw5-52",
+    "localId": "052",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "052/108",
+    "cardName": "Cofagrigus",
+    "fullDisplayName": "Cofagrigus 052/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      563
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yamask",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-052-low.png",
+    "imageHighSrc": "cards/bw5-052-high.png"
+  },
+  {
+    "masterCardId": "2683",
+    "externalId": null,
+    "tcgdex_id": "bw5-51",
+    "localId": "051",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "051/108",
+    "cardName": "Yamask",
+    "fullDisplayName": "Yamask 051/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      562
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-051-low.png",
+    "imageHighSrc": "cards/bw5-051-high.png"
+  },
+  {
+    "masterCardId": "2682",
+    "externalId": null,
+    "tcgdex_id": "bw5-50",
+    "localId": "050",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "050/108",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 050/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-050-low.png",
+    "imageHighSrc": "cards/bw5-050-high.png"
+  },
+  {
+    "masterCardId": "2681",
+    "externalId": null,
+    "tcgdex_id": "bw5-49",
+    "localId": "049",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "049/108",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 049/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-049-low.png",
+    "imageHighSrc": "cards/bw5-049-high.png"
+  },
+  {
+    "masterCardId": "2680",
+    "externalId": null,
+    "tcgdex_id": "bw5-48",
+    "localId": "048",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "048/108",
+    "cardName": "Espeon",
+    "fullDisplayName": "Espeon 048/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-048-low.png",
+    "imageHighSrc": "cards/bw5-048-high.png"
+  },
+  {
+    "masterCardId": "2679",
+    "externalId": null,
+    "tcgdex_id": "bw5-47",
+    "localId": "047",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "047/108",
+    "cardName": "Eelektross",
+    "fullDisplayName": "Eelektross 047/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      604
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eelektrik",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-047-low.png",
+    "imageHighSrc": "cards/bw5-047-high.png"
+  },
+  {
+    "masterCardId": "2678",
+    "externalId": null,
+    "tcgdex_id": "bw5-46",
+    "localId": "046",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "046/108",
+    "cardName": "Eelektrik",
+    "fullDisplayName": "Eelektrik 046/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      603
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tynamo",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-046-low.png",
+    "imageHighSrc": "cards/bw5-046-high.png"
+  },
+  {
+    "masterCardId": "2677",
+    "externalId": null,
+    "tcgdex_id": "bw5-45",
+    "localId": "045",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "045/108",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 045/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-045-low.png",
+    "imageHighSrc": "cards/bw5-045-high.png"
+  },
+  {
+    "masterCardId": "2676",
+    "externalId": null,
+    "tcgdex_id": "bw5-44",
+    "localId": "044",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "044/108",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 044/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-044-low.png",
+    "imageHighSrc": "cards/bw5-044-high.png"
+  },
+  {
+    "masterCardId": "2675",
+    "externalId": null,
+    "tcgdex_id": "bw5-43",
+    "localId": "043",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "043/108",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 043/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-043-low.png",
+    "imageHighSrc": "cards/bw5-043-high.png"
+  },
+  {
+    "masterCardId": "2674",
+    "externalId": null,
+    "tcgdex_id": "bw5-42",
+    "localId": "042",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "042/108",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 042/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-042-low.png",
+    "imageHighSrc": "cards/bw5-042-high.png"
+  },
+  {
+    "masterCardId": "2673",
+    "externalId": null,
+    "tcgdex_id": "bw5-41",
+    "localId": "041",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "041/108",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 041/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-041-low.png",
+    "imageHighSrc": "cards/bw5-041-high.png"
+  },
+  {
+    "masterCardId": "2672",
+    "externalId": null,
+    "tcgdex_id": "bw5-40",
+    "localId": "040",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "040/108",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 040/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-040-low.png",
+    "imageHighSrc": "cards/bw5-040-high.png"
+  },
+  {
+    "masterCardId": "2671",
+    "externalId": null,
+    "tcgdex_id": "bw5-39",
+    "localId": "039",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "039/108",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 039/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-039-low.png",
+    "imageHighSrc": "cards/bw5-039-high.png"
+  },
+  {
+    "masterCardId": "2670",
+    "externalId": null,
+    "tcgdex_id": "bw5-38",
+    "localId": "038",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "038/108",
+    "cardName": "Raikou-EX",
+    "fullDisplayName": "Raikou-EX 038/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-038-low.png",
+    "imageHighSrc": "cards/bw5-038-high.png"
+  },
+  {
+    "masterCardId": "2669",
+    "externalId": null,
+    "tcgdex_id": "bw5-37",
+    "localId": "037",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "037/108",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 037/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-037-low.png",
+    "imageHighSrc": "cards/bw5-037-high.png"
+  },
+  {
+    "masterCardId": "2668",
+    "externalId": null,
+    "tcgdex_id": "bw5-36",
+    "localId": "036",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "036/108",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 036/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ducklett",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-036-low.png",
+    "imageHighSrc": "cards/bw5-036-high.png"
+  },
+  {
+    "masterCardId": "2667",
+    "externalId": null,
+    "tcgdex_id": "bw5-35",
+    "localId": "035",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "035/108",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 035/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-035-low.png",
+    "imageHighSrc": "cards/bw5-035-high.png"
+  },
+  {
+    "masterCardId": "2666",
+    "externalId": null,
+    "tcgdex_id": "bw5-34",
+    "localId": "034",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "034/108",
+    "cardName": "Vanillish",
+    "fullDisplayName": "Vanillish 034/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      583
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vanillite",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-034-low.png",
+    "imageHighSrc": "cards/bw5-034-high.png"
+  },
+  {
+    "masterCardId": "2665",
+    "externalId": null,
+    "tcgdex_id": "bw5-33",
+    "localId": "033",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "033/108",
+    "cardName": "Vanillite",
+    "fullDisplayName": "Vanillite 033/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      582
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-033-low.png",
+    "imageHighSrc": "cards/bw5-033-high.png"
+  },
+  {
+    "masterCardId": "2664",
+    "externalId": null,
+    "tcgdex_id": "bw5-32",
+    "localId": "032",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "032/108",
+    "cardName": "Palpitoad",
+    "fullDisplayName": "Palpitoad 032/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      536
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tympole",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-032-low.png",
+    "imageHighSrc": "cards/bw5-032-high.png"
+  },
+  {
+    "masterCardId": "2663",
+    "externalId": null,
+    "tcgdex_id": "bw5-31",
+    "localId": "031",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "031/108",
+    "cardName": "Tympole",
+    "fullDisplayName": "Tympole 031/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      535
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-031-low.png",
+    "imageHighSrc": "cards/bw5-031-high.png"
+  },
+  {
+    "masterCardId": "2662",
+    "externalId": null,
+    "tcgdex_id": "bw5-30",
+    "localId": "030",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "030/108",
+    "cardName": "Glaceon",
+    "fullDisplayName": "Glaceon 030/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-030-low.png",
+    "imageHighSrc": "cards/bw5-030-high.png"
+  },
+  {
+    "masterCardId": "2661",
+    "externalId": null,
+    "tcgdex_id": "bw5-29",
+    "localId": "029",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "029/108",
+    "cardName": "Empoleon",
+    "fullDisplayName": "Empoleon 029/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-029-low.png",
+    "imageHighSrc": "cards/bw5-029-high.png"
+  },
+  {
+    "masterCardId": "2660",
+    "externalId": null,
+    "tcgdex_id": "bw5-28",
+    "localId": "028",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "028/108",
+    "cardName": "Prinplup",
+    "fullDisplayName": "Prinplup 028/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      394
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piplup",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-028-low.png",
+    "imageHighSrc": "cards/bw5-028-high.png"
+  },
+  {
+    "masterCardId": "2659",
+    "externalId": null,
+    "tcgdex_id": "bw5-27",
+    "localId": "027",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "027/108",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 027/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-027-low.png",
+    "imageHighSrc": "cards/bw5-027-high.png"
+  },
+  {
+    "masterCardId": "2658",
+    "externalId": null,
+    "tcgdex_id": "bw5-26",
+    "localId": "026",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "026/108",
+    "cardName": "Kyogre-EX",
+    "fullDisplayName": "Kyogre-EX 026/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-026-low.png",
+    "imageHighSrc": "cards/bw5-026-high.png"
+  },
+  {
+    "masterCardId": "2657",
+    "externalId": null,
+    "tcgdex_id": "bw5-25",
+    "localId": "025",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "025/108",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 025/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-025-low.png",
+    "imageHighSrc": "cards/bw5-025-high.png"
+  },
+  {
+    "masterCardId": "2656",
+    "externalId": null,
+    "tcgdex_id": "bw5-24",
+    "localId": "024",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "024/108",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 024/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-024-low.png",
+    "imageHighSrc": "cards/bw5-024-high.png"
+  },
+  {
+    "masterCardId": "2655",
+    "externalId": null,
+    "tcgdex_id": "bw5-23",
+    "localId": "023",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "023/108",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 023/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-023-low.png",
+    "imageHighSrc": "cards/bw5-023-high.png"
+  },
+  {
+    "masterCardId": "2654",
+    "externalId": null,
+    "tcgdex_id": "bw5-22",
+    "localId": "022",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "022/108",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona 022/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-022-low.png",
+    "imageHighSrc": "cards/bw5-022-high.png"
+  },
+  {
+    "masterCardId": "2653",
+    "externalId": null,
+    "tcgdex_id": "bw5-21",
+    "localId": "021",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "021/108",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 021/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-021-low.png",
+    "imageHighSrc": "cards/bw5-021-high.png"
+  },
+  {
+    "masterCardId": "2652",
+    "externalId": null,
+    "tcgdex_id": "bw5-20",
+    "localId": "020",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "020/108",
+    "cardName": "Larvesta",
+    "fullDisplayName": "Larvesta 020/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      636
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-020-low.png",
+    "imageHighSrc": "cards/bw5-020-high.png"
+  },
+  {
+    "masterCardId": "2651",
+    "externalId": null,
+    "tcgdex_id": "bw5-19",
+    "localId": "019",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "019/108",
+    "cardName": "Heatmor",
+    "fullDisplayName": "Heatmor 019/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      631
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-019-low.png",
+    "imageHighSrc": "cards/bw5-019-high.png"
+  },
+  {
+    "masterCardId": "2650",
+    "externalId": null,
+    "tcgdex_id": "bw5-18",
+    "localId": "018",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "018/108",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 018/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-018-low.png",
+    "imageHighSrc": "cards/bw5-018-high.png"
+  },
+  {
+    "masterCardId": "2649",
+    "externalId": null,
+    "tcgdex_id": "bw5-17",
+    "localId": "017",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "017/108",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 017/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-017-low.png",
+    "imageHighSrc": "cards/bw5-017-high.png"
+  },
+  {
+    "masterCardId": "2648",
+    "externalId": null,
+    "tcgdex_id": "bw5-16",
+    "localId": "016",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "016/108",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 016/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-016-low.png",
+    "imageHighSrc": "cards/bw5-016-high.png"
+  },
+  {
+    "masterCardId": "2647",
+    "externalId": null,
+    "tcgdex_id": "bw5-15",
+    "localId": "015",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "015/108",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 015/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-015-low.png",
+    "imageHighSrc": "cards/bw5-015-high.png"
+  },
+  {
+    "masterCardId": "2646",
+    "externalId": null,
+    "tcgdex_id": "bw5-14",
+    "localId": "014",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "014/108",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 014/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-014-low.png",
+    "imageHighSrc": "cards/bw5-014-high.png"
+  },
+  {
+    "masterCardId": "2645",
+    "externalId": null,
+    "tcgdex_id": "bw5-13",
+    "localId": "013",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "013/108",
+    "cardName": "Entei-EX",
+    "fullDisplayName": "Entei-EX 013/108 Dark Explorers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw5-013-low.png",
+    "imageHighSrc": "cards/bw5-013-high.png"
+  },
+  {
+    "masterCardId": "2644",
+    "externalId": null,
+    "tcgdex_id": "bw5-12",
+    "localId": "012",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "012/108",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 012/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-012-low.png",
+    "imageHighSrc": "cards/bw5-012-high.png"
+  },
+  {
+    "masterCardId": "2643",
+    "externalId": null,
+    "tcgdex_id": "bw5-11",
+    "localId": "011",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "011/108",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 011/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelmet",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-011-low.png",
+    "imageHighSrc": "cards/bw5-011-high.png"
+  },
+  {
+    "masterCardId": "2642",
+    "externalId": null,
+    "tcgdex_id": "bw5-10",
+    "localId": "010",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "010/108",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 010/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-010-low.png",
+    "imageHighSrc": "cards/bw5-010-high.png"
+  },
+  {
+    "masterCardId": "2641",
+    "externalId": null,
+    "tcgdex_id": "bw5-9",
+    "localId": "009",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "009/108",
+    "cardName": "Karrablast",
+    "fullDisplayName": "Karrablast 009/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      588
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-009-low.png",
+    "imageHighSrc": "cards/bw5-009-high.png"
+  },
+  {
+    "masterCardId": "2640",
+    "externalId": null,
+    "tcgdex_id": "bw5-8",
+    "localId": "008",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "008/108",
+    "cardName": "Crustle",
+    "fullDisplayName": "Crustle 008/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      558
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dwebble",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-008-low.png",
+    "imageHighSrc": "cards/bw5-008-high.png"
+  },
+  {
+    "masterCardId": "2639",
+    "externalId": null,
+    "tcgdex_id": "bw5-7",
+    "localId": "007",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "007/108",
+    "cardName": "Dwebble",
+    "fullDisplayName": "Dwebble 007/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      557
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-007-low.png",
+    "imageHighSrc": "cards/bw5-007-high.png"
+  },
+  {
+    "masterCardId": "2638",
+    "externalId": null,
+    "tcgdex_id": "bw5-6",
+    "localId": "006",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "006/108",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon 006/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-006-low.png",
+    "imageHighSrc": "cards/bw5-006-high.png"
+  },
+  {
+    "masterCardId": "2637",
+    "externalId": null,
+    "tcgdex_id": "bw5-5",
+    "localId": "005",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "005/108",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 005/108 Dark Explorers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-005-low.png",
+    "imageHighSrc": "cards/bw5-005-high.png"
+  },
+  {
+    "masterCardId": "2636",
+    "externalId": null,
+    "tcgdex_id": "bw5-4",
+    "localId": "004",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "004/108",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 004/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-004-low.png",
+    "imageHighSrc": "cards/bw5-004-high.png"
+  },
+  {
+    "masterCardId": "2635",
+    "externalId": null,
+    "tcgdex_id": "bw5-3",
+    "localId": "003",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "003/108",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 003/108 Dark Explorers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-003-low.png",
+    "imageHighSrc": "cards/bw5-003-high.png"
+  },
+  {
+    "masterCardId": "2634",
+    "externalId": null,
+    "tcgdex_id": "bw5-2",
+    "localId": "002",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "002/108",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 002/108 Dark Explorers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-002-low.png",
+    "imageHighSrc": "cards/bw5-002-high.png"
+  },
+  {
+    "masterCardId": "2633",
+    "externalId": null,
+    "tcgdex_id": "bw5-1",
+    "localId": "001",
+    "setCode": "bw5",
+    "setTcgdexId": "bw5",
+    "cardNumber": "001/108",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 001/108 Dark Explorers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw5-001-low.png",
+    "imageHighSrc": "cards/bw5-001-high.png"
+  }
+]

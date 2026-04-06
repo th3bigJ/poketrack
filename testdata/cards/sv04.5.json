@@ -1,0 +1,8022 @@
+[
+  {
+    "masterCardId": "14296",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-245",
+    "localId": "245",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "245/91",
+    "cardName": "Koraidon ex",
+    "fullDisplayName": "Koraidon ex 245/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1007
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-245-low.png",
+    "imageHighSrc": "cards/sv4pt5-245-high.png"
+  },
+  {
+    "masterCardId": "14292",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-244",
+    "localId": "244",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "244/91",
+    "cardName": "Ting-Lu ex",
+    "fullDisplayName": "Ting-Lu ex 244/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 240,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1003
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-244-low.png",
+    "imageHighSrc": "cards/sv4pt5-244-high.png"
+  },
+  {
+    "masterCardId": "14289",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-243",
+    "localId": "243",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "243/91",
+    "cardName": "Miraidon ex",
+    "fullDisplayName": "Miraidon ex 243/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      1008
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-243-low.png",
+    "imageHighSrc": "cards/sv4pt5-243-high.png"
+  },
+  {
+    "masterCardId": "14285",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-242",
+    "localId": "242",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "242/91",
+    "cardName": "Chien-Pao ex",
+    "fullDisplayName": "Chien-Pao ex 242/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      1002
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-242-low.png",
+    "imageHighSrc": "cards/sv4pt5-242-high.png"
+  },
+  {
+    "masterCardId": "14281",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-241",
+    "localId": "241",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "241/91",
+    "cardName": "Chi-Yu ex",
+    "fullDisplayName": "Chi-Yu ex 241/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      1004
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-241-low.png",
+    "imageHighSrc": "cards/sv4pt5-241-high.png"
+  },
+  {
+    "masterCardId": "14276",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-240",
+    "localId": "240",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "240/91",
+    "cardName": "Wo-Chien ex",
+    "fullDisplayName": "Wo-Chien ex 240/91 Paldean Fates",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1001
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-240-low.png",
+    "imageHighSrc": "cards/sv4pt5-240-high.png"
+  },
+  {
+    "masterCardId": "14272",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-239",
+    "localId": "239",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "239/91",
+    "cardName": "Penny",
+    "fullDisplayName": "Penny 239/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aspara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-239-low.png",
+    "imageHighSrc": "cards/sv4pt5-239-high.png"
+  },
+  {
+    "masterCardId": "14265",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-238",
+    "localId": "238",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "238/91",
+    "cardName": "Nemona",
+    "fullDisplayName": "Nemona 238/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aspara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-238-low.png",
+    "imageHighSrc": "cards/sv4pt5-238-high.png"
+  },
+  {
+    "masterCardId": "14260",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-237",
+    "localId": "237",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "237/91",
+    "cardName": "Iono",
+    "fullDisplayName": "Iono 237/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hanabushi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-237-low.png",
+    "imageHighSrc": "cards/sv4pt5-237-high.png"
+  },
+  {
+    "masterCardId": "14255",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-236",
+    "localId": "236",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "236/91",
+    "cardName": "Clive",
+    "fullDisplayName": "Clive 236/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taiga Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-236-low.png",
+    "imageHighSrc": "cards/sv4pt5-236-high.png"
+  },
+  {
+    "masterCardId": "14251",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-235",
+    "localId": "235",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "235/91",
+    "cardName": "Arven",
+    "fullDisplayName": "Arven 235/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aspara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-235-low.png",
+    "imageHighSrc": "cards/sv4pt5-235-high.png"
+  },
+  {
+    "masterCardId": "14246",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-234",
+    "localId": "234",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "234/91",
+    "cardName": "Charizard ex",
+    "fullDisplayName": "Charizard ex 234/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-234-low.png",
+    "imageHighSrc": "cards/sv4pt5-234-high.png"
+  },
+  {
+    "masterCardId": "14241",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-233",
+    "localId": "233",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "233/91",
+    "cardName": "Gardevoir ex",
+    "fullDisplayName": "Gardevoir ex 233/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Kuroimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-233-low.png",
+    "imageHighSrc": "cards/sv4pt5-233-high.png"
+  },
+  {
+    "masterCardId": "14237",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-232",
+    "localId": "232",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "232/91",
+    "cardName": "Mew ex",
+    "fullDisplayName": "Mew ex 232/91 Paldean Fates",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "USGMEN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-232-low.png",
+    "imageHighSrc": "cards/sv4pt5-232-high.png"
+  },
+  {
+    "masterCardId": "14234",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-231",
+    "localId": "231",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "231/91",
+    "cardName": "Paldean Student",
+    "fullDisplayName": "Paldean Student 231/91 Paldean Fates",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-231-low.png",
+    "imageHighSrc": "cards/sv4pt5-231-high.png"
+  },
+  {
+    "masterCardId": "14229",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-230",
+    "localId": "230",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "230/91",
+    "cardName": "Paldean Student",
+    "fullDisplayName": "Paldean Student 230/91 Paldean Fates",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Cona Nitanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-230-low.png",
+    "imageHighSrc": "cards/sv4pt5-230-high.png"
+  },
+  {
+    "masterCardId": "14224",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-229",
+    "localId": "229",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "229/91",
+    "cardName": "Nemona",
+    "fullDisplayName": "Nemona 229/91 Paldean Fates",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-229-low.png",
+    "imageHighSrc": "cards/sv4pt5-229-high.png"
+  },
+  {
+    "masterCardId": "14219",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-228",
+    "localId": "228",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "228/91",
+    "cardName": "Judge",
+    "fullDisplayName": "Judge 228/91 Paldean Fates",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-228-low.png",
+    "imageHighSrc": "cards/sv4pt5-228-high.png"
+  },
+  {
+    "masterCardId": "14214",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-227",
+    "localId": "227",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "227/91",
+    "cardName": "Clive",
+    "fullDisplayName": "Clive 227/91 Paldean Fates",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-227-low.png",
+    "imageHighSrc": "cards/sv4pt5-227-high.png"
+  },
+  {
+    "masterCardId": "14208",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-226",
+    "localId": "226",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "226/91",
+    "cardName": "Pawmi",
+    "fullDisplayName": "Pawmi 226/91 Paldean Fates",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      921
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-226-low.png",
+    "imageHighSrc": "cards/sv4pt5-226-high.png"
+  },
+  {
+    "masterCardId": "14197",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-225",
+    "localId": "225",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "225/91",
+    "cardName": "Palafin",
+    "fullDisplayName": "Palafin 225/91 Paldean Fates",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      964
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finizen",
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-225-low.png",
+    "imageHighSrc": "cards/sv4pt5-225-high.png"
+  },
+  {
+    "masterCardId": "14191",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-224",
+    "localId": "224",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "224/91",
+    "cardName": "Wugtrio",
+    "fullDisplayName": "Wugtrio 224/91 Paldean Fates",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      961
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wiglett",
+    "artist": "Tetsu Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-224-low.png",
+    "imageHighSrc": "cards/sv4pt5-224-high.png"
+  },
+  {
+    "masterCardId": "14183",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-223",
+    "localId": "223",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "223/91",
+    "cardName": "Squawkabilly ex",
+    "fullDisplayName": "Squawkabilly ex 223/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      931
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-223-low.png",
+    "imageHighSrc": "cards/sv4pt5-223-high.png"
+  },
+  {
+    "masterCardId": "14178",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-222",
+    "localId": "222",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "222/91",
+    "cardName": "Wigglytuff ex",
+    "fullDisplayName": "Wigglytuff ex 222/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 250,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-222-low.png",
+    "imageHighSrc": "cards/sv4pt5-222-high.png"
+  },
+  {
+    "masterCardId": "14174",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-221",
+    "localId": "221",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "221/91",
+    "cardName": "Pidgeot ex",
+    "fullDisplayName": "Pidgeot ex 221/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 280,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-221-low.png",
+    "imageHighSrc": "cards/sv4pt5-221-high.png"
+  },
+  {
+    "masterCardId": "14166",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-220",
+    "localId": "220",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "220/91",
+    "cardName": "Noivern ex",
+    "fullDisplayName": "Noivern ex 220/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      715
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Noibat",
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-220-low.png",
+    "imageHighSrc": "cards/sv4pt5-220-high.png"
+  },
+  {
+    "masterCardId": "14160",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-219",
+    "localId": "219",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "219/91",
+    "cardName": "Paldean Clodsire ex",
+    "fullDisplayName": "Paldean Clodsire ex 219/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 280,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      980
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paldean Wooper",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-219-low.png",
+    "imageHighSrc": "cards/sv4pt5-219-high.png"
+  },
+  {
+    "masterCardId": "14152",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-218",
+    "localId": "218",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "218/91",
+    "cardName": "Glimmora ex",
+    "fullDisplayName": "Glimmora ex 218/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      970
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Glimmet",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-218-low.png",
+    "imageHighSrc": "cards/sv4pt5-218-high.png"
+  },
+  {
+    "masterCardId": "14134",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-217",
+    "localId": "217",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "217/91",
+    "cardName": "Gardevoir ex",
+    "fullDisplayName": "Gardevoir ex 217/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-217-low.png",
+    "imageHighSrc": "cards/sv4pt5-217-high.png"
+  },
+  {
+    "masterCardId": "14127",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-216",
+    "localId": "216",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "216/91",
+    "cardName": "Mew ex",
+    "fullDisplayName": "Mew ex 216/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-216-low.png",
+    "imageHighSrc": "cards/sv4pt5-216-high.png"
+  },
+  {
+    "masterCardId": "14122",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-215",
+    "localId": "215",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "215/91",
+    "cardName": "Alakazam ex",
+    "fullDisplayName": "Alakazam ex 215/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kadabra",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-215-low.png",
+    "imageHighSrc": "cards/sv4pt5-215-high.png"
+  },
+  {
+    "masterCardId": "14115",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-214",
+    "localId": "214",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "214/91",
+    "cardName": "Espathra ex",
+    "fullDisplayName": "Espathra ex 214/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      956
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flittle",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-214-low.png",
+    "imageHighSrc": "cards/sv4pt5-214-high.png"
+  },
+  {
+    "masterCardId": "14110",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-213",
+    "localId": "213",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "213/91",
+    "cardName": "Toedscruel ex",
+    "fullDisplayName": "Toedscruel ex 213/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      949
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toedscool",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-213-low.png",
+    "imageHighSrc": "cards/sv4pt5-213-high.png"
+  },
+  {
+    "masterCardId": "14104",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-212",
+    "localId": "212",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "212/91",
+    "cardName": "Forretress ex",
+    "fullDisplayName": "Forretress ex 212/91 Paldean Fates",
+    "rarity": "Shiny Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-212-low.png",
+    "imageHighSrc": "cards/sv4pt5-212-high.png"
+  },
+  {
+    "masterCardId": "14096",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-211",
+    "localId": "211",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "211/91",
+    "cardName": "Flamigo",
+    "fullDisplayName": "Flamigo 211/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      973
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-211-low.png",
+    "imageHighSrc": "cards/sv4pt5-211-high.png"
+  },
+  {
+    "masterCardId": "14088",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-210",
+    "localId": "210",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "210/91",
+    "cardName": "Maushold",
+    "fullDisplayName": "Maushold 210/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      925
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tandemaus",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-210-low.png",
+    "imageHighSrc": "cards/sv4pt5-210-high.png"
+  },
+  {
+    "masterCardId": "14082",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-209",
+    "localId": "209",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "209/91",
+    "cardName": "Tandemaus",
+    "fullDisplayName": "Tandemaus 209/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      924
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-209-low.png",
+    "imageHighSrc": "cards/sv4pt5-209-high.png"
+  },
+  {
+    "masterCardId": "14075",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-208",
+    "localId": "208",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "208/91",
+    "cardName": "Oinkologne",
+    "fullDisplayName": "Oinkologne 208/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      916
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lechonk",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-208-low.png",
+    "imageHighSrc": "cards/sv4pt5-208-high.png"
+  },
+  {
+    "masterCardId": "14067",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-207",
+    "localId": "207",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "207/91",
+    "cardName": "Lechonk",
+    "fullDisplayName": "Lechonk 207/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      915
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-207-low.png",
+    "imageHighSrc": "cards/sv4pt5-207-high.png"
+  },
+  {
+    "masterCardId": "14060",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-206",
+    "localId": "206",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "206/91",
+    "cardName": "Greedent",
+    "fullDisplayName": "Greedent 206/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      820
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skwovet",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-206-low.png",
+    "imageHighSrc": "cards/sv4pt5-206-high.png"
+  },
+  {
+    "masterCardId": "14050",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-205",
+    "localId": "205",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "205/91",
+    "cardName": "Skwovet",
+    "fullDisplayName": "Skwovet 205/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      819
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-205-low.png",
+    "imageHighSrc": "cards/sv4pt5-205-high.png"
+  },
+  {
+    "masterCardId": "14041",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-204",
+    "localId": "204",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "204/91",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 204/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-204-low.png",
+    "imageHighSrc": "cards/sv4pt5-204-high.png"
+  },
+  {
+    "masterCardId": "14029",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-203",
+    "localId": "203",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "203/91",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 203/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-203-low.png",
+    "imageHighSrc": "cards/sv4pt5-203-high.png"
+  },
+  {
+    "masterCardId": "14019",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-202",
+    "localId": "202",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "202/91",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 202/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-202-low.png",
+    "imageHighSrc": "cards/sv4pt5-202-high.png"
+  },
+  {
+    "masterCardId": "14013",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-201",
+    "localId": "201",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "201/91",
+    "cardName": "Ditto",
+    "fullDisplayName": "Ditto 201/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      132
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-201-low.png",
+    "imageHighSrc": "cards/sv4pt5-201-high.png"
+  },
+  {
+    "masterCardId": "14006",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-200",
+    "localId": "200",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "200/91",
+    "cardName": "Dodrio",
+    "fullDisplayName": "Dodrio 200/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      85
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doduo",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-200-low.png",
+    "imageHighSrc": "cards/sv4pt5-200-high.png"
+  },
+  {
+    "masterCardId": "13995",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-199",
+    "localId": "199",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "199/91",
+    "cardName": "Doduo",
+    "fullDisplayName": "Doduo 199/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-199-low.png",
+    "imageHighSrc": "cards/sv4pt5-199-high.png"
+  },
+  {
+    "masterCardId": "13987",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-198",
+    "localId": "198",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "198/91",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 198/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-198-low.png",
+    "imageHighSrc": "cards/sv4pt5-198-high.png"
+  },
+  {
+    "masterCardId": "13979",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-197",
+    "localId": "197",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "197/91",
+    "cardName": "Pidgeotto",
+    "fullDisplayName": "Pidgeotto 197/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-197-low.png",
+    "imageHighSrc": "cards/sv4pt5-197-high.png"
+  },
+  {
+    "masterCardId": "13972",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-196",
+    "localId": "196",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "196/91",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 196/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-196-low.png",
+    "imageHighSrc": "cards/sv4pt5-196-high.png"
+  },
+  {
+    "masterCardId": "13964",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-195",
+    "localId": "195",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "195/91",
+    "cardName": "Cyclizar",
+    "fullDisplayName": "Cyclizar 195/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      967
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-195-low.png",
+    "imageHighSrc": "cards/sv4pt5-195-high.png"
+  },
+  {
+    "masterCardId": "13956",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-194",
+    "localId": "194",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "194/91",
+    "cardName": "Noibat",
+    "fullDisplayName": "Noibat 194/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      714
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-194-low.png",
+    "imageHighSrc": "cards/sv4pt5-194-high.png"
+  },
+  {
+    "masterCardId": "13949",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-193",
+    "localId": "193",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "193/91",
+    "cardName": "Revavroom",
+    "fullDisplayName": "Revavroom 193/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      966
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Varoom",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-193-low.png",
+    "imageHighSrc": "cards/sv4pt5-193-high.png"
+  },
+  {
+    "masterCardId": "13940",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-192",
+    "localId": "192",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "192/91",
+    "cardName": "Varoom",
+    "fullDisplayName": "Varoom 192/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      965
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-192-low.png",
+    "imageHighSrc": "cards/sv4pt5-192-high.png"
+  },
+  {
+    "masterCardId": "13932",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-191",
+    "localId": "191",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "191/91",
+    "cardName": "Scizor",
+    "fullDisplayName": "Scizor 191/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-191-low.png",
+    "imageHighSrc": "cards/sv4pt5-191-high.png"
+  },
+  {
+    "masterCardId": "13923",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-190",
+    "localId": "190",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "190/91",
+    "cardName": "Grafaiai",
+    "fullDisplayName": "Grafaiai 190/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      945
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroodle",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-190-low.png",
+    "imageHighSrc": "cards/sv4pt5-190-high.png"
+  },
+  {
+    "masterCardId": "13914",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-189",
+    "localId": "189",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "189/91",
+    "cardName": "Shroodle",
+    "fullDisplayName": "Shroodle 189/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      944
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-189-low.png",
+    "imageHighSrc": "cards/sv4pt5-189-high.png"
+  },
+  {
+    "masterCardId": "13905",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-188",
+    "localId": "188",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "188/91",
+    "cardName": "Mabosstiff",
+    "fullDisplayName": "Mabosstiff 188/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      943
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Maschiff",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-188-low.png",
+    "imageHighSrc": "cards/sv4pt5-188-high.png"
+  },
+  {
+    "masterCardId": "13896",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-187",
+    "localId": "187",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "187/91",
+    "cardName": "Kingambit",
+    "fullDisplayName": "Kingambit 187/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      983
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bisharp",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-187-low.png",
+    "imageHighSrc": "cards/sv4pt5-187-high.png"
+  },
+  {
+    "masterCardId": "13888",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-186",
+    "localId": "186",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "186/91",
+    "cardName": "Bisharp",
+    "fullDisplayName": "Bisharp 186/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      625
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawniard",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-186-low.png",
+    "imageHighSrc": "cards/sv4pt5-186-high.png"
+  },
+  {
+    "masterCardId": "13880",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-185",
+    "localId": "185",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "185/91",
+    "cardName": "Pawniard",
+    "fullDisplayName": "Pawniard 185/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      624
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-185-low.png",
+    "imageHighSrc": "cards/sv4pt5-185-high.png"
+  },
+  {
+    "masterCardId": "13872",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-184",
+    "localId": "184",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "184/91",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 184/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-184-low.png",
+    "imageHighSrc": "cards/sv4pt5-184-high.png"
+  },
+  {
+    "masterCardId": "13865",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-183",
+    "localId": "183",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "183/91",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 183/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      461
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sneasel",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-183-low.png",
+    "imageHighSrc": "cards/sv4pt5-183-high.png"
+  },
+  {
+    "masterCardId": "13856",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-182",
+    "localId": "182",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "182/91",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 182/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-182-low.png",
+    "imageHighSrc": "cards/sv4pt5-182-high.png"
+  },
+  {
+    "masterCardId": "13847",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-181",
+    "localId": "181",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "181/91",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 181/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-181-low.png",
+    "imageHighSrc": "cards/sv4pt5-181-high.png"
+  },
+  {
+    "masterCardId": "13839",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-180",
+    "localId": "180",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "180/91",
+    "cardName": "Paldean Wooper",
+    "fullDisplayName": "Paldean Wooper 180/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-180-low.png",
+    "imageHighSrc": "cards/sv4pt5-180-high.png"
+  },
+  {
+    "masterCardId": "13831",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-179",
+    "localId": "179",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "179/91",
+    "cardName": "Glimmet",
+    "fullDisplayName": "Glimmet 179/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      969
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-179-low.png",
+    "imageHighSrc": "cards/sv4pt5-179-high.png"
+  },
+  {
+    "masterCardId": "13823",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-178",
+    "localId": "178",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "178/91",
+    "cardName": "Garganacl",
+    "fullDisplayName": "Garganacl 178/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      934
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Naclstack",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-178-low.png",
+    "imageHighSrc": "cards/sv4pt5-178-high.png"
+  },
+  {
+    "masterCardId": "13814",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-177",
+    "localId": "177",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "177/91",
+    "cardName": "Naclstack",
+    "fullDisplayName": "Naclstack 177/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      933
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nacli",
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-177-low.png",
+    "imageHighSrc": "cards/sv4pt5-177-high.png"
+  },
+  {
+    "masterCardId": "13806",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-176",
+    "localId": "176",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "176/91",
+    "cardName": "Nacli",
+    "fullDisplayName": "Nacli 176/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      932
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-176-low.png",
+    "imageHighSrc": "cards/sv4pt5-176-high.png"
+  },
+  {
+    "masterCardId": "13795",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-175",
+    "localId": "175",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "175/91",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 175/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-175-low.png",
+    "imageHighSrc": "cards/sv4pt5-175-high.png"
+  },
+  {
+    "masterCardId": "13787",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-174",
+    "localId": "174",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "174/91",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 174/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-174-low.png",
+    "imageHighSrc": "cards/sv4pt5-174-high.png"
+  },
+  {
+    "masterCardId": "13778",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-173",
+    "localId": "173",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "173/91",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 173/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-173-low.png",
+    "imageHighSrc": "cards/sv4pt5-173-high.png"
+  },
+  {
+    "masterCardId": "13770",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-172",
+    "localId": "172",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "172/91",
+    "cardName": "Paldean Tauros",
+    "fullDisplayName": "Paldean Tauros 172/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-172-low.png",
+    "imageHighSrc": "cards/sv4pt5-172-high.png"
+  },
+  {
+    "masterCardId": "13761",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-171",
+    "localId": "171",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "171/91",
+    "cardName": "Annihilape",
+    "fullDisplayName": "Annihilape 171/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      979
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Primeape",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-171-low.png",
+    "imageHighSrc": "cards/sv4pt5-171-high.png"
+  },
+  {
+    "masterCardId": "13753",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-170",
+    "localId": "170",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "170/91",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 170/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-170-low.png",
+    "imageHighSrc": "cards/sv4pt5-170-high.png"
+  },
+  {
+    "masterCardId": "13745",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-169",
+    "localId": "169",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "169/91",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 169/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-169-low.png",
+    "imageHighSrc": "cards/sv4pt5-169-high.png"
+  },
+  {
+    "masterCardId": "13736",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-168",
+    "localId": "168",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "168/91",
+    "cardName": "Houndstone",
+    "fullDisplayName": "Houndstone 168/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      972
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Greavard",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-168-low.png",
+    "imageHighSrc": "cards/sv4pt5-168-high.png"
+  },
+  {
+    "masterCardId": "13727",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-167",
+    "localId": "167",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "167/91",
+    "cardName": "Tinkaton",
+    "fullDisplayName": "Tinkaton 167/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      959
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tinkatuff",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-167-low.png",
+    "imageHighSrc": "cards/sv4pt5-167-high.png"
+  },
+  {
+    "masterCardId": "13718",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-166",
+    "localId": "166",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "166/91",
+    "cardName": "Tinkatuff",
+    "fullDisplayName": "Tinkatuff 166/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      958
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tinkatink",
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-166-low.png",
+    "imageHighSrc": "cards/sv4pt5-166-high.png"
+  },
+  {
+    "masterCardId": "13710",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-165",
+    "localId": "165",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "165/91",
+    "cardName": "Tinkatink",
+    "fullDisplayName": "Tinkatink 165/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      957
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-165-low.png",
+    "imageHighSrc": "cards/sv4pt5-165-high.png"
+  },
+  {
+    "masterCardId": "13702",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-164",
+    "localId": "164",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "164/91",
+    "cardName": "Flittle",
+    "fullDisplayName": "Flittle 164/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      955
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-164-low.png",
+    "imageHighSrc": "cards/sv4pt5-164-high.png"
+  },
+  {
+    "masterCardId": "13694",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-163",
+    "localId": "163",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "163/91",
+    "cardName": "Rabsca",
+    "fullDisplayName": "Rabsca 163/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      954
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rellor",
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-163-low.png",
+    "imageHighSrc": "cards/sv4pt5-163-high.png"
+  },
+  {
+    "masterCardId": "13682",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-162",
+    "localId": "162",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "162/91",
+    "cardName": "Ceruledge",
+    "fullDisplayName": "Ceruledge 162/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      937
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charcadet",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-162-low.png",
+    "imageHighSrc": "cards/sv4pt5-162-high.png"
+  },
+  {
+    "masterCardId": "13673",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-161",
+    "localId": "161",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "161/91",
+    "cardName": "Dachsbun",
+    "fullDisplayName": "Dachsbun 161/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      927
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fidough",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-161-low.png",
+    "imageHighSrc": "cards/sv4pt5-161-high.png"
+  },
+  {
+    "masterCardId": "13664",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-160",
+    "localId": "160",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "160/91",
+    "cardName": "Mimikyu",
+    "fullDisplayName": "Mimikyu 160/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      778
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-160-low.png",
+    "imageHighSrc": "cards/sv4pt5-160-high.png"
+  },
+  {
+    "masterCardId": "13656",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-159",
+    "localId": "159",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "159/91",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 159/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-159-low.png",
+    "imageHighSrc": "cards/sv4pt5-159-high.png"
+  },
+  {
+    "masterCardId": "13646",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-158",
+    "localId": "158",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "158/91",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 158/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-158-low.png",
+    "imageHighSrc": "cards/sv4pt5-158-high.png"
+  },
+  {
+    "masterCardId": "13637",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-157",
+    "localId": "157",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "157/91",
+    "cardName": "Mime Jr.",
+    "fullDisplayName": "Mime Jr. 157/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      439
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-157-low.png",
+    "imageHighSrc": "cards/sv4pt5-157-high.png"
+  },
+  {
+    "masterCardId": "13628",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-156",
+    "localId": "156",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "156/91",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 156/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-156-low.png",
+    "imageHighSrc": "cards/sv4pt5-156-high.png"
+  },
+  {
+    "masterCardId": "13620",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-155",
+    "localId": "155",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "155/91",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 155/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-155-low.png",
+    "imageHighSrc": "cards/sv4pt5-155-high.png"
+  },
+  {
+    "masterCardId": "13613",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-154",
+    "localId": "154",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "154/91",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 154/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-154-low.png",
+    "imageHighSrc": "cards/sv4pt5-154-high.png"
+  },
+  {
+    "masterCardId": "13606",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-153",
+    "localId": "153",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "153/91",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 153/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-153-low.png",
+    "imageHighSrc": "cards/sv4pt5-153-high.png"
+  },
+  {
+    "masterCardId": "13597",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-152",
+    "localId": "152",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "152/91",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 152/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-152-low.png",
+    "imageHighSrc": "cards/sv4pt5-152-high.png"
+  },
+  {
+    "masterCardId": "13589",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-151",
+    "localId": "151",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "151/91",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 151/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-151-low.png",
+    "imageHighSrc": "cards/sv4pt5-151-high.png"
+  },
+  {
+    "masterCardId": "13580",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-150",
+    "localId": "150",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "150/91",
+    "cardName": "Cleffa",
+    "fullDisplayName": "Cleffa 150/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      173
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-150-low.png",
+    "imageHighSrc": "cards/sv4pt5-150-high.png"
+  },
+  {
+    "masterCardId": "13566",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-149",
+    "localId": "149",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "149/91",
+    "cardName": "Kadabra",
+    "fullDisplayName": "Kadabra 149/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      64
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Abra",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-149-low.png",
+    "imageHighSrc": "cards/sv4pt5-149-high.png"
+  },
+  {
+    "masterCardId": "13559",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-148",
+    "localId": "148",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "148/91",
+    "cardName": "Abra",
+    "fullDisplayName": "Abra 148/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-148-low.png",
+    "imageHighSrc": "cards/sv4pt5-148-high.png"
+  },
+  {
+    "masterCardId": "13549",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-147",
+    "localId": "147",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "147/91",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 147/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-147-low.png",
+    "imageHighSrc": "cards/sv4pt5-147-high.png"
+  },
+  {
+    "masterCardId": "13543",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-146",
+    "localId": "146",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "146/91",
+    "cardName": "Kilowattrel",
+    "fullDisplayName": "Kilowattrel 146/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      941
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wattrel",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-146-low.png",
+    "imageHighSrc": "cards/sv4pt5-146-high.png"
+  },
+  {
+    "masterCardId": "13534",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-145",
+    "localId": "145",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "145/91",
+    "cardName": "Wattrel",
+    "fullDisplayName": "Wattrel 145/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      940
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-145-low.png",
+    "imageHighSrc": "cards/sv4pt5-145-high.png"
+  },
+  {
+    "masterCardId": "13525",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-144",
+    "localId": "144",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "144/91",
+    "cardName": "Pawmot",
+    "fullDisplayName": "Pawmot 144/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      923
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawmo",
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-144-low.png",
+    "imageHighSrc": "cards/sv4pt5-144-high.png"
+  },
+  {
+    "masterCardId": "13516",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-143",
+    "localId": "143",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "143/91",
+    "cardName": "Pawmo",
+    "fullDisplayName": "Pawmo 143/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      922
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawmi",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-143-low.png",
+    "imageHighSrc": "cards/sv4pt5-143-high.png"
+  },
+  {
+    "masterCardId": "13507",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-142",
+    "localId": "142",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "142/91",
+    "cardName": "Pawmi",
+    "fullDisplayName": "Pawmi 142/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      921
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-142-low.png",
+    "imageHighSrc": "cards/sv4pt5-142-high.png"
+  },
+  {
+    "masterCardId": "13499",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-141",
+    "localId": "141",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "141/91",
+    "cardName": "Toxtricity",
+    "fullDisplayName": "Toxtricity 141/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      849
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toxel",
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-141-low.png",
+    "imageHighSrc": "cards/sv4pt5-141-high.png"
+  },
+  {
+    "masterCardId": "13490",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-140",
+    "localId": "140",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "140/91",
+    "cardName": "Toxel",
+    "fullDisplayName": "Toxel 140/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      848
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-140-low.png",
+    "imageHighSrc": "cards/sv4pt5-140-high.png"
+  },
+  {
+    "masterCardId": "13481",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-139",
+    "localId": "139",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "139/91",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus 139/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-139-low.png",
+    "imageHighSrc": "cards/sv4pt5-139-high.png"
+  },
+  {
+    "masterCardId": "13472",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-138",
+    "localId": "138",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "138/91",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 138/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-138-low.png",
+    "imageHighSrc": "cards/sv4pt5-138-high.png"
+  },
+  {
+    "masterCardId": "13462",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-137",
+    "localId": "137",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "137/91",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 137/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Luxio",
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-137-low.png",
+    "imageHighSrc": "cards/sv4pt5-137-high.png"
+  },
+  {
+    "masterCardId": "13454",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-136",
+    "localId": "136",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "136/91",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 136/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shinx",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-136-low.png",
+    "imageHighSrc": "cards/sv4pt5-136-high.png"
+  },
+  {
+    "masterCardId": "13445",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-135",
+    "localId": "135",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "135/91",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 135/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-135-low.png",
+    "imageHighSrc": "cards/sv4pt5-135-high.png"
+  },
+  {
+    "masterCardId": "13438",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-134",
+    "localId": "134",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "134/91",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 134/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-134-low.png",
+    "imageHighSrc": "cards/sv4pt5-134-high.png"
+  },
+  {
+    "masterCardId": "13428",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-133",
+    "localId": "133",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "133/91",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 133/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-133-low.png",
+    "imageHighSrc": "cards/sv4pt5-133-high.png"
+  },
+  {
+    "masterCardId": "13420",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-132",
+    "localId": "132",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "132/91",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 132/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-132-low.png",
+    "imageHighSrc": "cards/sv4pt5-132-high.png"
+  },
+  {
+    "masterCardId": "13412",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-131",
+    "localId": "131",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "131/91",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 131/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-131-low.png",
+    "imageHighSrc": "cards/sv4pt5-131-high.png"
+  },
+  {
+    "masterCardId": "13403",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-130",
+    "localId": "130",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "130/91",
+    "cardName": "Baxcalibur",
+    "fullDisplayName": "Baxcalibur 130/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      998
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Arctibax",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-130-low.png",
+    "imageHighSrc": "cards/sv4pt5-130-high.png"
+  },
+  {
+    "masterCardId": "13395",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-129",
+    "localId": "129",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "129/91",
+    "cardName": "Arctibax",
+    "fullDisplayName": "Arctibax 129/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      997
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frigibax",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-129-low.png",
+    "imageHighSrc": "cards/sv4pt5-129-high.png"
+  },
+  {
+    "masterCardId": "13387",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-128",
+    "localId": "128",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "128/91",
+    "cardName": "Frigibax",
+    "fullDisplayName": "Frigibax 128/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      996
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-128-low.png",
+    "imageHighSrc": "cards/sv4pt5-128-high.png"
+  },
+  {
+    "masterCardId": "13378",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-127",
+    "localId": "127",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "127/91",
+    "cardName": "Tatsugiri",
+    "fullDisplayName": "Tatsugiri 127/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      978
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-127-low.png",
+    "imageHighSrc": "cards/sv4pt5-127-high.png"
+  },
+  {
+    "masterCardId": "13370",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-126",
+    "localId": "126",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "126/91",
+    "cardName": "Dondozo",
+    "fullDisplayName": "Dondozo 126/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      977
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-126-low.png",
+    "imageHighSrc": "cards/sv4pt5-126-high.png"
+  },
+  {
+    "masterCardId": "13362",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-125",
+    "localId": "125",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "125/91",
+    "cardName": "Veluza",
+    "fullDisplayName": "Veluza 125/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      976
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-125-low.png",
+    "imageHighSrc": "cards/sv4pt5-125-high.png"
+  },
+  {
+    "masterCardId": "13354",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-124",
+    "localId": "124",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "124/91",
+    "cardName": "Palafin",
+    "fullDisplayName": "Palafin 124/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      964
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finizen",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-124-low.png",
+    "imageHighSrc": "cards/sv4pt5-124-high.png"
+  },
+  {
+    "masterCardId": "13345",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-123",
+    "localId": "123",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "123/91",
+    "cardName": "Finizen",
+    "fullDisplayName": "Finizen 123/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      963
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-123-low.png",
+    "imageHighSrc": "cards/sv4pt5-123-high.png"
+  },
+  {
+    "masterCardId": "13336",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-122",
+    "localId": "122",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "122/91",
+    "cardName": "Wugtrio",
+    "fullDisplayName": "Wugtrio 122/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      961
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wiglett",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-122-low.png",
+    "imageHighSrc": "cards/sv4pt5-122-high.png"
+  },
+  {
+    "masterCardId": "13327",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-121",
+    "localId": "121",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "121/91",
+    "cardName": "Wiglett",
+    "fullDisplayName": "Wiglett 121/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      960
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-121-low.png",
+    "imageHighSrc": "cards/sv4pt5-121-high.png"
+  },
+  {
+    "masterCardId": "13320",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-120",
+    "localId": "120",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "120/91",
+    "cardName": "Paldean Tauros",
+    "fullDisplayName": "Paldean Tauros 120/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-120-low.png",
+    "imageHighSrc": "cards/sv4pt5-120-high.png"
+  },
+  {
+    "masterCardId": "13312",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-119",
+    "localId": "119",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "119/91",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 119/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-119-low.png",
+    "imageHighSrc": "cards/sv4pt5-119-high.png"
+  },
+  {
+    "masterCardId": "13303",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-118",
+    "localId": "118",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "118/91",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 118/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-118-low.png",
+    "imageHighSrc": "cards/sv4pt5-118-high.png"
+  },
+  {
+    "masterCardId": "13294",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-117",
+    "localId": "117",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "117/91",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 117/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-117-low.png",
+    "imageHighSrc": "cards/sv4pt5-117-high.png"
+  },
+  {
+    "masterCardId": "13285",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-116",
+    "localId": "116",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "116/91",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 116/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-116-low.png",
+    "imageHighSrc": "cards/sv4pt5-116-high.png"
+  },
+  {
+    "masterCardId": "13276",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-115",
+    "localId": "115",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "115/91",
+    "cardName": "Armarouge",
+    "fullDisplayName": "Armarouge 115/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      936
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charcadet",
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-115-low.png",
+    "imageHighSrc": "cards/sv4pt5-115-high.png"
+  },
+  {
+    "masterCardId": "13268",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-114",
+    "localId": "114",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "114/91",
+    "cardName": "Charcadet",
+    "fullDisplayName": "Charcadet 114/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      935
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-114-low.png",
+    "imageHighSrc": "cards/sv4pt5-114-high.png"
+  },
+  {
+    "masterCardId": "13260",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-113",
+    "localId": "113",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "113/91",
+    "cardName": "Oricorio",
+    "fullDisplayName": "Oricorio 113/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      741
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-113-low.png",
+    "imageHighSrc": "cards/sv4pt5-113-high.png"
+  },
+  {
+    "masterCardId": "13252",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-112",
+    "localId": "112",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "112/91",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 112/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-112-low.png",
+    "imageHighSrc": "cards/sv4pt5-112-high.png"
+  },
+  {
+    "masterCardId": "13242",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-111",
+    "localId": "111",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "111/91",
+    "cardName": "Paldean Tauros",
+    "fullDisplayName": "Paldean Tauros 111/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-111-low.png",
+    "imageHighSrc": "cards/sv4pt5-111-high.png"
+  },
+  {
+    "masterCardId": "13233",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-110",
+    "localId": "110",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "110/91",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 110/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-110-low.png",
+    "imageHighSrc": "cards/sv4pt5-110-high.png"
+  },
+  {
+    "masterCardId": "13223",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-109",
+    "localId": "109",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "109/91",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 109/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-109-low.png",
+    "imageHighSrc": "cards/sv4pt5-109-high.png"
+  },
+  {
+    "masterCardId": "13214",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-108",
+    "localId": "108",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "108/91",
+    "cardName": "Rellor",
+    "fullDisplayName": "Rellor 108/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      953
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-108-low.png",
+    "imageHighSrc": "cards/sv4pt5-108-high.png"
+  },
+  {
+    "masterCardId": "13205",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-107",
+    "localId": "107",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "107/91",
+    "cardName": "Scovillain",
+    "fullDisplayName": "Scovillain 107/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      952
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Capsakid",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-107-low.png",
+    "imageHighSrc": "cards/sv4pt5-107-high.png"
+  },
+  {
+    "masterCardId": "13197",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-106",
+    "localId": "106",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "106/91",
+    "cardName": "Capsakid",
+    "fullDisplayName": "Capsakid 106/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      951
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-106-low.png",
+    "imageHighSrc": "cards/sv4pt5-106-high.png"
+  },
+  {
+    "masterCardId": "13190",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-105",
+    "localId": "105",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "105/91",
+    "cardName": "Toedscool",
+    "fullDisplayName": "Toedscool 105/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      948
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-105-low.png",
+    "imageHighSrc": "cards/sv4pt5-105-high.png"
+  },
+  {
+    "masterCardId": "13181",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-104",
+    "localId": "104",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "104/91",
+    "cardName": "Arboliva",
+    "fullDisplayName": "Arboliva 104/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      930
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dolliv",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-104-low.png",
+    "imageHighSrc": "cards/sv4pt5-104-high.png"
+  },
+  {
+    "masterCardId": "13172",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-103",
+    "localId": "103",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "103/91",
+    "cardName": "Dolliv",
+    "fullDisplayName": "Dolliv 103/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      929
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Smoliv",
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-103-low.png",
+    "imageHighSrc": "cards/sv4pt5-103-high.png"
+  },
+  {
+    "masterCardId": "13163",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-102",
+    "localId": "102",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "102/91",
+    "cardName": "Smoliv",
+    "fullDisplayName": "Smoliv 102/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      928
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-102-low.png",
+    "imageHighSrc": "cards/sv4pt5-102-high.png"
+  },
+  {
+    "masterCardId": "13154",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-101",
+    "localId": "101",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "101/91",
+    "cardName": "Abomasnow",
+    "fullDisplayName": "Abomasnow 101/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      460
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snover",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-101-low.png",
+    "imageHighSrc": "cards/sv4pt5-101-high.png"
+  },
+  {
+    "masterCardId": "13144",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-100",
+    "localId": "100",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "100/91",
+    "cardName": "Snover",
+    "fullDisplayName": "Snover 100/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      459
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-100-low.png",
+    "imageHighSrc": "cards/sv4pt5-100-high.png"
+  },
+  {
+    "masterCardId": "13136",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-099",
+    "localId": "099",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "099/91",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 099/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-099-low.png",
+    "imageHighSrc": "cards/sv4pt5-099-high.png"
+  },
+  {
+    "masterCardId": "13128",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-098",
+    "localId": "098",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "098/91",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 098/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-098-low.png",
+    "imageHighSrc": "cards/sv4pt5-098-high.png"
+  },
+  {
+    "masterCardId": "13117",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-097",
+    "localId": "097",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "097/91",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 097/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-097-low.png",
+    "imageHighSrc": "cards/sv4pt5-097-high.png"
+  },
+  {
+    "masterCardId": "13108",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-096",
+    "localId": "096",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "096/91",
+    "cardName": "Hoppip",
+    "fullDisplayName": "Hoppip 096/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      187
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-096-low.png",
+    "imageHighSrc": "cards/sv4pt5-096-high.png"
+  },
+  {
+    "masterCardId": "13099",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-095",
+    "localId": "095",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "095/91",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 095/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-095-low.png",
+    "imageHighSrc": "cards/sv4pt5-095-high.png"
+  },
+  {
+    "masterCardId": "13089",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-094",
+    "localId": "094",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "094/91",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 094/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-094-low.png",
+    "imageHighSrc": "cards/sv4pt5-094-high.png"
+  },
+  {
+    "masterCardId": "13079",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-093",
+    "localId": "093",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "093/91",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 093/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-093-low.png",
+    "imageHighSrc": "cards/sv4pt5-093-high.png"
+  },
+  {
+    "masterCardId": "13071",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-092",
+    "localId": "092",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "092/91",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 092/91 Paldean Fates",
+    "rarity": "Shiny Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-092-low.png",
+    "imageHighSrc": "cards/sv4pt5-092-high.png"
+  },
+  {
+    "masterCardId": "13062",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-091",
+    "localId": "091",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "091/91",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 091/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-091-low.png",
+    "imageHighSrc": "cards/sv4pt5-091-high.png"
+  },
+  {
+    "masterCardId": "13052",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-090",
+    "localId": "090",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "090/91",
+    "cardName": "Technical Machine: Crisis Punch",
+    "fullDisplayName": "Technical Machine: Crisis Punch 090/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-090-low.png",
+    "imageHighSrc": "cards/sv4pt5-090-high.png"
+  },
+  {
+    "masterCardId": "13042",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-089",
+    "localId": "089",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "089/91",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 089/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-089-low.png",
+    "imageHighSrc": "cards/sv4pt5-089-high.png"
+  },
+  {
+    "masterCardId": "13032",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-088",
+    "localId": "088",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "088/91",
+    "cardName": "Professor's Research",
+    "fullDisplayName": "Professor's Research 088/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-088-low.png",
+    "imageHighSrc": "cards/sv4pt5-088-high.png"
+  },
+  {
+    "masterCardId": "13023",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-087",
+    "localId": "087",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "087/91",
+    "cardName": "Professor's Research",
+    "fullDisplayName": "Professor's Research 087/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-087-low.png",
+    "imageHighSrc": "cards/sv4pt5-087-high.png"
+  },
+  {
+    "masterCardId": "13013",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-086",
+    "localId": "086",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "086/91",
+    "cardName": "Paldean Student",
+    "fullDisplayName": "Paldean Student 086/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-086-low.png",
+    "imageHighSrc": "cards/sv4pt5-086-high.png"
+  },
+  {
+    "masterCardId": "13004",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-085",
+    "localId": "085",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "085/91",
+    "cardName": "Paldean Student",
+    "fullDisplayName": "Paldean Student 085/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Cona Nitanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-085-low.png",
+    "imageHighSrc": "cards/sv4pt5-085-high.png"
+  },
+  {
+    "masterCardId": "12994",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-084",
+    "localId": "084",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "084/91",
+    "cardName": "Nest Ball",
+    "fullDisplayName": "Nest Ball 084/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-084-low.png",
+    "imageHighSrc": "cards/sv4pt5-084-high.png"
+  },
+  {
+    "masterCardId": "12984",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-083",
+    "localId": "083",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "083/91",
+    "cardName": "Nemona's Backpack",
+    "fullDisplayName": "Nemona's Backpack 083/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-083-low.png",
+    "imageHighSrc": "cards/sv4pt5-083-high.png"
+  },
+  {
+    "masterCardId": "12973",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-082",
+    "localId": "082",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "082/91",
+    "cardName": "Nemona",
+    "fullDisplayName": "Nemona 082/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-082-low.png",
+    "imageHighSrc": "cards/sv4pt5-082-high.png"
+  },
+  {
+    "masterCardId": "12964",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-081",
+    "localId": "081",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "081/91",
+    "cardName": "Moonlit Hill",
+    "fullDisplayName": "Moonlit Hill 081/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-081-low.png",
+    "imageHighSrc": "cards/sv4pt5-081-high.png"
+  },
+  {
+    "masterCardId": "12958",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-080",
+    "localId": "080",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "080/91",
+    "cardName": "Iono",
+    "fullDisplayName": "Iono 080/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-080-low.png",
+    "imageHighSrc": "cards/sv4pt5-080-high.png"
+  },
+  {
+    "masterCardId": "12948",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-079",
+    "localId": "079",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "079/91",
+    "cardName": "Electric Generator",
+    "fullDisplayName": "Electric Generator 079/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-079-low.png",
+    "imageHighSrc": "cards/sv4pt5-079-high.png"
+  },
+  {
+    "masterCardId": "12939",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-078",
+    "localId": "078",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "078/91",
+    "cardName": "Clive",
+    "fullDisplayName": "Clive 078/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-078-low.png",
+    "imageHighSrc": "cards/sv4pt5-078-high.png"
+  },
+  {
+    "masterCardId": "12929",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-077",
+    "localId": "077",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "077/91",
+    "cardName": "Atticus",
+    "fullDisplayName": "Atticus 077/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-077-low.png",
+    "imageHighSrc": "cards/sv4pt5-077-high.png"
+  },
+  {
+    "masterCardId": "12920",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-076",
+    "localId": "076",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "076/91",
+    "cardName": "Artazon",
+    "fullDisplayName": "Artazon 076/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-076-low.png",
+    "imageHighSrc": "cards/sv4pt5-076-high.png"
+  },
+  {
+    "masterCardId": "12912",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-075",
+    "localId": "075",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "075/91",
+    "cardName": "Squawkabilly ex",
+    "fullDisplayName": "Squawkabilly ex 075/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      931
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-075-low.png",
+    "imageHighSrc": "cards/sv4pt5-075-high.png"
+  },
+  {
+    "masterCardId": "12902",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-074",
+    "localId": "074",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "074/91",
+    "cardName": "Maushold",
+    "fullDisplayName": "Maushold 074/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      925
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tandemaus",
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-074-low.png",
+    "imageHighSrc": "cards/sv4pt5-074-high.png"
+  },
+  {
+    "masterCardId": "12893",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-073",
+    "localId": "073",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "073/91",
+    "cardName": "Tandemaus",
+    "fullDisplayName": "Tandemaus 073/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      924
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-073-low.png",
+    "imageHighSrc": "cards/sv4pt5-073-high.png"
+  },
+  {
+    "masterCardId": "12883",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-072",
+    "localId": "072",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "072/91",
+    "cardName": "Oinkologne",
+    "fullDisplayName": "Oinkologne 072/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      916
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lechonk",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-072-low.png",
+    "imageHighSrc": "cards/sv4pt5-072-high.png"
+  },
+  {
+    "masterCardId": "12873",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-071",
+    "localId": "071",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "071/91",
+    "cardName": "Lechonk",
+    "fullDisplayName": "Lechonk 071/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      915
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-071-low.png",
+    "imageHighSrc": "cards/sv4pt5-071-high.png"
+  },
+  {
+    "masterCardId": "12863",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-070",
+    "localId": "070",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "070/91",
+    "cardName": "Cyclizar",
+    "fullDisplayName": "Cyclizar 070/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      967
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-070-low.png",
+    "imageHighSrc": "cards/sv4pt5-070-high.png"
+  },
+  {
+    "masterCardId": "12854",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-069",
+    "localId": "069",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "069/91",
+    "cardName": "Noivern ex",
+    "fullDisplayName": "Noivern ex 069/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      715
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Noibat",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-069-low.png",
+    "imageHighSrc": "cards/sv4pt5-069-high.png"
+  },
+  {
+    "masterCardId": "12844",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-068",
+    "localId": "068",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "068/91",
+    "cardName": "Noibat",
+    "fullDisplayName": "Noibat 068/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      714
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "chibi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-068-low.png",
+    "imageHighSrc": "cards/sv4pt5-068-high.png"
+  },
+  {
+    "masterCardId": "12834",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-067",
+    "localId": "067",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "067/91",
+    "cardName": "Gholdengo",
+    "fullDisplayName": "Gholdengo 067/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      1000
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gimmighoul",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-067-low.png",
+    "imageHighSrc": "cards/sv4pt5-067-high.png"
+  },
+  {
+    "masterCardId": "12824",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-066",
+    "localId": "066",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "066/91",
+    "cardName": "Iron Treads ex",
+    "fullDisplayName": "Iron Treads ex 066/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      990
+    ],
+    "subtypes": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "toriyufu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-066-low.png",
+    "imageHighSrc": "cards/sv4pt5-066-high.png"
+  },
+  {
+    "masterCardId": "12814",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-065",
+    "localId": "065",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "065/91",
+    "cardName": "Revavroom",
+    "fullDisplayName": "Revavroom 065/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      966
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Varoom",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-065-low.png",
+    "imageHighSrc": "cards/sv4pt5-065-high.png"
+  },
+  {
+    "masterCardId": "12804",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-064",
+    "localId": "064",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "064/91",
+    "cardName": "Varoom",
+    "fullDisplayName": "Varoom 064/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      965
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tetsu Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-064-low.png",
+    "imageHighSrc": "cards/sv4pt5-064-high.png"
+  },
+  {
+    "masterCardId": "12794",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-063",
+    "localId": "063",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "063/91",
+    "cardName": "Mabosstiff",
+    "fullDisplayName": "Mabosstiff 063/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      943
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Maschiff",
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-063-low.png",
+    "imageHighSrc": "cards/sv4pt5-063-high.png"
+  },
+  {
+    "masterCardId": "12784",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-062",
+    "localId": "062",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "062/91",
+    "cardName": "Maschiff",
+    "fullDisplayName": "Maschiff 062/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      942
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-062-low.png",
+    "imageHighSrc": "cards/sv4pt5-062-high.png"
+  },
+  {
+    "masterCardId": "12774",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-061",
+    "localId": "061",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "061/91",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 061/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-061-low.png",
+    "imageHighSrc": "cards/sv4pt5-061-high.png"
+  },
+  {
+    "masterCardId": "12764",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-060",
+    "localId": "060",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "060/91",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 060/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-060-low.png",
+    "imageHighSrc": "cards/sv4pt5-060-high.png"
+  },
+  {
+    "masterCardId": "12754",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-059",
+    "localId": "059",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "059/91",
+    "cardName": "Paldean Clodsire ex",
+    "fullDisplayName": "Paldean Clodsire ex 059/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 280,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      980
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paldean Wooper",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-059-low.png",
+    "imageHighSrc": "cards/sv4pt5-059-high.png"
+  },
+  {
+    "masterCardId": "12746",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-058",
+    "localId": "058",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "058/91",
+    "cardName": "Paldean Wooper",
+    "fullDisplayName": "Paldean Wooper 058/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-058-low.png",
+    "imageHighSrc": "cards/sv4pt5-058-high.png"
+  },
+  {
+    "masterCardId": "12737",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-057",
+    "localId": "057",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "057/91",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 057/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-057-low.png",
+    "imageHighSrc": "cards/sv4pt5-057-high.png"
+  },
+  {
+    "masterCardId": "12728",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-056",
+    "localId": "056",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "056/91",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 056/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-056-low.png",
+    "imageHighSrc": "cards/sv4pt5-056-high.png"
+  },
+  {
+    "masterCardId": "12718",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-055",
+    "localId": "055",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "055/91",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 055/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nobuhiro Imagawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-055-low.png",
+    "imageHighSrc": "cards/sv4pt5-055-high.png"
+  },
+  {
+    "masterCardId": "12709",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-054",
+    "localId": "054",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "054/91",
+    "cardName": "Charizard ex",
+    "fullDisplayName": "Charizard ex 054/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-054-low.png",
+    "imageHighSrc": "cards/sv4pt5-054-high.png"
+  },
+  {
+    "masterCardId": "12699",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-053",
+    "localId": "053",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "053/91",
+    "cardName": "Great Tusk ex",
+    "fullDisplayName": "Great Tusk ex 053/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      984
+    ],
+    "subtypes": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-053-low.png",
+    "imageHighSrc": "cards/sv4pt5-053-high.png"
+  },
+  {
+    "masterCardId": "12688",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-052",
+    "localId": "052",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "052/91",
+    "cardName": "Grapploct",
+    "fullDisplayName": "Grapploct 052/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      853
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clobbopus",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-052-low.png",
+    "imageHighSrc": "cards/sv4pt5-052-high.png"
+  },
+  {
+    "masterCardId": "12678",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-051",
+    "localId": "051",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "051/91",
+    "cardName": "Clobbopus",
+    "fullDisplayName": "Clobbopus 051/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      852
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kedamahadaitai Yawarakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-051-low.png",
+    "imageHighSrc": "cards/sv4pt5-051-high.png"
+  },
+  {
+    "masterCardId": "12670",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-050",
+    "localId": "050",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "050/91",
+    "cardName": "Barboach",
+    "fullDisplayName": "Barboach 050/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      339
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-050-low.png",
+    "imageHighSrc": "cards/sv4pt5-050-high.png"
+  },
+  {
+    "masterCardId": "12659",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-049",
+    "localId": "049",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "049/91",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 049/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Phanpy",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-049-low.png",
+    "imageHighSrc": "cards/sv4pt5-049-high.png"
+  },
+  {
+    "masterCardId": "12648",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-048",
+    "localId": "048",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "048/91",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 048/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-048-low.png",
+    "imageHighSrc": "cards/sv4pt5-048-high.png"
+  },
+  {
+    "masterCardId": "12640",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-047",
+    "localId": "047",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "047/91",
+    "cardName": "Annihilape",
+    "fullDisplayName": "Annihilape 047/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      979
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Primeape",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-047-low.png",
+    "imageHighSrc": "cards/sv4pt5-047-high.png"
+  },
+  {
+    "masterCardId": "12633",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-046",
+    "localId": "046",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "046/91",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 046/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-046-low.png",
+    "imageHighSrc": "cards/sv4pt5-046-high.png"
+  },
+  {
+    "masterCardId": "12624",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-045",
+    "localId": "045",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "045/91",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 045/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-045-low.png",
+    "imageHighSrc": "cards/sv4pt5-045-high.png"
+  },
+  {
+    "masterCardId": "12615",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-044",
+    "localId": "044",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "044/91",
+    "cardName": "Gimmighoul",
+    "fullDisplayName": "Gimmighoul 044/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      999
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKUBO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-044-low.png",
+    "imageHighSrc": "cards/sv4pt5-044-high.png"
+  },
+  {
+    "masterCardId": "12600",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-043",
+    "localId": "043",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "043/91",
+    "cardName": "Houndstone",
+    "fullDisplayName": "Houndstone 043/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      972
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Greavard",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-043-low.png",
+    "imageHighSrc": "cards/sv4pt5-043-high.png"
+  },
+  {
+    "masterCardId": "12590",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-042",
+    "localId": "042",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "042/91",
+    "cardName": "Greavard",
+    "fullDisplayName": "Greavard 042/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      971
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-042-low.png",
+    "imageHighSrc": "cards/sv4pt5-042-high.png"
+  },
+  {
+    "masterCardId": "12582",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-041",
+    "localId": "041",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "041/91",
+    "cardName": "Flittle",
+    "fullDisplayName": "Flittle 041/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      955
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-041-low.png",
+    "imageHighSrc": "cards/sv4pt5-041-high.png"
+  },
+  {
+    "masterCardId": "12572",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-040",
+    "localId": "040",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "040/91",
+    "cardName": "Ceruledge",
+    "fullDisplayName": "Ceruledge 040/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      937
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charcadet",
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-040-low.png",
+    "imageHighSrc": "cards/sv4pt5-040-high.png"
+  },
+  {
+    "masterCardId": "12563",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-039",
+    "localId": "039",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "039/91",
+    "cardName": "Dachsbun",
+    "fullDisplayName": "Dachsbun 039/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      927
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fidough",
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-039-low.png",
+    "imageHighSrc": "cards/sv4pt5-039-high.png"
+  },
+  {
+    "masterCardId": "12553",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-038",
+    "localId": "038",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "038/91",
+    "cardName": "Fidough",
+    "fullDisplayName": "Fidough 038/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      926
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-038-low.png",
+    "imageHighSrc": "cards/sv4pt5-038-high.png"
+  },
+  {
+    "masterCardId": "12542",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-037",
+    "localId": "037",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "037/91",
+    "cardName": "Mimikyu",
+    "fullDisplayName": "Mimikyu 037/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      778
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-037-low.png",
+    "imageHighSrc": "cards/sv4pt5-037-high.png"
+  },
+  {
+    "masterCardId": "12533",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-036",
+    "localId": "036",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "036/91",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 036/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-036-low.png",
+    "imageHighSrc": "cards/sv4pt5-036-high.png"
+  },
+  {
+    "masterCardId": "12525",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-035",
+    "localId": "035",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "035/91",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 035/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "KYUPIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-035-low.png",
+    "imageHighSrc": "cards/sv4pt5-035-high.png"
+  },
+  {
+    "masterCardId": "12513",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-034",
+    "localId": "034",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "034/91",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 034/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-034-low.png",
+    "imageHighSrc": "cards/sv4pt5-034-high.png"
+  },
+  {
+    "masterCardId": "12506",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-033",
+    "localId": "033",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "033/91",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 033/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-033-low.png",
+    "imageHighSrc": "cards/sv4pt5-033-high.png"
+  },
+  {
+    "masterCardId": "12497",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-032",
+    "localId": "032",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "032/91",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 032/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-032-low.png",
+    "imageHighSrc": "cards/sv4pt5-032-high.png"
+  },
+  {
+    "masterCardId": "12486",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-031",
+    "localId": "031",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "031/91",
+    "cardName": "Mime Jr.",
+    "fullDisplayName": "Mime Jr. 031/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      439
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-031-low.png",
+    "imageHighSrc": "cards/sv4pt5-031-high.png"
+  },
+  {
+    "masterCardId": "12479",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-030",
+    "localId": "030",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "030/91",
+    "cardName": "Chimecho",
+    "fullDisplayName": "Chimecho 030/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-030-low.png",
+    "imageHighSrc": "cards/sv4pt5-030-high.png"
+  },
+  {
+    "masterCardId": "12466",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-029",
+    "localId": "029",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "029/91",
+    "cardName": "Gardevoir ex",
+    "fullDisplayName": "Gardevoir ex 029/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-029-low.png",
+    "imageHighSrc": "cards/sv4pt5-029-high.png"
+  },
+  {
+    "masterCardId": "12457",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-028",
+    "localId": "028",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "028/91",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 028/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-028-low.png",
+    "imageHighSrc": "cards/sv4pt5-028-high.png"
+  },
+  {
+    "masterCardId": "12447",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-027",
+    "localId": "027",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "027/91",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 027/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-027-low.png",
+    "imageHighSrc": "cards/sv4pt5-027-high.png"
+  },
+  {
+    "masterCardId": "12439",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-026",
+    "localId": "026",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "026/91",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 026/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-026-low.png",
+    "imageHighSrc": "cards/sv4pt5-026-high.png"
+  },
+  {
+    "masterCardId": "12429",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-025",
+    "localId": "025",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "025/91",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 025/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-025-low.png",
+    "imageHighSrc": "cards/sv4pt5-025-high.png"
+  },
+  {
+    "masterCardId": "12419",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-024",
+    "localId": "024",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "024/91",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 024/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Yoriyuki Ikegami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-024-low.png",
+    "imageHighSrc": "cards/sv4pt5-024-high.png"
+  },
+  {
+    "masterCardId": "12410",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-023",
+    "localId": "023",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "023/91",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 023/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kariya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-023-low.png",
+    "imageHighSrc": "cards/sv4pt5-023-high.png"
+  },
+  {
+    "masterCardId": "12400",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-022",
+    "localId": "022",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "022/91",
+    "cardName": "Kilowattrel",
+    "fullDisplayName": "Kilowattrel 022/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      941
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wattrel",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-022-low.png",
+    "imageHighSrc": "cards/sv4pt5-022-high.png"
+  },
+  {
+    "masterCardId": "12389",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-021",
+    "localId": "021",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "021/91",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 021/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "aspara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-021-low.png",
+    "imageHighSrc": "cards/sv4pt5-021-high.png"
+  },
+  {
+    "masterCardId": "12379",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-020",
+    "localId": "020",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "020/91",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 020/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-020-low.png",
+    "imageHighSrc": "cards/sv4pt5-020-high.png"
+  },
+  {
+    "masterCardId": "12370",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-019",
+    "localId": "019",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "019/91",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 019/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-019-low.png",
+    "imageHighSrc": "cards/sv4pt5-019-high.png"
+  },
+  {
+    "masterCardId": "12360",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-018",
+    "localId": "018",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "018/91",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 018/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-018-low.png",
+    "imageHighSrc": "cards/sv4pt5-018-high.png"
+  },
+  {
+    "masterCardId": "12351",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-017",
+    "localId": "017",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "017/91",
+    "cardName": "Frigibax",
+    "fullDisplayName": "Frigibax 017/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      996
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "rika",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-017-low.png",
+    "imageHighSrc": "cards/sv4pt5-017-high.png"
+  },
+  {
+    "masterCardId": "12341",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-016",
+    "localId": "016",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "016/91",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 016/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Gemi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-016-low.png",
+    "imageHighSrc": "cards/sv4pt5-016-high.png"
+  },
+  {
+    "masterCardId": "12332",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-015",
+    "localId": "015",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "015/91",
+    "cardName": "Armarouge",
+    "fullDisplayName": "Armarouge 015/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      936
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charcadet",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-015-low.png",
+    "imageHighSrc": "cards/sv4pt5-015-high.png"
+  },
+  {
+    "masterCardId": "12323",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-014",
+    "localId": "014",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "014/91",
+    "cardName": "Charcadet",
+    "fullDisplayName": "Charcadet 014/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      935
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-014-low.png",
+    "imageHighSrc": "cards/sv4pt5-014-high.png"
+  },
+  {
+    "masterCardId": "12313",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-013",
+    "localId": "013",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "013/91",
+    "cardName": "Heat Rotom",
+    "fullDisplayName": "Heat Rotom 013/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-013-low.png",
+    "imageHighSrc": "cards/sv4pt5-013-high.png"
+  },
+  {
+    "masterCardId": "12303",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-012",
+    "localId": "012",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "012/91",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 012/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-012-low.png",
+    "imageHighSrc": "cards/sv4pt5-012-high.png"
+  },
+  {
+    "masterCardId": "12294",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-011",
+    "localId": "011",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "011/91",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 011/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-011-low.png",
+    "imageHighSrc": "cards/sv4pt5-011-high.png"
+  },
+  {
+    "masterCardId": "12283",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-010",
+    "localId": "010",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "010/91",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 010/91 Paldean Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-010-low.png",
+    "imageHighSrc": "cards/sv4pt5-010-high.png"
+  },
+  {
+    "masterCardId": "12273",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-009",
+    "localId": "009",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "009/91",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 009/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-009-low.png",
+    "imageHighSrc": "cards/sv4pt5-009-high.png"
+  },
+  {
+    "masterCardId": "12263",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-008",
+    "localId": "008",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "008/91",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 008/91 Paldean Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Tonji Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-008-low.png",
+    "imageHighSrc": "cards/sv4pt5-008-high.png"
+  },
+  {
+    "masterCardId": "12253",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-007",
+    "localId": "007",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "007/91",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 007/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-007-low.png",
+    "imageHighSrc": "cards/sv4pt5-007-high.png"
+  },
+  {
+    "masterCardId": "12245",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-006",
+    "localId": "006",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "006/91",
+    "cardName": "Espathra ex",
+    "fullDisplayName": "Espathra ex 006/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      956
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flittle",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-006-low.png",
+    "imageHighSrc": "cards/sv4pt5-006-high.png"
+  },
+  {
+    "masterCardId": "12234",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-005",
+    "localId": "005",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "005/91",
+    "cardName": "Toedscruel ex",
+    "fullDisplayName": "Toedscruel ex 005/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      949
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toedscool",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-005-low.png",
+    "imageHighSrc": "cards/sv4pt5-005-high.png"
+  },
+  {
+    "masterCardId": "12225",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-004",
+    "localId": "004",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "004/91",
+    "cardName": "Toedscool",
+    "fullDisplayName": "Toedscool 004/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      948
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-004-low.png",
+    "imageHighSrc": "cards/sv4pt5-004-high.png"
+  },
+  {
+    "masterCardId": "12216",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-003",
+    "localId": "003",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "003/91",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 003/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masako Tomii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-003-low.png",
+    "imageHighSrc": "cards/sv4pt5-003-high.png"
+  },
+  {
+    "masterCardId": "12204",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-002",
+    "localId": "002",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "002/91",
+    "cardName": "Forretress ex",
+    "fullDisplayName": "Forretress ex 002/91 Paldean Fates",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-002-low.png",
+    "imageHighSrc": "cards/sv4pt5-002-high.png"
+  },
+  {
+    "masterCardId": "12195",
+    "externalId": null,
+    "tcgdex_id": "sv04.5-001",
+    "localId": "001",
+    "setCode": "sv04.5",
+    "setTcgdexId": "sv04.5",
+    "cardNumber": "001/91",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 001/91 Paldean Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv4pt5-001-low.png",
+    "imageHighSrc": "cards/sv4pt5-001-high.png"
+  }
+]

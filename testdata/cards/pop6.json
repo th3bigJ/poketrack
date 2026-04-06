@@ -1,0 +1,563 @@
+[
+  {
+    "masterCardId": "9254",
+    "externalId": null,
+    "tcgdex_id": "pop6-17",
+    "localId": "017",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "017/17",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 017/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-017-low.png",
+    "imageHighSrc": "cards/pop6-017-high.png"
+  },
+  {
+    "masterCardId": "9244",
+    "externalId": null,
+    "tcgdex_id": "pop6-16",
+    "localId": "016",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "016/17",
+    "cardName": "Starly",
+    "fullDisplayName": "Starly 016/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      396
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-016-low.png",
+    "imageHighSrc": "cards/pop6-016-high.png"
+  },
+  {
+    "masterCardId": "9236",
+    "externalId": null,
+    "tcgdex_id": "pop6-15",
+    "localId": "015",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "015/17",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 015/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-015-low.png",
+    "imageHighSrc": "cards/pop6-015-high.png"
+  },
+  {
+    "masterCardId": "9227",
+    "externalId": null,
+    "tcgdex_id": "pop6-14",
+    "localId": "014",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "014/17",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 014/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-014-low.png",
+    "imageHighSrc": "cards/pop6-014-high.png"
+  },
+  {
+    "masterCardId": "9218",
+    "externalId": null,
+    "tcgdex_id": "pop6-13",
+    "localId": "013",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "013/17",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 013/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-013-low.png",
+    "imageHighSrc": "cards/pop6-013-high.png"
+  },
+  {
+    "masterCardId": "9209",
+    "externalId": null,
+    "tcgdex_id": "pop6-12",
+    "localId": "012",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "012/17",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 012/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-012-low.png",
+    "imageHighSrc": "cards/pop6-012-high.png"
+  },
+  {
+    "masterCardId": "9200",
+    "externalId": null,
+    "tcgdex_id": "pop6-11",
+    "localId": "011",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "011/17",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 011/17 POP Series 6",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-011-low.png",
+    "imageHighSrc": "cards/pop6-011-high.png"
+  },
+  {
+    "masterCardId": "9190",
+    "externalId": null,
+    "tcgdex_id": "pop6-10",
+    "localId": "010",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "010/17",
+    "cardName": "Staravia",
+    "fullDisplayName": "Staravia 010/17 POP Series 6",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      397
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Starly",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-010-low.png",
+    "imageHighSrc": "cards/pop6-010-high.png"
+  },
+  {
+    "masterCardId": "9181",
+    "externalId": null,
+    "tcgdex_id": "pop6-9",
+    "localId": "009",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "009/17",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 009/17 POP Series 6",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-009-low.png",
+    "imageHighSrc": "cards/pop6-009-high.png"
+  },
+  {
+    "masterCardId": "9172",
+    "externalId": null,
+    "tcgdex_id": "pop6-8",
+    "localId": "008",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "008/17",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 008/17 POP Series 6",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-008-low.png",
+    "imageHighSrc": "cards/pop6-008-high.png"
+  },
+  {
+    "masterCardId": "9164",
+    "externalId": null,
+    "tcgdex_id": "pop6-7",
+    "localId": "007",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "007/17",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 007/17 POP Series 6",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-007-low.png",
+    "imageHighSrc": "cards/pop6-007-high.png"
+  },
+  {
+    "masterCardId": "9159",
+    "externalId": null,
+    "tcgdex_id": "pop6-6",
+    "localId": "006",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "006/17",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 006/17 POP Series 6",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-006-low.png",
+    "imageHighSrc": "cards/pop6-006-high.png"
+  },
+  {
+    "masterCardId": "9148",
+    "externalId": null,
+    "tcgdex_id": "pop6-5",
+    "localId": "005",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "005/17",
+    "cardName": "Rampardos",
+    "fullDisplayName": "Rampardos 005/17 POP Series 6",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      409
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cranidos",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-005-low.png",
+    "imageHighSrc": "cards/pop6-005-high.png"
+  },
+  {
+    "masterCardId": "9141",
+    "externalId": null,
+    "tcgdex_id": "pop6-4",
+    "localId": "004",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "004/17",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 004/17 POP Series 6",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-004-low.png",
+    "imageHighSrc": "cards/pop6-004-high.png"
+  },
+  {
+    "masterCardId": "9132",
+    "externalId": null,
+    "tcgdex_id": "pop6-3",
+    "localId": "003",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "003/17",
+    "cardName": "Manaphy",
+    "fullDisplayName": "Manaphy 003/17 POP Series 6",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      490
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-003-low.png",
+    "imageHighSrc": "cards/pop6-003-high.png"
+  },
+  {
+    "masterCardId": "9124",
+    "externalId": null,
+    "tcgdex_id": "pop6-2",
+    "localId": "002",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "002/17",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 002/17 POP Series 6",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-002-low.png",
+    "imageHighSrc": "cards/pop6-002-high.png"
+  },
+  {
+    "masterCardId": "9108",
+    "externalId": null,
+    "tcgdex_id": "pop6-1",
+    "localId": "001",
+    "setCode": "pop6",
+    "setTcgdexId": "pop6",
+    "cardNumber": "001/17",
+    "cardName": "Bastiodon",
+    "fullDisplayName": "Bastiodon 001/17 POP Series 6",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      411
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shieldon",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop6-001-low.png",
+    "imageHighSrc": "cards/pop6-001-high.png"
+  }
+]

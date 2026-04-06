@@ -1,0 +1,42 @@
+{
+  "scrapedAt": "2026-04-03T18:03:12.936Z",
+  "sourceApiUrl": "https://www.pokedata.io/api/products",
+  "count": 7,
+  "failures": [
+    {
+      "id": 1844,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Play%21+Pok%C3%A9mon+Prize+Pack+Series+Five.webp",
+      "error": "Failed to download image for 1844 from https://pokemonproductimages.pokedata.io/Products/Play%21+Pok%C3%A9mon+Prize+Pack+Series+Five.webp: HTTP 403"
+    },
+    {
+      "id": 7275,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Noble+Victories+Theme+Deck+-+%22Fast+Daze%22+Accelgor.webp",
+      "error": "Failed to download image for 7275 from https://pokemonproductimages.pokedata.io/Products/Noble+Victories+Theme+Deck+-+%22Fast+Daze%22+Accelgor.webp: HTTP 403"
+    },
+    {
+      "id": 7338,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Fuecoco%2FMiraidon+ex.webp",
+      "error": "Failed to download image for 7338 from https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Fuecoco%2FMiraidon+ex.webp: HTTP 403"
+    },
+    {
+      "id": 7340,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Sprigatito%2FKoraidon+ex.webp",
+      "error": "Failed to download image for 7340 from https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Sprigatito%2FKoraidon+ex.webp: HTTP 403"
+    },
+    {
+      "id": 7339,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Quaxly%2FKoraidon+ex.webp",
+      "error": "Failed to download image for 7339 from https://pokemonproductimages.pokedata.io/Products/Paldea+Collection+Quaxly%2FKoraidon+ex.webp: HTTP 403"
+    },
+    {
+      "id": 7444,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Arceus+Theme+Deck+-+%22Flamemaster%22.webp",
+      "error": "Failed to download image for 7444 from https://pokemonproductimages.pokedata.io/Products/Arceus+Theme+Deck+-+%22Flamemaster%22.webp: HTTP 403"
+    },
+    {
+      "id": 7443,
+      "source_url": "https://pokemonproductimages.pokedata.io/Products/Arceus+Theme+Deck+-+%22Stormshaper%22.webp",
+      "error": "Failed to download image for 7443 from https://pokemonproductimages.pokedata.io/Products/Arceus+Theme+Deck+-+%22Stormshaper%22.webp: HTTP 403"
+    }
+  ]
+}

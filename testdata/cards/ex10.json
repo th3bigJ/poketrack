@@ -1,0 +1,3796 @@
+[
+  {
+    "masterCardId": "5015",
+    "externalId": null,
+    "tcgdex_id": "ex10-117",
+    "localId": "117",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "117/115",
+    "cardName": "Celebi ex",
+    "fullDisplayName": "Celebi ex 117/115 Unseen Forces",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-117-low.png",
+    "imageHighSrc": "cards/ex10-117-high.png"
+  },
+  {
+    "masterCardId": "5010",
+    "externalId": null,
+    "tcgdex_id": "ex10-116",
+    "localId": "116",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "116/115",
+    "cardName": "Rocket's Persian ex",
+    "fullDisplayName": "Rocket's Persian ex 116/115 Unseen Forces",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rocket's Meowth",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-116-low.png",
+    "imageHighSrc": "cards/ex10-116-high.png"
+  },
+  {
+    "masterCardId": "5005",
+    "externalId": null,
+    "tcgdex_id": "ex10-115",
+    "localId": "115",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "115/115",
+    "cardName": "Suicune ★",
+    "fullDisplayName": "Suicune ★ 115/115 Unseen Forces",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-115-low.png",
+    "imageHighSrc": "cards/ex10-115-high.png"
+  },
+  {
+    "masterCardId": "5000",
+    "externalId": null,
+    "tcgdex_id": "ex10-114",
+    "localId": "114",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "114/115",
+    "cardName": "Raikou ★",
+    "fullDisplayName": "Raikou ★ 114/115 Unseen Forces",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-114-low.png",
+    "imageHighSrc": "cards/ex10-114-high.png"
+  },
+  {
+    "masterCardId": "4995",
+    "externalId": null,
+    "tcgdex_id": "ex10-113",
+    "localId": "113",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "113/115",
+    "cardName": "Entei ★",
+    "fullDisplayName": "Entei ★ 113/115 Unseen Forces",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-113-low.png",
+    "imageHighSrc": "cards/ex10-113-high.png"
+  },
+  {
+    "masterCardId": "4990",
+    "externalId": null,
+    "tcgdex_id": "ex10-112",
+    "localId": "112",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "112/115",
+    "cardName": "Umbreon ex",
+    "fullDisplayName": "Umbreon ex 112/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-112-low.png",
+    "imageHighSrc": "cards/ex10-112-high.png"
+  },
+  {
+    "masterCardId": "4985",
+    "externalId": null,
+    "tcgdex_id": "ex10-111",
+    "localId": "111",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "111/115",
+    "cardName": "Tyranitar ex",
+    "fullDisplayName": "Tyranitar ex 111/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-111-low.png",
+    "imageHighSrc": "cards/ex10-111-high.png"
+  },
+  {
+    "masterCardId": "4980",
+    "externalId": null,
+    "tcgdex_id": "ex10-110",
+    "localId": "110",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "110/115",
+    "cardName": "Typhlosion ex",
+    "fullDisplayName": "Typhlosion ex 110/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-110-low.png",
+    "imageHighSrc": "cards/ex10-110-high.png"
+  },
+  {
+    "masterCardId": "4975",
+    "externalId": null,
+    "tcgdex_id": "ex10-109",
+    "localId": "109",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "109/115",
+    "cardName": "Steelix ex",
+    "fullDisplayName": "Steelix ex 109/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-109-low.png",
+    "imageHighSrc": "cards/ex10-109-high.png"
+  },
+  {
+    "masterCardId": "4970",
+    "externalId": null,
+    "tcgdex_id": "ex10-108",
+    "localId": "108",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "108/115",
+    "cardName": "Scizor ex",
+    "fullDisplayName": "Scizor ex 108/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther ex",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-108-low.png",
+    "imageHighSrc": "cards/ex10-108-high.png"
+  },
+  {
+    "masterCardId": "4965",
+    "externalId": null,
+    "tcgdex_id": "ex10-107",
+    "localId": "107",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "107/115",
+    "cardName": "Politoed ex",
+    "fullDisplayName": "Politoed ex 107/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      186
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-107-low.png",
+    "imageHighSrc": "cards/ex10-107-high.png"
+  },
+  {
+    "masterCardId": "4959",
+    "externalId": null,
+    "tcgdex_id": "ex10-106",
+    "localId": "106",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "106/115",
+    "cardName": "Meganium ex",
+    "fullDisplayName": "Meganium ex 106/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      154
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bayleef",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-106-low.png",
+    "imageHighSrc": "cards/ex10-106-high.png"
+  },
+  {
+    "masterCardId": "4951",
+    "externalId": null,
+    "tcgdex_id": "ex10-105",
+    "localId": "105",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "105/115",
+    "cardName": "Lugia ex",
+    "fullDisplayName": "Lugia ex 105/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-105-low.png",
+    "imageHighSrc": "cards/ex10-105-high.png"
+  },
+  {
+    "masterCardId": "4943",
+    "externalId": null,
+    "tcgdex_id": "ex10-104",
+    "localId": "104",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "104/115",
+    "cardName": "Ho-Oh ex",
+    "fullDisplayName": "Ho-Oh ex 104/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-104-low.png",
+    "imageHighSrc": "cards/ex10-104-high.png"
+  },
+  {
+    "masterCardId": "4934",
+    "externalId": null,
+    "tcgdex_id": "ex10-103",
+    "localId": "103",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "103/115",
+    "cardName": "Feraligatr ex",
+    "fullDisplayName": "Feraligatr ex 103/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-103-low.png",
+    "imageHighSrc": "cards/ex10-103-high.png"
+  },
+  {
+    "masterCardId": "4929",
+    "externalId": null,
+    "tcgdex_id": "ex10-102",
+    "localId": "102",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "102/115",
+    "cardName": "Espeon ex",
+    "fullDisplayName": "Espeon ex 102/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-102-low.png",
+    "imageHighSrc": "cards/ex10-102-high.png"
+  },
+  {
+    "masterCardId": "4918",
+    "externalId": null,
+    "tcgdex_id": "ex10-101",
+    "localId": "101",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "101/115",
+    "cardName": "Blissey ex",
+    "fullDisplayName": "Blissey ex 101/115 Unseen Forces",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey ex",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-101-low.png",
+    "imageHighSrc": "cards/ex10-101-high.png"
+  },
+  {
+    "masterCardId": "4913",
+    "externalId": null,
+    "tcgdex_id": "ex10-100",
+    "localId": "100",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "100/115",
+    "cardName": "Warp Energy",
+    "fullDisplayName": "Warp Energy 100/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-100-low.png",
+    "imageHighSrc": "cards/ex10-100-high.png"
+  },
+  {
+    "masterCardId": "4905",
+    "externalId": null,
+    "tcgdex_id": "ex10-99",
+    "localId": "99",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "099/115",
+    "cardName": "Cyclone Energy",
+    "fullDisplayName": "Cyclone Energy 099/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-099-low.png",
+    "imageHighSrc": "cards/ex10-099-high.png"
+  },
+  {
+    "masterCardId": "4897",
+    "externalId": null,
+    "tcgdex_id": "ex10-98",
+    "localId": "98",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "098/115",
+    "cardName": "Boost Energy",
+    "fullDisplayName": "Boost Energy 098/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-098-low.png",
+    "imageHighSrc": "cards/ex10-098-high.png"
+  },
+  {
+    "masterCardId": "4889",
+    "externalId": null,
+    "tcgdex_id": "ex10-97",
+    "localId": "97",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "097/115",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 097/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-097-low.png",
+    "imageHighSrc": "cards/ex10-097-high.png"
+  },
+  {
+    "masterCardId": "4879",
+    "externalId": null,
+    "tcgdex_id": "ex10-96",
+    "localId": "96",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "096/115",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 096/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-096-low.png",
+    "imageHighSrc": "cards/ex10-096-high.png"
+  },
+  {
+    "masterCardId": "4874",
+    "externalId": null,
+    "tcgdex_id": "ex10-95",
+    "localId": "95",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "095/115",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 095/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-095-low.png",
+    "imageHighSrc": "cards/ex10-095-high.png"
+  },
+  {
+    "masterCardId": "4866",
+    "externalId": null,
+    "tcgdex_id": "ex10-94",
+    "localId": "94",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "094/115",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 094/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kai Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-094-low.png",
+    "imageHighSrc": "cards/ex10-094-high.png"
+  },
+  {
+    "masterCardId": "4854",
+    "externalId": null,
+    "tcgdex_id": "ex10-93",
+    "localId": "93",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "093/115",
+    "cardName": "Warp Point",
+    "fullDisplayName": "Warp Point 093/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-093-low.png",
+    "imageHighSrc": "cards/ex10-093-high.png"
+  },
+  {
+    "masterCardId": "4845",
+    "externalId": null,
+    "tcgdex_id": "ex10-92",
+    "localId": "92",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "092/115",
+    "cardName": "Solid Rage",
+    "fullDisplayName": "Solid Rage 092/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-092-low.png",
+    "imageHighSrc": "cards/ex10-092-high.png"
+  },
+  {
+    "masterCardId": "4837",
+    "externalId": null,
+    "tcgdex_id": "ex10-91",
+    "localId": "91",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "091/115",
+    "cardName": "Sitrus Berry",
+    "fullDisplayName": "Sitrus Berry 091/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-091-low.png",
+    "imageHighSrc": "cards/ex10-091-high.png"
+  },
+  {
+    "masterCardId": "4829",
+    "externalId": null,
+    "tcgdex_id": "ex10-90",
+    "localId": "90",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "090/115",
+    "cardName": "Protective Orb",
+    "fullDisplayName": "Protective Orb 090/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-090-low.png",
+    "imageHighSrc": "cards/ex10-090-high.png"
+  },
+  {
+    "masterCardId": "4821",
+    "externalId": null,
+    "tcgdex_id": "ex10-89",
+    "localId": "89",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "089/115",
+    "cardName": "Professor Elm's Training Method",
+    "fullDisplayName": "Professor Elm's Training Method 089/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-089-low.png",
+    "imageHighSrc": "cards/ex10-089-high.png"
+  },
+  {
+    "masterCardId": "4813",
+    "externalId": null,
+    "tcgdex_id": "ex10-88",
+    "localId": "88",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "088/115",
+    "cardName": "Pokémon Reversal",
+    "fullDisplayName": "Pokémon Reversal 088/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-088-low.png",
+    "imageHighSrc": "cards/ex10-088-high.png"
+  },
+  {
+    "masterCardId": "4805",
+    "externalId": null,
+    "tcgdex_id": "ex10-87",
+    "localId": "87",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "087/115",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 087/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-087-low.png",
+    "imageHighSrc": "cards/ex10-087-high.png"
+  },
+  {
+    "masterCardId": "4797",
+    "externalId": null,
+    "tcgdex_id": "ex10-86",
+    "localId": "86",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "086/115",
+    "cardName": "Mary's Request",
+    "fullDisplayName": "Mary's Request 086/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-086-low.png",
+    "imageHighSrc": "cards/ex10-086-high.png"
+  },
+  {
+    "masterCardId": "4789",
+    "externalId": null,
+    "tcgdex_id": "ex10-85",
+    "localId": "85",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "085/115",
+    "cardName": "Fluffy Berry",
+    "fullDisplayName": "Fluffy Berry 085/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-085-low.png",
+    "imageHighSrc": "cards/ex10-085-high.png"
+  },
+  {
+    "masterCardId": "4782",
+    "externalId": null,
+    "tcgdex_id": "ex10-84",
+    "localId": "84",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "084/115",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 084/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-084-low.png",
+    "imageHighSrc": "cards/ex10-084-high.png"
+  },
+  {
+    "masterCardId": "4774",
+    "externalId": null,
+    "tcgdex_id": "ex10-83",
+    "localId": "83",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "083/115",
+    "cardName": "Energy Root",
+    "fullDisplayName": "Energy Root 083/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-083-low.png",
+    "imageHighSrc": "cards/ex10-083-high.png"
+  },
+  {
+    "masterCardId": "4767",
+    "externalId": null,
+    "tcgdex_id": "ex10-82",
+    "localId": "82",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "082/115",
+    "cardName": "Energy Removal 2",
+    "fullDisplayName": "Energy Removal 2 082/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-082-low.png",
+    "imageHighSrc": "cards/ex10-082-high.png"
+  },
+  {
+    "masterCardId": "4760",
+    "externalId": null,
+    "tcgdex_id": "ex10-81",
+    "localId": "81",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "081/115",
+    "cardName": "Energy Recycle System",
+    "fullDisplayName": "Energy Recycle System 081/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-081-low.png",
+    "imageHighSrc": "cards/ex10-081-high.png"
+  },
+  {
+    "masterCardId": "4753",
+    "externalId": null,
+    "tcgdex_id": "ex10-80",
+    "localId": "80",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "080/115",
+    "cardName": "Curse Powder",
+    "fullDisplayName": "Curse Powder 080/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-080-low.png",
+    "imageHighSrc": "cards/ex10-080-high.png"
+  },
+  {
+    "masterCardId": "4745",
+    "externalId": null,
+    "tcgdex_id": "ex10-79",
+    "localId": "79",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "079/115",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper 079/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-079-low.png",
+    "imageHighSrc": "cards/ex10-079-high.png"
+  },
+  {
+    "masterCardId": "4737",
+    "externalId": null,
+    "tcgdex_id": "ex10-78",
+    "localId": "78",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "078/115",
+    "cardName": "Totodile",
+    "fullDisplayName": "Totodile 078/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-078-low.png",
+    "imageHighSrc": "cards/ex10-078-high.png"
+  },
+  {
+    "masterCardId": "4728",
+    "externalId": null,
+    "tcgdex_id": "ex10-77",
+    "localId": "77",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "077/115",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 077/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-077-low.png",
+    "imageHighSrc": "cards/ex10-077-high.png"
+  },
+  {
+    "masterCardId": "4719",
+    "externalId": null,
+    "tcgdex_id": "ex10-76",
+    "localId": "76",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "076/115",
+    "cardName": "Sunkern",
+    "fullDisplayName": "Sunkern 076/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      191
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-076-low.png",
+    "imageHighSrc": "cards/ex10-076-high.png"
+  },
+  {
+    "masterCardId": "4712",
+    "externalId": null,
+    "tcgdex_id": "ex10-75",
+    "localId": "75",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "075/115",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 075/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-075-low.png",
+    "imageHighSrc": "cards/ex10-075-high.png"
+  },
+  {
+    "masterCardId": "4703",
+    "externalId": null,
+    "tcgdex_id": "ex10-74",
+    "localId": "74",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "074/115",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 074/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-074-low.png",
+    "imageHighSrc": "cards/ex10-074-high.png"
+  },
+  {
+    "masterCardId": "4695",
+    "externalId": null,
+    "tcgdex_id": "ex10-73",
+    "localId": "73",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "073/115",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 073/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-073-low.png",
+    "imageHighSrc": "cards/ex10-073-high.png"
+  },
+  {
+    "masterCardId": "4687",
+    "externalId": null,
+    "tcgdex_id": "ex10-72",
+    "localId": "72",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "072/115",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 072/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-072-low.png",
+    "imageHighSrc": "cards/ex10-072-high.png"
+  },
+  {
+    "masterCardId": "4679",
+    "externalId": null,
+    "tcgdex_id": "ex10-71",
+    "localId": "71",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "071/115",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 071/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-071-low.png",
+    "imageHighSrc": "cards/ex10-071-high.png"
+  },
+  {
+    "masterCardId": "4670",
+    "externalId": null,
+    "tcgdex_id": "ex10-70",
+    "localId": "70",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "070/115",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 070/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-070-low.png",
+    "imageHighSrc": "cards/ex10-070-high.png"
+  },
+  {
+    "masterCardId": "4662",
+    "externalId": null,
+    "tcgdex_id": "ex10-69",
+    "localId": "69",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "069/115",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 069/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-069-low.png",
+    "imageHighSrc": "cards/ex10-069-high.png"
+  },
+  {
+    "masterCardId": "4655",
+    "externalId": null,
+    "tcgdex_id": "ex10-68",
+    "localId": "68",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "068/115",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 068/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwag",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-068-low.png",
+    "imageHighSrc": "cards/ex10-068-high.png"
+  },
+  {
+    "masterCardId": "4646",
+    "externalId": null,
+    "tcgdex_id": "ex10-67",
+    "localId": "67",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "067/115",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 067/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-067-low.png",
+    "imageHighSrc": "cards/ex10-067-high.png"
+  },
+  {
+    "masterCardId": "4640",
+    "externalId": null,
+    "tcgdex_id": "ex10-66",
+    "localId": "66",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "066/115",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 066/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-066-low.png",
+    "imageHighSrc": "cards/ex10-066-high.png"
+  },
+  {
+    "masterCardId": "4632",
+    "externalId": null,
+    "tcgdex_id": "ex10-65",
+    "localId": "65",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "065/115",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 065/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-065-low.png",
+    "imageHighSrc": "cards/ex10-065-high.png"
+  },
+  {
+    "masterCardId": "4624",
+    "externalId": null,
+    "tcgdex_id": "ex10-64",
+    "localId": "64",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "064/115",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 064/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-064-low.png",
+    "imageHighSrc": "cards/ex10-064-high.png"
+  },
+  {
+    "masterCardId": "4615",
+    "externalId": null,
+    "tcgdex_id": "ex10-63",
+    "localId": "63",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "063/115",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 063/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-063-low.png",
+    "imageHighSrc": "cards/ex10-063-high.png"
+  },
+  {
+    "masterCardId": "4607",
+    "externalId": null,
+    "tcgdex_id": "ex10-62",
+    "localId": "62",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "062/115",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 062/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-062-low.png",
+    "imageHighSrc": "cards/ex10-062-high.png"
+  },
+  {
+    "masterCardId": "4599",
+    "externalId": null,
+    "tcgdex_id": "ex10-61",
+    "localId": "61",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "061/115",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 061/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-061-low.png",
+    "imageHighSrc": "cards/ex10-061-high.png"
+  },
+  {
+    "masterCardId": "4591",
+    "externalId": null,
+    "tcgdex_id": "ex10-60",
+    "localId": "60",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "060/115",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 060/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-060-low.png",
+    "imageHighSrc": "cards/ex10-060-high.png"
+  },
+  {
+    "masterCardId": "4582",
+    "externalId": null,
+    "tcgdex_id": "ex10-59",
+    "localId": "59",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "059/115",
+    "cardName": "Hoothoot",
+    "fullDisplayName": "Hoothoot 059/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      163
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-059-low.png",
+    "imageHighSrc": "cards/ex10-059-high.png"
+  },
+  {
+    "masterCardId": "4575",
+    "externalId": null,
+    "tcgdex_id": "ex10-58",
+    "localId": "58",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "058/115",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 058/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-058-low.png",
+    "imageHighSrc": "cards/ex10-058-high.png"
+  },
+  {
+    "masterCardId": "4566",
+    "externalId": null,
+    "tcgdex_id": "ex10-57",
+    "localId": "57",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "057/115",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 057/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-057-low.png",
+    "imageHighSrc": "cards/ex10-057-high.png"
+  },
+  {
+    "masterCardId": "4557",
+    "externalId": null,
+    "tcgdex_id": "ex10-56",
+    "localId": "56",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "056/115",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 056/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-056-low.png",
+    "imageHighSrc": "cards/ex10-056-high.png"
+  },
+  {
+    "masterCardId": "4548",
+    "externalId": null,
+    "tcgdex_id": "ex10-55",
+    "localId": "55",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "055/115",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 055/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-055-low.png",
+    "imageHighSrc": "cards/ex10-055-high.png"
+  },
+  {
+    "masterCardId": "4539",
+    "externalId": null,
+    "tcgdex_id": "ex10-54",
+    "localId": "54",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "054/115",
+    "cardName": "Cyndaquil",
+    "fullDisplayName": "Cyndaquil 054/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      155
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-054-low.png",
+    "imageHighSrc": "cards/ex10-054-high.png"
+  },
+  {
+    "masterCardId": "4530",
+    "externalId": null,
+    "tcgdex_id": "ex10-53",
+    "localId": "53",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "053/115",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 053/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-053-low.png",
+    "imageHighSrc": "cards/ex10-053-high.png"
+  },
+  {
+    "masterCardId": "4521",
+    "externalId": null,
+    "tcgdex_id": "ex10-52",
+    "localId": "52",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "052/115",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 052/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-052-low.png",
+    "imageHighSrc": "cards/ex10-052-high.png"
+  },
+  {
+    "masterCardId": "4513",
+    "externalId": null,
+    "tcgdex_id": "ex10-51",
+    "localId": "51",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "051/115",
+    "cardName": "Chikorita",
+    "fullDisplayName": "Chikorita 051/115 Unseen Forces",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      152
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-051-low.png",
+    "imageHighSrc": "cards/ex10-051-high.png"
+  },
+  {
+    "masterCardId": "4503",
+    "externalId": null,
+    "tcgdex_id": "ex10-50",
+    "localId": "50",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "050/115",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 050/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-050-low.png",
+    "imageHighSrc": "cards/ex10-050-high.png"
+  },
+  {
+    "masterCardId": "4494",
+    "externalId": null,
+    "tcgdex_id": "ex10-49",
+    "localId": "49",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "049/115",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 049/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-049-low.png",
+    "imageHighSrc": "cards/ex10-049-high.png"
+  },
+  {
+    "masterCardId": "4484",
+    "externalId": null,
+    "tcgdex_id": "ex10-48",
+    "localId": "48",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "048/115",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 048/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-048-low.png",
+    "imageHighSrc": "cards/ex10-048-high.png"
+  },
+  {
+    "masterCardId": "4475",
+    "externalId": null,
+    "tcgdex_id": "ex10-47",
+    "localId": "47",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "047/115",
+    "cardName": "Shuckle",
+    "fullDisplayName": "Shuckle 047/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      213
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-047-low.png",
+    "imageHighSrc": "cards/ex10-047-high.png"
+  },
+  {
+    "masterCardId": "4467",
+    "externalId": null,
+    "tcgdex_id": "ex10-46",
+    "localId": "46",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "046/115",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 046/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-046-low.png",
+    "imageHighSrc": "cards/ex10-046-high.png"
+  },
+  {
+    "masterCardId": "4458",
+    "externalId": null,
+    "tcgdex_id": "ex10-45",
+    "localId": "45",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "045/115",
+    "cardName": "Quilava",
+    "fullDisplayName": "Quilava 045/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      156
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cyndaquil",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-045-low.png",
+    "imageHighSrc": "cards/ex10-045-high.png"
+  },
+  {
+    "masterCardId": "4450",
+    "externalId": null,
+    "tcgdex_id": "ex10-44",
+    "localId": "44",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "044/115",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 044/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-044-low.png",
+    "imageHighSrc": "cards/ex10-044-high.png"
+  },
+  {
+    "masterCardId": "4441",
+    "externalId": null,
+    "tcgdex_id": "ex10-43",
+    "localId": "43",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "043/115",
+    "cardName": "Noctowl",
+    "fullDisplayName": "Noctowl 043/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      164
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoothoot",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-043-low.png",
+    "imageHighSrc": "cards/ex10-043-high.png"
+  },
+  {
+    "masterCardId": "4431",
+    "externalId": null,
+    "tcgdex_id": "ex10-42",
+    "localId": "42",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "042/115",
+    "cardName": "Miltank",
+    "fullDisplayName": "Miltank 042/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      241
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-042-low.png",
+    "imageHighSrc": "cards/ex10-042-high.png"
+  },
+  {
+    "masterCardId": "4422",
+    "externalId": null,
+    "tcgdex_id": "ex10-41",
+    "localId": "41",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "041/115",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 041/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-041-low.png",
+    "imageHighSrc": "cards/ex10-041-high.png"
+  },
+  {
+    "masterCardId": "4413",
+    "externalId": null,
+    "tcgdex_id": "ex10-40",
+    "localId": "40",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "040/115",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 040/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-040-low.png",
+    "imageHighSrc": "cards/ex10-040-high.png"
+  },
+  {
+    "masterCardId": "4404",
+    "externalId": null,
+    "tcgdex_id": "ex10-39",
+    "localId": "39",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "039/115",
+    "cardName": "Granbull",
+    "fullDisplayName": "Granbull 039/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      210
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snubbull",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-039-low.png",
+    "imageHighSrc": "cards/ex10-039-high.png"
+  },
+  {
+    "masterCardId": "4396",
+    "externalId": null,
+    "tcgdex_id": "ex10-38",
+    "localId": "38",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "038/115",
+    "cardName": "Croconaw",
+    "fullDisplayName": "Croconaw 038/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-038-low.png",
+    "imageHighSrc": "cards/ex10-038-high.png"
+  },
+  {
+    "masterCardId": "4387",
+    "externalId": null,
+    "tcgdex_id": "ex10-37",
+    "localId": "37",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "037/115",
+    "cardName": "Corsola",
+    "fullDisplayName": "Corsola 037/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      222
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-037-low.png",
+    "imageHighSrc": "cards/ex10-037-high.png"
+  },
+  {
+    "masterCardId": "4378",
+    "externalId": null,
+    "tcgdex_id": "ex10-36",
+    "localId": "36",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "036/115",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 036/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-036-low.png",
+    "imageHighSrc": "cards/ex10-036-high.png"
+  },
+  {
+    "masterCardId": "4371",
+    "externalId": null,
+    "tcgdex_id": "ex10-35",
+    "localId": "35",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "035/115",
+    "cardName": "Bayleef",
+    "fullDisplayName": "Bayleef 035/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      153
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chikorita",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-035-low.png",
+    "imageHighSrc": "cards/ex10-035-high.png"
+  },
+  {
+    "masterCardId": "4362",
+    "externalId": null,
+    "tcgdex_id": "ex10-34",
+    "localId": "34",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "034/115",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 034/115 Unseen Forces",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-034-low.png",
+    "imageHighSrc": "cards/ex10-034-high.png"
+  },
+  {
+    "masterCardId": "4353",
+    "externalId": null,
+    "tcgdex_id": "ex10-33",
+    "localId": "33",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "033/115",
+    "cardName": "Tyrogue",
+    "fullDisplayName": "Tyrogue 033/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      236
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-033-low.png",
+    "imageHighSrc": "cards/ex10-033-high.png"
+  },
+  {
+    "masterCardId": "4344",
+    "externalId": null,
+    "tcgdex_id": "ex10-32",
+    "localId": "32",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "032/115",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 032/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-032-low.png",
+    "imageHighSrc": "cards/ex10-032-high.png"
+  },
+  {
+    "masterCardId": "4331",
+    "externalId": null,
+    "tcgdex_id": "ex10-31",
+    "localId": "31",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "031/115",
+    "cardName": "Smoochum",
+    "fullDisplayName": "Smoochum 031/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      238
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-031-low.png",
+    "imageHighSrc": "cards/ex10-031-high.png"
+  },
+  {
+    "masterCardId": "4322",
+    "externalId": null,
+    "tcgdex_id": "ex10-30",
+    "localId": "30",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "030/115",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 030/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-030-low.png",
+    "imageHighSrc": "cards/ex10-030-high.png"
+  },
+  {
+    "masterCardId": "4314",
+    "externalId": null,
+    "tcgdex_id": "ex10-29",
+    "localId": "29",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "029/115",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 029/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-029-low.png",
+    "imageHighSrc": "cards/ex10-029-high.png"
+  },
+  {
+    "masterCardId": "4304",
+    "externalId": null,
+    "tcgdex_id": "ex10-28",
+    "localId": "28",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "028/115",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 028/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-028-low.png",
+    "imageHighSrc": "cards/ex10-028-high.png"
+  },
+  {
+    "masterCardId": "4295",
+    "externalId": null,
+    "tcgdex_id": "ex10-27",
+    "localId": "27",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "027/115",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 027/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-027-low.png",
+    "imageHighSrc": "cards/ex10-027-high.png"
+  },
+  {
+    "masterCardId": "4286",
+    "externalId": null,
+    "tcgdex_id": "ex10-26",
+    "localId": "26",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "026/115",
+    "cardName": "Hitmontop",
+    "fullDisplayName": "Hitmontop 026/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      237
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-026-low.png",
+    "imageHighSrc": "cards/ex10-026-high.png"
+  },
+  {
+    "masterCardId": "4277",
+    "externalId": null,
+    "tcgdex_id": "ex10-25",
+    "localId": "25",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "025/115",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 025/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-025-low.png",
+    "imageHighSrc": "cards/ex10-025-high.png"
+  },
+  {
+    "masterCardId": "4268",
+    "externalId": null,
+    "tcgdex_id": "ex10-24",
+    "localId": "24",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "024/115",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 024/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-024-low.png",
+    "imageHighSrc": "cards/ex10-024-high.png"
+  },
+  {
+    "masterCardId": "4259",
+    "externalId": null,
+    "tcgdex_id": "ex10-23",
+    "localId": "23",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "023/115",
+    "cardName": "Elekid",
+    "fullDisplayName": "Elekid 023/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      239
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-023-low.png",
+    "imageHighSrc": "cards/ex10-023-high.png"
+  },
+  {
+    "masterCardId": "4250",
+    "externalId": null,
+    "tcgdex_id": "ex10-22",
+    "localId": "22",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "022/115",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 022/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-022-low.png",
+    "imageHighSrc": "cards/ex10-022-high.png"
+  },
+  {
+    "masterCardId": "4241",
+    "externalId": null,
+    "tcgdex_id": "ex10-21",
+    "localId": "21",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "021/115",
+    "cardName": "Cleffa",
+    "fullDisplayName": "Cleffa 021/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      173
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-021-low.png",
+    "imageHighSrc": "cards/ex10-021-high.png"
+  },
+  {
+    "masterCardId": "4232",
+    "externalId": null,
+    "tcgdex_id": "ex10-20",
+    "localId": "20",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "020/115",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 020/115 Unseen Forces",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-020-low.png",
+    "imageHighSrc": "cards/ex10-020-high.png"
+  },
+  {
+    "masterCardId": "4223",
+    "externalId": null,
+    "tcgdex_id": "ex10-19",
+    "localId": "19",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "019/115",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 019/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-019-low.png",
+    "imageHighSrc": "cards/ex10-019-high.png"
+  },
+  {
+    "masterCardId": "4214",
+    "externalId": null,
+    "tcgdex_id": "ex10-18",
+    "localId": "18",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "018/115",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 018/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-018-low.png",
+    "imageHighSrc": "cards/ex10-018-high.png"
+  },
+  {
+    "masterCardId": "4205",
+    "externalId": null,
+    "tcgdex_id": "ex10-17",
+    "localId": "17",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "017/115",
+    "cardName": "Typhlosion",
+    "fullDisplayName": "Typhlosion 017/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-017-low.png",
+    "imageHighSrc": "cards/ex10-017-high.png"
+  },
+  {
+    "masterCardId": "4197",
+    "externalId": null,
+    "tcgdex_id": "ex10-16",
+    "localId": "16",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "016/115",
+    "cardName": "Sunflora",
+    "fullDisplayName": "Sunflora 016/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      192
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sunkern",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-016-low.png",
+    "imageHighSrc": "cards/ex10-016-high.png"
+  },
+  {
+    "masterCardId": "4189",
+    "externalId": null,
+    "tcgdex_id": "ex10-15",
+    "localId": "15",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "015/115",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 015/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-015-low.png",
+    "imageHighSrc": "cards/ex10-015-high.png"
+  },
+  {
+    "masterCardId": "4180",
+    "externalId": null,
+    "tcgdex_id": "ex10-14",
+    "localId": "14",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "014/115",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 014/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-014-low.png",
+    "imageHighSrc": "cards/ex10-014-high.png"
+  },
+  {
+    "masterCardId": "4170",
+    "externalId": null,
+    "tcgdex_id": "ex10-13",
+    "localId": "13",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "013/115",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 013/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-013-low.png",
+    "imageHighSrc": "cards/ex10-013-high.png"
+  },
+  {
+    "masterCardId": "4161",
+    "externalId": null,
+    "tcgdex_id": "ex10-12",
+    "localId": "12",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "012/115",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 012/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-012-low.png",
+    "imageHighSrc": "cards/ex10-012-high.png"
+  },
+  {
+    "masterCardId": "4152",
+    "externalId": null,
+    "tcgdex_id": "ex10-11",
+    "localId": "11",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "011/115",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 011/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-011-low.png",
+    "imageHighSrc": "cards/ex10-011-high.png"
+  },
+  {
+    "masterCardId": "4143",
+    "externalId": null,
+    "tcgdex_id": "ex10-10",
+    "localId": "10",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "010/115",
+    "cardName": "Octillery",
+    "fullDisplayName": "Octillery 010/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-010-low.png",
+    "imageHighSrc": "cards/ex10-010-high.png"
+  },
+  {
+    "masterCardId": "4136",
+    "externalId": null,
+    "tcgdex_id": "ex10-9",
+    "localId": "9",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "009/115",
+    "cardName": "Meganium",
+    "fullDisplayName": "Meganium 009/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      154
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bayleef",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-009-low.png",
+    "imageHighSrc": "cards/ex10-009-high.png"
+  },
+  {
+    "masterCardId": "4127",
+    "externalId": null,
+    "tcgdex_id": "ex10-8",
+    "localId": "8",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "008/115",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 008/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-008-low.png",
+    "imageHighSrc": "cards/ex10-008-high.png"
+  },
+  {
+    "masterCardId": "4119",
+    "externalId": null,
+    "tcgdex_id": "ex10-7",
+    "localId": "7",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "007/115",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 007/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-007-low.png",
+    "imageHighSrc": "cards/ex10-007-high.png"
+  },
+  {
+    "masterCardId": "4110",
+    "externalId": null,
+    "tcgdex_id": "ex10-6",
+    "localId": "6",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "006/115",
+    "cardName": "Forretress",
+    "fullDisplayName": "Forretress 006/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-006-low.png",
+    "imageHighSrc": "cards/ex10-006-high.png"
+  },
+  {
+    "masterCardId": "4101",
+    "externalId": null,
+    "tcgdex_id": "ex10-5",
+    "localId": "5",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "005/115",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 005/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-005-low.png",
+    "imageHighSrc": "cards/ex10-005-high.png"
+  },
+  {
+    "masterCardId": "4091",
+    "externalId": null,
+    "tcgdex_id": "ex10-4",
+    "localId": "4",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "004/115",
+    "cardName": "Feraligatr",
+    "fullDisplayName": "Feraligatr 004/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-004-low.png",
+    "imageHighSrc": "cards/ex10-004-high.png"
+  },
+  {
+    "masterCardId": "4082",
+    "externalId": null,
+    "tcgdex_id": "ex10-3",
+    "localId": "3",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "003/115",
+    "cardName": "Bellossom",
+    "fullDisplayName": "Bellossom 003/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      182
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-003-low.png",
+    "imageHighSrc": "cards/ex10-003-high.png"
+  },
+  {
+    "masterCardId": "4073",
+    "externalId": null,
+    "tcgdex_id": "ex10-2",
+    "localId": "2",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "002/115",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 002/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spinarak",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-002-low.png",
+    "imageHighSrc": "cards/ex10-002-high.png"
+  },
+  {
+    "masterCardId": "4062",
+    "externalId": null,
+    "tcgdex_id": "ex10-1",
+    "localId": "1",
+    "setCode": "ex10",
+    "setTcgdexId": "ex10",
+    "cardNumber": "001/115",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 001/115 Unseen Forces",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex10-001-low.png",
+    "imageHighSrc": "cards/ex10-001-high.png"
+  }
+]

@@ -1,0 +1,4249 @@
+[
+  {
+    "masterCardId": "7554",
+    "externalId": null,
+    "tcgdex_id": "me02-130",
+    "localId": "130",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "130/94",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 130/94 Phantasmal Flames",
+    "rarity": "Mega Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-130-low.png",
+    "imageHighSrc": "cards/me2-130-high.png"
+  },
+  {
+    "masterCardId": "7552",
+    "externalId": null,
+    "tcgdex_id": "me02-129",
+    "localId": "129",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "129/94",
+    "cardName": "Dawn",
+    "fullDisplayName": "Dawn 129/94 Phantasmal Flames",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-129-low.png",
+    "imageHighSrc": "cards/me2-129-high.png"
+  },
+  {
+    "masterCardId": "7550",
+    "externalId": null,
+    "tcgdex_id": "me02-128",
+    "localId": "128",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "128/94",
+    "cardName": "Mega Lopunny ex",
+    "fullDisplayName": "Mega Lopunny ex 128/94 Phantasmal Flames",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "Kinu Nishimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-128-low.png",
+    "imageHighSrc": "cards/me2-128-high.png"
+  },
+  {
+    "masterCardId": "7548",
+    "externalId": null,
+    "tcgdex_id": "me02-127",
+    "localId": "127",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "127/94",
+    "cardName": "Mega Sharpedo ex",
+    "fullDisplayName": "Mega Sharpedo ex 127/94 Phantasmal Flames",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-127-low.png",
+    "imageHighSrc": "cards/me2-127-high.png"
+  },
+  {
+    "masterCardId": "7546",
+    "externalId": null,
+    "tcgdex_id": "me02-126",
+    "localId": "126",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "126/94",
+    "cardName": "Rotom ex",
+    "fullDisplayName": "Rotom ex 126/94 Phantasmal Flames",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshimi Miyoshi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-126-low.png",
+    "imageHighSrc": "cards/me2-126-high.png"
+  },
+  {
+    "masterCardId": "7544",
+    "externalId": null,
+    "tcgdex_id": "me02-125",
+    "localId": "125",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "125/94",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 125/94 Phantasmal Flames",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "danciao",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-125-low.png",
+    "imageHighSrc": "cards/me2-125-high.png"
+  },
+  {
+    "masterCardId": "7542",
+    "externalId": null,
+    "tcgdex_id": "me02-124",
+    "localId": "124",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "124/94",
+    "cardName": "Ignition Energy",
+    "fullDisplayName": "Ignition Energy 124/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-124-low.png",
+    "imageHighSrc": "cards/me2-124-high.png"
+  },
+  {
+    "masterCardId": "7540",
+    "externalId": null,
+    "tcgdex_id": "me02-123",
+    "localId": "123",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "123/94",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 123/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-123-low.png",
+    "imageHighSrc": "cards/me2-123-high.png"
+  },
+  {
+    "masterCardId": "7538",
+    "externalId": null,
+    "tcgdex_id": "me02-122",
+    "localId": "122",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "122/94",
+    "cardName": "Sacred Charm",
+    "fullDisplayName": "Sacred Charm 122/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-122-low.png",
+    "imageHighSrc": "cards/me2-122-high.png"
+  },
+  {
+    "masterCardId": "7536",
+    "externalId": null,
+    "tcgdex_id": "me02-121",
+    "localId": "121",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "121/94",
+    "cardName": "Punk Helmet",
+    "fullDisplayName": "Punk Helmet 121/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-121-low.png",
+    "imageHighSrc": "cards/me2-121-high.png"
+  },
+  {
+    "masterCardId": "7534",
+    "externalId": null,
+    "tcgdex_id": "me02-120",
+    "localId": "120",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "120/94",
+    "cardName": "Grimsley's Move",
+    "fullDisplayName": "Grimsley's Move 120/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-120-low.png",
+    "imageHighSrc": "cards/me2-120-high.png"
+  },
+  {
+    "masterCardId": "7532",
+    "externalId": null,
+    "tcgdex_id": "me02-119",
+    "localId": "119",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "119/94",
+    "cardName": "Firebreather",
+    "fullDisplayName": "Firebreather 119/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-119-low.png",
+    "imageHighSrc": "cards/me2-119-high.png"
+  },
+  {
+    "masterCardId": "7530",
+    "externalId": null,
+    "tcgdex_id": "me02-118",
+    "localId": "118",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "118/94",
+    "cardName": "Dawn",
+    "fullDisplayName": "Dawn 118/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-118-low.png",
+    "imageHighSrc": "cards/me2-118-high.png"
+  },
+  {
+    "masterCardId": "7528",
+    "externalId": null,
+    "tcgdex_id": "me02-117",
+    "localId": "117",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "117/94",
+    "cardName": "Blowtorch",
+    "fullDisplayName": "Blowtorch 117/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-117-low.png",
+    "imageHighSrc": "cards/me2-117-high.png"
+  },
+  {
+    "masterCardId": "7526",
+    "externalId": null,
+    "tcgdex_id": "me02-116",
+    "localId": "116",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "116/94",
+    "cardName": "Battle Cage",
+    "fullDisplayName": "Battle Cage 116/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MARINA Chikazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-116-low.png",
+    "imageHighSrc": "cards/me2-116-high.png"
+  },
+  {
+    "masterCardId": "7524",
+    "externalId": null,
+    "tcgdex_id": "me02-115",
+    "localId": "115",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "115/94",
+    "cardName": "Mega Lopunny ex",
+    "fullDisplayName": "Mega Lopunny ex 115/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-115-low.png",
+    "imageHighSrc": "cards/me2-115-high.png"
+  },
+  {
+    "masterCardId": "7522",
+    "externalId": null,
+    "tcgdex_id": "me02-114",
+    "localId": "114",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "114/94",
+    "cardName": "Empoleon ex",
+    "fullDisplayName": "Empoleon ex 114/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 320,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-114-low.png",
+    "imageHighSrc": "cards/me2-114-high.png"
+  },
+  {
+    "masterCardId": "7520",
+    "externalId": null,
+    "tcgdex_id": "me02-113",
+    "localId": "113",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "113/94",
+    "cardName": "Mega Sharpedo ex",
+    "fullDisplayName": "Mega Sharpedo ex 113/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-113-low.png",
+    "imageHighSrc": "cards/me2-113-high.png"
+  },
+  {
+    "masterCardId": "7518",
+    "externalId": null,
+    "tcgdex_id": "me02-112",
+    "localId": "112",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "112/94",
+    "cardName": "Mismagius ex",
+    "fullDisplayName": "Mismagius ex 112/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-112-low.png",
+    "imageHighSrc": "cards/me2-112-high.png"
+  },
+  {
+    "masterCardId": "7516",
+    "externalId": null,
+    "tcgdex_id": "me02-111",
+    "localId": "111",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "111/94",
+    "cardName": "Rotom ex",
+    "fullDisplayName": "Rotom ex 111/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-111-low.png",
+    "imageHighSrc": "cards/me2-111-high.png"
+  },
+  {
+    "masterCardId": "7514",
+    "externalId": null,
+    "tcgdex_id": "me02-110",
+    "localId": "110",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "110/94",
+    "cardName": "Oricorio ex",
+    "fullDisplayName": "Oricorio ex 110/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      741
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-110-low.png",
+    "imageHighSrc": "cards/me2-110-high.png"
+  },
+  {
+    "masterCardId": "7511",
+    "externalId": null,
+    "tcgdex_id": "me02-109",
+    "localId": "109",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "109/94",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 109/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-109-low.png",
+    "imageHighSrc": "cards/me2-109-high.png"
+  },
+  {
+    "masterCardId": "7509",
+    "externalId": null,
+    "tcgdex_id": "me02-108",
+    "localId": "108",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "108/94",
+    "cardName": "Mega Heracross ex",
+    "fullDisplayName": "Mega Heracross ex 108/94 Phantasmal Flames",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 280,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-108-low.png",
+    "imageHighSrc": "cards/me2-108-high.png"
+  },
+  {
+    "masterCardId": "7507",
+    "externalId": null,
+    "tcgdex_id": "me02-107",
+    "localId": "107",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "107/94",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 107/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-107-low.png",
+    "imageHighSrc": "cards/me2-107-high.png"
+  },
+  {
+    "masterCardId": "7505",
+    "externalId": null,
+    "tcgdex_id": "me02-106",
+    "localId": "106",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "106/94",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 106/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Uninori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-106-low.png",
+    "imageHighSrc": "cards/me2-106-high.png"
+  },
+  {
+    "masterCardId": "7503",
+    "externalId": null,
+    "tcgdex_id": "me02-105",
+    "localId": "105",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "105/94",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 105/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-105-low.png",
+    "imageHighSrc": "cards/me2-105-high.png"
+  },
+  {
+    "masterCardId": "7501",
+    "externalId": null,
+    "tcgdex_id": "me02-104",
+    "localId": "104",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "104/94",
+    "cardName": "Togedemaru",
+    "fullDisplayName": "Togedemaru 104/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      777
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Orca",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-104-low.png",
+    "imageHighSrc": "cards/me2-104-high.png"
+  },
+  {
+    "masterCardId": "7499",
+    "externalId": null,
+    "tcgdex_id": "me02-103",
+    "localId": "103",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "103/94",
+    "cardName": "Toxtricity",
+    "fullDisplayName": "Toxtricity 103/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      849
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toxel",
+    "artist": "Terada Tera",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-103-low.png",
+    "imageHighSrc": "cards/me2-103-high.png"
+  },
+  {
+    "masterCardId": "7497",
+    "externalId": null,
+    "tcgdex_id": "me02-102",
+    "localId": "102",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "102/94",
+    "cardName": "Paldean Wooper",
+    "fullDisplayName": "Paldean Wooper 102/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-102-low.png",
+    "imageHighSrc": "cards/me2-102-high.png"
+  },
+  {
+    "masterCardId": "7495",
+    "externalId": null,
+    "tcgdex_id": "me02-101",
+    "localId": "101",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "101/94",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 101/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-101-low.png",
+    "imageHighSrc": "cards/me2-101-high.png"
+  },
+  {
+    "masterCardId": "7493",
+    "externalId": null,
+    "tcgdex_id": "me02-100",
+    "localId": "100",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "100/94",
+    "cardName": "Zacian",
+    "fullDisplayName": "Zacian 100/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      888
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoriyuki Ikegami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-100-low.png",
+    "imageHighSrc": "cards/me2-100-high.png"
+  },
+  {
+    "masterCardId": "7492",
+    "externalId": null,
+    "tcgdex_id": "me02-099",
+    "localId": "099",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "099/94",
+    "cardName": "Yamper",
+    "fullDisplayName": "Yamper 099/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      835
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "tono",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-099-low.png",
+    "imageHighSrc": "cards/me2-099-high.png"
+  },
+  {
+    "masterCardId": "7489",
+    "externalId": null,
+    "tcgdex_id": "me02-098",
+    "localId": "098",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "098/94",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 098/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-098-low.png",
+    "imageHighSrc": "cards/me2-098-high.png"
+  },
+  {
+    "masterCardId": "7488",
+    "externalId": null,
+    "tcgdex_id": "me02-097",
+    "localId": "097",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "097/94",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 097/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-097-low.png",
+    "imageHighSrc": "cards/me2-097-high.png"
+  },
+  {
+    "masterCardId": "7485",
+    "externalId": null,
+    "tcgdex_id": "me02-096",
+    "localId": "096",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "096/94",
+    "cardName": "Nymble",
+    "fullDisplayName": "Nymble 096/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      919
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakamura Ippan",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-096-low.png",
+    "imageHighSrc": "cards/me2-096-high.png"
+  },
+  {
+    "masterCardId": "7484",
+    "externalId": null,
+    "tcgdex_id": "me02-095",
+    "localId": "095",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "095/94",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 095/94 Phantasmal Flames",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Jerky",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-095-low.png",
+    "imageHighSrc": "cards/me2-095-high.png"
+  },
+  {
+    "masterCardId": "7482",
+    "externalId": null,
+    "tcgdex_id": "me02-094",
+    "localId": "094",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "094/94",
+    "cardName": "Wondrous Patch",
+    "fullDisplayName": "Wondrous Patch 094/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-094-low.png",
+    "imageHighSrc": "cards/me2-094-high.png"
+  },
+  {
+    "masterCardId": "7480",
+    "externalId": null,
+    "tcgdex_id": "me02-093",
+    "localId": "093",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "093/94",
+    "cardName": "Sacred Charm",
+    "fullDisplayName": "Sacred Charm 093/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-093-low.png",
+    "imageHighSrc": "cards/me2-093-high.png"
+  },
+  {
+    "masterCardId": "7478",
+    "externalId": null,
+    "tcgdex_id": "me02-092",
+    "localId": "092",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "092/94",
+    "cardName": "Punk Helmet",
+    "fullDisplayName": "Punk Helmet 092/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-092-low.png",
+    "imageHighSrc": "cards/me2-092-high.png"
+  },
+  {
+    "masterCardId": "7476",
+    "externalId": null,
+    "tcgdex_id": "me02-091",
+    "localId": "091",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "091/94",
+    "cardName": "Jumbo Ice Cream",
+    "fullDisplayName": "Jumbo Ice Cream 091/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-091-low.png",
+    "imageHighSrc": "cards/me2-091-high.png"
+  },
+  {
+    "masterCardId": "7474",
+    "externalId": null,
+    "tcgdex_id": "me02-090",
+    "localId": "090",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "090/94",
+    "cardName": "Grimsley's Move",
+    "fullDisplayName": "Grimsley's Move 090/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-090-low.png",
+    "imageHighSrc": "cards/me2-090-high.png"
+  },
+  {
+    "masterCardId": "7472",
+    "externalId": null,
+    "tcgdex_id": "me02-089",
+    "localId": "089",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "089/94",
+    "cardName": "Firebreather",
+    "fullDisplayName": "Firebreather 089/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-089-low.png",
+    "imageHighSrc": "cards/me2-089-high.png"
+  },
+  {
+    "masterCardId": "7470",
+    "externalId": null,
+    "tcgdex_id": "me02-088",
+    "localId": "088",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "088/94",
+    "cardName": "Dizzying Valley",
+    "fullDisplayName": "Dizzying Valley 088/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-088-low.png",
+    "imageHighSrc": "cards/me2-088-high.png"
+  },
+  {
+    "masterCardId": "7468",
+    "externalId": null,
+    "tcgdex_id": "me02-087",
+    "localId": "087",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "087/94",
+    "cardName": "Dawn",
+    "fullDisplayName": "Dawn 087/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-087-low.png",
+    "imageHighSrc": "cards/me2-087-high.png"
+  },
+  {
+    "masterCardId": "7466",
+    "externalId": null,
+    "tcgdex_id": "me02-086",
+    "localId": "086",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "086/94",
+    "cardName": "Blowtorch",
+    "fullDisplayName": "Blowtorch 086/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-086-low.png",
+    "imageHighSrc": "cards/me2-086-high.png"
+  },
+  {
+    "masterCardId": "7465",
+    "externalId": null,
+    "tcgdex_id": "me02-085",
+    "localId": "085",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "085/94",
+    "cardName": "Battle Cage",
+    "fullDisplayName": "Battle Cage 085/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MARINA Chikazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-085-low.png",
+    "imageHighSrc": "cards/me2-085-high.png"
+  },
+  {
+    "masterCardId": "7462",
+    "externalId": null,
+    "tcgdex_id": "me02-084",
+    "localId": "084",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "084/94",
+    "cardName": "Mega Lopunny ex",
+    "fullDisplayName": "Mega Lopunny ex 084/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-084-low.png",
+    "imageHighSrc": "cards/me2-084-high.png"
+  },
+  {
+    "masterCardId": "7460",
+    "externalId": null,
+    "tcgdex_id": "me02-083",
+    "localId": "083",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "083/94",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 083/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "tono",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-083-low.png",
+    "imageHighSrc": "cards/me2-083-high.png"
+  },
+  {
+    "masterCardId": "7458",
+    "externalId": null,
+    "tcgdex_id": "me02-082",
+    "localId": "082",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "082/94",
+    "cardName": "Linoone",
+    "fullDisplayName": "Linoone 082/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      264
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zigzagoon",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-082-low.png",
+    "imageHighSrc": "cards/me2-082-high.png"
+  },
+  {
+    "masterCardId": "7456",
+    "externalId": null,
+    "tcgdex_id": "me02-081",
+    "localId": "081",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "081/94",
+    "cardName": "Zigzagoon",
+    "fullDisplayName": "Zigzagoon 081/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      263
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Dsuke",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-081-low.png",
+    "imageHighSrc": "cards/me2-081-high.png"
+  },
+  {
+    "masterCardId": "7454",
+    "externalId": null,
+    "tcgdex_id": "me02-080",
+    "localId": "080",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "080/94",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 080/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-080-low.png",
+    "imageHighSrc": "cards/me2-080-high.png"
+  },
+  {
+    "masterCardId": "7452",
+    "externalId": null,
+    "tcgdex_id": "me02-079",
+    "localId": "079",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "079/94",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 079/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "hncl",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-079-low.png",
+    "imageHighSrc": "cards/me2-079-high.png"
+  },
+  {
+    "masterCardId": "7450",
+    "externalId": null,
+    "tcgdex_id": "me02-078",
+    "localId": "078",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "078/94",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 078/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saboteri",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-078-low.png",
+    "imageHighSrc": "cards/me2-078-high.png"
+  },
+  {
+    "masterCardId": "7448",
+    "externalId": null,
+    "tcgdex_id": "me02-077",
+    "localId": "077",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "077/94",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 077/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "En Morikura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-077-low.png",
+    "imageHighSrc": "cards/me2-077-high.png"
+  },
+  {
+    "masterCardId": "7446",
+    "externalId": null,
+    "tcgdex_id": "me02-076",
+    "localId": "076",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "076/94",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 076/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-076-low.png",
+    "imageHighSrc": "cards/me2-076-high.png"
+  },
+  {
+    "masterCardId": "7444",
+    "externalId": null,
+    "tcgdex_id": "me02-075",
+    "localId": "075",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "075/94",
+    "cardName": "Archaludon",
+    "fullDisplayName": "Archaludon 075/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      1018
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duraludon",
+    "artist": "toriyufu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-075-low.png",
+    "imageHighSrc": "cards/me2-075-high.png"
+  },
+  {
+    "masterCardId": "7443",
+    "externalId": null,
+    "tcgdex_id": "me02-074",
+    "localId": "074",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "074/94",
+    "cardName": "Duraludon",
+    "fullDisplayName": "Duraludon 074/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      884
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-074-low.png",
+    "imageHighSrc": "cards/me2-074-high.png"
+  },
+  {
+    "masterCardId": "7441",
+    "externalId": null,
+    "tcgdex_id": "me02-073",
+    "localId": "073",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "073/94",
+    "cardName": "Togedemaru",
+    "fullDisplayName": "Togedemaru 073/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      777
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Bun Toujo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-073-low.png",
+    "imageHighSrc": "cards/me2-073-high.png"
+  },
+  {
+    "masterCardId": "7439",
+    "externalId": null,
+    "tcgdex_id": "me02-072",
+    "localId": "072",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "072/94",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 072/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Masako Tomii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-072-low.png",
+    "imageHighSrc": "cards/me2-072-high.png"
+  },
+  {
+    "masterCardId": "7437",
+    "externalId": null,
+    "tcgdex_id": "me02-071",
+    "localId": "071",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "071/94",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 071/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKUBO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-071-low.png",
+    "imageHighSrc": "cards/me2-071-high.png"
+  },
+  {
+    "masterCardId": "7435",
+    "externalId": null,
+    "tcgdex_id": "me02-070",
+    "localId": "070",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "070/94",
+    "cardName": "Empoleon ex",
+    "fullDisplayName": "Empoleon ex 070/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 320,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-070-low.png",
+    "imageHighSrc": "cards/me2-070-high.png"
+  },
+  {
+    "masterCardId": "7433",
+    "externalId": null,
+    "tcgdex_id": "me02-069",
+    "localId": "069",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "069/94",
+    "cardName": "Eternatus",
+    "fullDisplayName": "Eternatus 069/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-069-low.png",
+    "imageHighSrc": "cards/me2-069-high.png"
+  },
+  {
+    "masterCardId": "7431",
+    "externalId": null,
+    "tcgdex_id": "me02-068",
+    "localId": "068",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "068/94",
+    "cardName": "Toxtricity",
+    "fullDisplayName": "Toxtricity 068/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      849
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toxel",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-068-low.png",
+    "imageHighSrc": "cards/me2-068-high.png"
+  },
+  {
+    "masterCardId": "7428",
+    "externalId": null,
+    "tcgdex_id": "me02-067",
+    "localId": "067",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "067/94",
+    "cardName": "Toxel",
+    "fullDisplayName": "Toxel 067/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      848
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-067-low.png",
+    "imageHighSrc": "cards/me2-067-high.png"
+  },
+  {
+    "masterCardId": "7426",
+    "externalId": null,
+    "tcgdex_id": "me02-066",
+    "localId": "066",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "066/94",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 066/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krokorok",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-066-low.png",
+    "imageHighSrc": "cards/me2-066-high.png"
+  },
+  {
+    "masterCardId": "7424",
+    "externalId": null,
+    "tcgdex_id": "me02-065",
+    "localId": "065",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "065/94",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 065/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandile",
+    "artist": "Uninori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-065-low.png",
+    "imageHighSrc": "cards/me2-065-high.png"
+  },
+  {
+    "masterCardId": "7423",
+    "externalId": null,
+    "tcgdex_id": "me02-064",
+    "localId": "064",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "064/94",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 064/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taiga Kasai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-064-low.png",
+    "imageHighSrc": "cards/me2-064-high.png"
+  },
+  {
+    "masterCardId": "7422",
+    "externalId": null,
+    "tcgdex_id": "me02-063",
+    "localId": "063",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "063/94",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 063/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Wada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-063-low.png",
+    "imageHighSrc": "cards/me2-063-high.png"
+  },
+  {
+    "masterCardId": "7420",
+    "externalId": null,
+    "tcgdex_id": "me02-062",
+    "localId": "062",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "062/94",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 062/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hncl",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-062-low.png",
+    "imageHighSrc": "cards/me2-062-high.png"
+  },
+  {
+    "masterCardId": "7418",
+    "externalId": null,
+    "tcgdex_id": "me02-061",
+    "localId": "061",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "061/94",
+    "cardName": "Mega Sharpedo ex",
+    "fullDisplayName": "Mega Sharpedo ex 061/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-061-low.png",
+    "imageHighSrc": "cards/me2-061-high.png"
+  },
+  {
+    "masterCardId": "7416",
+    "externalId": null,
+    "tcgdex_id": "me02-060",
+    "localId": "060",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "060/94",
+    "cardName": "Carvanha",
+    "fullDisplayName": "Carvanha 060/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-060-low.png",
+    "imageHighSrc": "cards/me2-060-high.png"
+  },
+  {
+    "masterCardId": "7414",
+    "externalId": null,
+    "tcgdex_id": "me02-059",
+    "localId": "059",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "059/94",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 059/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "osare",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-059-low.png",
+    "imageHighSrc": "cards/me2-059-high.png"
+  },
+  {
+    "masterCardId": "7412",
+    "externalId": null,
+    "tcgdex_id": "me02-058",
+    "localId": "058",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "058/94",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 058/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Murkrow",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-058-low.png",
+    "imageHighSrc": "cards/me2-058-high.png"
+  },
+  {
+    "masterCardId": "7410",
+    "externalId": null,
+    "tcgdex_id": "me02-057",
+    "localId": "057",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "057/94",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 057/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-057-low.png",
+    "imageHighSrc": "cards/me2-057-high.png"
+  },
+  {
+    "masterCardId": "7408",
+    "externalId": null,
+    "tcgdex_id": "me02-056",
+    "localId": "056",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "056/94",
+    "cardName": "Mega Gengar ex",
+    "fullDisplayName": "Mega Gengar ex 056/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 350,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-056-low.png",
+    "imageHighSrc": "cards/me2-056-high.png"
+  },
+  {
+    "masterCardId": "7406",
+    "externalId": null,
+    "tcgdex_id": "me02-055",
+    "localId": "055",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "055/94",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 055/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Rianti Hidayat",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-055-low.png",
+    "imageHighSrc": "cards/me2-055-high.png"
+  },
+  {
+    "masterCardId": "7404",
+    "externalId": null,
+    "tcgdex_id": "me02-054",
+    "localId": "054",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "054/94",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 054/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saboteri",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-054-low.png",
+    "imageHighSrc": "cards/me2-054-high.png"
+  },
+  {
+    "masterCardId": "7402",
+    "externalId": null,
+    "tcgdex_id": "me02-053",
+    "localId": "053",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "053/94",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 053/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Jerky",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-053-low.png",
+    "imageHighSrc": "cards/me2-053-high.png"
+  },
+  {
+    "masterCardId": "7400",
+    "externalId": null,
+    "tcgdex_id": "me02-052",
+    "localId": "052",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "052/94",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 052/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-052-low.png",
+    "imageHighSrc": "cards/me2-052-high.png"
+  },
+  {
+    "masterCardId": "7398",
+    "externalId": null,
+    "tcgdex_id": "me02-051",
+    "localId": "051",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "051/94",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 051/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-051-low.png",
+    "imageHighSrc": "cards/me2-051-high.png"
+  },
+  {
+    "masterCardId": "7395",
+    "externalId": null,
+    "tcgdex_id": "me02-050",
+    "localId": "050",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "050/94",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 050/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Dsuke",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-050-low.png",
+    "imageHighSrc": "cards/me2-050-high.png"
+  },
+  {
+    "masterCardId": "7393",
+    "externalId": null,
+    "tcgdex_id": "me02-049",
+    "localId": "049",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "049/94",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 049/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazumasa Yasukuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-049-low.png",
+    "imageHighSrc": "cards/me2-049-high.png"
+  },
+  {
+    "masterCardId": "7391",
+    "externalId": null,
+    "tcgdex_id": "me02-048",
+    "localId": "048",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "048/94",
+    "cardName": "Paldean Tauros",
+    "fullDisplayName": "Paldean Tauros 048/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-048-low.png",
+    "imageHighSrc": "cards/me2-048-high.png"
+  },
+  {
+    "masterCardId": "7389",
+    "externalId": null,
+    "tcgdex_id": "me02-047",
+    "localId": "047",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "047/94",
+    "cardName": "Brambleghast",
+    "fullDisplayName": "Brambleghast 047/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      947
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bramblin",
+    "artist": "Tetsu Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-047-low.png",
+    "imageHighSrc": "cards/me2-047-high.png"
+  },
+  {
+    "masterCardId": "7387",
+    "externalId": null,
+    "tcgdex_id": "me02-046",
+    "localId": "046",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "046/94",
+    "cardName": "Bramblin",
+    "fullDisplayName": "Bramblin 046/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      946
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takeshi Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-046-low.png",
+    "imageHighSrc": "cards/me2-046-high.png"
+  },
+  {
+    "masterCardId": "7385",
+    "externalId": null,
+    "tcgdex_id": "me02-045",
+    "localId": "045",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "045/94",
+    "cardName": "Zacian",
+    "fullDisplayName": "Zacian 045/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      888
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-045-low.png",
+    "imageHighSrc": "cards/me2-045-high.png"
+  },
+  {
+    "masterCardId": "7383",
+    "externalId": null,
+    "tcgdex_id": "me02-044",
+    "localId": "044",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "044/94",
+    "cardName": "Alcremie",
+    "fullDisplayName": "Alcremie 044/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      869
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Milcery",
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-044-low.png",
+    "imageHighSrc": "cards/me2-044-high.png"
+  },
+  {
+    "masterCardId": "7381",
+    "externalId": null,
+    "tcgdex_id": "me02-043",
+    "localId": "043",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "043/94",
+    "cardName": "Milcery",
+    "fullDisplayName": "Milcery 043/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      868
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taiga Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-043-low.png",
+    "imageHighSrc": "cards/me2-043-high.png"
+  },
+  {
+    "masterCardId": "7379",
+    "externalId": null,
+    "tcgdex_id": "me02-042",
+    "localId": "042",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "042/94",
+    "cardName": "Mimikyu",
+    "fullDisplayName": "Mimikyu 042/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      778
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-042-low.png",
+    "imageHighSrc": "cards/me2-042-high.png"
+  },
+  {
+    "masterCardId": "7377",
+    "externalId": null,
+    "tcgdex_id": "me02-041",
+    "localId": "041",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "041/94",
+    "cardName": "Mega Diancie ex",
+    "fullDisplayName": "Mega Diancie ex 041/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 270,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      719
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-041-low.png",
+    "imageHighSrc": "cards/me2-041-high.png"
+  },
+  {
+    "masterCardId": "7375",
+    "externalId": null,
+    "tcgdex_id": "me02-040",
+    "localId": "040",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "040/94",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta 040/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MINAMINAMI Take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-040-low.png",
+    "imageHighSrc": "cards/me2-040-high.png"
+  },
+  {
+    "masterCardId": "7373",
+    "externalId": null,
+    "tcgdex_id": "me02-039",
+    "localId": "039",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "039/94",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 039/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Raita Kazama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-039-low.png",
+    "imageHighSrc": "cards/me2-039-high.png"
+  },
+  {
+    "masterCardId": "7371",
+    "externalId": null,
+    "tcgdex_id": "me02-038",
+    "localId": "038",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "038/94",
+    "cardName": "Granbull",
+    "fullDisplayName": "Granbull 038/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      210
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snubbull",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-038-low.png",
+    "imageHighSrc": "cards/me2-038-high.png"
+  },
+  {
+    "masterCardId": "7369",
+    "externalId": null,
+    "tcgdex_id": "me02-037",
+    "localId": "037",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "037/94",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 037/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Gapao",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-037-low.png",
+    "imageHighSrc": "cards/me2-037-high.png"
+  },
+  {
+    "masterCardId": "7367",
+    "externalId": null,
+    "tcgdex_id": "me02-036",
+    "localId": "036",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "036/94",
+    "cardName": "Mismagius ex",
+    "fullDisplayName": "Mismagius ex 036/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-036-low.png",
+    "imageHighSrc": "cards/me2-036-high.png"
+  },
+  {
+    "masterCardId": "7365",
+    "externalId": null,
+    "tcgdex_id": "me02-035",
+    "localId": "035",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "035/94",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 035/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-035-low.png",
+    "imageHighSrc": "cards/me2-035-high.png"
+  },
+  {
+    "masterCardId": "7363",
+    "externalId": null,
+    "tcgdex_id": "me02-034",
+    "localId": "034",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "034/94",
+    "cardName": "Pawmot",
+    "fullDisplayName": "Pawmot 034/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      923
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawmo",
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-034-low.png",
+    "imageHighSrc": "cards/me2-034-high.png"
+  },
+  {
+    "masterCardId": "7361",
+    "externalId": null,
+    "tcgdex_id": "me02-033",
+    "localId": "033",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "033/94",
+    "cardName": "Pawmo",
+    "fullDisplayName": "Pawmo 033/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      922
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pawmi",
+    "artist": "Taiga Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-033-low.png",
+    "imageHighSrc": "cards/me2-033-high.png"
+  },
+  {
+    "masterCardId": "7359",
+    "externalId": null,
+    "tcgdex_id": "me02-032",
+    "localId": "032",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "032/94",
+    "cardName": "Pawmi",
+    "fullDisplayName": "Pawmi 032/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      921
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shimaris Yukichi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-032-low.png",
+    "imageHighSrc": "cards/me2-032-high.png"
+  },
+  {
+    "masterCardId": "7357",
+    "externalId": null,
+    "tcgdex_id": "me02-031",
+    "localId": "031",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "031/94",
+    "cardName": "Boltund",
+    "fullDisplayName": "Boltund 031/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      836
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yamper",
+    "artist": "Orca",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-031-low.png",
+    "imageHighSrc": "cards/me2-031-high.png"
+  },
+  {
+    "masterCardId": "7355",
+    "externalId": null,
+    "tcgdex_id": "me02-030",
+    "localId": "030",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "030/94",
+    "cardName": "Yamper",
+    "fullDisplayName": "Yamper 030/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      835
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayako Ozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-030-low.png",
+    "imageHighSrc": "cards/me2-030-high.png"
+  },
+  {
+    "masterCardId": "7353",
+    "externalId": null,
+    "tcgdex_id": "me02-029",
+    "localId": "029",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "029/94",
+    "cardName": "Rotom ex",
+    "fullDisplayName": "Rotom ex 029/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-029-low.png",
+    "imageHighSrc": "cards/me2-029-high.png"
+  },
+  {
+    "masterCardId": "7351",
+    "externalId": null,
+    "tcgdex_id": "me02-028",
+    "localId": "028",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "028/94",
+    "cardName": "Prinplup",
+    "fullDisplayName": "Prinplup 028/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      394
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piplup",
+    "artist": "Atsuya Uki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-028-low.png",
+    "imageHighSrc": "cards/me2-028-high.png"
+  },
+  {
+    "masterCardId": "7347",
+    "externalId": null,
+    "tcgdex_id": "me02-027",
+    "localId": "027",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "027/94",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 027/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-027-low.png",
+    "imageHighSrc": "cards/me2-027-high.png"
+  },
+  {
+    "masterCardId": "7344",
+    "externalId": null,
+    "tcgdex_id": "me02-026",
+    "localId": "026",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "026/94",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 026/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takeshi Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-026-low.png",
+    "imageHighSrc": "cards/me2-026-high.png"
+  },
+  {
+    "masterCardId": "7342",
+    "externalId": null,
+    "tcgdex_id": "me02-025",
+    "localId": "025",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "025/94",
+    "cardName": "Mamoswine",
+    "fullDisplayName": "Mamoswine 025/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      473
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piloswine",
+    "artist": "Takumi Wada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-025-low.png",
+    "imageHighSrc": "cards/me2-025-high.png"
+  },
+  {
+    "masterCardId": "7339",
+    "externalId": null,
+    "tcgdex_id": "me02-024",
+    "localId": "024",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "024/94",
+    "cardName": "Piloswine",
+    "fullDisplayName": "Piloswine 024/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      221
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swinub",
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-024-low.png",
+    "imageHighSrc": "cards/me2-024-high.png"
+  },
+  {
+    "masterCardId": "7336",
+    "externalId": null,
+    "tcgdex_id": "me02-023",
+    "localId": "023",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "023/94",
+    "cardName": "Swinub",
+    "fullDisplayName": "Swinub 023/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      220
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "imoniii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-023-low.png",
+    "imageHighSrc": "cards/me2-023-high.png"
+  },
+  {
+    "masterCardId": "7333",
+    "externalId": null,
+    "tcgdex_id": "me02-022",
+    "localId": "022",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "022/94",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 022/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-022-low.png",
+    "imageHighSrc": "cards/me2-022-high.png"
+  },
+  {
+    "masterCardId": "7330",
+    "externalId": null,
+    "tcgdex_id": "me02-021",
+    "localId": "021",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "021/94",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 021/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "svlt",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-021-low.png",
+    "imageHighSrc": "cards/me2-021-high.png"
+  },
+  {
+    "masterCardId": "7328",
+    "externalId": null,
+    "tcgdex_id": "me02-020",
+    "localId": "020",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "020/94",
+    "cardName": "Ceruledge",
+    "fullDisplayName": "Ceruledge 020/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      937
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charcadet",
+    "artist": "Gemi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-020-low.png",
+    "imageHighSrc": "cards/me2-020-high.png"
+  },
+  {
+    "masterCardId": "7325",
+    "externalId": null,
+    "tcgdex_id": "me02-019",
+    "localId": "019",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "019/94",
+    "cardName": "Charcadet",
+    "fullDisplayName": "Charcadet 019/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      935
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-019-low.png",
+    "imageHighSrc": "cards/me2-019-high.png"
+  },
+  {
+    "masterCardId": "7322",
+    "externalId": null,
+    "tcgdex_id": "me02-018",
+    "localId": "018",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "018/94",
+    "cardName": "Oricorio ex",
+    "fullDisplayName": "Oricorio ex 018/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      741
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-018-low.png",
+    "imageHighSrc": "cards/me2-018-high.png"
+  },
+  {
+    "masterCardId": "7319",
+    "externalId": null,
+    "tcgdex_id": "me02-017",
+    "localId": "017",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "017/94",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 017/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-017-low.png",
+    "imageHighSrc": "cards/me2-017-high.png"
+  },
+  {
+    "masterCardId": "7316",
+    "externalId": null,
+    "tcgdex_id": "me02-016",
+    "localId": "016",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "016/94",
+    "cardName": "Darmanitan",
+    "fullDisplayName": "Darmanitan 016/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darumaka",
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-016-low.png",
+    "imageHighSrc": "cards/me2-016-high.png"
+  },
+  {
+    "masterCardId": "7313",
+    "externalId": null,
+    "tcgdex_id": "me02-015",
+    "localId": "015",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "015/94",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka 015/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-015-low.png",
+    "imageHighSrc": "cards/me2-015-high.png"
+  },
+  {
+    "masterCardId": "7311",
+    "externalId": null,
+    "tcgdex_id": "me02-014",
+    "localId": "014",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "014/94",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 014/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazumasa Yasukuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-014-low.png",
+    "imageHighSrc": "cards/me2-014-high.png"
+  },
+  {
+    "masterCardId": "7307",
+    "externalId": null,
+    "tcgdex_id": "me02-013",
+    "localId": "013",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "013/94",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 013/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-013-low.png",
+    "imageHighSrc": "cards/me2-013-high.png"
+  },
+  {
+    "masterCardId": "7302",
+    "externalId": null,
+    "tcgdex_id": "me02-012",
+    "localId": "012",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "012/94",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 012/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Uninori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-012-low.png",
+    "imageHighSrc": "cards/me2-012-high.png"
+  },
+  {
+    "masterCardId": "7297",
+    "externalId": null,
+    "tcgdex_id": "me02-011",
+    "localId": "011",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "011/94",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 011/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-011-low.png",
+    "imageHighSrc": "cards/me2-011-high.png"
+  },
+  {
+    "masterCardId": "7291",
+    "externalId": null,
+    "tcgdex_id": "me02-010",
+    "localId": "010",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "010/94",
+    "cardName": "Lokix",
+    "fullDisplayName": "Lokix 010/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      920
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nymble",
+    "artist": "Taiga Kasai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-010-low.png",
+    "imageHighSrc": "cards/me2-010-high.png"
+  },
+  {
+    "masterCardId": "7287",
+    "externalId": null,
+    "tcgdex_id": "me02-009",
+    "localId": "009",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "009/94",
+    "cardName": "Nymble",
+    "fullDisplayName": "Nymble 009/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      919
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-009-low.png",
+    "imageHighSrc": "cards/me2-009-high.png"
+  },
+  {
+    "masterCardId": "7282",
+    "externalId": null,
+    "tcgdex_id": "me02-008",
+    "localId": "008",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "008/94",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect 008/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-008-low.png",
+    "imageHighSrc": "cards/me2-008-high.png"
+  },
+  {
+    "masterCardId": "7277",
+    "externalId": null,
+    "tcgdex_id": "me02-007",
+    "localId": "007",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "007/94",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 007/94 Phantasmal Flames",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-007-low.png",
+    "imageHighSrc": "cards/me2-007-high.png"
+  },
+  {
+    "masterCardId": "7273",
+    "externalId": null,
+    "tcgdex_id": "me02-006",
+    "localId": "006",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "006/94",
+    "cardName": "Lombre",
+    "fullDisplayName": "Lombre 006/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      271
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lotad",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-006-low.png",
+    "imageHighSrc": "cards/me2-006-high.png"
+  },
+  {
+    "masterCardId": "7268",
+    "externalId": null,
+    "tcgdex_id": "me02-005",
+    "localId": "005",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "005/94",
+    "cardName": "Lotad",
+    "fullDisplayName": "Lotad 005/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      270
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wintr Wandr",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-005-low.png",
+    "imageHighSrc": "cards/me2-005-high.png"
+  },
+  {
+    "masterCardId": "7260",
+    "externalId": null,
+    "tcgdex_id": "me02-004",
+    "localId": "004",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "004/94",
+    "cardName": "Mega Heracross ex",
+    "fullDisplayName": "Mega Heracross ex 004/94 Phantasmal Flames",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 280,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-004-low.png",
+    "imageHighSrc": "cards/me2-004-high.png"
+  },
+  {
+    "masterCardId": "7248",
+    "externalId": null,
+    "tcgdex_id": "me02-003",
+    "localId": "003",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "003/94",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 003/94 Phantasmal Flames",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-003-low.png",
+    "imageHighSrc": "cards/me2-003-high.png"
+  },
+  {
+    "masterCardId": "7236",
+    "externalId": null,
+    "tcgdex_id": "me02-002",
+    "localId": "002",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "002/94",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 002/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Yoriyuki Ikegami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-002-low.png",
+    "imageHighSrc": "cards/me2-002-high.png"
+  },
+  {
+    "masterCardId": "7229",
+    "externalId": null,
+    "tcgdex_id": "me02-001",
+    "localId": "001",
+    "setCode": "me02",
+    "setTcgdexId": "me02",
+    "cardNumber": "001/94",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 001/94 Phantasmal Flames",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MINAMINAMI Take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/me2-001-low.png",
+    "imageHighSrc": "cards/me2-001-high.png"
+  }
+]

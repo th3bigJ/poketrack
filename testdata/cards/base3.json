@@ -1,0 +1,2018 @@
+[
+  {
+    "masterCardId": "1584",
+    "externalId": null,
+    "tcgdex_id": "base3-62",
+    "localId": "062",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "062/62",
+    "cardName": "Mysterious Fossil",
+    "fullDisplayName": "Mysterious Fossil 062/62 Fossil",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 10,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-062-low.png",
+    "imageHighSrc": "cards/base3-062-high.png"
+  },
+  {
+    "masterCardId": "1583",
+    "externalId": null,
+    "tcgdex_id": "base3-61",
+    "localId": "061",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "061/62",
+    "cardName": "Recycle",
+    "fullDisplayName": "Recycle 061/62 Fossil",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-061-low.png",
+    "imageHighSrc": "cards/base3-061-high.png"
+  },
+  {
+    "masterCardId": "1582",
+    "externalId": null,
+    "tcgdex_id": "base3-60",
+    "localId": "060",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "060/62",
+    "cardName": "Gambler",
+    "fullDisplayName": "Gambler 060/62 Fossil",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-060-low.png",
+    "imageHighSrc": "cards/base3-060-high.png"
+  },
+  {
+    "masterCardId": "1581",
+    "externalId": null,
+    "tcgdex_id": "base3-59",
+    "localId": "059",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "059/62",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 059/62 Fossil",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-059-low.png",
+    "imageHighSrc": "cards/base3-059-high.png"
+  },
+  {
+    "masterCardId": "1580",
+    "externalId": null,
+    "tcgdex_id": "base3-58",
+    "localId": "058",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "058/62",
+    "cardName": "Mr. Fuji",
+    "fullDisplayName": "Mr. Fuji 058/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-058-low.png",
+    "imageHighSrc": "cards/base3-058-high.png"
+  },
+  {
+    "masterCardId": "1579",
+    "externalId": null,
+    "tcgdex_id": "base3-57",
+    "localId": "057",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "057/62",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 057/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-057-low.png",
+    "imageHighSrc": "cards/base3-057-high.png"
+  },
+  {
+    "masterCardId": "1578",
+    "externalId": null,
+    "tcgdex_id": "base3-56",
+    "localId": "056",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "056/62",
+    "cardName": "Tentacool",
+    "fullDisplayName": "Tentacool 056/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-056-low.png",
+    "imageHighSrc": "cards/base3-056-high.png"
+  },
+  {
+    "masterCardId": "1577",
+    "externalId": null,
+    "tcgdex_id": "base3-55",
+    "localId": "055",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "055/62",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 055/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-055-low.png",
+    "imageHighSrc": "cards/base3-055-high.png"
+  },
+  {
+    "masterCardId": "1576",
+    "externalId": null,
+    "tcgdex_id": "base3-54",
+    "localId": "054",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "054/62",
+    "cardName": "Shellder",
+    "fullDisplayName": "Shellder 054/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      90
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-054-low.png",
+    "imageHighSrc": "cards/base3-054-high.png"
+  },
+  {
+    "masterCardId": "1575",
+    "externalId": null,
+    "tcgdex_id": "base3-53",
+    "localId": "053",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "053/62",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 053/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-053-low.png",
+    "imageHighSrc": "cards/base3-053-high.png"
+  },
+  {
+    "masterCardId": "1574",
+    "externalId": null,
+    "tcgdex_id": "base3-52",
+    "localId": "052",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "052/62",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 052/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-052-low.png",
+    "imageHighSrc": "cards/base3-052-high.png"
+  },
+  {
+    "masterCardId": "1573",
+    "externalId": null,
+    "tcgdex_id": "base3-51",
+    "localId": "051",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "051/62",
+    "cardName": "Krabby",
+    "fullDisplayName": "Krabby 051/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      98
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-051-low.png",
+    "imageHighSrc": "cards/base3-051-high.png"
+  },
+  {
+    "masterCardId": "1572",
+    "externalId": null,
+    "tcgdex_id": "base3-50",
+    "localId": "050",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "050/62",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 050/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 30,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-050-low.png",
+    "imageHighSrc": "cards/base3-050-high.png"
+  },
+  {
+    "masterCardId": "1571",
+    "externalId": null,
+    "tcgdex_id": "base3-49",
+    "localId": "049",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "049/62",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 049/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-049-low.png",
+    "imageHighSrc": "cards/base3-049-high.png"
+  },
+  {
+    "masterCardId": "1570",
+    "externalId": null,
+    "tcgdex_id": "base3-48",
+    "localId": "048",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "048/62",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 048/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-048-low.png",
+    "imageHighSrc": "cards/base3-048-high.png"
+  },
+  {
+    "masterCardId": "1569",
+    "externalId": null,
+    "tcgdex_id": "base3-47",
+    "localId": "047",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "047/62",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 047/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-047-low.png",
+    "imageHighSrc": "cards/base3-047-high.png"
+  },
+  {
+    "masterCardId": "1568",
+    "externalId": null,
+    "tcgdex_id": "base3-46",
+    "localId": "046",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "046/62",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 046/62 Fossil",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-046-low.png",
+    "imageHighSrc": "cards/base3-046-high.png"
+  },
+  {
+    "masterCardId": "1567",
+    "externalId": null,
+    "tcgdex_id": "base3-45",
+    "localId": "045",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "045/62",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 045/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-045-low.png",
+    "imageHighSrc": "cards/base3-045-high.png"
+  },
+  {
+    "masterCardId": "1566",
+    "externalId": null,
+    "tcgdex_id": "base3-44",
+    "localId": "044",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "044/62",
+    "cardName": "Tentacruel",
+    "fullDisplayName": "Tentacruel 044/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tentacool",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-044-low.png",
+    "imageHighSrc": "cards/base3-044-high.png"
+  },
+  {
+    "masterCardId": "1565",
+    "externalId": null,
+    "tcgdex_id": "base3-43",
+    "localId": "043",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "043/62",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 043/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-043-low.png",
+    "imageHighSrc": "cards/base3-043-high.png"
+  },
+  {
+    "masterCardId": "1564",
+    "externalId": null,
+    "tcgdex_id": "base3-42",
+    "localId": "042",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "042/62",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 042/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-042-low.png",
+    "imageHighSrc": "cards/base3-042-high.png"
+  },
+  {
+    "masterCardId": "1563",
+    "externalId": null,
+    "tcgdex_id": "base3-41",
+    "localId": "041",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "041/62",
+    "cardName": "Sandslash",
+    "fullDisplayName": "Sandslash 041/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandshrew",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-041-low.png",
+    "imageHighSrc": "cards/base3-041-high.png"
+  },
+  {
+    "masterCardId": "1562",
+    "externalId": null,
+    "tcgdex_id": "base3-40",
+    "localId": "040",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "040/62",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 040/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-040-low.png",
+    "imageHighSrc": "cards/base3-040-high.png"
+  },
+  {
+    "masterCardId": "1561",
+    "externalId": null,
+    "tcgdex_id": "base3-39",
+    "localId": "039",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "039/62",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 039/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magby",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-039-low.png",
+    "imageHighSrc": "cards/base3-039-high.png"
+  },
+  {
+    "masterCardId": "1560",
+    "externalId": null,
+    "tcgdex_id": "base3-38",
+    "localId": "038",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "038/62",
+    "cardName": "Kingler",
+    "fullDisplayName": "Kingler 038/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      99
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krabby",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-038-low.png",
+    "imageHighSrc": "cards/base3-038-high.png"
+  },
+  {
+    "masterCardId": "1559",
+    "externalId": null,
+    "tcgdex_id": "base3-37",
+    "localId": "037",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "037/62",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 037/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-037-low.png",
+    "imageHighSrc": "cards/base3-037-high.png"
+  },
+  {
+    "masterCardId": "1558",
+    "externalId": null,
+    "tcgdex_id": "base3-36",
+    "localId": "036",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "036/62",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 036/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-036-low.png",
+    "imageHighSrc": "cards/base3-036-high.png"
+  },
+  {
+    "masterCardId": "1557",
+    "externalId": null,
+    "tcgdex_id": "base3-35",
+    "localId": "035",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "035/62",
+    "cardName": "Golduck",
+    "fullDisplayName": "Golduck 035/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-035-low.png",
+    "imageHighSrc": "cards/base3-035-high.png"
+  },
+  {
+    "masterCardId": "1556",
+    "externalId": null,
+    "tcgdex_id": "base3-34",
+    "localId": "034",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "034/62",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 034/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-034-low.png",
+    "imageHighSrc": "cards/base3-034-high.png"
+  },
+  {
+    "masterCardId": "1555",
+    "externalId": null,
+    "tcgdex_id": "base3-33",
+    "localId": "033",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "033/62",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 033/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-033-low.png",
+    "imageHighSrc": "cards/base3-033-high.png"
+  },
+  {
+    "masterCardId": "1554",
+    "externalId": null,
+    "tcgdex_id": "base3-32",
+    "localId": "032",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "032/62",
+    "cardName": "Cloyster",
+    "fullDisplayName": "Cloyster 032/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      91
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellder",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-032-low.png",
+    "imageHighSrc": "cards/base3-032-high.png"
+  },
+  {
+    "masterCardId": "1553",
+    "externalId": null,
+    "tcgdex_id": "base3-31",
+    "localId": "031",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "031/62",
+    "cardName": "Arbok",
+    "fullDisplayName": "Arbok 031/62 Fossil",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-031-low.png",
+    "imageHighSrc": "cards/base3-031-high.png"
+  },
+  {
+    "masterCardId": "1552",
+    "externalId": null,
+    "tcgdex_id": "base3-30",
+    "localId": "030",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "030/62",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 030/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-030-low.png",
+    "imageHighSrc": "cards/base3-030-high.png"
+  },
+  {
+    "masterCardId": "1551",
+    "externalId": null,
+    "tcgdex_id": "base3-29",
+    "localId": "029",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "029/62",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 029/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-029-low.png",
+    "imageHighSrc": "cards/base3-029-high.png"
+  },
+  {
+    "masterCardId": "1550",
+    "externalId": null,
+    "tcgdex_id": "base3-28",
+    "localId": "028",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "028/62",
+    "cardName": "Muk",
+    "fullDisplayName": "Muk 028/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-028-low.png",
+    "imageHighSrc": "cards/base3-028-high.png"
+  },
+  {
+    "masterCardId": "1549",
+    "externalId": null,
+    "tcgdex_id": "base3-27",
+    "localId": "027",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "027/62",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 027/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-027-low.png",
+    "imageHighSrc": "cards/base3-027-high.png"
+  },
+  {
+    "masterCardId": "1548",
+    "externalId": null,
+    "tcgdex_id": "base3-26",
+    "localId": "026",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "026/62",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 026/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-026-low.png",
+    "imageHighSrc": "cards/base3-026-high.png"
+  },
+  {
+    "masterCardId": "1547",
+    "externalId": null,
+    "tcgdex_id": "base3-25",
+    "localId": "025",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "025/62",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 025/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-025-low.png",
+    "imageHighSrc": "cards/base3-025-high.png"
+  },
+  {
+    "masterCardId": "1546",
+    "externalId": null,
+    "tcgdex_id": "base3-24",
+    "localId": "024",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "024/62",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 024/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-024-low.png",
+    "imageHighSrc": "cards/base3-024-high.png"
+  },
+  {
+    "masterCardId": "1545",
+    "externalId": null,
+    "tcgdex_id": "base3-23",
+    "localId": "023",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "023/62",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 023/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-023-low.png",
+    "imageHighSrc": "cards/base3-023-high.png"
+  },
+  {
+    "masterCardId": "1544",
+    "externalId": null,
+    "tcgdex_id": "base3-22",
+    "localId": "022",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "022/62",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 022/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-022-low.png",
+    "imageHighSrc": "cards/base3-022-high.png"
+  },
+  {
+    "masterCardId": "1543",
+    "externalId": null,
+    "tcgdex_id": "base3-21",
+    "localId": "021",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "021/62",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 021/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-021-low.png",
+    "imageHighSrc": "cards/base3-021-high.png"
+  },
+  {
+    "masterCardId": "1542",
+    "externalId": null,
+    "tcgdex_id": "base3-20",
+    "localId": "020",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "020/62",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 020/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-020-low.png",
+    "imageHighSrc": "cards/base3-020-high.png"
+  },
+  {
+    "masterCardId": "1541",
+    "externalId": null,
+    "tcgdex_id": "base3-19",
+    "localId": "019",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "019/62",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 019/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-019-low.png",
+    "imageHighSrc": "cards/base3-019-high.png"
+  },
+  {
+    "masterCardId": "1540",
+    "externalId": null,
+    "tcgdex_id": "base3-18",
+    "localId": "018",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "018/62",
+    "cardName": "Ditto",
+    "fullDisplayName": "Ditto 018/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      132
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-018-low.png",
+    "imageHighSrc": "cards/base3-018-high.png"
+  },
+  {
+    "masterCardId": "1539",
+    "externalId": null,
+    "tcgdex_id": "base3-17",
+    "localId": "017",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "017/62",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 017/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-017-low.png",
+    "imageHighSrc": "cards/base3-017-high.png"
+  },
+  {
+    "masterCardId": "1538",
+    "externalId": null,
+    "tcgdex_id": "base3-16",
+    "localId": "016",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "016/62",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 016/62 Fossil",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-016-low.png",
+    "imageHighSrc": "cards/base3-016-high.png"
+  },
+  {
+    "masterCardId": "1537",
+    "externalId": null,
+    "tcgdex_id": "base3-15",
+    "localId": "015",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "015/62",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 015/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-015-low.png",
+    "imageHighSrc": "cards/base3-015-high.png"
+  },
+  {
+    "masterCardId": "1536",
+    "externalId": null,
+    "tcgdex_id": "base3-14",
+    "localId": "014",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "014/62",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 014/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-014-low.png",
+    "imageHighSrc": "cards/base3-014-high.png"
+  },
+  {
+    "masterCardId": "1535",
+    "externalId": null,
+    "tcgdex_id": "base3-13",
+    "localId": "013",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "013/62",
+    "cardName": "Muk",
+    "fullDisplayName": "Muk 013/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-013-low.png",
+    "imageHighSrc": "cards/base3-013-high.png"
+  },
+  {
+    "masterCardId": "1534",
+    "externalId": null,
+    "tcgdex_id": "base3-12",
+    "localId": "012",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "012/62",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 012/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-012-low.png",
+    "imageHighSrc": "cards/base3-012-high.png"
+  },
+  {
+    "masterCardId": "1533",
+    "externalId": null,
+    "tcgdex_id": "base3-11",
+    "localId": "011",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "011/62",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 011/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-011-low.png",
+    "imageHighSrc": "cards/base3-011-high.png"
+  },
+  {
+    "masterCardId": "1532",
+    "externalId": null,
+    "tcgdex_id": "base3-10",
+    "localId": "010",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "010/62",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 010/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-010-low.png",
+    "imageHighSrc": "cards/base3-010-high.png"
+  },
+  {
+    "masterCardId": "1531",
+    "externalId": null,
+    "tcgdex_id": "base3-9",
+    "localId": "009",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "009/62",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 009/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-009-low.png",
+    "imageHighSrc": "cards/base3-009-high.png"
+  },
+  {
+    "masterCardId": "1530",
+    "externalId": null,
+    "tcgdex_id": "base3-8",
+    "localId": "008",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "008/62",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 008/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-008-low.png",
+    "imageHighSrc": "cards/base3-008-high.png"
+  },
+  {
+    "masterCardId": "1529",
+    "externalId": null,
+    "tcgdex_id": "base3-7",
+    "localId": "007",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "007/62",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 007/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-007-low.png",
+    "imageHighSrc": "cards/base3-007-high.png"
+  },
+  {
+    "masterCardId": "1528",
+    "externalId": null,
+    "tcgdex_id": "base3-6",
+    "localId": "006",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "006/62",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 006/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-006-low.png",
+    "imageHighSrc": "cards/base3-006-high.png"
+  },
+  {
+    "masterCardId": "1527",
+    "externalId": null,
+    "tcgdex_id": "base3-5",
+    "localId": "005",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "005/62",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 005/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-005-low.png",
+    "imageHighSrc": "cards/base3-005-high.png"
+  },
+  {
+    "masterCardId": "1526",
+    "externalId": null,
+    "tcgdex_id": "base3-4",
+    "localId": "004",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "004/62",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 004/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-004-low.png",
+    "imageHighSrc": "cards/base3-004-high.png"
+  },
+  {
+    "masterCardId": "1525",
+    "externalId": null,
+    "tcgdex_id": "base3-3",
+    "localId": "003",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "003/62",
+    "cardName": "Ditto",
+    "fullDisplayName": "Ditto 003/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      132
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-003-low.png",
+    "imageHighSrc": "cards/base3-003-high.png"
+  },
+  {
+    "masterCardId": "1524",
+    "externalId": null,
+    "tcgdex_id": "base3-2",
+    "localId": "002",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "002/62",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 002/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-002-low.png",
+    "imageHighSrc": "cards/base3-002-high.png"
+  },
+  {
+    "masterCardId": "1523",
+    "externalId": null,
+    "tcgdex_id": "base3-1",
+    "localId": "001",
+    "setCode": "base3",
+    "setTcgdexId": "base3",
+    "cardNumber": "001/62",
+    "cardName": "Aerodactyl",
+    "fullDisplayName": "Aerodactyl 001/62 Fossil",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base3-001-low.png",
+    "imageHighSrc": "cards/base3-001-high.png"
+  }
+]

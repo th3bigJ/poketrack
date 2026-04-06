@@ -1,0 +1,2108 @@
+[
+  {
+    "masterCardId": "1522",
+    "externalId": null,
+    "tcgdex_id": "base2-64",
+    "localId": "064",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "064/64",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 064/64 Jungle",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-064-low.png",
+    "imageHighSrc": "cards/base2-064-high.png"
+  },
+  {
+    "masterCardId": "1521",
+    "externalId": null,
+    "tcgdex_id": "base2-63",
+    "localId": "063",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "063/64",
+    "cardName": "Venonat",
+    "fullDisplayName": "Venonat 063/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      48
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-063-low.png",
+    "imageHighSrc": "cards/base2-063-high.png"
+  },
+  {
+    "masterCardId": "1520",
+    "externalId": null,
+    "tcgdex_id": "base2-62",
+    "localId": "062",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "062/64",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 062/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-062-low.png",
+    "imageHighSrc": "cards/base2-062-high.png"
+  },
+  {
+    "masterCardId": "1519",
+    "externalId": null,
+    "tcgdex_id": "base2-61",
+    "localId": "061",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "061/64",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 061/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-061-low.png",
+    "imageHighSrc": "cards/base2-061-high.png"
+  },
+  {
+    "masterCardId": "1518",
+    "externalId": null,
+    "tcgdex_id": "base2-60",
+    "localId": "060",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "060/64",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 060/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pichu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-060-low.png",
+    "imageHighSrc": "cards/base2-060-high.png"
+  },
+  {
+    "masterCardId": "1517",
+    "externalId": null,
+    "tcgdex_id": "base2-59",
+    "localId": "059",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "059/64",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 059/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-059-low.png",
+    "imageHighSrc": "cards/base2-059-high.png"
+  },
+  {
+    "masterCardId": "1516",
+    "externalId": null,
+    "tcgdex_id": "base2-58",
+    "localId": "058",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "058/64",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 058/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-058-low.png",
+    "imageHighSrc": "cards/base2-058-high.png"
+  },
+  {
+    "masterCardId": "1515",
+    "externalId": null,
+    "tcgdex_id": "base2-57",
+    "localId": "057",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "057/64",
+    "cardName": "Nidoran ♀",
+    "fullDisplayName": "Nidoran ♀ 057/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      29
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/base2-057-low.png",
+    "imageHighSrc": "cards/base2-057-high.png"
+  },
+  {
+    "masterCardId": "1514",
+    "externalId": null,
+    "tcgdex_id": "base2-56",
+    "localId": "056",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "056/64",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 056/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-056-low.png",
+    "imageHighSrc": "cards/base2-056-high.png"
+  },
+  {
+    "masterCardId": "1513",
+    "externalId": null,
+    "tcgdex_id": "base2-55",
+    "localId": "055",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "055/64",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 055/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-055-low.png",
+    "imageHighSrc": "cards/base2-055-high.png"
+  },
+  {
+    "masterCardId": "1512",
+    "externalId": null,
+    "tcgdex_id": "base2-54",
+    "localId": "054",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "054/64",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 054/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-054-low.png",
+    "imageHighSrc": "cards/base2-054-high.png"
+  },
+  {
+    "masterCardId": "1511",
+    "externalId": null,
+    "tcgdex_id": "base2-53",
+    "localId": "053",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "053/64",
+    "cardName": "Goldeen",
+    "fullDisplayName": "Goldeen 053/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      118
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-053-low.png",
+    "imageHighSrc": "cards/base2-053-high.png"
+  },
+  {
+    "masterCardId": "1510",
+    "externalId": null,
+    "tcgdex_id": "base2-52",
+    "localId": "052",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "052/64",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 052/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-052-low.png",
+    "imageHighSrc": "cards/base2-052-high.png"
+  },
+  {
+    "masterCardId": "1509",
+    "externalId": null,
+    "tcgdex_id": "base2-51",
+    "localId": "051",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "051/64",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 051/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-051-low.png",
+    "imageHighSrc": "cards/base2-051-high.png"
+  },
+  {
+    "masterCardId": "1508",
+    "externalId": null,
+    "tcgdex_id": "base2-50",
+    "localId": "050",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "050/64",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 050/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-050-low.png",
+    "imageHighSrc": "cards/base2-050-high.png"
+  },
+  {
+    "masterCardId": "1507",
+    "externalId": null,
+    "tcgdex_id": "base2-49",
+    "localId": "049",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "049/64",
+    "cardName": "Bellsprout",
+    "fullDisplayName": "Bellsprout 049/64 Jungle",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      69
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-049-low.png",
+    "imageHighSrc": "cards/base2-049-high.png"
+  },
+  {
+    "masterCardId": "1506",
+    "externalId": null,
+    "tcgdex_id": "base2-48",
+    "localId": "048",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "048/64",
+    "cardName": "Weepinbell",
+    "fullDisplayName": "Weepinbell 048/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      70
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bellsprout",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-048-low.png",
+    "imageHighSrc": "cards/base2-048-high.png"
+  },
+  {
+    "masterCardId": "1505",
+    "externalId": null,
+    "tcgdex_id": "base2-47",
+    "localId": "047",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "047/64",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 047/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-047-low.png",
+    "imageHighSrc": "cards/base2-047-high.png"
+  },
+  {
+    "masterCardId": "1504",
+    "externalId": null,
+    "tcgdex_id": "base2-46",
+    "localId": "046",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "046/64",
+    "cardName": "Seaking",
+    "fullDisplayName": "Seaking 046/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      119
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Goldeen",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-046-low.png",
+    "imageHighSrc": "cards/base2-046-high.png"
+  },
+  {
+    "masterCardId": "1503",
+    "externalId": null,
+    "tcgdex_id": "base2-45",
+    "localId": "045",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "045/64",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 045/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyhorn",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-045-low.png",
+    "imageHighSrc": "cards/base2-045-high.png"
+  },
+  {
+    "masterCardId": "1502",
+    "externalId": null,
+    "tcgdex_id": "base2-44",
+    "localId": "044",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "044/64",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 044/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-044-low.png",
+    "imageHighSrc": "cards/base2-044-high.png"
+  },
+  {
+    "masterCardId": "1501",
+    "externalId": null,
+    "tcgdex_id": "base2-43",
+    "localId": "043",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "043/64",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 043/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-043-low.png",
+    "imageHighSrc": "cards/base2-043-high.png"
+  },
+  {
+    "masterCardId": "1500",
+    "externalId": null,
+    "tcgdex_id": "base2-42",
+    "localId": "042",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "042/64",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 042/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-042-low.png",
+    "imageHighSrc": "cards/base2-042-high.png"
+  },
+  {
+    "masterCardId": "1499",
+    "externalId": null,
+    "tcgdex_id": "base2-41",
+    "localId": "041",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "041/64",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 041/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Paras",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-041-low.png",
+    "imageHighSrc": "cards/base2-041-high.png"
+  },
+  {
+    "masterCardId": "1498",
+    "externalId": null,
+    "tcgdex_id": "base2-40",
+    "localId": "040",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "040/64",
+    "cardName": "Nidorina",
+    "fullDisplayName": "Nidorina 040/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      30
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♀",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-040-low.png",
+    "imageHighSrc": "cards/base2-040-high.png"
+  },
+  {
+    "masterCardId": "1497",
+    "externalId": null,
+    "tcgdex_id": "base2-39",
+    "localId": "039",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "039/64",
+    "cardName": "Marowak",
+    "fullDisplayName": "Marowak 039/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-039-low.png",
+    "imageHighSrc": "cards/base2-039-high.png"
+  },
+  {
+    "masterCardId": "1496",
+    "externalId": null,
+    "tcgdex_id": "base2-38",
+    "localId": "038",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "038/64",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 038/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-038-low.png",
+    "imageHighSrc": "cards/base2-038-high.png"
+  },
+  {
+    "masterCardId": "1495",
+    "externalId": null,
+    "tcgdex_id": "base2-37",
+    "localId": "037",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "037/64",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 037/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-037-low.png",
+    "imageHighSrc": "cards/base2-037-high.png"
+  },
+  {
+    "masterCardId": "1494",
+    "externalId": null,
+    "tcgdex_id": "base2-36",
+    "localId": "036",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "036/64",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 036/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-036-low.png",
+    "imageHighSrc": "cards/base2-036-high.png"
+  },
+  {
+    "masterCardId": "1493",
+    "externalId": null,
+    "tcgdex_id": "base2-35",
+    "localId": "035",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "035/64",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 035/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-035-low.png",
+    "imageHighSrc": "cards/base2-035-high.png"
+  },
+  {
+    "masterCardId": "1492",
+    "externalId": null,
+    "tcgdex_id": "base2-34",
+    "localId": "034",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "034/64",
+    "cardName": "Dodrio",
+    "fullDisplayName": "Dodrio 034/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      85
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doduo",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-034-low.png",
+    "imageHighSrc": "cards/base2-034-high.png"
+  },
+  {
+    "masterCardId": "1491",
+    "externalId": null,
+    "tcgdex_id": "base2-33",
+    "localId": "033",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "033/64",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 033/64 Jungle",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-033-low.png",
+    "imageHighSrc": "cards/base2-033-high.png"
+  },
+  {
+    "masterCardId": "1490",
+    "externalId": null,
+    "tcgdex_id": "base2-32",
+    "localId": "032",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "032/64",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 032/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-032-low.png",
+    "imageHighSrc": "cards/base2-032-high.png"
+  },
+  {
+    "masterCardId": "1489",
+    "externalId": null,
+    "tcgdex_id": "base2-31",
+    "localId": "031",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "031/64",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 031/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-031-low.png",
+    "imageHighSrc": "cards/base2-031-high.png"
+  },
+  {
+    "masterCardId": "1488",
+    "externalId": null,
+    "tcgdex_id": "base2-30",
+    "localId": "030",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "030/64",
+    "cardName": "Victreebel",
+    "fullDisplayName": "Victreebel 030/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      71
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weepinbell",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-030-low.png",
+    "imageHighSrc": "cards/base2-030-high.png"
+  },
+  {
+    "masterCardId": "1487",
+    "externalId": null,
+    "tcgdex_id": "base2-29",
+    "localId": "029",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "029/64",
+    "cardName": "Venomoth",
+    "fullDisplayName": "Venomoth 029/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venonat",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-029-low.png",
+    "imageHighSrc": "cards/base2-029-high.png"
+  },
+  {
+    "masterCardId": "1486",
+    "externalId": null,
+    "tcgdex_id": "base2-28",
+    "localId": "028",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "028/64",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 028/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-028-low.png",
+    "imageHighSrc": "cards/base2-028-high.png"
+  },
+  {
+    "masterCardId": "1485",
+    "externalId": null,
+    "tcgdex_id": "base2-27",
+    "localId": "027",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "027/64",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 027/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munchlax",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-027-low.png",
+    "imageHighSrc": "cards/base2-027-high.png"
+  },
+  {
+    "masterCardId": "1484",
+    "externalId": null,
+    "tcgdex_id": "base2-26",
+    "localId": "026",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "026/64",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 026/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-026-low.png",
+    "imageHighSrc": "cards/base2-026-high.png"
+  },
+  {
+    "masterCardId": "1483",
+    "externalId": null,
+    "tcgdex_id": "base2-25",
+    "localId": "025",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "025/64",
+    "cardName": "Pinsir",
+    "fullDisplayName": "Pinsir 025/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-025-low.png",
+    "imageHighSrc": "cards/base2-025-high.png"
+  },
+  {
+    "masterCardId": "1482",
+    "externalId": null,
+    "tcgdex_id": "base2-24",
+    "localId": "024",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "024/64",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 024/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-024-low.png",
+    "imageHighSrc": "cards/base2-024-high.png"
+  },
+  {
+    "masterCardId": "1481",
+    "externalId": null,
+    "tcgdex_id": "base2-23",
+    "localId": "023",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "023/64",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 023/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-023-low.png",
+    "imageHighSrc": "cards/base2-023-high.png"
+  },
+  {
+    "masterCardId": "1480",
+    "externalId": null,
+    "tcgdex_id": "base2-22",
+    "localId": "022",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "022/64",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 022/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mime Jr.",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-022-low.png",
+    "imageHighSrc": "cards/base2-022-high.png"
+  },
+  {
+    "masterCardId": "1479",
+    "externalId": null,
+    "tcgdex_id": "base2-21",
+    "localId": "021",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "021/64",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 021/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-021-low.png",
+    "imageHighSrc": "cards/base2-021-high.png"
+  },
+  {
+    "masterCardId": "1478",
+    "externalId": null,
+    "tcgdex_id": "base2-20",
+    "localId": "020",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "020/64",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 020/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-020-low.png",
+    "imageHighSrc": "cards/base2-020-high.png"
+  },
+  {
+    "masterCardId": "1477",
+    "externalId": null,
+    "tcgdex_id": "base2-19",
+    "localId": "019",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "019/64",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 019/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-019-low.png",
+    "imageHighSrc": "cards/base2-019-high.png"
+  },
+  {
+    "masterCardId": "1476",
+    "externalId": null,
+    "tcgdex_id": "base2-18",
+    "localId": "018",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "018/64",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 018/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-018-low.png",
+    "imageHighSrc": "cards/base2-018-high.png"
+  },
+  {
+    "masterCardId": "1475",
+    "externalId": null,
+    "tcgdex_id": "base2-17",
+    "localId": "017",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "017/64",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 017/64 Jungle",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-017-low.png",
+    "imageHighSrc": "cards/base2-017-high.png"
+  },
+  {
+    "masterCardId": "1474",
+    "externalId": null,
+    "tcgdex_id": "base2-16",
+    "localId": "016",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "016/64",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 016/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-016-low.png",
+    "imageHighSrc": "cards/base2-016-high.png"
+  },
+  {
+    "masterCardId": "1473",
+    "externalId": null,
+    "tcgdex_id": "base2-15",
+    "localId": "015",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "015/64",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 015/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-015-low.png",
+    "imageHighSrc": "cards/base2-015-high.png"
+  },
+  {
+    "masterCardId": "1472",
+    "externalId": null,
+    "tcgdex_id": "base2-14",
+    "localId": "014",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "014/64",
+    "cardName": "Victreebel",
+    "fullDisplayName": "Victreebel 014/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      71
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weepinbell",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-014-low.png",
+    "imageHighSrc": "cards/base2-014-high.png"
+  },
+  {
+    "masterCardId": "1471",
+    "externalId": null,
+    "tcgdex_id": "base2-13",
+    "localId": "013",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "013/64",
+    "cardName": "Venomoth",
+    "fullDisplayName": "Venomoth 013/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venonat",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-013-low.png",
+    "imageHighSrc": "cards/base2-013-high.png"
+  },
+  {
+    "masterCardId": "1470",
+    "externalId": null,
+    "tcgdex_id": "base2-12",
+    "localId": "012",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "012/64",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 012/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-012-low.png",
+    "imageHighSrc": "cards/base2-012-high.png"
+  },
+  {
+    "masterCardId": "1469",
+    "externalId": null,
+    "tcgdex_id": "base2-11",
+    "localId": "011",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "011/64",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 011/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munchlax",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-011-low.png",
+    "imageHighSrc": "cards/base2-011-high.png"
+  },
+  {
+    "masterCardId": "1468",
+    "externalId": null,
+    "tcgdex_id": "base2-10",
+    "localId": "010",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "010/64",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 010/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-010-low.png",
+    "imageHighSrc": "cards/base2-010-high.png"
+  },
+  {
+    "masterCardId": "1467",
+    "externalId": null,
+    "tcgdex_id": "base2-9",
+    "localId": "009",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "009/64",
+    "cardName": "Pinsir",
+    "fullDisplayName": "Pinsir 009/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-009-low.png",
+    "imageHighSrc": "cards/base2-009-high.png"
+  },
+  {
+    "masterCardId": "1466",
+    "externalId": null,
+    "tcgdex_id": "base2-8",
+    "localId": "008",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "008/64",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 008/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-008-low.png",
+    "imageHighSrc": "cards/base2-008-high.png"
+  },
+  {
+    "masterCardId": "1465",
+    "externalId": null,
+    "tcgdex_id": "base2-7",
+    "localId": "007",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "007/64",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 007/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-007-low.png",
+    "imageHighSrc": "cards/base2-007-high.png"
+  },
+  {
+    "masterCardId": "1464",
+    "externalId": null,
+    "tcgdex_id": "base2-6",
+    "localId": "006",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "006/64",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 006/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mime Jr.",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-006-low.png",
+    "imageHighSrc": "cards/base2-006-high.png"
+  },
+  {
+    "masterCardId": "1463",
+    "externalId": null,
+    "tcgdex_id": "base2-5",
+    "localId": "005",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "005/64",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 005/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-005-low.png",
+    "imageHighSrc": "cards/base2-005-high.png"
+  },
+  {
+    "masterCardId": "1462",
+    "externalId": null,
+    "tcgdex_id": "base2-4",
+    "localId": "004",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "004/64",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 004/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-004-low.png",
+    "imageHighSrc": "cards/base2-004-high.png"
+  },
+  {
+    "masterCardId": "1461",
+    "externalId": null,
+    "tcgdex_id": "base2-3",
+    "localId": "003",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "003/64",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 003/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-003-low.png",
+    "imageHighSrc": "cards/base2-003-high.png"
+  },
+  {
+    "masterCardId": "1460",
+    "externalId": null,
+    "tcgdex_id": "base2-2",
+    "localId": "002",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "002/64",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 002/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-002-low.png",
+    "imageHighSrc": "cards/base2-002-high.png"
+  },
+  {
+    "masterCardId": "1459",
+    "externalId": null,
+    "tcgdex_id": "base2-1",
+    "localId": "001",
+    "setCode": "base2",
+    "setTcgdexId": "base2",
+    "cardNumber": "001/64",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 001/64 Jungle",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base2-001-low.png",
+    "imageHighSrc": "cards/base2-001-high.png"
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "masterCardId": "22375",
+    "externalId": "mcd24-15",
+    "tcgdex_id": "2024sv-15",
+    "localId": "015",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "015/15",
+    "cardName": "Drampa",
+    "fullDisplayName": "Drampa 015/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      780
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-015-low.jpg",
+    "imageHighSrc": "cards/2024sv-015-low.jpg"
+  },
+  {
+    "masterCardId": "22374",
+    "externalId": "mcd24-14",
+    "tcgdex_id": "2024sv-14",
+    "localId": "014",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "014/15",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 014/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "so-taro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-014-low.jpg",
+    "imageHighSrc": "cards/2024sv-014-low.jpg"
+  },
+  {
+    "masterCardId": "22373",
+    "externalId": "mcd24-13",
+    "tcgdex_id": "2024sv-13",
+    "localId": "013",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "013/15",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 013/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-013-low.jpg",
+    "imageHighSrc": "cards/2024sv-013-low.jpg"
+  },
+  {
+    "masterCardId": "22372",
+    "externalId": "mcd24-12",
+    "tcgdex_id": "2024sv-12",
+    "localId": "012",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "012/15",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 012/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-012-low.jpg",
+    "imageHighSrc": "cards/2024sv-012-low.jpg"
+  },
+  {
+    "masterCardId": "22371",
+    "externalId": "mcd24-11",
+    "tcgdex_id": "2024sv-11",
+    "localId": "011",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "011/15",
+    "cardName": "Roaring Moon",
+    "fullDisplayName": "Roaring Moon 011/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1005
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hncl",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-011-low.jpg",
+    "imageHighSrc": "cards/2024sv-011-low.jpg"
+  },
+  {
+    "masterCardId": "22370",
+    "externalId": "mcd24-10",
+    "tcgdex_id": "2024sv-10",
+    "localId": "010",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "010/15",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 010/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-010-low.jpg",
+    "imageHighSrc": "cards/2024sv-010-low.jpg"
+  },
+  {
+    "masterCardId": "22369",
+    "externalId": "mcd24-9",
+    "tcgdex_id": "2024sv-9",
+    "localId": "009",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "009/15",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 009/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-009-low.jpg",
+    "imageHighSrc": "cards/2024sv-009-low.jpg"
+  },
+  {
+    "masterCardId": "22368",
+    "externalId": "mcd24-8",
+    "tcgdex_id": "2024sv-8",
+    "localId": "008",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "008/15",
+    "cardName": "Koraidon",
+    "fullDisplayName": "Koraidon 008/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1007
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-008-low.jpg",
+    "imageHighSrc": "cards/2024sv-008-low.jpg"
+  },
+  {
+    "masterCardId": "22367",
+    "externalId": "mcd24-7",
+    "tcgdex_id": "2024sv-7",
+    "localId": "007",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "007/15",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 007/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-007-low.jpg",
+    "imageHighSrc": "cards/2024sv-007-low.jpg"
+  },
+  {
+    "masterCardId": "22366",
+    "externalId": "mcd24-6",
+    "tcgdex_id": "2024sv-6",
+    "localId": "006",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "006/15",
+    "cardName": "Dragapult",
+    "fullDisplayName": "Dragapult 006/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      887
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drakloak",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-006-low.jpg",
+    "imageHighSrc": "cards/2024sv-006-low.jpg"
+  },
+  {
+    "masterCardId": "22365",
+    "externalId": "mcd24-5",
+    "tcgdex_id": "2024sv-5",
+    "localId": "005",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "005/15",
+    "cardName": "Hatenna",
+    "fullDisplayName": "Hatenna 005/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      856
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-005-low.jpg",
+    "imageHighSrc": "cards/2024sv-005-low.jpg"
+  },
+  {
+    "masterCardId": "22364",
+    "externalId": "mcd24-4",
+    "tcgdex_id": "2024sv-4",
+    "localId": "004",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "004/15",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 004/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-004-low.jpg",
+    "imageHighSrc": "cards/2024sv-004-low.jpg"
+  },
+  {
+    "masterCardId": "22363",
+    "externalId": "mcd24-3",
+    "tcgdex_id": "2024sv-3",
+    "localId": "003",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "003/15",
+    "cardName": "Miraidon",
+    "fullDisplayName": "Miraidon 003/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      1008
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-003-low.jpg",
+    "imageHighSrc": "cards/2024sv-003-low.jpg"
+  },
+  {
+    "masterCardId": "22362",
+    "externalId": "mcd24-2",
+    "tcgdex_id": "2024sv-2",
+    "localId": "002",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "002/15",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 002/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-002-low.jpg",
+    "imageHighSrc": "cards/2024sv-002-low.jpg"
+  },
+  {
+    "masterCardId": "22361",
+    "externalId": "mcd24-1",
+    "tcgdex_id": "2024sv-1",
+    "localId": "001",
+    "setCode": "2024sv",
+    "setTcgdexId": "2024sv",
+    "cardNumber": "001/15",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 001/15 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2024sv-001-low.jpg",
+    "imageHighSrc": "cards/2024sv-001-low.jpg"
+  }
+]

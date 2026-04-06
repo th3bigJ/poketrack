@@ -1,0 +1,5730 @@
+[
+  {
+    "masterCardId": "14059",
+    "externalId": null,
+    "tcgdex_id": "sv07-175",
+    "localId": "175",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "175/142",
+    "cardName": "Bravery Charm",
+    "fullDisplayName": "Bravery Charm 175/142 Stellar Crown",
+    "rarity": "Hyper Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-175-low.png",
+    "imageHighSrc": "cards/sv7-175-high.png"
+  },
+  {
+    "masterCardId": "14049",
+    "externalId": null,
+    "tcgdex_id": "sv07-174",
+    "localId": "174",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "174/142",
+    "cardName": "Area Zero Underdepths",
+    "fullDisplayName": "Area Zero Underdepths 174/142 Stellar Crown",
+    "rarity": "Hyper Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-174-low.png",
+    "imageHighSrc": "cards/sv7-174-high.png"
+  },
+  {
+    "masterCardId": "14037",
+    "externalId": null,
+    "tcgdex_id": "sv07-173",
+    "localId": "173",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "173/142",
+    "cardName": "Terapagos ex",
+    "fullDisplayName": "Terapagos ex 173/142 Stellar Crown",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      1024
+    ],
+    "subtypes": [
+      "Basic",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-173-low.png",
+    "imageHighSrc": "cards/sv7-173-high.png"
+  },
+  {
+    "masterCardId": "14027",
+    "externalId": null,
+    "tcgdex_id": "sv07-172",
+    "localId": "172",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "172/142",
+    "cardName": "Lacey",
+    "fullDisplayName": "Lacey 172/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-172-low.png",
+    "imageHighSrc": "cards/sv7-172-high.png"
+  },
+  {
+    "masterCardId": "14018",
+    "externalId": null,
+    "tcgdex_id": "sv07-171",
+    "localId": "171",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "171/142",
+    "cardName": "Briar",
+    "fullDisplayName": "Briar 171/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-171-low.png",
+    "imageHighSrc": "cards/sv7-171-high.png"
+  },
+  {
+    "masterCardId": "14008",
+    "externalId": null,
+    "tcgdex_id": "sv07-170",
+    "localId": "170",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "170/142",
+    "cardName": "Terapagos ex",
+    "fullDisplayName": "Terapagos ex 170/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      1024
+    ],
+    "subtypes": [
+      "Basic",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-170-low.png",
+    "imageHighSrc": "cards/sv7-170-high.png"
+  },
+  {
+    "masterCardId": "14000",
+    "externalId": null,
+    "tcgdex_id": "sv07-169",
+    "localId": "169",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "169/142",
+    "cardName": "Dachsbun ex",
+    "fullDisplayName": "Dachsbun ex 169/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 250,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      927
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fidough",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-169-low.png",
+    "imageHighSrc": "cards/sv7-169-high.png"
+  },
+  {
+    "masterCardId": "13991",
+    "externalId": null,
+    "tcgdex_id": "sv07-168",
+    "localId": "168",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "168/142",
+    "cardName": "Galvantula ex",
+    "fullDisplayName": "Galvantula ex 168/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-168-low.png",
+    "imageHighSrc": "cards/sv7-168-high.png"
+  },
+  {
+    "masterCardId": "13980",
+    "externalId": null,
+    "tcgdex_id": "sv07-167",
+    "localId": "167",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "167/142",
+    "cardName": "Hydrapple ex",
+    "fullDisplayName": "Hydrapple ex 167/142 Stellar Crown",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1019
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dipplin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-167-low.png",
+    "imageHighSrc": "cards/sv7-167-high.png"
+  },
+  {
+    "masterCardId": "13971",
+    "externalId": null,
+    "tcgdex_id": "sv07-166",
+    "localId": "166",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "166/142",
+    "cardName": "Lacey",
+    "fullDisplayName": "Lacey 166/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-166-low.png",
+    "imageHighSrc": "cards/sv7-166-high.png"
+  },
+  {
+    "masterCardId": "13961",
+    "externalId": null,
+    "tcgdex_id": "sv07-165",
+    "localId": "165",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "165/142",
+    "cardName": "Kofu",
+    "fullDisplayName": "Kofu 165/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-165-low.png",
+    "imageHighSrc": "cards/sv7-165-high.png"
+  },
+  {
+    "masterCardId": "13951",
+    "externalId": null,
+    "tcgdex_id": "sv07-164",
+    "localId": "164",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "164/142",
+    "cardName": "Crispin",
+    "fullDisplayName": "Crispin 164/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-164-low.png",
+    "imageHighSrc": "cards/sv7-164-high.png"
+  },
+  {
+    "masterCardId": "13942",
+    "externalId": null,
+    "tcgdex_id": "sv07-163",
+    "localId": "163",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "163/142",
+    "cardName": "Briar",
+    "fullDisplayName": "Briar 163/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-163-low.png",
+    "imageHighSrc": "cards/sv7-163-high.png"
+  },
+  {
+    "masterCardId": "13931",
+    "externalId": null,
+    "tcgdex_id": "sv07-162",
+    "localId": "162",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "162/142",
+    "cardName": "Orthworm ex",
+    "fullDisplayName": "Orthworm ex 162/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      968
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-162-low.png",
+    "imageHighSrc": "cards/sv7-162-high.png"
+  },
+  {
+    "masterCardId": "13919",
+    "externalId": null,
+    "tcgdex_id": "sv07-161",
+    "localId": "161",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "161/142",
+    "cardName": "Medicham ex",
+    "fullDisplayName": "Medicham ex 161/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-161-low.png",
+    "imageHighSrc": "cards/sv7-161-high.png"
+  },
+  {
+    "masterCardId": "13909",
+    "externalId": null,
+    "tcgdex_id": "sv07-160",
+    "localId": "160",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "160/142",
+    "cardName": "Dachsbun ex",
+    "fullDisplayName": "Dachsbun ex 160/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 250,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      927
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fidough",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-160-low.png",
+    "imageHighSrc": "cards/sv7-160-high.png"
+  },
+  {
+    "masterCardId": "13900",
+    "externalId": null,
+    "tcgdex_id": "sv07-159",
+    "localId": "159",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "159/142",
+    "cardName": "Galvantula ex",
+    "fullDisplayName": "Galvantula ex 159/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-159-low.png",
+    "imageHighSrc": "cards/sv7-159-high.png"
+  },
+  {
+    "masterCardId": "13890",
+    "externalId": null,
+    "tcgdex_id": "sv07-158",
+    "localId": "158",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "158/142",
+    "cardName": "Lapras ex",
+    "fullDisplayName": "Lapras ex 158/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-158-low.png",
+    "imageHighSrc": "cards/sv7-158-high.png"
+  },
+  {
+    "masterCardId": "13879",
+    "externalId": null,
+    "tcgdex_id": "sv07-157",
+    "localId": "157",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "157/142",
+    "cardName": "Cinderace ex",
+    "fullDisplayName": "Cinderace ex 157/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      815
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Raboot",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-157-low.png",
+    "imageHighSrc": "cards/sv7-157-high.png"
+  },
+  {
+    "masterCardId": "13870",
+    "externalId": null,
+    "tcgdex_id": "sv07-156",
+    "localId": "156",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "156/142",
+    "cardName": "Hydrapple ex",
+    "fullDisplayName": "Hydrapple ex 156/142 Stellar Crown",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1019
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dipplin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-156-low.png",
+    "imageHighSrc": "cards/sv7-156-high.png"
+  },
+  {
+    "masterCardId": "13858",
+    "externalId": null,
+    "tcgdex_id": "sv07-155",
+    "localId": "155",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "155/142",
+    "cardName": "Archaludon",
+    "fullDisplayName": "Archaludon 155/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      1018
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duraludon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-155-low.png",
+    "imageHighSrc": "cards/sv7-155-high.png"
+  },
+  {
+    "masterCardId": "13849",
+    "externalId": null,
+    "tcgdex_id": "sv07-154",
+    "localId": "154",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "154/142",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 154/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-154-low.png",
+    "imageHighSrc": "cards/sv7-154-high.png"
+  },
+  {
+    "masterCardId": "13837",
+    "externalId": null,
+    "tcgdex_id": "sv07-153",
+    "localId": "153",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "153/142",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 153/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-153-low.png",
+    "imageHighSrc": "cards/sv7-153-high.png"
+  },
+  {
+    "masterCardId": "13826",
+    "externalId": null,
+    "tcgdex_id": "sv07-152",
+    "localId": "152",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "152/142",
+    "cardName": "Milcery",
+    "fullDisplayName": "Milcery 152/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      868
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-152-low.png",
+    "imageHighSrc": "cards/sv7-152-high.png"
+  },
+  {
+    "masterCardId": "13815",
+    "externalId": null,
+    "tcgdex_id": "sv07-151",
+    "localId": "151",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "151/142",
+    "cardName": "Zeraora",
+    "fullDisplayName": "Zeraora 151/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      807
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-151-low.png",
+    "imageHighSrc": "cards/sv7-151-high.png"
+  },
+  {
+    "masterCardId": "13800",
+    "externalId": null,
+    "tcgdex_id": "sv07-150",
+    "localId": "150",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "150/142",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 150/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-150-low.png",
+    "imageHighSrc": "cards/sv7-150-high.png"
+  },
+  {
+    "masterCardId": "13792",
+    "externalId": null,
+    "tcgdex_id": "sv07-149",
+    "localId": "149",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "149/142",
+    "cardName": "Crabominable",
+    "fullDisplayName": "Crabominable 149/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      740
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Crabrawler",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-149-low.png",
+    "imageHighSrc": "cards/sv7-149-high.png"
+  },
+  {
+    "masterCardId": "13782",
+    "externalId": null,
+    "tcgdex_id": "sv07-148",
+    "localId": "148",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "148/142",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 148/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-148-low.png",
+    "imageHighSrc": "cards/sv7-148-high.png"
+  },
+  {
+    "masterCardId": "13769",
+    "externalId": null,
+    "tcgdex_id": "sv07-147",
+    "localId": "147",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "147/142",
+    "cardName": "Raboot",
+    "fullDisplayName": "Raboot 147/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      814
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scorbunny",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-147-low.png",
+    "imageHighSrc": "cards/sv7-147-high.png"
+  },
+  {
+    "masterCardId": "13760",
+    "externalId": null,
+    "tcgdex_id": "sv07-146",
+    "localId": "146",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "146/142",
+    "cardName": "Turtonator",
+    "fullDisplayName": "Turtonator 146/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      776
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-146-low.png",
+    "imageHighSrc": "cards/sv7-146-high.png"
+  },
+  {
+    "masterCardId": "13751",
+    "externalId": null,
+    "tcgdex_id": "sv07-145",
+    "localId": "145",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "145/142",
+    "cardName": "Lileep",
+    "fullDisplayName": "Lileep 145/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Antique Root Fossil",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-145-low.png",
+    "imageHighSrc": "cards/sv7-145-high.png"
+  },
+  {
+    "masterCardId": "13739",
+    "externalId": null,
+    "tcgdex_id": "sv07-144",
+    "localId": "144",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "144/142",
+    "cardName": "Ledian",
+    "fullDisplayName": "Ledian 144/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      166
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ledyba",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-144-low.png",
+    "imageHighSrc": "cards/sv7-144-high.png"
+  },
+  {
+    "masterCardId": "13730",
+    "externalId": null,
+    "tcgdex_id": "sv07-143",
+    "localId": "143",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "143/142",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 143/142 Stellar Crown",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-143-low.png",
+    "imageHighSrc": "cards/sv7-143-high.png"
+  },
+  {
+    "masterCardId": "13720",
+    "externalId": null,
+    "tcgdex_id": "sv07-142",
+    "localId": "142",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "142/142",
+    "cardName": "Sparkling Crystal",
+    "fullDisplayName": "Sparkling Crystal 142/142 Stellar Crown",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool",
+      "ACE SPEC"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-142-low.png",
+    "imageHighSrc": "cards/sv7-142-high.png"
+  },
+  {
+    "masterCardId": "13709",
+    "externalId": null,
+    "tcgdex_id": "sv07-141",
+    "localId": "141",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "141/142",
+    "cardName": "Payapa Berry",
+    "fullDisplayName": "Payapa Berry 141/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-141-low.png",
+    "imageHighSrc": "cards/sv7-141-high.png"
+  },
+  {
+    "masterCardId": "13696",
+    "externalId": null,
+    "tcgdex_id": "sv07-140",
+    "localId": "140",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "140/142",
+    "cardName": "Occa Berry",
+    "fullDisplayName": "Occa Berry 140/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-140-low.png",
+    "imageHighSrc": "cards/sv7-140-high.png"
+  },
+  {
+    "masterCardId": "13687",
+    "externalId": null,
+    "tcgdex_id": "sv07-139",
+    "localId": "139",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "139/142",
+    "cardName": "Lacey",
+    "fullDisplayName": "Lacey 139/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-139-low.png",
+    "imageHighSrc": "cards/sv7-139-high.png"
+  },
+  {
+    "masterCardId": "13678",
+    "externalId": null,
+    "tcgdex_id": "sv07-138",
+    "localId": "138",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "138/142",
+    "cardName": "Kofu",
+    "fullDisplayName": "Kofu 138/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-138-low.png",
+    "imageHighSrc": "cards/sv7-138-high.png"
+  },
+  {
+    "masterCardId": "13670",
+    "externalId": null,
+    "tcgdex_id": "sv07-137",
+    "localId": "137",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "137/142",
+    "cardName": "Gravity Gemstone",
+    "fullDisplayName": "Gravity Gemstone 137/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-137-low.png",
+    "imageHighSrc": "cards/sv7-137-high.png"
+  },
+  {
+    "masterCardId": "13659",
+    "externalId": null,
+    "tcgdex_id": "sv07-136",
+    "localId": "136",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "136/142",
+    "cardName": "Grand Tree",
+    "fullDisplayName": "Grand Tree 136/142 Stellar Crown",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium",
+      "ACE SPEC"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-136-low.png",
+    "imageHighSrc": "cards/sv7-136-high.png"
+  },
+  {
+    "masterCardId": "13650",
+    "externalId": null,
+    "tcgdex_id": "sv07-135",
+    "localId": "135",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "135/142",
+    "cardName": "Glass Trumpet",
+    "fullDisplayName": "Glass Trumpet 135/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-135-low.png",
+    "imageHighSrc": "cards/sv7-135-high.png"
+  },
+  {
+    "masterCardId": "13640",
+    "externalId": null,
+    "tcgdex_id": "sv07-134",
+    "localId": "134",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "134/142",
+    "cardName": "Deluxe Bomb",
+    "fullDisplayName": "Deluxe Bomb 134/142 Stellar Crown",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool",
+      "ACE SPEC"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-134-low.png",
+    "imageHighSrc": "cards/sv7-134-high.png"
+  },
+  {
+    "masterCardId": "13630",
+    "externalId": null,
+    "tcgdex_id": "sv07-133",
+    "localId": "133",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "133/142",
+    "cardName": "Crispin",
+    "fullDisplayName": "Crispin 133/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-133-low.png",
+    "imageHighSrc": "cards/sv7-133-high.png"
+  },
+  {
+    "masterCardId": "13619",
+    "externalId": null,
+    "tcgdex_id": "sv07-132",
+    "localId": "132",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "132/142",
+    "cardName": "Briar",
+    "fullDisplayName": "Briar 132/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-132-low.png",
+    "imageHighSrc": "cards/sv7-132-high.png"
+  },
+  {
+    "masterCardId": "13607",
+    "externalId": null,
+    "tcgdex_id": "sv07-131",
+    "localId": "131",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "131/142",
+    "cardName": "Area Zero Underdepths",
+    "fullDisplayName": "Area Zero Underdepths 131/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-131-low.png",
+    "imageHighSrc": "cards/sv7-131-high.png"
+  },
+  {
+    "masterCardId": "13598",
+    "externalId": null,
+    "tcgdex_id": "sv07-130",
+    "localId": "130",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "130/142",
+    "cardName": "Antique Root Fossil",
+    "fullDisplayName": "Antique Root Fossil 130/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 60,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-130-low.png",
+    "imageHighSrc": "cards/sv7-130-high.png"
+  },
+  {
+    "masterCardId": "13588",
+    "externalId": null,
+    "tcgdex_id": "sv07-129",
+    "localId": "129",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "129/142",
+    "cardName": "Antique Cover Fossil",
+    "fullDisplayName": "Antique Cover Fossil 129/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 60,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-129-low.png",
+    "imageHighSrc": "cards/sv7-129-high.png"
+  },
+  {
+    "masterCardId": "13579",
+    "externalId": null,
+    "tcgdex_id": "sv07-128",
+    "localId": "128",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "128/142",
+    "cardName": "Terapagos ex",
+    "fullDisplayName": "Terapagos ex 128/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      1024
+    ],
+    "subtypes": [
+      "Basic",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-128-low.png",
+    "imageHighSrc": "cards/sv7-128-high.png"
+  },
+  {
+    "masterCardId": "13568",
+    "externalId": null,
+    "tcgdex_id": "sv07-127",
+    "localId": "127",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "127/142",
+    "cardName": "Cyclizar",
+    "fullDisplayName": "Cyclizar 127/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      967
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-127-low.png",
+    "imageHighSrc": "cards/sv7-127-high.png"
+  },
+  {
+    "masterCardId": "13555",
+    "externalId": null,
+    "tcgdex_id": "sv07-126",
+    "localId": "126",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "126/142",
+    "cardName": "Lechonk",
+    "fullDisplayName": "Lechonk 126/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      915
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-126-low.png",
+    "imageHighSrc": "cards/sv7-126-high.png"
+  },
+  {
+    "masterCardId": "13546",
+    "externalId": null,
+    "tcgdex_id": "sv07-125",
+    "localId": "125",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "125/142",
+    "cardName": "Dubwool",
+    "fullDisplayName": "Dubwool 125/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      832
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooloo",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-125-low.png",
+    "imageHighSrc": "cards/sv7-125-high.png"
+  },
+  {
+    "masterCardId": "13536",
+    "externalId": null,
+    "tcgdex_id": "sv07-124",
+    "localId": "124",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "124/142",
+    "cardName": "Wooloo",
+    "fullDisplayName": "Wooloo 124/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      831
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-124-low.png",
+    "imageHighSrc": "cards/sv7-124-high.png"
+  },
+  {
+    "masterCardId": "13527",
+    "externalId": null,
+    "tcgdex_id": "sv07-123",
+    "localId": "123",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "123/142",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 123/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchinder",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-123-low.png",
+    "imageHighSrc": "cards/sv7-123-high.png"
+  },
+  {
+    "masterCardId": "13518",
+    "externalId": null,
+    "tcgdex_id": "sv07-122",
+    "localId": "122",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "122/142",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 122/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchling",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-122-low.png",
+    "imageHighSrc": "cards/sv7-122-high.png"
+  },
+  {
+    "masterCardId": "13510",
+    "externalId": null,
+    "tcgdex_id": "sv07-121",
+    "localId": "121",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "121/142",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 121/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-121-low.png",
+    "imageHighSrc": "cards/sv7-121-high.png"
+  },
+  {
+    "masterCardId": "13495",
+    "externalId": null,
+    "tcgdex_id": "sv07-120",
+    "localId": "120",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "120/142",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 120/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-120-low.png",
+    "imageHighSrc": "cards/sv7-120-high.png"
+  },
+  {
+    "masterCardId": "13485",
+    "externalId": null,
+    "tcgdex_id": "sv07-119",
+    "localId": "119",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "119/142",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 119/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-119-low.png",
+    "imageHighSrc": "cards/sv7-119-high.png"
+  },
+  {
+    "masterCardId": "13476",
+    "externalId": null,
+    "tcgdex_id": "sv07-118",
+    "localId": "118",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "118/142",
+    "cardName": "Fan Rotom",
+    "fullDisplayName": "Fan Rotom 118/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-118-low.png",
+    "imageHighSrc": "cards/sv7-118-high.png"
+  },
+  {
+    "masterCardId": "13467",
+    "externalId": null,
+    "tcgdex_id": "sv07-117",
+    "localId": "117",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "117/142",
+    "cardName": "Purugly",
+    "fullDisplayName": "Purugly 117/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      432
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Glameow",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-117-low.png",
+    "imageHighSrc": "cards/sv7-117-high.png"
+  },
+  {
+    "masterCardId": "13457",
+    "externalId": null,
+    "tcgdex_id": "sv07-116",
+    "localId": "116",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "116/142",
+    "cardName": "Glameow",
+    "fullDisplayName": "Glameow 116/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      431
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-116-low.png",
+    "imageHighSrc": "cards/sv7-116-high.png"
+  },
+  {
+    "masterCardId": "13448",
+    "externalId": null,
+    "tcgdex_id": "sv07-115",
+    "localId": "115",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "115/142",
+    "cardName": "Noctowl",
+    "fullDisplayName": "Noctowl 115/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      164
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoothoot",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-115-low.png",
+    "imageHighSrc": "cards/sv7-115-high.png"
+  },
+  {
+    "masterCardId": "13435",
+    "externalId": null,
+    "tcgdex_id": "sv07-114",
+    "localId": "114",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "114/142",
+    "cardName": "Hoothoot",
+    "fullDisplayName": "Hoothoot 114/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      163
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-114-low.png",
+    "imageHighSrc": "cards/sv7-114-high.png"
+  },
+  {
+    "masterCardId": "13425",
+    "externalId": null,
+    "tcgdex_id": "sv07-113",
+    "localId": "113",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "113/142",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 113/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-113-low.png",
+    "imageHighSrc": "cards/sv7-113-high.png"
+  },
+  {
+    "masterCardId": "13415",
+    "externalId": null,
+    "tcgdex_id": "sv07-112",
+    "localId": "112",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "112/142",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 112/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-112-low.png",
+    "imageHighSrc": "cards/sv7-112-high.png"
+  },
+  {
+    "masterCardId": "13405",
+    "externalId": null,
+    "tcgdex_id": "sv07-111",
+    "localId": "111",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "111/142",
+    "cardName": "Raging Bolt",
+    "fullDisplayName": "Raging Bolt 111/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      1021
+    ],
+    "subtypes": [
+      "Basic",
+      "Ancient"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-111-low.png",
+    "imageHighSrc": "cards/sv7-111-high.png"
+  },
+  {
+    "masterCardId": "13394",
+    "externalId": null,
+    "tcgdex_id": "sv07-110",
+    "localId": "110",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "110/142",
+    "cardName": "Orthworm ex",
+    "fullDisplayName": "Orthworm ex 110/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      968
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-110-low.png",
+    "imageHighSrc": "cards/sv7-110-high.png"
+  },
+  {
+    "masterCardId": "13385",
+    "externalId": null,
+    "tcgdex_id": "sv07-109",
+    "localId": "109",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "109/142",
+    "cardName": "Revavroom",
+    "fullDisplayName": "Revavroom 109/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      966
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Varoom",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-109-low.png",
+    "imageHighSrc": "cards/sv7-109-high.png"
+  },
+  {
+    "masterCardId": "13374",
+    "externalId": null,
+    "tcgdex_id": "sv07-108",
+    "localId": "108",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "108/142",
+    "cardName": "Varoom",
+    "fullDisplayName": "Varoom 108/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      965
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-108-low.png",
+    "imageHighSrc": "cards/sv7-108-high.png"
+  },
+  {
+    "masterCardId": "13365",
+    "externalId": null,
+    "tcgdex_id": "sv07-107",
+    "localId": "107",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "107/142",
+    "cardName": "Archaludon",
+    "fullDisplayName": "Archaludon 107/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      1018
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duraludon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-107-low.png",
+    "imageHighSrc": "cards/sv7-107-high.png"
+  },
+  {
+    "masterCardId": "13357",
+    "externalId": null,
+    "tcgdex_id": "sv07-106",
+    "localId": "106",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "106/142",
+    "cardName": "Duraludon",
+    "fullDisplayName": "Duraludon 106/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      884
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-106-low.png",
+    "imageHighSrc": "cards/sv7-106-high.png"
+  },
+  {
+    "masterCardId": "13348",
+    "externalId": null,
+    "tcgdex_id": "sv07-105",
+    "localId": "105",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "105/142",
+    "cardName": "Melmetal ex",
+    "fullDisplayName": "Melmetal ex 105/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 280,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meltan",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-105-low.png",
+    "imageHighSrc": "cards/sv7-105-high.png"
+  },
+  {
+    "masterCardId": "13337",
+    "externalId": null,
+    "tcgdex_id": "sv07-104",
+    "localId": "104",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "104/142",
+    "cardName": "Melmetal",
+    "fullDisplayName": "Melmetal 104/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meltan",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-104-low.png",
+    "imageHighSrc": "cards/sv7-104-high.png"
+  },
+  {
+    "masterCardId": "13329",
+    "externalId": null,
+    "tcgdex_id": "sv07-103",
+    "localId": "103",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "103/142",
+    "cardName": "Meltan",
+    "fullDisplayName": "Meltan 103/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      808
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-103-low.png",
+    "imageHighSrc": "cards/sv7-103-high.png"
+  },
+  {
+    "masterCardId": "13318",
+    "externalId": null,
+    "tcgdex_id": "sv07-102",
+    "localId": "102",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "102/142",
+    "cardName": "Meltan",
+    "fullDisplayName": "Meltan 102/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      808
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-102-low.png",
+    "imageHighSrc": "cards/sv7-102-high.png"
+  },
+  {
+    "masterCardId": "13308",
+    "externalId": null,
+    "tcgdex_id": "sv07-101",
+    "localId": "101",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "101/142",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 101/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klang",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-101-low.png",
+    "imageHighSrc": "cards/sv7-101-high.png"
+  },
+  {
+    "masterCardId": "13299",
+    "externalId": null,
+    "tcgdex_id": "sv07-100",
+    "localId": "100",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "100/142",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 100/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klink",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-100-low.png",
+    "imageHighSrc": "cards/sv7-100-high.png"
+  },
+  {
+    "masterCardId": "13288",
+    "externalId": null,
+    "tcgdex_id": "sv07-099",
+    "localId": "099",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "099/142",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 099/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-099-low.png",
+    "imageHighSrc": "cards/sv7-099-high.png"
+  },
+  {
+    "masterCardId": "13278",
+    "externalId": null,
+    "tcgdex_id": "sv07-098",
+    "localId": "098",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "098/142",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 098/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-098-low.png",
+    "imageHighSrc": "cards/sv7-098-high.png"
+  },
+  {
+    "masterCardId": "13267",
+    "externalId": null,
+    "tcgdex_id": "sv07-097",
+    "localId": "097",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "097/142",
+    "cardName": "Bombirdier",
+    "fullDisplayName": "Bombirdier 097/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      962
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-097-low.png",
+    "imageHighSrc": "cards/sv7-097-high.png"
+  },
+  {
+    "masterCardId": "13259",
+    "externalId": null,
+    "tcgdex_id": "sv07-096",
+    "localId": "096",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "096/142",
+    "cardName": "Grimmsnarl",
+    "fullDisplayName": "Grimmsnarl 096/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      861
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Morgrem",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-096-low.png",
+    "imageHighSrc": "cards/sv7-096-high.png"
+  },
+  {
+    "masterCardId": "13249",
+    "externalId": null,
+    "tcgdex_id": "sv07-095",
+    "localId": "095",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "095/142",
+    "cardName": "Morgrem",
+    "fullDisplayName": "Morgrem 095/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      860
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Impidimp",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-095-low.png",
+    "imageHighSrc": "cards/sv7-095-high.png"
+  },
+  {
+    "masterCardId": "13238",
+    "externalId": null,
+    "tcgdex_id": "sv07-094",
+    "localId": "094",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "094/142",
+    "cardName": "Impidimp",
+    "fullDisplayName": "Impidimp 094/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      859
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-094-low.png",
+    "imageHighSrc": "cards/sv7-094-high.png"
+  },
+  {
+    "masterCardId": "13230",
+    "externalId": null,
+    "tcgdex_id": "sv07-093",
+    "localId": "093",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "093/142",
+    "cardName": "Pangoro",
+    "fullDisplayName": "Pangoro 093/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      675
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pancham",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-093-low.png",
+    "imageHighSrc": "cards/sv7-093-high.png"
+  },
+  {
+    "masterCardId": "13219",
+    "externalId": null,
+    "tcgdex_id": "sv07-092",
+    "localId": "092",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "092/142",
+    "cardName": "Swalot",
+    "fullDisplayName": "Swalot 092/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      317
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gulpin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-092-low.png",
+    "imageHighSrc": "cards/sv7-092-high.png"
+  },
+  {
+    "masterCardId": "13210",
+    "externalId": null,
+    "tcgdex_id": "sv07-091",
+    "localId": "091",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "091/142",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 091/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-091-low.png",
+    "imageHighSrc": "cards/sv7-091-high.png"
+  },
+  {
+    "masterCardId": "13200",
+    "externalId": null,
+    "tcgdex_id": "sv07-090",
+    "localId": "090",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "090/142",
+    "cardName": "Koraidon",
+    "fullDisplayName": "Koraidon 090/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1007
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-090-low.png",
+    "imageHighSrc": "cards/sv7-090-high.png"
+  },
+  {
+    "masterCardId": "13188",
+    "externalId": null,
+    "tcgdex_id": "sv07-089",
+    "localId": "089",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "089/142",
+    "cardName": "Garganacl ex",
+    "fullDisplayName": "Garganacl ex 089/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 340,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      934
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Naclstack",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-089-low.png",
+    "imageHighSrc": "cards/sv7-089-high.png"
+  },
+  {
+    "masterCardId": "13178",
+    "externalId": null,
+    "tcgdex_id": "sv07-088",
+    "localId": "088",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "088/142",
+    "cardName": "Falinks",
+    "fullDisplayName": "Falinks 088/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      870
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-088-low.png",
+    "imageHighSrc": "cards/sv7-088-high.png"
+  },
+  {
+    "masterCardId": "13168",
+    "externalId": null,
+    "tcgdex_id": "sv07-087",
+    "localId": "087",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "087/142",
+    "cardName": "Crabrawler",
+    "fullDisplayName": "Crabrawler 087/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      739
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-087-low.png",
+    "imageHighSrc": "cards/sv7-087-high.png"
+  },
+  {
+    "masterCardId": "13158",
+    "externalId": null,
+    "tcgdex_id": "sv07-086",
+    "localId": "086",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "086/142",
+    "cardName": "Diancie",
+    "fullDisplayName": "Diancie 086/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      719
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-086-low.png",
+    "imageHighSrc": "cards/sv7-086-high.png"
+  },
+  {
+    "masterCardId": "13147",
+    "externalId": null,
+    "tcgdex_id": "sv07-085",
+    "localId": "085",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "085/142",
+    "cardName": "Pancham",
+    "fullDisplayName": "Pancham 085/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      674
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-085-low.png",
+    "imageHighSrc": "cards/sv7-085-high.png"
+  },
+  {
+    "masterCardId": "13132",
+    "externalId": null,
+    "tcgdex_id": "sv07-084",
+    "localId": "084",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "084/142",
+    "cardName": "Mienshao",
+    "fullDisplayName": "Mienshao 084/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      620
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mienfoo",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-084-low.png",
+    "imageHighSrc": "cards/sv7-084-high.png"
+  },
+  {
+    "masterCardId": "13121",
+    "externalId": null,
+    "tcgdex_id": "sv07-083",
+    "localId": "083",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "083/142",
+    "cardName": "Mienfoo",
+    "fullDisplayName": "Mienfoo 083/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      619
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-083-low.png",
+    "imageHighSrc": "cards/sv7-083-high.png"
+  },
+  {
+    "masterCardId": "13109",
+    "externalId": null,
+    "tcgdex_id": "sv07-082",
+    "localId": "082",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "082/142",
+    "cardName": "Lucario ex",
+    "fullDisplayName": "Lucario ex 082/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 250,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-082-low.png",
+    "imageHighSrc": "cards/sv7-082-high.png"
+  },
+  {
+    "masterCardId": "13098",
+    "externalId": null,
+    "tcgdex_id": "sv07-081",
+    "localId": "081",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "081/142",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 081/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-081-low.png",
+    "imageHighSrc": "cards/sv7-081-high.png"
+  },
+  {
+    "masterCardId": "13088",
+    "externalId": null,
+    "tcgdex_id": "sv07-080",
+    "localId": "080",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "080/142",
+    "cardName": "Medicham ex",
+    "fullDisplayName": "Medicham ex 080/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-080-low.png",
+    "imageHighSrc": "cards/sv7-080-high.png"
+  },
+  {
+    "masterCardId": "13076",
+    "externalId": null,
+    "tcgdex_id": "sv07-079",
+    "localId": "079",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "079/142",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 079/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-079-low.png",
+    "imageHighSrc": "cards/sv7-079-high.png"
+  },
+  {
+    "masterCardId": "13067",
+    "externalId": null,
+    "tcgdex_id": "sv07-078",
+    "localId": "078",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "078/142",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 078/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-078-low.png",
+    "imageHighSrc": "cards/sv7-078-high.png"
+  },
+  {
+    "masterCardId": "13057",
+    "externalId": null,
+    "tcgdex_id": "sv07-077",
+    "localId": "077",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "077/142",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 077/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-077-low.png",
+    "imageHighSrc": "cards/sv7-077-high.png"
+  },
+  {
+    "masterCardId": "13046",
+    "externalId": null,
+    "tcgdex_id": "sv07-076",
+    "localId": "076",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "076/142",
+    "cardName": "Rhyperior",
+    "fullDisplayName": "Rhyperior 076/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 200,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhydon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-076-low.png",
+    "imageHighSrc": "cards/sv7-076-high.png"
+  },
+  {
+    "masterCardId": "13035",
+    "externalId": null,
+    "tcgdex_id": "sv07-075",
+    "localId": "075",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "075/142",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 075/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyhorn",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-075-low.png",
+    "imageHighSrc": "cards/sv7-075-high.png"
+  },
+  {
+    "masterCardId": "13022",
+    "externalId": null,
+    "tcgdex_id": "sv07-074",
+    "localId": "074",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "074/142",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 074/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-074-low.png",
+    "imageHighSrc": "cards/sv7-074-high.png"
+  },
+  {
+    "masterCardId": "13012",
+    "externalId": null,
+    "tcgdex_id": "sv07-073",
+    "localId": "073",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "073/142",
+    "cardName": "Marowak",
+    "fullDisplayName": "Marowak 073/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-073-low.png",
+    "imageHighSrc": "cards/sv7-073-high.png"
+  },
+  {
+    "masterCardId": "13002",
+    "externalId": null,
+    "tcgdex_id": "sv07-072",
+    "localId": "072",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "072/142",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 072/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-072-low.png",
+    "imageHighSrc": "cards/sv7-072-high.png"
+  },
+  {
+    "masterCardId": "12992",
+    "externalId": null,
+    "tcgdex_id": "sv07-071",
+    "localId": "071",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "071/142",
+    "cardName": "Iron Boulder",
+    "fullDisplayName": "Iron Boulder 071/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      1022
+    ],
+    "subtypes": [
+      "Basic",
+      "Future"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-071-low.png",
+    "imageHighSrc": "cards/sv7-071-high.png"
+  },
+  {
+    "masterCardId": "12978",
+    "externalId": null,
+    "tcgdex_id": "sv07-070",
+    "localId": "070",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "070/142",
+    "cardName": "Greavard",
+    "fullDisplayName": "Greavard 070/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      971
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-070-low.png",
+    "imageHighSrc": "cards/sv7-070-high.png"
+  },
+  {
+    "masterCardId": "12967",
+    "externalId": null,
+    "tcgdex_id": "sv07-069",
+    "localId": "069",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "069/142",
+    "cardName": "Espathra",
+    "fullDisplayName": "Espathra 069/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      956
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flittle",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-069-low.png",
+    "imageHighSrc": "cards/sv7-069-high.png"
+  },
+  {
+    "masterCardId": "12953",
+    "externalId": null,
+    "tcgdex_id": "sv07-068",
+    "localId": "068",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "068/142",
+    "cardName": "Flittle",
+    "fullDisplayName": "Flittle 068/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      955
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-068-low.png",
+    "imageHighSrc": "cards/sv7-068-high.png"
+  },
+  {
+    "masterCardId": "12941",
+    "externalId": null,
+    "tcgdex_id": "sv07-067",
+    "localId": "067",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "067/142",
+    "cardName": "Dachsbun ex",
+    "fullDisplayName": "Dachsbun ex 067/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 250,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      927
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fidough",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-067-low.png",
+    "imageHighSrc": "cards/sv7-067-high.png"
+  },
+  {
+    "masterCardId": "12930",
+    "externalId": null,
+    "tcgdex_id": "sv07-066",
+    "localId": "066",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "066/142",
+    "cardName": "Fidough",
+    "fullDisplayName": "Fidough 066/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      926
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-066-low.png",
+    "imageHighSrc": "cards/sv7-066-high.png"
+  },
+  {
+    "masterCardId": "12918",
+    "externalId": null,
+    "tcgdex_id": "sv07-065",
+    "localId": "065",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "065/142",
+    "cardName": "Alcremie",
+    "fullDisplayName": "Alcremie 065/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      869
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Milcery",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-065-low.png",
+    "imageHighSrc": "cards/sv7-065-high.png"
+  },
+  {
+    "masterCardId": "12908",
+    "externalId": null,
+    "tcgdex_id": "sv07-064",
+    "localId": "064",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "064/142",
+    "cardName": "Milcery",
+    "fullDisplayName": "Milcery 064/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      868
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-064-low.png",
+    "imageHighSrc": "cards/sv7-064-high.png"
+  },
+  {
+    "masterCardId": "12896",
+    "externalId": null,
+    "tcgdex_id": "sv07-063",
+    "localId": "063",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "063/142",
+    "cardName": "Comfey",
+    "fullDisplayName": "Comfey 063/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      764
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-063-low.png",
+    "imageHighSrc": "cards/sv7-063-high.png"
+  },
+  {
+    "masterCardId": "12885",
+    "externalId": null,
+    "tcgdex_id": "sv07-062",
+    "localId": "062",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "062/142",
+    "cardName": "Yamask",
+    "fullDisplayName": "Yamask 062/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      562
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-062-low.png",
+    "imageHighSrc": "cards/sv7-062-high.png"
+  },
+  {
+    "masterCardId": "12875",
+    "externalId": null,
+    "tcgdex_id": "sv07-061",
+    "localId": "061",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "061/142",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 061/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-061-low.png",
+    "imageHighSrc": "cards/sv7-061-high.png"
+  },
+  {
+    "masterCardId": "12864",
+    "externalId": null,
+    "tcgdex_id": "sv07-060",
+    "localId": "060",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "060/142",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 060/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-060-low.png",
+    "imageHighSrc": "cards/sv7-060-high.png"
+  },
+  {
+    "masterCardId": "12852",
+    "externalId": null,
+    "tcgdex_id": "sv07-059",
+    "localId": "059",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "059/142",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 059/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-059-low.png",
+    "imageHighSrc": "cards/sv7-059-high.png"
+  },
+  {
+    "masterCardId": "12840",
+    "externalId": null,
+    "tcgdex_id": "sv07-058",
+    "localId": "058",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "058/142",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 058/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-058-low.png",
+    "imageHighSrc": "cards/sv7-058-high.png"
+  },
+  {
+    "masterCardId": "12830",
+    "externalId": null,
+    "tcgdex_id": "sv07-057",
+    "localId": "057",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "057/142",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 057/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-057-low.png",
+    "imageHighSrc": "cards/sv7-057-high.png"
+  },
+  {
+    "masterCardId": "12818",
+    "externalId": null,
+    "tcgdex_id": "sv07-056",
+    "localId": "056",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "056/142",
+    "cardName": "Pawmi",
+    "fullDisplayName": "Pawmi 056/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      921
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-056-low.png",
+    "imageHighSrc": "cards/sv7-056-high.png"
+  },
+  {
+    "masterCardId": "12808",
+    "externalId": null,
+    "tcgdex_id": "sv07-055",
+    "localId": "055",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "055/142",
+    "cardName": "Zeraora",
+    "fullDisplayName": "Zeraora 055/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      807
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-055-low.png",
+    "imageHighSrc": "cards/sv7-055-high.png"
+  },
+  {
+    "masterCardId": "12793",
+    "externalId": null,
+    "tcgdex_id": "sv07-054",
+    "localId": "054",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "054/142",
+    "cardName": "Togedemaru",
+    "fullDisplayName": "Togedemaru 054/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      777
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-054-low.png",
+    "imageHighSrc": "cards/sv7-054-high.png"
+  },
+  {
+    "masterCardId": "12783",
+    "externalId": null,
+    "tcgdex_id": "sv07-053",
+    "localId": "053",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "053/142",
+    "cardName": "Vikavolt",
+    "fullDisplayName": "Vikavolt 053/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      738
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charjabug",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-053-low.png",
+    "imageHighSrc": "cards/sv7-053-high.png"
+  },
+  {
+    "masterCardId": "12771",
+    "externalId": null,
+    "tcgdex_id": "sv07-052",
+    "localId": "052",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "052/142",
+    "cardName": "Charjabug",
+    "fullDisplayName": "Charjabug 052/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      737
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grubbin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-052-low.png",
+    "imageHighSrc": "cards/sv7-052-high.png"
+  },
+  {
+    "masterCardId": "12760",
+    "externalId": null,
+    "tcgdex_id": "sv07-051",
+    "localId": "051",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "051/142",
+    "cardName": "Galvantula ex",
+    "fullDisplayName": "Galvantula ex 051/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 260,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-051-low.png",
+    "imageHighSrc": "cards/sv7-051-high.png"
+  },
+  {
+    "masterCardId": "12748",
+    "externalId": null,
+    "tcgdex_id": "sv07-050",
+    "localId": "050",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "050/142",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 050/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-050-low.png",
+    "imageHighSrc": "cards/sv7-050-high.png"
+  },
+  {
+    "masterCardId": "12738",
+    "externalId": null,
+    "tcgdex_id": "sv07-049",
+    "localId": "049",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "049/142",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 049/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-049-low.png",
+    "imageHighSrc": "cards/sv7-049-high.png"
+  },
+  {
+    "masterCardId": "12727",
+    "externalId": null,
+    "tcgdex_id": "sv07-048",
+    "localId": "048",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "048/142",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 048/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-048-low.png",
+    "imageHighSrc": "cards/sv7-048-high.png"
+  },
+  {
+    "masterCardId": "12717",
+    "externalId": null,
+    "tcgdex_id": "sv07-047",
+    "localId": "047",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "047/142",
+    "cardName": "Electivire",
+    "fullDisplayName": "Electivire 047/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electabuzz",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-047-low.png",
+    "imageHighSrc": "cards/sv7-047-high.png"
+  },
+  {
+    "masterCardId": "12705",
+    "externalId": null,
+    "tcgdex_id": "sv07-046",
+    "localId": "046",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "046/142",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 046/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-046-low.png",
+    "imageHighSrc": "cards/sv7-046-high.png"
+  },
+  {
+    "masterCardId": "12694",
+    "externalId": null,
+    "tcgdex_id": "sv07-045",
+    "localId": "045",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "045/142",
+    "cardName": "Veluza",
+    "fullDisplayName": "Veluza 045/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      976
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-045-low.png",
+    "imageHighSrc": "cards/sv7-045-high.png"
+  },
+  {
+    "masterCardId": "12683",
+    "externalId": null,
+    "tcgdex_id": "sv07-044",
+    "localId": "044",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "044/142",
+    "cardName": "Drednaw",
+    "fullDisplayName": "Drednaw 044/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      834
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chewtle",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-044-low.png",
+    "imageHighSrc": "cards/sv7-044-high.png"
+  },
+  {
+    "masterCardId": "12668",
+    "externalId": null,
+    "tcgdex_id": "sv07-043",
+    "localId": "043",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "043/142",
+    "cardName": "Chewtle",
+    "fullDisplayName": "Chewtle 043/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      833
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-043-low.png",
+    "imageHighSrc": "cards/sv7-043-high.png"
+  },
+  {
+    "masterCardId": "12657",
+    "externalId": null,
+    "tcgdex_id": "sv07-042",
+    "localId": "042",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "042/142",
+    "cardName": "Crabominable",
+    "fullDisplayName": "Crabominable 042/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      740
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Crabrawler",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-042-low.png",
+    "imageHighSrc": "cards/sv7-042-high.png"
+  },
+  {
+    "masterCardId": "12646",
+    "externalId": null,
+    "tcgdex_id": "sv07-041",
+    "localId": "041",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "041/142",
+    "cardName": "Greninja ex",
+    "fullDisplayName": "Greninja ex 041/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 300,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      658
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frogadier",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-041-low.png",
+    "imageHighSrc": "cards/sv7-041-high.png"
+  },
+  {
+    "masterCardId": "12636",
+    "externalId": null,
+    "tcgdex_id": "sv07-040",
+    "localId": "040",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "040/142",
+    "cardName": "Frogadier",
+    "fullDisplayName": "Frogadier 040/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      657
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Froakie",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-040-low.png",
+    "imageHighSrc": "cards/sv7-040-high.png"
+  },
+  {
+    "masterCardId": "12627",
+    "externalId": null,
+    "tcgdex_id": "sv07-039",
+    "localId": "039",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "039/142",
+    "cardName": "Froakie",
+    "fullDisplayName": "Froakie 039/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      656
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-039-low.png",
+    "imageHighSrc": "cards/sv7-039-high.png"
+  },
+  {
+    "masterCardId": "12616",
+    "externalId": null,
+    "tcgdex_id": "sv07-038",
+    "localId": "038",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "038/142",
+    "cardName": "Carracosta",
+    "fullDisplayName": "Carracosta 038/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      565
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tirtouga",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-038-low.png",
+    "imageHighSrc": "cards/sv7-038-high.png"
+  },
+  {
+    "masterCardId": "12605",
+    "externalId": null,
+    "tcgdex_id": "sv07-037",
+    "localId": "037",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "037/142",
+    "cardName": "Tirtouga",
+    "fullDisplayName": "Tirtouga 037/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      564
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Antique Cover Fossil",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-037-low.png",
+    "imageHighSrc": "cards/sv7-037-high.png"
+  },
+  {
+    "masterCardId": "12595",
+    "externalId": null,
+    "tcgdex_id": "sv07-036",
+    "localId": "036",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "036/142",
+    "cardName": "Lumineon",
+    "fullDisplayName": "Lumineon 036/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      457
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finneon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-036-low.png",
+    "imageHighSrc": "cards/sv7-036-high.png"
+  },
+  {
+    "masterCardId": "12581",
+    "externalId": null,
+    "tcgdex_id": "sv07-035",
+    "localId": "035",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "035/142",
+    "cardName": "Finneon",
+    "fullDisplayName": "Finneon 035/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      456
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-035-low.png",
+    "imageHighSrc": "cards/sv7-035-high.png"
+  },
+  {
+    "masterCardId": "12569",
+    "externalId": null,
+    "tcgdex_id": "sv07-034",
+    "localId": "034",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "034/142",
+    "cardName": "Azumarill",
+    "fullDisplayName": "Azumarill 034/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      184
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marill",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-034-low.png",
+    "imageHighSrc": "cards/sv7-034-high.png"
+  },
+  {
+    "masterCardId": "12560",
+    "externalId": null,
+    "tcgdex_id": "sv07-033",
+    "localId": "033",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "033/142",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 033/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-033-low.png",
+    "imageHighSrc": "cards/sv7-033-high.png"
+  },
+  {
+    "masterCardId": "12549",
+    "externalId": null,
+    "tcgdex_id": "sv07-032",
+    "localId": "032",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "032/142",
+    "cardName": "Lapras ex",
+    "fullDisplayName": "Lapras ex 032/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-032-low.png",
+    "imageHighSrc": "cards/sv7-032-high.png"
+  },
+  {
+    "masterCardId": "12540",
+    "externalId": null,
+    "tcgdex_id": "sv07-031",
+    "localId": "031",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "031/142",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 031/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-031-low.png",
+    "imageHighSrc": "cards/sv7-031-high.png"
+  },
+  {
+    "masterCardId": "12528",
+    "externalId": null,
+    "tcgdex_id": "sv07-030",
+    "localId": "030",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "030/142",
+    "cardName": "Blastoise ex",
+    "fullDisplayName": "Blastoise ex 030/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-030-low.png",
+    "imageHighSrc": "cards/sv7-030-high.png"
+  },
+  {
+    "masterCardId": "12515",
+    "externalId": null,
+    "tcgdex_id": "sv07-029",
+    "localId": "029",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "029/142",
+    "cardName": "Charcadet",
+    "fullDisplayName": "Charcadet 029/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      935
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-029-low.png",
+    "imageHighSrc": "cards/sv7-029-high.png"
+  },
+  {
+    "masterCardId": "12503",
+    "externalId": null,
+    "tcgdex_id": "sv07-028",
+    "localId": "028",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "028/142",
+    "cardName": "Cinderace ex",
+    "fullDisplayName": "Cinderace ex 028/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      815
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Raboot",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-028-low.png",
+    "imageHighSrc": "cards/sv7-028-high.png"
+  },
+  {
+    "masterCardId": "12492",
+    "externalId": null,
+    "tcgdex_id": "sv07-027",
+    "localId": "027",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "027/142",
+    "cardName": "Raboot",
+    "fullDisplayName": "Raboot 027/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      814
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scorbunny",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-027-low.png",
+    "imageHighSrc": "cards/sv7-027-high.png"
+  },
+  {
+    "masterCardId": "12482",
+    "externalId": null,
+    "tcgdex_id": "sv07-026",
+    "localId": "026",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "026/142",
+    "cardName": "Scorbunny",
+    "fullDisplayName": "Scorbunny 026/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      813
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-026-low.png",
+    "imageHighSrc": "cards/sv7-026-high.png"
+  },
+  {
+    "masterCardId": "12472",
+    "externalId": null,
+    "tcgdex_id": "sv07-025",
+    "localId": "025",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "025/142",
+    "cardName": "Turtonator",
+    "fullDisplayName": "Turtonator 025/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      776
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-025-low.png",
+    "imageHighSrc": "cards/sv7-025-high.png"
+  },
+  {
+    "masterCardId": "12462",
+    "externalId": null,
+    "tcgdex_id": "sv07-024",
+    "localId": "024",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "024/142",
+    "cardName": "Salazzle",
+    "fullDisplayName": "Salazzle 024/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      758
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Salandit",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-024-low.png",
+    "imageHighSrc": "cards/sv7-024-high.png"
+  },
+  {
+    "masterCardId": "12452",
+    "externalId": null,
+    "tcgdex_id": "sv07-023",
+    "localId": "023",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "023/142",
+    "cardName": "Salandit",
+    "fullDisplayName": "Salandit 023/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      757
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-023-low.png",
+    "imageHighSrc": "cards/sv7-023-high.png"
+  },
+  {
+    "masterCardId": "12441",
+    "externalId": null,
+    "tcgdex_id": "sv07-022",
+    "localId": "022",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "022/142",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 022/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-022-low.png",
+    "imageHighSrc": "cards/sv7-022-high.png"
+  },
+  {
+    "masterCardId": "12428",
+    "externalId": null,
+    "tcgdex_id": "sv07-021",
+    "localId": "021",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "021/142",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 021/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-021-low.png",
+    "imageHighSrc": "cards/sv7-021-high.png"
+  },
+  {
+    "masterCardId": "12416",
+    "externalId": null,
+    "tcgdex_id": "sv07-020",
+    "localId": "020",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "020/142",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 020/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-020-low.png",
+    "imageHighSrc": "cards/sv7-020-high.png"
+  },
+  {
+    "masterCardId": "12405",
+    "externalId": null,
+    "tcgdex_id": "sv07-019",
+    "localId": "019",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "019/142",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 019/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-019-low.png",
+    "imageHighSrc": "cards/sv7-019-high.png"
+  },
+  {
+    "masterCardId": "12394",
+    "externalId": null,
+    "tcgdex_id": "sv07-018",
+    "localId": "018",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "018/142",
+    "cardName": "Toedscruel",
+    "fullDisplayName": "Toedscruel 018/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      949
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Toedscool",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-018-low.png",
+    "imageHighSrc": "cards/sv7-018-high.png"
+  },
+  {
+    "masterCardId": "12383",
+    "externalId": null,
+    "tcgdex_id": "sv07-017",
+    "localId": "017",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "017/142",
+    "cardName": "Toedscool",
+    "fullDisplayName": "Toedscool 017/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      948
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-017-low.png",
+    "imageHighSrc": "cards/sv7-017-high.png"
+  },
+  {
+    "masterCardId": "12373",
+    "externalId": null,
+    "tcgdex_id": "sv07-016",
+    "localId": "016",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "016/142",
+    "cardName": "Lokix",
+    "fullDisplayName": "Lokix 016/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      920
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nymble",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-016-low.png",
+    "imageHighSrc": "cards/sv7-016-high.png"
+  },
+  {
+    "masterCardId": "12362",
+    "externalId": null,
+    "tcgdex_id": "sv07-015",
+    "localId": "015",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "015/142",
+    "cardName": "Nymble",
+    "fullDisplayName": "Nymble 015/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      919
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-015-low.png",
+    "imageHighSrc": "cards/sv7-015-high.png"
+  },
+  {
+    "masterCardId": "12348",
+    "externalId": null,
+    "tcgdex_id": "sv07-014",
+    "localId": "014",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "014/142",
+    "cardName": "Hydrapple ex",
+    "fullDisplayName": "Hydrapple ex 014/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1019
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dipplin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-014-low.png",
+    "imageHighSrc": "cards/sv7-014-high.png"
+  },
+  {
+    "masterCardId": "12334",
+    "externalId": null,
+    "tcgdex_id": "sv07-013",
+    "localId": "013",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "013/142",
+    "cardName": "Dipplin",
+    "fullDisplayName": "Dipplin 013/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1011
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Applin",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-013-low.png",
+    "imageHighSrc": "cards/sv7-013-high.png"
+  },
+  {
+    "masterCardId": "12322",
+    "externalId": null,
+    "tcgdex_id": "sv07-012",
+    "localId": "012",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "012/142",
+    "cardName": "Applin",
+    "fullDisplayName": "Applin 012/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      840
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-012-low.png",
+    "imageHighSrc": "cards/sv7-012-high.png"
+  },
+  {
+    "masterCardId": "12312",
+    "externalId": null,
+    "tcgdex_id": "sv07-011",
+    "localId": "011",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "011/142",
+    "cardName": "Eldegoss",
+    "fullDisplayName": "Eldegoss 011/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      830
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gossifleur",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-011-low.png",
+    "imageHighSrc": "cards/sv7-011-high.png"
+  },
+  {
+    "masterCardId": "12302",
+    "externalId": null,
+    "tcgdex_id": "sv07-010",
+    "localId": "010",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "010/142",
+    "cardName": "Gossifleur",
+    "fullDisplayName": "Gossifleur 010/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      829
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-010-low.png",
+    "imageHighSrc": "cards/sv7-010-high.png"
+  },
+  {
+    "masterCardId": "12291",
+    "externalId": null,
+    "tcgdex_id": "sv07-009",
+    "localId": "009",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "009/142",
+    "cardName": "Grubbin",
+    "fullDisplayName": "Grubbin 009/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      736
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-009-low.png",
+    "imageHighSrc": "cards/sv7-009-high.png"
+  },
+  {
+    "masterCardId": "12280",
+    "externalId": null,
+    "tcgdex_id": "sv07-008",
+    "localId": "008",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "008/142",
+    "cardName": "Mow Rotom",
+    "fullDisplayName": "Mow Rotom 008/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-008-low.png",
+    "imageHighSrc": "cards/sv7-008-high.png"
+  },
+  {
+    "masterCardId": "12268",
+    "externalId": null,
+    "tcgdex_id": "sv07-007",
+    "localId": "007",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "007/142",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 007/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-007-low.png",
+    "imageHighSrc": "cards/sv7-007-high.png"
+  },
+  {
+    "masterCardId": "12255",
+    "externalId": null,
+    "tcgdex_id": "sv07-006",
+    "localId": "006",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "006/142",
+    "cardName": "Cradily",
+    "fullDisplayName": "Cradily 006/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-006-low.png",
+    "imageHighSrc": "cards/sv7-006-high.png"
+  },
+  {
+    "masterCardId": "12243",
+    "externalId": null,
+    "tcgdex_id": "sv07-005",
+    "localId": "005",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "005/142",
+    "cardName": "Lileep",
+    "fullDisplayName": "Lileep 005/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Antique Root Fossil",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-005-low.png",
+    "imageHighSrc": "cards/sv7-005-high.png"
+  },
+  {
+    "masterCardId": "12233",
+    "externalId": null,
+    "tcgdex_id": "sv07-004",
+    "localId": "004",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "004/142",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 004/142 Stellar Crown",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-004-low.png",
+    "imageHighSrc": "cards/sv7-004-high.png"
+  },
+  {
+    "masterCardId": "12222",
+    "externalId": null,
+    "tcgdex_id": "sv07-003",
+    "localId": "003",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "003/142",
+    "cardName": "Ledian",
+    "fullDisplayName": "Ledian 003/142 Stellar Crown",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      166
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ledyba",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-003-low.png",
+    "imageHighSrc": "cards/sv7-003-high.png"
+  },
+  {
+    "masterCardId": "12211",
+    "externalId": null,
+    "tcgdex_id": "sv07-002",
+    "localId": "002",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "002/142",
+    "cardName": "Ledyba",
+    "fullDisplayName": "Ledyba 002/142 Stellar Crown",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-002-low.png",
+    "imageHighSrc": "cards/sv7-002-high.png"
+  },
+  {
+    "masterCardId": "12201",
+    "externalId": null,
+    "tcgdex_id": "sv07-001",
+    "localId": "001",
+    "setCode": "sv07",
+    "setTcgdexId": "sv07",
+    "cardNumber": "001/142",
+    "cardName": "Venusaur ex",
+    "fullDisplayName": "Venusaur ex 001/142 Stellar Crown",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 340,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv7-001-low.png",
+    "imageHighSrc": "cards/sv7-001-high.png"
+  }
+]

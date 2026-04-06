@@ -2,8 +2,11 @@ import Foundation
 import Observation
 
 @Observable
+@MainActor
 final class CardDataService {
     private(set) var sets: [TCGSet] = []
+    /// From R2 `pokemon.json` (see `nationalDexNumber`); sorted ascending when loaded.
+    private(set) var nationalDexPokemon: [NationalDexPokemon] = []
     private(set) var cardsBySet: [String: [Card]] = [:]
     private(set) var lastError: String?
     private(set) var isLoading = false
@@ -37,15 +40,64 @@ final class CardDataService {
         }
 
         let url = AppConfiguration.r2CatalogURL(path: "sets.json")
+
+        // Always prefer live `sets.json` when online so metadata like `logoSrc` matches R2. Previously we
+        // returned SQLite first and never refreshed set rows from the network, so stale/empty `logoSrc`
+        // could persist while card images (from other JSON) still loaded correctly.
         do {
             let (data, _) = try await session.data(from: url)
             let decoded = try JSONDecoder().decode([TCGSet].self, from: data)
             sets = decoded.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
             Task { await self.prepareSearchIndex() }
+            return
         } catch {
             lastError = error.localizedDescription
+        }
+
+        do {
+            try CatalogStore.shared.open()
+            let fromDb = try CatalogStore.shared.fetchAllSets()
+            if !fromDb.isEmpty {
+                sets = fromDb.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+                lastError = nil
+                Task { await self.prepareSearchIndex() }
+                return
+            }
+        } catch {
+            // Keep lastError from network attempt when offline / DB missing.
+        }
+
+        if sets.isEmpty {
             sets = []
         }
+    }
+
+    /// Loads `pokemon.json` next to `sets.json` under the catalog prefix. Falls back to bundled `pokemon.json` for previews/offline.
+    func loadNationalDexPokemon() async {
+        let base = AppConfiguration.r2BaseURL
+        if base.host != "invalid.local" {
+            let url = AppConfiguration.r2CatalogURL(path: "pokemon.json")
+            do {
+                let (data, _) = try await session.data(from: url)
+                let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
+                nationalDexPokemon = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+                return
+            } catch {
+                // Fall through to bundle.
+            }
+        }
+        if let url = Bundle.main.url(forResource: "pokemon", withExtension: "json"),
+           let data = try? Data(contentsOf: url),
+           let decoded = try? JSONDecoder().decode([NationalDexPokemon].self, from: data) {
+            nationalDexPokemon = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+        } else {
+            nationalDexPokemon = []
+        }
+    }
+
+    /// Pokémon rows for browsing (R2 list), already sorted by `nationalDexNumber`.
+    func nationalDexPokemonSorted() -> [NationalDexPokemon] {
+        nationalDexPokemon.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
     }
 
     private func prepareSearchIndex() async {
@@ -58,6 +110,11 @@ final class CardDataService {
 
     func loadCards(forSetCode setCode: String) async -> [Card] {
         if let cached = cardsBySet[setCode] { return cached }
+
+        if let fromDb = try? await loadCardsFromDatabase(setCode: setCode), !fromDb.isEmpty {
+            cardsBySet[setCode] = fromDb
+            return fromDb
+        }
 
         if let bundled = loadBundledCards(setCode: setCode) {
             cardsBySet[setCode] = bundled
@@ -82,6 +139,103 @@ final class CardDataService {
         } catch {
             lastError = error.localizedDescription
             return []
+        }
+    }
+
+    /// Substring match on set name, code, or series (for universal search).
+    func searchSets(matching query: String) -> [TCGSet] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+        return sets.filter { set in
+            set.name.lowercased().contains(q)
+                || set.setCode.lowercased().contains(q)
+                || (set.seriesName?.lowercased().contains(q) == true)
+        }
+    }
+
+    /// All sets sorted by `releaseDate` descending (newest first). String compare on ISO-ish dates from catalog.
+    func allSetsSortedByReleaseDateNewestFirst() -> [TCGSet] {
+        sets.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+    }
+
+    /// Stable shuffle order for the Browse tab for this app session. New shuffle only when `forceReshuffle` is true (pull-to-refresh) or before first load.
+    private var browseFeedSessionRefs: [CardRef]?
+
+    /// Card order for the Browse grid. Set `forceReshuffle` to `true` on pull-to-refresh; otherwise the same order is reused until the app restarts.
+    func browseFeedCardRefs(forceReshuffle: Bool) async -> [CardRef] {
+        if forceReshuffle {
+            browseFeedSessionRefs = nil
+        }
+        if let cached = browseFeedSessionRefs {
+            return cached
+        }
+        let refs = await buildShuffledBrowseCardRefs()
+        browseFeedSessionRefs = refs
+        return refs
+    }
+
+    private func buildShuffledBrowseCardRefs() async -> [CardRef] {
+        do {
+            try CatalogStore.shared.open()
+            let refs = try CatalogStore.shared.fetchAllCardRefs()
+            if !refs.isEmpty {
+                return refs.shuffled()
+            }
+        } catch {
+            // Fall through.
+        }
+        guard !sets.isEmpty else { return [] }
+        var all: [CardRef] = []
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            all.reserveCapacity(all.count + cards.count)
+            for c in cards {
+                all.append(CardRef(masterCardId: c.masterCardId, setCode: c.setCode))
+            }
+        }
+        return all.shuffled()
+    }
+
+    /// Resolves `refs` to full `Card` models in **the same order** as `refs` (for paginated grids).
+    func cardsInOrder(refs: [CardRef]) async -> [Card] {
+        guard !refs.isEmpty else { return [] }
+        var bySet: [String: Set<String>] = [:]
+        for ref in refs {
+            bySet[ref.setCode, default: []].insert(ref.masterCardId)
+        }
+        var cardByKey: [String: Card] = [:]
+        for (setCode, ids) in bySet {
+            let loaded = await loadCards(forSetCode: setCode)
+            for c in loaded where ids.contains(c.masterCardId) {
+                cardByKey["\(c.setCode)|\(c.masterCardId)"] = c
+            }
+        }
+        return refs.compactMap { cardByKey["\($0.setCode)|\($0.masterCardId)"] }
+    }
+
+    /// Substring match on Pokédex rows (`pokemon.json`): slug `name`, display title, or dex number string.
+    func searchPokemon(matching query: String) -> [NationalDexPokemon] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+        return nationalDexPokemon.filter { row in
+            row.name.lowercased().contains(q)
+                || row.displayName.lowercased().contains(q)
+                || String(row.nationalDexNumber).contains(q)
+        }
+    }
+
+    /// All cards in the catalog that include a dex id (for species detail).
+    func cards(matchingNationalDex dexId: Int) async -> [Card] {
+        var out: [Card] = []
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            out.append(contentsOf: cards.filter { $0.dexIds?.contains(dexId) == true })
+        }
+        return out.sorted { a, b in
+            if a.setCode != b.setCode {
+                return a.setCode.localizedStandardCompare(b.setCode) == .orderedAscending
+            }
+            return a.cardNumber.localizedStandardCompare(b.cardNumber) == .orderedAscending
         }
     }
 
@@ -133,6 +287,11 @@ final class CardDataService {
             }
         }
         return results
+    }
+
+    private func loadCardsFromDatabase(setCode: String) async throws -> [Card] {
+        try CatalogStore.shared.open()
+        return try CatalogStore.shared.fetchCards(setCode: setCode)
     }
 
     private func loadBundledCards(setCode: String) -> [Card]? {

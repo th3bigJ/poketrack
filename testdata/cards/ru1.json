@@ -1,0 +1,530 @@
+[
+  {
+    "masterCardId": "9251",
+    "externalId": null,
+    "tcgdex_id": "ru1-16",
+    "localId": "016",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "016/16",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 016/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-016-low.png",
+    "imageHighSrc": "cards/ru1-016-high.png"
+  },
+  {
+    "masterCardId": "9241",
+    "externalId": null,
+    "tcgdex_id": "ru1-15",
+    "localId": "015",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "015/16",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 015/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-015-low.png",
+    "imageHighSrc": "cards/ru1-015-high.png"
+  },
+  {
+    "masterCardId": "9232",
+    "externalId": null,
+    "tcgdex_id": "ru1-14",
+    "localId": "014",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "014/16",
+    "cardName": "Bastiodon",
+    "fullDisplayName": "Bastiodon 014/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      411
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shieldon",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-014-low.png",
+    "imageHighSrc": "cards/ru1-014-high.png"
+  },
+  {
+    "masterCardId": "9223",
+    "externalId": null,
+    "tcgdex_id": "ru1-13",
+    "localId": "013",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "013/16",
+    "cardName": "Skuntank",
+    "fullDisplayName": "Skuntank 013/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stunky",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-013-low.png",
+    "imageHighSrc": "cards/ru1-013-high.png"
+  },
+  {
+    "masterCardId": "9213",
+    "externalId": null,
+    "tcgdex_id": "ru1-12",
+    "localId": "012",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "012/16",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 012/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-012-low.png",
+    "imageHighSrc": "cards/ru1-012-high.png"
+  },
+  {
+    "masterCardId": "9204",
+    "externalId": null,
+    "tcgdex_id": "ru1-11",
+    "localId": "011",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "011/16",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 011/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-011-low.png",
+    "imageHighSrc": "cards/ru1-011-high.png"
+  },
+  {
+    "masterCardId": "9195",
+    "externalId": null,
+    "tcgdex_id": "ru1-10",
+    "localId": "010",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "010/16",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 010/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-010-low.png",
+    "imageHighSrc": "cards/ru1-010-high.png"
+  },
+  {
+    "masterCardId": "9183",
+    "externalId": null,
+    "tcgdex_id": "ru1-9",
+    "localId": "009",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "009/16",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 009/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-009-low.png",
+    "imageHighSrc": "cards/ru1-009-high.png"
+  },
+  {
+    "masterCardId": "9175",
+    "externalId": null,
+    "tcgdex_id": "ru1-8",
+    "localId": "008",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "008/16",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 008/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-008-low.png",
+    "imageHighSrc": "cards/ru1-008-high.png"
+  },
+  {
+    "masterCardId": "9166",
+    "externalId": null,
+    "tcgdex_id": "ru1-7",
+    "localId": "007",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "007/16",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 007/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-007-low.png",
+    "imageHighSrc": "cards/ru1-007-high.png"
+  },
+  {
+    "masterCardId": "9157",
+    "externalId": null,
+    "tcgdex_id": "ru1-6",
+    "localId": "006",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "006/16",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 006/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-006-low.png",
+    "imageHighSrc": "cards/ru1-006-high.png"
+  },
+  {
+    "masterCardId": "9149",
+    "externalId": null,
+    "tcgdex_id": "ru1-5",
+    "localId": "005",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "005/16",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 005/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-005-low.png",
+    "imageHighSrc": "cards/ru1-005-high.png"
+  },
+  {
+    "masterCardId": "9138",
+    "externalId": null,
+    "tcgdex_id": "ru1-4",
+    "localId": "004",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "004/16",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 004/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-004-low.png",
+    "imageHighSrc": "cards/ru1-004-high.png"
+  },
+  {
+    "masterCardId": "9129",
+    "externalId": null,
+    "tcgdex_id": "ru1-3",
+    "localId": "003",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "003/16",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 003/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-003-low.png",
+    "imageHighSrc": "cards/ru1-003-high.png"
+  },
+  {
+    "masterCardId": "9121",
+    "externalId": null,
+    "tcgdex_id": "ru1-2",
+    "localId": "002",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "002/16",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 002/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cherubi",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-002-low.png",
+    "imageHighSrc": "cards/ru1-002-high.png"
+  },
+  {
+    "masterCardId": "9114",
+    "externalId": null,
+    "tcgdex_id": "ru1-1",
+    "localId": "001",
+    "setCode": "ru1",
+    "setTcgdexId": "ru1",
+    "cardNumber": "001/16",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 001/16 Pokémon Rumble",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Pokemon Rumble",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ru1-001-low.png",
+    "imageHighSrc": "cards/ru1-001-high.png"
+  }
+]

@@ -1,6 +1,6 @@
 import Foundation
 
-struct TCGSet: Codable, Identifiable, Hashable {
+struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     var id: String { tcgdexId ?? internalId }
 
     let internalId: String

@@ -1,0 +1,378 @@
+[
+  {
+    "masterCardId": "18808",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-12",
+    "localId": "012",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "012/12",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 012/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-012-low.png",
+    "imageHighSrc": "cards/tk2b-012-high.png"
+  },
+  {
+    "masterCardId": "18805",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-11",
+    "localId": "011",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "011/12",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 011/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-011-low.png",
+    "imageHighSrc": "cards/tk2b-011-high.png"
+  },
+  {
+    "masterCardId": "18801",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-10",
+    "localId": "010",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "010/12",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 010/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-010-low.png",
+    "imageHighSrc": "cards/tk2b-010-high.png"
+  },
+  {
+    "masterCardId": "18797",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-9",
+    "localId": "009",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "009/12",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 009/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kai Ishikawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-009-low.png",
+    "imageHighSrc": "cards/tk2b-009-high.png"
+  },
+  {
+    "masterCardId": "18793",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-8",
+    "localId": "008",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "008/12",
+    "cardName": "Celio's Network",
+    "fullDisplayName": "Celio's Network 008/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-008-low.png",
+    "imageHighSrc": "cards/tk2b-008-high.png"
+  },
+  {
+    "masterCardId": "18790",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-7",
+    "localId": "007",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "007/12",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 007/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-007-low.png",
+    "imageHighSrc": "cards/tk2b-007-high.png"
+  },
+  {
+    "masterCardId": "18786",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-6",
+    "localId": "006",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "006/12",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 006/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-006-low.png",
+    "imageHighSrc": "cards/tk2b-006-high.png"
+  },
+  {
+    "masterCardId": "18782",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-5",
+    "localId": "005",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "005/12",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 005/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-005-low.png",
+    "imageHighSrc": "cards/tk2b-005-high.png"
+  },
+  {
+    "masterCardId": "18778",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-4",
+    "localId": "004",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "004/12",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 004/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-004-low.png",
+    "imageHighSrc": "cards/tk2b-004-high.png"
+  },
+  {
+    "masterCardId": "18774",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-3",
+    "localId": "003",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "003/12",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 003/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-003-low.png",
+    "imageHighSrc": "cards/tk2b-003-high.png"
+  },
+  {
+    "masterCardId": "18770",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-2",
+    "localId": "002",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "002/12",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 002/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-002-low.png",
+    "imageHighSrc": "cards/tk2b-002-high.png"
+  },
+  {
+    "masterCardId": "18767",
+    "externalId": null,
+    "tcgdex_id": "tk-ex-m-1",
+    "localId": "001",
+    "setCode": "tk-ex-m",
+    "setTcgdexId": "tk-ex-m",
+    "cardNumber": "001/12",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 001/12 EX trainer Kit 2 (Minun)",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/tk2b-001-low.png",
+    "imageHighSrc": "cards/tk2b-001-high.png"
+  }
+]

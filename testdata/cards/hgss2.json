@@ -1,0 +1,3132 @@
+[
+  {
+    "masterCardId": "7183",
+    "externalId": null,
+    "tcgdex_id": "hgss2-TWO",
+    "localId": "TWO",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "TWO/95",
+    "cardName": "Alph Lithograph",
+    "fullDisplayName": "Alph Lithograph TWO/95 Unleashed",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Milky Isobe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-TWO-low.png",
+    "imageHighSrc": "cards/hgss2-TWO-high.png"
+  },
+  {
+    "masterCardId": "7180",
+    "externalId": null,
+    "tcgdex_id": "hgss2-95",
+    "localId": "095",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "095/95",
+    "cardName": "Suicune & Entei LEGEND",
+    "fullDisplayName": "Suicune & Entei LEGEND 095/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Water",
+      "Fire"
+    ],
+    "dexIds": [
+      244,
+      245
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-095-low.png",
+    "imageHighSrc": "cards/hgss2-095-high.png"
+  },
+  {
+    "masterCardId": "7177",
+    "externalId": null,
+    "tcgdex_id": "hgss2-94",
+    "localId": "094",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "094/95",
+    "cardName": "Suicune & Entei LEGEND",
+    "fullDisplayName": "Suicune & Entei LEGEND 094/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Water",
+      "Fire"
+    ],
+    "dexIds": [
+      244,
+      245
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-094-low.png",
+    "imageHighSrc": "cards/hgss2-094-high.png"
+  },
+  {
+    "masterCardId": "7175",
+    "externalId": null,
+    "tcgdex_id": "hgss2-93",
+    "localId": "093",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "093/95",
+    "cardName": "Raikou & Suicune LEGEND",
+    "fullDisplayName": "Raikou & Suicune LEGEND 093/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Lightning",
+      "Water"
+    ],
+    "dexIds": [
+      243,
+      245
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Noriko Takaya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-093-low.png",
+    "imageHighSrc": "cards/hgss2-093-high.png"
+  },
+  {
+    "masterCardId": "7172",
+    "externalId": null,
+    "tcgdex_id": "hgss2-92",
+    "localId": "092",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "092/95",
+    "cardName": "Raikou & Suicune LEGEND",
+    "fullDisplayName": "Raikou & Suicune LEGEND 092/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Lightning",
+      "Water"
+    ],
+    "dexIds": [
+      243,
+      245
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Noriko Takaya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-092-low.png",
+    "imageHighSrc": "cards/hgss2-092-high.png"
+  },
+  {
+    "masterCardId": "7168",
+    "externalId": null,
+    "tcgdex_id": "hgss2-91",
+    "localId": "091",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "091/95",
+    "cardName": "Entei & Raikou LEGEND",
+    "fullDisplayName": "Entei & Raikou LEGEND 091/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fire",
+      "Lightning"
+    ],
+    "dexIds": [
+      243,
+      244
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-091-low.png",
+    "imageHighSrc": "cards/hgss2-091-high.png"
+  },
+  {
+    "masterCardId": "7164",
+    "externalId": null,
+    "tcgdex_id": "hgss2-90",
+    "localId": "090",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "090/95",
+    "cardName": "Entei & Raikou LEGEND",
+    "fullDisplayName": "Entei & Raikou LEGEND 090/95 Unleashed",
+    "rarity": "LEGEND",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fire",
+      "Lightning"
+    ],
+    "dexIds": [
+      243,
+      244
+    ],
+    "subtypes": [
+      "LEGEND"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-090-low.png",
+    "imageHighSrc": "cards/hgss2-090-high.png"
+  },
+  {
+    "masterCardId": "7160",
+    "externalId": null,
+    "tcgdex_id": "hgss2-89",
+    "localId": "089",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "089/95",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 089/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-089-low.png",
+    "imageHighSrc": "cards/hgss2-089-high.png"
+  },
+  {
+    "masterCardId": "7156",
+    "externalId": null,
+    "tcgdex_id": "hgss2-88",
+    "localId": "088",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "088/95",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 088/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-088-low.png",
+    "imageHighSrc": "cards/hgss2-088-high.png"
+  },
+  {
+    "masterCardId": "7152",
+    "externalId": null,
+    "tcgdex_id": "hgss2-87",
+    "localId": "087",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "087/95",
+    "cardName": "Steelix",
+    "fullDisplayName": "Steelix 087/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-087-low.png",
+    "imageHighSrc": "cards/hgss2-087-high.png"
+  },
+  {
+    "masterCardId": "7148",
+    "externalId": null,
+    "tcgdex_id": "hgss2-86",
+    "localId": "086",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "086/95",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 086/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-086-low.png",
+    "imageHighSrc": "cards/hgss2-086-high.png"
+  },
+  {
+    "masterCardId": "7144",
+    "externalId": null,
+    "tcgdex_id": "hgss2-85",
+    "localId": "085",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "085/95",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 085/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-085-low.png",
+    "imageHighSrc": "cards/hgss2-085-high.png"
+  },
+  {
+    "masterCardId": "7140",
+    "externalId": null,
+    "tcgdex_id": "hgss2-84",
+    "localId": "084",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "084/95",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 084/95 Unleashed",
+    "rarity": "Rare Prime",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Prime"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-084-low.png",
+    "imageHighSrc": "cards/hgss2-084-high.png"
+  },
+  {
+    "masterCardId": "7136",
+    "externalId": null,
+    "tcgdex_id": "hgss2-83",
+    "localId": "083",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "083/95",
+    "cardName": "Super Scoop Up",
+    "fullDisplayName": "Super Scoop Up 083/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-083-low.png",
+    "imageHighSrc": "cards/hgss2-083-high.png"
+  },
+  {
+    "masterCardId": "7132",
+    "externalId": null,
+    "tcgdex_id": "hgss2-82",
+    "localId": "082",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "082/95",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 082/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-082-low.png",
+    "imageHighSrc": "cards/hgss2-082-high.png"
+  },
+  {
+    "masterCardId": "7128",
+    "externalId": null,
+    "tcgdex_id": "hgss2-81",
+    "localId": "081",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "081/95",
+    "cardName": "Pokémon Circulator",
+    "fullDisplayName": "Pokémon Circulator 081/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-081-low.png",
+    "imageHighSrc": "cards/hgss2-081-high.png"
+  },
+  {
+    "masterCardId": "7124",
+    "externalId": null,
+    "tcgdex_id": "hgss2-80",
+    "localId": "080",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "080/95",
+    "cardName": "PlusPower",
+    "fullDisplayName": "PlusPower 080/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-080-low.png",
+    "imageHighSrc": "cards/hgss2-080-high.png"
+  },
+  {
+    "masterCardId": "7120",
+    "externalId": null,
+    "tcgdex_id": "hgss2-79",
+    "localId": "079",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "079/95",
+    "cardName": "Life Herb",
+    "fullDisplayName": "Life Herb 079/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-079-low.png",
+    "imageHighSrc": "cards/hgss2-079-high.png"
+  },
+  {
+    "masterCardId": "7116",
+    "externalId": null,
+    "tcgdex_id": "hgss2-78",
+    "localId": "078",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "078/95",
+    "cardName": "Judge",
+    "fullDisplayName": "Judge 078/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-078-low.png",
+    "imageHighSrc": "cards/hgss2-078-high.png"
+  },
+  {
+    "masterCardId": "7112",
+    "externalId": null,
+    "tcgdex_id": "hgss2-77",
+    "localId": "077",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "077/95",
+    "cardName": "Interviewer's Questions",
+    "fullDisplayName": "Interviewer's Questions 077/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/hgss2-077-low.png",
+    "imageHighSrc": "cards/hgss2-077-high.png"
+  },
+  {
+    "masterCardId": "7108",
+    "externalId": null,
+    "tcgdex_id": "hgss2-76",
+    "localId": "076",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "076/95",
+    "cardName": "Good Rod",
+    "fullDisplayName": "Good Rod 076/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-076-low.png",
+    "imageHighSrc": "cards/hgss2-076-high.png"
+  },
+  {
+    "masterCardId": "7104",
+    "externalId": null,
+    "tcgdex_id": "hgss2-75",
+    "localId": "075",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "075/95",
+    "cardName": "Engineer's Adjustments",
+    "fullDisplayName": "Engineer's Adjustments 075/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/hgss2-075-low.png",
+    "imageHighSrc": "cards/hgss2-075-high.png"
+  },
+  {
+    "masterCardId": "7100",
+    "externalId": null,
+    "tcgdex_id": "hgss2-74",
+    "localId": "074",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "074/95",
+    "cardName": "Energy Returner",
+    "fullDisplayName": "Energy Returner 074/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-074-low.png",
+    "imageHighSrc": "cards/hgss2-074-high.png"
+  },
+  {
+    "masterCardId": "7096",
+    "externalId": null,
+    "tcgdex_id": "hgss2-73",
+    "localId": "073",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "073/95",
+    "cardName": "Emcee's Chatter",
+    "fullDisplayName": "Emcee's Chatter 073/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/hgss2-073-low.png",
+    "imageHighSrc": "cards/hgss2-073-high.png"
+  },
+  {
+    "masterCardId": "7092",
+    "externalId": null,
+    "tcgdex_id": "hgss2-72",
+    "localId": "072",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "072/95",
+    "cardName": "Dual Ball",
+    "fullDisplayName": "Dual Ball 072/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-072-low.png",
+    "imageHighSrc": "cards/hgss2-072-high.png"
+  },
+  {
+    "masterCardId": "7089",
+    "externalId": null,
+    "tcgdex_id": "hgss2-71",
+    "localId": "071",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "071/95",
+    "cardName": "Cheerleader's Cheer",
+    "fullDisplayName": "Cheerleader's Cheer 071/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 0,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/hgss2-071-low.png",
+    "imageHighSrc": "cards/hgss2-071-high.png"
+  },
+  {
+    "masterCardId": "7085",
+    "externalId": null,
+    "tcgdex_id": "hgss2-70",
+    "localId": "070",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "070/95",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 070/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-070-low.png",
+    "imageHighSrc": "cards/hgss2-070-high.png"
+  },
+  {
+    "masterCardId": "7081",
+    "externalId": null,
+    "tcgdex_id": "hgss2-69",
+    "localId": "069",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "069/95",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 069/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-069-low.png",
+    "imageHighSrc": "cards/hgss2-069-high.png"
+  },
+  {
+    "masterCardId": "7077",
+    "externalId": null,
+    "tcgdex_id": "hgss2-68",
+    "localId": "068",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "068/95",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 068/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-068-low.png",
+    "imageHighSrc": "cards/hgss2-068-high.png"
+  },
+  {
+    "masterCardId": "7073",
+    "externalId": null,
+    "tcgdex_id": "hgss2-67",
+    "localId": "067",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "067/95",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 067/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-067-low.png",
+    "imageHighSrc": "cards/hgss2-067-high.png"
+  },
+  {
+    "masterCardId": "7069",
+    "externalId": null,
+    "tcgdex_id": "hgss2-66",
+    "localId": "066",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "066/95",
+    "cardName": "Tropius",
+    "fullDisplayName": "Tropius 066/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      357
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-066-low.png",
+    "imageHighSrc": "cards/hgss2-066-high.png"
+  },
+  {
+    "masterCardId": "7065",
+    "externalId": null,
+    "tcgdex_id": "hgss2-65",
+    "localId": "065",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "065/95",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa 065/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-065-low.png",
+    "imageHighSrc": "cards/hgss2-065-high.png"
+  },
+  {
+    "masterCardId": "7061",
+    "externalId": null,
+    "tcgdex_id": "hgss2-64",
+    "localId": "064",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "064/95",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 064/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-064-low.png",
+    "imageHighSrc": "cards/hgss2-064-high.png"
+  },
+  {
+    "masterCardId": "7057",
+    "externalId": null,
+    "tcgdex_id": "hgss2-63",
+    "localId": "063",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "063/95",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 063/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-063-low.png",
+    "imageHighSrc": "cards/hgss2-063-high.png"
+  },
+  {
+    "masterCardId": "7054",
+    "externalId": null,
+    "tcgdex_id": "hgss2-62",
+    "localId": "062",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "062/95",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 062/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-062-low.png",
+    "imageHighSrc": "cards/hgss2-062-high.png"
+  },
+  {
+    "masterCardId": "7050",
+    "externalId": null,
+    "tcgdex_id": "hgss2-61",
+    "localId": "061",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "061/95",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 061/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-061-low.png",
+    "imageHighSrc": "cards/hgss2-061-high.png"
+  },
+  {
+    "masterCardId": "7046",
+    "externalId": null,
+    "tcgdex_id": "hgss2-60",
+    "localId": "060",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "060/95",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 060/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-060-low.png",
+    "imageHighSrc": "cards/hgss2-060-high.png"
+  },
+  {
+    "masterCardId": "7042",
+    "externalId": null,
+    "tcgdex_id": "hgss2-59",
+    "localId": "059",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "059/95",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 059/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-059-low.png",
+    "imageHighSrc": "cards/hgss2-059-high.png"
+  },
+  {
+    "masterCardId": "7038",
+    "externalId": null,
+    "tcgdex_id": "hgss2-58",
+    "localId": "058",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "058/95",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 058/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-058-low.png",
+    "imageHighSrc": "cards/hgss2-058-high.png"
+  },
+  {
+    "masterCardId": "7034",
+    "externalId": null,
+    "tcgdex_id": "hgss2-57",
+    "localId": "057",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "057/95",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 057/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-057-low.png",
+    "imageHighSrc": "cards/hgss2-057-high.png"
+  },
+  {
+    "masterCardId": "7029",
+    "externalId": null,
+    "tcgdex_id": "hgss2-56",
+    "localId": "056",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "056/95",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 056/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-056-low.png",
+    "imageHighSrc": "cards/hgss2-056-high.png"
+  },
+  {
+    "masterCardId": "7025",
+    "externalId": null,
+    "tcgdex_id": "hgss2-55",
+    "localId": "055",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "055/95",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 055/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-055-low.png",
+    "imageHighSrc": "cards/hgss2-055-high.png"
+  },
+  {
+    "masterCardId": "7021",
+    "externalId": null,
+    "tcgdex_id": "hgss2-54",
+    "localId": "054",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "054/95",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 054/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-054-low.png",
+    "imageHighSrc": "cards/hgss2-054-high.png"
+  },
+  {
+    "masterCardId": "7017",
+    "externalId": null,
+    "tcgdex_id": "hgss2-53",
+    "localId": "053",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "053/95",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 053/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-053-low.png",
+    "imageHighSrc": "cards/hgss2-053-high.png"
+  },
+  {
+    "masterCardId": "7013",
+    "externalId": null,
+    "tcgdex_id": "hgss2-52",
+    "localId": "052",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "052/95",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 052/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-052-low.png",
+    "imageHighSrc": "cards/hgss2-052-high.png"
+  },
+  {
+    "masterCardId": "7009",
+    "externalId": null,
+    "tcgdex_id": "hgss2-51",
+    "localId": "051",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "051/95",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 051/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-051-low.png",
+    "imageHighSrc": "cards/hgss2-051-high.png"
+  },
+  {
+    "masterCardId": "7005",
+    "externalId": null,
+    "tcgdex_id": "hgss2-50",
+    "localId": "050",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "050/95",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 050/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-050-low.png",
+    "imageHighSrc": "cards/hgss2-050-high.png"
+  },
+  {
+    "masterCardId": "7001",
+    "externalId": null,
+    "tcgdex_id": "hgss2-49",
+    "localId": "049",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "049/95",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 049/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-049-low.png",
+    "imageHighSrc": "cards/hgss2-049-high.png"
+  },
+  {
+    "masterCardId": "6997",
+    "externalId": null,
+    "tcgdex_id": "hgss2-48",
+    "localId": "048",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "048/95",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 048/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-048-low.png",
+    "imageHighSrc": "cards/hgss2-048-high.png"
+  },
+  {
+    "masterCardId": "6993",
+    "externalId": null,
+    "tcgdex_id": "hgss2-47",
+    "localId": "047",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "047/95",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 047/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-047-low.png",
+    "imageHighSrc": "cards/hgss2-047-high.png"
+  },
+  {
+    "masterCardId": "6990",
+    "externalId": null,
+    "tcgdex_id": "hgss2-46",
+    "localId": "046",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "046/95",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 046/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-046-low.png",
+    "imageHighSrc": "cards/hgss2-046-high.png"
+  },
+  {
+    "masterCardId": "6986",
+    "externalId": null,
+    "tcgdex_id": "hgss2-45",
+    "localId": "045",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "045/95",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 045/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-045-low.png",
+    "imageHighSrc": "cards/hgss2-045-high.png"
+  },
+  {
+    "masterCardId": "6982",
+    "externalId": null,
+    "tcgdex_id": "hgss2-44",
+    "localId": "044",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "044/95",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 044/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-044-low.png",
+    "imageHighSrc": "cards/hgss2-044-high.png"
+  },
+  {
+    "masterCardId": "6977",
+    "externalId": null,
+    "tcgdex_id": "hgss2-43",
+    "localId": "043",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "043/95",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 043/95 Unleashed",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-043-low.png",
+    "imageHighSrc": "cards/hgss2-043-high.png"
+  },
+  {
+    "masterCardId": "6973",
+    "externalId": null,
+    "tcgdex_id": "hgss2-42",
+    "localId": "042",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "042/95",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 042/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-042-low.png",
+    "imageHighSrc": "cards/hgss2-042-high.png"
+  },
+  {
+    "masterCardId": "6969",
+    "externalId": null,
+    "tcgdex_id": "hgss2-41",
+    "localId": "041",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "041/95",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 041/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-041-low.png",
+    "imageHighSrc": "cards/hgss2-041-high.png"
+  },
+  {
+    "masterCardId": "6965",
+    "externalId": null,
+    "tcgdex_id": "hgss2-40",
+    "localId": "040",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "040/95",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 040/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-040-low.png",
+    "imageHighSrc": "cards/hgss2-040-high.png"
+  },
+  {
+    "masterCardId": "6961",
+    "externalId": null,
+    "tcgdex_id": "hgss2-39",
+    "localId": "039",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "039/95",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 039/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-039-low.png",
+    "imageHighSrc": "cards/hgss2-039-high.png"
+  },
+  {
+    "masterCardId": "6957",
+    "externalId": null,
+    "tcgdex_id": "hgss2-38",
+    "localId": "038",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "038/95",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 038/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-038-low.png",
+    "imageHighSrc": "cards/hgss2-038-high.png"
+  },
+  {
+    "masterCardId": "6953",
+    "externalId": null,
+    "tcgdex_id": "hgss2-37",
+    "localId": "037",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "037/95",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 037/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwag",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-037-low.png",
+    "imageHighSrc": "cards/hgss2-037-high.png"
+  },
+  {
+    "masterCardId": "6949",
+    "externalId": null,
+    "tcgdex_id": "hgss2-36",
+    "localId": "036",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "036/95",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 036/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-036-low.png",
+    "imageHighSrc": "cards/hgss2-036-high.png"
+  },
+  {
+    "masterCardId": "6945",
+    "externalId": null,
+    "tcgdex_id": "hgss2-35",
+    "localId": "035",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "035/95",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 035/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-035-low.png",
+    "imageHighSrc": "cards/hgss2-035-high.png"
+  },
+  {
+    "masterCardId": "6941",
+    "externalId": null,
+    "tcgdex_id": "hgss2-34",
+    "localId": "034",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "034/95",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 034/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-034-low.png",
+    "imageHighSrc": "cards/hgss2-034-high.png"
+  },
+  {
+    "masterCardId": "6937",
+    "externalId": null,
+    "tcgdex_id": "hgss2-33",
+    "localId": "033",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "033/95",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 033/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-033-low.png",
+    "imageHighSrc": "cards/hgss2-033-high.png"
+  },
+  {
+    "masterCardId": "6933",
+    "externalId": null,
+    "tcgdex_id": "hgss2-32",
+    "localId": "032",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "032/95",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 032/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-032-low.png",
+    "imageHighSrc": "cards/hgss2-032-high.png"
+  },
+  {
+    "masterCardId": "6929",
+    "externalId": null,
+    "tcgdex_id": "hgss2-31",
+    "localId": "031",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "031/95",
+    "cardName": "Grotle",
+    "fullDisplayName": "Grotle 031/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      388
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Turtwig",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-031-low.png",
+    "imageHighSrc": "cards/hgss2-031-high.png"
+  },
+  {
+    "masterCardId": "6926",
+    "externalId": null,
+    "tcgdex_id": "hgss2-30",
+    "localId": "030",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "030/95",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 030/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-030-low.png",
+    "imageHighSrc": "cards/hgss2-030-high.png"
+  },
+  {
+    "masterCardId": "6921",
+    "externalId": null,
+    "tcgdex_id": "hgss2-29",
+    "localId": "029",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "029/95",
+    "cardName": "Dunsparce",
+    "fullDisplayName": "Dunsparce 029/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      206
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-029-low.png",
+    "imageHighSrc": "cards/hgss2-029-high.png"
+  },
+  {
+    "masterCardId": "6918",
+    "externalId": null,
+    "tcgdex_id": "hgss2-28",
+    "localId": "028",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "028/95",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 028/95 Unleashed",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cherubi",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-028-low.png",
+    "imageHighSrc": "cards/hgss2-028-high.png"
+  },
+  {
+    "masterCardId": "6914",
+    "externalId": null,
+    "tcgdex_id": "hgss2-27",
+    "localId": "027",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "027/95",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring 027/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-027-low.png",
+    "imageHighSrc": "cards/hgss2-027-high.png"
+  },
+  {
+    "masterCardId": "6909",
+    "externalId": null,
+    "tcgdex_id": "hgss2-26",
+    "localId": "026",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "026/95",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 026/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-026-low.png",
+    "imageHighSrc": "cards/hgss2-026-high.png"
+  },
+  {
+    "masterCardId": "6905",
+    "externalId": null,
+    "tcgdex_id": "hgss2-25",
+    "localId": "025",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "025/95",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 025/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-025-low.png",
+    "imageHighSrc": "cards/hgss2-025-high.png"
+  },
+  {
+    "masterCardId": "6901",
+    "externalId": null,
+    "tcgdex_id": "hgss2-24",
+    "localId": "024",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "024/95",
+    "cardName": "Steelix",
+    "fullDisplayName": "Steelix 024/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-024-low.png",
+    "imageHighSrc": "cards/hgss2-024-high.png"
+  },
+  {
+    "masterCardId": "6896",
+    "externalId": null,
+    "tcgdex_id": "hgss2-23",
+    "localId": "023",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "023/95",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 023/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Takashi Yamaguchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-023-low.png",
+    "imageHighSrc": "cards/hgss2-023-high.png"
+  },
+  {
+    "masterCardId": "6891",
+    "externalId": null,
+    "tcgdex_id": "hgss2-22",
+    "localId": "022",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "022/95",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 022/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-022-low.png",
+    "imageHighSrc": "cards/hgss2-022-high.png"
+  },
+  {
+    "masterCardId": "6886",
+    "externalId": null,
+    "tcgdex_id": "hgss2-21",
+    "localId": "021",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "021/95",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 021/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-021-low.png",
+    "imageHighSrc": "cards/hgss2-021-high.png"
+  },
+  {
+    "masterCardId": "6881",
+    "externalId": null,
+    "tcgdex_id": "hgss2-20",
+    "localId": "020",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "020/95",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 020/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-020-low.png",
+    "imageHighSrc": "cards/hgss2-020-high.png"
+  },
+  {
+    "masterCardId": "6876",
+    "externalId": null,
+    "tcgdex_id": "hgss2-19",
+    "localId": "019",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "019/95",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 019/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-019-low.png",
+    "imageHighSrc": "cards/hgss2-019-high.png"
+  },
+  {
+    "masterCardId": "6871",
+    "externalId": null,
+    "tcgdex_id": "hgss2-18",
+    "localId": "018",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "018/95",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 018/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-018-low.png",
+    "imageHighSrc": "cards/hgss2-018-high.png"
+  },
+  {
+    "masterCardId": "6865",
+    "externalId": null,
+    "tcgdex_id": "hgss2-17",
+    "localId": "017",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "017/95",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 017/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-017-low.png",
+    "imageHighSrc": "cards/hgss2-017-high.png"
+  },
+  {
+    "masterCardId": "6860",
+    "externalId": null,
+    "tcgdex_id": "hgss2-16",
+    "localId": "016",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "016/95",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 016/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-016-low.png",
+    "imageHighSrc": "cards/hgss2-016-high.png"
+  },
+  {
+    "masterCardId": "6855",
+    "externalId": null,
+    "tcgdex_id": "hgss2-15",
+    "localId": "015",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "015/95",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 015/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-015-low.png",
+    "imageHighSrc": "cards/hgss2-015-high.png"
+  },
+  {
+    "masterCardId": "6850",
+    "externalId": null,
+    "tcgdex_id": "hgss2-14",
+    "localId": "014",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "014/95",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 014/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-014-low.png",
+    "imageHighSrc": "cards/hgss2-014-high.png"
+  },
+  {
+    "masterCardId": "6845",
+    "externalId": null,
+    "tcgdex_id": "hgss2-13",
+    "localId": "013",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "013/95",
+    "cardName": "Blastoise",
+    "fullDisplayName": "Blastoise 013/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-013-low.png",
+    "imageHighSrc": "cards/hgss2-013-high.png"
+  },
+  {
+    "masterCardId": "6838",
+    "externalId": null,
+    "tcgdex_id": "hgss2-12",
+    "localId": "012",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "012/95",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 012/95 Unleashed",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-012-low.png",
+    "imageHighSrc": "cards/hgss2-012-high.png"
+  },
+  {
+    "masterCardId": "6832",
+    "externalId": null,
+    "tcgdex_id": "hgss2-11",
+    "localId": "011",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "011/95",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 011/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-011-low.png",
+    "imageHighSrc": "cards/hgss2-011-high.png"
+  },
+  {
+    "masterCardId": "6825",
+    "externalId": null,
+    "tcgdex_id": "hgss2-10",
+    "localId": "010",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "010/95",
+    "cardName": "Torterra",
+    "fullDisplayName": "Torterra 010/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      389
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grotle",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-010-low.png",
+    "imageHighSrc": "cards/hgss2-010-high.png"
+  },
+  {
+    "masterCardId": "6819",
+    "externalId": null,
+    "tcgdex_id": "hgss2-9",
+    "localId": "009",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "009/95",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 009/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-009-low.png",
+    "imageHighSrc": "cards/hgss2-009-high.png"
+  },
+  {
+    "masterCardId": "6811",
+    "externalId": null,
+    "tcgdex_id": "hgss2-8",
+    "localId": "008",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "008/95",
+    "cardName": "Shaymin",
+    "fullDisplayName": "Shaymin 008/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-008-low.png",
+    "imageHighSrc": "cards/hgss2-008-high.png"
+  },
+  {
+    "masterCardId": "6803",
+    "externalId": null,
+    "tcgdex_id": "hgss2-7",
+    "localId": "007",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "007/95",
+    "cardName": "Politoed",
+    "fullDisplayName": "Politoed 007/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      186
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-007-low.png",
+    "imageHighSrc": "cards/hgss2-007-high.png"
+  },
+  {
+    "masterCardId": "6798",
+    "externalId": null,
+    "tcgdex_id": "hgss2-6",
+    "localId": "006",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "006/95",
+    "cardName": "Octillery",
+    "fullDisplayName": "Octillery 006/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-006-low.png",
+    "imageHighSrc": "cards/hgss2-006-high.png"
+  },
+  {
+    "masterCardId": "6793",
+    "externalId": null,
+    "tcgdex_id": "hgss2-5",
+    "localId": "005",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "005/95",
+    "cardName": "Mismagius",
+    "fullDisplayName": "Mismagius 005/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-005-low.png",
+    "imageHighSrc": "cards/hgss2-005-high.png"
+  },
+  {
+    "masterCardId": "6785",
+    "externalId": null,
+    "tcgdex_id": "hgss2-4",
+    "localId": "004",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "004/95",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 004/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-004-low.png",
+    "imageHighSrc": "cards/hgss2-004-high.png"
+  },
+  {
+    "masterCardId": "6772",
+    "externalId": null,
+    "tcgdex_id": "hgss2-3",
+    "localId": "003",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "003/95",
+    "cardName": "Manaphy",
+    "fullDisplayName": "Manaphy 003/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      490
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-003-low.png",
+    "imageHighSrc": "cards/hgss2-003-high.png"
+  },
+  {
+    "masterCardId": "6751",
+    "externalId": null,
+    "tcgdex_id": "hgss2-2",
+    "localId": "002",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "002/95",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 002/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-002-low.png",
+    "imageHighSrc": "cards/hgss2-002-high.png"
+  },
+  {
+    "masterCardId": "6737",
+    "externalId": null,
+    "tcgdex_id": "hgss2-1",
+    "localId": "001",
+    "setCode": "hgss2",
+    "setTcgdexId": "hgss2",
+    "cardNumber": "001/95",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 001/95 Unleashed",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wataru Kawahara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/hgss2-001-low.png",
+    "imageHighSrc": "cards/hgss2-001-high.png"
+  }
+]

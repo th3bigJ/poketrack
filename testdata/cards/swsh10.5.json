@@ -1,0 +1,2866 @@
+[
+  {
+    "masterCardId": "8893",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-088",
+    "localId": "088",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "088/78",
+    "cardName": "Lure Module",
+    "fullDisplayName": "Lure Module 088/78 Pokémon GO",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "ORBITALLINK Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-088-low.png",
+    "imageHighSrc": "cards/pgo-088-high.png"
+  },
+  {
+    "masterCardId": "8887",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-087",
+    "localId": "087",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "087/78",
+    "cardName": "Egg Incubator",
+    "fullDisplayName": "Egg Incubator 087/78 Pokémon GO",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-087-low.png",
+    "imageHighSrc": "cards/pgo-087-high.png"
+  },
+  {
+    "masterCardId": "8881",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-086",
+    "localId": "086",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "086/78",
+    "cardName": "Mewtwo VSTAR",
+    "fullDisplayName": "Mewtwo VSTAR 086/78 Pokémon GO",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mewtwo V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-086-low.png",
+    "imageHighSrc": "cards/pgo-086-high.png"
+  },
+  {
+    "masterCardId": "8875",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-085",
+    "localId": "085",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "085/78",
+    "cardName": "Spark",
+    "fullDisplayName": "Spark 085/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-085-low.png",
+    "imageHighSrc": "cards/pgo-085-high.png"
+  },
+  {
+    "masterCardId": "8869",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-084",
+    "localId": "084",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "084/78",
+    "cardName": "Professor's Research",
+    "fullDisplayName": "Professor's Research 084/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Kozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-084-low.png",
+    "imageHighSrc": "cards/pgo-084-high.png"
+  },
+  {
+    "masterCardId": "8863",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-083",
+    "localId": "083",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "083/78",
+    "cardName": "Candela",
+    "fullDisplayName": "Candela 083/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-083-low.png",
+    "imageHighSrc": "cards/pgo-083-high.png"
+  },
+  {
+    "masterCardId": "8857",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-082",
+    "localId": "082",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "082/78",
+    "cardName": "Blanche",
+    "fullDisplayName": "Blanche 082/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-082-low.png",
+    "imageHighSrc": "cards/pgo-082-high.png"
+  },
+  {
+    "masterCardId": "8850",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-081",
+    "localId": "081",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "081/78",
+    "cardName": "Dragonite VSTAR",
+    "fullDisplayName": "Dragonite VSTAR 081/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonite V",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-081-low.png",
+    "imageHighSrc": "cards/pgo-081-high.png"
+  },
+  {
+    "masterCardId": "8843",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-080",
+    "localId": "080",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "080/78",
+    "cardName": "Melmetal VMAX",
+    "fullDisplayName": "Melmetal VMAX 080/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Melmetal V",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-080-low.png",
+    "imageHighSrc": "cards/pgo-080-high.png"
+  },
+  {
+    "masterCardId": "8838",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-079",
+    "localId": "079",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "079/78",
+    "cardName": "Mewtwo VSTAR",
+    "fullDisplayName": "Mewtwo VSTAR 079/78 Pokémon GO",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mewtwo V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-079-low.png",
+    "imageHighSrc": "cards/pgo-079-high.png"
+  },
+  {
+    "masterCardId": "8832",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-078",
+    "localId": "078",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "078/78",
+    "cardName": "Professor's Research",
+    "fullDisplayName": "Professor's Research 078/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Kozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-078-low.png",
+    "imageHighSrc": "cards/pgo-078-high.png"
+  },
+  {
+    "masterCardId": "8827",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-077",
+    "localId": "077",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "077/78",
+    "cardName": "Slaking V",
+    "fullDisplayName": "Slaking V 077/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-077-low.png",
+    "imageHighSrc": "cards/pgo-077-high.png"
+  },
+  {
+    "masterCardId": "8821",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-076",
+    "localId": "076",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "076/78",
+    "cardName": "Dragonite V",
+    "fullDisplayName": "Dragonite V 076/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-076-low.png",
+    "imageHighSrc": "cards/pgo-076-high.png"
+  },
+  {
+    "masterCardId": "8816",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-075",
+    "localId": "075",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "075/78",
+    "cardName": "Melmetal V",
+    "fullDisplayName": "Melmetal V 075/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-075-low.png",
+    "imageHighSrc": "cards/pgo-075-high.png"
+  },
+  {
+    "masterCardId": "8811",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-074",
+    "localId": "074",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "074/78",
+    "cardName": "Conkeldurr V",
+    "fullDisplayName": "Conkeldurr V 074/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      534
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-074-low.png",
+    "imageHighSrc": "cards/pgo-074-high.png"
+  },
+  {
+    "masterCardId": "8805",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-073",
+    "localId": "073",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "073/78",
+    "cardName": "Conkeldurr V",
+    "fullDisplayName": "Conkeldurr V 073/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      534
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-073-low.png",
+    "imageHighSrc": "cards/pgo-073-high.png"
+  },
+  {
+    "masterCardId": "8799",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-072",
+    "localId": "072",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "072/78",
+    "cardName": "Mewtwo V",
+    "fullDisplayName": "Mewtwo V 072/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-072-low.png",
+    "imageHighSrc": "cards/pgo-072-high.png"
+  },
+  {
+    "masterCardId": "8794",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-071",
+    "localId": "071",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "071/78",
+    "cardName": "Alolan Exeggutor V",
+    "fullDisplayName": "Alolan Exeggutor V 071/78 Pokémon GO",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 240,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MUGENUP",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-071-low.png",
+    "imageHighSrc": "cards/pgo-071-high.png"
+  },
+  {
+    "masterCardId": "8788",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-070",
+    "localId": "070",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "070/78",
+    "cardName": "Spark",
+    "fullDisplayName": "Spark 070/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-070-low.png",
+    "imageHighSrc": "cards/pgo-070-high.png"
+  },
+  {
+    "masterCardId": "8782",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-069",
+    "localId": "069",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "069/78",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 069/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-069-low.png",
+    "imageHighSrc": "cards/pgo-069-high.png"
+  },
+  {
+    "masterCardId": "8776",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-068",
+    "localId": "068",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "068/78",
+    "cardName": "PokéStop",
+    "fullDisplayName": "PokéStop 068/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-068-low.png",
+    "imageHighSrc": "cards/pgo-068-high.png"
+  },
+  {
+    "masterCardId": "8770",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-067",
+    "localId": "067",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "067/78",
+    "cardName": "Lure Module",
+    "fullDisplayName": "Lure Module 067/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "ORBITALLINK Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-067-low.png",
+    "imageHighSrc": "cards/pgo-067-high.png"
+  },
+  {
+    "masterCardId": "8766",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-066",
+    "localId": "066",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "066/78",
+    "cardName": "Egg Incubator",
+    "fullDisplayName": "Egg Incubator 066/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-066-low.png",
+    "imageHighSrc": "cards/pgo-066-high.png"
+  },
+  {
+    "masterCardId": "8762",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-065",
+    "localId": "065",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "065/78",
+    "cardName": "Candela",
+    "fullDisplayName": "Candela 065/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-065-low.png",
+    "imageHighSrc": "cards/pgo-065-high.png"
+  },
+  {
+    "masterCardId": "8755",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-064",
+    "localId": "064",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "064/78",
+    "cardName": "Blanche",
+    "fullDisplayName": "Blanche 064/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-064-low.png",
+    "imageHighSrc": "cards/pgo-064-high.png"
+  },
+  {
+    "masterCardId": "8750",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-063",
+    "localId": "063",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "063/78",
+    "cardName": "Unfezant",
+    "fullDisplayName": "Unfezant 063/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      521
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tranquill",
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-063-low.png",
+    "imageHighSrc": "cards/pgo-063-high.png"
+  },
+  {
+    "masterCardId": "8745",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-062",
+    "localId": "062",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "062/78",
+    "cardName": "Tranquill",
+    "fullDisplayName": "Tranquill 062/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      520
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidove",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-062-low.png",
+    "imageHighSrc": "cards/pgo-062-high.png"
+  },
+  {
+    "masterCardId": "8739",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-061",
+    "localId": "061",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "061/78",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove 061/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-061-low.png",
+    "imageHighSrc": "cards/pgo-061-high.png"
+  },
+  {
+    "masterCardId": "8733",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-060",
+    "localId": "060",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "060/78",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 060/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-060-low.png",
+    "imageHighSrc": "cards/pgo-060-high.png"
+  },
+  {
+    "masterCardId": "8727",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-059",
+    "localId": "059",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "059/78",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 059/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-059-low.png",
+    "imageHighSrc": "cards/pgo-059-high.png"
+  },
+  {
+    "masterCardId": "8721",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-058",
+    "localId": "058",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "058/78",
+    "cardName": "Slaking V",
+    "fullDisplayName": "Slaking V 058/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-058-low.png",
+    "imageHighSrc": "cards/pgo-058-high.png"
+  },
+  {
+    "masterCardId": "8714",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-057",
+    "localId": "057",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "057/78",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 057/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aipom",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-057-low.png",
+    "imageHighSrc": "cards/pgo-057-high.png"
+  },
+  {
+    "masterCardId": "8709",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-056",
+    "localId": "056",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "056/78",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 056/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-056-low.png",
+    "imageHighSrc": "cards/pgo-056-high.png"
+  },
+  {
+    "masterCardId": "8701",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-055",
+    "localId": "055",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "055/78",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 055/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-055-low.png",
+    "imageHighSrc": "cards/pgo-055-high.png"
+  },
+  {
+    "masterCardId": "8697",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-054",
+    "localId": "054",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "054/78",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 054/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-054-low.png",
+    "imageHighSrc": "cards/pgo-054-high.png"
+  },
+  {
+    "masterCardId": "8691",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-053",
+    "localId": "053",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "053/78",
+    "cardName": "Ditto",
+    "fullDisplayName": "Ditto 053/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      132
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-053-low.png",
+    "imageHighSrc": "cards/pgo-053-high.png"
+  },
+  {
+    "masterCardId": "8686",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-052",
+    "localId": "052",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "052/78",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 052/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-052-low.png",
+    "imageHighSrc": "cards/pgo-052-high.png"
+  },
+  {
+    "masterCardId": "8681",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-051",
+    "localId": "051",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "051/78",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 051/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-051-low.png",
+    "imageHighSrc": "cards/pgo-051-high.png"
+  },
+  {
+    "masterCardId": "8675",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-050",
+    "localId": "050",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "050/78",
+    "cardName": "Dragonite VSTAR",
+    "fullDisplayName": "Dragonite VSTAR 050/78 Pokémon GO",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonite V",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-050-low.png",
+    "imageHighSrc": "cards/pgo-050-high.png"
+  },
+  {
+    "masterCardId": "8668",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-049",
+    "localId": "049",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "049/78",
+    "cardName": "Dragonite V",
+    "fullDisplayName": "Dragonite V 049/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-049-low.png",
+    "imageHighSrc": "cards/pgo-049-high.png"
+  },
+  {
+    "masterCardId": "8663",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-048",
+    "localId": "048",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "048/78",
+    "cardName": "Melmetal VMAX",
+    "fullDisplayName": "Melmetal VMAX 048/78 Pokémon GO",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Melmetal V",
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-048-low.png",
+    "imageHighSrc": "cards/pgo-048-high.png"
+  },
+  {
+    "masterCardId": "8658",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-047",
+    "localId": "047",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "047/78",
+    "cardName": "Melmetal V",
+    "fullDisplayName": "Melmetal V 047/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-047-low.png",
+    "imageHighSrc": "cards/pgo-047-high.png"
+  },
+  {
+    "masterCardId": "8653",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-046",
+    "localId": "046",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "046/78",
+    "cardName": "Melmetal",
+    "fullDisplayName": "Melmetal 046/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      809
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meltan",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-046-low.png",
+    "imageHighSrc": "cards/pgo-046-high.png"
+  },
+  {
+    "masterCardId": "8648",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-045",
+    "localId": "045",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "045/78",
+    "cardName": "Meltan",
+    "fullDisplayName": "Meltan 045/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      808
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-045-low.png",
+    "imageHighSrc": "cards/pgo-045-high.png"
+  },
+  {
+    "masterCardId": "8644",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-044",
+    "localId": "044",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "044/78",
+    "cardName": "Steelix",
+    "fullDisplayName": "Steelix 044/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-044-low.png",
+    "imageHighSrc": "cards/pgo-044-high.png"
+  },
+  {
+    "masterCardId": "8641",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-043",
+    "localId": "043",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "043/78",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 043/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-043-low.png",
+    "imageHighSrc": "cards/pgo-043-high.png"
+  },
+  {
+    "masterCardId": "8635",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-042",
+    "localId": "042",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "042/78",
+    "cardName": "Alolan Raticate",
+    "fullDisplayName": "Alolan Raticate 042/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Alolan Rattata",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-042-low.png",
+    "imageHighSrc": "cards/pgo-042-high.png"
+  },
+  {
+    "masterCardId": "8627",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-041",
+    "localId": "041",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "041/78",
+    "cardName": "Alolan Rattata",
+    "fullDisplayName": "Alolan Rattata 041/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-041-low.png",
+    "imageHighSrc": "cards/pgo-041-high.png"
+  },
+  {
+    "masterCardId": "8609",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-040",
+    "localId": "040",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "040/78",
+    "cardName": "Conkeldurr V",
+    "fullDisplayName": "Conkeldurr V 040/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      534
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-040-low.png",
+    "imageHighSrc": "cards/pgo-040-high.png"
+  },
+  {
+    "masterCardId": "8602",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-039",
+    "localId": "039",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "039/78",
+    "cardName": "Solrock",
+    "fullDisplayName": "Solrock 039/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      338
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-039-low.png",
+    "imageHighSrc": "cards/pgo-039-high.png"
+  },
+  {
+    "masterCardId": "8594",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-038",
+    "localId": "038",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "038/78",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 038/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-038-low.png",
+    "imageHighSrc": "cards/pgo-038-high.png"
+  },
+  {
+    "masterCardId": "8587",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-037",
+    "localId": "037",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "037/78",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 037/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-037-low.png",
+    "imageHighSrc": "cards/pgo-037-high.png"
+  },
+  {
+    "masterCardId": "8582",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-036",
+    "localId": "036",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "036/78",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 036/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-036-low.png",
+    "imageHighSrc": "cards/pgo-036-high.png"
+  },
+  {
+    "masterCardId": "8575",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-035",
+    "localId": "035",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "035/78",
+    "cardName": "Sylveon",
+    "fullDisplayName": "Sylveon 035/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      700
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-035-low.png",
+    "imageHighSrc": "cards/pgo-035-high.png"
+  },
+  {
+    "masterCardId": "8567",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-034",
+    "localId": "034",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "034/78",
+    "cardName": "Lunatone",
+    "fullDisplayName": "Lunatone 034/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      337
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-034-low.png",
+    "imageHighSrc": "cards/pgo-034-high.png"
+  },
+  {
+    "masterCardId": "8561",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-033",
+    "localId": "033",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "033/78",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 033/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Hataya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-033-low.png",
+    "imageHighSrc": "cards/pgo-033-high.png"
+  },
+  {
+    "masterCardId": "8554",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-032",
+    "localId": "032",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "032/78",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 032/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-032-low.png",
+    "imageHighSrc": "cards/pgo-032-high.png"
+  },
+  {
+    "masterCardId": "8547",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-031",
+    "localId": "031",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "031/78",
+    "cardName": "Mewtwo VSTAR",
+    "fullDisplayName": "Mewtwo VSTAR 031/78 Pokémon GO",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mewtwo V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-031-low.png",
+    "imageHighSrc": "cards/pgo-031-high.png"
+  },
+  {
+    "masterCardId": "8540",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-030",
+    "localId": "030",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "030/78",
+    "cardName": "Mewtwo V",
+    "fullDisplayName": "Mewtwo V 030/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nurikabe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-030-low.png",
+    "imageHighSrc": "cards/pgo-030-high.png"
+  },
+  {
+    "masterCardId": "8534",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-029",
+    "localId": "029",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "029/78",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 029/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-029-low.png",
+    "imageHighSrc": "cards/pgo-029-high.png"
+  },
+  {
+    "masterCardId": "8527",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-028",
+    "localId": "028",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "028/78",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 028/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-028-low.png",
+    "imageHighSrc": "cards/pgo-028-high.png"
+  },
+  {
+    "masterCardId": "8520",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-027",
+    "localId": "027",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "027/78",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 027/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-027-low.png",
+    "imageHighSrc": "cards/pgo-027-high.png"
+  },
+  {
+    "masterCardId": "8514",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-026",
+    "localId": "026",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "026/78",
+    "cardName": "Golisopod",
+    "fullDisplayName": "Golisopod 026/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      768
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wimpod",
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-026-low.png",
+    "imageHighSrc": "cards/pgo-026-high.png"
+  },
+  {
+    "masterCardId": "8508",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-025",
+    "localId": "025",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "025/78",
+    "cardName": "Wimpod",
+    "fullDisplayName": "Wimpod 025/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      767
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-025-low.png",
+    "imageHighSrc": "cards/pgo-025-high.png"
+  },
+  {
+    "masterCardId": "8499",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-024",
+    "localId": "024",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "024/78",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 024/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-024-low.png",
+    "imageHighSrc": "cards/pgo-024-high.png"
+  },
+  {
+    "masterCardId": "8493",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-023",
+    "localId": "023",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "023/78",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 023/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-023-low.png",
+    "imageHighSrc": "cards/pgo-023-high.png"
+  },
+  {
+    "masterCardId": "8486",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-022",
+    "localId": "022",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "022/78",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 022/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-022-low.png",
+    "imageHighSrc": "cards/pgo-022-high.png"
+  },
+  {
+    "masterCardId": "8480",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-021",
+    "localId": "021",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "021/78",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 021/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-021-low.png",
+    "imageHighSrc": "cards/pgo-021-high.png"
+  },
+  {
+    "masterCardId": "8473",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-020",
+    "localId": "020",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "020/78",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 020/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-020-low.png",
+    "imageHighSrc": "cards/pgo-020-high.png"
+  },
+  {
+    "masterCardId": "8466",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-019",
+    "localId": "019",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "019/78",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 019/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-019-low.png",
+    "imageHighSrc": "cards/pgo-019-high.png"
+  },
+  {
+    "masterCardId": "8460",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-018",
+    "localId": "018",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "018/78",
+    "cardName": "Radiant Blastoise",
+    "fullDisplayName": "Radiant Blastoise 018/78 Pokémon GO",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-018-low.png",
+    "imageHighSrc": "cards/pgo-018-high.png"
+  },
+  {
+    "masterCardId": "8452",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-017",
+    "localId": "017",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "017/78",
+    "cardName": "Blastoise",
+    "fullDisplayName": "Blastoise 017/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-017-low.png",
+    "imageHighSrc": "cards/pgo-017-high.png"
+  },
+  {
+    "masterCardId": "8439",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-016",
+    "localId": "016",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "016/78",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 016/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-016-low.png",
+    "imageHighSrc": "cards/pgo-016-high.png"
+  },
+  {
+    "masterCardId": "8431",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-015",
+    "localId": "015",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "015/78",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 015/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-015-low.png",
+    "imageHighSrc": "cards/pgo-015-high.png"
+  },
+  {
+    "masterCardId": "8425",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-014",
+    "localId": "014",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "014/78",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 014/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-014-low.png",
+    "imageHighSrc": "cards/pgo-014-high.png"
+  },
+  {
+    "masterCardId": "8417",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-013",
+    "localId": "013",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "013/78",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 013/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-013-low.png",
+    "imageHighSrc": "cards/pgo-013-high.png"
+  },
+  {
+    "masterCardId": "8407",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-012",
+    "localId": "012",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "012/78",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 012/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-012-low.png",
+    "imageHighSrc": "cards/pgo-012-high.png"
+  },
+  {
+    "masterCardId": "8399",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-011",
+    "localId": "011",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "011/78",
+    "cardName": "Radiant Charizard",
+    "fullDisplayName": "Radiant Charizard 011/78 Pokémon GO",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-011-low.png",
+    "imageHighSrc": "cards/pgo-011-high.png"
+  },
+  {
+    "masterCardId": "8389",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-010",
+    "localId": "010",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "010/78",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 010/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-010-low.png",
+    "imageHighSrc": "cards/pgo-010-high.png"
+  },
+  {
+    "masterCardId": "8375",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-009",
+    "localId": "009",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "009/78",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 009/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-009-low.png",
+    "imageHighSrc": "cards/pgo-009-high.png"
+  },
+  {
+    "masterCardId": "8368",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-008",
+    "localId": "008",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "008/78",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 008/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-008-low.png",
+    "imageHighSrc": "cards/pgo-008-high.png"
+  },
+  {
+    "masterCardId": "8357",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-007",
+    "localId": "007",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "007/78",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 007/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spinarak",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-007-low.png",
+    "imageHighSrc": "cards/pgo-007-high.png"
+  },
+  {
+    "masterCardId": "8347",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-006",
+    "localId": "006",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "006/78",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 006/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-006-low.png",
+    "imageHighSrc": "cards/pgo-006-high.png"
+  },
+  {
+    "masterCardId": "8337",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-005",
+    "localId": "005",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "005/78",
+    "cardName": "Alolan Exeggutor V",
+    "fullDisplayName": "Alolan Exeggutor V 005/78 Pokémon GO",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 240,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MUGENUP",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-005-low.png",
+    "imageHighSrc": "cards/pgo-005-high.png"
+  },
+  {
+    "masterCardId": "8327",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-004",
+    "localId": "004",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "004/78",
+    "cardName": "Radiant Venusaur",
+    "fullDisplayName": "Radiant Venusaur 004/78 Pokémon GO",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-004-low.png",
+    "imageHighSrc": "cards/pgo-004-high.png"
+  },
+  {
+    "masterCardId": "8320",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-003",
+    "localId": "003",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "003/78",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 003/78 Pokémon GO",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-003-low.png",
+    "imageHighSrc": "cards/pgo-003-high.png"
+  },
+  {
+    "masterCardId": "8312",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-002",
+    "localId": "002",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "002/78",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 002/78 Pokémon GO",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "zig",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-002-low.png",
+    "imageHighSrc": "cards/pgo-002-high.png"
+  },
+  {
+    "masterCardId": "8305",
+    "externalId": null,
+    "tcgdex_id": "swsh10.5-001",
+    "localId": "001",
+    "setCode": "swsh10.5",
+    "setTcgdexId": "swsh10.5",
+    "cardNumber": "001/78",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 001/78 Pokémon GO",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pgo-001-low.png",
+    "imageHighSrc": "cards/pgo-001-high.png"
+  }
+]

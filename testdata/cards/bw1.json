@@ -1,0 +1,3713 @@
+[
+  {
+    "masterCardId": "2084",
+    "externalId": null,
+    "tcgdex_id": "bw1-115",
+    "localId": "115",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "115/114",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 115/114 Black & White",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-115-low.png",
+    "imageHighSrc": "cards/bw1-115-high.png"
+  },
+  {
+    "masterCardId": "2083",
+    "externalId": null,
+    "tcgdex_id": "bw1-114",
+    "localId": "114",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "114/114",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 114/114 Black & White",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-114-low.png",
+    "imageHighSrc": "cards/bw1-114-high.png"
+  },
+  {
+    "masterCardId": "2082",
+    "externalId": null,
+    "tcgdex_id": "bw1-113",
+    "localId": "113",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "113/114",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 113/114 Black & White",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-113-low.png",
+    "imageHighSrc": "cards/bw1-113-high.png"
+  },
+  {
+    "masterCardId": "2081",
+    "externalId": null,
+    "tcgdex_id": "bw1-112",
+    "localId": "112",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "112/114",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 112/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-112-low.png",
+    "imageHighSrc": "cards/bw1-112-high.png"
+  },
+  {
+    "masterCardId": "2080",
+    "externalId": null,
+    "tcgdex_id": "bw1-111",
+    "localId": "111",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "111/114",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 111/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-111-low.png",
+    "imageHighSrc": "cards/bw1-111-high.png"
+  },
+  {
+    "masterCardId": "2079",
+    "externalId": null,
+    "tcgdex_id": "bw1-110",
+    "localId": "110",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "110/114",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 110/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-110-low.png",
+    "imageHighSrc": "cards/bw1-110-high.png"
+  },
+  {
+    "masterCardId": "2078",
+    "externalId": null,
+    "tcgdex_id": "bw1-109",
+    "localId": "109",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "109/114",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 109/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-109-low.png",
+    "imageHighSrc": "cards/bw1-109-high.png"
+  },
+  {
+    "masterCardId": "2077",
+    "externalId": null,
+    "tcgdex_id": "bw1-108",
+    "localId": "108",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "108/114",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 108/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-108-low.png",
+    "imageHighSrc": "cards/bw1-108-high.png"
+  },
+  {
+    "masterCardId": "2076",
+    "externalId": null,
+    "tcgdex_id": "bw1-107",
+    "localId": "107",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "107/114",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 107/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-107-low.png",
+    "imageHighSrc": "cards/bw1-107-high.png"
+  },
+  {
+    "masterCardId": "2075",
+    "externalId": null,
+    "tcgdex_id": "bw1-106",
+    "localId": "106",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "106/114",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 106/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-106-low.png",
+    "imageHighSrc": "cards/bw1-106-high.png"
+  },
+  {
+    "masterCardId": "2074",
+    "externalId": null,
+    "tcgdex_id": "bw1-105",
+    "localId": "105",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "105/114",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 105/114 Black & White",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-105-low.png",
+    "imageHighSrc": "cards/bw1-105-high.png"
+  },
+  {
+    "masterCardId": "2073",
+    "externalId": null,
+    "tcgdex_id": "bw1-104",
+    "localId": "104",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "104/114",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 104/114 Black & White",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-104-low.png",
+    "imageHighSrc": "cards/bw1-104-high.png"
+  },
+  {
+    "masterCardId": "2072",
+    "externalId": null,
+    "tcgdex_id": "bw1-103",
+    "localId": "103",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "103/114",
+    "cardName": "Super Scoop Up",
+    "fullDisplayName": "Super Scoop Up 103/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Iwamoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-103-low.png",
+    "imageHighSrc": "cards/bw1-103-high.png"
+  },
+  {
+    "masterCardId": "2071",
+    "externalId": null,
+    "tcgdex_id": "bw1-102",
+    "localId": "102",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "102/114",
+    "cardName": "Revive",
+    "fullDisplayName": "Revive 102/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-102-low.png",
+    "imageHighSrc": "cards/bw1-102-high.png"
+  },
+  {
+    "masterCardId": "2070",
+    "externalId": null,
+    "tcgdex_id": "bw1-101",
+    "localId": "101",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "101/114",
+    "cardName": "Professor Juniper",
+    "fullDisplayName": "Professor Juniper 101/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-101-low.png",
+    "imageHighSrc": "cards/bw1-101-high.png"
+  },
+  {
+    "masterCardId": "2069",
+    "externalId": null,
+    "tcgdex_id": "bw1-100",
+    "localId": "100",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "100/114",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 100/114 Black & White",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-100-low.png",
+    "imageHighSrc": "cards/bw1-100-high.png"
+  },
+  {
+    "masterCardId": "2068",
+    "externalId": null,
+    "tcgdex_id": "bw1-99",
+    "localId": "099",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "099/114",
+    "cardName": "Pokémon Communication",
+    "fullDisplayName": "Pokémon Communication 099/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-099-low.png",
+    "imageHighSrc": "cards/bw1-099-high.png"
+  },
+  {
+    "masterCardId": "2067",
+    "externalId": null,
+    "tcgdex_id": "bw1-98",
+    "localId": "098",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "098/114",
+    "cardName": "Pokédex",
+    "fullDisplayName": "Pokédex 098/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Noriko Hotta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-098-low.png",
+    "imageHighSrc": "cards/bw1-098-high.png"
+  },
+  {
+    "masterCardId": "2066",
+    "externalId": null,
+    "tcgdex_id": "bw1-97",
+    "localId": "097",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "097/114",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 097/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuri Umemura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-097-low.png",
+    "imageHighSrc": "cards/bw1-097-high.png"
+  },
+  {
+    "masterCardId": "2065",
+    "externalId": null,
+    "tcgdex_id": "bw1-96",
+    "localId": "096",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "096/114",
+    "cardName": "PlusPower",
+    "fullDisplayName": "PlusPower 096/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-096-low.png",
+    "imageHighSrc": "cards/bw1-096-high.png"
+  },
+  {
+    "masterCardId": "2064",
+    "externalId": null,
+    "tcgdex_id": "bw1-95",
+    "localId": "095",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "095/114",
+    "cardName": "Full Heal",
+    "fullDisplayName": "Full Heal 095/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-095-low.png",
+    "imageHighSrc": "cards/bw1-095-high.png"
+  },
+  {
+    "masterCardId": "2063",
+    "externalId": null,
+    "tcgdex_id": "bw1-94",
+    "localId": "094",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "094/114",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 094/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-094-low.png",
+    "imageHighSrc": "cards/bw1-094-high.png"
+  },
+  {
+    "masterCardId": "2062",
+    "externalId": null,
+    "tcgdex_id": "bw1-93",
+    "localId": "093",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "093/114",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 093/114 Black & White",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-093-low.png",
+    "imageHighSrc": "cards/bw1-093-high.png"
+  },
+  {
+    "masterCardId": "2061",
+    "externalId": null,
+    "tcgdex_id": "bw1-92",
+    "localId": "092",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "092/114",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 092/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-092-low.png",
+    "imageHighSrc": "cards/bw1-092-high.png"
+  },
+  {
+    "masterCardId": "2060",
+    "externalId": null,
+    "tcgdex_id": "bw1-91",
+    "localId": "091",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "091/114",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 091/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-091-low.png",
+    "imageHighSrc": "cards/bw1-091-high.png"
+  },
+  {
+    "masterCardId": "2059",
+    "externalId": null,
+    "tcgdex_id": "bw1-90",
+    "localId": "090",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "090/114",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 090/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-090-low.png",
+    "imageHighSrc": "cards/bw1-090-high.png"
+  },
+  {
+    "masterCardId": "2058",
+    "externalId": null,
+    "tcgdex_id": "bw1-89",
+    "localId": "089",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "089/114",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino 089/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-089-low.png",
+    "imageHighSrc": "cards/bw1-089-high.png"
+  },
+  {
+    "masterCardId": "2057",
+    "externalId": null,
+    "tcgdex_id": "bw1-88",
+    "localId": "088",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "088/114",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 088/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-088-low.png",
+    "imageHighSrc": "cards/bw1-088-high.png"
+  },
+  {
+    "masterCardId": "2056",
+    "externalId": null,
+    "tcgdex_id": "bw1-87",
+    "localId": "087",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "087/114",
+    "cardName": "Audino",
+    "fullDisplayName": "Audino 087/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-087-low.png",
+    "imageHighSrc": "cards/bw1-087-high.png"
+  },
+  {
+    "masterCardId": "2055",
+    "externalId": null,
+    "tcgdex_id": "bw1-86",
+    "localId": "086",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "086/114",
+    "cardName": "Unfezant",
+    "fullDisplayName": "Unfezant 086/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      521
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tranquill",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-086-low.png",
+    "imageHighSrc": "cards/bw1-086-high.png"
+  },
+  {
+    "masterCardId": "2054",
+    "externalId": null,
+    "tcgdex_id": "bw1-85",
+    "localId": "085",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "085/114",
+    "cardName": "Tranquill",
+    "fullDisplayName": "Tranquill 085/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      520
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidove",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-085-low.png",
+    "imageHighSrc": "cards/bw1-085-high.png"
+  },
+  {
+    "masterCardId": "2053",
+    "externalId": null,
+    "tcgdex_id": "bw1-84",
+    "localId": "084",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "084/114",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove 084/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-084-low.png",
+    "imageHighSrc": "cards/bw1-084-high.png"
+  },
+  {
+    "masterCardId": "2052",
+    "externalId": null,
+    "tcgdex_id": "bw1-83",
+    "localId": "083",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "083/114",
+    "cardName": "Stoutland",
+    "fullDisplayName": "Stoutland 083/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      508
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Herdier",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-083-low.png",
+    "imageHighSrc": "cards/bw1-083-high.png"
+  },
+  {
+    "masterCardId": "2051",
+    "externalId": null,
+    "tcgdex_id": "bw1-82",
+    "localId": "082",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "082/114",
+    "cardName": "Herdier",
+    "fullDisplayName": "Herdier 082/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      507
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lillipup",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-082-low.png",
+    "imageHighSrc": "cards/bw1-082-high.png"
+  },
+  {
+    "masterCardId": "2050",
+    "externalId": null,
+    "tcgdex_id": "bw1-81",
+    "localId": "081",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "081/114",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup 081/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-081-low.png",
+    "imageHighSrc": "cards/bw1-081-high.png"
+  },
+  {
+    "masterCardId": "2049",
+    "externalId": null,
+    "tcgdex_id": "bw1-80",
+    "localId": "080",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "080/114",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup 080/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-080-low.png",
+    "imageHighSrc": "cards/bw1-080-high.png"
+  },
+  {
+    "masterCardId": "2048",
+    "externalId": null,
+    "tcgdex_id": "bw1-79",
+    "localId": "079",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "079/114",
+    "cardName": "Watchog",
+    "fullDisplayName": "Watchog 079/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      505
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Patrat",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-079-low.png",
+    "imageHighSrc": "cards/bw1-079-high.png"
+  },
+  {
+    "masterCardId": "2047",
+    "externalId": null,
+    "tcgdex_id": "bw1-78",
+    "localId": "078",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "078/114",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 078/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-078-low.png",
+    "imageHighSrc": "cards/bw1-078-high.png"
+  },
+  {
+    "masterCardId": "2046",
+    "externalId": null,
+    "tcgdex_id": "bw1-77",
+    "localId": "077",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "077/114",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 077/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-077-low.png",
+    "imageHighSrc": "cards/bw1-077-high.png"
+  },
+  {
+    "masterCardId": "2045",
+    "externalId": null,
+    "tcgdex_id": "bw1-76",
+    "localId": "076",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "076/114",
+    "cardName": "Klinklang",
+    "fullDisplayName": "Klinklang 076/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      601
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klang",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-076-low.png",
+    "imageHighSrc": "cards/bw1-076-high.png"
+  },
+  {
+    "masterCardId": "2044",
+    "externalId": null,
+    "tcgdex_id": "bw1-75",
+    "localId": "075",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "075/114",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 075/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Klink",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-075-low.png",
+    "imageHighSrc": "cards/bw1-075-high.png"
+  },
+  {
+    "masterCardId": "2043",
+    "externalId": null,
+    "tcgdex_id": "bw1-74",
+    "localId": "074",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "074/114",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 074/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-074-low.png",
+    "imageHighSrc": "cards/bw1-074-high.png"
+  },
+  {
+    "masterCardId": "2042",
+    "externalId": null,
+    "tcgdex_id": "bw1-73",
+    "localId": "073",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "073/114",
+    "cardName": "Mandibuzz",
+    "fullDisplayName": "Mandibuzz 073/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      630
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vullaby",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-073-low.png",
+    "imageHighSrc": "cards/bw1-073-high.png"
+  },
+  {
+    "masterCardId": "2041",
+    "externalId": null,
+    "tcgdex_id": "bw1-72",
+    "localId": "072",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "072/114",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 072/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-072-low.png",
+    "imageHighSrc": "cards/bw1-072-high.png"
+  },
+  {
+    "masterCardId": "2040",
+    "externalId": null,
+    "tcgdex_id": "bw1-71",
+    "localId": "071",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "071/114",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 071/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-071-low.png",
+    "imageHighSrc": "cards/bw1-071-high.png"
+  },
+  {
+    "masterCardId": "2039",
+    "externalId": null,
+    "tcgdex_id": "bw1-70",
+    "localId": "070",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "070/114",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 070/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-070-low.png",
+    "imageHighSrc": "cards/bw1-070-high.png"
+  },
+  {
+    "masterCardId": "2038",
+    "externalId": null,
+    "tcgdex_id": "bw1-69",
+    "localId": "069",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "069/114",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 069/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-069-low.png",
+    "imageHighSrc": "cards/bw1-069-high.png"
+  },
+  {
+    "masterCardId": "2037",
+    "externalId": null,
+    "tcgdex_id": "bw1-68",
+    "localId": "068",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "068/114",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 068/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-068-low.png",
+    "imageHighSrc": "cards/bw1-068-high.png"
+  },
+  {
+    "masterCardId": "2036",
+    "externalId": null,
+    "tcgdex_id": "bw1-67",
+    "localId": "067",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "067/114",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 067/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-067-low.png",
+    "imageHighSrc": "cards/bw1-067-high.png"
+  },
+  {
+    "masterCardId": "2035",
+    "externalId": null,
+    "tcgdex_id": "bw1-66",
+    "localId": "066",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "066/114",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 066/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-066-low.png",
+    "imageHighSrc": "cards/bw1-066-high.png"
+  },
+  {
+    "masterCardId": "2034",
+    "externalId": null,
+    "tcgdex_id": "bw1-65",
+    "localId": "065",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "065/114",
+    "cardName": "Krookodile",
+    "fullDisplayName": "Krookodile 065/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      553
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krokorok",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-065-low.png",
+    "imageHighSrc": "cards/bw1-065-high.png"
+  },
+  {
+    "masterCardId": "2033",
+    "externalId": null,
+    "tcgdex_id": "bw1-64",
+    "localId": "064",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "064/114",
+    "cardName": "Krokorok",
+    "fullDisplayName": "Krokorok 064/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      552
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandile",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-064-low.png",
+    "imageHighSrc": "cards/bw1-064-high.png"
+  },
+  {
+    "masterCardId": "2032",
+    "externalId": null,
+    "tcgdex_id": "bw1-63",
+    "localId": "063",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "063/114",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 063/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      551
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-063-low.png",
+    "imageHighSrc": "cards/bw1-063-high.png"
+  },
+  {
+    "masterCardId": "2031",
+    "externalId": null,
+    "tcgdex_id": "bw1-62",
+    "localId": "062",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "062/114",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 062/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-062-low.png",
+    "imageHighSrc": "cards/bw1-062-high.png"
+  },
+  {
+    "masterCardId": "2030",
+    "externalId": null,
+    "tcgdex_id": "bw1-61",
+    "localId": "061",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "061/114",
+    "cardName": "Throh",
+    "fullDisplayName": "Throh 061/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      538
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-061-low.png",
+    "imageHighSrc": "cards/bw1-061-high.png"
+  },
+  {
+    "masterCardId": "2029",
+    "externalId": null,
+    "tcgdex_id": "bw1-60",
+    "localId": "060",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "060/114",
+    "cardName": "Gurdurr",
+    "fullDisplayName": "Gurdurr 060/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      533
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Timburr",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-060-low.png",
+    "imageHighSrc": "cards/bw1-060-high.png"
+  },
+  {
+    "masterCardId": "2028",
+    "externalId": null,
+    "tcgdex_id": "bw1-59",
+    "localId": "059",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "059/114",
+    "cardName": "Timburr",
+    "fullDisplayName": "Timburr 059/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      532
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-059-low.png",
+    "imageHighSrc": "cards/bw1-059-high.png"
+  },
+  {
+    "masterCardId": "2027",
+    "externalId": null,
+    "tcgdex_id": "bw1-58",
+    "localId": "058",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "058/114",
+    "cardName": "Timburr",
+    "fullDisplayName": "Timburr 058/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      532
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-058-low.png",
+    "imageHighSrc": "cards/bw1-058-high.png"
+  },
+  {
+    "masterCardId": "2026",
+    "externalId": null,
+    "tcgdex_id": "bw1-57",
+    "localId": "057",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "057/114",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 057/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duosion",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-057-low.png",
+    "imageHighSrc": "cards/bw1-057-high.png"
+  },
+  {
+    "masterCardId": "2025",
+    "externalId": null,
+    "tcgdex_id": "bw1-56",
+    "localId": "056",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "056/114",
+    "cardName": "Duosion",
+    "fullDisplayName": "Duosion 056/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      578
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Solosis",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-056-low.png",
+    "imageHighSrc": "cards/bw1-056-high.png"
+  },
+  {
+    "masterCardId": "2024",
+    "externalId": null,
+    "tcgdex_id": "bw1-55",
+    "localId": "055",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "055/114",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 055/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-055-low.png",
+    "imageHighSrc": "cards/bw1-055-high.png"
+  },
+  {
+    "masterCardId": "2023",
+    "externalId": null,
+    "tcgdex_id": "bw1-54",
+    "localId": "054",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "054/114",
+    "cardName": "Scolipede",
+    "fullDisplayName": "Scolipede 054/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      545
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whirlipede",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-054-low.png",
+    "imageHighSrc": "cards/bw1-054-high.png"
+  },
+  {
+    "masterCardId": "2022",
+    "externalId": null,
+    "tcgdex_id": "bw1-53",
+    "localId": "053",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "053/114",
+    "cardName": "Whirlipede",
+    "fullDisplayName": "Whirlipede 053/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      544
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venipede",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-053-low.png",
+    "imageHighSrc": "cards/bw1-053-high.png"
+  },
+  {
+    "masterCardId": "2021",
+    "externalId": null,
+    "tcgdex_id": "bw1-52",
+    "localId": "052",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "052/114",
+    "cardName": "Venipede",
+    "fullDisplayName": "Venipede 052/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      543
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-052-low.png",
+    "imageHighSrc": "cards/bw1-052-high.png"
+  },
+  {
+    "masterCardId": "2020",
+    "externalId": null,
+    "tcgdex_id": "bw1-51",
+    "localId": "051",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "051/114",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 051/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-051-low.png",
+    "imageHighSrc": "cards/bw1-051-high.png"
+  },
+  {
+    "masterCardId": "2019",
+    "externalId": null,
+    "tcgdex_id": "bw1-50",
+    "localId": "050",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "050/114",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 050/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-050-low.png",
+    "imageHighSrc": "cards/bw1-050-high.png"
+  },
+  {
+    "masterCardId": "2018",
+    "externalId": null,
+    "tcgdex_id": "bw1-49",
+    "localId": "049",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "049/114",
+    "cardName": "Musharna",
+    "fullDisplayName": "Musharna 049/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      518
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Munna",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-049-low.png",
+    "imageHighSrc": "cards/bw1-049-high.png"
+  },
+  {
+    "masterCardId": "2017",
+    "externalId": null,
+    "tcgdex_id": "bw1-48",
+    "localId": "048",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "048/114",
+    "cardName": "Munna",
+    "fullDisplayName": "Munna 048/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      517
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-048-low.png",
+    "imageHighSrc": "cards/bw1-048-high.png"
+  },
+  {
+    "masterCardId": "2016",
+    "externalId": null,
+    "tcgdex_id": "bw1-47",
+    "localId": "047",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "047/114",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 047/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-047-low.png",
+    "imageHighSrc": "cards/bw1-047-high.png"
+  },
+  {
+    "masterCardId": "2015",
+    "externalId": null,
+    "tcgdex_id": "bw1-46",
+    "localId": "046",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "046/114",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 046/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-046-low.png",
+    "imageHighSrc": "cards/bw1-046-high.png"
+  },
+  {
+    "masterCardId": "2014",
+    "externalId": null,
+    "tcgdex_id": "bw1-45",
+    "localId": "045",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "045/114",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 045/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-045-low.png",
+    "imageHighSrc": "cards/bw1-045-high.png"
+  },
+  {
+    "masterCardId": "2013",
+    "externalId": null,
+    "tcgdex_id": "bw1-44",
+    "localId": "044",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "044/114",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 044/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-044-low.png",
+    "imageHighSrc": "cards/bw1-044-high.png"
+  },
+  {
+    "masterCardId": "2012",
+    "externalId": null,
+    "tcgdex_id": "bw1-43",
+    "localId": "043",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "043/114",
+    "cardName": "Zebstrika",
+    "fullDisplayName": "Zebstrika 043/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      523
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blitzle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-043-low.png",
+    "imageHighSrc": "cards/bw1-043-high.png"
+  },
+  {
+    "masterCardId": "2011",
+    "externalId": null,
+    "tcgdex_id": "bw1-42",
+    "localId": "042",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "042/114",
+    "cardName": "Zebstrika",
+    "fullDisplayName": "Zebstrika 042/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      523
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blitzle",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-042-low.png",
+    "imageHighSrc": "cards/bw1-042-high.png"
+  },
+  {
+    "masterCardId": "2010",
+    "externalId": null,
+    "tcgdex_id": "bw1-41",
+    "localId": "041",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "041/114",
+    "cardName": "Blitzle",
+    "fullDisplayName": "Blitzle 041/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      522
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-041-low.png",
+    "imageHighSrc": "cards/bw1-041-high.png"
+  },
+  {
+    "masterCardId": "2009",
+    "externalId": null,
+    "tcgdex_id": "bw1-40",
+    "localId": "040",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "040/114",
+    "cardName": "Blitzle",
+    "fullDisplayName": "Blitzle 040/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      522
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-040-low.png",
+    "imageHighSrc": "cards/bw1-040-high.png"
+  },
+  {
+    "masterCardId": "2008",
+    "externalId": null,
+    "tcgdex_id": "bw1-39",
+    "localId": "039",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "039/114",
+    "cardName": "Alomomola",
+    "fullDisplayName": "Alomomola 039/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      594
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-039-low.png",
+    "imageHighSrc": "cards/bw1-039-high.png"
+  },
+  {
+    "masterCardId": "2007",
+    "externalId": null,
+    "tcgdex_id": "bw1-38",
+    "localId": "038",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "038/114",
+    "cardName": "Alomomola",
+    "fullDisplayName": "Alomomola 038/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      594
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-038-low.png",
+    "imageHighSrc": "cards/bw1-038-high.png"
+  },
+  {
+    "masterCardId": "2006",
+    "externalId": null,
+    "tcgdex_id": "bw1-37",
+    "localId": "037",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "037/114",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 037/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ducklett",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-037-low.png",
+    "imageHighSrc": "cards/bw1-037-high.png"
+  },
+  {
+    "masterCardId": "2005",
+    "externalId": null,
+    "tcgdex_id": "bw1-36",
+    "localId": "036",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "036/114",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 036/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-036-low.png",
+    "imageHighSrc": "cards/bw1-036-high.png"
+  },
+  {
+    "masterCardId": "2004",
+    "externalId": null,
+    "tcgdex_id": "bw1-35",
+    "localId": "035",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "035/114",
+    "cardName": "Basculin",
+    "fullDisplayName": "Basculin 035/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-035-low.png",
+    "imageHighSrc": "cards/bw1-035-high.png"
+  },
+  {
+    "masterCardId": "2003",
+    "externalId": null,
+    "tcgdex_id": "bw1-34",
+    "localId": "034",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "034/114",
+    "cardName": "Simipour",
+    "fullDisplayName": "Simipour 034/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      516
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Panpour",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-034-low.png",
+    "imageHighSrc": "cards/bw1-034-high.png"
+  },
+  {
+    "masterCardId": "2002",
+    "externalId": null,
+    "tcgdex_id": "bw1-33",
+    "localId": "033",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "033/114",
+    "cardName": "Panpour",
+    "fullDisplayName": "Panpour 033/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      515
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-033-low.png",
+    "imageHighSrc": "cards/bw1-033-high.png"
+  },
+  {
+    "masterCardId": "2001",
+    "externalId": null,
+    "tcgdex_id": "bw1-32",
+    "localId": "032",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "032/114",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 032/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-032-low.png",
+    "imageHighSrc": "cards/bw1-032-high.png"
+  },
+  {
+    "masterCardId": "2000",
+    "externalId": null,
+    "tcgdex_id": "bw1-31",
+    "localId": "031",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "031/114",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 031/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-031-low.png",
+    "imageHighSrc": "cards/bw1-031-high.png"
+  },
+  {
+    "masterCardId": "1999",
+    "externalId": null,
+    "tcgdex_id": "bw1-30",
+    "localId": "030",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "030/114",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 030/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-030-low.png",
+    "imageHighSrc": "cards/bw1-030-high.png"
+  },
+  {
+    "masterCardId": "1998",
+    "externalId": null,
+    "tcgdex_id": "bw1-29",
+    "localId": "029",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "029/114",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 029/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-029-low.png",
+    "imageHighSrc": "cards/bw1-029-high.png"
+  },
+  {
+    "masterCardId": "1997",
+    "externalId": null,
+    "tcgdex_id": "bw1-28",
+    "localId": "028",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "028/114",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 028/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-028-low.png",
+    "imageHighSrc": "cards/bw1-028-high.png"
+  },
+  {
+    "masterCardId": "1996",
+    "externalId": null,
+    "tcgdex_id": "bw1-27",
+    "localId": "027",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "027/114",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 027/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-027-low.png",
+    "imageHighSrc": "cards/bw1-027-high.png"
+  },
+  {
+    "masterCardId": "1995",
+    "externalId": null,
+    "tcgdex_id": "bw1-26",
+    "localId": "026",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "026/114",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 026/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-026-low.png",
+    "imageHighSrc": "cards/bw1-026-high.png"
+  },
+  {
+    "masterCardId": "1994",
+    "externalId": null,
+    "tcgdex_id": "bw1-25",
+    "localId": "025",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "025/114",
+    "cardName": "Darmanitan",
+    "fullDisplayName": "Darmanitan 025/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      555
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darumaka",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-025-low.png",
+    "imageHighSrc": "cards/bw1-025-high.png"
+  },
+  {
+    "masterCardId": "1993",
+    "externalId": null,
+    "tcgdex_id": "bw1-24",
+    "localId": "024",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "024/114",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka 024/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-024-low.png",
+    "imageHighSrc": "cards/bw1-024-high.png"
+  },
+  {
+    "masterCardId": "1992",
+    "externalId": null,
+    "tcgdex_id": "bw1-23",
+    "localId": "023",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "023/114",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka 023/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-023-low.png",
+    "imageHighSrc": "cards/bw1-023-high.png"
+  },
+  {
+    "masterCardId": "1991",
+    "externalId": null,
+    "tcgdex_id": "bw1-22",
+    "localId": "022",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "022/114",
+    "cardName": "Simisear",
+    "fullDisplayName": "Simisear 022/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      514
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansear",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-022-low.png",
+    "imageHighSrc": "cards/bw1-022-high.png"
+  },
+  {
+    "masterCardId": "1990",
+    "externalId": null,
+    "tcgdex_id": "bw1-21",
+    "localId": "021",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "021/114",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 021/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-021-low.png",
+    "imageHighSrc": "cards/bw1-021-high.png"
+  },
+  {
+    "masterCardId": "1989",
+    "externalId": null,
+    "tcgdex_id": "bw1-20",
+    "localId": "020",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "020/114",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar 020/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-020-low.png",
+    "imageHighSrc": "cards/bw1-020-high.png"
+  },
+  {
+    "masterCardId": "1988",
+    "externalId": null,
+    "tcgdex_id": "bw1-19",
+    "localId": "019",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "019/114",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar 019/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-019-low.png",
+    "imageHighSrc": "cards/bw1-019-high.png"
+  },
+  {
+    "masterCardId": "1987",
+    "externalId": null,
+    "tcgdex_id": "bw1-18",
+    "localId": "018",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "018/114",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 018/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tepig",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-018-low.png",
+    "imageHighSrc": "cards/bw1-018-high.png"
+  },
+  {
+    "masterCardId": "1986",
+    "externalId": null,
+    "tcgdex_id": "bw1-17",
+    "localId": "017",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "017/114",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 017/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tepig",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-017-low.png",
+    "imageHighSrc": "cards/bw1-017-high.png"
+  },
+  {
+    "masterCardId": "1985",
+    "externalId": null,
+    "tcgdex_id": "bw1-16",
+    "localId": "016",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "016/114",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 016/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-016-low.png",
+    "imageHighSrc": "cards/bw1-016-high.png"
+  },
+  {
+    "masterCardId": "1984",
+    "externalId": null,
+    "tcgdex_id": "bw1-15",
+    "localId": "015",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "015/114",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 015/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-015-low.png",
+    "imageHighSrc": "cards/bw1-015-high.png"
+  },
+  {
+    "masterCardId": "1983",
+    "externalId": null,
+    "tcgdex_id": "bw1-14",
+    "localId": "014",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "014/114",
+    "cardName": "Sawsbuck",
+    "fullDisplayName": "Sawsbuck 014/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      586
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deerling",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-014-low.png",
+    "imageHighSrc": "cards/bw1-014-high.png"
+  },
+  {
+    "masterCardId": "1982",
+    "externalId": null,
+    "tcgdex_id": "bw1-13",
+    "localId": "013",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "013/114",
+    "cardName": "Deerling",
+    "fullDisplayName": "Deerling 013/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      585
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-013-low.png",
+    "imageHighSrc": "cards/bw1-013-high.png"
+  },
+  {
+    "masterCardId": "1981",
+    "externalId": null,
+    "tcgdex_id": "bw1-12",
+    "localId": "012",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "012/114",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 012/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-012-low.png",
+    "imageHighSrc": "cards/bw1-012-high.png"
+  },
+  {
+    "masterCardId": "1980",
+    "externalId": null,
+    "tcgdex_id": "bw1-11",
+    "localId": "011",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "011/114",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 011/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-011-low.png",
+    "imageHighSrc": "cards/bw1-011-high.png"
+  },
+  {
+    "masterCardId": "1979",
+    "externalId": null,
+    "tcgdex_id": "bw1-10",
+    "localId": "010",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "010/114",
+    "cardName": "Lilligant",
+    "fullDisplayName": "Lilligant 010/114 Black & White",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      549
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Petilil",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-010-low.png",
+    "imageHighSrc": "cards/bw1-010-high.png"
+  },
+  {
+    "masterCardId": "1978",
+    "externalId": null,
+    "tcgdex_id": "bw1-9",
+    "localId": "009",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "009/114",
+    "cardName": "Petilil",
+    "fullDisplayName": "Petilil 009/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      548
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-009-low.png",
+    "imageHighSrc": "cards/bw1-009-high.png"
+  },
+  {
+    "masterCardId": "1977",
+    "externalId": null,
+    "tcgdex_id": "bw1-8",
+    "localId": "008",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "008/114",
+    "cardName": "Simisage",
+    "fullDisplayName": "Simisage 008/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      512
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansage",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-008-low.png",
+    "imageHighSrc": "cards/bw1-008-high.png"
+  },
+  {
+    "masterCardId": "1976",
+    "externalId": null,
+    "tcgdex_id": "bw1-7",
+    "localId": "007",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "007/114",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage 007/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-007-low.png",
+    "imageHighSrc": "cards/bw1-007-high.png"
+  },
+  {
+    "masterCardId": "1975",
+    "externalId": null,
+    "tcgdex_id": "bw1-6",
+    "localId": "006",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "006/114",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 006/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-006-low.png",
+    "imageHighSrc": "cards/bw1-006-high.png"
+  },
+  {
+    "masterCardId": "1974",
+    "externalId": null,
+    "tcgdex_id": "bw1-5",
+    "localId": "005",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "005/114",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 005/114 Black & White",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-005-low.png",
+    "imageHighSrc": "cards/bw1-005-high.png"
+  },
+  {
+    "masterCardId": "1973",
+    "externalId": null,
+    "tcgdex_id": "bw1-4",
+    "localId": "004",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "004/114",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 004/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snivy",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-004-low.png",
+    "imageHighSrc": "cards/bw1-004-high.png"
+  },
+  {
+    "masterCardId": "1972",
+    "externalId": null,
+    "tcgdex_id": "bw1-3",
+    "localId": "003",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "003/114",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 003/114 Black & White",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snivy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-003-low.png",
+    "imageHighSrc": "cards/bw1-003-high.png"
+  },
+  {
+    "masterCardId": "1971",
+    "externalId": null,
+    "tcgdex_id": "bw1-2",
+    "localId": "002",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "002/114",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 002/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-002-low.png",
+    "imageHighSrc": "cards/bw1-002-high.png"
+  },
+  {
+    "masterCardId": "1970",
+    "externalId": null,
+    "tcgdex_id": "bw1-1",
+    "localId": "001",
+    "setCode": "bw1",
+    "setTcgdexId": "bw1",
+    "cardNumber": "001/114",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 001/114 Black & White",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw1-001-low.png",
+    "imageHighSrc": "cards/bw1-001-high.png"
+  }
+]

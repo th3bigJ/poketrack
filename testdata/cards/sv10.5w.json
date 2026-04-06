@@ -1,0 +1,5686 @@
+[
+  {
+    "masterCardId": "9416",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-173",
+    "localId": "173",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "173/86",
+    "cardName": "Reshiram ex",
+    "fullDisplayName": "Reshiram ex 173/86 White Flare",
+    "rarity": "Black White Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-173-low.png",
+    "imageHighSrc": "cards/rsv10pt5-173-high.png"
+  },
+  {
+    "masterCardId": "9415",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-172",
+    "localId": "172",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "172/86",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 172/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-172-low.png",
+    "imageHighSrc": "cards/rsv10pt5-172-high.png"
+  },
+  {
+    "masterCardId": "9414",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-171",
+    "localId": "171",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "171/86",
+    "cardName": "Hilda",
+    "fullDisplayName": "Hilda 171/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-171-low.png",
+    "imageHighSrc": "cards/rsv10pt5-171-high.png"
+  },
+  {
+    "masterCardId": "9413",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-170",
+    "localId": "170",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "170/86",
+    "cardName": "Bouffalant ex",
+    "fullDisplayName": "Bouffalant ex 170/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Rianti Hidayat",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-170-low.png",
+    "imageHighSrc": "cards/rsv10pt5-170-high.png"
+  },
+  {
+    "masterCardId": "9412",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-169",
+    "localId": "169",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "169/86",
+    "cardName": "Hydreigon ex",
+    "fullDisplayName": "Hydreigon ex 169/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Takumi Wada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-169-low.png",
+    "imageHighSrc": "cards/rsv10pt5-169-high.png"
+  },
+  {
+    "masterCardId": "9411",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-168",
+    "localId": "168",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "168/86",
+    "cardName": "Jellicent ex",
+    "fullDisplayName": "Jellicent ex 168/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      593
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frillish",
+    "artist": "Narano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-168-low.png",
+    "imageHighSrc": "cards/rsv10pt5-168-high.png"
+  },
+  {
+    "masterCardId": "9410",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-167",
+    "localId": "167",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "167/86",
+    "cardName": "Keldeo ex",
+    "fullDisplayName": "Keldeo ex 167/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-167-low.png",
+    "imageHighSrc": "cards/rsv10pt5-167-high.png"
+  },
+  {
+    "masterCardId": "9409",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-166",
+    "localId": "166",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "166/86",
+    "cardName": "Reshiram ex",
+    "fullDisplayName": "Reshiram ex 166/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-166-low.png",
+    "imageHighSrc": "cards/rsv10pt5-166-high.png"
+  },
+  {
+    "masterCardId": "9408",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-165",
+    "localId": "165",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "165/86",
+    "cardName": "Whimsicott ex",
+    "fullDisplayName": "Whimsicott ex 165/86 White Flare",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "mele",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-165-low.png",
+    "imageHighSrc": "cards/rsv10pt5-165-high.png"
+  },
+  {
+    "masterCardId": "9407",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-164",
+    "localId": "164",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "164/86",
+    "cardName": "Hilda",
+    "fullDisplayName": "Hilda 164/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-164-low.png",
+    "imageHighSrc": "cards/rsv10pt5-164-high.png"
+  },
+  {
+    "masterCardId": "9406",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-163",
+    "localId": "163",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "163/86",
+    "cardName": "Harlequin",
+    "fullDisplayName": "Harlequin 163/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-163-low.png",
+    "imageHighSrc": "cards/rsv10pt5-163-high.png"
+  },
+  {
+    "masterCardId": "9405",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-162",
+    "localId": "162",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "162/86",
+    "cardName": "Bouffalant ex",
+    "fullDisplayName": "Bouffalant ex 162/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-162-low.png",
+    "imageHighSrc": "cards/rsv10pt5-162-high.png"
+  },
+  {
+    "masterCardId": "9404",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-161",
+    "localId": "161",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "161/86",
+    "cardName": "Hydreigon ex",
+    "fullDisplayName": "Hydreigon ex 161/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-161-low.png",
+    "imageHighSrc": "cards/rsv10pt5-161-high.png"
+  },
+  {
+    "masterCardId": "9403",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-160",
+    "localId": "160",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "160/86",
+    "cardName": "Jellicent ex",
+    "fullDisplayName": "Jellicent ex 160/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      593
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frillish",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-160-low.png",
+    "imageHighSrc": "cards/rsv10pt5-160-high.png"
+  },
+  {
+    "masterCardId": "9402",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-159",
+    "localId": "159",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "159/86",
+    "cardName": "Keldeo ex",
+    "fullDisplayName": "Keldeo ex 159/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-159-low.png",
+    "imageHighSrc": "cards/rsv10pt5-159-high.png"
+  },
+  {
+    "masterCardId": "9401",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-158",
+    "localId": "158",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "158/86",
+    "cardName": "Reshiram ex",
+    "fullDisplayName": "Reshiram ex 158/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-158-low.png",
+    "imageHighSrc": "cards/rsv10pt5-158-high.png"
+  },
+  {
+    "masterCardId": "9400",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-157",
+    "localId": "157",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "157/86",
+    "cardName": "Whimsicott ex",
+    "fullDisplayName": "Whimsicott ex 157/86 White Flare",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-157-low.png",
+    "imageHighSrc": "cards/rsv10pt5-157-high.png"
+  },
+  {
+    "masterCardId": "9399",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-156",
+    "localId": "156",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "156/86",
+    "cardName": "Stoutland",
+    "fullDisplayName": "Stoutland 156/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      508
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Herdier",
+    "artist": "Eri Kamei",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-156-low.png",
+    "imageHighSrc": "cards/rsv10pt5-156-high.png"
+  },
+  {
+    "masterCardId": "9398",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-155",
+    "localId": "155",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "155/86",
+    "cardName": "Herdier",
+    "fullDisplayName": "Herdier 155/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      507
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lillipup",
+    "artist": "Makura Tami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-155-low.png",
+    "imageHighSrc": "cards/rsv10pt5-155-high.png"
+  },
+  {
+    "masterCardId": "9397",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-154",
+    "localId": "154",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "154/86",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup 154/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-154-low.png",
+    "imageHighSrc": "cards/rsv10pt5-154-high.png"
+  },
+  {
+    "masterCardId": "9396",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-153",
+    "localId": "153",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "153/86",
+    "cardName": "Watchog",
+    "fullDisplayName": "Watchog 153/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      505
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Patrat",
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-153-low.png",
+    "imageHighSrc": "cards/rsv10pt5-153-high.png"
+  },
+  {
+    "masterCardId": "9395",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-152",
+    "localId": "152",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "152/86",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 152/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukihiro Tada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-152-low.png",
+    "imageHighSrc": "cards/rsv10pt5-152-high.png"
+  },
+  {
+    "masterCardId": "9394",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-151",
+    "localId": "151",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "151/86",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 151/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kamome Shirahama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-151-low.png",
+    "imageHighSrc": "cards/rsv10pt5-151-high.png"
+  },
+  {
+    "masterCardId": "9393",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-150",
+    "localId": "150",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "150/86",
+    "cardName": "Durant",
+    "fullDisplayName": "Durant 150/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      632
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-150-low.png",
+    "imageHighSrc": "cards/rsv10pt5-150-high.png"
+  },
+  {
+    "masterCardId": "9392",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-149",
+    "localId": "149",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "149/86",
+    "cardName": "Ferrothorn",
+    "fullDisplayName": "Ferrothorn 149/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      598
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ferroseed",
+    "artist": "Minahamu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-149-low.png",
+    "imageHighSrc": "cards/rsv10pt5-149-high.png"
+  },
+  {
+    "masterCardId": "9391",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-148",
+    "localId": "148",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "148/86",
+    "cardName": "Ferroseed",
+    "fullDisplayName": "Ferroseed 148/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      597
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nurikabe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-148-low.png",
+    "imageHighSrc": "cards/rsv10pt5-148-high.png"
+  },
+  {
+    "masterCardId": "9390",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-147",
+    "localId": "147",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "147/86",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 147/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-147-low.png",
+    "imageHighSrc": "cards/rsv10pt5-147-high.png"
+  },
+  {
+    "masterCardId": "9389",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-146",
+    "localId": "146",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "146/86",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 146/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-146-low.png",
+    "imageHighSrc": "cards/rsv10pt5-146-high.png"
+  },
+  {
+    "masterCardId": "9388",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-145",
+    "localId": "145",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "145/86",
+    "cardName": "Mandibuzz",
+    "fullDisplayName": "Mandibuzz 145/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      630
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vullaby",
+    "artist": "Bun Toujo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-145-low.png",
+    "imageHighSrc": "cards/rsv10pt5-145-high.png"
+  },
+  {
+    "masterCardId": "9387",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-144",
+    "localId": "144",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "144/86",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 144/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-144-low.png",
+    "imageHighSrc": "cards/rsv10pt5-144-high.png"
+  },
+  {
+    "masterCardId": "9386",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-143",
+    "localId": "143",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "143/86",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 143/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "Iwamoto05",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-143-low.png",
+    "imageHighSrc": "cards/rsv10pt5-143-high.png"
+  },
+  {
+    "masterCardId": "9385",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-142",
+    "localId": "142",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "142/86",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 142/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-142-low.png",
+    "imageHighSrc": "cards/rsv10pt5-142-high.png"
+  },
+  {
+    "masterCardId": "9384",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-141",
+    "localId": "141",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "141/86",
+    "cardName": "Garbodor",
+    "fullDisplayName": "Garbodor 141/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      569
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trubbish",
+    "artist": "Gapao",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-141-low.png",
+    "imageHighSrc": "cards/rsv10pt5-141-high.png"
+  },
+  {
+    "masterCardId": "9383",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-140",
+    "localId": "140",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "140/86",
+    "cardName": "Trubbish",
+    "fullDisplayName": "Trubbish 140/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      568
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-140-low.png",
+    "imageHighSrc": "cards/rsv10pt5-140-high.png"
+  },
+  {
+    "masterCardId": "9382",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-139",
+    "localId": "139",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "139/86",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 139/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "Tetsu Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-139-low.png",
+    "imageHighSrc": "cards/rsv10pt5-139-high.png"
+  },
+  {
+    "masterCardId": "9381",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-138",
+    "localId": "138",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "138/86",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 138/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nelnal",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-138-low.png",
+    "imageHighSrc": "cards/rsv10pt5-138-high.png"
+  },
+  {
+    "masterCardId": "9380",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-137",
+    "localId": "137",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "137/86",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 137/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "matazo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-137-low.png",
+    "imageHighSrc": "cards/rsv10pt5-137-high.png"
+  },
+  {
+    "masterCardId": "9379",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-136",
+    "localId": "136",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "136/86",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 136/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mugi Hamada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-136-low.png",
+    "imageHighSrc": "cards/rsv10pt5-136-high.png"
+  },
+  {
+    "masterCardId": "9378",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-135",
+    "localId": "135",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "135/86",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion 135/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-135-low.png",
+    "imageHighSrc": "cards/rsv10pt5-135-high.png"
+  },
+  {
+    "masterCardId": "9377",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-134",
+    "localId": "134",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "134/86",
+    "cardName": "Mienshao",
+    "fullDisplayName": "Mienshao 134/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      620
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mienfoo",
+    "artist": "Atsuya Uki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-134-low.png",
+    "imageHighSrc": "cards/rsv10pt5-134-high.png"
+  },
+  {
+    "masterCardId": "9376",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-133",
+    "localId": "133",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "133/86",
+    "cardName": "Mienfoo",
+    "fullDisplayName": "Mienfoo 133/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      619
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Iori Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-133-low.png",
+    "imageHighSrc": "cards/rsv10pt5-133-high.png"
+  },
+  {
+    "masterCardId": "9375",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-132",
+    "localId": "132",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "132/86",
+    "cardName": "Archeops",
+    "fullDisplayName": "Archeops 132/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      567
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Archen",
+    "artist": "Jerky",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-132-low.png",
+    "imageHighSrc": "cards/rsv10pt5-132-high.png"
+  },
+  {
+    "masterCardId": "9374",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-131",
+    "localId": "131",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "131/86",
+    "cardName": "Archen",
+    "fullDisplayName": "Archen 131/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      566
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Antiuqe Plume Fossil",
+    "artist": "Ounishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-131-low.png",
+    "imageHighSrc": "cards/rsv10pt5-131-high.png"
+  },
+  {
+    "masterCardId": "9373",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-130",
+    "localId": "130",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "130/86",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 130/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-130-low.png",
+    "imageHighSrc": "cards/rsv10pt5-130-high.png"
+  },
+  {
+    "masterCardId": "9372",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-129",
+    "localId": "129",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "129/86",
+    "cardName": "Gigalith",
+    "fullDisplayName": "Gigalith 129/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      526
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Boldore",
+    "artist": "toi8",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-129-low.png",
+    "imageHighSrc": "cards/rsv10pt5-129-high.png"
+  },
+  {
+    "masterCardId": "9371",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-128",
+    "localId": "128",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "128/86",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 128/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Krgc",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-128-low.png",
+    "imageHighSrc": "cards/rsv10pt5-128-high.png"
+  },
+  {
+    "masterCardId": "9370",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-127",
+    "localId": "127",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "127/86",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 127/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuriko Akase",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-127-low.png",
+    "imageHighSrc": "cards/rsv10pt5-127-high.png"
+  },
+  {
+    "masterCardId": "9369",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-126",
+    "localId": "126",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "126/86",
+    "cardName": "Frillish",
+    "fullDisplayName": "Frillish 126/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      592
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-126-low.png",
+    "imageHighSrc": "cards/rsv10pt5-126-high.png"
+  },
+  {
+    "masterCardId": "9368",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-125",
+    "localId": "125",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "125/86",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 125/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Terada Tera",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-125-low.png",
+    "imageHighSrc": "cards/rsv10pt5-125-high.png"
+  },
+  {
+    "masterCardId": "9367",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-124",
+    "localId": "124",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "124/86",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 124/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanami Ogata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-124-low.png",
+    "imageHighSrc": "cards/rsv10pt5-124-high.png"
+  },
+  {
+    "masterCardId": "9366",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-123",
+    "localId": "123",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "123/86",
+    "cardName": "Cofagrigus",
+    "fullDisplayName": "Cofagrigus 123/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      563
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yamask",
+    "artist": "Haru Akasaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-123-low.png",
+    "imageHighSrc": "cards/rsv10pt5-123-high.png"
+  },
+  {
+    "masterCardId": "9365",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-122",
+    "localId": "122",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "122/86",
+    "cardName": "Yamask",
+    "fullDisplayName": "Yamask 122/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      562
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "YASHIRO Nanaco",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-122-low.png",
+    "imageHighSrc": "cards/rsv10pt5-122-high.png"
+  },
+  {
+    "masterCardId": "9364",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-121",
+    "localId": "121",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "121/86",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 121/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "mingo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-121-low.png",
+    "imageHighSrc": "cards/rsv10pt5-121-high.png"
+  },
+  {
+    "masterCardId": "9363",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-120",
+    "localId": "120",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "120/86",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 120/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Saboteri",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-120-low.png",
+    "imageHighSrc": "cards/rsv10pt5-120-high.png"
+  },
+  {
+    "masterCardId": "9362",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-119",
+    "localId": "119",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "119/86",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 119/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-119-low.png",
+    "imageHighSrc": "cards/rsv10pt5-119-high.png"
+  },
+  {
+    "masterCardId": "9361",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-118",
+    "localId": "118",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "118/86",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 118/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-118-low.png",
+    "imageHighSrc": "cards/rsv10pt5-118-high.png"
+  },
+  {
+    "masterCardId": "9360",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-117",
+    "localId": "117",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "117/86",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 117/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-117-low.png",
+    "imageHighSrc": "cards/rsv10pt5-117-high.png"
+  },
+  {
+    "masterCardId": "9359",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-116",
+    "localId": "116",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "116/86",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 116/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-116-low.png",
+    "imageHighSrc": "cards/rsv10pt5-116-high.png"
+  },
+  {
+    "masterCardId": "9358",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-115",
+    "localId": "115",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "115/86",
+    "cardName": "Zebstrika",
+    "fullDisplayName": "Zebstrika 115/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      523
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blitzle",
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-115-low.png",
+    "imageHighSrc": "cards/rsv10pt5-115-high.png"
+  },
+  {
+    "masterCardId": "9357",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-114",
+    "localId": "114",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "114/86",
+    "cardName": "Blitzle",
+    "fullDisplayName": "Blitzle 114/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      522
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Natsumi Miyanose",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-114-low.png",
+    "imageHighSrc": "cards/rsv10pt5-114-high.png"
+  },
+  {
+    "masterCardId": "9356",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-113",
+    "localId": "113",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "113/86",
+    "cardName": "Vanilluxe",
+    "fullDisplayName": "Vanilluxe 113/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      584
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vanillish",
+    "artist": "aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-113-low.png",
+    "imageHighSrc": "cards/rsv10pt5-113-high.png"
+  },
+  {
+    "masterCardId": "9355",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-112",
+    "localId": "112",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "112/86",
+    "cardName": "Vanillish",
+    "fullDisplayName": "Vanillish 112/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      583
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vanillite",
+    "artist": "Yoko Hishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-112-low.png",
+    "imageHighSrc": "cards/rsv10pt5-112-high.png"
+  },
+  {
+    "masterCardId": "9354",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-111",
+    "localId": "111",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "111/86",
+    "cardName": "Vanillite",
+    "fullDisplayName": "Vanillite 111/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      582
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-111-low.png",
+    "imageHighSrc": "cards/rsv10pt5-111-high.png"
+  },
+  {
+    "masterCardId": "9353",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-110",
+    "localId": "110",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "110/86",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 110/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ducklett",
+    "artist": "Gemi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-110-low.png",
+    "imageHighSrc": "cards/rsv10pt5-110-high.png"
+  },
+  {
+    "masterCardId": "9352",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-109",
+    "localId": "109",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "109/86",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 109/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-109-low.png",
+    "imageHighSrc": "cards/rsv10pt5-109-high.png"
+  },
+  {
+    "masterCardId": "9351",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-108",
+    "localId": "108",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "108/86",
+    "cardName": "Basculin",
+    "fullDisplayName": "Basculin 108/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakamura Ippan",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-108-low.png",
+    "imageHighSrc": "cards/rsv10pt5-108-high.png"
+  },
+  {
+    "masterCardId": "9350",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-107",
+    "localId": "107",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "107/86",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 107/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-107-low.png",
+    "imageHighSrc": "cards/rsv10pt5-107-high.png"
+  },
+  {
+    "masterCardId": "9349",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-106",
+    "localId": "106",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "106/86",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 106/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-106-low.png",
+    "imageHighSrc": "cards/rsv10pt5-106-high.png"
+  },
+  {
+    "masterCardId": "9348",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-105",
+    "localId": "105",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "105/86",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 105/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-105-low.png",
+    "imageHighSrc": "cards/rsv10pt5-105-high.png"
+  },
+  {
+    "masterCardId": "9347",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-104",
+    "localId": "104",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "104/86",
+    "cardName": "Heatmor",
+    "fullDisplayName": "Heatmor 104/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      631
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kariya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-104-low.png",
+    "imageHighSrc": "cards/rsv10pt5-104-high.png"
+  },
+  {
+    "masterCardId": "9346",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-103",
+    "localId": "103",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "103/86",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure 103/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lampent",
+    "artist": "Kuroimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-103-low.png",
+    "imageHighSrc": "cards/rsv10pt5-103-high.png"
+  },
+  {
+    "masterCardId": "9345",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-102",
+    "localId": "102",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "102/86",
+    "cardName": "Lampent",
+    "fullDisplayName": "Lampent 102/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      608
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litwick",
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-102-low.png",
+    "imageHighSrc": "cards/rsv10pt5-102-high.png"
+  },
+  {
+    "masterCardId": "9344",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-101",
+    "localId": "101",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "101/86",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick 101/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-101-low.png",
+    "imageHighSrc": "cards/rsv10pt5-101-high.png"
+  },
+  {
+    "masterCardId": "9343",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-100",
+    "localId": "100",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "100/86",
+    "cardName": "Simisear",
+    "fullDisplayName": "Simisear 100/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      514
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansear",
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-100-low.png",
+    "imageHighSrc": "cards/rsv10pt5-100-high.png"
+  },
+  {
+    "masterCardId": "9342",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-099",
+    "localId": "099",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "099/86",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 099/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOTO minori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-099-low.png",
+    "imageHighSrc": "cards/rsv10pt5-099-high.png"
+  },
+  {
+    "masterCardId": "9341",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-098",
+    "localId": "098",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "098/86",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar 098/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-098-low.png",
+    "imageHighSrc": "cards/rsv10pt5-098-high.png"
+  },
+  {
+    "masterCardId": "9340",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-097",
+    "localId": "097",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "097/86",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 097/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tepig",
+    "artist": "Masa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-097-low.png",
+    "imageHighSrc": "cards/rsv10pt5-097-high.png"
+  },
+  {
+    "masterCardId": "9339",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-096",
+    "localId": "096",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "096/86",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 096/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Orca",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-096-low.png",
+    "imageHighSrc": "cards/rsv10pt5-096-high.png"
+  },
+  {
+    "masterCardId": "9338",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-095",
+    "localId": "095",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "095/86",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 095/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-095-low.png",
+    "imageHighSrc": "cards/rsv10pt5-095-high.png"
+  },
+  {
+    "masterCardId": "9337",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-094",
+    "localId": "094",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "094/86",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 094/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelmet",
+    "artist": "Taiga Kasai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-094-low.png",
+    "imageHighSrc": "cards/rsv10pt5-094-high.png"
+  },
+  {
+    "masterCardId": "9336",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-093",
+    "localId": "093",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "093/86",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 093/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mékayu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-093-low.png",
+    "imageHighSrc": "cards/rsv10pt5-093-high.png"
+  },
+  {
+    "masterCardId": "9335",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-092",
+    "localId": "092",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "092/86",
+    "cardName": "Sawsbuck",
+    "fullDisplayName": "Sawsbuck 092/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      586
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deerling",
+    "artist": "Yano Keiji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-092-low.png",
+    "imageHighSrc": "cards/rsv10pt5-092-high.png"
+  },
+  {
+    "masterCardId": "9334",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-091",
+    "localId": "091",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "091/86",
+    "cardName": "Deerling",
+    "fullDisplayName": "Deerling 091/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      585
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "takashi shiraishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-091-low.png",
+    "imageHighSrc": "cards/rsv10pt5-091-high.png"
+  },
+  {
+    "masterCardId": "9333",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-090",
+    "localId": "090",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "090/86",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 090/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keisin",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-090-low.png",
+    "imageHighSrc": "cards/rsv10pt5-090-high.png"
+  },
+  {
+    "masterCardId": "9332",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-089",
+    "localId": "089",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "089/86",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 089/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "mashu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-089-low.png",
+    "imageHighSrc": "cards/rsv10pt5-089-high.png"
+  },
+  {
+    "masterCardId": "9331",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-088",
+    "localId": "088",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "088/86",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 088/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-088-low.png",
+    "imageHighSrc": "cards/rsv10pt5-088-high.png"
+  },
+  {
+    "masterCardId": "9330",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-087",
+    "localId": "087",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "087/86",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 087/86 White Flare",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nisimono",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-087-low.png",
+    "imageHighSrc": "cards/rsv10pt5-087-high.png"
+  },
+  {
+    "masterCardId": "9329",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-086",
+    "localId": "086",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "086/86",
+    "cardName": "Ignition Energy",
+    "fullDisplayName": "Ignition Energy 086/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-086-low.png",
+    "imageHighSrc": "cards/rsv10pt5-086-high.png"
+  },
+  {
+    "masterCardId": "9328",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-085",
+    "localId": "085",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "085/86",
+    "cardName": "Tool Scrapper",
+    "fullDisplayName": "Tool Scrapper 085/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-085-low.png",
+    "imageHighSrc": "cards/rsv10pt5-085-high.png"
+  },
+  {
+    "masterCardId": "9327",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-084",
+    "localId": "084",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "084/86",
+    "cardName": "Hilda",
+    "fullDisplayName": "Hilda 084/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-084-low.png",
+    "imageHighSrc": "cards/rsv10pt5-084-high.png"
+  },
+  {
+    "masterCardId": "9326",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-083",
+    "localId": "083",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "083/86",
+    "cardName": "Harlequin",
+    "fullDisplayName": "Harlequin 083/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-083-low.png",
+    "imageHighSrc": "cards/rsv10pt5-083-high.png"
+  },
+  {
+    "masterCardId": "9325",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-082",
+    "localId": "082",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "082/86",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 082/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-082-low.png",
+    "imageHighSrc": "cards/rsv10pt5-082-high.png"
+  },
+  {
+    "masterCardId": "9324",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-081",
+    "localId": "081",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "081/86",
+    "cardName": "Cheren",
+    "fullDisplayName": "Cheren 081/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-081-low.png",
+    "imageHighSrc": "cards/rsv10pt5-081-high.png"
+  },
+  {
+    "masterCardId": "9323",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-080",
+    "localId": "080",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "080/86",
+    "cardName": "Brave Bangle",
+    "fullDisplayName": "Brave Bangle 080/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-080-low.png",
+    "imageHighSrc": "cards/rsv10pt5-080-high.png"
+  },
+  {
+    "masterCardId": "9322",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-079",
+    "localId": "079",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "079/86",
+    "cardName": "Antique Plume Fossil",
+    "fullDisplayName": "Antique Plume Fossil 079/86 White Flare",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-079-low.png",
+    "imageHighSrc": "cards/rsv10pt5-079-high.png"
+  },
+  {
+    "masterCardId": "9321",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-078",
+    "localId": "078",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "078/86",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 078/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-078-low.png",
+    "imageHighSrc": "cards/rsv10pt5-078-high.png"
+  },
+  {
+    "masterCardId": "9320",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-077",
+    "localId": "077",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "077/86",
+    "cardName": "Bouffalant ex",
+    "fullDisplayName": "Bouffalant ex 077/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Tsuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-077-low.png",
+    "imageHighSrc": "cards/rsv10pt5-077-high.png"
+  },
+  {
+    "masterCardId": "9319",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-076",
+    "localId": "076",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "076/86",
+    "cardName": "Stoutland",
+    "fullDisplayName": "Stoutland 076/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      508
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Herdier",
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-076-low.png",
+    "imageHighSrc": "cards/rsv10pt5-076-high.png"
+  },
+  {
+    "masterCardId": "9318",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-075",
+    "localId": "075",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "075/86",
+    "cardName": "Herdier",
+    "fullDisplayName": "Herdier 075/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      507
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lillipup",
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-075-low.png",
+    "imageHighSrc": "cards/rsv10pt5-075-high.png"
+  },
+  {
+    "masterCardId": "9317",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-074",
+    "localId": "074",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "074/86",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup 074/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-074-low.png",
+    "imageHighSrc": "cards/rsv10pt5-074-high.png"
+  },
+  {
+    "masterCardId": "9316",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-073",
+    "localId": "073",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "073/86",
+    "cardName": "Watchog",
+    "fullDisplayName": "Watchog 073/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      505
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Patrat",
+    "artist": "Ounishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-073-low.png",
+    "imageHighSrc": "cards/rsv10pt5-073-high.png"
+  },
+  {
+    "masterCardId": "9315",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-072",
+    "localId": "072",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "072/86",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 072/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ounishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-072-low.png",
+    "imageHighSrc": "cards/rsv10pt5-072-high.png"
+  },
+  {
+    "masterCardId": "9314",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-071",
+    "localId": "071",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "071/86",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 071/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nurikabe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-071-low.png",
+    "imageHighSrc": "cards/rsv10pt5-071-high.png"
+  },
+  {
+    "masterCardId": "9313",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-070",
+    "localId": "070",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "070/86",
+    "cardName": "Durant",
+    "fullDisplayName": "Durant 070/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      632
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-070-low.png",
+    "imageHighSrc": "cards/rsv10pt5-070-high.png"
+  },
+  {
+    "masterCardId": "9312",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-069",
+    "localId": "069",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "069/86",
+    "cardName": "Ferrothorn",
+    "fullDisplayName": "Ferrothorn 069/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      598
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ferroseed",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-069-low.png",
+    "imageHighSrc": "cards/rsv10pt5-069-high.png"
+  },
+  {
+    "masterCardId": "9311",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-068",
+    "localId": "068",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "068/86",
+    "cardName": "Ferroseed",
+    "fullDisplayName": "Ferroseed 068/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      597
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-068-low.png",
+    "imageHighSrc": "cards/rsv10pt5-068-high.png"
+  },
+  {
+    "masterCardId": "9310",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-067",
+    "localId": "067",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "067/86",
+    "cardName": "Hydreigon ex",
+    "fullDisplayName": "Hydreigon ex 067/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 330,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-067-low.png",
+    "imageHighSrc": "cards/rsv10pt5-067-high.png"
+  },
+  {
+    "masterCardId": "9309",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-066",
+    "localId": "066",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "066/86",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 066/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-066-low.png",
+    "imageHighSrc": "cards/rsv10pt5-066-high.png"
+  },
+  {
+    "masterCardId": "9308",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-065",
+    "localId": "065",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "065/86",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 065/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-065-low.png",
+    "imageHighSrc": "cards/rsv10pt5-065-high.png"
+  },
+  {
+    "masterCardId": "9307",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-064",
+    "localId": "064",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "064/86",
+    "cardName": "Mandibuzz",
+    "fullDisplayName": "Mandibuzz 064/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      630
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vullaby",
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-064-low.png",
+    "imageHighSrc": "cards/rsv10pt5-064-high.png"
+  },
+  {
+    "masterCardId": "9306",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-063",
+    "localId": "063",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "063/86",
+    "cardName": "Vullaby",
+    "fullDisplayName": "Vullaby 063/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      629
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-063-low.png",
+    "imageHighSrc": "cards/rsv10pt5-063-high.png"
+  },
+  {
+    "masterCardId": "9305",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-062",
+    "localId": "062",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "062/86",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 062/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-062-low.png",
+    "imageHighSrc": "cards/rsv10pt5-062-high.png"
+  },
+  {
+    "masterCardId": "9304",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-061",
+    "localId": "061",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "061/86",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 061/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-061-low.png",
+    "imageHighSrc": "cards/rsv10pt5-061-high.png"
+  },
+  {
+    "masterCardId": "9303",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-060",
+    "localId": "060",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "060/86",
+    "cardName": "Garbodor",
+    "fullDisplayName": "Garbodor 060/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      569
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trubbish",
+    "artist": "OKUBO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-060-low.png",
+    "imageHighSrc": "cards/rsv10pt5-060-high.png"
+  },
+  {
+    "masterCardId": "9302",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-059",
+    "localId": "059",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "059/86",
+    "cardName": "Trubbish",
+    "fullDisplayName": "Trubbish 059/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      568
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKUBO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-059-low.png",
+    "imageHighSrc": "cards/rsv10pt5-059-high.png"
+  },
+  {
+    "masterCardId": "9301",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-058",
+    "localId": "058",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "058/86",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 058/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "osare",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-058-low.png",
+    "imageHighSrc": "cards/rsv10pt5-058-high.png"
+  },
+  {
+    "masterCardId": "9300",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-057",
+    "localId": "057",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "057/86",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 057/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "osare",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-057-low.png",
+    "imageHighSrc": "cards/rsv10pt5-057-high.png"
+  },
+  {
+    "masterCardId": "9299",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-056",
+    "localId": "056",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "056/86",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 056/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-056-low.png",
+    "imageHighSrc": "cards/rsv10pt5-056-high.png"
+  },
+  {
+    "masterCardId": "9298",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-055",
+    "localId": "055",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "055/86",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 055/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-055-low.png",
+    "imageHighSrc": "cards/rsv10pt5-055-high.png"
+  },
+  {
+    "masterCardId": "9297",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-054",
+    "localId": "054",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "054/86",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion 054/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tonji Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-054-low.png",
+    "imageHighSrc": "cards/rsv10pt5-054-high.png"
+  },
+  {
+    "masterCardId": "9296",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-053",
+    "localId": "053",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "053/86",
+    "cardName": "Mienshao",
+    "fullDisplayName": "Mienshao 053/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      620
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mienfoo",
+    "artist": "Keisin",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-053-low.png",
+    "imageHighSrc": "cards/rsv10pt5-053-high.png"
+  },
+  {
+    "masterCardId": "9295",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-052",
+    "localId": "052",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "052/86",
+    "cardName": "Mienfoo",
+    "fullDisplayName": "Mienfoo 052/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      619
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keisin",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-052-low.png",
+    "imageHighSrc": "cards/rsv10pt5-052-high.png"
+  },
+  {
+    "masterCardId": "9294",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-051",
+    "localId": "051",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "051/86",
+    "cardName": "Archeops",
+    "fullDisplayName": "Archeops 051/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      567
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Archen",
+    "artist": "Haru Akasaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-051-low.png",
+    "imageHighSrc": "cards/rsv10pt5-051-high.png"
+  },
+  {
+    "masterCardId": "9293",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-050",
+    "localId": "050",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "050/86",
+    "cardName": "Archen",
+    "fullDisplayName": "Archen 050/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      566
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Antiuqe Plume Fossil",
+    "artist": "Haru Akasaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-050-low.png",
+    "imageHighSrc": "cards/rsv10pt5-050-high.png"
+  },
+  {
+    "masterCardId": "9292",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-049",
+    "localId": "049",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "049/86",
+    "cardName": "Sawk",
+    "fullDisplayName": "Sawk 049/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      539
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Dsuke",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-049-low.png",
+    "imageHighSrc": "cards/rsv10pt5-049-high.png"
+  },
+  {
+    "masterCardId": "9291",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-048",
+    "localId": "048",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "048/86",
+    "cardName": "Gigalith",
+    "fullDisplayName": "Gigalith 048/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      526
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Boldore",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-048-low.png",
+    "imageHighSrc": "cards/rsv10pt5-048-high.png"
+  },
+  {
+    "masterCardId": "9290",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-047",
+    "localId": "047",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "047/86",
+    "cardName": "Boldore",
+    "fullDisplayName": "Boldore 047/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      525
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roggenrola",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-047-low.png",
+    "imageHighSrc": "cards/rsv10pt5-047-high.png"
+  },
+  {
+    "masterCardId": "9289",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-046",
+    "localId": "046",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "046/86",
+    "cardName": "Roggenrola",
+    "fullDisplayName": "Roggenrola 046/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      524
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-046-low.png",
+    "imageHighSrc": "cards/rsv10pt5-046-high.png"
+  },
+  {
+    "masterCardId": "9288",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-045",
+    "localId": "045",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "045/86",
+    "cardName": "Jellicent ex",
+    "fullDisplayName": "Jellicent ex 045/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 270,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      593
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Frillish",
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-045-low.png",
+    "imageHighSrc": "cards/rsv10pt5-045-high.png"
+  },
+  {
+    "masterCardId": "9287",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-044",
+    "localId": "044",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "044/86",
+    "cardName": "Frillish",
+    "fullDisplayName": "Frillish 044/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      592
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MARINA Chikazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-044-low.png",
+    "imageHighSrc": "cards/rsv10pt5-044-high.png"
+  },
+  {
+    "masterCardId": "9286",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-043",
+    "localId": "043",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "043/86",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 043/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-043-low.png",
+    "imageHighSrc": "cards/rsv10pt5-043-high.png"
+  },
+  {
+    "masterCardId": "9285",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-042",
+    "localId": "042",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "042/86",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 042/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-042-low.png",
+    "imageHighSrc": "cards/rsv10pt5-042-high.png"
+  },
+  {
+    "masterCardId": "9284",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-041",
+    "localId": "041",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "041/86",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 041/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mousho",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-041-low.png",
+    "imageHighSrc": "cards/rsv10pt5-041-high.png"
+  },
+  {
+    "masterCardId": "9283",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-040",
+    "localId": "040",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "040/86",
+    "cardName": "Cofagrigus",
+    "fullDisplayName": "Cofagrigus 040/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      563
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yamask",
+    "artist": "Bun Toujo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-040-low.png",
+    "imageHighSrc": "cards/rsv10pt5-040-high.png"
+  },
+  {
+    "masterCardId": "9282",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-039",
+    "localId": "039",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "039/86",
+    "cardName": "Yamask",
+    "fullDisplayName": "Yamask 039/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      562
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Bun Toujo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-039-low.png",
+    "imageHighSrc": "cards/rsv10pt5-039-high.png"
+  },
+  {
+    "masterCardId": "9281",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-038",
+    "localId": "038",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "038/86",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 038/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Krgc",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-038-low.png",
+    "imageHighSrc": "cards/rsv10pt5-038-high.png"
+  },
+  {
+    "masterCardId": "9280",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-037",
+    "localId": "037",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "037/86",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 037/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Wintr Wandr",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-037-low.png",
+    "imageHighSrc": "cards/rsv10pt5-037-high.png"
+  },
+  {
+    "masterCardId": "9279",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-036",
+    "localId": "036",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "036/86",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 036/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Wintr Wandr",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-036-low.png",
+    "imageHighSrc": "cards/rsv10pt5-036-high.png"
+  },
+  {
+    "masterCardId": "9278",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-035",
+    "localId": "035",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "035/86",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 035/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-035-low.png",
+    "imageHighSrc": "cards/rsv10pt5-035-high.png"
+  },
+  {
+    "masterCardId": "9277",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-034",
+    "localId": "034",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "034/86",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 034/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "Shimaris Yukichi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-034-low.png",
+    "imageHighSrc": "cards/rsv10pt5-034-high.png"
+  },
+  {
+    "masterCardId": "9276",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-033",
+    "localId": "033",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "033/86",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 033/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shimaris Yukichi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-033-low.png",
+    "imageHighSrc": "cards/rsv10pt5-033-high.png"
+  },
+  {
+    "masterCardId": "9275",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-032",
+    "localId": "032",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "032/86",
+    "cardName": "Zebstrika",
+    "fullDisplayName": "Zebstrika 032/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      523
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blitzle",
+    "artist": "Mugi Hamada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-032-low.png",
+    "imageHighSrc": "cards/rsv10pt5-032-high.png"
+  },
+  {
+    "masterCardId": "9274",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-031",
+    "localId": "031",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "031/86",
+    "cardName": "Blitzle",
+    "fullDisplayName": "Blitzle 031/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      522
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mugi Hamada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-031-low.png",
+    "imageHighSrc": "cards/rsv10pt5-031-high.png"
+  },
+  {
+    "masterCardId": "9273",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-030",
+    "localId": "030",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "030/86",
+    "cardName": "Keldeo ex",
+    "fullDisplayName": "Keldeo ex 030/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-030-low.png",
+    "imageHighSrc": "cards/rsv10pt5-030-high.png"
+  },
+  {
+    "masterCardId": "9272",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-029",
+    "localId": "029",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "029/86",
+    "cardName": "Vanilluxe",
+    "fullDisplayName": "Vanilluxe 029/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      584
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vanillish",
+    "artist": "cochi8i",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-029-low.png",
+    "imageHighSrc": "cards/rsv10pt5-029-high.png"
+  },
+  {
+    "masterCardId": "9271",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-028",
+    "localId": "028",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "028/86",
+    "cardName": "Vanillish",
+    "fullDisplayName": "Vanillish 028/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      583
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vanillite",
+    "artist": "cochi8i",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-028-low.png",
+    "imageHighSrc": "cards/rsv10pt5-028-high.png"
+  },
+  {
+    "masterCardId": "9270",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-027",
+    "localId": "027",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "027/86",
+    "cardName": "Vanillite",
+    "fullDisplayName": "Vanillite 027/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      582
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "cochi8i",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-027-low.png",
+    "imageHighSrc": "cards/rsv10pt5-027-high.png"
+  },
+  {
+    "masterCardId": "9269",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-026",
+    "localId": "026",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "026/86",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 026/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ducklett",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-026-low.png",
+    "imageHighSrc": "cards/rsv10pt5-026-high.png"
+  },
+  {
+    "masterCardId": "9268",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-025",
+    "localId": "025",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "025/86",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 025/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-025-low.png",
+    "imageHighSrc": "cards/rsv10pt5-025-high.png"
+  },
+  {
+    "masterCardId": "9267",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-024",
+    "localId": "024",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "024/86",
+    "cardName": "Basculin",
+    "fullDisplayName": "Basculin 024/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-024-low.png",
+    "imageHighSrc": "cards/rsv10pt5-024-high.png"
+  },
+  {
+    "masterCardId": "9266",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-023",
+    "localId": "023",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "023/86",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 023/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "rika",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-023-low.png",
+    "imageHighSrc": "cards/rsv10pt5-023-high.png"
+  },
+  {
+    "masterCardId": "9265",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-022",
+    "localId": "022",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "022/86",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 022/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "rika",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-022-low.png",
+    "imageHighSrc": "cards/rsv10pt5-022-high.png"
+  },
+  {
+    "masterCardId": "9264",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-021",
+    "localId": "021",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "021/86",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 021/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "rika",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-021-low.png",
+    "imageHighSrc": "cards/rsv10pt5-021-high.png"
+  },
+  {
+    "masterCardId": "9263",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-020",
+    "localId": "020",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "020/86",
+    "cardName": "Reshiram ex",
+    "fullDisplayName": "Reshiram ex 020/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 230,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-020-low.png",
+    "imageHighSrc": "cards/rsv10pt5-020-high.png"
+  },
+  {
+    "masterCardId": "9262",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-019",
+    "localId": "019",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "019/86",
+    "cardName": "Heatmor",
+    "fullDisplayName": "Heatmor 019/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      631
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Minahamu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-019-low.png",
+    "imageHighSrc": "cards/rsv10pt5-019-high.png"
+  },
+  {
+    "masterCardId": "9261",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-018",
+    "localId": "018",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "018/86",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure 018/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lampent",
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-018-low.png",
+    "imageHighSrc": "cards/rsv10pt5-018-high.png"
+  },
+  {
+    "masterCardId": "9257",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-017",
+    "localId": "017",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "017/86",
+    "cardName": "Lampent",
+    "fullDisplayName": "Lampent 017/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      608
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Litwick",
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-017-low.png",
+    "imageHighSrc": "cards/rsv10pt5-017-high.png"
+  },
+  {
+    "masterCardId": "9249",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-016",
+    "localId": "016",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "016/86",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick 016/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-016-low.png",
+    "imageHighSrc": "cards/rsv10pt5-016-high.png"
+  },
+  {
+    "masterCardId": "9239",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-015",
+    "localId": "015",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "015/86",
+    "cardName": "Simisear",
+    "fullDisplayName": "Simisear 015/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      514
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pansear",
+    "artist": "Julie Hang",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-015-low.png",
+    "imageHighSrc": "cards/rsv10pt5-015-high.png"
+  },
+  {
+    "masterCardId": "9230",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-014",
+    "localId": "014",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "014/86",
+    "cardName": "Pansear",
+    "fullDisplayName": "Pansear 014/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      513
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Julie Hang",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-014-low.png",
+    "imageHighSrc": "cards/rsv10pt5-014-high.png"
+  },
+  {
+    "masterCardId": "9221",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-013",
+    "localId": "013",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "013/86",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar 013/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-013-low.png",
+    "imageHighSrc": "cards/rsv10pt5-013-high.png"
+  },
+  {
+    "masterCardId": "9216",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-012",
+    "localId": "012",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "012/86",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 012/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tepig",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-012-low.png",
+    "imageHighSrc": "cards/rsv10pt5-012-high.png"
+  },
+  {
+    "masterCardId": "9207",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-011",
+    "localId": "011",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "011/86",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 011/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-011-low.png",
+    "imageHighSrc": "cards/rsv10pt5-011-high.png"
+  },
+  {
+    "masterCardId": "9198",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-010",
+    "localId": "010",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "010/86",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 010/86 White Flare",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Felicia Chen",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-010-low.png",
+    "imageHighSrc": "cards/rsv10pt5-010-high.png"
+  },
+  {
+    "masterCardId": "9184",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-009",
+    "localId": "009",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "009/86",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 009/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelmet",
+    "artist": "Saboteri",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-009-low.png",
+    "imageHighSrc": "cards/rsv10pt5-009-high.png"
+  },
+  {
+    "masterCardId": "9176",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-008",
+    "localId": "008",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "008/86",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 008/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saboteri",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-008-low.png",
+    "imageHighSrc": "cards/rsv10pt5-008-high.png"
+  },
+  {
+    "masterCardId": "9167",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-007",
+    "localId": "007",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "007/86",
+    "cardName": "Sawsbuck",
+    "fullDisplayName": "Sawsbuck 007/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      586
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deerling",
+    "artist": "Narano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-007-low.png",
+    "imageHighSrc": "cards/rsv10pt5-007-high.png"
+  },
+  {
+    "masterCardId": "9160",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-006",
+    "localId": "006",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "006/86",
+    "cardName": "Deerling",
+    "fullDisplayName": "Deerling 006/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      585
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Narano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-006-low.png",
+    "imageHighSrc": "cards/rsv10pt5-006-high.png"
+  },
+  {
+    "masterCardId": "9151",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-005",
+    "localId": "005",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "005/86",
+    "cardName": "Whimsicott ex",
+    "fullDisplayName": "Whimsicott ex 005/86 White Flare",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      547
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cottonee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-005-low.png",
+    "imageHighSrc": "cards/rsv10pt5-005-high.png"
+  },
+  {
+    "masterCardId": "9142",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-004",
+    "localId": "004",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "004/86",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 004/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      546
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-004-low.png",
+    "imageHighSrc": "cards/rsv10pt5-004-high.png"
+  },
+  {
+    "masterCardId": "9134",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-003",
+    "localId": "003",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "003/86",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 003/86 White Flare",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-003-low.png",
+    "imageHighSrc": "cards/rsv10pt5-003-high.png"
+  },
+  {
+    "masterCardId": "9125",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-002",
+    "localId": "002",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "002/86",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 002/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-002-low.png",
+    "imageHighSrc": "cards/rsv10pt5-002-high.png"
+  },
+  {
+    "masterCardId": "9115",
+    "externalId": null,
+    "tcgdex_id": "sv10.5w-001",
+    "localId": "001",
+    "setCode": "sv10.5w",
+    "setTcgdexId": "sv10.5w",
+    "cardNumber": "001/86",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 001/86 White Flare",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/rsv10pt5-001-low.png",
+    "imageHighSrc": "cards/rsv10pt5-001-high.png"
+  }
+]

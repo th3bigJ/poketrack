@@ -1,0 +1,3275 @@
+[
+  {
+    "masterCardId": "6143",
+    "externalId": null,
+    "tcgdex_id": "ex15-101",
+    "localId": "101",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "101/101",
+    "cardName": "Mew ★ δ",
+    "fullDisplayName": "Mew ★ δ 101/101 Dragon Frontiers",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex15-101-low.png",
+    "imageHighSrc": "cards/ex15-101-high.png"
+  },
+  {
+    "masterCardId": "6136",
+    "externalId": null,
+    "tcgdex_id": "ex15-100",
+    "localId": "100",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "100/101",
+    "cardName": "Charizard ★ δ",
+    "fullDisplayName": "Charizard ★ δ 100/101 Dragon Frontiers",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex15-100-low.png",
+    "imageHighSrc": "cards/ex15-100-high.png"
+  },
+  {
+    "masterCardId": "6129",
+    "externalId": null,
+    "tcgdex_id": "ex15-99",
+    "localId": "099",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "099/101",
+    "cardName": "Tyranitar ex δ",
+    "fullDisplayName": "Tyranitar ex δ 099/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Yusuke Shimada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-099-low.png",
+    "imageHighSrc": "cards/ex15-099-high.png"
+  },
+  {
+    "masterCardId": "6121",
+    "externalId": null,
+    "tcgdex_id": "ex15-98",
+    "localId": "098",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "098/101",
+    "cardName": "Salamence ex δ",
+    "fullDisplayName": "Salamence ex δ 098/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-098-low.png",
+    "imageHighSrc": "cards/ex15-098-high.png"
+  },
+  {
+    "masterCardId": "6115",
+    "externalId": null,
+    "tcgdex_id": "ex15-97",
+    "localId": "097",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "097/101",
+    "cardName": "Rayquaza ex δ",
+    "fullDisplayName": "Rayquaza ex δ 097/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-097-low.png",
+    "imageHighSrc": "cards/ex15-097-high.png"
+  },
+  {
+    "masterCardId": "6107",
+    "externalId": null,
+    "tcgdex_id": "ex15-96",
+    "localId": "096",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "096/101",
+    "cardName": "Latios ex δ",
+    "fullDisplayName": "Latios ex δ 096/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-096-low.png",
+    "imageHighSrc": "cards/ex15-096-high.png"
+  },
+  {
+    "masterCardId": "6101",
+    "externalId": null,
+    "tcgdex_id": "ex15-95",
+    "localId": "095",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "095/101",
+    "cardName": "Latias ex δ",
+    "fullDisplayName": "Latias ex δ 095/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-095-low.png",
+    "imageHighSrc": "cards/ex15-095-high.png"
+  },
+  {
+    "masterCardId": "6094",
+    "externalId": null,
+    "tcgdex_id": "ex15-94",
+    "localId": "094",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "094/101",
+    "cardName": "Kingdra ex δ",
+    "fullDisplayName": "Kingdra ex δ 094/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Masahiko Ishii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-094-low.png",
+    "imageHighSrc": "cards/ex15-094-high.png"
+  },
+  {
+    "masterCardId": "6086",
+    "externalId": null,
+    "tcgdex_id": "ex15-93",
+    "localId": "093",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "093/101",
+    "cardName": "Gardevoir ex δ",
+    "fullDisplayName": "Gardevoir ex δ 093/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Masahiko Ishii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-093-low.png",
+    "imageHighSrc": "cards/ex15-093-high.png"
+  },
+  {
+    "masterCardId": "6080",
+    "externalId": null,
+    "tcgdex_id": "ex15-92",
+    "localId": "092",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "092/101",
+    "cardName": "Flygon ex δ",
+    "fullDisplayName": "Flygon ex δ 092/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-092-low.png",
+    "imageHighSrc": "cards/ex15-092-high.png"
+  },
+  {
+    "masterCardId": "6071",
+    "externalId": null,
+    "tcgdex_id": "ex15-91",
+    "localId": "091",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "091/101",
+    "cardName": "Dragonite ex δ",
+    "fullDisplayName": "Dragonite ex δ 091/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-091-low.png",
+    "imageHighSrc": "cards/ex15-091-high.png"
+  },
+  {
+    "masterCardId": "6062",
+    "externalId": null,
+    "tcgdex_id": "ex15-90",
+    "localId": "090",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "090/101",
+    "cardName": "Altaria ex δ",
+    "fullDisplayName": "Altaria ex δ 090/101 Dragon Frontiers",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-090-low.png",
+    "imageHighSrc": "cards/ex15-090-high.png"
+  },
+  {
+    "masterCardId": "6053",
+    "externalId": null,
+    "tcgdex_id": "ex15-89",
+    "localId": "089",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "089/101",
+    "cardName": "Scramble Energy",
+    "fullDisplayName": "Scramble Energy 089/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-089-low.png",
+    "imageHighSrc": "cards/ex15-089-high.png"
+  },
+  {
+    "masterCardId": "6044",
+    "externalId": null,
+    "tcgdex_id": "ex15-88",
+    "localId": "088",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "088/101",
+    "cardName": "δ Rainbow Energy",
+    "fullDisplayName": "δ Rainbow Energy 088/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex15-088-low.png",
+    "imageHighSrc": "cards/ex15-088-high.png"
+  },
+  {
+    "masterCardId": "6035",
+    "externalId": null,
+    "tcgdex_id": "ex15-87",
+    "localId": "087",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "087/101",
+    "cardName": "Boost Energy",
+    "fullDisplayName": "Boost Energy 087/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-087-low.png",
+    "imageHighSrc": "cards/ex15-087-high.png"
+  },
+  {
+    "masterCardId": "6027",
+    "externalId": null,
+    "tcgdex_id": "ex15-86",
+    "localId": "086",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "086/101",
+    "cardName": "Holon Energy WP",
+    "fullDisplayName": "Holon Energy WP 086/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-086-low.png",
+    "imageHighSrc": "cards/ex15-086-high.png"
+  },
+  {
+    "masterCardId": "6018",
+    "externalId": null,
+    "tcgdex_id": "ex15-85",
+    "localId": "085",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "085/101",
+    "cardName": "Holon Energy GL",
+    "fullDisplayName": "Holon Energy GL 085/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-085-low.png",
+    "imageHighSrc": "cards/ex15-085-high.png"
+  },
+  {
+    "masterCardId": "6009",
+    "externalId": null,
+    "tcgdex_id": "ex15-84",
+    "localId": "084",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "084/101",
+    "cardName": "Holon Energy FF",
+    "fullDisplayName": "Holon Energy FF 084/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-084-low.png",
+    "imageHighSrc": "cards/ex15-084-high.png"
+  },
+  {
+    "masterCardId": "5999",
+    "externalId": null,
+    "tcgdex_id": "ex15-83",
+    "localId": "083",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "083/101",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 083/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-083-low.png",
+    "imageHighSrc": "cards/ex15-083-high.png"
+  },
+  {
+    "masterCardId": "5990",
+    "externalId": null,
+    "tcgdex_id": "ex15-82",
+    "localId": "082",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "082/101",
+    "cardName": "TV Reporter",
+    "fullDisplayName": "TV Reporter 082/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-082-low.png",
+    "imageHighSrc": "cards/ex15-082-high.png"
+  },
+  {
+    "masterCardId": "5981",
+    "externalId": null,
+    "tcgdex_id": "ex15-81",
+    "localId": "081",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "081/101",
+    "cardName": "Strength Charm",
+    "fullDisplayName": "Strength Charm 081/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-081-low.png",
+    "imageHighSrc": "cards/ex15-081-high.png"
+  },
+  {
+    "masterCardId": "5972",
+    "externalId": null,
+    "tcgdex_id": "ex15-80",
+    "localId": "080",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "080/101",
+    "cardName": "Professor Oak's Research",
+    "fullDisplayName": "Professor Oak's Research 080/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-080-low.png",
+    "imageHighSrc": "cards/ex15-080-high.png"
+  },
+  {
+    "masterCardId": "5964",
+    "externalId": null,
+    "tcgdex_id": "ex15-79",
+    "localId": "079",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "079/101",
+    "cardName": "Professor Elm's Training Method",
+    "fullDisplayName": "Professor Elm's Training Method 079/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-079-low.png",
+    "imageHighSrc": "cards/ex15-079-high.png"
+  },
+  {
+    "masterCardId": "5955",
+    "externalId": null,
+    "tcgdex_id": "ex15-78",
+    "localId": "078",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "078/101",
+    "cardName": "Old Rod",
+    "fullDisplayName": "Old Rod 078/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-078-low.png",
+    "imageHighSrc": "cards/ex15-078-high.png"
+  },
+  {
+    "masterCardId": "5946",
+    "externalId": null,
+    "tcgdex_id": "ex15-77",
+    "localId": "077",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "077/101",
+    "cardName": "Mr. Stone's Project",
+    "fullDisplayName": "Mr. Stone's Project 077/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-077-low.png",
+    "imageHighSrc": "cards/ex15-077-high.png"
+  },
+  {
+    "masterCardId": "5937",
+    "externalId": null,
+    "tcgdex_id": "ex15-76",
+    "localId": "076",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "076/101",
+    "cardName": "Island Hermit",
+    "fullDisplayName": "Island Hermit 076/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-076-low.png",
+    "imageHighSrc": "cards/ex15-076-high.png"
+  },
+  {
+    "masterCardId": "5928",
+    "externalId": null,
+    "tcgdex_id": "ex15-75",
+    "localId": "075",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "075/101",
+    "cardName": "Holon Mentor",
+    "fullDisplayName": "Holon Mentor 075/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-075-low.png",
+    "imageHighSrc": "cards/ex15-075-high.png"
+  },
+  {
+    "masterCardId": "5919",
+    "externalId": null,
+    "tcgdex_id": "ex15-74",
+    "localId": "074",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "074/101",
+    "cardName": "Holon Legacy",
+    "fullDisplayName": "Holon Legacy 074/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-074-low.png",
+    "imageHighSrc": "cards/ex15-074-high.png"
+  },
+  {
+    "masterCardId": "5910",
+    "externalId": null,
+    "tcgdex_id": "ex15-73",
+    "localId": "073",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "073/101",
+    "cardName": "Copycat",
+    "fullDisplayName": "Copycat 073/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-073-low.png",
+    "imageHighSrc": "cards/ex15-073-high.png"
+  },
+  {
+    "masterCardId": "5901",
+    "externalId": null,
+    "tcgdex_id": "ex15-72",
+    "localId": "072",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "072/101",
+    "cardName": "Buffer Piece",
+    "fullDisplayName": "Buffer Piece 072/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-072-low.png",
+    "imageHighSrc": "cards/ex15-072-high.png"
+  },
+  {
+    "masterCardId": "5891",
+    "externalId": null,
+    "tcgdex_id": "ex15-71",
+    "localId": "071",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "071/101",
+    "cardName": "Wooper δ",
+    "fullDisplayName": "Wooper δ 071/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-071-low.png",
+    "imageHighSrc": "cards/ex15-071-high.png"
+  },
+  {
+    "masterCardId": "5882",
+    "externalId": null,
+    "tcgdex_id": "ex15-70",
+    "localId": "070",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "070/101",
+    "cardName": "Vulpix δ",
+    "fullDisplayName": "Vulpix δ 070/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-070-low.png",
+    "imageHighSrc": "cards/ex15-070-high.png"
+  },
+  {
+    "masterCardId": "5873",
+    "externalId": null,
+    "tcgdex_id": "ex15-69",
+    "localId": "069",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "069/101",
+    "cardName": "Trapinch δ",
+    "fullDisplayName": "Trapinch δ 069/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-069-low.png",
+    "imageHighSrc": "cards/ex15-069-high.png"
+  },
+  {
+    "masterCardId": "5863",
+    "externalId": null,
+    "tcgdex_id": "ex15-68",
+    "localId": "068",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "068/101",
+    "cardName": "Trapinch δ",
+    "fullDisplayName": "Trapinch δ 068/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-068-low.png",
+    "imageHighSrc": "cards/ex15-068-high.png"
+  },
+  {
+    "masterCardId": "5854",
+    "externalId": null,
+    "tcgdex_id": "ex15-67",
+    "localId": "067",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "067/101",
+    "cardName": "Totodile δ",
+    "fullDisplayName": "Totodile δ 067/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      158
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-067-low.png",
+    "imageHighSrc": "cards/ex15-067-high.png"
+  },
+  {
+    "masterCardId": "5846",
+    "externalId": null,
+    "tcgdex_id": "ex15-66",
+    "localId": "066",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "066/101",
+    "cardName": "Taillow δ",
+    "fullDisplayName": "Taillow δ 066/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      276
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-066-low.png",
+    "imageHighSrc": "cards/ex15-066-high.png"
+  },
+  {
+    "masterCardId": "5837",
+    "externalId": null,
+    "tcgdex_id": "ex15-65",
+    "localId": "065",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "065/101",
+    "cardName": "Swablu δ",
+    "fullDisplayName": "Swablu δ 065/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-065-low.png",
+    "imageHighSrc": "cards/ex15-065-high.png"
+  },
+  {
+    "masterCardId": "5826",
+    "externalId": null,
+    "tcgdex_id": "ex15-64",
+    "localId": "064",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "064/101",
+    "cardName": "Smoochum δ",
+    "fullDisplayName": "Smoochum δ 064/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      238
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-064-low.png",
+    "imageHighSrc": "cards/ex15-064-high.png"
+  },
+  {
+    "masterCardId": "5818",
+    "externalId": null,
+    "tcgdex_id": "ex15-63",
+    "localId": "063",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "063/101",
+    "cardName": "Shellder δ",
+    "fullDisplayName": "Shellder δ 063/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      90
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-063-low.png",
+    "imageHighSrc": "cards/ex15-063-high.png"
+  },
+  {
+    "masterCardId": "5809",
+    "externalId": null,
+    "tcgdex_id": "ex15-62",
+    "localId": "062",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "062/101",
+    "cardName": "Seel δ",
+    "fullDisplayName": "Seel δ 062/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-062-low.png",
+    "imageHighSrc": "cards/ex15-062-high.png"
+  },
+  {
+    "masterCardId": "5801",
+    "externalId": null,
+    "tcgdex_id": "ex15-61",
+    "localId": "061",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "061/101",
+    "cardName": "Ralts δ",
+    "fullDisplayName": "Ralts δ 061/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-061-low.png",
+    "imageHighSrc": "cards/ex15-061-high.png"
+  },
+  {
+    "masterCardId": "5792",
+    "externalId": null,
+    "tcgdex_id": "ex15-60",
+    "localId": "060",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "060/101",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 060/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-060-low.png",
+    "imageHighSrc": "cards/ex15-060-high.png"
+  },
+  {
+    "masterCardId": "5784",
+    "externalId": null,
+    "tcgdex_id": "ex15-59",
+    "localId": "059",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "059/101",
+    "cardName": "Pupitar δ",
+    "fullDisplayName": "Pupitar δ 059/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-059-low.png",
+    "imageHighSrc": "cards/ex15-059-high.png"
+  },
+  {
+    "masterCardId": "5774",
+    "externalId": null,
+    "tcgdex_id": "ex15-58",
+    "localId": "058",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "058/101",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 058/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-058-low.png",
+    "imageHighSrc": "cards/ex15-058-high.png"
+  },
+  {
+    "masterCardId": "5765",
+    "externalId": null,
+    "tcgdex_id": "ex15-57",
+    "localId": "057",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "057/101",
+    "cardName": "Nidoran ♂ δ",
+    "fullDisplayName": "Nidoran ♂ δ 057/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      32
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex15-057-low.png",
+    "imageHighSrc": "cards/ex15-057-high.png"
+  },
+  {
+    "masterCardId": "5756",
+    "externalId": null,
+    "tcgdex_id": "ex15-56",
+    "localId": "056",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "056/101",
+    "cardName": "Nidoran ♀ δ",
+    "fullDisplayName": "Nidoran ♀ δ 056/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      29
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex15-056-low.png",
+    "imageHighSrc": "cards/ex15-056-high.png"
+  },
+  {
+    "masterCardId": "5747",
+    "externalId": null,
+    "tcgdex_id": "ex15-55",
+    "localId": "055",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "055/101",
+    "cardName": "Natu δ",
+    "fullDisplayName": "Natu δ 055/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-055-low.png",
+    "imageHighSrc": "cards/ex15-055-high.png"
+  },
+  {
+    "masterCardId": "5739",
+    "externalId": null,
+    "tcgdex_id": "ex15-54",
+    "localId": "054",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "054/101",
+    "cardName": "Mareep δ",
+    "fullDisplayName": "Mareep δ 054/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-054-low.png",
+    "imageHighSrc": "cards/ex15-054-high.png"
+  },
+  {
+    "masterCardId": "5730",
+    "externalId": null,
+    "tcgdex_id": "ex15-53",
+    "localId": "053",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "053/101",
+    "cardName": "Ledyba δ",
+    "fullDisplayName": "Ledyba δ 053/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-053-low.png",
+    "imageHighSrc": "cards/ex15-053-high.png"
+  },
+  {
+    "masterCardId": "5722",
+    "externalId": null,
+    "tcgdex_id": "ex15-52",
+    "localId": "052",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "052/101",
+    "cardName": "Larvitar δ",
+    "fullDisplayName": "Larvitar δ 052/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-052-low.png",
+    "imageHighSrc": "cards/ex15-052-high.png"
+  },
+  {
+    "masterCardId": "5712",
+    "externalId": null,
+    "tcgdex_id": "ex15-51",
+    "localId": "051",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "051/101",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 051/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-051-low.png",
+    "imageHighSrc": "cards/ex15-051-high.png"
+  },
+  {
+    "masterCardId": "5704",
+    "externalId": null,
+    "tcgdex_id": "ex15-50",
+    "localId": "050",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "050/101",
+    "cardName": "Horsea δ",
+    "fullDisplayName": "Horsea δ 050/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-050-low.png",
+    "imageHighSrc": "cards/ex15-050-high.png"
+  },
+  {
+    "masterCardId": "5694",
+    "externalId": null,
+    "tcgdex_id": "ex15-49",
+    "localId": "049",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "049/101",
+    "cardName": "Feebas δ",
+    "fullDisplayName": "Feebas δ 049/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-049-low.png",
+    "imageHighSrc": "cards/ex15-049-high.png"
+  },
+  {
+    "masterCardId": "5686",
+    "externalId": null,
+    "tcgdex_id": "ex15-48",
+    "localId": "048",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "048/101",
+    "cardName": "Elekid δ",
+    "fullDisplayName": "Elekid δ 048/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      239
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-048-low.png",
+    "imageHighSrc": "cards/ex15-048-high.png"
+  },
+  {
+    "masterCardId": "5676",
+    "externalId": null,
+    "tcgdex_id": "ex15-47",
+    "localId": "047",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "047/101",
+    "cardName": "Ekans δ",
+    "fullDisplayName": "Ekans δ 047/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-047-low.png",
+    "imageHighSrc": "cards/ex15-047-high.png"
+  },
+  {
+    "masterCardId": "5667",
+    "externalId": null,
+    "tcgdex_id": "ex15-46",
+    "localId": "046",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "046/101",
+    "cardName": "Dratini δ",
+    "fullDisplayName": "Dratini δ 046/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-046-low.png",
+    "imageHighSrc": "cards/ex15-046-high.png"
+  },
+  {
+    "masterCardId": "5658",
+    "externalId": null,
+    "tcgdex_id": "ex15-45",
+    "localId": "045",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "045/101",
+    "cardName": "Cyndaquil δ",
+    "fullDisplayName": "Cyndaquil δ 045/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      155
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-045-low.png",
+    "imageHighSrc": "cards/ex15-045-high.png"
+  },
+  {
+    "masterCardId": "5649",
+    "externalId": null,
+    "tcgdex_id": "ex15-44",
+    "localId": "044",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "044/101",
+    "cardName": "Chikorita δ",
+    "fullDisplayName": "Chikorita δ 044/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      152
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-044-low.png",
+    "imageHighSrc": "cards/ex15-044-high.png"
+  },
+  {
+    "masterCardId": "5640",
+    "externalId": null,
+    "tcgdex_id": "ex15-43",
+    "localId": "043",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "043/101",
+    "cardName": "Bagon δ",
+    "fullDisplayName": "Bagon δ 043/101 Dragon Frontiers",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-043-low.png",
+    "imageHighSrc": "cards/ex15-043-high.png"
+  },
+  {
+    "masterCardId": "5631",
+    "externalId": null,
+    "tcgdex_id": "ex15-42",
+    "localId": "042",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "042/101",
+    "cardName": "Vibrava δ",
+    "fullDisplayName": "Vibrava δ 042/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-042-low.png",
+    "imageHighSrc": "cards/ex15-042-high.png"
+  },
+  {
+    "masterCardId": "5622",
+    "externalId": null,
+    "tcgdex_id": "ex15-41",
+    "localId": "041",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "041/101",
+    "cardName": "Togepi δ",
+    "fullDisplayName": "Togepi δ 041/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-041-low.png",
+    "imageHighSrc": "cards/ex15-041-high.png"
+  },
+  {
+    "masterCardId": "5611",
+    "externalId": null,
+    "tcgdex_id": "ex15-40",
+    "localId": "040",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "040/101",
+    "cardName": "Swellow δ",
+    "fullDisplayName": "Swellow δ 040/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-040-low.png",
+    "imageHighSrc": "cards/ex15-040-high.png"
+  },
+  {
+    "masterCardId": "5604",
+    "externalId": null,
+    "tcgdex_id": "ex15-39",
+    "localId": "039",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "039/101",
+    "cardName": "Smeargle δ",
+    "fullDisplayName": "Smeargle δ 039/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-039-low.png",
+    "imageHighSrc": "cards/ex15-039-high.png"
+  },
+  {
+    "masterCardId": "5594",
+    "externalId": null,
+    "tcgdex_id": "ex15-38",
+    "localId": "038",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "038/101",
+    "cardName": "Shelgon δ",
+    "fullDisplayName": "Shelgon δ 038/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-038-low.png",
+    "imageHighSrc": "cards/ex15-038-high.png"
+  },
+  {
+    "masterCardId": "5585",
+    "externalId": null,
+    "tcgdex_id": "ex15-37",
+    "localId": "037",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "037/101",
+    "cardName": "Seadra δ",
+    "fullDisplayName": "Seadra δ 037/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-037-low.png",
+    "imageHighSrc": "cards/ex15-037-high.png"
+  },
+  {
+    "masterCardId": "5577",
+    "externalId": null,
+    "tcgdex_id": "ex15-36",
+    "localId": "036",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "036/101",
+    "cardName": "Quilava δ",
+    "fullDisplayName": "Quilava δ 036/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      156
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cyndaquil",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-036-low.png",
+    "imageHighSrc": "cards/ex15-036-high.png"
+  },
+  {
+    "masterCardId": "5567",
+    "externalId": null,
+    "tcgdex_id": "ex15-35",
+    "localId": "035",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "035/101",
+    "cardName": "Nidorino δ",
+    "fullDisplayName": "Nidorino δ 035/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      33
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♂",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-035-low.png",
+    "imageHighSrc": "cards/ex15-035-high.png"
+  },
+  {
+    "masterCardId": "5558",
+    "externalId": null,
+    "tcgdex_id": "ex15-34",
+    "localId": "034",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "034/101",
+    "cardName": "Nidorina δ",
+    "fullDisplayName": "Nidorina δ 034/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      30
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♀",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-034-low.png",
+    "imageHighSrc": "cards/ex15-034-high.png"
+  },
+  {
+    "masterCardId": "5549",
+    "externalId": null,
+    "tcgdex_id": "ex15-33",
+    "localId": "033",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "033/101",
+    "cardName": "Kirlia δ",
+    "fullDisplayName": "Kirlia δ 033/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-033-low.png",
+    "imageHighSrc": "cards/ex15-033-high.png"
+  },
+  {
+    "masterCardId": "5540",
+    "externalId": null,
+    "tcgdex_id": "ex15-32",
+    "localId": "032",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "032/101",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 032/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-032-low.png",
+    "imageHighSrc": "cards/ex15-032-high.png"
+  },
+  {
+    "masterCardId": "5531",
+    "externalId": null,
+    "tcgdex_id": "ex15-31",
+    "localId": "031",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "031/101",
+    "cardName": "Horsea δ",
+    "fullDisplayName": "Horsea δ 031/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-031-low.png",
+    "imageHighSrc": "cards/ex15-031-high.png"
+  },
+  {
+    "masterCardId": "5522",
+    "externalId": null,
+    "tcgdex_id": "ex15-30",
+    "localId": "030",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "030/101",
+    "cardName": "Flaaffy δ",
+    "fullDisplayName": "Flaaffy δ 030/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-030-low.png",
+    "imageHighSrc": "cards/ex15-030-high.png"
+  },
+  {
+    "masterCardId": "5512",
+    "externalId": null,
+    "tcgdex_id": "ex15-29",
+    "localId": "029",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "029/101",
+    "cardName": "Electabuzz δ",
+    "fullDisplayName": "Electabuzz δ 029/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-029-low.png",
+    "imageHighSrc": "cards/ex15-029-high.png"
+  },
+  {
+    "masterCardId": "5503",
+    "externalId": null,
+    "tcgdex_id": "ex15-28",
+    "localId": "028",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "028/101",
+    "cardName": "Dragonair δ",
+    "fullDisplayName": "Dragonair δ 028/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-028-low.png",
+    "imageHighSrc": "cards/ex15-028-high.png"
+  },
+  {
+    "masterCardId": "5494",
+    "externalId": null,
+    "tcgdex_id": "ex15-27",
+    "localId": "027",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "027/101",
+    "cardName": "Croconaw δ",
+    "fullDisplayName": "Croconaw δ 027/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      159
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Totodile",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-027-low.png",
+    "imageHighSrc": "cards/ex15-027-high.png"
+  },
+  {
+    "masterCardId": "5486",
+    "externalId": null,
+    "tcgdex_id": "ex15-26",
+    "localId": "026",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "026/101",
+    "cardName": "Bayleef δ",
+    "fullDisplayName": "Bayleef δ 026/101 Dragon Frontiers",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      153
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chikorita",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-026-low.png",
+    "imageHighSrc": "cards/ex15-026-high.png"
+  },
+  {
+    "masterCardId": "5477",
+    "externalId": null,
+    "tcgdex_id": "ex15-25",
+    "localId": "025",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "025/101",
+    "cardName": "Xatu δ",
+    "fullDisplayName": "Xatu δ 025/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-025-low.png",
+    "imageHighSrc": "cards/ex15-025-high.png"
+  },
+  {
+    "masterCardId": "5468",
+    "externalId": null,
+    "tcgdex_id": "ex15-24",
+    "localId": "024",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "024/101",
+    "cardName": "Vibrava δ",
+    "fullDisplayName": "Vibrava δ 024/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-024-low.png",
+    "imageHighSrc": "cards/ex15-024-high.png"
+  },
+  {
+    "masterCardId": "5459",
+    "externalId": null,
+    "tcgdex_id": "ex15-23",
+    "localId": "023",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "023/101",
+    "cardName": "Tropius δ",
+    "fullDisplayName": "Tropius δ 023/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      357
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-023-low.png",
+    "imageHighSrc": "cards/ex15-023-high.png"
+  },
+  {
+    "masterCardId": "5452",
+    "externalId": null,
+    "tcgdex_id": "ex15-22",
+    "localId": "022",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "022/101",
+    "cardName": "Seadra δ",
+    "fullDisplayName": "Seadra δ 022/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-022-low.png",
+    "imageHighSrc": "cards/ex15-022-high.png"
+  },
+  {
+    "masterCardId": "5442",
+    "externalId": null,
+    "tcgdex_id": "ex15-21",
+    "localId": "021",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "021/101",
+    "cardName": "Quagsire δ",
+    "fullDisplayName": "Quagsire δ 021/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-021-low.png",
+    "imageHighSrc": "cards/ex15-021-high.png"
+  },
+  {
+    "masterCardId": "5433",
+    "externalId": null,
+    "tcgdex_id": "ex15-20",
+    "localId": "020",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "020/101",
+    "cardName": "Mantine δ",
+    "fullDisplayName": "Mantine δ 020/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      226
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-020-low.png",
+    "imageHighSrc": "cards/ex15-020-high.png"
+  },
+  {
+    "masterCardId": "5424",
+    "externalId": null,
+    "tcgdex_id": "ex15-19",
+    "localId": "019",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "019/101",
+    "cardName": "Lickitung δ",
+    "fullDisplayName": "Lickitung δ 019/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-019-low.png",
+    "imageHighSrc": "cards/ex15-019-high.png"
+  },
+  {
+    "masterCardId": "5415",
+    "externalId": null,
+    "tcgdex_id": "ex15-18",
+    "localId": "018",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "018/101",
+    "cardName": "Ledian δ",
+    "fullDisplayName": "Ledian δ 018/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      166
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ledyba",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-018-low.png",
+    "imageHighSrc": "cards/ex15-018-high.png"
+  },
+  {
+    "masterCardId": "5406",
+    "externalId": null,
+    "tcgdex_id": "ex15-17",
+    "localId": "017",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "017/101",
+    "cardName": "Jynx δ",
+    "fullDisplayName": "Jynx δ 017/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-017-low.png",
+    "imageHighSrc": "cards/ex15-017-high.png"
+  },
+  {
+    "masterCardId": "5395",
+    "externalId": null,
+    "tcgdex_id": "ex15-16",
+    "localId": "016",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "016/101",
+    "cardName": "Gligar δ",
+    "fullDisplayName": "Gligar δ 016/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-016-low.png",
+    "imageHighSrc": "cards/ex15-016-high.png"
+  },
+  {
+    "masterCardId": "5387",
+    "externalId": null,
+    "tcgdex_id": "ex15-15",
+    "localId": "015",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "015/101",
+    "cardName": "Dewgong δ",
+    "fullDisplayName": "Dewgong δ 015/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-015-low.png",
+    "imageHighSrc": "cards/ex15-015-high.png"
+  },
+  {
+    "masterCardId": "5378",
+    "externalId": null,
+    "tcgdex_id": "ex15-14",
+    "localId": "014",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "014/101",
+    "cardName": "Cloyster δ",
+    "fullDisplayName": "Cloyster δ 014/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      91
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellder",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-014-low.png",
+    "imageHighSrc": "cards/ex15-014-high.png"
+  },
+  {
+    "masterCardId": "5369",
+    "externalId": null,
+    "tcgdex_id": "ex15-13",
+    "localId": "013",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "013/101",
+    "cardName": "Arbok δ",
+    "fullDisplayName": "Arbok δ 013/101 Dragon Frontiers",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-013-low.png",
+    "imageHighSrc": "cards/ex15-013-high.png"
+  },
+  {
+    "masterCardId": "5360",
+    "externalId": null,
+    "tcgdex_id": "ex15-12",
+    "localId": "012",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "012/101",
+    "cardName": "Typhlosion δ",
+    "fullDisplayName": "Typhlosion δ 012/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-012-low.png",
+    "imageHighSrc": "cards/ex15-012-high.png"
+  },
+  {
+    "masterCardId": "5351",
+    "externalId": null,
+    "tcgdex_id": "ex15-11",
+    "localId": "011",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "011/101",
+    "cardName": "Togetic δ",
+    "fullDisplayName": "Togetic δ 011/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      176
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togepi",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-011-low.png",
+    "imageHighSrc": "cards/ex15-011-high.png"
+  },
+  {
+    "masterCardId": "5343",
+    "externalId": null,
+    "tcgdex_id": "ex15-10",
+    "localId": "010",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "010/101",
+    "cardName": "Snorlax δ",
+    "fullDisplayName": "Snorlax δ 010/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-010-low.png",
+    "imageHighSrc": "cards/ex15-010-high.png"
+  },
+  {
+    "masterCardId": "5334",
+    "externalId": null,
+    "tcgdex_id": "ex15-9",
+    "localId": "009",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "009/101",
+    "cardName": "Pinsir δ",
+    "fullDisplayName": "Pinsir δ 009/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-009-low.png",
+    "imageHighSrc": "cards/ex15-009-high.png"
+  },
+  {
+    "masterCardId": "5327",
+    "externalId": null,
+    "tcgdex_id": "ex15-8",
+    "localId": "008",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "008/101",
+    "cardName": "Ninetales δ",
+    "fullDisplayName": "Ninetales δ 008/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-008-low.png",
+    "imageHighSrc": "cards/ex15-008-high.png"
+  },
+  {
+    "masterCardId": "5317",
+    "externalId": null,
+    "tcgdex_id": "ex15-7",
+    "localId": "007",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "007/101",
+    "cardName": "Nidoqueen δ",
+    "fullDisplayName": "Nidoqueen δ 007/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-007-low.png",
+    "imageHighSrc": "cards/ex15-007-high.png"
+  },
+  {
+    "masterCardId": "5308",
+    "externalId": null,
+    "tcgdex_id": "ex15-6",
+    "localId": "006",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "006/101",
+    "cardName": "Nidoking δ",
+    "fullDisplayName": "Nidoking δ 006/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorino",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-006-low.png",
+    "imageHighSrc": "cards/ex15-006-high.png"
+  },
+  {
+    "masterCardId": "5294",
+    "externalId": null,
+    "tcgdex_id": "ex15-5",
+    "localId": "005",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "005/101",
+    "cardName": "Milotic δ",
+    "fullDisplayName": "Milotic δ 005/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-005-low.png",
+    "imageHighSrc": "cards/ex15-005-high.png"
+  },
+  {
+    "masterCardId": "5286",
+    "externalId": null,
+    "tcgdex_id": "ex15-4",
+    "localId": "004",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "004/101",
+    "cardName": "Meganium δ",
+    "fullDisplayName": "Meganium δ 004/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      154
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bayleef",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-004-low.png",
+    "imageHighSrc": "cards/ex15-004-high.png"
+  },
+  {
+    "masterCardId": "5278",
+    "externalId": null,
+    "tcgdex_id": "ex15-3",
+    "localId": "003",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "003/101",
+    "cardName": "Heracross δ",
+    "fullDisplayName": "Heracross δ 003/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-003-low.png",
+    "imageHighSrc": "cards/ex15-003-high.png"
+  },
+  {
+    "masterCardId": "5269",
+    "externalId": null,
+    "tcgdex_id": "ex15-2",
+    "localId": "002",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "002/101",
+    "cardName": "Feraligatr δ",
+    "fullDisplayName": "Feraligatr δ 002/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      160
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croconaw",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-002-low.png",
+    "imageHighSrc": "cards/ex15-002-high.png"
+  },
+  {
+    "masterCardId": "5257",
+    "externalId": null,
+    "tcgdex_id": "ex15-1",
+    "localId": "001",
+    "setCode": "ex15",
+    "setTcgdexId": "ex15",
+    "cardNumber": "001/101",
+    "cardName": "Ampharos δ",
+    "fullDisplayName": "Ampharos δ 001/101 Dragon Frontiers",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex15-001-low.png",
+    "imageHighSrc": "cards/ex15-001-high.png"
+  }
+]

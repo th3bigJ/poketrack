@@ -1,0 +1,4310 @@
+[
+  {
+    "masterCardId": "4060",
+    "externalId": null,
+    "tcgdex_id": "dp3-132",
+    "localId": "132",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "132/132",
+    "cardName": "Honchkrow LV.X",
+    "fullDisplayName": "Honchkrow LV.X 132/132 Secret Wonders",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Honchkrow",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-132-low.png",
+    "imageHighSrc": "cards/dp3-132-high.png"
+  },
+  {
+    "masterCardId": "4059",
+    "externalId": null,
+    "tcgdex_id": "dp3-131",
+    "localId": "131",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "131/132",
+    "cardName": "Gardevoir LV.X",
+    "fullDisplayName": "Gardevoir LV.X 131/132 Secret Wonders",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-131-low.png",
+    "imageHighSrc": "cards/dp3-131-high.png"
+  },
+  {
+    "masterCardId": "4058",
+    "externalId": null,
+    "tcgdex_id": "dp3-130",
+    "localId": "130",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "130/132",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 130/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-130-low.png",
+    "imageHighSrc": "cards/dp3-130-high.png"
+  },
+  {
+    "masterCardId": "4057",
+    "externalId": null,
+    "tcgdex_id": "dp3-129",
+    "localId": "129",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "129/132",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 129/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-129-low.png",
+    "imageHighSrc": "cards/dp3-129-high.png"
+  },
+  {
+    "masterCardId": "4056",
+    "externalId": null,
+    "tcgdex_id": "dp3-128",
+    "localId": "128",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "128/132",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 128/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-128-low.png",
+    "imageHighSrc": "cards/dp3-128-high.png"
+  },
+  {
+    "masterCardId": "4055",
+    "externalId": null,
+    "tcgdex_id": "dp3-127",
+    "localId": "127",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "127/132",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 127/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-127-low.png",
+    "imageHighSrc": "cards/dp3-127-high.png"
+  },
+  {
+    "masterCardId": "4053",
+    "externalId": null,
+    "tcgdex_id": "dp3-126",
+    "localId": "126",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "126/132",
+    "cardName": "Team Galactic's Mars",
+    "fullDisplayName": "Team Galactic's Mars 126/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-126-low.png",
+    "imageHighSrc": "cards/dp3-126-high.png"
+  },
+  {
+    "masterCardId": "4051",
+    "externalId": null,
+    "tcgdex_id": "dp3-125",
+    "localId": "125",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "125/132",
+    "cardName": "Roseanne's Research",
+    "fullDisplayName": "Roseanne's Research 125/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-125-low.png",
+    "imageHighSrc": "cards/dp3-125-high.png"
+  },
+  {
+    "masterCardId": "4049",
+    "externalId": null,
+    "tcgdex_id": "dp3-124",
+    "localId": "124",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "124/132",
+    "cardName": "Rival",
+    "fullDisplayName": "Rival 124/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-124-low.png",
+    "imageHighSrc": "cards/dp3-124-high.png"
+  },
+  {
+    "masterCardId": "4047",
+    "externalId": null,
+    "tcgdex_id": "dp3-123",
+    "localId": "123",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "123/132",
+    "cardName": "Professor Rowan",
+    "fullDisplayName": "Professor Rowan 123/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-123-low.png",
+    "imageHighSrc": "cards/dp3-123-high.png"
+  },
+  {
+    "masterCardId": "4045",
+    "externalId": null,
+    "tcgdex_id": "dp3-122",
+    "localId": "122",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "122/132",
+    "cardName": "Professor Oak's Visit",
+    "fullDisplayName": "Professor Oak's Visit 122/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-122-low.png",
+    "imageHighSrc": "cards/dp3-122-high.png"
+  },
+  {
+    "masterCardId": "4043",
+    "externalId": null,
+    "tcgdex_id": "dp3-121",
+    "localId": "121",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "121/132",
+    "cardName": "PlusPower",
+    "fullDisplayName": "PlusPower 121/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-121-low.png",
+    "imageHighSrc": "cards/dp3-121-high.png"
+  },
+  {
+    "masterCardId": "4040",
+    "externalId": null,
+    "tcgdex_id": "dp3-120",
+    "localId": "120",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "120/132",
+    "cardName": "Night Maintenance",
+    "fullDisplayName": "Night Maintenance 120/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-120-low.png",
+    "imageHighSrc": "cards/dp3-120-high.png"
+  },
+  {
+    "masterCardId": "4037",
+    "externalId": null,
+    "tcgdex_id": "dp3-119",
+    "localId": "119",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "119/132",
+    "cardName": "Bebe's Search",
+    "fullDisplayName": "Bebe's Search 119/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-119-low.png",
+    "imageHighSrc": "cards/dp3-119-high.png"
+  },
+  {
+    "masterCardId": "4034",
+    "externalId": null,
+    "tcgdex_id": "dp3-118",
+    "localId": "118",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "118/132",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper 118/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-118-low.png",
+    "imageHighSrc": "cards/dp3-118-high.png"
+  },
+  {
+    "masterCardId": "4030",
+    "externalId": null,
+    "tcgdex_id": "dp3-117",
+    "localId": "117",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "117/132",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 117/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Ohta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-117-low.png",
+    "imageHighSrc": "cards/dp3-117-high.png"
+  },
+  {
+    "masterCardId": "4027",
+    "externalId": null,
+    "tcgdex_id": "dp3-116",
+    "localId": "116",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "116/132",
+    "cardName": "Venonat",
+    "fullDisplayName": "Venonat 116/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      48
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-116-low.png",
+    "imageHighSrc": "cards/dp3-116-high.png"
+  },
+  {
+    "masterCardId": "4024",
+    "externalId": null,
+    "tcgdex_id": "dp3-115",
+    "localId": "115",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "115/132",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 115/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-115-low.png",
+    "imageHighSrc": "cards/dp3-115-high.png"
+  },
+  {
+    "masterCardId": "4021",
+    "externalId": null,
+    "tcgdex_id": "dp3-114",
+    "localId": "114",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "114/132",
+    "cardName": "Sunkern",
+    "fullDisplayName": "Sunkern 114/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      191
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-114-low.png",
+    "imageHighSrc": "cards/dp3-114-high.png"
+  },
+  {
+    "masterCardId": "4018",
+    "externalId": null,
+    "tcgdex_id": "dp3-113",
+    "localId": "113",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "113/132",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 113/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-113-low.png",
+    "imageHighSrc": "cards/dp3-113-high.png"
+  },
+  {
+    "masterCardId": "4015",
+    "externalId": null,
+    "tcgdex_id": "dp3-112",
+    "localId": "112",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "112/132",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 112/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-112-low.png",
+    "imageHighSrc": "cards/dp3-112-high.png"
+  },
+  {
+    "masterCardId": "4012",
+    "externalId": null,
+    "tcgdex_id": "dp3-111",
+    "localId": "111",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "111/132",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 111/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-111-low.png",
+    "imageHighSrc": "cards/dp3-111-high.png"
+  },
+  {
+    "masterCardId": "4009",
+    "externalId": null,
+    "tcgdex_id": "dp3-110",
+    "localId": "110",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "110/132",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 110/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-110-low.png",
+    "imageHighSrc": "cards/dp3-110-high.png"
+  },
+  {
+    "masterCardId": "4006",
+    "externalId": null,
+    "tcgdex_id": "dp3-109",
+    "localId": "109",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "109/132",
+    "cardName": "Shuckle",
+    "fullDisplayName": "Shuckle 109/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      213
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-109-low.png",
+    "imageHighSrc": "cards/dp3-109-high.png"
+  },
+  {
+    "masterCardId": "4003",
+    "externalId": null,
+    "tcgdex_id": "dp3-108",
+    "localId": "108",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "108/132",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 108/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-108-low.png",
+    "imageHighSrc": "cards/dp3-108-high.png"
+  },
+  {
+    "masterCardId": "4000",
+    "externalId": null,
+    "tcgdex_id": "dp3-107",
+    "localId": "107",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "107/132",
+    "cardName": "Shellos West Sea",
+    "fullDisplayName": "Shellos West Sea 107/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      422
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-107-low.png",
+    "imageHighSrc": "cards/dp3-107-high.png"
+  },
+  {
+    "masterCardId": "3997",
+    "externalId": null,
+    "tcgdex_id": "dp3-106",
+    "localId": "106",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "106/132",
+    "cardName": "Shellos East Sea",
+    "fullDisplayName": "Shellos East Sea 106/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      422
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-106-low.png",
+    "imageHighSrc": "cards/dp3-106-high.png"
+  },
+  {
+    "masterCardId": "3994",
+    "externalId": null,
+    "tcgdex_id": "dp3-105",
+    "localId": "105",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "105/132",
+    "cardName": "Shellder",
+    "fullDisplayName": "Shellder 105/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      90
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-105-low.png",
+    "imageHighSrc": "cards/dp3-105-high.png"
+  },
+  {
+    "masterCardId": "3991",
+    "externalId": null,
+    "tcgdex_id": "dp3-104",
+    "localId": "104",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "104/132",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 104/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-104-low.png",
+    "imageHighSrc": "cards/dp3-104-high.png"
+  },
+  {
+    "masterCardId": "3986",
+    "externalId": null,
+    "tcgdex_id": "dp3-103",
+    "localId": "103",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "103/132",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 103/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-103-low.png",
+    "imageHighSrc": "cards/dp3-103-high.png"
+  },
+  {
+    "masterCardId": "3982",
+    "externalId": null,
+    "tcgdex_id": "dp3-102",
+    "localId": "102",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "102/132",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 102/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-102-low.png",
+    "imageHighSrc": "cards/dp3-102-high.png"
+  },
+  {
+    "masterCardId": "3978",
+    "externalId": null,
+    "tcgdex_id": "dp3-101",
+    "localId": "101",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "101/132",
+    "cardName": "Qwilfish",
+    "fullDisplayName": "Qwilfish 101/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      211
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kenkichi Toyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-101-low.png",
+    "imageHighSrc": "cards/dp3-101-high.png"
+  },
+  {
+    "masterCardId": "3974",
+    "externalId": null,
+    "tcgdex_id": "dp3-100",
+    "localId": "100",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "100/132",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 100/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-100-low.png",
+    "imageHighSrc": "cards/dp3-100-high.png"
+  },
+  {
+    "masterCardId": "3970",
+    "externalId": null,
+    "tcgdex_id": "dp3-99",
+    "localId": "099",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "099/132",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 099/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-099-low.png",
+    "imageHighSrc": "cards/dp3-099-high.png"
+  },
+  {
+    "masterCardId": "3966",
+    "externalId": null,
+    "tcgdex_id": "dp3-98",
+    "localId": "098",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "098/132",
+    "cardName": "Phanpy",
+    "fullDisplayName": "Phanpy 098/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      231
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-098-low.png",
+    "imageHighSrc": "cards/dp3-098-high.png"
+  },
+  {
+    "masterCardId": "3962",
+    "externalId": null,
+    "tcgdex_id": "dp3-97",
+    "localId": "097",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "097/132",
+    "cardName": "Nidoran ♂",
+    "fullDisplayName": "Nidoran ♂ 097/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      32
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-097-low.png",
+    "imageHighSrc": "cards/dp3-097-high.png"
+  },
+  {
+    "masterCardId": "3958",
+    "externalId": null,
+    "tcgdex_id": "dp3-96",
+    "localId": "096",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "096/132",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 096/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-096-low.png",
+    "imageHighSrc": "cards/dp3-096-high.png"
+  },
+  {
+    "masterCardId": "3954",
+    "externalId": null,
+    "tcgdex_id": "dp3-95",
+    "localId": "095",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "095/132",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 095/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-095-low.png",
+    "imageHighSrc": "cards/dp3-095-high.png"
+  },
+  {
+    "masterCardId": "3950",
+    "externalId": null,
+    "tcgdex_id": "dp3-94",
+    "localId": "094",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "094/132",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 094/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-094-low.png",
+    "imageHighSrc": "cards/dp3-094-high.png"
+  },
+  {
+    "masterCardId": "3946",
+    "externalId": null,
+    "tcgdex_id": "dp3-93",
+    "localId": "093",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "093/132",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 093/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-093-low.png",
+    "imageHighSrc": "cards/dp3-093-high.png"
+  },
+  {
+    "masterCardId": "3942",
+    "externalId": null,
+    "tcgdex_id": "dp3-92",
+    "localId": "092",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "092/132",
+    "cardName": "Lotad",
+    "fullDisplayName": "Lotad 092/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      270
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-092-low.png",
+    "imageHighSrc": "cards/dp3-092-high.png"
+  },
+  {
+    "masterCardId": "3938",
+    "externalId": null,
+    "tcgdex_id": "dp3-91",
+    "localId": "091",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "091/132",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 091/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-091-low.png",
+    "imageHighSrc": "cards/dp3-091-high.png"
+  },
+  {
+    "masterCardId": "3933",
+    "externalId": null,
+    "tcgdex_id": "dp3-90",
+    "localId": "090",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "090/132",
+    "cardName": "Hoppip",
+    "fullDisplayName": "Hoppip 090/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      187
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-090-low.png",
+    "imageHighSrc": "cards/dp3-090-high.png"
+  },
+  {
+    "masterCardId": "3929",
+    "externalId": null,
+    "tcgdex_id": "dp3-89",
+    "localId": "089",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "089/132",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 089/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-089-low.png",
+    "imageHighSrc": "cards/dp3-089-high.png"
+  },
+  {
+    "masterCardId": "3925",
+    "externalId": null,
+    "tcgdex_id": "dp3-88",
+    "localId": "088",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "088/132",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 088/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-088-low.png",
+    "imageHighSrc": "cards/dp3-088-high.png"
+  },
+  {
+    "masterCardId": "3921",
+    "externalId": null,
+    "tcgdex_id": "dp3-87",
+    "localId": "087",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "087/132",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 087/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-087-low.png",
+    "imageHighSrc": "cards/dp3-087-high.png"
+  },
+  {
+    "masterCardId": "3917",
+    "externalId": null,
+    "tcgdex_id": "dp3-86",
+    "localId": "086",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "086/132",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 086/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-086-low.png",
+    "imageHighSrc": "cards/dp3-086-high.png"
+  },
+  {
+    "masterCardId": "3913",
+    "externalId": null,
+    "tcgdex_id": "dp3-85",
+    "localId": "085",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "085/132",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 085/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takao Unno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-085-low.png",
+    "imageHighSrc": "cards/dp3-085-high.png"
+  },
+  {
+    "masterCardId": "3909",
+    "externalId": null,
+    "tcgdex_id": "dp3-84",
+    "localId": "084",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "084/132",
+    "cardName": "Corsola",
+    "fullDisplayName": "Corsola 084/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      222
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-084-low.png",
+    "imageHighSrc": "cards/dp3-084-high.png"
+  },
+  {
+    "masterCardId": "3905",
+    "externalId": null,
+    "tcgdex_id": "dp3-83",
+    "localId": "083",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "083/132",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 083/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-083-low.png",
+    "imageHighSrc": "cards/dp3-083-high.png"
+  },
+  {
+    "masterCardId": "3901",
+    "externalId": null,
+    "tcgdex_id": "dp3-82",
+    "localId": "082",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "082/132",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 082/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-082-low.png",
+    "imageHighSrc": "cards/dp3-082-high.png"
+  },
+  {
+    "masterCardId": "3897",
+    "externalId": null,
+    "tcgdex_id": "dp3-81",
+    "localId": "081",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "081/132",
+    "cardName": "Carvanha",
+    "fullDisplayName": "Carvanha 081/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-081-low.png",
+    "imageHighSrc": "cards/dp3-081-high.png"
+  },
+  {
+    "masterCardId": "3893",
+    "externalId": null,
+    "tcgdex_id": "dp3-80",
+    "localId": "080",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "080/132",
+    "cardName": "Burmy Trash Cloak",
+    "fullDisplayName": "Burmy Trash Cloak 080/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-080-low.png",
+    "imageHighSrc": "cards/dp3-080-high.png"
+  },
+  {
+    "masterCardId": "3890",
+    "externalId": null,
+    "tcgdex_id": "dp3-79",
+    "localId": "079",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "079/132",
+    "cardName": "Burmy Sandy Cloak",
+    "fullDisplayName": "Burmy Sandy Cloak 079/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-079-low.png",
+    "imageHighSrc": "cards/dp3-079-high.png"
+  },
+  {
+    "masterCardId": "3885",
+    "externalId": null,
+    "tcgdex_id": "dp3-78",
+    "localId": "078",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "078/132",
+    "cardName": "Burmy Plant Cloak",
+    "fullDisplayName": "Burmy Plant Cloak 078/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-078-low.png",
+    "imageHighSrc": "cards/dp3-078-high.png"
+  },
+  {
+    "masterCardId": "3882",
+    "externalId": null,
+    "tcgdex_id": "dp3-77",
+    "localId": "077",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "077/132",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 077/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-077-low.png",
+    "imageHighSrc": "cards/dp3-077-high.png"
+  },
+  {
+    "masterCardId": "3878",
+    "externalId": null,
+    "tcgdex_id": "dp3-76",
+    "localId": "076",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "076/132",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 076/132 Secret Wonders",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-076-low.png",
+    "imageHighSrc": "cards/dp3-076-high.png"
+  },
+  {
+    "masterCardId": "3875",
+    "externalId": null,
+    "tcgdex_id": "dp3-75",
+    "localId": "075",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "075/132",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 075/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-075-low.png",
+    "imageHighSrc": "cards/dp3-075-high.png"
+  },
+  {
+    "masterCardId": "3871",
+    "externalId": null,
+    "tcgdex_id": "dp3-74",
+    "localId": "074",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "074/132",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 074/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-074-low.png",
+    "imageHighSrc": "cards/dp3-074-high.png"
+  },
+  {
+    "masterCardId": "3866",
+    "externalId": null,
+    "tcgdex_id": "dp3-73",
+    "localId": "073",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "073/132",
+    "cardName": "Venomoth",
+    "fullDisplayName": "Venomoth 073/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      49
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venonat",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-073-low.png",
+    "imageHighSrc": "cards/dp3-073-high.png"
+  },
+  {
+    "masterCardId": "3862",
+    "externalId": null,
+    "tcgdex_id": "dp3-72",
+    "localId": "072",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "072/132",
+    "cardName": "Unown [Z]",
+    "fullDisplayName": "Unown [Z] 072/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-072-low.png",
+    "imageHighSrc": "cards/dp3-072-high.png"
+  },
+  {
+    "masterCardId": "3859",
+    "externalId": null,
+    "tcgdex_id": "dp3-71",
+    "localId": "071",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "071/132",
+    "cardName": "Unown [X]",
+    "fullDisplayName": "Unown [X] 071/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-071-low.png",
+    "imageHighSrc": "cards/dp3-071-high.png"
+  },
+  {
+    "masterCardId": "3855",
+    "externalId": null,
+    "tcgdex_id": "dp3-70",
+    "localId": "070",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "070/132",
+    "cardName": "Unown [O]",
+    "fullDisplayName": "Unown [O] 070/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-070-low.png",
+    "imageHighSrc": "cards/dp3-070-high.png"
+  },
+  {
+    "masterCardId": "3851",
+    "externalId": null,
+    "tcgdex_id": "dp3-69",
+    "localId": "069",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "069/132",
+    "cardName": "Unown [N]",
+    "fullDisplayName": "Unown [N] 069/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-069-low.png",
+    "imageHighSrc": "cards/dp3-069-high.png"
+  },
+  {
+    "masterCardId": "3847",
+    "externalId": null,
+    "tcgdex_id": "dp3-68",
+    "localId": "068",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "068/132",
+    "cardName": "Unown [K]",
+    "fullDisplayName": "Unown [K] 068/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-068-low.png",
+    "imageHighSrc": "cards/dp3-068-high.png"
+  },
+  {
+    "masterCardId": "3844",
+    "externalId": null,
+    "tcgdex_id": "dp3-67",
+    "localId": "067",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "067/132",
+    "cardName": "Smoochum",
+    "fullDisplayName": "Smoochum 067/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      238
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-067-low.png",
+    "imageHighSrc": "cards/dp3-067-high.png"
+  },
+  {
+    "masterCardId": "3840",
+    "externalId": null,
+    "tcgdex_id": "dp3-66",
+    "localId": "066",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "066/132",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 066/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-066-low.png",
+    "imageHighSrc": "cards/dp3-066-high.png"
+  },
+  {
+    "masterCardId": "3836",
+    "externalId": null,
+    "tcgdex_id": "dp3-65",
+    "localId": "065",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "065/132",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 065/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-065-low.png",
+    "imageHighSrc": "cards/dp3-065-high.png"
+  },
+  {
+    "masterCardId": "3832",
+    "externalId": null,
+    "tcgdex_id": "dp3-64",
+    "localId": "064",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "064/132",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 064/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-064-low.png",
+    "imageHighSrc": "cards/dp3-064-high.png"
+  },
+  {
+    "masterCardId": "3828",
+    "externalId": null,
+    "tcgdex_id": "dp3-63",
+    "localId": "063",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "063/132",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 063/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-063-low.png",
+    "imageHighSrc": "cards/dp3-063-high.png"
+  },
+  {
+    "masterCardId": "3824",
+    "externalId": null,
+    "tcgdex_id": "dp3-62",
+    "localId": "062",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "062/132",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 062/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-062-low.png",
+    "imageHighSrc": "cards/dp3-062-high.png"
+  },
+  {
+    "masterCardId": "3820",
+    "externalId": null,
+    "tcgdex_id": "dp3-61",
+    "localId": "061",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "061/132",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 061/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-061-low.png",
+    "imageHighSrc": "cards/dp3-061-high.png"
+  },
+  {
+    "masterCardId": "3816",
+    "externalId": null,
+    "tcgdex_id": "dp3-60",
+    "localId": "060",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "060/132",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 060/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-060-low.png",
+    "imageHighSrc": "cards/dp3-060-high.png"
+  },
+  {
+    "masterCardId": "3812",
+    "externalId": null,
+    "tcgdex_id": "dp3-59",
+    "localId": "059",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "059/132",
+    "cardName": "Pinsir",
+    "fullDisplayName": "Pinsir 059/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-059-low.png",
+    "imageHighSrc": "cards/dp3-059-high.png"
+  },
+  {
+    "masterCardId": "3808",
+    "externalId": null,
+    "tcgdex_id": "dp3-58",
+    "localId": "058",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "058/132",
+    "cardName": "Pidgeotto",
+    "fullDisplayName": "Pidgeotto 058/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-058-low.png",
+    "imageHighSrc": "cards/dp3-058-high.png"
+  },
+  {
+    "masterCardId": "3804",
+    "externalId": null,
+    "tcgdex_id": "dp3-57",
+    "localId": "057",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "057/132",
+    "cardName": "Nidorino",
+    "fullDisplayName": "Nidorino 057/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      33
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♂",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-057-low.png",
+    "imageHighSrc": "cards/dp3-057-high.png"
+  },
+  {
+    "masterCardId": "3801",
+    "externalId": null,
+    "tcgdex_id": "dp3-56",
+    "localId": "056",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "056/132",
+    "cardName": "Muk",
+    "fullDisplayName": "Muk 056/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-056-low.png",
+    "imageHighSrc": "cards/dp3-056-high.png"
+  },
+  {
+    "masterCardId": "3797",
+    "externalId": null,
+    "tcgdex_id": "dp3-55",
+    "localId": "055",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "055/132",
+    "cardName": "Miltank",
+    "fullDisplayName": "Miltank 055/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      241
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-055-low.png",
+    "imageHighSrc": "cards/dp3-055-high.png"
+  },
+  {
+    "masterCardId": "3793",
+    "externalId": null,
+    "tcgdex_id": "dp3-54",
+    "localId": "054",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "054/132",
+    "cardName": "Lombre",
+    "fullDisplayName": "Lombre 054/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      271
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lotad",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-054-low.png",
+    "imageHighSrc": "cards/dp3-054-high.png"
+  },
+  {
+    "masterCardId": "3789",
+    "externalId": null,
+    "tcgdex_id": "dp3-53",
+    "localId": "053",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "053/132",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 053/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-053-low.png",
+    "imageHighSrc": "cards/dp3-053-high.png"
+  },
+  {
+    "masterCardId": "3785",
+    "externalId": null,
+    "tcgdex_id": "dp3-52",
+    "localId": "052",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "052/132",
+    "cardName": "Kecleon",
+    "fullDisplayName": "Kecleon 052/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      352
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-052-low.png",
+    "imageHighSrc": "cards/dp3-052-high.png"
+  },
+  {
+    "masterCardId": "3781",
+    "externalId": null,
+    "tcgdex_id": "dp3-51",
+    "localId": "051",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "051/132",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 051/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-051-low.png",
+    "imageHighSrc": "cards/dp3-051-high.png"
+  },
+  {
+    "masterCardId": "3777",
+    "externalId": null,
+    "tcgdex_id": "dp3-50",
+    "localId": "050",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "050/132",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 050/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-050-low.png",
+    "imageHighSrc": "cards/dp3-050-high.png"
+  },
+  {
+    "masterCardId": "3773",
+    "externalId": null,
+    "tcgdex_id": "dp3-49",
+    "localId": "049",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "049/132",
+    "cardName": "Farfetch'd",
+    "fullDisplayName": "Farfetch'd 049/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      83
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-049-low.png",
+    "imageHighSrc": "cards/dp3-049-high.png"
+  },
+  {
+    "masterCardId": "3768",
+    "externalId": null,
+    "tcgdex_id": "dp3-48",
+    "localId": "048",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "048/132",
+    "cardName": "Donphan",
+    "fullDisplayName": "Donphan 048/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      232
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Phanpy",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-048-low.png",
+    "imageHighSrc": "cards/dp3-048-high.png"
+  },
+  {
+    "masterCardId": "3764",
+    "externalId": null,
+    "tcgdex_id": "dp3-47",
+    "localId": "047",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "047/132",
+    "cardName": "Cloyster",
+    "fullDisplayName": "Cloyster 047/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      91
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellder",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-047-low.png",
+    "imageHighSrc": "cards/dp3-047-high.png"
+  },
+  {
+    "masterCardId": "3760",
+    "externalId": null,
+    "tcgdex_id": "dp3-46",
+    "localId": "046",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "046/132",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 046/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-046-low.png",
+    "imageHighSrc": "cards/dp3-046-high.png"
+  },
+  {
+    "masterCardId": "3756",
+    "externalId": null,
+    "tcgdex_id": "dp3-45",
+    "localId": "045",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "045/132",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 045/132 Secret Wonders",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-045-low.png",
+    "imageHighSrc": "cards/dp3-045-high.png"
+  },
+  {
+    "masterCardId": "3752",
+    "externalId": null,
+    "tcgdex_id": "dp3-44",
+    "localId": "044",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "044/132",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 044/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-044-low.png",
+    "imageHighSrc": "cards/dp3-044-high.png"
+  },
+  {
+    "masterCardId": "3748",
+    "externalId": null,
+    "tcgdex_id": "dp3-43",
+    "localId": "043",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "043/132",
+    "cardName": "Wormadam Trash Cloak",
+    "fullDisplayName": "Wormadam Trash Cloak 043/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Trash Cloak",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-043-low.png",
+    "imageHighSrc": "cards/dp3-043-high.png"
+  },
+  {
+    "masterCardId": "3744",
+    "externalId": null,
+    "tcgdex_id": "dp3-42",
+    "localId": "042",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "042/132",
+    "cardName": "Wormadam Sandy Cloak",
+    "fullDisplayName": "Wormadam Sandy Cloak 042/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Sandy Cloak",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-042-low.png",
+    "imageHighSrc": "cards/dp3-042-high.png"
+  },
+  {
+    "masterCardId": "3740",
+    "externalId": null,
+    "tcgdex_id": "dp3-41",
+    "localId": "041",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "041/132",
+    "cardName": "Wormadam Plant Cloak",
+    "fullDisplayName": "Wormadam Plant Cloak 041/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      413
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy Plant Cloak",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-041-low.png",
+    "imageHighSrc": "cards/dp3-041-high.png"
+  },
+  {
+    "masterCardId": "3736",
+    "externalId": null,
+    "tcgdex_id": "dp3-40",
+    "localId": "040",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "040/132",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 040/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      461
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sneasel",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-040-low.png",
+    "imageHighSrc": "cards/dp3-040-high.png"
+  },
+  {
+    "masterCardId": "3732",
+    "externalId": null,
+    "tcgdex_id": "dp3-39",
+    "localId": "039",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "039/132",
+    "cardName": "Unown [S]",
+    "fullDisplayName": "Unown [S] 039/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp3-039-low.png",
+    "imageHighSrc": "cards/dp3-039-high.png"
+  },
+  {
+    "masterCardId": "3728",
+    "externalId": null,
+    "tcgdex_id": "dp3-38",
+    "localId": "038",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "038/132",
+    "cardName": "Sunflora",
+    "fullDisplayName": "Sunflora 038/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      192
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sunkern",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-038-low.png",
+    "imageHighSrc": "cards/dp3-038-high.png"
+  },
+  {
+    "masterCardId": "3724",
+    "externalId": null,
+    "tcgdex_id": "dp3-37",
+    "localId": "037",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "037/132",
+    "cardName": "Sharpedo",
+    "fullDisplayName": "Sharpedo 037/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-037-low.png",
+    "imageHighSrc": "cards/dp3-037-high.png"
+  },
+  {
+    "masterCardId": "3720",
+    "externalId": null,
+    "tcgdex_id": "dp3-36",
+    "localId": "036",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "036/132",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 036/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-036-low.png",
+    "imageHighSrc": "cards/dp3-036-high.png"
+  },
+  {
+    "masterCardId": "3716",
+    "externalId": null,
+    "tcgdex_id": "dp3-35",
+    "localId": "035",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "035/132",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 035/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-035-low.png",
+    "imageHighSrc": "cards/dp3-035-high.png"
+  },
+  {
+    "masterCardId": "3712",
+    "externalId": null,
+    "tcgdex_id": "dp3-34",
+    "localId": "034",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "034/132",
+    "cardName": "Nidoking",
+    "fullDisplayName": "Nidoking 034/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorino",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-034-low.png",
+    "imageHighSrc": "cards/dp3-034-high.png"
+  },
+  {
+    "masterCardId": "3708",
+    "externalId": null,
+    "tcgdex_id": "dp3-33",
+    "localId": "033",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "033/132",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 033/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Burmy",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-033-low.png",
+    "imageHighSrc": "cards/dp3-033-high.png"
+  },
+  {
+    "masterCardId": "3704",
+    "externalId": null,
+    "tcgdex_id": "dp3-32",
+    "localId": "032",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "032/132",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 032/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-032-low.png",
+    "imageHighSrc": "cards/dp3-032-high.png"
+  },
+  {
+    "masterCardId": "3697",
+    "externalId": null,
+    "tcgdex_id": "dp3-31",
+    "localId": "031",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "031/132",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 031/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-031-low.png",
+    "imageHighSrc": "cards/dp3-031-high.png"
+  },
+  {
+    "masterCardId": "3692",
+    "externalId": null,
+    "tcgdex_id": "dp3-30",
+    "localId": "030",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "030/132",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 030/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-030-low.png",
+    "imageHighSrc": "cards/dp3-030-high.png"
+  },
+  {
+    "masterCardId": "3687",
+    "externalId": null,
+    "tcgdex_id": "dp3-29",
+    "localId": "029",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "029/132",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 029/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-029-low.png",
+    "imageHighSrc": "cards/dp3-029-high.png"
+  },
+  {
+    "masterCardId": "3682",
+    "externalId": null,
+    "tcgdex_id": "dp3-28",
+    "localId": "028",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "028/132",
+    "cardName": "Golduck",
+    "fullDisplayName": "Golduck 028/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-028-low.png",
+    "imageHighSrc": "cards/dp3-028-high.png"
+  },
+  {
+    "masterCardId": "3678",
+    "externalId": null,
+    "tcgdex_id": "dp3-27",
+    "localId": "027",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "027/132",
+    "cardName": "Furret",
+    "fullDisplayName": "Furret 027/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      162
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sentret",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-027-low.png",
+    "imageHighSrc": "cards/dp3-027-high.png"
+  },
+  {
+    "masterCardId": "3672",
+    "externalId": null,
+    "tcgdex_id": "dp3-26",
+    "localId": "026",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "026/132",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 026/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-026-low.png",
+    "imageHighSrc": "cards/dp3-026-high.png"
+  },
+  {
+    "masterCardId": "3669",
+    "externalId": null,
+    "tcgdex_id": "dp3-25",
+    "localId": "025",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "025/132",
+    "cardName": "Electivire",
+    "fullDisplayName": "Electivire 025/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electabuzz",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-025-low.png",
+    "imageHighSrc": "cards/dp3-025-high.png"
+  },
+  {
+    "masterCardId": "3664",
+    "externalId": null,
+    "tcgdex_id": "dp3-24",
+    "localId": "024",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "024/132",
+    "cardName": "Dugtrio",
+    "fullDisplayName": "Dugtrio 024/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Diglett",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-024-low.png",
+    "imageHighSrc": "cards/dp3-024-high.png"
+  },
+  {
+    "masterCardId": "3659",
+    "externalId": null,
+    "tcgdex_id": "dp3-23",
+    "localId": "023",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "023/132",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 023/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-023-low.png",
+    "imageHighSrc": "cards/dp3-023-high.png"
+  },
+  {
+    "masterCardId": "3654",
+    "externalId": null,
+    "tcgdex_id": "dp3-22",
+    "localId": "022",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "022/132",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 022/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-022-low.png",
+    "imageHighSrc": "cards/dp3-022-high.png"
+  },
+  {
+    "masterCardId": "3649",
+    "externalId": null,
+    "tcgdex_id": "dp3-21",
+    "localId": "021",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "021/132",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 021/132 Secret Wonders",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-021-low.png",
+    "imageHighSrc": "cards/dp3-021-high.png"
+  },
+  {
+    "masterCardId": "3645",
+    "externalId": null,
+    "tcgdex_id": "dp3-20",
+    "localId": "020",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "020/132",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 020/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-020-low.png",
+    "imageHighSrc": "cards/dp3-020-high.png"
+  },
+  {
+    "masterCardId": "3640",
+    "externalId": null,
+    "tcgdex_id": "dp3-19",
+    "localId": "019",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "019/132",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 019/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-019-low.png",
+    "imageHighSrc": "cards/dp3-019-high.png"
+  },
+  {
+    "masterCardId": "3636",
+    "externalId": null,
+    "tcgdex_id": "dp3-18",
+    "localId": "018",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "018/132",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 018/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-018-low.png",
+    "imageHighSrc": "cards/dp3-018-high.png"
+  },
+  {
+    "masterCardId": "3631",
+    "externalId": null,
+    "tcgdex_id": "dp3-17",
+    "localId": "017",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "017/132",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 017/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-017-low.png",
+    "imageHighSrc": "cards/dp3-017-high.png"
+  },
+  {
+    "masterCardId": "3627",
+    "externalId": null,
+    "tcgdex_id": "dp3-16",
+    "localId": "016",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "016/132",
+    "cardName": "Raikou",
+    "fullDisplayName": "Raikou 016/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-016-low.png",
+    "imageHighSrc": "cards/dp3-016-high.png"
+  },
+  {
+    "masterCardId": "3622",
+    "externalId": null,
+    "tcgdex_id": "dp3-15",
+    "localId": "015",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "015/132",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 015/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-015-low.png",
+    "imageHighSrc": "cards/dp3-015-high.png"
+  },
+  {
+    "masterCardId": "3617",
+    "externalId": null,
+    "tcgdex_id": "dp3-14",
+    "localId": "014",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "014/132",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 014/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-014-low.png",
+    "imageHighSrc": "cards/dp3-014-high.png"
+  },
+  {
+    "masterCardId": "3604",
+    "externalId": null,
+    "tcgdex_id": "dp3-13",
+    "localId": "013",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "013/132",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 013/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-013-low.png",
+    "imageHighSrc": "cards/dp3-013-high.png"
+  },
+  {
+    "masterCardId": "3599",
+    "externalId": null,
+    "tcgdex_id": "dp3-12",
+    "localId": "012",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "012/132",
+    "cardName": "Lickilicky",
+    "fullDisplayName": "Lickilicky 012/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      463
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lickitung",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-012-low.png",
+    "imageHighSrc": "cards/dp3-012-high.png"
+  },
+  {
+    "masterCardId": "3592",
+    "externalId": null,
+    "tcgdex_id": "dp3-11",
+    "localId": "011",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "011/132",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 011/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-011-low.png",
+    "imageHighSrc": "cards/dp3-011-high.png"
+  },
+  {
+    "masterCardId": "3585",
+    "externalId": null,
+    "tcgdex_id": "dp3-10",
+    "localId": "010",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "010/132",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 010/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-010-low.png",
+    "imageHighSrc": "cards/dp3-010-high.png"
+  },
+  {
+    "masterCardId": "3580",
+    "externalId": null,
+    "tcgdex_id": "dp3-9",
+    "localId": "009",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "009/132",
+    "cardName": "Gastrodon West Sea",
+    "fullDisplayName": "Gastrodon West Sea 009/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      423
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellos West Sea",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-009-low.png",
+    "imageHighSrc": "cards/dp3-009-high.png"
+  },
+  {
+    "masterCardId": "3573",
+    "externalId": null,
+    "tcgdex_id": "dp3-8",
+    "localId": "008",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "008/132",
+    "cardName": "Gastrodon East Sea",
+    "fullDisplayName": "Gastrodon East Sea 008/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      423
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shellos East Sea",
+    "artist": "Kazuyuki Kano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-008-low.png",
+    "imageHighSrc": "cards/dp3-008-high.png"
+  },
+  {
+    "masterCardId": "3568",
+    "externalId": null,
+    "tcgdex_id": "dp3-7",
+    "localId": "007",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "007/132",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir 007/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-007-low.png",
+    "imageHighSrc": "cards/dp3-007-high.png"
+  },
+  {
+    "masterCardId": "3561",
+    "externalId": null,
+    "tcgdex_id": "dp3-6",
+    "localId": "006",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "006/132",
+    "cardName": "Gallade",
+    "fullDisplayName": "Gallade 006/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-006-low.png",
+    "imageHighSrc": "cards/dp3-006-high.png"
+  },
+  {
+    "masterCardId": "3556",
+    "externalId": null,
+    "tcgdex_id": "dp3-5",
+    "localId": "005",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "005/132",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 005/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-005-low.png",
+    "imageHighSrc": "cards/dp3-005-high.png"
+  },
+  {
+    "masterCardId": "3550",
+    "externalId": null,
+    "tcgdex_id": "dp3-4",
+    "localId": "004",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "004/132",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 004/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-004-low.png",
+    "imageHighSrc": "cards/dp3-004-high.png"
+  },
+  {
+    "masterCardId": "3542",
+    "externalId": null,
+    "tcgdex_id": "dp3-3",
+    "localId": "003",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "003/132",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 003/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-003-low.png",
+    "imageHighSrc": "cards/dp3-003-high.png"
+  },
+  {
+    "masterCardId": "3537",
+    "externalId": null,
+    "tcgdex_id": "dp3-2",
+    "localId": "002",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "002/132",
+    "cardName": "Blastoise",
+    "fullDisplayName": "Blastoise 002/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-002-low.png",
+    "imageHighSrc": "cards/dp3-002-high.png"
+  },
+  {
+    "masterCardId": "3530",
+    "externalId": null,
+    "tcgdex_id": "dp3-1",
+    "localId": "001",
+    "setCode": "dp3",
+    "setTcgdexId": "dp3",
+    "cardNumber": "001/132",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 001/132 Secret Wonders",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp3-001-low.png",
+    "imageHighSrc": "cards/dp3-001-high.png"
+  }
+]

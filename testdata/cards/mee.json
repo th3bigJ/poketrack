@@ -1,0 +1,250 @@
+[
+  {
+    "masterCardId": "22032",
+    "externalId": null,
+    "tcgdex_id": "mee-008",
+    "localId": "008",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "008/8",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 008/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-008-low.webp",
+    "imageHighSrc": "cards/mee-008-low.webp"
+  },
+  {
+    "masterCardId": "22031",
+    "externalId": null,
+    "tcgdex_id": "mee-007",
+    "localId": "007",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "007/8",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 007/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-007-low.webp",
+    "imageHighSrc": "cards/mee-007-low.webp"
+  },
+  {
+    "masterCardId": "22030",
+    "externalId": null,
+    "tcgdex_id": "mee-006",
+    "localId": "006",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "006/8",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 006/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-006-low.webp",
+    "imageHighSrc": "cards/mee-006-low.webp"
+  },
+  {
+    "masterCardId": "22029",
+    "externalId": null,
+    "tcgdex_id": "mee-005",
+    "localId": "005",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "005/8",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 005/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-005-low.webp",
+    "imageHighSrc": "cards/mee-005-low.webp"
+  },
+  {
+    "masterCardId": "22028",
+    "externalId": null,
+    "tcgdex_id": "mee-004",
+    "localId": "004",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "004/8",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 004/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-004-low.webp",
+    "imageHighSrc": "cards/mee-004-low.webp"
+  },
+  {
+    "masterCardId": "22027",
+    "externalId": null,
+    "tcgdex_id": "mee-003",
+    "localId": "003",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "003/8",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 003/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-003-low.webp",
+    "imageHighSrc": "cards/mee-003-low.webp"
+  },
+  {
+    "masterCardId": "22026",
+    "externalId": null,
+    "tcgdex_id": "mee-002",
+    "localId": "002",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "002/8",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 002/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-002-low.webp",
+    "imageHighSrc": "cards/mee-002-low.webp"
+  },
+  {
+    "masterCardId": "22025",
+    "externalId": null,
+    "tcgdex_id": "mee-001",
+    "localId": "001",
+    "setCode": "mee",
+    "setTcgdexId": "mee",
+    "cardNumber": "001/8",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 001/8 Mega Evolution Energy",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Normal",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/mee-001-low.webp",
+    "imageHighSrc": "cards/mee-001-low.webp"
+  }
+]

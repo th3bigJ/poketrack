@@ -1,0 +1,3444 @@
+[
+  {
+    "masterCardId": "4960",
+    "externalId": null,
+    "tcgdex_id": "dp7-SH3",
+    "localId": "SH3",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "SH3/100",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb SH3/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-SH3-low.png",
+    "imageHighSrc": "cards/dp7-SH3-high.png"
+  },
+  {
+    "masterCardId": "4954",
+    "externalId": null,
+    "tcgdex_id": "dp7-SH2",
+    "localId": "SH2",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "SH2/100",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull SH2/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-SH2-low.png",
+    "imageHighSrc": "cards/dp7-SH2-high.png"
+  },
+  {
+    "masterCardId": "4947",
+    "externalId": null,
+    "tcgdex_id": "dp7-SH1",
+    "localId": "SH1",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "SH1/100",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon SH1/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-SH1-low.png",
+    "imageHighSrc": "cards/dp7-SH1-high.png"
+  },
+  {
+    "masterCardId": "4940",
+    "externalId": null,
+    "tcgdex_id": "dp7-103",
+    "localId": "103",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "103/100",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 103/100 Stormfront",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-103-low.png",
+    "imageHighSrc": "cards/dp7-103-high.png"
+  },
+  {
+    "masterCardId": "4933",
+    "externalId": null,
+    "tcgdex_id": "dp7-102",
+    "localId": "102",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "102/100",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 102/100 Stormfront",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-102-low.png",
+    "imageHighSrc": "cards/dp7-102-high.png"
+  },
+  {
+    "masterCardId": "4926",
+    "externalId": null,
+    "tcgdex_id": "dp7-101",
+    "localId": "101",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "101/100",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 101/100 Stormfront",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-101-low.png",
+    "imageHighSrc": "cards/dp7-101-high.png"
+  },
+  {
+    "masterCardId": "4919",
+    "externalId": null,
+    "tcgdex_id": "dp7-100",
+    "localId": "100",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "100/100",
+    "cardName": "Regigigas LV.X",
+    "fullDisplayName": "Regigigas LV.X 100/100 Stormfront",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Regigigas",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-100-low.png",
+    "imageHighSrc": "cards/dp7-100-high.png"
+  },
+  {
+    "masterCardId": "4912",
+    "externalId": null,
+    "tcgdex_id": "dp7-99",
+    "localId": "099",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "099/100",
+    "cardName": "Raichu LV.X",
+    "fullDisplayName": "Raichu LV.X 099/100 Stormfront",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Raichu",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-099-low.png",
+    "imageHighSrc": "cards/dp7-099-high.png"
+  },
+  {
+    "masterCardId": "4903",
+    "externalId": null,
+    "tcgdex_id": "dp7-98",
+    "localId": "098",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "098/100",
+    "cardName": "Machamp LV.X",
+    "fullDisplayName": "Machamp LV.X 098/100 Stormfront",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machamp",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-098-low.png",
+    "imageHighSrc": "cards/dp7-098-high.png"
+  },
+  {
+    "masterCardId": "4896",
+    "externalId": null,
+    "tcgdex_id": "dp7-97",
+    "localId": "097",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "097/100",
+    "cardName": "Heatran LV.X",
+    "fullDisplayName": "Heatran LV.X 097/100 Stormfront",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Heatran",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-097-low.png",
+    "imageHighSrc": "cards/dp7-097-high.png"
+  },
+  {
+    "masterCardId": "4888",
+    "externalId": null,
+    "tcgdex_id": "dp7-96",
+    "localId": "096",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "096/100",
+    "cardName": "Dusknoir LV.X",
+    "fullDisplayName": "Dusknoir LV.X 096/100 Stormfront",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusknoir",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-096-low.png",
+    "imageHighSrc": "cards/dp7-096-high.png"
+  },
+  {
+    "masterCardId": "4881",
+    "externalId": null,
+    "tcgdex_id": "dp7-95",
+    "localId": "095",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "095/100",
+    "cardName": "Warp Energy",
+    "fullDisplayName": "Warp Energy 095/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-095-low.png",
+    "imageHighSrc": "cards/dp7-095-high.png"
+  },
+  {
+    "masterCardId": "4871",
+    "externalId": null,
+    "tcgdex_id": "dp7-94",
+    "localId": "094",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "094/100",
+    "cardName": "Cyclone Energy",
+    "fullDisplayName": "Cyclone Energy 094/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-094-low.png",
+    "imageHighSrc": "cards/dp7-094-high.png"
+  },
+  {
+    "masterCardId": "4863",
+    "externalId": null,
+    "tcgdex_id": "dp7-93",
+    "localId": "093",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "093/100",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 093/100 Stormfront",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-093-low.png",
+    "imageHighSrc": "cards/dp7-093-high.png"
+  },
+  {
+    "masterCardId": "4859",
+    "externalId": null,
+    "tcgdex_id": "dp7-92",
+    "localId": "092",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "092/100",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 092/100 Stormfront",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-092-low.png",
+    "imageHighSrc": "cards/dp7-092-high.png"
+  },
+  {
+    "masterCardId": "4851",
+    "externalId": null,
+    "tcgdex_id": "dp7-91",
+    "localId": "091",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "091/100",
+    "cardName": "Premier Ball",
+    "fullDisplayName": "Premier Ball 091/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-091-low.png",
+    "imageHighSrc": "cards/dp7-091-high.png"
+  },
+  {
+    "masterCardId": "4843",
+    "externalId": null,
+    "tcgdex_id": "dp7-90",
+    "localId": "090",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "090/100",
+    "cardName": "Poké Healer +",
+    "fullDisplayName": "Poké Healer + 090/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-090-low.png",
+    "imageHighSrc": "cards/dp7-090-high.png"
+  },
+  {
+    "masterCardId": "4834",
+    "externalId": null,
+    "tcgdex_id": "dp7-89",
+    "localId": "089",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "089/100",
+    "cardName": "Poké Drawer +",
+    "fullDisplayName": "Poké Drawer + 089/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-089-low.png",
+    "imageHighSrc": "cards/dp7-089-high.png"
+  },
+  {
+    "masterCardId": "4826",
+    "externalId": null,
+    "tcgdex_id": "dp7-88",
+    "localId": "088",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "088/100",
+    "cardName": "Poké Blower +",
+    "fullDisplayName": "Poké Blower + 088/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-088-low.png",
+    "imageHighSrc": "cards/dp7-088-high.png"
+  },
+  {
+    "masterCardId": "4818",
+    "externalId": null,
+    "tcgdex_id": "dp7-87",
+    "localId": "087",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "087/100",
+    "cardName": "Marley's Request",
+    "fullDisplayName": "Marley's Request 087/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-087-low.png",
+    "imageHighSrc": "cards/dp7-087-high.png"
+  },
+  {
+    "masterCardId": "4810",
+    "externalId": null,
+    "tcgdex_id": "dp7-86",
+    "localId": "086",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "086/100",
+    "cardName": "Luxury Ball",
+    "fullDisplayName": "Luxury Ball 086/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-086-low.png",
+    "imageHighSrc": "cards/dp7-086-high.png"
+  },
+  {
+    "masterCardId": "4803",
+    "externalId": null,
+    "tcgdex_id": "dp7-85",
+    "localId": "085",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "085/100",
+    "cardName": "Great Ball",
+    "fullDisplayName": "Great Ball 085/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-085-low.png",
+    "imageHighSrc": "cards/dp7-085-high.png"
+  },
+  {
+    "masterCardId": "4796",
+    "externalId": null,
+    "tcgdex_id": "dp7-84",
+    "localId": "084",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "084/100",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 084/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-084-low.png",
+    "imageHighSrc": "cards/dp7-084-high.png"
+  },
+  {
+    "masterCardId": "4788",
+    "externalId": null,
+    "tcgdex_id": "dp7-83",
+    "localId": "083",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "083/100",
+    "cardName": "Energy Link",
+    "fullDisplayName": "Energy Link 083/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-083-low.png",
+    "imageHighSrc": "cards/dp7-083-high.png"
+  },
+  {
+    "masterCardId": "4779",
+    "externalId": null,
+    "tcgdex_id": "dp7-82",
+    "localId": "082",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "082/100",
+    "cardName": "Conductive Quarry",
+    "fullDisplayName": "Conductive Quarry 082/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-082-low.png",
+    "imageHighSrc": "cards/dp7-082-high.png"
+  },
+  {
+    "masterCardId": "4772",
+    "externalId": null,
+    "tcgdex_id": "dp7-81",
+    "localId": "081",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "081/100",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 081/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-081-low.png",
+    "imageHighSrc": "cards/dp7-081-high.png"
+  },
+  {
+    "masterCardId": "4764",
+    "externalId": null,
+    "tcgdex_id": "dp7-80",
+    "localId": "080",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "080/100",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 080/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-080-low.png",
+    "imageHighSrc": "cards/dp7-080-high.png"
+  },
+  {
+    "masterCardId": "4757",
+    "externalId": null,
+    "tcgdex_id": "dp7-79",
+    "localId": "079",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "079/100",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 079/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-079-low.png",
+    "imageHighSrc": "cards/dp7-079-high.png"
+  },
+  {
+    "masterCardId": "4749",
+    "externalId": null,
+    "tcgdex_id": "dp7-78",
+    "localId": "078",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "078/100",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 078/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-078-low.png",
+    "imageHighSrc": "cards/dp7-078-high.png"
+  },
+  {
+    "masterCardId": "4743",
+    "externalId": null,
+    "tcgdex_id": "dp7-77",
+    "localId": "077",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "077/100",
+    "cardName": "Swinub",
+    "fullDisplayName": "Swinub 077/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      220
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-077-low.png",
+    "imageHighSrc": "cards/dp7-077-high.png"
+  },
+  {
+    "masterCardId": "4731",
+    "externalId": null,
+    "tcgdex_id": "dp7-76",
+    "localId": "076",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "076/100",
+    "cardName": "Stunky",
+    "fullDisplayName": "Stunky 076/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      434
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-076-low.png",
+    "imageHighSrc": "cards/dp7-076-high.png"
+  },
+  {
+    "masterCardId": "4723",
+    "externalId": null,
+    "tcgdex_id": "dp7-75",
+    "localId": "075",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "075/100",
+    "cardName": "Starly",
+    "fullDisplayName": "Starly 075/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      396
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-075-low.png",
+    "imageHighSrc": "cards/dp7-075-high.png"
+  },
+  {
+    "masterCardId": "4715",
+    "externalId": null,
+    "tcgdex_id": "dp7-74",
+    "localId": "074",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "074/100",
+    "cardName": "Snover",
+    "fullDisplayName": "Snover 074/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      459
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-074-low.png",
+    "imageHighSrc": "cards/dp7-074-high.png"
+  },
+  {
+    "masterCardId": "4710",
+    "externalId": null,
+    "tcgdex_id": "dp7-73",
+    "localId": "073",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "073/100",
+    "cardName": "Skorupi",
+    "fullDisplayName": "Skorupi 073/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      451
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-073-low.png",
+    "imageHighSrc": "cards/dp7-073-high.png"
+  },
+  {
+    "masterCardId": "4701",
+    "externalId": null,
+    "tcgdex_id": "dp7-72",
+    "localId": "072",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "072/100",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 072/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-072-low.png",
+    "imageHighSrc": "cards/dp7-072-high.png"
+  },
+  {
+    "masterCardId": "4693",
+    "externalId": null,
+    "tcgdex_id": "dp7-71",
+    "localId": "071",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "071/100",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 071/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-071-low.png",
+    "imageHighSrc": "cards/dp7-071-high.png"
+  },
+  {
+    "masterCardId": "4685",
+    "externalId": null,
+    "tcgdex_id": "dp7-70",
+    "localId": "070",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "070/100",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 070/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-070-low.png",
+    "imageHighSrc": "cards/dp7-070-high.png"
+  },
+  {
+    "masterCardId": "4678",
+    "externalId": null,
+    "tcgdex_id": "dp7-69",
+    "localId": "069",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "069/100",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 069/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-069-low.png",
+    "imageHighSrc": "cards/dp7-069-high.png"
+  },
+  {
+    "masterCardId": "4672",
+    "externalId": null,
+    "tcgdex_id": "dp7-68",
+    "localId": "068",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "068/100",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 068/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-068-low.png",
+    "imageHighSrc": "cards/dp7-068-high.png"
+  },
+  {
+    "masterCardId": "4664",
+    "externalId": null,
+    "tcgdex_id": "dp7-67",
+    "localId": "067",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "067/100",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 067/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-067-low.png",
+    "imageHighSrc": "cards/dp7-067-high.png"
+  },
+  {
+    "masterCardId": "4656",
+    "externalId": null,
+    "tcgdex_id": "dp7-66",
+    "localId": "066",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "066/100",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 066/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-066-low.png",
+    "imageHighSrc": "cards/dp7-066-high.png"
+  },
+  {
+    "masterCardId": "4647",
+    "externalId": null,
+    "tcgdex_id": "dp7-65",
+    "localId": "065",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "065/100",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 065/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-065-low.png",
+    "imageHighSrc": "cards/dp7-065-high.png"
+  },
+  {
+    "masterCardId": "4638",
+    "externalId": null,
+    "tcgdex_id": "dp7-64",
+    "localId": "064",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "064/100",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 064/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-064-low.png",
+    "imageHighSrc": "cards/dp7-064-high.png"
+  },
+  {
+    "masterCardId": "4631",
+    "externalId": null,
+    "tcgdex_id": "dp7-63",
+    "localId": "063",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "063/100",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 063/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-063-low.png",
+    "imageHighSrc": "cards/dp7-063-high.png"
+  },
+  {
+    "masterCardId": "4623",
+    "externalId": null,
+    "tcgdex_id": "dp7-62",
+    "localId": "062",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "062/100",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 062/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-062-low.png",
+    "imageHighSrc": "cards/dp7-062-high.png"
+  },
+  {
+    "masterCardId": "4616",
+    "externalId": null,
+    "tcgdex_id": "dp7-61",
+    "localId": "061",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "061/100",
+    "cardName": "Finneon",
+    "fullDisplayName": "Finneon 061/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      456
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-061-low.png",
+    "imageHighSrc": "cards/dp7-061-high.png"
+  },
+  {
+    "masterCardId": "4608",
+    "externalId": null,
+    "tcgdex_id": "dp7-60",
+    "localId": "060",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "060/100",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 060/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-060-low.png",
+    "imageHighSrc": "cards/dp7-060-high.png"
+  },
+  {
+    "masterCardId": "4600",
+    "externalId": null,
+    "tcgdex_id": "dp7-59",
+    "localId": "059",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "059/100",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 059/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-059-low.png",
+    "imageHighSrc": "cards/dp7-059-high.png"
+  },
+  {
+    "masterCardId": "4592",
+    "externalId": null,
+    "tcgdex_id": "dp7-58",
+    "localId": "058",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "058/100",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 058/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-058-low.png",
+    "imageHighSrc": "cards/dp7-058-high.png"
+  },
+  {
+    "masterCardId": "4585",
+    "externalId": null,
+    "tcgdex_id": "dp7-57",
+    "localId": "057",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "057/100",
+    "cardName": "Combee",
+    "fullDisplayName": "Combee 057/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      415
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-057-low.png",
+    "imageHighSrc": "cards/dp7-057-high.png"
+  },
+  {
+    "masterCardId": "4576",
+    "externalId": null,
+    "tcgdex_id": "dp7-56",
+    "localId": "056",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "056/100",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 056/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-056-low.png",
+    "imageHighSrc": "cards/dp7-056-high.png"
+  },
+  {
+    "masterCardId": "4569",
+    "externalId": null,
+    "tcgdex_id": "dp7-55",
+    "localId": "055",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "055/100",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 055/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-055-low.png",
+    "imageHighSrc": "cards/dp7-055-high.png"
+  },
+  {
+    "masterCardId": "4560",
+    "externalId": null,
+    "tcgdex_id": "dp7-54",
+    "localId": "054",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "054/100",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 054/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-054-low.png",
+    "imageHighSrc": "cards/dp7-054-high.png"
+  },
+  {
+    "masterCardId": "4550",
+    "externalId": null,
+    "tcgdex_id": "dp7-53",
+    "localId": "053",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "053/100",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 053/100 Stormfront",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-053-low.png",
+    "imageHighSrc": "cards/dp7-053-high.png"
+  },
+  {
+    "masterCardId": "4543",
+    "externalId": null,
+    "tcgdex_id": "dp7-52",
+    "localId": "052",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "052/100",
+    "cardName": "Staravia",
+    "fullDisplayName": "Staravia 052/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      397
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Starly",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-052-low.png",
+    "imageHighSrc": "cards/dp7-052-high.png"
+  },
+  {
+    "masterCardId": "4534",
+    "externalId": null,
+    "tcgdex_id": "dp7-51",
+    "localId": "051",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "051/100",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 051/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-051-low.png",
+    "imageHighSrc": "cards/dp7-051-high.png"
+  },
+  {
+    "masterCardId": "4525",
+    "externalId": null,
+    "tcgdex_id": "dp7-50",
+    "localId": "050",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "050/100",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 050/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-050-low.png",
+    "imageHighSrc": "cards/dp7-050-high.png"
+  },
+  {
+    "masterCardId": "4516",
+    "externalId": null,
+    "tcgdex_id": "dp7-49",
+    "localId": "049",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "049/100",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 049/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-049-low.png",
+    "imageHighSrc": "cards/dp7-049-high.png"
+  },
+  {
+    "masterCardId": "4507",
+    "externalId": null,
+    "tcgdex_id": "dp7-48",
+    "localId": "048",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "048/100",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 048/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-048-low.png",
+    "imageHighSrc": "cards/dp7-048-high.png"
+  },
+  {
+    "masterCardId": "4496",
+    "externalId": null,
+    "tcgdex_id": "dp7-47",
+    "localId": "047",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "047/100",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 047/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-047-low.png",
+    "imageHighSrc": "cards/dp7-047-high.png"
+  },
+  {
+    "masterCardId": "4486",
+    "externalId": null,
+    "tcgdex_id": "dp7-46",
+    "localId": "046",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "046/100",
+    "cardName": "Piloswine",
+    "fullDisplayName": "Piloswine 046/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      221
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swinub",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-046-low.png",
+    "imageHighSrc": "cards/dp7-046-high.png"
+  },
+  {
+    "masterCardId": "4478",
+    "externalId": null,
+    "tcgdex_id": "dp7-45",
+    "localId": "045",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "045/100",
+    "cardName": "Pichu",
+    "fullDisplayName": "Pichu 045/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-045-low.png",
+    "imageHighSrc": "cards/dp7-045-high.png"
+  },
+  {
+    "masterCardId": "4469",
+    "externalId": null,
+    "tcgdex_id": "dp7-44",
+    "localId": "044",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "044/100",
+    "cardName": "Miltank",
+    "fullDisplayName": "Miltank 044/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      241
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-044-low.png",
+    "imageHighSrc": "cards/dp7-044-high.png"
+  },
+  {
+    "masterCardId": "4459",
+    "externalId": null,
+    "tcgdex_id": "dp7-43",
+    "localId": "043",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "043/100",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 043/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-043-low.png",
+    "imageHighSrc": "cards/dp7-043-high.png"
+  },
+  {
+    "masterCardId": "4448",
+    "externalId": null,
+    "tcgdex_id": "dp7-42",
+    "localId": "042",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "042/100",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 042/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-042-low.png",
+    "imageHighSrc": "cards/dp7-042-high.png"
+  },
+  {
+    "masterCardId": "4439",
+    "externalId": null,
+    "tcgdex_id": "dp7-41",
+    "localId": "041",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "041/100",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 041/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-041-low.png",
+    "imageHighSrc": "cards/dp7-041-high.png"
+  },
+  {
+    "masterCardId": "4425",
+    "externalId": null,
+    "tcgdex_id": "dp7-40",
+    "localId": "040",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "040/100",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 040/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-040-low.png",
+    "imageHighSrc": "cards/dp7-040-high.png"
+  },
+  {
+    "masterCardId": "4417",
+    "externalId": null,
+    "tcgdex_id": "dp7-39",
+    "localId": "039",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "039/100",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 039/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-039-low.png",
+    "imageHighSrc": "cards/dp7-039-high.png"
+  },
+  {
+    "masterCardId": "4402",
+    "externalId": null,
+    "tcgdex_id": "dp7-38",
+    "localId": "038",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "038/100",
+    "cardName": "Farfetch'd",
+    "fullDisplayName": "Farfetch'd 038/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      83
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-038-low.png",
+    "imageHighSrc": "cards/dp7-038-high.png"
+  },
+  {
+    "masterCardId": "4393",
+    "externalId": null,
+    "tcgdex_id": "dp7-37",
+    "localId": "037",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "037/100",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 037/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-037-low.png",
+    "imageHighSrc": "cards/dp7-037-high.png"
+  },
+  {
+    "masterCardId": "4384",
+    "externalId": null,
+    "tcgdex_id": "dp7-36",
+    "localId": "036",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "036/100",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 036/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-036-low.png",
+    "imageHighSrc": "cards/dp7-036-high.png"
+  },
+  {
+    "masterCardId": "4375",
+    "externalId": null,
+    "tcgdex_id": "dp7-35",
+    "localId": "035",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "035/100",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 035/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-035-low.png",
+    "imageHighSrc": "cards/dp7-035-high.png"
+  },
+  {
+    "masterCardId": "4365",
+    "externalId": null,
+    "tcgdex_id": "dp7-34",
+    "localId": "034",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "034/100",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 034/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-034-low.png",
+    "imageHighSrc": "cards/dp7-034-high.png"
+  },
+  {
+    "masterCardId": "4357",
+    "externalId": null,
+    "tcgdex_id": "dp7-33",
+    "localId": "033",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "033/100",
+    "cardName": "Budew",
+    "fullDisplayName": "Budew 033/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      406
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-033-low.png",
+    "imageHighSrc": "cards/dp7-033-high.png"
+  },
+  {
+    "masterCardId": "4345",
+    "externalId": null,
+    "tcgdex_id": "dp7-32",
+    "localId": "032",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "032/100",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 032/100 Stormfront",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-032-low.png",
+    "imageHighSrc": "cards/dp7-032-high.png"
+  },
+  {
+    "masterCardId": "4336",
+    "externalId": null,
+    "tcgdex_id": "dp7-31",
+    "localId": "031",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "031/100",
+    "cardName": "Vespiquen",
+    "fullDisplayName": "Vespiquen 031/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      416
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combee",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-031-low.png",
+    "imageHighSrc": "cards/dp7-031-high.png"
+  },
+  {
+    "masterCardId": "4328",
+    "externalId": null,
+    "tcgdex_id": "dp7-30",
+    "localId": "030",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "030/100",
+    "cardName": "Tyranitar",
+    "fullDisplayName": "Tyranitar 030/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-030-low.png",
+    "imageHighSrc": "cards/dp7-030-high.png"
+  },
+  {
+    "masterCardId": "4320",
+    "externalId": null,
+    "tcgdex_id": "dp7-29",
+    "localId": "029",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "029/100",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 029/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-029-low.png",
+    "imageHighSrc": "cards/dp7-029-high.png"
+  },
+  {
+    "masterCardId": "4310",
+    "externalId": null,
+    "tcgdex_id": "dp7-28",
+    "localId": "028",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "028/100",
+    "cardName": "Steelix",
+    "fullDisplayName": "Steelix 028/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-028-low.png",
+    "imageHighSrc": "cards/dp7-028-high.png"
+  },
+  {
+    "masterCardId": "4301",
+    "externalId": null,
+    "tcgdex_id": "dp7-27",
+    "localId": "027",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "027/100",
+    "cardName": "Staraptor",
+    "fullDisplayName": "Staraptor 027/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      398
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staravia",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-027-low.png",
+    "imageHighSrc": "cards/dp7-027-high.png"
+  },
+  {
+    "masterCardId": "4291",
+    "externalId": null,
+    "tcgdex_id": "dp7-26",
+    "localId": "026",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "026/100",
+    "cardName": "Skuntank",
+    "fullDisplayName": "Skuntank 026/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      435
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stunky",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-026-low.png",
+    "imageHighSrc": "cards/dp7-026-high.png"
+  },
+  {
+    "masterCardId": "4281",
+    "externalId": null,
+    "tcgdex_id": "dp7-25",
+    "localId": "025",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "025/100",
+    "cardName": "Scizor",
+    "fullDisplayName": "Scizor 025/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-025-low.png",
+    "imageHighSrc": "cards/dp7-025-high.png"
+  },
+  {
+    "masterCardId": "4272",
+    "externalId": null,
+    "tcgdex_id": "dp7-24",
+    "localId": "024",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "024/100",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 024/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-024-low.png",
+    "imageHighSrc": "cards/dp7-024-high.png"
+  },
+  {
+    "masterCardId": "4263",
+    "externalId": null,
+    "tcgdex_id": "dp7-23",
+    "localId": "023",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "023/100",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 023/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Roselia",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-023-low.png",
+    "imageHighSrc": "cards/dp7-023-high.png"
+  },
+  {
+    "masterCardId": "4256",
+    "externalId": null,
+    "tcgdex_id": "dp7-22",
+    "localId": "022",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "022/100",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 022/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-022-low.png",
+    "imageHighSrc": "cards/dp7-022-high.png"
+  },
+  {
+    "masterCardId": "4246",
+    "externalId": null,
+    "tcgdex_id": "dp7-21",
+    "localId": "021",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "021/100",
+    "cardName": "Mamoswine",
+    "fullDisplayName": "Mamoswine 021/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      473
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piloswine",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-021-low.png",
+    "imageHighSrc": "cards/dp7-021-high.png"
+  },
+  {
+    "masterCardId": "4238",
+    "externalId": null,
+    "tcgdex_id": "dp7-20",
+    "localId": "020",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "020/100",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 020/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-020-low.png",
+    "imageHighSrc": "cards/dp7-020-high.png"
+  },
+  {
+    "masterCardId": "4230",
+    "externalId": null,
+    "tcgdex_id": "dp7-19",
+    "localId": "019",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "019/100",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 019/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-019-low.png",
+    "imageHighSrc": "cards/dp7-019-high.png"
+  },
+  {
+    "masterCardId": "4218",
+    "externalId": null,
+    "tcgdex_id": "dp7-18",
+    "localId": "018",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "018/100",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 018/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-018-low.png",
+    "imageHighSrc": "cards/dp7-018-high.png"
+  },
+  {
+    "masterCardId": "4209",
+    "externalId": null,
+    "tcgdex_id": "dp7-17",
+    "localId": "017",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "017/100",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 017/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-017-low.png",
+    "imageHighSrc": "cards/dp7-017-high.png"
+  },
+  {
+    "masterCardId": "4200",
+    "externalId": null,
+    "tcgdex_id": "dp7-16",
+    "localId": "016",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "016/100",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 016/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-016-low.png",
+    "imageHighSrc": "cards/dp7-016-high.png"
+  },
+  {
+    "masterCardId": "4193",
+    "externalId": null,
+    "tcgdex_id": "dp7-15",
+    "localId": "015",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "015/100",
+    "cardName": "Drapion",
+    "fullDisplayName": "Drapion 015/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skorupi",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-015-low.png",
+    "imageHighSrc": "cards/dp7-015-high.png"
+  },
+  {
+    "masterCardId": "4184",
+    "externalId": null,
+    "tcgdex_id": "dp7-14",
+    "localId": "014",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "014/100",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 014/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cherubi",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-014-low.png",
+    "imageHighSrc": "cards/dp7-014-high.png"
+  },
+  {
+    "masterCardId": "4177",
+    "externalId": null,
+    "tcgdex_id": "dp7-13",
+    "localId": "013",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "013/100",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 013/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bronzor",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-013-low.png",
+    "imageHighSrc": "cards/dp7-013-high.png"
+  },
+  {
+    "masterCardId": "4169",
+    "externalId": null,
+    "tcgdex_id": "dp7-12",
+    "localId": "012",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "012/100",
+    "cardName": "Abomasnow",
+    "fullDisplayName": "Abomasnow 012/100 Stormfront",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      460
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snover",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-012-low.png",
+    "imageHighSrc": "cards/dp7-012-high.png"
+  },
+  {
+    "masterCardId": "4159",
+    "externalId": null,
+    "tcgdex_id": "dp7-11",
+    "localId": "011",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "011/100",
+    "cardName": "Torterra",
+    "fullDisplayName": "Torterra 011/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      389
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grotle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-011-low.png",
+    "imageHighSrc": "cards/dp7-011-high.png"
+  },
+  {
+    "masterCardId": "4151",
+    "externalId": null,
+    "tcgdex_id": "dp7-10",
+    "localId": "010",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "010/100",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 010/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-010-low.png",
+    "imageHighSrc": "cards/dp7-010-high.png"
+  },
+  {
+    "masterCardId": "4141",
+    "externalId": null,
+    "tcgdex_id": "dp7-9",
+    "localId": "009",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "009/100",
+    "cardName": "Regigigas",
+    "fullDisplayName": "Regigigas 009/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-009-low.png",
+    "imageHighSrc": "cards/dp7-009-high.png"
+  },
+  {
+    "masterCardId": "4131",
+    "externalId": null,
+    "tcgdex_id": "dp7-8",
+    "localId": "008",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "008/100",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 008/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-008-low.png",
+    "imageHighSrc": "cards/dp7-008-high.png"
+  },
+  {
+    "masterCardId": "4124",
+    "externalId": null,
+    "tcgdex_id": "dp7-7",
+    "localId": "007",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "007/100",
+    "cardName": "Mismagius",
+    "fullDisplayName": "Mismagius 007/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-007-low.png",
+    "imageHighSrc": "cards/dp7-007-high.png"
+  },
+  {
+    "masterCardId": "4115",
+    "externalId": null,
+    "tcgdex_id": "dp7-6",
+    "localId": "006",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "006/100",
+    "cardName": "Magnezone",
+    "fullDisplayName": "Magnezone 006/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magneton",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-006-low.png",
+    "imageHighSrc": "cards/dp7-006-high.png"
+  },
+  {
+    "masterCardId": "4105",
+    "externalId": null,
+    "tcgdex_id": "dp7-5",
+    "localId": "005",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "005/100",
+    "cardName": "Magnezone",
+    "fullDisplayName": "Magnezone 005/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magneton",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-005-low.png",
+    "imageHighSrc": "cards/dp7-005-high.png"
+  },
+  {
+    "masterCardId": "4098",
+    "externalId": null,
+    "tcgdex_id": "dp7-4",
+    "localId": "004",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "004/100",
+    "cardName": "Lumineon",
+    "fullDisplayName": "Lumineon 004/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      457
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Finneon",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-004-low.png",
+    "imageHighSrc": "cards/dp7-004-high.png"
+  },
+  {
+    "masterCardId": "4088",
+    "externalId": null,
+    "tcgdex_id": "dp7-3",
+    "localId": "003",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "003/100",
+    "cardName": "Infernape",
+    "fullDisplayName": "Infernape 003/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      392
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Monferno",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-003-low.png",
+    "imageHighSrc": "cards/dp7-003-high.png"
+  },
+  {
+    "masterCardId": "4078",
+    "externalId": null,
+    "tcgdex_id": "dp7-2",
+    "localId": "002",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "002/100",
+    "cardName": "Empoleon",
+    "fullDisplayName": "Empoleon 002/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-002-low.png",
+    "imageHighSrc": "cards/dp7-002-high.png"
+  },
+  {
+    "masterCardId": "4061",
+    "externalId": null,
+    "tcgdex_id": "dp7-1",
+    "localId": "001",
+    "setCode": "dp7",
+    "setTcgdexId": "dp7",
+    "cardNumber": "001/100",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 001/100 Stormfront",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp7-001-low.png",
+    "imageHighSrc": "cards/dp7-001-high.png"
+  }
+]

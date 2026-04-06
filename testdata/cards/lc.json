@@ -1,0 +1,3570 @@
+[
+  {
+    "masterCardId": "1907",
+    "externalId": null,
+    "tcgdex_id": "lc-110",
+    "localId": "110",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "110/110",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 110/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-110-low.png",
+    "imageHighSrc": "cards/base6-110-high.png"
+  },
+  {
+    "masterCardId": "1906",
+    "externalId": null,
+    "tcgdex_id": "lc-109",
+    "localId": "109",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "109/110",
+    "cardName": "Mysterious Fossil",
+    "fullDisplayName": "Mysterious Fossil 109/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 10,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-109-low.png",
+    "imageHighSrc": "cards/base6-109-high.png"
+  },
+  {
+    "masterCardId": "1905",
+    "externalId": null,
+    "tcgdex_id": "lc-108",
+    "localId": "108",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "108/110",
+    "cardName": "Bill",
+    "fullDisplayName": "Bill 108/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-108-low.png",
+    "imageHighSrc": "cards/base6-108-high.png"
+  },
+  {
+    "masterCardId": "1904",
+    "externalId": null,
+    "tcgdex_id": "lc-107",
+    "localId": "107",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "107/110",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 107/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-107-low.png",
+    "imageHighSrc": "cards/base6-107-high.png"
+  },
+  {
+    "masterCardId": "1903",
+    "externalId": null,
+    "tcgdex_id": "lc-106",
+    "localId": "106",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "106/110",
+    "cardName": "Challenge!",
+    "fullDisplayName": "Challenge! 106/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-106-low.png",
+    "imageHighSrc": "cards/base6-106-high.png"
+  },
+  {
+    "masterCardId": "1902",
+    "externalId": null,
+    "tcgdex_id": "lc-105",
+    "localId": "105",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "105/110",
+    "cardName": "The Boss's Way",
+    "fullDisplayName": "The Boss's Way 105/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-105-low.png",
+    "imageHighSrc": "cards/base6-105-high.png"
+  },
+  {
+    "masterCardId": "1901",
+    "externalId": null,
+    "tcgdex_id": "lc-104",
+    "localId": "104",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "104/110",
+    "cardName": "Scoop Up",
+    "fullDisplayName": "Scoop Up 104/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-104-low.png",
+    "imageHighSrc": "cards/base6-104-high.png"
+  },
+  {
+    "masterCardId": "1900",
+    "externalId": null,
+    "tcgdex_id": "lc-103",
+    "localId": "103",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "103/110",
+    "cardName": "Pokémon Trader",
+    "fullDisplayName": "Pokémon Trader 103/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-103-low.png",
+    "imageHighSrc": "cards/base6-103-high.png"
+  },
+  {
+    "masterCardId": "1899",
+    "externalId": null,
+    "tcgdex_id": "lc-102",
+    "localId": "102",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "102/110",
+    "cardName": "Pokémon Breeder",
+    "fullDisplayName": "Pokémon Breeder 102/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-102-low.png",
+    "imageHighSrc": "cards/base6-102-high.png"
+  },
+  {
+    "masterCardId": "1898",
+    "externalId": null,
+    "tcgdex_id": "lc-101",
+    "localId": "101",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "101/110",
+    "cardName": "Potion Energy",
+    "fullDisplayName": "Potion Energy 101/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-101-low.png",
+    "imageHighSrc": "cards/base6-101-high.png"
+  },
+  {
+    "masterCardId": "1897",
+    "externalId": null,
+    "tcgdex_id": "lc-100",
+    "localId": "100",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "100/110",
+    "cardName": "Full Heal Energy",
+    "fullDisplayName": "Full Heal Energy 100/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-100-low.png",
+    "imageHighSrc": "cards/base6-100-high.png"
+  },
+  {
+    "masterCardId": "1896",
+    "externalId": null,
+    "tcgdex_id": "lc-99",
+    "localId": "099",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "099/110",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 099/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-099-low.png",
+    "imageHighSrc": "cards/base6-099-high.png"
+  },
+  {
+    "masterCardId": "1895",
+    "externalId": null,
+    "tcgdex_id": "lc-98",
+    "localId": "098",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "098/110",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 098/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-098-low.png",
+    "imageHighSrc": "cards/base6-098-high.png"
+  },
+  {
+    "masterCardId": "1894",
+    "externalId": null,
+    "tcgdex_id": "lc-97",
+    "localId": "097",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "097/110",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 097/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-097-low.png",
+    "imageHighSrc": "cards/base6-097-high.png"
+  },
+  {
+    "masterCardId": "1893",
+    "externalId": null,
+    "tcgdex_id": "lc-96",
+    "localId": "096",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "096/110",
+    "cardName": "Tentacool",
+    "fullDisplayName": "Tentacool 096/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-096-low.png",
+    "imageHighSrc": "cards/base6-096-high.png"
+  },
+  {
+    "masterCardId": "1892",
+    "externalId": null,
+    "tcgdex_id": "lc-95",
+    "localId": "095",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "095/110",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 095/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-095-low.png",
+    "imageHighSrc": "cards/base6-095-high.png"
+  },
+  {
+    "masterCardId": "1891",
+    "externalId": null,
+    "tcgdex_id": "lc-94",
+    "localId": "094",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "094/110",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 094/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-094-low.png",
+    "imageHighSrc": "cards/base6-094-high.png"
+  },
+  {
+    "masterCardId": "1890",
+    "externalId": null,
+    "tcgdex_id": "lc-93",
+    "localId": "093",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "093/110",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 093/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-093-low.png",
+    "imageHighSrc": "cards/base6-093-high.png"
+  },
+  {
+    "masterCardId": "1889",
+    "externalId": null,
+    "tcgdex_id": "lc-92",
+    "localId": "092",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "092/110",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 092/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-092-low.png",
+    "imageHighSrc": "cards/base6-092-high.png"
+  },
+  {
+    "masterCardId": "1888",
+    "externalId": null,
+    "tcgdex_id": "lc-91",
+    "localId": "091",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "091/110",
+    "cardName": "Sandshrew",
+    "fullDisplayName": "Sandshrew 091/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-091-low.png",
+    "imageHighSrc": "cards/base6-091-high.png"
+  },
+  {
+    "masterCardId": "1887",
+    "externalId": null,
+    "tcgdex_id": "lc-90",
+    "localId": "090",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "090/110",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 090/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-090-low.png",
+    "imageHighSrc": "cards/base6-090-high.png"
+  },
+  {
+    "masterCardId": "1886",
+    "externalId": null,
+    "tcgdex_id": "lc-89",
+    "localId": "089",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "089/110",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 089/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-089-low.png",
+    "imageHighSrc": "cards/base6-089-high.png"
+  },
+  {
+    "masterCardId": "1885",
+    "externalId": null,
+    "tcgdex_id": "lc-88",
+    "localId": "088",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "088/110",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 088/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-088-low.png",
+    "imageHighSrc": "cards/base6-088-high.png"
+  },
+  {
+    "masterCardId": "1884",
+    "externalId": null,
+    "tcgdex_id": "lc-87",
+    "localId": "087",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "087/110",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 087/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-087-low.png",
+    "imageHighSrc": "cards/base6-087-high.png"
+  },
+  {
+    "masterCardId": "1883",
+    "externalId": null,
+    "tcgdex_id": "lc-86",
+    "localId": "086",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "086/110",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 086/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-086-low.png",
+    "imageHighSrc": "cards/base6-086-high.png"
+  },
+  {
+    "masterCardId": "1882",
+    "externalId": null,
+    "tcgdex_id": "lc-85",
+    "localId": "085",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "085/110",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 085/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-085-low.png",
+    "imageHighSrc": "cards/base6-085-high.png"
+  },
+  {
+    "masterCardId": "1881",
+    "externalId": null,
+    "tcgdex_id": "lc-84",
+    "localId": "084",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "084/110",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 084/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-084-low.png",
+    "imageHighSrc": "cards/base6-084-high.png"
+  },
+  {
+    "masterCardId": "1880",
+    "externalId": null,
+    "tcgdex_id": "lc-83",
+    "localId": "083",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "083/110",
+    "cardName": "Nidoran ♂",
+    "fullDisplayName": "Nidoran ♂ 083/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      32
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/base6-083-low.png",
+    "imageHighSrc": "cards/base6-083-high.png"
+  },
+  {
+    "masterCardId": "1879",
+    "externalId": null,
+    "tcgdex_id": "lc-82",
+    "localId": "082",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "082/110",
+    "cardName": "Nidoran ♀",
+    "fullDisplayName": "Nidoran ♀ 082/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      29
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/base6-082-low.png",
+    "imageHighSrc": "cards/base6-082-high.png"
+  },
+  {
+    "masterCardId": "1878",
+    "externalId": null,
+    "tcgdex_id": "lc-81",
+    "localId": "081",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "081/110",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 081/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-081-low.png",
+    "imageHighSrc": "cards/base6-081-high.png"
+  },
+  {
+    "masterCardId": "1877",
+    "externalId": null,
+    "tcgdex_id": "lc-80",
+    "localId": "080",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "080/110",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 080/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-080-low.png",
+    "imageHighSrc": "cards/base6-080-high.png"
+  },
+  {
+    "masterCardId": "1876",
+    "externalId": null,
+    "tcgdex_id": "lc-79",
+    "localId": "079",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "079/110",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 079/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-079-low.png",
+    "imageHighSrc": "cards/base6-079-high.png"
+  },
+  {
+    "masterCardId": "1875",
+    "externalId": null,
+    "tcgdex_id": "lc-78",
+    "localId": "078",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "078/110",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 078/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-078-low.png",
+    "imageHighSrc": "cards/base6-078-high.png"
+  },
+  {
+    "masterCardId": "1874",
+    "externalId": null,
+    "tcgdex_id": "lc-77",
+    "localId": "077",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "077/110",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 077/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-077-low.png",
+    "imageHighSrc": "cards/base6-077-high.png"
+  },
+  {
+    "masterCardId": "1873",
+    "externalId": null,
+    "tcgdex_id": "lc-76",
+    "localId": "076",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "076/110",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 076/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-076-low.png",
+    "imageHighSrc": "cards/base6-076-high.png"
+  },
+  {
+    "masterCardId": "1872",
+    "externalId": null,
+    "tcgdex_id": "lc-75",
+    "localId": "075",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "075/110",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 075/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-075-low.png",
+    "imageHighSrc": "cards/base6-075-high.png"
+  },
+  {
+    "masterCardId": "1871",
+    "externalId": null,
+    "tcgdex_id": "lc-74",
+    "localId": "074",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "074/110",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 074/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-074-low.png",
+    "imageHighSrc": "cards/base6-074-high.png"
+  },
+  {
+    "masterCardId": "1870",
+    "externalId": null,
+    "tcgdex_id": "lc-73",
+    "localId": "073",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "073/110",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 073/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-073-low.png",
+    "imageHighSrc": "cards/base6-073-high.png"
+  },
+  {
+    "masterCardId": "1869",
+    "externalId": null,
+    "tcgdex_id": "lc-72",
+    "localId": "072",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "072/110",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 072/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-072-low.png",
+    "imageHighSrc": "cards/base6-072-high.png"
+  },
+  {
+    "masterCardId": "1868",
+    "externalId": null,
+    "tcgdex_id": "lc-71",
+    "localId": "071",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "071/110",
+    "cardName": "Doduo",
+    "fullDisplayName": "Doduo 071/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-071-low.png",
+    "imageHighSrc": "cards/base6-071-high.png"
+  },
+  {
+    "masterCardId": "1867",
+    "externalId": null,
+    "tcgdex_id": "lc-70",
+    "localId": "070",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "070/110",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 070/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-070-low.png",
+    "imageHighSrc": "cards/base6-070-high.png"
+  },
+  {
+    "masterCardId": "1866",
+    "externalId": null,
+    "tcgdex_id": "lc-69",
+    "localId": "069",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "069/110",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 069/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-069-low.png",
+    "imageHighSrc": "cards/base6-069-high.png"
+  },
+  {
+    "masterCardId": "1865",
+    "externalId": null,
+    "tcgdex_id": "lc-68",
+    "localId": "068",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "068/110",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 068/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-068-low.png",
+    "imageHighSrc": "cards/base6-068-high.png"
+  },
+  {
+    "masterCardId": "1864",
+    "externalId": null,
+    "tcgdex_id": "lc-67",
+    "localId": "067",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "067/110",
+    "cardName": "Abra",
+    "fullDisplayName": "Abra 067/110 Legendary Collection",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-067-low.png",
+    "imageHighSrc": "cards/base6-067-high.png"
+  },
+  {
+    "masterCardId": "1863",
+    "externalId": null,
+    "tcgdex_id": "lc-66",
+    "localId": "066",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "066/110",
+    "cardName": "Tentacruel",
+    "fullDisplayName": "Tentacruel 066/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tentacool",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-066-low.png",
+    "imageHighSrc": "cards/base6-066-high.png"
+  },
+  {
+    "masterCardId": "1862",
+    "externalId": null,
+    "tcgdex_id": "lc-65",
+    "localId": "065",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "065/110",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 065/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-065-low.png",
+    "imageHighSrc": "cards/base6-065-high.png"
+  },
+  {
+    "masterCardId": "1861",
+    "externalId": null,
+    "tcgdex_id": "lc-64",
+    "localId": "064",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "064/110",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 064/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-064-low.png",
+    "imageHighSrc": "cards/base6-064-high.png"
+  },
+  {
+    "masterCardId": "1860",
+    "externalId": null,
+    "tcgdex_id": "lc-63",
+    "localId": "063",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "063/110",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 063/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-063-low.png",
+    "imageHighSrc": "cards/base6-063-high.png"
+  },
+  {
+    "masterCardId": "1859",
+    "externalId": null,
+    "tcgdex_id": "lc-62",
+    "localId": "062",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "062/110",
+    "cardName": "Sandslash",
+    "fullDisplayName": "Sandslash 062/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandshrew",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-062-low.png",
+    "imageHighSrc": "cards/base6-062-high.png"
+  },
+  {
+    "masterCardId": "1858",
+    "externalId": null,
+    "tcgdex_id": "lc-61",
+    "localId": "061",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "061/110",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 061/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-061-low.png",
+    "imageHighSrc": "cards/base6-061-high.png"
+  },
+  {
+    "masterCardId": "1857",
+    "externalId": null,
+    "tcgdex_id": "lc-60",
+    "localId": "060",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "060/110",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 060/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-060-low.png",
+    "imageHighSrc": "cards/base6-060-high.png"
+  },
+  {
+    "masterCardId": "1856",
+    "externalId": null,
+    "tcgdex_id": "lc-59",
+    "localId": "059",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "059/110",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 059/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-059-low.png",
+    "imageHighSrc": "cards/base6-059-high.png"
+  },
+  {
+    "masterCardId": "1855",
+    "externalId": null,
+    "tcgdex_id": "lc-58",
+    "localId": "058",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "058/110",
+    "cardName": "Omastar",
+    "fullDisplayName": "Omastar 058/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      139
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Omanyte",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-058-low.png",
+    "imageHighSrc": "cards/base6-058-high.png"
+  },
+  {
+    "masterCardId": "1854",
+    "externalId": null,
+    "tcgdex_id": "lc-57",
+    "localId": "057",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "057/110",
+    "cardName": "Omanyte",
+    "fullDisplayName": "Omanyte 057/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      138
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-057-low.png",
+    "imageHighSrc": "cards/base6-057-high.png"
+  },
+  {
+    "masterCardId": "1853",
+    "externalId": null,
+    "tcgdex_id": "lc-56",
+    "localId": "056",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "056/110",
+    "cardName": "Nidorino",
+    "fullDisplayName": "Nidorino 056/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      33
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♂",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-056-low.png",
+    "imageHighSrc": "cards/base6-056-high.png"
+  },
+  {
+    "masterCardId": "1852",
+    "externalId": null,
+    "tcgdex_id": "lc-55",
+    "localId": "055",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "055/110",
+    "cardName": "Nidorina",
+    "fullDisplayName": "Nidorina 055/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      30
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♀",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-055-low.png",
+    "imageHighSrc": "cards/base6-055-high.png"
+  },
+  {
+    "masterCardId": "1851",
+    "externalId": null,
+    "tcgdex_id": "lc-54",
+    "localId": "054",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "054/110",
+    "cardName": "Metapod",
+    "fullDisplayName": "Metapod 054/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      11
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Caterpie",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-054-low.png",
+    "imageHighSrc": "cards/base6-054-high.png"
+  },
+  {
+    "masterCardId": "1850",
+    "externalId": null,
+    "tcgdex_id": "lc-53",
+    "localId": "053",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "053/110",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 053/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-053-low.png",
+    "imageHighSrc": "cards/base6-053-high.png"
+  },
+  {
+    "masterCardId": "1849",
+    "externalId": null,
+    "tcgdex_id": "lc-52",
+    "localId": "052",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "052/110",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 052/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-052-low.png",
+    "imageHighSrc": "cards/base6-052-high.png"
+  },
+  {
+    "masterCardId": "1848",
+    "externalId": null,
+    "tcgdex_id": "lc-51",
+    "localId": "051",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "051/110",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 051/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-051-low.png",
+    "imageHighSrc": "cards/base6-051-high.png"
+  },
+  {
+    "masterCardId": "1847",
+    "externalId": null,
+    "tcgdex_id": "lc-50",
+    "localId": "050",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "050/110",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 050/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-050-low.png",
+    "imageHighSrc": "cards/base6-050-high.png"
+  },
+  {
+    "masterCardId": "1846",
+    "externalId": null,
+    "tcgdex_id": "lc-49",
+    "localId": "049",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "049/110",
+    "cardName": "Kadabra",
+    "fullDisplayName": "Kadabra 049/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      64
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Abra",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-049-low.png",
+    "imageHighSrc": "cards/base6-049-high.png"
+  },
+  {
+    "masterCardId": "1845",
+    "externalId": null,
+    "tcgdex_id": "lc-48",
+    "localId": "048",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "048/110",
+    "cardName": "Kabuto",
+    "fullDisplayName": "Kabuto 048/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 30,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      140
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mysterious Fossil",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-048-low.png",
+    "imageHighSrc": "cards/base6-048-high.png"
+  },
+  {
+    "masterCardId": "1844",
+    "externalId": null,
+    "tcgdex_id": "lc-47",
+    "localId": "047",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "047/110",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 047/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-047-low.png",
+    "imageHighSrc": "cards/base6-047-high.png"
+  },
+  {
+    "masterCardId": "1843",
+    "externalId": null,
+    "tcgdex_id": "lc-46",
+    "localId": "046",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "046/110",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 046/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-046-low.png",
+    "imageHighSrc": "cards/base6-046-high.png"
+  },
+  {
+    "masterCardId": "1842",
+    "externalId": null,
+    "tcgdex_id": "lc-45",
+    "localId": "045",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "045/110",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 045/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-045-low.png",
+    "imageHighSrc": "cards/base6-045-high.png"
+  },
+  {
+    "masterCardId": "1841",
+    "externalId": null,
+    "tcgdex_id": "lc-44",
+    "localId": "044",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "044/110",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 044/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-044-low.png",
+    "imageHighSrc": "cards/base6-044-high.png"
+  },
+  {
+    "masterCardId": "1840",
+    "externalId": null,
+    "tcgdex_id": "lc-43",
+    "localId": "043",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "043/110",
+    "cardName": "Golduck",
+    "fullDisplayName": "Golduck 043/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-043-low.png",
+    "imageHighSrc": "cards/base6-043-high.png"
+  },
+  {
+    "masterCardId": "1839",
+    "externalId": null,
+    "tcgdex_id": "lc-42",
+    "localId": "042",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "042/110",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 042/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-042-low.png",
+    "imageHighSrc": "cards/base6-042-high.png"
+  },
+  {
+    "masterCardId": "1838",
+    "externalId": null,
+    "tcgdex_id": "lc-41",
+    "localId": "041",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "041/110",
+    "cardName": "Dodrio",
+    "fullDisplayName": "Dodrio 041/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      85
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doduo",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-041-low.png",
+    "imageHighSrc": "cards/base6-041-high.png"
+  },
+  {
+    "masterCardId": "1837",
+    "externalId": null,
+    "tcgdex_id": "lc-40",
+    "localId": "040",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "040/110",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 040/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-040-low.png",
+    "imageHighSrc": "cards/base6-040-high.png"
+  },
+  {
+    "masterCardId": "1836",
+    "externalId": null,
+    "tcgdex_id": "lc-39",
+    "localId": "039",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "039/110",
+    "cardName": "Dark Wartortle",
+    "fullDisplayName": "Dark Wartortle 039/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-039-low.png",
+    "imageHighSrc": "cards/base6-039-high.png"
+  },
+  {
+    "masterCardId": "1835",
+    "externalId": null,
+    "tcgdex_id": "lc-38",
+    "localId": "038",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "038/110",
+    "cardName": "Dark Dragonair",
+    "fullDisplayName": "Dark Dragonair 038/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-038-low.png",
+    "imageHighSrc": "cards/base6-038-high.png"
+  },
+  {
+    "masterCardId": "1834",
+    "externalId": null,
+    "tcgdex_id": "lc-37",
+    "localId": "037",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "037/110",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 037/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-037-low.png",
+    "imageHighSrc": "cards/base6-037-high.png"
+  },
+  {
+    "masterCardId": "1833",
+    "externalId": null,
+    "tcgdex_id": "lc-36",
+    "localId": "036",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "036/110",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 036/110 Legendary Collection",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-036-low.png",
+    "imageHighSrc": "cards/base6-036-high.png"
+  },
+  {
+    "masterCardId": "1832",
+    "externalId": null,
+    "tcgdex_id": "lc-35",
+    "localId": "035",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "035/110",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 035/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyhorn",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-035-low.png",
+    "imageHighSrc": "cards/base6-035-high.png"
+  },
+  {
+    "masterCardId": "1831",
+    "externalId": null,
+    "tcgdex_id": "lc-34",
+    "localId": "034",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "034/110",
+    "cardName": "Pidgeotto",
+    "fullDisplayName": "Pidgeotto 034/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      17
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgey",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-034-low.png",
+    "imageHighSrc": "cards/base6-034-high.png"
+  },
+  {
+    "masterCardId": "1830",
+    "externalId": null,
+    "tcgdex_id": "lc-33",
+    "localId": "033",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "033/110",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 033/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-033-low.png",
+    "imageHighSrc": "cards/base6-033-high.png"
+  },
+  {
+    "masterCardId": "1829",
+    "externalId": null,
+    "tcgdex_id": "lc-32",
+    "localId": "032",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "032/110",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 032/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-032-low.png",
+    "imageHighSrc": "cards/base6-032-high.png"
+  },
+  {
+    "masterCardId": "1828",
+    "externalId": null,
+    "tcgdex_id": "lc-31",
+    "localId": "031",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "031/110",
+    "cardName": "Nidoking",
+    "fullDisplayName": "Nidoking 031/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorino",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-031-low.png",
+    "imageHighSrc": "cards/base6-031-high.png"
+  },
+  {
+    "masterCardId": "1827",
+    "externalId": null,
+    "tcgdex_id": "lc-30",
+    "localId": "030",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "030/110",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 030/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-030-low.png",
+    "imageHighSrc": "cards/base6-030-high.png"
+  },
+  {
+    "masterCardId": "1826",
+    "externalId": null,
+    "tcgdex_id": "lc-29",
+    "localId": "029",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "029/110",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 029/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Christopher Rush",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-029-low.png",
+    "imageHighSrc": "cards/base6-029-high.png"
+  },
+  {
+    "masterCardId": "1825",
+    "externalId": null,
+    "tcgdex_id": "lc-28",
+    "localId": "028",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "028/110",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 028/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-028-low.png",
+    "imageHighSrc": "cards/base6-028-high.png"
+  },
+  {
+    "masterCardId": "1824",
+    "externalId": null,
+    "tcgdex_id": "lc-27",
+    "localId": "027",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "027/110",
+    "cardName": "Kabutops",
+    "fullDisplayName": "Kabutops 027/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      141
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kabuto",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-027-low.png",
+    "imageHighSrc": "cards/base6-027-high.png"
+  },
+  {
+    "masterCardId": "1823",
+    "externalId": null,
+    "tcgdex_id": "lc-26",
+    "localId": "026",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "026/110",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 026/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-026-low.png",
+    "imageHighSrc": "cards/base6-026-high.png"
+  },
+  {
+    "masterCardId": "1822",
+    "externalId": null,
+    "tcgdex_id": "lc-25",
+    "localId": "025",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "025/110",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 025/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-025-low.png",
+    "imageHighSrc": "cards/base6-025-high.png"
+  },
+  {
+    "masterCardId": "1821",
+    "externalId": null,
+    "tcgdex_id": "lc-24",
+    "localId": "024",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "024/110",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 024/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-024-low.png",
+    "imageHighSrc": "cards/base6-024-high.png"
+  },
+  {
+    "masterCardId": "1820",
+    "externalId": null,
+    "tcgdex_id": "lc-23",
+    "localId": "023",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "023/110",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 023/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-023-low.png",
+    "imageHighSrc": "cards/base6-023-high.png"
+  },
+  {
+    "masterCardId": "1819",
+    "externalId": null,
+    "tcgdex_id": "lc-22",
+    "localId": "022",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "022/110",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 022/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-022-low.png",
+    "imageHighSrc": "cards/base6-022-high.png"
+  },
+  {
+    "masterCardId": "1818",
+    "externalId": null,
+    "tcgdex_id": "lc-21",
+    "localId": "021",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "021/110",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 021/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-021-low.png",
+    "imageHighSrc": "cards/base6-021-high.png"
+  },
+  {
+    "masterCardId": "1817",
+    "externalId": null,
+    "tcgdex_id": "lc-20",
+    "localId": "020",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "020/110",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 020/110 Legendary Collection",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-020-low.png",
+    "imageHighSrc": "cards/base6-020-high.png"
+  },
+  {
+    "masterCardId": "1816",
+    "externalId": null,
+    "tcgdex_id": "lc-19",
+    "localId": "019",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "019/110",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 019/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-019-low.png",
+    "imageHighSrc": "cards/base6-019-high.png"
+  },
+  {
+    "masterCardId": "1815",
+    "externalId": null,
+    "tcgdex_id": "lc-18",
+    "localId": "018",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "018/110",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 018/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-018-low.png",
+    "imageHighSrc": "cards/base6-018-high.png"
+  },
+  {
+    "masterCardId": "1814",
+    "externalId": null,
+    "tcgdex_id": "lc-17",
+    "localId": "017",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "017/110",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 017/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-017-low.png",
+    "imageHighSrc": "cards/base6-017-high.png"
+  },
+  {
+    "masterCardId": "1813",
+    "externalId": null,
+    "tcgdex_id": "lc-16",
+    "localId": "016",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "016/110",
+    "cardName": "Muk",
+    "fullDisplayName": "Muk 016/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-016-low.png",
+    "imageHighSrc": "cards/base6-016-high.png"
+  },
+  {
+    "masterCardId": "1812",
+    "externalId": null,
+    "tcgdex_id": "lc-15",
+    "localId": "015",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "015/110",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 015/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-015-low.png",
+    "imageHighSrc": "cards/base6-015-high.png"
+  },
+  {
+    "masterCardId": "1811",
+    "externalId": null,
+    "tcgdex_id": "lc-14",
+    "localId": "014",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "014/110",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 014/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-014-low.png",
+    "imageHighSrc": "cards/base6-014-high.png"
+  },
+  {
+    "masterCardId": "1810",
+    "externalId": null,
+    "tcgdex_id": "lc-13",
+    "localId": "013",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "013/110",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 013/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-013-low.png",
+    "imageHighSrc": "cards/base6-013-high.png"
+  },
+  {
+    "masterCardId": "1809",
+    "externalId": null,
+    "tcgdex_id": "lc-12",
+    "localId": "012",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "012/110",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 012/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-012-low.png",
+    "imageHighSrc": "cards/base6-012-high.png"
+  },
+  {
+    "masterCardId": "1808",
+    "externalId": null,
+    "tcgdex_id": "lc-11",
+    "localId": "011",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "011/110",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 011/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Haunter",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-011-low.png",
+    "imageHighSrc": "cards/base6-011-high.png"
+  },
+  {
+    "masterCardId": "1807",
+    "externalId": null,
+    "tcgdex_id": "lc-10",
+    "localId": "010",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "010/110",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon 010/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-010-low.png",
+    "imageHighSrc": "cards/base6-010-high.png"
+  },
+  {
+    "masterCardId": "1806",
+    "externalId": null,
+    "tcgdex_id": "lc-9",
+    "localId": "009",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "009/110",
+    "cardName": "Dark Vaporeon",
+    "fullDisplayName": "Dark Vaporeon 009/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-009-low.png",
+    "imageHighSrc": "cards/base6-009-high.png"
+  },
+  {
+    "masterCardId": "1805",
+    "externalId": null,
+    "tcgdex_id": "lc-8",
+    "localId": "008",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "008/110",
+    "cardName": "Dark Slowbro",
+    "fullDisplayName": "Dark Slowbro 008/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-008-low.png",
+    "imageHighSrc": "cards/base6-008-high.png"
+  },
+  {
+    "masterCardId": "1804",
+    "externalId": null,
+    "tcgdex_id": "lc-7",
+    "localId": "007",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "007/110",
+    "cardName": "Dark Raichu",
+    "fullDisplayName": "Dark Raichu 007/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-007-low.png",
+    "imageHighSrc": "cards/base6-007-high.png"
+  },
+  {
+    "masterCardId": "1803",
+    "externalId": null,
+    "tcgdex_id": "lc-6",
+    "localId": "006",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "006/110",
+    "cardName": "Dark Persian",
+    "fullDisplayName": "Dark Persian 006/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-006-low.png",
+    "imageHighSrc": "cards/base6-006-high.png"
+  },
+  {
+    "masterCardId": "1802",
+    "externalId": null,
+    "tcgdex_id": "lc-5",
+    "localId": "005",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "005/110",
+    "cardName": "Dark Dragonite",
+    "fullDisplayName": "Dark Dragonite 005/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Dragonair",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-005-low.png",
+    "imageHighSrc": "cards/base6-005-high.png"
+  },
+  {
+    "masterCardId": "1801",
+    "externalId": null,
+    "tcgdex_id": "lc-4",
+    "localId": "004",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "004/110",
+    "cardName": "Dark Blastoise",
+    "fullDisplayName": "Dark Blastoise 004/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Wartortle",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-004-low.png",
+    "imageHighSrc": "cards/base6-004-high.png"
+  },
+  {
+    "masterCardId": "1800",
+    "externalId": null,
+    "tcgdex_id": "lc-3",
+    "localId": "003",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "003/110",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 003/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-003-low.png",
+    "imageHighSrc": "cards/base6-003-high.png"
+  },
+  {
+    "masterCardId": "1799",
+    "externalId": null,
+    "tcgdex_id": "lc-2",
+    "localId": "002",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "002/110",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 002/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-002-low.png",
+    "imageHighSrc": "cards/base6-002-high.png"
+  },
+  {
+    "masterCardId": "1798",
+    "externalId": null,
+    "tcgdex_id": "lc-1",
+    "localId": "001",
+    "setCode": "lc",
+    "setTcgdexId": "lc",
+    "cardNumber": "001/110",
+    "cardName": "Alakazam",
+    "fullDisplayName": "Alakazam 001/110 Legendary Collection",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kadabra",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base6-001-low.png",
+    "imageHighSrc": "cards/base6-001-high.png"
+  }
+]

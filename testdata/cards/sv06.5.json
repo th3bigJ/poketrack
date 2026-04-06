@@ -1,0 +1,3218 @@
+[
+  {
+    "masterCardId": "13153",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-099",
+    "localId": "099",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "099/64",
+    "cardName": "Basic Metal Energy",
+    "fullDisplayName": "Basic Metal Energy 099/64 Shrouded Fable",
+    "rarity": "Hyper Rare",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-099-low.png",
+    "imageHighSrc": "cards/sv6pt5-099-high.png"
+  },
+  {
+    "masterCardId": "13143",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-098",
+    "localId": "098",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "098/64",
+    "cardName": "Basic Darkness Energy",
+    "fullDisplayName": "Basic Darkness Energy 098/64 Shrouded Fable",
+    "rarity": "Hyper Rare",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-098-low.png",
+    "imageHighSrc": "cards/sv6pt5-098-high.png"
+  },
+  {
+    "masterCardId": "13134",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-097",
+    "localId": "097",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "097/64",
+    "cardName": "Powerglass",
+    "fullDisplayName": "Powerglass 097/64 Shrouded Fable",
+    "rarity": "Hyper Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-097-low.png",
+    "imageHighSrc": "cards/sv6pt5-097-high.png"
+  },
+  {
+    "masterCardId": "13123",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-096",
+    "localId": "096",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "096/64",
+    "cardName": "Earthen Vessel",
+    "fullDisplayName": "Earthen Vessel 096/64 Shrouded Fable",
+    "rarity": "Hyper Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Ancient"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-096-low.png",
+    "imageHighSrc": "cards/sv6pt5-096-high.png"
+  },
+  {
+    "masterCardId": "13113",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-095",
+    "localId": "095",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "095/64",
+    "cardName": "Pecharunt ex",
+    "fullDisplayName": "Pecharunt ex 095/64 Shrouded Fable",
+    "rarity": "Hyper Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1025
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-095-low.png",
+    "imageHighSrc": "cards/sv6pt5-095-high.png"
+  },
+  {
+    "masterCardId": "13104",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-094",
+    "localId": "094",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "094/64",
+    "cardName": "Cassiopeia",
+    "fullDisplayName": "Cassiopeia 094/64 Shrouded Fable",
+    "rarity": "Special Illustration Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "burari",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-094-low.png",
+    "imageHighSrc": "cards/sv6pt5-094-high.png"
+  },
+  {
+    "masterCardId": "13094",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-093",
+    "localId": "093",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "093/64",
+    "cardName": "Pecharunt ex",
+    "fullDisplayName": "Pecharunt ex 093/64 Shrouded Fable",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1025
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-093-low.png",
+    "imageHighSrc": "cards/sv6pt5-093-high.png"
+  },
+  {
+    "masterCardId": "13084",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-092",
+    "localId": "092",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "092/64",
+    "cardName": "Fezandipiti ex",
+    "fullDisplayName": "Fezandipiti ex 092/64 Shrouded Fable",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1016
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-092-low.png",
+    "imageHighSrc": "cards/sv6pt5-092-high.png"
+  },
+  {
+    "masterCardId": "13075",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-091",
+    "localId": "091",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "091/64",
+    "cardName": "Munkidori ex",
+    "fullDisplayName": "Munkidori ex 091/64 Shrouded Fable",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1015
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-091-low.png",
+    "imageHighSrc": "cards/sv6pt5-091-high.png"
+  },
+  {
+    "masterCardId": "13061",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-090",
+    "localId": "090",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "090/64",
+    "cardName": "Okidogi ex",
+    "fullDisplayName": "Okidogi ex 090/64 Shrouded Fable",
+    "rarity": "Special Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1014
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-090-low.png",
+    "imageHighSrc": "cards/sv6pt5-090-high.png"
+  },
+  {
+    "masterCardId": "13053",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-089",
+    "localId": "089",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "089/64",
+    "cardName": "Xerosic's Machinations",
+    "fullDisplayName": "Xerosic's Machinations 089/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-089-low.png",
+    "imageHighSrc": "cards/sv6pt5-089-high.png"
+  },
+  {
+    "masterCardId": "13043",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-088",
+    "localId": "088",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "088/64",
+    "cardName": "Janine's Secret Art",
+    "fullDisplayName": "Janine's Secret Art 088/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-088-low.png",
+    "imageHighSrc": "cards/sv6pt5-088-high.png"
+  },
+  {
+    "masterCardId": "13033",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-087",
+    "localId": "087",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "087/64",
+    "cardName": "Colress's Tenacity",
+    "fullDisplayName": "Colress's Tenacity 087/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hncl",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-087-low.png",
+    "imageHighSrc": "cards/sv6pt5-087-high.png"
+  },
+  {
+    "masterCardId": "13025",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-086",
+    "localId": "086",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "086/64",
+    "cardName": "Cassiopeia",
+    "fullDisplayName": "Cassiopeia 086/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-086-low.png",
+    "imageHighSrc": "cards/sv6pt5-086-high.png"
+  },
+  {
+    "masterCardId": "13015",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-085",
+    "localId": "085",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "085/64",
+    "cardName": "Pecharunt ex",
+    "fullDisplayName": "Pecharunt ex 085/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1025
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-085-low.png",
+    "imageHighSrc": "cards/sv6pt5-085-high.png"
+  },
+  {
+    "masterCardId": "13005",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-084",
+    "localId": "084",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "084/64",
+    "cardName": "Fezandipiti ex",
+    "fullDisplayName": "Fezandipiti ex 084/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1016
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-084-low.png",
+    "imageHighSrc": "cards/sv6pt5-084-high.png"
+  },
+  {
+    "masterCardId": "12995",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-083",
+    "localId": "083",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "083/64",
+    "cardName": "Munkidori ex",
+    "fullDisplayName": "Munkidori ex 083/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1015
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-083-low.png",
+    "imageHighSrc": "cards/sv6pt5-083-high.png"
+  },
+  {
+    "masterCardId": "12987",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-082",
+    "localId": "082",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "082/64",
+    "cardName": "Okidogi ex",
+    "fullDisplayName": "Okidogi ex 082/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1014
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-082-low.png",
+    "imageHighSrc": "cards/sv6pt5-082-high.png"
+  },
+  {
+    "masterCardId": "12977",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-081",
+    "localId": "081",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "081/64",
+    "cardName": "Revavroom ex",
+    "fullDisplayName": "Revavroom ex 081/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 280,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      966
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Varoom",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-081-low.png",
+    "imageHighSrc": "cards/sv6pt5-081-high.png"
+  },
+  {
+    "masterCardId": "12970",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-080",
+    "localId": "080",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "080/64",
+    "cardName": "Kingdra ex",
+    "fullDisplayName": "Kingdra ex 080/64 Shrouded Fable",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-080-low.png",
+    "imageHighSrc": "cards/sv6pt5-080-high.png"
+  },
+  {
+    "masterCardId": "12960",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-079",
+    "localId": "079",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "079/64",
+    "cardName": "Bewear",
+    "fullDisplayName": "Bewear 079/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      760
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stufful",
+    "artist": "Takeshi Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-079-low.png",
+    "imageHighSrc": "cards/sv6pt5-079-high.png"
+  },
+  {
+    "masterCardId": "12950",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-078",
+    "localId": "078",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "078/64",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 078/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Whisker",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-078-low.png",
+    "imageHighSrc": "cards/sv6pt5-078-high.png"
+  },
+  {
+    "masterCardId": "12940",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-077",
+    "localId": "077",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "077/64",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 077/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Axew",
+    "artist": "MINAMINAMI Take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-077-low.png",
+    "imageHighSrc": "cards/sv6pt5-077-high.png"
+  },
+  {
+    "masterCardId": "12932",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-076",
+    "localId": "076",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "076/64",
+    "cardName": "Cufant",
+    "fullDisplayName": "Cufant 076/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      878
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mina Nakai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-076-low.png",
+    "imageHighSrc": "cards/sv6pt5-076-high.png"
+  },
+  {
+    "masterCardId": "12921",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-075",
+    "localId": "075",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "075/64",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 075/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-075-low.png",
+    "imageHighSrc": "cards/sv6pt5-075-high.png"
+  },
+  {
+    "masterCardId": "12913",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-074",
+    "localId": "074",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "074/64",
+    "cardName": "Okidogi",
+    "fullDisplayName": "Okidogi 074/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1014
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-074-low.png",
+    "imageHighSrc": "cards/sv6pt5-074-high.png"
+  },
+  {
+    "masterCardId": "12903",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-073",
+    "localId": "073",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "073/64",
+    "cardName": "Fezandipiti",
+    "fullDisplayName": "Fezandipiti 073/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      1016
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-073-low.png",
+    "imageHighSrc": "cards/sv6pt5-073-high.png"
+  },
+  {
+    "masterCardId": "12891",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-072",
+    "localId": "072",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "072/64",
+    "cardName": "Munkidori",
+    "fullDisplayName": "Munkidori 072/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      1015
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-072-low.png",
+    "imageHighSrc": "cards/sv6pt5-072-high.png"
+  },
+  {
+    "masterCardId": "12882",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-071",
+    "localId": "071",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "071/64",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 071/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "satoma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-071-low.png",
+    "imageHighSrc": "cards/sv6pt5-071-high.png"
+  },
+  {
+    "masterCardId": "12871",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-070",
+    "localId": "070",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "070/64",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 070/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "James Turner",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-070-low.png",
+    "imageHighSrc": "cards/sv6pt5-070-high.png"
+  },
+  {
+    "masterCardId": "12862",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-069",
+    "localId": "069",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "069/64",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 069/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "James Turner",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-069-low.png",
+    "imageHighSrc": "cards/sv6pt5-069-high.png"
+  },
+  {
+    "masterCardId": "12851",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-068",
+    "localId": "068",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "068/64",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 068/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "James Turner",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-068-low.png",
+    "imageHighSrc": "cards/sv6pt5-068-high.png"
+  },
+  {
+    "masterCardId": "12841",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-067",
+    "localId": "067",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "067/64",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 067/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-067-low.png",
+    "imageHighSrc": "cards/sv6pt5-067-high.png"
+  },
+  {
+    "masterCardId": "12832",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-066",
+    "localId": "066",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "066/64",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 066/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Taiga Kasai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-066-low.png",
+    "imageHighSrc": "cards/sv6pt5-066-high.png"
+  },
+  {
+    "masterCardId": "12821",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-065",
+    "localId": "065",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "065/64",
+    "cardName": "Tapu Bulu",
+    "fullDisplayName": "Tapu Bulu 065/64 Shrouded Fable",
+    "rarity": "Illustration Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      787
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "IKEDA Saki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-065-low.png",
+    "imageHighSrc": "cards/sv6pt5-065-high.png"
+  },
+  {
+    "masterCardId": "12811",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-064",
+    "localId": "064",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "064/64",
+    "cardName": "Xerosic's Machinations",
+    "fullDisplayName": "Xerosic's Machinations 064/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-064-low.png",
+    "imageHighSrc": "cards/sv6pt5-064-high.png"
+  },
+  {
+    "masterCardId": "12802",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-063",
+    "localId": "063",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "063/64",
+    "cardName": "Powerglass",
+    "fullDisplayName": "Powerglass 063/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-063-low.png",
+    "imageHighSrc": "cards/sv6pt5-063-high.png"
+  },
+  {
+    "masterCardId": "12791",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-062",
+    "localId": "062",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "062/64",
+    "cardName": "Poké Vital A",
+    "fullDisplayName": "Poké Vital A 062/64 Shrouded Fable",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "ACE SPEC"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-062-low.png",
+    "imageHighSrc": "cards/sv6pt5-062-high.png"
+  },
+  {
+    "masterCardId": "12781",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-061",
+    "localId": "061",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "061/64",
+    "cardName": "Night Stretcher",
+    "fullDisplayName": "Night Stretcher 061/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-061-low.png",
+    "imageHighSrc": "cards/sv6pt5-061-high.png"
+  },
+  {
+    "masterCardId": "12772",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-060",
+    "localId": "060",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "060/64",
+    "cardName": "Neutralization Zone",
+    "fullDisplayName": "Neutralization Zone 060/64 Shrouded Fable",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium",
+      "ACE SPEC"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "imoniii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-060-low.png",
+    "imageHighSrc": "cards/sv6pt5-060-high.png"
+  },
+  {
+    "masterCardId": "12763",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-059",
+    "localId": "059",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "059/64",
+    "cardName": "Janine's Secret Art",
+    "fullDisplayName": "Janine's Secret Art 059/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-059-low.png",
+    "imageHighSrc": "cards/sv6pt5-059-high.png"
+  },
+  {
+    "masterCardId": "12753",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-058",
+    "localId": "058",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "058/64",
+    "cardName": "Dangerous Laser",
+    "fullDisplayName": "Dangerous Laser 058/64 Shrouded Fable",
+    "rarity": "ACE SPEC Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "ACE SPEC"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "inose yukie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-058-low.png",
+    "imageHighSrc": "cards/sv6pt5-058-high.png"
+  },
+  {
+    "masterCardId": "12743",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-057",
+    "localId": "057",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "057/64",
+    "cardName": "Colress's Tenacity",
+    "fullDisplayName": "Colress's Tenacity 057/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "hncl",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-057-low.png",
+    "imageHighSrc": "cards/sv6pt5-057-high.png"
+  },
+  {
+    "masterCardId": "12735",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-056",
+    "localId": "056",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "056/64",
+    "cardName": "Cassiopeia",
+    "fullDisplayName": "Cassiopeia 056/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-056-low.png",
+    "imageHighSrc": "cards/sv6pt5-056-high.png"
+  },
+  {
+    "masterCardId": "12724",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-055",
+    "localId": "055",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "055/64",
+    "cardName": "Binding Mochi",
+    "fullDisplayName": "Binding Mochi 055/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-055-low.png",
+    "imageHighSrc": "cards/sv6pt5-055-high.png"
+  },
+  {
+    "masterCardId": "12714",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-054",
+    "localId": "054",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "054/64",
+    "cardName": "Academy at Night",
+    "fullDisplayName": "Academy at Night 054/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-054-low.png",
+    "imageHighSrc": "cards/sv6pt5-054-high.png"
+  },
+  {
+    "masterCardId": "12706",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-053",
+    "localId": "053",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "053/64",
+    "cardName": "Bewear",
+    "fullDisplayName": "Bewear 053/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      760
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Stufful",
+    "artist": "Takeshi Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-053-low.png",
+    "imageHighSrc": "cards/sv6pt5-053-high.png"
+  },
+  {
+    "masterCardId": "12696",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-052",
+    "localId": "052",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "052/64",
+    "cardName": "Stufful",
+    "fullDisplayName": "Stufful 052/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      759
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-052-low.png",
+    "imageHighSrc": "cards/sv6pt5-052-high.png"
+  },
+  {
+    "masterCardId": "12686",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-051",
+    "localId": "051",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "051/64",
+    "cardName": "Furfrou",
+    "fullDisplayName": "Furfrou 051/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      676
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinya Komatsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-051-low.png",
+    "imageHighSrc": "cards/sv6pt5-051-high.png"
+  },
+  {
+    "masterCardId": "12676",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-050",
+    "localId": "050",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "050/64",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 050/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Susumu Maeya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-050-low.png",
+    "imageHighSrc": "cards/sv6pt5-050-high.png"
+  },
+  {
+    "masterCardId": "12666",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-049",
+    "localId": "049",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "049/64",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 049/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "NC Empire",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-049-low.png",
+    "imageHighSrc": "cards/sv6pt5-049-high.png"
+  },
+  {
+    "masterCardId": "12656",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-048",
+    "localId": "048",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "048/64",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 048/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-048-low.png",
+    "imageHighSrc": "cards/sv6pt5-048-high.png"
+  },
+  {
+    "masterCardId": "12647",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-047",
+    "localId": "047",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "047/64",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem 047/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-047-low.png",
+    "imageHighSrc": "cards/sv6pt5-047-high.png"
+  },
+  {
+    "masterCardId": "12637",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-046",
+    "localId": "046",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "046/64",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus 046/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      612
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fraxure",
+    "artist": "Tsuyoshi Nagano",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-046-low.png",
+    "imageHighSrc": "cards/sv6pt5-046-high.png"
+  },
+  {
+    "masterCardId": "12628",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-045",
+    "localId": "045",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "045/64",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 045/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Axew",
+    "artist": "Uninori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-045-low.png",
+    "imageHighSrc": "cards/sv6pt5-045-high.png"
+  },
+  {
+    "masterCardId": "12619",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-044",
+    "localId": "044",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "044/64",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 044/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Orca",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-044-low.png",
+    "imageHighSrc": "cards/sv6pt5-044-high.png"
+  },
+  {
+    "masterCardId": "12609",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-043",
+    "localId": "043",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "043/64",
+    "cardName": "Varoom",
+    "fullDisplayName": "Varoom 043/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      965
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HAGIYA Kaoru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-043-low.png",
+    "imageHighSrc": "cards/sv6pt5-043-high.png"
+  },
+  {
+    "masterCardId": "12599",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-042",
+    "localId": "042",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "042/64",
+    "cardName": "Copperajah",
+    "fullDisplayName": "Copperajah 042/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      879
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cufant",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-042-low.png",
+    "imageHighSrc": "cards/sv6pt5-042-high.png"
+  },
+  {
+    "masterCardId": "12589",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-041",
+    "localId": "041",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "041/64",
+    "cardName": "Cufant",
+    "fullDisplayName": "Cufant 041/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      878
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinya Mizuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-041-low.png",
+    "imageHighSrc": "cards/sv6pt5-041-high.png"
+  },
+  {
+    "masterCardId": "12579",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-040",
+    "localId": "040",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "040/64",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect 040/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazumasa Yasukuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-040-low.png",
+    "imageHighSrc": "cards/sv6pt5-040-high.png"
+  },
+  {
+    "masterCardId": "12570",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-039",
+    "localId": "039",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "039/64",
+    "cardName": "Pecharunt ex",
+    "fullDisplayName": "Pecharunt ex 039/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1025
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-039-low.png",
+    "imageHighSrc": "cards/sv6pt5-039-high.png"
+  },
+  {
+    "masterCardId": "12559",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-038",
+    "localId": "038",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "038/64",
+    "cardName": "Fezandipiti ex",
+    "fullDisplayName": "Fezandipiti ex 038/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1016
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-038-low.png",
+    "imageHighSrc": "cards/sv6pt5-038-high.png"
+  },
+  {
+    "masterCardId": "12551",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-037",
+    "localId": "037",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "037/64",
+    "cardName": "Munkidori ex",
+    "fullDisplayName": "Munkidori ex 037/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1015
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-037-low.png",
+    "imageHighSrc": "cards/sv6pt5-037-high.png"
+  },
+  {
+    "masterCardId": "12541",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-036",
+    "localId": "036",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "036/64",
+    "cardName": "Okidogi ex",
+    "fullDisplayName": "Okidogi ex 036/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1014
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-036-low.png",
+    "imageHighSrc": "cards/sv6pt5-036-high.png"
+  },
+  {
+    "masterCardId": "12531",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-035",
+    "localId": "035",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "035/64",
+    "cardName": "Yveltal",
+    "fullDisplayName": "Yveltal 035/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      717
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "SIE NANAHARA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-035-low.png",
+    "imageHighSrc": "cards/sv6pt5-035-high.png"
+  },
+  {
+    "masterCardId": "12521",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-034",
+    "localId": "034",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "034/64",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar 034/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Inkay",
+    "artist": "akagi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-034-low.png",
+    "imageHighSrc": "cards/sv6pt5-034-high.png"
+  },
+  {
+    "masterCardId": "12511",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-033",
+    "localId": "033",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "033/64",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 033/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mori Yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-033-low.png",
+    "imageHighSrc": "cards/sv6pt5-033-high.png"
+  },
+  {
+    "masterCardId": "12501",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-032",
+    "localId": "032",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "032/64",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 032/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-032-low.png",
+    "imageHighSrc": "cards/sv6pt5-032-high.png"
+  },
+  {
+    "masterCardId": "12491",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-031",
+    "localId": "031",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "031/64",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 031/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-031-low.png",
+    "imageHighSrc": "cards/sv6pt5-031-high.png"
+  },
+  {
+    "masterCardId": "12480",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-030",
+    "localId": "030",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "030/64",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 030/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "rika",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-030-low.png",
+    "imageHighSrc": "cards/sv6pt5-030-high.png"
+  },
+  {
+    "masterCardId": "12469",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-029",
+    "localId": "029",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "029/64",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat 029/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-029-low.png",
+    "imageHighSrc": "cards/sv6pt5-029-high.png"
+  },
+  {
+    "masterCardId": "12459",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-028",
+    "localId": "028",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "028/64",
+    "cardName": "Golbat",
+    "fullDisplayName": "Golbat 028/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-028-low.png",
+    "imageHighSrc": "cards/sv6pt5-028-high.png"
+  },
+  {
+    "masterCardId": "12451",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-027",
+    "localId": "027",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "027/64",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 027/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "osare",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-027-low.png",
+    "imageHighSrc": "cards/sv6pt5-027-high.png"
+  },
+  {
+    "masterCardId": "12442",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-026",
+    "localId": "026",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "026/64",
+    "cardName": "Slither Wing",
+    "fullDisplayName": "Slither Wing 026/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      988
+    ],
+    "subtypes": [
+      "Basic",
+      "Ancient"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-026-low.png",
+    "imageHighSrc": "cards/sv6pt5-026-high.png"
+  },
+  {
+    "masterCardId": "12434",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-025",
+    "localId": "025",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "025/64",
+    "cardName": "Bloodmoon Ursaluna",
+    "fullDisplayName": "Bloodmoon Ursaluna 025/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      901
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-025-low.png",
+    "imageHighSrc": "cards/sv6pt5-025-high.png"
+  },
+  {
+    "masterCardId": "12424",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-024",
+    "localId": "024",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "024/64",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 024/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-024-low.png",
+    "imageHighSrc": "cards/sv6pt5-024-high.png"
+  },
+  {
+    "masterCardId": "12414",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-023",
+    "localId": "023",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "023/64",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 023/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aliya Chen",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-023-low.png",
+    "imageHighSrc": "cards/sv6pt5-023-high.png"
+  },
+  {
+    "masterCardId": "12404",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-022",
+    "localId": "022",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "022/64",
+    "cardName": "Sylveon",
+    "fullDisplayName": "Sylveon 022/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      700
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kuroimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-022-low.png",
+    "imageHighSrc": "cards/sv6pt5-022-high.png"
+  },
+  {
+    "masterCardId": "12396",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-021",
+    "localId": "021",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "021/64",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 021/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "matazo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-021-low.png",
+    "imageHighSrc": "cards/sv6pt5-021-high.png"
+  },
+  {
+    "masterCardId": "12386",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-020",
+    "localId": "020",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "020/64",
+    "cardName": "Dusknoir",
+    "fullDisplayName": "Dusknoir 020/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      477
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dusclops",
+    "artist": "danciao",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-020-low.png",
+    "imageHighSrc": "cards/sv6pt5-020-high.png"
+  },
+  {
+    "masterCardId": "12376",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-019",
+    "localId": "019",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "019/64",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 019/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-019-low.png",
+    "imageHighSrc": "cards/sv6pt5-019-high.png"
+  },
+  {
+    "masterCardId": "12366",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-018",
+    "localId": "018",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "018/64",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 018/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "IKEDA Saki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-018-low.png",
+    "imageHighSrc": "cards/sv6pt5-018-high.png"
+  },
+  {
+    "masterCardId": "12357",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-017",
+    "localId": "017",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "017/64",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 017/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Masako Tomii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-017-low.png",
+    "imageHighSrc": "cards/sv6pt5-017-high.png"
+  },
+  {
+    "masterCardId": "12347",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-016",
+    "localId": "016",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "016/64",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 016/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKUBO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-016-low.png",
+    "imageHighSrc": "cards/sv6pt5-016-high.png"
+  },
+  {
+    "masterCardId": "12339",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-015",
+    "localId": "015",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "015/64",
+    "cardName": "Revavroom ex",
+    "fullDisplayName": "Revavroom ex 015/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 280,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      966
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Tera",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Varoom",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-015-low.png",
+    "imageHighSrc": "cards/sv6pt5-015-high.png"
+  },
+  {
+    "masterCardId": "12328",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-014",
+    "localId": "014",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "014/64",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 014/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      461
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sneasel",
+    "artist": "aspara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-014-low.png",
+    "imageHighSrc": "cards/sv6pt5-014-high.png"
+  },
+  {
+    "masterCardId": "12318",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-013",
+    "localId": "013",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "013/64",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 013/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Krgc",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-013-low.png",
+    "imageHighSrc": "cards/sv6pt5-013-high.png"
+  },
+  {
+    "masterCardId": "12308",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-012",
+    "localId": "012",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "012/64",
+    "cardName": "Kingdra ex",
+    "fullDisplayName": "Kingdra ex 012/64 Shrouded Fable",
+    "rarity": "Double Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 310,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "toriyufu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-012-low.png",
+    "imageHighSrc": "cards/sv6pt5-012-high.png"
+  },
+  {
+    "masterCardId": "12298",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-011",
+    "localId": "011",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "011/64",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 011/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-011-low.png",
+    "imageHighSrc": "cards/sv6pt5-011-high.png"
+  },
+  {
+    "masterCardId": "12288",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-010",
+    "localId": "010",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "010/64",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 010/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shimaris Yukichi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-010-low.png",
+    "imageHighSrc": "cards/sv6pt5-010-high.png"
+  },
+  {
+    "masterCardId": "12279",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-009",
+    "localId": "009",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "009/64",
+    "cardName": "Iron Moth",
+    "fullDisplayName": "Iron Moth 009/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      994
+    ],
+    "subtypes": [
+      "Basic",
+      "Future"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-009-low.png",
+    "imageHighSrc": "cards/sv6pt5-009-high.png"
+  },
+  {
+    "masterCardId": "12270",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-008",
+    "localId": "008",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "008/64",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 008/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "burari",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-008-low.png",
+    "imageHighSrc": "cards/sv6pt5-008-high.png"
+  },
+  {
+    "masterCardId": "12261",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-007",
+    "localId": "007",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "007/64",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 007/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "REND",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-007-low.png",
+    "imageHighSrc": "cards/sv6pt5-007-high.png"
+  },
+  {
+    "masterCardId": "12251",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-006",
+    "localId": "006",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "006/64",
+    "cardName": "Tapu Bulu",
+    "fullDisplayName": "Tapu Bulu 006/64 Shrouded Fable",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      787
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-006-low.png",
+    "imageHighSrc": "cards/sv6pt5-006-high.png"
+  },
+  {
+    "masterCardId": "12241",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-005",
+    "localId": "005",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "005/64",
+    "cardName": "Decidueye",
+    "fullDisplayName": "Decidueye 005/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      724
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dartrix",
+    "artist": "DOM",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-005-low.png",
+    "imageHighSrc": "cards/sv6pt5-005-high.png"
+  },
+  {
+    "masterCardId": "12231",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-004",
+    "localId": "004",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "004/64",
+    "cardName": "Dartrix",
+    "fullDisplayName": "Dartrix 004/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      723
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rowlet",
+    "artist": "Tetsu Kayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-004-low.png",
+    "imageHighSrc": "cards/sv6pt5-004-high.png"
+  },
+  {
+    "masterCardId": "12221",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-003",
+    "localId": "003",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "003/64",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 003/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshimi Miyoshi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-003-low.png",
+    "imageHighSrc": "cards/sv6pt5-003-high.png"
+  },
+  {
+    "masterCardId": "12213",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-002",
+    "localId": "002",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "002/64",
+    "cardName": "Galvantula",
+    "fullDisplayName": "Galvantula 002/64 Shrouded Fable",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      596
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Joltik",
+    "artist": "mashu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-002-low.png",
+    "imageHighSrc": "cards/sv6pt5-002-high.png"
+  },
+  {
+    "masterCardId": "12203",
+    "externalId": null,
+    "tcgdex_id": "sv06.5-001",
+    "localId": "001",
+    "setCode": "sv06.5",
+    "setTcgdexId": "sv06.5",
+    "cardNumber": "001/64",
+    "cardName": "Joltik",
+    "fullDisplayName": "Joltik 001/64 Shrouded Fable",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      595
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sv6pt5-001-low.png",
+    "imageHighSrc": "cards/sv6pt5-001-high.png"
+  }
+]

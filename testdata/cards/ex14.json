@@ -1,0 +1,3245 @@
+[
+  {
+    "masterCardId": "8099",
+    "externalId": null,
+    "tcgdex_id": "ex14-100",
+    "localId": "100",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "100/100",
+    "cardName": "Celebi ★",
+    "fullDisplayName": "Celebi ★ 100/100 Crystal Guardians",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-100-low.png",
+    "imageHighSrc": "cards/ex14-100-high.png"
+  },
+  {
+    "masterCardId": "8095",
+    "externalId": null,
+    "tcgdex_id": "ex14-99",
+    "localId": "099",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "099/100",
+    "cardName": "Alakazam ★",
+    "fullDisplayName": "Alakazam ★ 099/100 Crystal Guardians",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-099-low.png",
+    "imageHighSrc": "cards/ex14-099-high.png"
+  },
+  {
+    "masterCardId": "8091",
+    "externalId": null,
+    "tcgdex_id": "ex14-98",
+    "localId": "098",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "098/100",
+    "cardName": "Swampert ex",
+    "fullDisplayName": "Swampert ex 098/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-098-low.png",
+    "imageHighSrc": "cards/ex14-098-high.png"
+  },
+  {
+    "masterCardId": "8088",
+    "externalId": null,
+    "tcgdex_id": "ex14-97",
+    "localId": "097",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "097/100",
+    "cardName": "Shiftry ex",
+    "fullDisplayName": "Shiftry ex 097/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      275
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nuzleaf",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-097-low.png",
+    "imageHighSrc": "cards/ex14-097-high.png"
+  },
+  {
+    "masterCardId": "8083",
+    "externalId": null,
+    "tcgdex_id": "ex14-96",
+    "localId": "096",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "096/100",
+    "cardName": "Sceptile ex δ",
+    "fullDisplayName": "Sceptile ex δ 096/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-096-low.png",
+    "imageHighSrc": "cards/ex14-096-high.png"
+  },
+  {
+    "masterCardId": "8079",
+    "externalId": null,
+    "tcgdex_id": "ex14-95",
+    "localId": "095",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "095/100",
+    "cardName": "Kyogre ex",
+    "fullDisplayName": "Kyogre ex 095/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yasuki Watanabe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-095-low.png",
+    "imageHighSrc": "cards/ex14-095-high.png"
+  },
+  {
+    "masterCardId": "8075",
+    "externalId": null,
+    "tcgdex_id": "ex14-94",
+    "localId": "094",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "094/100",
+    "cardName": "Jirachi ex",
+    "fullDisplayName": "Jirachi ex 094/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-094-low.png",
+    "imageHighSrc": "cards/ex14-094-high.png"
+  },
+  {
+    "masterCardId": "8070",
+    "externalId": null,
+    "tcgdex_id": "ex14-93",
+    "localId": "093",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "093/100",
+    "cardName": "Groudon ex",
+    "fullDisplayName": "Groudon ex 093/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takabon",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-093-low.png",
+    "imageHighSrc": "cards/ex14-093-high.png"
+  },
+  {
+    "masterCardId": "8067",
+    "externalId": null,
+    "tcgdex_id": "ex14-92",
+    "localId": "092",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "092/100",
+    "cardName": "Exploud ex",
+    "fullDisplayName": "Exploud ex 092/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      295
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Loudred",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-092-low.png",
+    "imageHighSrc": "cards/ex14-092-high.png"
+  },
+  {
+    "masterCardId": "8066",
+    "externalId": null,
+    "tcgdex_id": "ex14-91",
+    "localId": "091",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "091/100",
+    "cardName": "Delcatty ex",
+    "fullDisplayName": "Delcatty ex 091/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-091-low.png",
+    "imageHighSrc": "cards/ex14-091-high.png"
+  },
+  {
+    "masterCardId": "8062",
+    "externalId": null,
+    "tcgdex_id": "ex14-90",
+    "localId": "090",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "090/100",
+    "cardName": "Blaziken ex",
+    "fullDisplayName": "Blaziken ex 090/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-090-low.png",
+    "imageHighSrc": "cards/ex14-090-high.png"
+  },
+  {
+    "masterCardId": "8058",
+    "externalId": null,
+    "tcgdex_id": "ex14-89",
+    "localId": "089",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "089/100",
+    "cardName": "Aggron ex",
+    "fullDisplayName": "Aggron ex 089/100 Crystal Guardians",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lairon",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-089-low.png",
+    "imageHighSrc": "cards/ex14-089-high.png"
+  },
+  {
+    "masterCardId": "8054",
+    "externalId": null,
+    "tcgdex_id": "ex14-88",
+    "localId": "088",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "088/100",
+    "cardName": "Double Rainbow Energy",
+    "fullDisplayName": "Double Rainbow Energy 088/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-088-low.png",
+    "imageHighSrc": "cards/ex14-088-high.png"
+  },
+  {
+    "masterCardId": "8050",
+    "externalId": null,
+    "tcgdex_id": "ex14-87",
+    "localId": "087",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "087/100",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 087/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-087-low.png",
+    "imageHighSrc": "cards/ex14-087-high.png"
+  },
+  {
+    "masterCardId": "8046",
+    "externalId": null,
+    "tcgdex_id": "ex14-86",
+    "localId": "086",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "086/100",
+    "cardName": "Energy Search",
+    "fullDisplayName": "Energy Search 086/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kai Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-086-low.png",
+    "imageHighSrc": "cards/ex14-086-high.png"
+  },
+  {
+    "masterCardId": "8042",
+    "externalId": null,
+    "tcgdex_id": "ex14-85",
+    "localId": "085",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "085/100",
+    "cardName": "Windstorm",
+    "fullDisplayName": "Windstorm 085/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-085-low.png",
+    "imageHighSrc": "cards/ex14-085-high.png"
+  },
+  {
+    "masterCardId": "8038",
+    "externalId": null,
+    "tcgdex_id": "ex14-84",
+    "localId": "084",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "084/100",
+    "cardName": "Warp Point",
+    "fullDisplayName": "Warp Point 084/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-084-low.png",
+    "imageHighSrc": "cards/ex14-084-high.png"
+  },
+  {
+    "masterCardId": "8034",
+    "externalId": null,
+    "tcgdex_id": "ex14-83",
+    "localId": "083",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "083/100",
+    "cardName": "PokéNav",
+    "fullDisplayName": "PokéNav 083/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-083-low.png",
+    "imageHighSrc": "cards/ex14-083-high.png"
+  },
+  {
+    "masterCardId": "8030",
+    "externalId": null,
+    "tcgdex_id": "ex14-82",
+    "localId": "082",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "082/100",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 082/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-082-low.png",
+    "imageHighSrc": "cards/ex14-082-high.png"
+  },
+  {
+    "masterCardId": "8026",
+    "externalId": null,
+    "tcgdex_id": "ex14-81",
+    "localId": "081",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "081/100",
+    "cardName": "Mysterious Shard",
+    "fullDisplayName": "Mysterious Shard 081/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-081-low.png",
+    "imageHighSrc": "cards/ex14-081-high.png"
+  },
+  {
+    "masterCardId": "8022",
+    "externalId": null,
+    "tcgdex_id": "ex14-80",
+    "localId": "080",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "080/100",
+    "cardName": "Memory Berry",
+    "fullDisplayName": "Memory Berry 080/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-080-low.png",
+    "imageHighSrc": "cards/ex14-080-high.png"
+  },
+  {
+    "masterCardId": "8018",
+    "externalId": null,
+    "tcgdex_id": "ex14-79",
+    "localId": "079",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "079/100",
+    "cardName": "Holon Circle",
+    "fullDisplayName": "Holon Circle 079/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-079-low.png",
+    "imageHighSrc": "cards/ex14-079-high.png"
+  },
+  {
+    "masterCardId": "8014",
+    "externalId": null,
+    "tcgdex_id": "ex14-78",
+    "localId": "078",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "078/100",
+    "cardName": "Dual Ball",
+    "fullDisplayName": "Dual Ball 078/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "\"Big Mama\" Tagawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-078-low.png",
+    "imageHighSrc": "cards/ex14-078-high.png"
+  },
+  {
+    "masterCardId": "8011",
+    "externalId": null,
+    "tcgdex_id": "ex14-77",
+    "localId": "077",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "077/100",
+    "cardName": "Double Full Heal",
+    "fullDisplayName": "Double Full Heal 077/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-077-low.png",
+    "imageHighSrc": "cards/ex14-077-high.png"
+  },
+  {
+    "masterCardId": "8007",
+    "externalId": null,
+    "tcgdex_id": "ex14-76",
+    "localId": "076",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "076/100",
+    "cardName": "Crystal Shard",
+    "fullDisplayName": "Crystal Shard 076/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-076-low.png",
+    "imageHighSrc": "cards/ex14-076-high.png"
+  },
+  {
+    "masterCardId": "8003",
+    "externalId": null,
+    "tcgdex_id": "ex14-75",
+    "localId": "075",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "075/100",
+    "cardName": "Crystal Beach",
+    "fullDisplayName": "Crystal Beach 075/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-075-low.png",
+    "imageHighSrc": "cards/ex14-075-high.png"
+  },
+  {
+    "masterCardId": "7998",
+    "externalId": null,
+    "tcgdex_id": "ex14-74",
+    "localId": "074",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "074/100",
+    "cardName": "Cessation Crystal",
+    "fullDisplayName": "Cessation Crystal 074/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-074-low.png",
+    "imageHighSrc": "cards/ex14-074-high.png"
+  },
+  {
+    "masterCardId": "7993",
+    "externalId": null,
+    "tcgdex_id": "ex14-73",
+    "localId": "073",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "073/100",
+    "cardName": "Celio's Network",
+    "fullDisplayName": "Celio's Network 073/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-073-low.png",
+    "imageHighSrc": "cards/ex14-073-high.png"
+  },
+  {
+    "masterCardId": "7988",
+    "externalId": null,
+    "tcgdex_id": "ex14-72",
+    "localId": "072",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "072/100",
+    "cardName": "Castaway",
+    "fullDisplayName": "Castaway 072/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-072-low.png",
+    "imageHighSrc": "cards/ex14-072-high.png"
+  },
+  {
+    "masterCardId": "7983",
+    "externalId": null,
+    "tcgdex_id": "ex14-71",
+    "localId": "071",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "071/100",
+    "cardName": "Bill's Maintenance",
+    "fullDisplayName": "Bill's Maintenance 071/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-071-low.png",
+    "imageHighSrc": "cards/ex14-071-high.png"
+  },
+  {
+    "masterCardId": "7977",
+    "externalId": null,
+    "tcgdex_id": "ex14-70",
+    "localId": "070",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "070/100",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 070/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-070-low.png",
+    "imageHighSrc": "cards/ex14-070-high.png"
+  },
+  {
+    "masterCardId": "7972",
+    "externalId": null,
+    "tcgdex_id": "ex14-69",
+    "localId": "069",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "069/100",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 069/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-069-low.png",
+    "imageHighSrc": "cards/ex14-069-high.png"
+  },
+  {
+    "masterCardId": "7967",
+    "externalId": null,
+    "tcgdex_id": "ex14-68",
+    "localId": "068",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "068/100",
+    "cardName": "Treecko δ",
+    "fullDisplayName": "Treecko δ 068/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-068-low.png",
+    "imageHighSrc": "cards/ex14-068-high.png"
+  },
+  {
+    "masterCardId": "7963",
+    "externalId": null,
+    "tcgdex_id": "ex14-67",
+    "localId": "067",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "067/100",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 067/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-067-low.png",
+    "imageHighSrc": "cards/ex14-067-high.png"
+  },
+  {
+    "masterCardId": "7957",
+    "externalId": null,
+    "tcgdex_id": "ex14-66",
+    "localId": "066",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "066/100",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 066/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-066-low.png",
+    "imageHighSrc": "cards/ex14-066-high.png"
+  },
+  {
+    "masterCardId": "7952",
+    "externalId": null,
+    "tcgdex_id": "ex14-65",
+    "localId": "065",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "065/100",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 065/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-065-low.png",
+    "imageHighSrc": "cards/ex14-065-high.png"
+  },
+  {
+    "masterCardId": "7947",
+    "externalId": null,
+    "tcgdex_id": "ex14-64",
+    "localId": "064",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "064/100",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 064/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-064-low.png",
+    "imageHighSrc": "cards/ex14-064-high.png"
+  },
+  {
+    "masterCardId": "7942",
+    "externalId": null,
+    "tcgdex_id": "ex14-63",
+    "localId": "063",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "063/100",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 063/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-063-low.png",
+    "imageHighSrc": "cards/ex14-063-high.png"
+  },
+  {
+    "masterCardId": "7937",
+    "externalId": null,
+    "tcgdex_id": "ex14-62",
+    "localId": "062",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "062/100",
+    "cardName": "Spoink",
+    "fullDisplayName": "Spoink 062/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      325
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-062-low.png",
+    "imageHighSrc": "cards/ex14-062-high.png"
+  },
+  {
+    "masterCardId": "7933",
+    "externalId": null,
+    "tcgdex_id": "ex14-61",
+    "localId": "061",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "061/100",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 061/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-061-low.png",
+    "imageHighSrc": "cards/ex14-061-high.png"
+  },
+  {
+    "masterCardId": "7928",
+    "externalId": null,
+    "tcgdex_id": "ex14-60",
+    "localId": "060",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "060/100",
+    "cardName": "Seedot",
+    "fullDisplayName": "Seedot 060/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      273
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-060-low.png",
+    "imageHighSrc": "cards/ex14-060-high.png"
+  },
+  {
+    "masterCardId": "7923",
+    "externalId": null,
+    "tcgdex_id": "ex14-59",
+    "localId": "059",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "059/100",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 059/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-059-low.png",
+    "imageHighSrc": "cards/ex14-059-high.png"
+  },
+  {
+    "masterCardId": "7918",
+    "externalId": null,
+    "tcgdex_id": "ex14-58",
+    "localId": "058",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "058/100",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 058/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-058-low.png",
+    "imageHighSrc": "cards/ex14-058-high.png"
+  },
+  {
+    "masterCardId": "7913",
+    "externalId": null,
+    "tcgdex_id": "ex14-57",
+    "localId": "057",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "057/100",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 057/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-057-low.png",
+    "imageHighSrc": "cards/ex14-057-high.png"
+  },
+  {
+    "masterCardId": "7908",
+    "externalId": null,
+    "tcgdex_id": "ex14-56",
+    "localId": "056",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "056/100",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 056/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-056-low.png",
+    "imageHighSrc": "cards/ex14-056-high.png"
+  },
+  {
+    "masterCardId": "7903",
+    "externalId": null,
+    "tcgdex_id": "ex14-55",
+    "localId": "055",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "055/100",
+    "cardName": "Lotad",
+    "fullDisplayName": "Lotad 055/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      270
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-055-low.png",
+    "imageHighSrc": "cards/ex14-055-high.png"
+  },
+  {
+    "masterCardId": "7898",
+    "externalId": null,
+    "tcgdex_id": "ex14-54",
+    "localId": "054",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "054/100",
+    "cardName": "Krabby",
+    "fullDisplayName": "Krabby 054/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      98
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-054-low.png",
+    "imageHighSrc": "cards/ex14-054-high.png"
+  },
+  {
+    "masterCardId": "7893",
+    "externalId": null,
+    "tcgdex_id": "ex14-53",
+    "localId": "053",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "053/100",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 053/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-053-low.png",
+    "imageHighSrc": "cards/ex14-053-high.png"
+  },
+  {
+    "masterCardId": "7888",
+    "externalId": null,
+    "tcgdex_id": "ex14-52",
+    "localId": "052",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "052/100",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 052/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-052-low.png",
+    "imageHighSrc": "cards/ex14-052-high.png"
+  },
+  {
+    "masterCardId": "7883",
+    "externalId": null,
+    "tcgdex_id": "ex14-51",
+    "localId": "051",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "051/100",
+    "cardName": "Duskull",
+    "fullDisplayName": "Duskull 051/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      355
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-051-low.png",
+    "imageHighSrc": "cards/ex14-051-high.png"
+  },
+  {
+    "masterCardId": "7878",
+    "externalId": null,
+    "tcgdex_id": "ex14-50",
+    "localId": "050",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "050/100",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 050/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-050-low.png",
+    "imageHighSrc": "cards/ex14-050-high.png"
+  },
+  {
+    "masterCardId": "7873",
+    "externalId": null,
+    "tcgdex_id": "ex14-49",
+    "localId": "049",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "049/100",
+    "cardName": "Charmander δ",
+    "fullDisplayName": "Charmander δ 049/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-049-low.png",
+    "imageHighSrc": "cards/ex14-049-high.png"
+  },
+  {
+    "masterCardId": "7869",
+    "externalId": null,
+    "tcgdex_id": "ex14-48",
+    "localId": "048",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "048/100",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 048/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-048-low.png",
+    "imageHighSrc": "cards/ex14-048-high.png"
+  },
+  {
+    "masterCardId": "7864",
+    "externalId": null,
+    "tcgdex_id": "ex14-47",
+    "localId": "047",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "047/100",
+    "cardName": "Cacnea",
+    "fullDisplayName": "Cacnea 047/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      331
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-047-low.png",
+    "imageHighSrc": "cards/ex14-047-high.png"
+  },
+  {
+    "masterCardId": "7859",
+    "externalId": null,
+    "tcgdex_id": "ex14-46",
+    "localId": "046",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "046/100",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 046/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-046-low.png",
+    "imageHighSrc": "cards/ex14-046-high.png"
+  },
+  {
+    "masterCardId": "7855",
+    "externalId": null,
+    "tcgdex_id": "ex14-45",
+    "localId": "045",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "045/100",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 045/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-045-low.png",
+    "imageHighSrc": "cards/ex14-045-high.png"
+  },
+  {
+    "masterCardId": "7850",
+    "externalId": null,
+    "tcgdex_id": "ex14-44",
+    "localId": "044",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "044/100",
+    "cardName": "Aron",
+    "fullDisplayName": "Aron 044/100 Crystal Guardians",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-044-low.png",
+    "imageHighSrc": "cards/ex14-044-high.png"
+  },
+  {
+    "masterCardId": "7844",
+    "externalId": null,
+    "tcgdex_id": "ex14-43",
+    "localId": "043",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "043/100",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 043/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-043-low.png",
+    "imageHighSrc": "cards/ex14-043-high.png"
+  },
+  {
+    "masterCardId": "7839",
+    "externalId": null,
+    "tcgdex_id": "ex14-42",
+    "localId": "042",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "042/100",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 042/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-042-low.png",
+    "imageHighSrc": "cards/ex14-042-high.png"
+  },
+  {
+    "masterCardId": "7834",
+    "externalId": null,
+    "tcgdex_id": "ex14-41",
+    "localId": "041",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "041/100",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 041/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-041-low.png",
+    "imageHighSrc": "cards/ex14-041-high.png"
+  },
+  {
+    "masterCardId": "7829",
+    "externalId": null,
+    "tcgdex_id": "ex14-40",
+    "localId": "040",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "040/100",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 040/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-040-low.png",
+    "imageHighSrc": "cards/ex14-040-high.png"
+  },
+  {
+    "masterCardId": "7824",
+    "externalId": null,
+    "tcgdex_id": "ex14-39",
+    "localId": "039",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "039/100",
+    "cardName": "Nuzleaf",
+    "fullDisplayName": "Nuzleaf 039/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      274
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seedot",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-039-low.png",
+    "imageHighSrc": "cards/ex14-039-high.png"
+  },
+  {
+    "masterCardId": "7819",
+    "externalId": null,
+    "tcgdex_id": "ex14-38",
+    "localId": "038",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "038/100",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 038/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-038-low.png",
+    "imageHighSrc": "cards/ex14-038-high.png"
+  },
+  {
+    "masterCardId": "7814",
+    "externalId": null,
+    "tcgdex_id": "ex14-37",
+    "localId": "037",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "037/100",
+    "cardName": "Lombre",
+    "fullDisplayName": "Lombre 037/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      271
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lotad",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-037-low.png",
+    "imageHighSrc": "cards/ex14-037-high.png"
+  },
+  {
+    "masterCardId": "7809",
+    "externalId": null,
+    "tcgdex_id": "ex14-36",
+    "localId": "036",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "036/100",
+    "cardName": "Lairon",
+    "fullDisplayName": "Lairon 036/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aron",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-036-low.png",
+    "imageHighSrc": "cards/ex14-036-high.png"
+  },
+  {
+    "masterCardId": "7804",
+    "externalId": null,
+    "tcgdex_id": "ex14-35",
+    "localId": "035",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "035/100",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 035/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-035-low.png",
+    "imageHighSrc": "cards/ex14-035-high.png"
+  },
+  {
+    "masterCardId": "7799",
+    "externalId": null,
+    "tcgdex_id": "ex14-34",
+    "localId": "034",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "034/100",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 034/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-034-low.png",
+    "imageHighSrc": "cards/ex14-034-high.png"
+  },
+  {
+    "masterCardId": "7795",
+    "externalId": null,
+    "tcgdex_id": "ex14-33",
+    "localId": "033",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "033/100",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 033/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-033-low.png",
+    "imageHighSrc": "cards/ex14-033-high.png"
+  },
+  {
+    "masterCardId": "7790",
+    "externalId": null,
+    "tcgdex_id": "ex14-32",
+    "localId": "032",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "032/100",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 032/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-032-low.png",
+    "imageHighSrc": "cards/ex14-032-high.png"
+  },
+  {
+    "masterCardId": "7785",
+    "externalId": null,
+    "tcgdex_id": "ex14-31",
+    "localId": "031",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "031/100",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 031/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-031-low.png",
+    "imageHighSrc": "cards/ex14-031-high.png"
+  },
+  {
+    "masterCardId": "7782",
+    "externalId": null,
+    "tcgdex_id": "ex14-30",
+    "localId": "030",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "030/100",
+    "cardName": "Charmeleon δ",
+    "fullDisplayName": "Charmeleon δ 030/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-030-low.png",
+    "imageHighSrc": "cards/ex14-030-high.png"
+  },
+  {
+    "masterCardId": "7778",
+    "externalId": null,
+    "tcgdex_id": "ex14-29",
+    "localId": "029",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "029/100",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 029/100 Crystal Guardians",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-029-low.png",
+    "imageHighSrc": "cards/ex14-029-high.png"
+  },
+  {
+    "masterCardId": "7773",
+    "externalId": null,
+    "tcgdex_id": "ex14-28",
+    "localId": "028",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "028/100",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 028/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-028-low.png",
+    "imageHighSrc": "cards/ex14-028-high.png"
+  },
+  {
+    "masterCardId": "7768",
+    "externalId": null,
+    "tcgdex_id": "ex14-27",
+    "localId": "027",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "027/100",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 027/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-027-low.png",
+    "imageHighSrc": "cards/ex14-027-high.png"
+  },
+  {
+    "masterCardId": "7763",
+    "externalId": null,
+    "tcgdex_id": "ex14-26",
+    "localId": "026",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "026/100",
+    "cardName": "Pelipper δ",
+    "fullDisplayName": "Pelipper δ 026/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-026-low.png",
+    "imageHighSrc": "cards/ex14-026-high.png"
+  },
+  {
+    "masterCardId": "7758",
+    "externalId": null,
+    "tcgdex_id": "ex14-25",
+    "localId": "025",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "025/100",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 025/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-025-low.png",
+    "imageHighSrc": "cards/ex14-025-high.png"
+  },
+  {
+    "masterCardId": "7753",
+    "externalId": null,
+    "tcgdex_id": "ex14-24",
+    "localId": "024",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "024/100",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 024/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-024-low.png",
+    "imageHighSrc": "cards/ex14-024-high.png"
+  },
+  {
+    "masterCardId": "7748",
+    "externalId": null,
+    "tcgdex_id": "ex14-23",
+    "localId": "023",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "023/100",
+    "cardName": "Loudred",
+    "fullDisplayName": "Loudred 023/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      294
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whismur",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-023-low.png",
+    "imageHighSrc": "cards/ex14-023-high.png"
+  },
+  {
+    "masterCardId": "7743",
+    "externalId": null,
+    "tcgdex_id": "ex14-22",
+    "localId": "022",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "022/100",
+    "cardName": "Kingler δ",
+    "fullDisplayName": "Kingler δ 022/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire",
+      "Metal"
+    ],
+    "dexIds": [
+      99
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krabby",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-022-low.png",
+    "imageHighSrc": "cards/ex14-022-high.png"
+  },
+  {
+    "masterCardId": "7738",
+    "externalId": null,
+    "tcgdex_id": "ex14-21",
+    "localId": "021",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "021/100",
+    "cardName": "Igglybuff",
+    "fullDisplayName": "Igglybuff 021/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      174
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-021-low.png",
+    "imageHighSrc": "cards/ex14-021-high.png"
+  },
+  {
+    "masterCardId": "7732",
+    "externalId": null,
+    "tcgdex_id": "ex14-20",
+    "localId": "020",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "020/100",
+    "cardName": "Grumpig",
+    "fullDisplayName": "Grumpig 020/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      326
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spoink",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-020-low.png",
+    "imageHighSrc": "cards/ex14-020-high.png"
+  },
+  {
+    "masterCardId": "7726",
+    "externalId": null,
+    "tcgdex_id": "ex14-19",
+    "localId": "019",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "019/100",
+    "cardName": "Grovyle δ",
+    "fullDisplayName": "Grovyle δ 019/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-019-low.png",
+    "imageHighSrc": "cards/ex14-019-high.png"
+  },
+  {
+    "masterCardId": "7720",
+    "externalId": null,
+    "tcgdex_id": "ex14-18",
+    "localId": "018",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "018/100",
+    "cardName": "Fearow δ",
+    "fullDisplayName": "Fearow δ 018/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-018-low.png",
+    "imageHighSrc": "cards/ex14-018-high.png"
+  },
+  {
+    "masterCardId": "7714",
+    "externalId": null,
+    "tcgdex_id": "ex14-17",
+    "localId": "017",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "017/100",
+    "cardName": "Dusclops",
+    "fullDisplayName": "Dusclops 017/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      356
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duskull",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-017-low.png",
+    "imageHighSrc": "cards/ex14-017-high.png"
+  },
+  {
+    "masterCardId": "7709",
+    "externalId": null,
+    "tcgdex_id": "ex14-16",
+    "localId": "016",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "016/100",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 016/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-016-low.png",
+    "imageHighSrc": "cards/ex14-016-high.png"
+  },
+  {
+    "masterCardId": "7704",
+    "externalId": null,
+    "tcgdex_id": "ex14-15",
+    "localId": "015",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "015/100",
+    "cardName": "Cacturne δ",
+    "fullDisplayName": "Cacturne δ 015/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      332
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cacnea",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-015-low.png",
+    "imageHighSrc": "cards/ex14-015-high.png"
+  },
+  {
+    "masterCardId": "7698",
+    "externalId": null,
+    "tcgdex_id": "ex14-14",
+    "localId": "014",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "014/100",
+    "cardName": "Blastoise",
+    "fullDisplayName": "Blastoise 014/100 Crystal Guardians",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-014-low.png",
+    "imageHighSrc": "cards/ex14-014-high.png"
+  },
+  {
+    "masterCardId": "7692",
+    "externalId": null,
+    "tcgdex_id": "ex14-13",
+    "localId": "013",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "013/100",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 013/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-013-low.png",
+    "imageHighSrc": "cards/ex14-013-high.png"
+  },
+  {
+    "masterCardId": "7686",
+    "externalId": null,
+    "tcgdex_id": "ex14-12",
+    "localId": "012",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "012/100",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 012/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-012-low.png",
+    "imageHighSrc": "cards/ex14-012-high.png"
+  },
+  {
+    "masterCardId": "7679",
+    "externalId": null,
+    "tcgdex_id": "ex14-11",
+    "localId": "011",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "011/100",
+    "cardName": "Swalot",
+    "fullDisplayName": "Swalot 011/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      317
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gulpin",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-011-low.png",
+    "imageHighSrc": "cards/ex14-011-high.png"
+  },
+  {
+    "masterCardId": "7674",
+    "externalId": null,
+    "tcgdex_id": "ex14-10",
+    "localId": "010",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "010/100",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 010/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-010-low.png",
+    "imageHighSrc": "cards/ex14-010-high.png"
+  },
+  {
+    "masterCardId": "7668",
+    "externalId": null,
+    "tcgdex_id": "ex14-9",
+    "localId": "009",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "009/100",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 009/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-009-low.png",
+    "imageHighSrc": "cards/ex14-009-high.png"
+  },
+  {
+    "masterCardId": "7661",
+    "externalId": null,
+    "tcgdex_id": "ex14-8",
+    "localId": "008",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "008/100",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 008/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-008-low.png",
+    "imageHighSrc": "cards/ex14-008-high.png"
+  },
+  {
+    "masterCardId": "7656",
+    "externalId": null,
+    "tcgdex_id": "ex14-7",
+    "localId": "007",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "007/100",
+    "cardName": "Luvdisc",
+    "fullDisplayName": "Luvdisc 007/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      370
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-007-low.png",
+    "imageHighSrc": "cards/ex14-007-high.png"
+  },
+  {
+    "masterCardId": "7650",
+    "externalId": null,
+    "tcgdex_id": "ex14-6",
+    "localId": "006",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "006/100",
+    "cardName": "Ludicolo δ",
+    "fullDisplayName": "Ludicolo δ 006/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-006-low.png",
+    "imageHighSrc": "cards/ex14-006-high.png"
+  },
+  {
+    "masterCardId": "7644",
+    "externalId": null,
+    "tcgdex_id": "ex14-5",
+    "localId": "005",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "005/100",
+    "cardName": "Dugtrio",
+    "fullDisplayName": "Dugtrio 005/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Diglett",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-005-low.png",
+    "imageHighSrc": "cards/ex14-005-high.png"
+  },
+  {
+    "masterCardId": "7638",
+    "externalId": null,
+    "tcgdex_id": "ex14-4",
+    "localId": "004",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "004/100",
+    "cardName": "Charizard δ",
+    "fullDisplayName": "Charizard δ 004/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning",
+      "Metal"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-004-low.png",
+    "imageHighSrc": "cards/ex14-004-high.png"
+  },
+  {
+    "masterCardId": "7632",
+    "externalId": null,
+    "tcgdex_id": "ex14-3",
+    "localId": "003",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "003/100",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 003/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-003-low.png",
+    "imageHighSrc": "cards/ex14-003-high.png"
+  },
+  {
+    "masterCardId": "7626",
+    "externalId": null,
+    "tcgdex_id": "ex14-2",
+    "localId": "002",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "002/100",
+    "cardName": "Blastoise δ",
+    "fullDisplayName": "Blastoise δ 002/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting",
+      "Metal"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wartortle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-002-low.png",
+    "imageHighSrc": "cards/ex14-002-high.png"
+  },
+  {
+    "masterCardId": "7620",
+    "externalId": null,
+    "tcgdex_id": "ex14-1",
+    "localId": "001",
+    "setCode": "ex14",
+    "setTcgdexId": "ex14",
+    "cardNumber": "001/100",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 001/100 Crystal Guardians",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex14-001-low.png",
+    "imageHighSrc": "cards/ex14-001-high.png"
+  }
+]

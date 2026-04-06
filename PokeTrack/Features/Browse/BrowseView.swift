@@ -1,88 +1,157 @@
 import SwiftUI
 
-struct BrowseView: View {
-    @Environment(AppServices.self) private var services
-    @State private var query = ""
-    @State private var searchResults: [Card] = []
-    @State private var isSearching = false
+// MARK: - Shared card grid cell
+
+struct CardGridCell: View {
+    let card: Card
 
     var body: some View {
-        List {
-            Section {
-                TextField("Search all cards", text: $query)
-                    .textInputAutocapitalization(.never)
-                Button("Search") {
-                    Task { await runSearch() }
-                }
-                .disabled(query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-                if isSearching { ProgressView() }
+        VStack(spacing: 4) {
+            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageLowSrc)) { img in
+                img.resizable().scaledToFit()
+            } placeholder: {
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5/7, contentMode: .fit)
             }
-
-            if !searchResults.isEmpty {
-                Section("Results") {
-                    ForEach(searchResults) { card in
-                        NavigationLink {
-                            CardBrowseDetailView(card: card)
-                        } label: {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(card.cardName)
-                                Text("\(card.setCode) · \(card.cardNumber)")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                    }
-                }
-            }
-
-            Section("Sets") {
-                if services.cardData.isLoading {
-                    ProgressView("Loading sets…")
-                } else if services.cardData.sets.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("No sets loaded.")
-                            .foregroundStyle(.secondary)
-                        if let err = services.cardData.lastError {
-                            Text(err)
-                                .font(.caption)
-                                .foregroundStyle(.red)
-                        }
-                        Text("Configure POKETRACK_R2_BASE_URL. Catalog JSON uses POKETRACK_R2_CATALOG_PREFIX (default data); pricing uses POKETRACK_R2_PRICING_PREFIX (default root). See Account → About for resolved URLs.")
-                            .font(.caption2)
-                            .foregroundStyle(.tertiary)
-                    }
-                } else {
-                    ForEach(services.cardData.sets) { set in
-                        NavigationLink {
-                            SetCardsView(set: set)
-                        } label: {
-                            Text(set.name)
-                        }
-                    }
-                }
-            }
+            .frame(maxWidth: .infinity)
+            .aspectRatio(5/7, contentMode: .fit)
+            Text(card.cardName)
+                .font(.caption2)
+                .lineLimit(1)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.primary)
         }
-        .navigationTitle("Cards")
-        .refreshable {
-            await services.cardData.loadSets()
-        }
-    }
-
-    private func runSearch() async {
-        isSearching = true
-        defer { isSearching = false }
-        searchResults = await services.cardData.search(query: query)
     }
 }
 
+// MARK: - Browse feed
+
+struct BrowseView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.presentCard) private var presentCard
+    @EnvironmentObject private var chromeScroll: ChromeScrollCoordinator
+
+    @State private var shuffledRefs: [CardRef] = []
+    @State private var nextRefIndex = 0
+    @State private var displayedCards: [Card] = []
+    @State private var isLoadingInitial = true
+    @State private var isLoadingMore = false
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+
+    private static let initialBatchSize = 60
+    private static let pageSize = 30
+    private static let prefetchBuffer = 9
+
+    var body: some View {
+        Group {
+            if isLoadingInitial {
+                ProgressView("Loading cards…")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if displayedCards.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("No cards in the catalog yet.")
+                        .foregroundStyle(.secondary)
+                    if let err = services.cardData.lastError {
+                        Text(err).font(.caption).foregroundStyle(.red)
+                    }
+                    Text("Pull to refresh after your catalog syncs, or check POKETRACK_R2_BASE_URL in Info.plist.")
+                        .font(.caption2).foregroundStyle(.tertiary)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .padding()
+            } else {
+                scrollTrackedCardGrid
+            }
+        }
+        .toolbar(.hidden, for: .navigationBar)
+        .tabBarChromeFromScroll()
+        .task { await bootstrapFeed(forceReshuffle: false) }
+        .refreshable { await bootstrapFeed(forceReshuffle: true) }
+    }
+
+    private var browseCardGrid: some View {
+        LazyVGrid(columns: columns, spacing: 12) {
+            ForEach(Array(displayedCards.enumerated()), id: \.element.id) { index, card in
+                Button { presentCard(card, displayedCards) } label: {
+                    CardGridCell(card: card)
+                }
+                .buttonStyle(.plain)
+                .onAppear {
+                    if index >= displayedCards.count - Self.prefetchBuffer {
+                        Task { await loadNextPageIfNeeded() }
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 6)
+        .padding(.bottom, 16)
+    }
+
+    private var scrollTrackedCardGrid: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                ScrollOffsetAnchor { y in chromeScroll.reportScrollOffsetY(y) }
+                browseCardGrid
+                if isLoadingMore {
+                    ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
+                }
+            }
+        }
+        .coordinateSpace(name: "scroll")
+    }
+
+    private func bootstrapFeed(forceReshuffle: Bool) async {
+        if !forceReshuffle && !displayedCards.isEmpty { return }
+        ImagePrefetcher.shared.cancelAll()
+        isLoadingInitial = true
+        let refs = await services.cardData.browseFeedCardRefs(forceReshuffle: forceReshuffle)
+        shuffledRefs = refs
+        nextRefIndex = 0
+        displayedCards = []
+        guard !refs.isEmpty else { isLoadingInitial = false; return }
+        let firstEnd = min(Self.initialBatchSize, refs.count)
+        let batch = Array(refs[..<firstEnd])
+        nextRefIndex = firstEnd
+        displayedCards = await services.cardData.cardsInOrder(refs: batch)
+        isLoadingInitial = false
+        prefetchNextWindow()
+    }
+
+    private func loadNextPageIfNeeded() async {
+        guard !isLoadingMore, nextRefIndex < shuffledRefs.count else { return }
+        isLoadingMore = true
+        let end = min(nextRefIndex + Self.pageSize, shuffledRefs.count)
+        let batch = Array(shuffledRefs[nextRefIndex..<end])
+        nextRefIndex = end
+        let more = await services.cardData.cardsInOrder(refs: batch)
+        displayedCards.append(contentsOf: more)
+        isLoadingMore = false
+        prefetchNextWindow()
+    }
+
+    private func prefetchNextWindow() {
+        let end = min(nextRefIndex + Self.pageSize, shuffledRefs.count)
+        guard nextRefIndex < end else { return }
+        let upcoming = Array(shuffledRefs[nextRefIndex..<end])
+        Task.detached(priority: .low) {
+            let cards = await services.cardData.cardsInOrder(refs: upcoming)
+            let urls = cards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+            ImagePrefetcher.shared.prefetch(urls)
+        }
+    }
+}
+
+// MARK: - Set cards
+
 struct SetCardsView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.presentCard) private var presentCard
     let set: TCGSet
 
     @State private var cards: [Card] = []
     @State private var isLoading = true
-
-    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 12)]
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
     var body: some View {
         ScrollView {
@@ -91,35 +160,63 @@ struct SetCardsView: View {
             } else {
                 LazyVGrid(columns: columns, spacing: 12) {
                     ForEach(cards) { card in
-                        NavigationLink {
-                            CardBrowseDetailView(card: card)
-                        } label: {
-                            VStack(spacing: 6) {
-                                AsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageLowSrc)) { p in
-                                    p.resizable().scaledToFit()
-                                } placeholder: {
-                                    Color.gray.opacity(0.12)
-                                }
-                                .frame(height: 140)
-                                Text(card.cardName)
-                                    .font(.caption2)
-                                    .lineLimit(2)
-                                    .multilineTextAlignment(.center)
-                            }
-                            .padding(6)
-                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
-                        }
-                        .buttonStyle(.plain)
+                        Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
+                            .buttonStyle(.plain)
                     }
                 }
                 .padding()
             }
         }
         .navigationTitle(set.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .task {
             isLoading = true
             cards = await services.cardData.loadCards(forSetCode: set.setCode)
             isLoading = false
         }
     }
+}
+
+// MARK: - Dex cards
+
+struct DexCardsView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.presentCard) private var presentCard
+    let dexId: Int
+    let displayName: String
+
+    @State private var cards: [Card] = []
+    @State private var isLoading = true
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+
+    var body: some View {
+        ScrollView {
+            if isLoading {
+                ProgressView().padding()
+            } else {
+                LazyVGrid(columns: columns, spacing: 12) {
+                    ForEach(cards) { card in
+                        Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
+                            .buttonStyle(.plain)
+                    }
+                }
+                .padding()
+            }
+        }
+        .navigationTitle(displayName)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .task {
+            isLoading = true
+            cards = await services.cardData.cards(matchingNationalDex: dexId)
+            isLoading = false
+        }
+    }
+}
+
+#Preview {
+    NavigationStack { BrowseView() }
+        .environment(AppServices())
+        .environmentObject(ChromeScrollCoordinator())
 }

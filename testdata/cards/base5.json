@@ -1,0 +1,2665 @@
+[
+  {
+    "masterCardId": "1797",
+    "externalId": null,
+    "tcgdex_id": "base5-83",
+    "localId": "083",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "083/82",
+    "cardName": "Dark Raichu",
+    "fullDisplayName": "Dark Raichu 083/82 Team Rocket",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-083-low.png",
+    "imageHighSrc": "cards/base5-083-high.png"
+  },
+  {
+    "masterCardId": "1796",
+    "externalId": null,
+    "tcgdex_id": "base5-82",
+    "localId": "082",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "082/82",
+    "cardName": "Potion Energy",
+    "fullDisplayName": "Potion Energy 082/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-082-low.png",
+    "imageHighSrc": "cards/base5-082-high.png"
+  },
+  {
+    "masterCardId": "1795",
+    "externalId": null,
+    "tcgdex_id": "base5-81",
+    "localId": "081",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "081/82",
+    "cardName": "Full Heal Energy",
+    "fullDisplayName": "Full Heal Energy 081/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-081-low.png",
+    "imageHighSrc": "cards/base5-081-high.png"
+  },
+  {
+    "masterCardId": "1794",
+    "externalId": null,
+    "tcgdex_id": "base5-80",
+    "localId": "080",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "080/82",
+    "cardName": "Rainbow Energy",
+    "fullDisplayName": "Rainbow Energy 080/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-080-low.png",
+    "imageHighSrc": "cards/base5-080-high.png"
+  },
+  {
+    "masterCardId": "1793",
+    "externalId": null,
+    "tcgdex_id": "base5-79",
+    "localId": "079",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "079/82",
+    "cardName": "Sleep!",
+    "fullDisplayName": "Sleep! 079/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-079-low.png",
+    "imageHighSrc": "cards/base5-079-high.png"
+  },
+  {
+    "masterCardId": "1792",
+    "externalId": null,
+    "tcgdex_id": "base5-78",
+    "localId": "078",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "078/82",
+    "cardName": "Goop Gas Attack",
+    "fullDisplayName": "Goop Gas Attack 078/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-078-low.png",
+    "imageHighSrc": "cards/base5-078-high.png"
+  },
+  {
+    "masterCardId": "1791",
+    "externalId": null,
+    "tcgdex_id": "base5-77",
+    "localId": "077",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "077/82",
+    "cardName": "Nightly Garbage Run",
+    "fullDisplayName": "Nightly Garbage Run 077/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-077-low.png",
+    "imageHighSrc": "cards/base5-077-high.png"
+  },
+  {
+    "masterCardId": "1790",
+    "externalId": null,
+    "tcgdex_id": "base5-76",
+    "localId": "076",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "076/82",
+    "cardName": "Imposter Oak's Revenge",
+    "fullDisplayName": "Imposter Oak's Revenge 076/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-076-low.png",
+    "imageHighSrc": "cards/base5-076-high.png"
+  },
+  {
+    "masterCardId": "1789",
+    "externalId": null,
+    "tcgdex_id": "base5-75",
+    "localId": "075",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "075/82",
+    "cardName": "Digger",
+    "fullDisplayName": "Digger 075/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-075-low.png",
+    "imageHighSrc": "cards/base5-075-high.png"
+  },
+  {
+    "masterCardId": "1788",
+    "externalId": null,
+    "tcgdex_id": "base5-74",
+    "localId": "074",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "074/82",
+    "cardName": "Challenge!",
+    "fullDisplayName": "Challenge! 074/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-074-low.png",
+    "imageHighSrc": "cards/base5-074-high.png"
+  },
+  {
+    "masterCardId": "1787",
+    "externalId": null,
+    "tcgdex_id": "base5-73",
+    "localId": "073",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "073/82",
+    "cardName": "The Boss's Way",
+    "fullDisplayName": "The Boss's Way 073/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-073-low.png",
+    "imageHighSrc": "cards/base5-073-high.png"
+  },
+  {
+    "masterCardId": "1786",
+    "externalId": null,
+    "tcgdex_id": "base5-72",
+    "localId": "072",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "072/82",
+    "cardName": "Rocket's Sneak Attack",
+    "fullDisplayName": "Rocket's Sneak Attack 072/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-072-low.png",
+    "imageHighSrc": "cards/base5-072-high.png"
+  },
+  {
+    "masterCardId": "1785",
+    "externalId": null,
+    "tcgdex_id": "base5-71",
+    "localId": "071",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "071/82",
+    "cardName": "Here Comes Team Rocket!",
+    "fullDisplayName": "Here Comes Team Rocket! 071/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-071-low.png",
+    "imageHighSrc": "cards/base5-071-high.png"
+  },
+  {
+    "masterCardId": "1784",
+    "externalId": null,
+    "tcgdex_id": "base5-70",
+    "localId": "070",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "070/82",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 070/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-070-low.png",
+    "imageHighSrc": "cards/base5-070-high.png"
+  },
+  {
+    "masterCardId": "1783",
+    "externalId": null,
+    "tcgdex_id": "base5-69",
+    "localId": "069",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "069/82",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 069/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-069-low.png",
+    "imageHighSrc": "cards/base5-069-high.png"
+  },
+  {
+    "masterCardId": "1782",
+    "externalId": null,
+    "tcgdex_id": "base5-68",
+    "localId": "068",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "068/82",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 068/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-068-low.png",
+    "imageHighSrc": "cards/base5-068-high.png"
+  },
+  {
+    "masterCardId": "1781",
+    "externalId": null,
+    "tcgdex_id": "base5-67",
+    "localId": "067",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "067/82",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 067/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-067-low.png",
+    "imageHighSrc": "cards/base5-067-high.png"
+  },
+  {
+    "masterCardId": "1780",
+    "externalId": null,
+    "tcgdex_id": "base5-66",
+    "localId": "066",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "066/82",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 066/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-066-low.png",
+    "imageHighSrc": "cards/base5-066-high.png"
+  },
+  {
+    "masterCardId": "1779",
+    "externalId": null,
+    "tcgdex_id": "base5-65",
+    "localId": "065",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "065/82",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 065/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-065-low.png",
+    "imageHighSrc": "cards/base5-065-high.png"
+  },
+  {
+    "masterCardId": "1778",
+    "externalId": null,
+    "tcgdex_id": "base5-64",
+    "localId": "064",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "064/82",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 064/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-064-low.png",
+    "imageHighSrc": "cards/base5-064-high.png"
+  },
+  {
+    "masterCardId": "1777",
+    "externalId": null,
+    "tcgdex_id": "base5-63",
+    "localId": "063",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "063/82",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 063/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-063-low.png",
+    "imageHighSrc": "cards/base5-063-high.png"
+  },
+  {
+    "masterCardId": "1776",
+    "externalId": null,
+    "tcgdex_id": "base5-62",
+    "localId": "062",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "062/82",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 062/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-062-low.png",
+    "imageHighSrc": "cards/base5-062-high.png"
+  },
+  {
+    "masterCardId": "1775",
+    "externalId": null,
+    "tcgdex_id": "base5-61",
+    "localId": "061",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "061/82",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 061/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-061-low.png",
+    "imageHighSrc": "cards/base5-061-high.png"
+  },
+  {
+    "masterCardId": "1774",
+    "externalId": null,
+    "tcgdex_id": "base5-60",
+    "localId": "060",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "060/82",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 060/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-060-low.png",
+    "imageHighSrc": "cards/base5-060-high.png"
+  },
+  {
+    "masterCardId": "1773",
+    "externalId": null,
+    "tcgdex_id": "base5-59",
+    "localId": "059",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "059/82",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 059/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-059-low.png",
+    "imageHighSrc": "cards/base5-059-high.png"
+  },
+  {
+    "masterCardId": "1772",
+    "externalId": null,
+    "tcgdex_id": "base5-58",
+    "localId": "058",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "058/82",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 058/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-058-low.png",
+    "imageHighSrc": "cards/base5-058-high.png"
+  },
+  {
+    "masterCardId": "1771",
+    "externalId": null,
+    "tcgdex_id": "base5-57",
+    "localId": "057",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "057/82",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 057/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-057-low.png",
+    "imageHighSrc": "cards/base5-057-high.png"
+  },
+  {
+    "masterCardId": "1770",
+    "externalId": null,
+    "tcgdex_id": "base5-56",
+    "localId": "056",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "056/82",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 056/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-056-low.png",
+    "imageHighSrc": "cards/base5-056-high.png"
+  },
+  {
+    "masterCardId": "1769",
+    "externalId": null,
+    "tcgdex_id": "base5-55",
+    "localId": "055",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "055/82",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 055/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-055-low.png",
+    "imageHighSrc": "cards/base5-055-high.png"
+  },
+  {
+    "masterCardId": "1768",
+    "externalId": null,
+    "tcgdex_id": "base5-54",
+    "localId": "054",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "054/82",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 054/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-054-low.png",
+    "imageHighSrc": "cards/base5-054-high.png"
+  },
+  {
+    "masterCardId": "1767",
+    "externalId": null,
+    "tcgdex_id": "base5-53",
+    "localId": "053",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "053/82",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 053/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-053-low.png",
+    "imageHighSrc": "cards/base5-053-high.png"
+  },
+  {
+    "masterCardId": "1766",
+    "externalId": null,
+    "tcgdex_id": "base5-52",
+    "localId": "052",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "052/82",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 052/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-052-low.png",
+    "imageHighSrc": "cards/base5-052-high.png"
+  },
+  {
+    "masterCardId": "1765",
+    "externalId": null,
+    "tcgdex_id": "base5-51",
+    "localId": "051",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "051/82",
+    "cardName": "Dark Raticate",
+    "fullDisplayName": "Dark Raticate 051/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-051-low.png",
+    "imageHighSrc": "cards/base5-051-high.png"
+  },
+  {
+    "masterCardId": "1764",
+    "externalId": null,
+    "tcgdex_id": "base5-50",
+    "localId": "050",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "050/82",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 050/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-050-low.png",
+    "imageHighSrc": "cards/base5-050-high.png"
+  },
+  {
+    "masterCardId": "1763",
+    "externalId": null,
+    "tcgdex_id": "base5-49",
+    "localId": "049",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "049/82",
+    "cardName": "Abra",
+    "fullDisplayName": "Abra 049/82 Team Rocket",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-049-low.png",
+    "imageHighSrc": "cards/base5-049-high.png"
+  },
+  {
+    "masterCardId": "1762",
+    "externalId": null,
+    "tcgdex_id": "base5-48",
+    "localId": "048",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "048/82",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 048/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-048-low.png",
+    "imageHighSrc": "cards/base5-048-high.png"
+  },
+  {
+    "masterCardId": "1761",
+    "externalId": null,
+    "tcgdex_id": "base5-47",
+    "localId": "047",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "047/82",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 047/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-047-low.png",
+    "imageHighSrc": "cards/base5-047-high.png"
+  },
+  {
+    "masterCardId": "1760",
+    "externalId": null,
+    "tcgdex_id": "base5-46",
+    "localId": "046",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "046/82",
+    "cardName": "Dark Wartortle",
+    "fullDisplayName": "Dark Wartortle 046/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-046-low.png",
+    "imageHighSrc": "cards/base5-046-high.png"
+  },
+  {
+    "masterCardId": "1759",
+    "externalId": null,
+    "tcgdex_id": "base5-45",
+    "localId": "045",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "045/82",
+    "cardName": "Dark Vaporeon",
+    "fullDisplayName": "Dark Vaporeon 045/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-045-low.png",
+    "imageHighSrc": "cards/base5-045-high.png"
+  },
+  {
+    "masterCardId": "1758",
+    "externalId": null,
+    "tcgdex_id": "base5-44",
+    "localId": "044",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "044/82",
+    "cardName": "Dark Rapidash",
+    "fullDisplayName": "Dark Rapidash 044/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-044-low.png",
+    "imageHighSrc": "cards/base5-044-high.png"
+  },
+  {
+    "masterCardId": "1757",
+    "externalId": null,
+    "tcgdex_id": "base5-43",
+    "localId": "043",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "043/82",
+    "cardName": "Dark Primeape",
+    "fullDisplayName": "Dark Primeape 043/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-043-low.png",
+    "imageHighSrc": "cards/base5-043-high.png"
+  },
+  {
+    "masterCardId": "1756",
+    "externalId": null,
+    "tcgdex_id": "base5-42",
+    "localId": "042",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "042/82",
+    "cardName": "Dark Persian",
+    "fullDisplayName": "Dark Persian 042/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-042-low.png",
+    "imageHighSrc": "cards/base5-042-high.png"
+  },
+  {
+    "masterCardId": "1755",
+    "externalId": null,
+    "tcgdex_id": "base5-41",
+    "localId": "041",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "041/82",
+    "cardName": "Dark Muk",
+    "fullDisplayName": "Dark Muk 041/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-041-low.png",
+    "imageHighSrc": "cards/base5-041-high.png"
+  },
+  {
+    "masterCardId": "1754",
+    "externalId": null,
+    "tcgdex_id": "base5-40",
+    "localId": "040",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "040/82",
+    "cardName": "Dark Machoke",
+    "fullDisplayName": "Dark Machoke 040/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-040-low.png",
+    "imageHighSrc": "cards/base5-040-high.png"
+  },
+  {
+    "masterCardId": "1753",
+    "externalId": null,
+    "tcgdex_id": "base5-39",
+    "localId": "039",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "039/82",
+    "cardName": "Dark Kadabra",
+    "fullDisplayName": "Dark Kadabra 039/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      64
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Abra",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-039-low.png",
+    "imageHighSrc": "cards/base5-039-high.png"
+  },
+  {
+    "masterCardId": "1752",
+    "externalId": null,
+    "tcgdex_id": "base5-38",
+    "localId": "038",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "038/82",
+    "cardName": "Dark Jolteon",
+    "fullDisplayName": "Dark Jolteon 038/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-038-low.png",
+    "imageHighSrc": "cards/base5-038-high.png"
+  },
+  {
+    "masterCardId": "1751",
+    "externalId": null,
+    "tcgdex_id": "base5-37",
+    "localId": "037",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "037/82",
+    "cardName": "Dark Golduck",
+    "fullDisplayName": "Dark Golduck 037/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-037-low.png",
+    "imageHighSrc": "cards/base5-037-high.png"
+  },
+  {
+    "masterCardId": "1750",
+    "externalId": null,
+    "tcgdex_id": "base5-36",
+    "localId": "036",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "036/82",
+    "cardName": "Dark Gloom",
+    "fullDisplayName": "Dark Gloom 036/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-036-low.png",
+    "imageHighSrc": "cards/base5-036-high.png"
+  },
+  {
+    "masterCardId": "1749",
+    "externalId": null,
+    "tcgdex_id": "base5-35",
+    "localId": "035",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "035/82",
+    "cardName": "Dark Flareon",
+    "fullDisplayName": "Dark Flareon 035/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-035-low.png",
+    "imageHighSrc": "cards/base5-035-high.png"
+  },
+  {
+    "masterCardId": "1748",
+    "externalId": null,
+    "tcgdex_id": "base5-34",
+    "localId": "034",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "034/82",
+    "cardName": "Dark Electrode",
+    "fullDisplayName": "Dark Electrode 034/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-034-low.png",
+    "imageHighSrc": "cards/base5-034-high.png"
+  },
+  {
+    "masterCardId": "1747",
+    "externalId": null,
+    "tcgdex_id": "base5-33",
+    "localId": "033",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "033/82",
+    "cardName": "Dark Dragonair",
+    "fullDisplayName": "Dark Dragonair 033/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-033-low.png",
+    "imageHighSrc": "cards/base5-033-high.png"
+  },
+  {
+    "masterCardId": "1746",
+    "externalId": null,
+    "tcgdex_id": "base5-32",
+    "localId": "032",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "032/82",
+    "cardName": "Dark Charmeleon",
+    "fullDisplayName": "Dark Charmeleon 032/82 Team Rocket",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-032-low.png",
+    "imageHighSrc": "cards/base5-032-high.png"
+  },
+  {
+    "masterCardId": "1745",
+    "externalId": null,
+    "tcgdex_id": "base5-31",
+    "localId": "031",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "031/82",
+    "cardName": "Dark Weezing",
+    "fullDisplayName": "Dark Weezing 031/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-031-low.png",
+    "imageHighSrc": "cards/base5-031-high.png"
+  },
+  {
+    "masterCardId": "1744",
+    "externalId": null,
+    "tcgdex_id": "base5-30",
+    "localId": "030",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "030/82",
+    "cardName": "Dark Vileplume",
+    "fullDisplayName": "Dark Vileplume 030/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Gloom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-030-low.png",
+    "imageHighSrc": "cards/base5-030-high.png"
+  },
+  {
+    "masterCardId": "1743",
+    "externalId": null,
+    "tcgdex_id": "base5-29",
+    "localId": "029",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "029/82",
+    "cardName": "Dark Slowbro",
+    "fullDisplayName": "Dark Slowbro 029/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-029-low.png",
+    "imageHighSrc": "cards/base5-029-high.png"
+  },
+  {
+    "masterCardId": "1742",
+    "externalId": null,
+    "tcgdex_id": "base5-28",
+    "localId": "028",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "028/82",
+    "cardName": "Dark Magneton",
+    "fullDisplayName": "Dark Magneton 028/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-028-low.png",
+    "imageHighSrc": "cards/base5-028-high.png"
+  },
+  {
+    "masterCardId": "1741",
+    "externalId": null,
+    "tcgdex_id": "base5-27",
+    "localId": "027",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "027/82",
+    "cardName": "Dark Machamp",
+    "fullDisplayName": "Dark Machamp 027/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Machoke",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-027-low.png",
+    "imageHighSrc": "cards/base5-027-high.png"
+  },
+  {
+    "masterCardId": "1740",
+    "externalId": null,
+    "tcgdex_id": "base5-26",
+    "localId": "026",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "026/82",
+    "cardName": "Dark Hypno",
+    "fullDisplayName": "Dark Hypno 026/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-026-low.png",
+    "imageHighSrc": "cards/base5-026-high.png"
+  },
+  {
+    "masterCardId": "1739",
+    "externalId": null,
+    "tcgdex_id": "base5-25",
+    "localId": "025",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "025/82",
+    "cardName": "Dark Gyarados",
+    "fullDisplayName": "Dark Gyarados 025/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-025-low.png",
+    "imageHighSrc": "cards/base5-025-high.png"
+  },
+  {
+    "masterCardId": "1738",
+    "externalId": null,
+    "tcgdex_id": "base5-24",
+    "localId": "024",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "024/82",
+    "cardName": "Dark Golbat",
+    "fullDisplayName": "Dark Golbat 024/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-024-low.png",
+    "imageHighSrc": "cards/base5-024-high.png"
+  },
+  {
+    "masterCardId": "1737",
+    "externalId": null,
+    "tcgdex_id": "base5-23",
+    "localId": "023",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "023/82",
+    "cardName": "Dark Dugtrio",
+    "fullDisplayName": "Dark Dugtrio 023/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Diglett",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-023-low.png",
+    "imageHighSrc": "cards/base5-023-high.png"
+  },
+  {
+    "masterCardId": "1736",
+    "externalId": null,
+    "tcgdex_id": "base5-22",
+    "localId": "022",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "022/82",
+    "cardName": "Dark Dragonite",
+    "fullDisplayName": "Dark Dragonite 022/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Dragonair",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-022-low.png",
+    "imageHighSrc": "cards/base5-022-high.png"
+  },
+  {
+    "masterCardId": "1735",
+    "externalId": null,
+    "tcgdex_id": "base5-21",
+    "localId": "021",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "021/82",
+    "cardName": "Dark Charizard",
+    "fullDisplayName": "Dark Charizard 021/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Charmeleon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-021-low.png",
+    "imageHighSrc": "cards/base5-021-high.png"
+  },
+  {
+    "masterCardId": "1734",
+    "externalId": null,
+    "tcgdex_id": "base5-20",
+    "localId": "020",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "020/82",
+    "cardName": "Dark Blastoise",
+    "fullDisplayName": "Dark Blastoise 020/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Wartortle",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-020-low.png",
+    "imageHighSrc": "cards/base5-020-high.png"
+  },
+  {
+    "masterCardId": "1733",
+    "externalId": null,
+    "tcgdex_id": "base5-19",
+    "localId": "019",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "019/82",
+    "cardName": "Dark Arbok",
+    "fullDisplayName": "Dark Arbok 019/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-019-low.png",
+    "imageHighSrc": "cards/base5-019-high.png"
+  },
+  {
+    "masterCardId": "1732",
+    "externalId": null,
+    "tcgdex_id": "base5-18",
+    "localId": "018",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "018/82",
+    "cardName": "Dark Alakazam",
+    "fullDisplayName": "Dark Alakazam 018/82 Team Rocket",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Kadabra",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-018-low.png",
+    "imageHighSrc": "cards/base5-018-high.png"
+  },
+  {
+    "masterCardId": "1731",
+    "externalId": null,
+    "tcgdex_id": "base5-17",
+    "localId": "017",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "017/82",
+    "cardName": "Rainbow Energy",
+    "fullDisplayName": "Rainbow Energy 017/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-017-low.png",
+    "imageHighSrc": "cards/base5-017-high.png"
+  },
+  {
+    "masterCardId": "1730",
+    "externalId": null,
+    "tcgdex_id": "base5-16",
+    "localId": "016",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "016/82",
+    "cardName": "Rocket's Sneak Attack",
+    "fullDisplayName": "Rocket's Sneak Attack 016/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-016-low.png",
+    "imageHighSrc": "cards/base5-016-high.png"
+  },
+  {
+    "masterCardId": "1729",
+    "externalId": null,
+    "tcgdex_id": "base5-15",
+    "localId": "015",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "015/82",
+    "cardName": "Here Comes Team Rocket!",
+    "fullDisplayName": "Here Comes Team Rocket! 015/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-015-low.png",
+    "imageHighSrc": "cards/base5-015-high.png"
+  },
+  {
+    "masterCardId": "1728",
+    "externalId": null,
+    "tcgdex_id": "base5-14",
+    "localId": "014",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "014/82",
+    "cardName": "Dark Weezing",
+    "fullDisplayName": "Dark Weezing 014/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-014-low.png",
+    "imageHighSrc": "cards/base5-014-high.png"
+  },
+  {
+    "masterCardId": "1727",
+    "externalId": null,
+    "tcgdex_id": "base5-13",
+    "localId": "013",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "013/82",
+    "cardName": "Dark Vileplume",
+    "fullDisplayName": "Dark Vileplume 013/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Gloom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-013-low.png",
+    "imageHighSrc": "cards/base5-013-high.png"
+  },
+  {
+    "masterCardId": "1726",
+    "externalId": null,
+    "tcgdex_id": "base5-12",
+    "localId": "012",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "012/82",
+    "cardName": "Dark Slowbro",
+    "fullDisplayName": "Dark Slowbro 012/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-012-low.png",
+    "imageHighSrc": "cards/base5-012-high.png"
+  },
+  {
+    "masterCardId": "1725",
+    "externalId": null,
+    "tcgdex_id": "base5-11",
+    "localId": "011",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "011/82",
+    "cardName": "Dark Magneton",
+    "fullDisplayName": "Dark Magneton 011/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-011-low.png",
+    "imageHighSrc": "cards/base5-011-high.png"
+  },
+  {
+    "masterCardId": "1724",
+    "externalId": null,
+    "tcgdex_id": "base5-10",
+    "localId": "010",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "010/82",
+    "cardName": "Dark Machamp",
+    "fullDisplayName": "Dark Machamp 010/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Machoke",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-010-low.png",
+    "imageHighSrc": "cards/base5-010-high.png"
+  },
+  {
+    "masterCardId": "1723",
+    "externalId": null,
+    "tcgdex_id": "base5-9",
+    "localId": "009",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "009/82",
+    "cardName": "Dark Hypno",
+    "fullDisplayName": "Dark Hypno 009/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-009-low.png",
+    "imageHighSrc": "cards/base5-009-high.png"
+  },
+  {
+    "masterCardId": "1722",
+    "externalId": null,
+    "tcgdex_id": "base5-8",
+    "localId": "008",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "008/82",
+    "cardName": "Dark Gyarados",
+    "fullDisplayName": "Dark Gyarados 008/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-008-low.png",
+    "imageHighSrc": "cards/base5-008-high.png"
+  },
+  {
+    "masterCardId": "1721",
+    "externalId": null,
+    "tcgdex_id": "base5-7",
+    "localId": "007",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "007/82",
+    "cardName": "Dark Golbat",
+    "fullDisplayName": "Dark Golbat 007/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-007-low.png",
+    "imageHighSrc": "cards/base5-007-high.png"
+  },
+  {
+    "masterCardId": "1720",
+    "externalId": null,
+    "tcgdex_id": "base5-6",
+    "localId": "006",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "006/82",
+    "cardName": "Dark Dugtrio",
+    "fullDisplayName": "Dark Dugtrio 006/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Diglett",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-006-low.png",
+    "imageHighSrc": "cards/base5-006-high.png"
+  },
+  {
+    "masterCardId": "1719",
+    "externalId": null,
+    "tcgdex_id": "base5-5",
+    "localId": "005",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "005/82",
+    "cardName": "Dark Dragonite",
+    "fullDisplayName": "Dark Dragonite 005/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Dragonair",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-005-low.png",
+    "imageHighSrc": "cards/base5-005-high.png"
+  },
+  {
+    "masterCardId": "1718",
+    "externalId": null,
+    "tcgdex_id": "base5-4",
+    "localId": "004",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "004/82",
+    "cardName": "Dark Charizard",
+    "fullDisplayName": "Dark Charizard 004/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Charmeleon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-004-low.png",
+    "imageHighSrc": "cards/base5-004-high.png"
+  },
+  {
+    "masterCardId": "1717",
+    "externalId": null,
+    "tcgdex_id": "base5-3",
+    "localId": "003",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "003/82",
+    "cardName": "Dark Blastoise",
+    "fullDisplayName": "Dark Blastoise 003/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Wartortle",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-003-low.png",
+    "imageHighSrc": "cards/base5-003-high.png"
+  },
+  {
+    "masterCardId": "1716",
+    "externalId": null,
+    "tcgdex_id": "base5-2",
+    "localId": "002",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "002/82",
+    "cardName": "Dark Arbok",
+    "fullDisplayName": "Dark Arbok 002/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-002-low.png",
+    "imageHighSrc": "cards/base5-002-high.png"
+  },
+  {
+    "masterCardId": "1715",
+    "externalId": null,
+    "tcgdex_id": "base5-1",
+    "localId": "001",
+    "setCode": "base5",
+    "setTcgdexId": "base5",
+    "cardNumber": "001/82",
+    "cardName": "Dark Alakazam",
+    "fullDisplayName": "Dark Alakazam 001/82 Team Rocket",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      65
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Kadabra",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/base5-001-low.png",
+    "imageHighSrc": "cards/base5-001-high.png"
+  }
+]

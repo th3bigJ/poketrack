@@ -1,0 +1,3647 @@
+[
+  {
+    "masterCardId": "6723",
+    "externalId": null,
+    "tcgdex_id": "ex7-111",
+    "localId": "111",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "111/109",
+    "cardName": "Here Comes Team Rocket!",
+    "fullDisplayName": "Here Comes Team Rocket! 111/109 Team Rocket Returns",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-111-low.png",
+    "imageHighSrc": "cards/ex7-111-high.png"
+  },
+  {
+    "masterCardId": "6720",
+    "externalId": null,
+    "tcgdex_id": "ex7-110",
+    "localId": "110",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "110/109",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 110/109 Team Rocket Returns",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-110-low.png",
+    "imageHighSrc": "cards/ex7-110-high.png"
+  },
+  {
+    "masterCardId": "6717",
+    "externalId": null,
+    "tcgdex_id": "ex7-109",
+    "localId": "109",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "109/109",
+    "cardName": "Treecko ★",
+    "fullDisplayName": "Treecko ★ 109/109 Team Rocket Returns",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-109-low.png",
+    "imageHighSrc": "cards/ex7-109-high.png"
+  },
+  {
+    "masterCardId": "6714",
+    "externalId": null,
+    "tcgdex_id": "ex7-108",
+    "localId": "108",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "108/109",
+    "cardName": "Torchic ★",
+    "fullDisplayName": "Torchic ★ 108/109 Team Rocket Returns",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-108-low.png",
+    "imageHighSrc": "cards/ex7-108-high.png"
+  },
+  {
+    "masterCardId": "6709",
+    "externalId": null,
+    "tcgdex_id": "ex7-107",
+    "localId": "107",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "107/109",
+    "cardName": "Mudkip ★",
+    "fullDisplayName": "Mudkip ★ 107/109 Team Rocket Returns",
+    "rarity": "Rare Holo Star",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex7-107-low.png",
+    "imageHighSrc": "cards/ex7-107-high.png"
+  },
+  {
+    "masterCardId": "6705",
+    "externalId": null,
+    "tcgdex_id": "ex7-106",
+    "localId": "106",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "106/109",
+    "cardName": "Rocket's Zapdos ex",
+    "fullDisplayName": "Rocket's Zapdos ex 106/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-106-low.png",
+    "imageHighSrc": "cards/ex7-106-high.png"
+  },
+  {
+    "masterCardId": "6699",
+    "externalId": null,
+    "tcgdex_id": "ex7-105",
+    "localId": "105",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "105/109",
+    "cardName": "Rocket's Suicune ex",
+    "fullDisplayName": "Rocket's Suicune ex 105/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-105-low.png",
+    "imageHighSrc": "cards/ex7-105-high.png"
+  },
+  {
+    "masterCardId": "6694",
+    "externalId": null,
+    "tcgdex_id": "ex7-104",
+    "localId": "104",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "104/109",
+    "cardName": "Rocket's Snorlax ex",
+    "fullDisplayName": "Rocket's Snorlax ex 104/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-104-low.png",
+    "imageHighSrc": "cards/ex7-104-high.png"
+  },
+  {
+    "masterCardId": "6689",
+    "externalId": null,
+    "tcgdex_id": "ex7-103",
+    "localId": "103",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "103/109",
+    "cardName": "Rocket's Sneasel ex",
+    "fullDisplayName": "Rocket's Sneasel ex 103/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-103-low.png",
+    "imageHighSrc": "cards/ex7-103-high.png"
+  },
+  {
+    "masterCardId": "6685",
+    "externalId": null,
+    "tcgdex_id": "ex7-102",
+    "localId": "102",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "102/109",
+    "cardName": "Rocket's Scyther ex",
+    "fullDisplayName": "Rocket's Scyther ex 102/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-102-low.png",
+    "imageHighSrc": "cards/ex7-102-high.png"
+  },
+  {
+    "masterCardId": "6680",
+    "externalId": null,
+    "tcgdex_id": "ex7-101",
+    "localId": "101",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "101/109",
+    "cardName": "Rocket's Scizor ex",
+    "fullDisplayName": "Rocket's Scizor ex 101/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rocket's Scyther ex",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-101-low.png",
+    "imageHighSrc": "cards/ex7-101-high.png"
+  },
+  {
+    "masterCardId": "6675",
+    "externalId": null,
+    "tcgdex_id": "ex7-100",
+    "localId": "100",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "100/109",
+    "cardName": "Rocket's Moltres ex",
+    "fullDisplayName": "Rocket's Moltres ex 100/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-100-low.png",
+    "imageHighSrc": "cards/ex7-100-high.png"
+  },
+  {
+    "masterCardId": "6670",
+    "externalId": null,
+    "tcgdex_id": "ex7-99",
+    "localId": "099",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "099/109",
+    "cardName": "Rocket's Mewtwo ex",
+    "fullDisplayName": "Rocket's Mewtwo ex 099/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-099-low.png",
+    "imageHighSrc": "cards/ex7-099-high.png"
+  },
+  {
+    "masterCardId": "6666",
+    "externalId": null,
+    "tcgdex_id": "ex7-98",
+    "localId": "098",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "098/109",
+    "cardName": "Rocket's Hitmonchan ex",
+    "fullDisplayName": "Rocket's Hitmonchan ex 098/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-098-low.png",
+    "imageHighSrc": "cards/ex7-098-high.png"
+  },
+  {
+    "masterCardId": "6662",
+    "externalId": null,
+    "tcgdex_id": "ex7-97",
+    "localId": "097",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "097/109",
+    "cardName": "Rocket's Entei ex",
+    "fullDisplayName": "Rocket's Entei ex 097/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-097-low.png",
+    "imageHighSrc": "cards/ex7-097-high.png"
+  },
+  {
+    "masterCardId": "6655",
+    "externalId": null,
+    "tcgdex_id": "ex7-96",
+    "localId": "096",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "096/109",
+    "cardName": "Rocket's Articuno ex",
+    "fullDisplayName": "Rocket's Articuno ex 096/109 Team Rocket Returns",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-096-low.png",
+    "imageHighSrc": "cards/ex7-096-high.png"
+  },
+  {
+    "masterCardId": "6650",
+    "externalId": null,
+    "tcgdex_id": "ex7-95",
+    "localId": "095",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "095/109",
+    "cardName": "R Energy",
+    "fullDisplayName": "R Energy 095/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-095-low.png",
+    "imageHighSrc": "cards/ex7-095-high.png"
+  },
+  {
+    "masterCardId": "6645",
+    "externalId": null,
+    "tcgdex_id": "ex7-94",
+    "localId": "094",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "094/109",
+    "cardName": "Dark Metal Energy",
+    "fullDisplayName": "Dark Metal Energy 094/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-094-low.png",
+    "imageHighSrc": "cards/ex7-094-high.png"
+  },
+  {
+    "masterCardId": "6640",
+    "externalId": null,
+    "tcgdex_id": "ex7-93",
+    "localId": "093",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "093/109",
+    "cardName": "Venture Bomb",
+    "fullDisplayName": "Venture Bomb 093/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-093-low.png",
+    "imageHighSrc": "cards/ex7-093-high.png"
+  },
+  {
+    "masterCardId": "6635",
+    "externalId": null,
+    "tcgdex_id": "ex7-92",
+    "localId": "092",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "092/109",
+    "cardName": "Swoop! Teleporter",
+    "fullDisplayName": "Swoop! Teleporter 092/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-092-low.png",
+    "imageHighSrc": "cards/ex7-092-high.png"
+  },
+  {
+    "masterCardId": "6632",
+    "externalId": null,
+    "tcgdex_id": "ex7-91",
+    "localId": "091",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "091/109",
+    "cardName": "Surprise! Time Machine",
+    "fullDisplayName": "Surprise! Time Machine 091/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-091-low.png",
+    "imageHighSrc": "cards/ex7-091-high.png"
+  },
+  {
+    "masterCardId": "6626",
+    "externalId": null,
+    "tcgdex_id": "ex7-90",
+    "localId": "090",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "090/109",
+    "cardName": "Rocket's Tricky Gym",
+    "fullDisplayName": "Rocket's Tricky Gym 090/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-090-low.png",
+    "imageHighSrc": "cards/ex7-090-high.png"
+  },
+  {
+    "masterCardId": "6621",
+    "externalId": null,
+    "tcgdex_id": "ex7-89",
+    "localId": "089",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "089/109",
+    "cardName": "Rocket's Poké Ball",
+    "fullDisplayName": "Rocket's Poké Ball 089/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-089-low.png",
+    "imageHighSrc": "cards/ex7-089-high.png"
+  },
+  {
+    "masterCardId": "6616",
+    "externalId": null,
+    "tcgdex_id": "ex7-88",
+    "localId": "088",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "088/109",
+    "cardName": "Rocket's Mission",
+    "fullDisplayName": "Rocket's Mission 088/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-088-low.png",
+    "imageHighSrc": "cards/ex7-088-high.png"
+  },
+  {
+    "masterCardId": "6611",
+    "externalId": null,
+    "tcgdex_id": "ex7-87",
+    "localId": "087",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "087/109",
+    "cardName": "Rocket's Hideout",
+    "fullDisplayName": "Rocket's Hideout 087/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-087-low.png",
+    "imageHighSrc": "cards/ex7-087-high.png"
+  },
+  {
+    "masterCardId": "6606",
+    "externalId": null,
+    "tcgdex_id": "ex7-86",
+    "localId": "086",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "086/109",
+    "cardName": "Rocket's Admin.",
+    "fullDisplayName": "Rocket's Admin. 086/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-086-low.png",
+    "imageHighSrc": "cards/ex7-086-high.png"
+  },
+  {
+    "masterCardId": "6601",
+    "externalId": null,
+    "tcgdex_id": "ex7-85",
+    "localId": "085",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "085/109",
+    "cardName": "Pow! Hand Extension",
+    "fullDisplayName": "Pow! Hand Extension 085/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-085-low.png",
+    "imageHighSrc": "cards/ex7-085-high.png"
+  },
+  {
+    "masterCardId": "6596",
+    "externalId": null,
+    "tcgdex_id": "ex7-84",
+    "localId": "084",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "084/109",
+    "cardName": "Pokémon Retriever",
+    "fullDisplayName": "Pokémon Retriever 084/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-084-low.png",
+    "imageHighSrc": "cards/ex7-084-high.png"
+  },
+  {
+    "masterCardId": "6591",
+    "externalId": null,
+    "tcgdex_id": "ex7-83",
+    "localId": "083",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "083/109",
+    "cardName": "Copycat",
+    "fullDisplayName": "Copycat 083/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-083-low.png",
+    "imageHighSrc": "cards/ex7-083-high.png"
+  },
+  {
+    "masterCardId": "6587",
+    "externalId": null,
+    "tcgdex_id": "ex7-82",
+    "localId": "082",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "082/109",
+    "cardName": "Zubat",
+    "fullDisplayName": "Zubat 082/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      41
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-082-low.png",
+    "imageHighSrc": "cards/ex7-082-high.png"
+  },
+  {
+    "masterCardId": "6581",
+    "externalId": null,
+    "tcgdex_id": "ex7-81",
+    "localId": "081",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "081/109",
+    "cardName": "Wooper",
+    "fullDisplayName": "Wooper 081/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      194
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-081-low.png",
+    "imageHighSrc": "cards/ex7-081-high.png"
+  },
+  {
+    "masterCardId": "6579",
+    "externalId": null,
+    "tcgdex_id": "ex7-80",
+    "localId": "080",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "080/109",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 080/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-080-low.png",
+    "imageHighSrc": "cards/ex7-080-high.png"
+  },
+  {
+    "masterCardId": "6572",
+    "externalId": null,
+    "tcgdex_id": "ex7-79",
+    "localId": "079",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "079/109",
+    "cardName": "Swinub",
+    "fullDisplayName": "Swinub 079/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      220
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-079-low.png",
+    "imageHighSrc": "cards/ex7-079-high.png"
+  },
+  {
+    "masterCardId": "6569",
+    "externalId": null,
+    "tcgdex_id": "ex7-78",
+    "localId": "078",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "078/109",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 078/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-078-low.png",
+    "imageHighSrc": "cards/ex7-078-high.png"
+  },
+  {
+    "masterCardId": "6564",
+    "externalId": null,
+    "tcgdex_id": "ex7-77",
+    "localId": "077",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "077/109",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 077/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-077-low.png",
+    "imageHighSrc": "cards/ex7-077-high.png"
+  },
+  {
+    "masterCardId": "6558",
+    "externalId": null,
+    "tcgdex_id": "ex7-76",
+    "localId": "076",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "076/109",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 076/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-076-low.png",
+    "imageHighSrc": "cards/ex7-076-high.png"
+  },
+  {
+    "masterCardId": "6553",
+    "externalId": null,
+    "tcgdex_id": "ex7-75",
+    "localId": "075",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "075/109",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 075/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-075-low.png",
+    "imageHighSrc": "cards/ex7-075-high.png"
+  },
+  {
+    "masterCardId": "6548",
+    "externalId": null,
+    "tcgdex_id": "ex7-74",
+    "localId": "074",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "074/109",
+    "cardName": "Sandshrew",
+    "fullDisplayName": "Sandshrew 074/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-074-low.png",
+    "imageHighSrc": "cards/ex7-074-high.png"
+  },
+  {
+    "masterCardId": "6543",
+    "externalId": null,
+    "tcgdex_id": "ex7-73",
+    "localId": "073",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "073/109",
+    "cardName": "Remoraid",
+    "fullDisplayName": "Remoraid 073/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      223
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-073-low.png",
+    "imageHighSrc": "cards/ex7-073-high.png"
+  },
+  {
+    "masterCardId": "6539",
+    "externalId": null,
+    "tcgdex_id": "ex7-72",
+    "localId": "072",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "072/109",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 072/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-072-low.png",
+    "imageHighSrc": "cards/ex7-072-high.png"
+  },
+  {
+    "masterCardId": "6535",
+    "externalId": null,
+    "tcgdex_id": "ex7-71",
+    "localId": "071",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "071/109",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 071/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-071-low.png",
+    "imageHighSrc": "cards/ex7-071-high.png"
+  },
+  {
+    "masterCardId": "6530",
+    "externalId": null,
+    "tcgdex_id": "ex7-70",
+    "localId": "070",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "070/109",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 070/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-070-low.png",
+    "imageHighSrc": "cards/ex7-070-high.png"
+  },
+  {
+    "masterCardId": "6525",
+    "externalId": null,
+    "tcgdex_id": "ex7-69",
+    "localId": "069",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "069/109",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 069/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-069-low.png",
+    "imageHighSrc": "cards/ex7-069-high.png"
+  },
+  {
+    "masterCardId": "6520",
+    "externalId": null,
+    "tcgdex_id": "ex7-68",
+    "localId": "068",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "068/109",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 068/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-068-low.png",
+    "imageHighSrc": "cards/ex7-068-high.png"
+  },
+  {
+    "masterCardId": "6516",
+    "externalId": null,
+    "tcgdex_id": "ex7-67",
+    "localId": "067",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "067/109",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 067/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-067-low.png",
+    "imageHighSrc": "cards/ex7-067-high.png"
+  },
+  {
+    "masterCardId": "6511",
+    "externalId": null,
+    "tcgdex_id": "ex7-66",
+    "localId": "066",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "066/109",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 066/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-066-low.png",
+    "imageHighSrc": "cards/ex7-066-high.png"
+  },
+  {
+    "masterCardId": "6506",
+    "externalId": null,
+    "tcgdex_id": "ex7-65",
+    "localId": "065",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "065/109",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 065/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-065-low.png",
+    "imageHighSrc": "cards/ex7-065-high.png"
+  },
+  {
+    "masterCardId": "6501",
+    "externalId": null,
+    "tcgdex_id": "ex7-64",
+    "localId": "064",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "064/109",
+    "cardName": "Ledyba",
+    "fullDisplayName": "Ledyba 064/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-064-low.png",
+    "imageHighSrc": "cards/ex7-064-high.png"
+  },
+  {
+    "masterCardId": "6496",
+    "externalId": null,
+    "tcgdex_id": "ex7-63",
+    "localId": "063",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "063/109",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 063/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-063-low.png",
+    "imageHighSrc": "cards/ex7-063-high.png"
+  },
+  {
+    "masterCardId": "6491",
+    "externalId": null,
+    "tcgdex_id": "ex7-62",
+    "localId": "062",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "062/109",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 062/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-062-low.png",
+    "imageHighSrc": "cards/ex7-062-high.png"
+  },
+  {
+    "masterCardId": "6486",
+    "externalId": null,
+    "tcgdex_id": "ex7-61",
+    "localId": "061",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "061/109",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 061/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-061-low.png",
+    "imageHighSrc": "cards/ex7-061-high.png"
+  },
+  {
+    "masterCardId": "6481",
+    "externalId": null,
+    "tcgdex_id": "ex7-60",
+    "localId": "060",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "060/109",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 060/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-060-low.png",
+    "imageHighSrc": "cards/ex7-060-high.png"
+  },
+  {
+    "masterCardId": "6476",
+    "externalId": null,
+    "tcgdex_id": "ex7-59",
+    "localId": "059",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "059/109",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 059/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-059-low.png",
+    "imageHighSrc": "cards/ex7-059-high.png"
+  },
+  {
+    "masterCardId": "6471",
+    "externalId": null,
+    "tcgdex_id": "ex7-58",
+    "localId": "058",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "058/109",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 058/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-058-low.png",
+    "imageHighSrc": "cards/ex7-058-high.png"
+  },
+  {
+    "masterCardId": "6466",
+    "externalId": null,
+    "tcgdex_id": "ex7-57",
+    "localId": "057",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "057/109",
+    "cardName": "Hoppip",
+    "fullDisplayName": "Hoppip 057/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      187
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-057-low.png",
+    "imageHighSrc": "cards/ex7-057-high.png"
+  },
+  {
+    "masterCardId": "6461",
+    "externalId": null,
+    "tcgdex_id": "ex7-56",
+    "localId": "056",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "056/109",
+    "cardName": "Grimer",
+    "fullDisplayName": "Grimer 056/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      88
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-056-low.png",
+    "imageHighSrc": "cards/ex7-056-high.png"
+  },
+  {
+    "masterCardId": "6457",
+    "externalId": null,
+    "tcgdex_id": "ex7-55",
+    "localId": "055",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "055/109",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 055/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-055-low.png",
+    "imageHighSrc": "cards/ex7-055-high.png"
+  },
+  {
+    "masterCardId": "6452",
+    "externalId": null,
+    "tcgdex_id": "ex7-54",
+    "localId": "054",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "054/109",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 054/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-054-low.png",
+    "imageHighSrc": "cards/ex7-054-high.png"
+  },
+  {
+    "masterCardId": "6447",
+    "externalId": null,
+    "tcgdex_id": "ex7-53",
+    "localId": "053",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "053/109",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 053/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-053-low.png",
+    "imageHighSrc": "cards/ex7-053-high.png"
+  },
+  {
+    "masterCardId": "6442",
+    "externalId": null,
+    "tcgdex_id": "ex7-52",
+    "localId": "052",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "052/109",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 052/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-052-low.png",
+    "imageHighSrc": "cards/ex7-052-high.png"
+  },
+  {
+    "masterCardId": "6437",
+    "externalId": null,
+    "tcgdex_id": "ex7-51",
+    "localId": "051",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "051/109",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 051/109 Team Rocket Returns",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-051-low.png",
+    "imageHighSrc": "cards/ex7-051-high.png"
+  },
+  {
+    "masterCardId": "6432",
+    "externalId": null,
+    "tcgdex_id": "ex7-50",
+    "localId": "050",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "050/109",
+    "cardName": "Togepi",
+    "fullDisplayName": "Togepi 050/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-050-low.png",
+    "imageHighSrc": "cards/ex7-050-high.png"
+  },
+  {
+    "masterCardId": "6427",
+    "externalId": null,
+    "tcgdex_id": "ex7-49",
+    "localId": "049",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "049/109",
+    "cardName": "Skiploom",
+    "fullDisplayName": "Skiploom 049/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      188
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hoppip",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-049-low.png",
+    "imageHighSrc": "cards/ex7-049-high.png"
+  },
+  {
+    "masterCardId": "6422",
+    "externalId": null,
+    "tcgdex_id": "ex7-48",
+    "localId": "048",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "048/109",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 048/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-048-low.png",
+    "imageHighSrc": "cards/ex7-048-high.png"
+  },
+  {
+    "masterCardId": "6417",
+    "externalId": null,
+    "tcgdex_id": "ex7-47",
+    "localId": "047",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "047/109",
+    "cardName": "Rocket's Wobbuffet",
+    "fullDisplayName": "Rocket's Wobbuffet 047/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      202
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-047-low.png",
+    "imageHighSrc": "cards/ex7-047-high.png"
+  },
+  {
+    "masterCardId": "6412",
+    "externalId": null,
+    "tcgdex_id": "ex7-46",
+    "localId": "046",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "046/109",
+    "cardName": "Rocket's Meowth",
+    "fullDisplayName": "Rocket's Meowth 046/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-046-low.png",
+    "imageHighSrc": "cards/ex7-046-high.png"
+  },
+  {
+    "masterCardId": "6407",
+    "externalId": null,
+    "tcgdex_id": "ex7-45",
+    "localId": "045",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "045/109",
+    "cardName": "Mantine",
+    "fullDisplayName": "Mantine 045/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      226
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-045-low.png",
+    "imageHighSrc": "cards/ex7-045-high.png"
+  },
+  {
+    "masterCardId": "6402",
+    "externalId": null,
+    "tcgdex_id": "ex7-44",
+    "localId": "044",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "044/109",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 044/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-044-low.png",
+    "imageHighSrc": "cards/ex7-044-high.png"
+  },
+  {
+    "masterCardId": "6397",
+    "externalId": null,
+    "tcgdex_id": "ex7-43",
+    "localId": "043",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "043/109",
+    "cardName": "Heracross",
+    "fullDisplayName": "Heracross 043/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-043-low.png",
+    "imageHighSrc": "cards/ex7-043-high.png"
+  },
+  {
+    "masterCardId": "6391",
+    "externalId": null,
+    "tcgdex_id": "ex7-42",
+    "localId": "042",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "042/109",
+    "cardName": "Dark Weezing",
+    "fullDisplayName": "Dark Weezing 042/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-042-low.png",
+    "imageHighSrc": "cards/ex7-042-high.png"
+  },
+  {
+    "masterCardId": "6386",
+    "externalId": null,
+    "tcgdex_id": "ex7-41",
+    "localId": "041",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "041/109",
+    "cardName": "Dark Pupitar",
+    "fullDisplayName": "Dark Pupitar 041/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Emi Miwa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-041-low.png",
+    "imageHighSrc": "cards/ex7-041-high.png"
+  },
+  {
+    "masterCardId": "6381",
+    "externalId": null,
+    "tcgdex_id": "ex7-40",
+    "localId": "040",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "040/109",
+    "cardName": "Dark Pupitar",
+    "fullDisplayName": "Dark Pupitar 040/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-040-low.png",
+    "imageHighSrc": "cards/ex7-040-high.png"
+  },
+  {
+    "masterCardId": "6377",
+    "externalId": null,
+    "tcgdex_id": "ex7-39",
+    "localId": "039",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "039/109",
+    "cardName": "Dark Magneton",
+    "fullDisplayName": "Dark Magneton 039/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning",
+      "Darkness"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Emi Miwa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-039-low.png",
+    "imageHighSrc": "cards/ex7-039-high.png"
+  },
+  {
+    "masterCardId": "6372",
+    "externalId": null,
+    "tcgdex_id": "ex7-38",
+    "localId": "038",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "038/109",
+    "cardName": "Dark Magcargo",
+    "fullDisplayName": "Dark Magcargo 038/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire",
+      "Darkness"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-038-low.png",
+    "imageHighSrc": "cards/ex7-038-high.png"
+  },
+  {
+    "masterCardId": "6367",
+    "externalId": null,
+    "tcgdex_id": "ex7-37",
+    "localId": "037",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "037/109",
+    "cardName": "Dark Houndoom",
+    "fullDisplayName": "Dark Houndoom 037/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire",
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-037-low.png",
+    "imageHighSrc": "cards/ex7-037-high.png"
+  },
+  {
+    "masterCardId": "6362",
+    "externalId": null,
+    "tcgdex_id": "ex7-36",
+    "localId": "036",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "036/109",
+    "cardName": "Dark Gyarados",
+    "fullDisplayName": "Dark Gyarados 036/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-036-low.png",
+    "imageHighSrc": "cards/ex7-036-high.png"
+  },
+  {
+    "masterCardId": "6356",
+    "externalId": null,
+    "tcgdex_id": "ex7-35",
+    "localId": "035",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "035/109",
+    "cardName": "Dark Golduck",
+    "fullDisplayName": "Dark Golduck 035/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      55
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Psyduck",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-035-low.png",
+    "imageHighSrc": "cards/ex7-035-high.png"
+  },
+  {
+    "masterCardId": "6351",
+    "externalId": null,
+    "tcgdex_id": "ex7-34",
+    "localId": "034",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "034/109",
+    "cardName": "Dark Golbat",
+    "fullDisplayName": "Dark Golbat 034/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      42
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zubat",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-034-low.png",
+    "imageHighSrc": "cards/ex7-034-high.png"
+  },
+  {
+    "masterCardId": "6346",
+    "externalId": null,
+    "tcgdex_id": "ex7-33",
+    "localId": "033",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "033/109",
+    "cardName": "Dark Flaaffy",
+    "fullDisplayName": "Dark Flaaffy 033/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning",
+      "Darkness"
+    ],
+    "dexIds": [
+      180
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mareep",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-033-low.png",
+    "imageHighSrc": "cards/ex7-033-high.png"
+  },
+  {
+    "masterCardId": "6340",
+    "externalId": null,
+    "tcgdex_id": "ex7-32",
+    "localId": "032",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "032/109",
+    "cardName": "Dark Dragonair",
+    "fullDisplayName": "Dark Dragonair 032/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-032-low.png",
+    "imageHighSrc": "cards/ex7-032-high.png"
+  },
+  {
+    "masterCardId": "6335",
+    "externalId": null,
+    "tcgdex_id": "ex7-31",
+    "localId": "031",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "031/109",
+    "cardName": "Dark Dragonair",
+    "fullDisplayName": "Dark Dragonair 031/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Emi Miwa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-031-low.png",
+    "imageHighSrc": "cards/ex7-031-high.png"
+  },
+  {
+    "masterCardId": "6329",
+    "externalId": null,
+    "tcgdex_id": "ex7-30",
+    "localId": "030",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "030/109",
+    "cardName": "Dark Ariados",
+    "fullDisplayName": "Dark Ariados 030/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spinarak",
+    "artist": "Kyoko Koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-030-low.png",
+    "imageHighSrc": "cards/ex7-030-high.png"
+  },
+  {
+    "masterCardId": "6324",
+    "externalId": null,
+    "tcgdex_id": "ex7-29",
+    "localId": "029",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "029/109",
+    "cardName": "Dark Arbok",
+    "fullDisplayName": "Dark Arbok 029/109 Team Rocket Returns",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-029-low.png",
+    "imageHighSrc": "cards/ex7-029-high.png"
+  },
+  {
+    "masterCardId": "6319",
+    "externalId": null,
+    "tcgdex_id": "ex7-28",
+    "localId": "028",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "028/109",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 028/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-028-low.png",
+    "imageHighSrc": "cards/ex7-028-high.png"
+  },
+  {
+    "masterCardId": "6314",
+    "externalId": null,
+    "tcgdex_id": "ex7-27",
+    "localId": "027",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "027/109",
+    "cardName": "Qwilfish",
+    "fullDisplayName": "Qwilfish 027/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      211
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-027-low.png",
+    "imageHighSrc": "cards/ex7-027-high.png"
+  },
+  {
+    "masterCardId": "6309",
+    "externalId": null,
+    "tcgdex_id": "ex7-26",
+    "localId": "026",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "026/109",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 026/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      195
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wooper",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-026-low.png",
+    "imageHighSrc": "cards/ex7-026-high.png"
+  },
+  {
+    "masterCardId": "6304",
+    "externalId": null,
+    "tcgdex_id": "ex7-25",
+    "localId": "025",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "025/109",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 025/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-025-low.png",
+    "imageHighSrc": "cards/ex7-025-high.png"
+  },
+  {
+    "masterCardId": "6299",
+    "externalId": null,
+    "tcgdex_id": "ex7-24",
+    "localId": "024",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "024/109",
+    "cardName": "Magby",
+    "fullDisplayName": "Magby 024/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      240
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-024-low.png",
+    "imageHighSrc": "cards/ex7-024-high.png"
+  },
+  {
+    "masterCardId": "6294",
+    "externalId": null,
+    "tcgdex_id": "ex7-23",
+    "localId": "023",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "023/109",
+    "cardName": "Ledian",
+    "fullDisplayName": "Ledian 023/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      166
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ledyba",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-023-low.png",
+    "imageHighSrc": "cards/ex7-023-high.png"
+  },
+  {
+    "masterCardId": "6289",
+    "externalId": null,
+    "tcgdex_id": "ex7-22",
+    "localId": "022",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "022/109",
+    "cardName": "Furret",
+    "fullDisplayName": "Furret 022/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      162
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sentret",
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-022-low.png",
+    "imageHighSrc": "cards/ex7-022-high.png"
+  },
+  {
+    "masterCardId": "6284",
+    "externalId": null,
+    "tcgdex_id": "ex7-21",
+    "localId": "021",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "021/109",
+    "cardName": "Delibird",
+    "fullDisplayName": "Delibird 021/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      225
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-021-low.png",
+    "imageHighSrc": "cards/ex7-021-high.png"
+  },
+  {
+    "masterCardId": "6279",
+    "externalId": null,
+    "tcgdex_id": "ex7-20",
+    "localId": "020",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "020/109",
+    "cardName": "Dark Tyranitar",
+    "fullDisplayName": "Dark Tyranitar 020/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Pupitar",
+    "artist": "Kyoko Koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-020-low.png",
+    "imageHighSrc": "cards/ex7-020-high.png"
+  },
+  {
+    "masterCardId": "6274",
+    "externalId": null,
+    "tcgdex_id": "ex7-19",
+    "localId": "019",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "019/109",
+    "cardName": "Dark Tyranitar",
+    "fullDisplayName": "Dark Tyranitar 019/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Pupitar",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-019-low.png",
+    "imageHighSrc": "cards/ex7-019-high.png"
+  },
+  {
+    "masterCardId": "6268",
+    "externalId": null,
+    "tcgdex_id": "ex7-18",
+    "localId": "018",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "018/109",
+    "cardName": "Dark Sandslash",
+    "fullDisplayName": "Dark Sandslash 018/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      28
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sandshrew",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-018-low.png",
+    "imageHighSrc": "cards/ex7-018-high.png"
+  },
+  {
+    "masterCardId": "6263",
+    "externalId": null,
+    "tcgdex_id": "ex7-17",
+    "localId": "017",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "017/109",
+    "cardName": "Dark Raticate",
+    "fullDisplayName": "Dark Raticate 017/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-017-low.png",
+    "imageHighSrc": "cards/ex7-017-high.png"
+  },
+  {
+    "masterCardId": "6258",
+    "externalId": null,
+    "tcgdex_id": "ex7-16",
+    "localId": "016",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "016/109",
+    "cardName": "Dark Muk",
+    "fullDisplayName": "Dark Muk 016/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      89
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grimer",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-016-low.png",
+    "imageHighSrc": "cards/ex7-016-high.png"
+  },
+  {
+    "masterCardId": "6254",
+    "externalId": null,
+    "tcgdex_id": "ex7-15",
+    "localId": "015",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "015/109",
+    "cardName": "Dark Dragonite",
+    "fullDisplayName": "Dark Dragonite 015/109 Team Rocket Returns",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Dragonair",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-015-low.png",
+    "imageHighSrc": "cards/ex7-015-high.png"
+  },
+  {
+    "masterCardId": "6248",
+    "externalId": null,
+    "tcgdex_id": "ex7-14",
+    "localId": "014",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "014/109",
+    "cardName": "Togetic",
+    "fullDisplayName": "Togetic 014/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      176
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togepi",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-014-low.png",
+    "imageHighSrc": "cards/ex7-014-high.png"
+  },
+  {
+    "masterCardId": "6244",
+    "externalId": null,
+    "tcgdex_id": "ex7-13",
+    "localId": "013",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "013/109",
+    "cardName": "Piloswine",
+    "fullDisplayName": "Piloswine 013/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      221
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swinub",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-013-low.png",
+    "imageHighSrc": "cards/ex7-013-high.png"
+  },
+  {
+    "masterCardId": "6239",
+    "externalId": null,
+    "tcgdex_id": "ex7-12",
+    "localId": "012",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "012/109",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 012/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-012-low.png",
+    "imageHighSrc": "cards/ex7-012-high.png"
+  },
+  {
+    "masterCardId": "6234",
+    "externalId": null,
+    "tcgdex_id": "ex7-11",
+    "localId": "011",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "011/109",
+    "cardName": "Jumpluff",
+    "fullDisplayName": "Jumpluff 011/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      189
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skiploom",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-011-low.png",
+    "imageHighSrc": "cards/ex7-011-high.png"
+  },
+  {
+    "masterCardId": "6229",
+    "externalId": null,
+    "tcgdex_id": "ex7-10",
+    "localId": "010",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "010/109",
+    "cardName": "Dark Steelix",
+    "fullDisplayName": "Dark Steelix 010/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness",
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Onix",
+    "artist": "Kyoko Koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-010-low.png",
+    "imageHighSrc": "cards/ex7-010-high.png"
+  },
+  {
+    "masterCardId": "6223",
+    "externalId": null,
+    "tcgdex_id": "ex7-9",
+    "localId": "009",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "009/109",
+    "cardName": "Dark Slowking",
+    "fullDisplayName": "Dark Slowking 009/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic",
+      "Darkness"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-009-low.png",
+    "imageHighSrc": "cards/ex7-009-high.png"
+  },
+  {
+    "masterCardId": "6218",
+    "externalId": null,
+    "tcgdex_id": "ex7-8",
+    "localId": "008",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "008/109",
+    "cardName": "Dark Octillery",
+    "fullDisplayName": "Dark Octillery 008/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      224
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Remoraid",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-008-low.png",
+    "imageHighSrc": "cards/ex7-008-high.png"
+  },
+  {
+    "masterCardId": "6212",
+    "externalId": null,
+    "tcgdex_id": "ex7-7",
+    "localId": "007",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "007/109",
+    "cardName": "Dark Marowak",
+    "fullDisplayName": "Dark Marowak 007/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-007-low.png",
+    "imageHighSrc": "cards/ex7-007-high.png"
+  },
+  {
+    "masterCardId": "6207",
+    "externalId": null,
+    "tcgdex_id": "ex7-6",
+    "localId": "006",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "006/109",
+    "cardName": "Dark Hypno",
+    "fullDisplayName": "Dark Hypno 006/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic",
+      "Darkness"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-006-low.png",
+    "imageHighSrc": "cards/ex7-006-high.png"
+  },
+  {
+    "masterCardId": "6202",
+    "externalId": null,
+    "tcgdex_id": "ex7-5",
+    "localId": "005",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "005/109",
+    "cardName": "Dark Houndoom",
+    "fullDisplayName": "Dark Houndoom 005/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire",
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-005-low.png",
+    "imageHighSrc": "cards/ex7-005-high.png"
+  },
+  {
+    "masterCardId": "6197",
+    "externalId": null,
+    "tcgdex_id": "ex7-4",
+    "localId": "004",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "004/109",
+    "cardName": "Dark Electrode",
+    "fullDisplayName": "Dark Electrode 004/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning",
+      "Darkness"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-004-low.png",
+    "imageHighSrc": "cards/ex7-004-high.png"
+  },
+  {
+    "masterCardId": "6192",
+    "externalId": null,
+    "tcgdex_id": "ex7-3",
+    "localId": "003",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "003/109",
+    "cardName": "Dark Crobat",
+    "fullDisplayName": "Dark Crobat 003/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Golbat",
+    "artist": "Kyoko Koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-003-low.png",
+    "imageHighSrc": "cards/ex7-003-high.png"
+  },
+  {
+    "masterCardId": "6187",
+    "externalId": null,
+    "tcgdex_id": "ex7-2",
+    "localId": "002",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "002/109",
+    "cardName": "Dark Ampharos",
+    "fullDisplayName": "Dark Ampharos 002/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning",
+      "Darkness"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Flaaffy",
+    "artist": "Emi Miwa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-002-low.png",
+    "imageHighSrc": "cards/ex7-002-high.png"
+  },
+  {
+    "masterCardId": "6182",
+    "externalId": null,
+    "tcgdex_id": "ex7-1",
+    "localId": "001",
+    "setCode": "ex7",
+    "setTcgdexId": "ex7",
+    "cardNumber": "001/109",
+    "cardName": "Azumarill",
+    "fullDisplayName": "Azumarill 001/109 Team Rocket Returns",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      184
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marill",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex7-001-low.png",
+    "imageHighSrc": "cards/ex7-001-high.png"
+  }
+]

@@ -1,0 +1,3476 @@
+[
+  {
+    "masterCardId": "3989",
+    "externalId": null,
+    "tcgdex_id": "dp4-106",
+    "localId": "106",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "106/106",
+    "cardName": "Palkia LV.X",
+    "fullDisplayName": "Palkia LV.X 106/106 Great Encounters",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Palkia",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-106-low.png",
+    "imageHighSrc": "cards/dp4-106-high.png"
+  },
+  {
+    "masterCardId": "3985",
+    "externalId": null,
+    "tcgdex_id": "dp4-105",
+    "localId": "105",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "105/106",
+    "cardName": "Dialga LV.X",
+    "fullDisplayName": "Dialga LV.X 105/106 Great Encounters",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dialga",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-105-low.png",
+    "imageHighSrc": "cards/dp4-105-high.png"
+  },
+  {
+    "masterCardId": "3981",
+    "externalId": null,
+    "tcgdex_id": "dp4-104",
+    "localId": "104",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "104/106",
+    "cardName": "Darkrai LV.X",
+    "fullDisplayName": "Darkrai LV.X 104/106 Great Encounters",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Darkrai",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-104-low.png",
+    "imageHighSrc": "cards/dp4-104-high.png"
+  },
+  {
+    "masterCardId": "3977",
+    "externalId": null,
+    "tcgdex_id": "dp4-103",
+    "localId": "103",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "103/106",
+    "cardName": "Cresselia LV.X",
+    "fullDisplayName": "Cresselia LV.X 103/106 Great Encounters",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cresselia",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-103-low.png",
+    "imageHighSrc": "cards/dp4-103-high.png"
+  },
+  {
+    "masterCardId": "3973",
+    "externalId": null,
+    "tcgdex_id": "dp4-102",
+    "localId": "102",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "102/106",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 102/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-102-low.png",
+    "imageHighSrc": "cards/dp4-102-high.png"
+  },
+  {
+    "masterCardId": "3969",
+    "externalId": null,
+    "tcgdex_id": "dp4-101",
+    "localId": "101",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "101/106",
+    "cardName": "Premier Ball",
+    "fullDisplayName": "Premier Ball 101/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-101-low.png",
+    "imageHighSrc": "cards/dp4-101-high.png"
+  },
+  {
+    "masterCardId": "3964",
+    "externalId": null,
+    "tcgdex_id": "dp4-100",
+    "localId": "100",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "100/106",
+    "cardName": "Moonlight Stadium",
+    "fullDisplayName": "Moonlight Stadium 100/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-100-low.png",
+    "imageHighSrc": "cards/dp4-100-high.png"
+  },
+  {
+    "masterCardId": "3959",
+    "externalId": null,
+    "tcgdex_id": "dp4-99",
+    "localId": "099",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "099/106",
+    "cardName": "Leftovers",
+    "fullDisplayName": "Leftovers 099/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-099-low.png",
+    "imageHighSrc": "cards/dp4-099-high.png"
+  },
+  {
+    "masterCardId": "3955",
+    "externalId": null,
+    "tcgdex_id": "dp4-98",
+    "localId": "098",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "098/106",
+    "cardName": "Felicity's Drawing",
+    "fullDisplayName": "Felicity's Drawing 098/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-098-low.png",
+    "imageHighSrc": "cards/dp4-098-high.png"
+  },
+  {
+    "masterCardId": "3951",
+    "externalId": null,
+    "tcgdex_id": "dp4-97",
+    "localId": "097",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "097/106",
+    "cardName": "Amulet Coin",
+    "fullDisplayName": "Amulet Coin 097/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-097-low.png",
+    "imageHighSrc": "cards/dp4-097-high.png"
+  },
+  {
+    "masterCardId": "3947",
+    "externalId": null,
+    "tcgdex_id": "dp4-96",
+    "localId": "096",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "096/106",
+    "cardName": "Zigzagoon",
+    "fullDisplayName": "Zigzagoon 096/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      263
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-096-low.png",
+    "imageHighSrc": "cards/dp4-096-high.png"
+  },
+  {
+    "masterCardId": "3943",
+    "externalId": null,
+    "tcgdex_id": "dp4-95",
+    "localId": "095",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "095/106",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 095/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-095-low.png",
+    "imageHighSrc": "cards/dp4-095-high.png"
+  },
+  {
+    "masterCardId": "3939",
+    "externalId": null,
+    "tcgdex_id": "dp4-94",
+    "localId": "094",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "094/106",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 094/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takao Unno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-094-low.png",
+    "imageHighSrc": "cards/dp4-094-high.png"
+  },
+  {
+    "masterCardId": "3935",
+    "externalId": null,
+    "tcgdex_id": "dp4-93",
+    "localId": "093",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "093/106",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 093/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-093-low.png",
+    "imageHighSrc": "cards/dp4-093-high.png"
+  },
+  {
+    "masterCardId": "3932",
+    "externalId": null,
+    "tcgdex_id": "dp4-92",
+    "localId": "092",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "092/106",
+    "cardName": "Volbeat",
+    "fullDisplayName": "Volbeat 092/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      313
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-092-low.png",
+    "imageHighSrc": "cards/dp4-092-high.png"
+  },
+  {
+    "masterCardId": "3928",
+    "externalId": null,
+    "tcgdex_id": "dp4-91",
+    "localId": "091",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "091/106",
+    "cardName": "Unown [L]",
+    "fullDisplayName": "Unown [L] 091/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp4-091-low.png",
+    "imageHighSrc": "cards/dp4-091-high.png"
+  },
+  {
+    "masterCardId": "3924",
+    "externalId": null,
+    "tcgdex_id": "dp4-90",
+    "localId": "090",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "090/106",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 090/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-090-low.png",
+    "imageHighSrc": "cards/dp4-090-high.png"
+  },
+  {
+    "masterCardId": "3920",
+    "externalId": null,
+    "tcgdex_id": "dp4-89",
+    "localId": "089",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "089/106",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 089/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-089-low.png",
+    "imageHighSrc": "cards/dp4-089-high.png"
+  },
+  {
+    "masterCardId": "3916",
+    "externalId": null,
+    "tcgdex_id": "dp4-88",
+    "localId": "088",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "088/106",
+    "cardName": "Togepi",
+    "fullDisplayName": "Togepi 088/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-088-low.png",
+    "imageHighSrc": "cards/dp4-088-high.png"
+  },
+  {
+    "masterCardId": "3912",
+    "externalId": null,
+    "tcgdex_id": "dp4-87",
+    "localId": "087",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "087/106",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 087/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-087-low.png",
+    "imageHighSrc": "cards/dp4-087-high.png"
+  },
+  {
+    "masterCardId": "3908",
+    "externalId": null,
+    "tcgdex_id": "dp4-86",
+    "localId": "086",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "086/106",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 086/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-086-low.png",
+    "imageHighSrc": "cards/dp4-086-high.png"
+  },
+  {
+    "masterCardId": "3904",
+    "externalId": null,
+    "tcgdex_id": "dp4-85",
+    "localId": "085",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "085/106",
+    "cardName": "Solrock",
+    "fullDisplayName": "Solrock 085/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      338
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-085-low.png",
+    "imageHighSrc": "cards/dp4-085-high.png"
+  },
+  {
+    "masterCardId": "3900",
+    "externalId": null,
+    "tcgdex_id": "dp4-84",
+    "localId": "084",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "084/106",
+    "cardName": "Snubbull",
+    "fullDisplayName": "Snubbull 084/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      209
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-084-low.png",
+    "imageHighSrc": "cards/dp4-084-high.png"
+  },
+  {
+    "masterCardId": "3896",
+    "externalId": null,
+    "tcgdex_id": "dp4-83",
+    "localId": "083",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "083/106",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 083/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-083-low.png",
+    "imageHighSrc": "cards/dp4-083-high.png"
+  },
+  {
+    "masterCardId": "3892",
+    "externalId": null,
+    "tcgdex_id": "dp4-82",
+    "localId": "082",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "082/106",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 082/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-082-low.png",
+    "imageHighSrc": "cards/dp4-082-high.png"
+  },
+  {
+    "masterCardId": "3888",
+    "externalId": null,
+    "tcgdex_id": "dp4-81",
+    "localId": "081",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "081/106",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 081/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-081-low.png",
+    "imageHighSrc": "cards/dp4-081-high.png"
+  },
+  {
+    "masterCardId": "3884",
+    "externalId": null,
+    "tcgdex_id": "dp4-80",
+    "localId": "080",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "080/106",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 080/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-080-low.png",
+    "imageHighSrc": "cards/dp4-080-high.png"
+  },
+  {
+    "masterCardId": "3879",
+    "externalId": null,
+    "tcgdex_id": "dp4-79",
+    "localId": "079",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "079/106",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 079/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-079-low.png",
+    "imageHighSrc": "cards/dp4-079-high.png"
+  },
+  {
+    "masterCardId": "3873",
+    "externalId": null,
+    "tcgdex_id": "dp4-78",
+    "localId": "078",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "078/106",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 078/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-078-low.png",
+    "imageHighSrc": "cards/dp4-078-high.png"
+  },
+  {
+    "masterCardId": "3869",
+    "externalId": null,
+    "tcgdex_id": "dp4-77",
+    "localId": "077",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "077/106",
+    "cardName": "Luvdisc",
+    "fullDisplayName": "Luvdisc 077/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      370
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Motofumi Fujiwara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-077-low.png",
+    "imageHighSrc": "cards/dp4-077-high.png"
+  },
+  {
+    "masterCardId": "3865",
+    "externalId": null,
+    "tcgdex_id": "dp4-76",
+    "localId": "076",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "076/106",
+    "cardName": "Lunatone",
+    "fullDisplayName": "Lunatone 076/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      337
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-076-low.png",
+    "imageHighSrc": "cards/dp4-076-high.png"
+  },
+  {
+    "masterCardId": "3861",
+    "externalId": null,
+    "tcgdex_id": "dp4-75",
+    "localId": "075",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "075/106",
+    "cardName": "Krabby",
+    "fullDisplayName": "Krabby 075/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      98
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-075-low.png",
+    "imageHighSrc": "cards/dp4-075-high.png"
+  },
+  {
+    "masterCardId": "3857",
+    "externalId": null,
+    "tcgdex_id": "dp4-74",
+    "localId": "074",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "074/106",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 074/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-074-low.png",
+    "imageHighSrc": "cards/dp4-074-high.png"
+  },
+  {
+    "masterCardId": "3853",
+    "externalId": null,
+    "tcgdex_id": "dp4-73",
+    "localId": "073",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "073/106",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 073/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-073-low.png",
+    "imageHighSrc": "cards/dp4-073-high.png"
+  },
+  {
+    "masterCardId": "3849",
+    "externalId": null,
+    "tcgdex_id": "dp4-72",
+    "localId": "072",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "072/106",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 072/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kenkichi Toyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-072-low.png",
+    "imageHighSrc": "cards/dp4-072-high.png"
+  },
+  {
+    "masterCardId": "3845",
+    "externalId": null,
+    "tcgdex_id": "dp4-71",
+    "localId": "071",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "071/106",
+    "cardName": "Illumise",
+    "fullDisplayName": "Illumise 071/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      314
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-071-low.png",
+    "imageHighSrc": "cards/dp4-071-high.png"
+  },
+  {
+    "masterCardId": "3841",
+    "externalId": null,
+    "tcgdex_id": "dp4-70",
+    "localId": "070",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "070/106",
+    "cardName": "Igglybuff",
+    "fullDisplayName": "Igglybuff 070/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      174
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-070-low.png",
+    "imageHighSrc": "cards/dp4-070-high.png"
+  },
+  {
+    "masterCardId": "3837",
+    "externalId": null,
+    "tcgdex_id": "dp4-69",
+    "localId": "069",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "069/106",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 069/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-069-low.png",
+    "imageHighSrc": "cards/dp4-069-high.png"
+  },
+  {
+    "masterCardId": "3833",
+    "externalId": null,
+    "tcgdex_id": "dp4-68",
+    "localId": "068",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "068/106",
+    "cardName": "Glameow",
+    "fullDisplayName": "Glameow 068/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      431
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-068-low.png",
+    "imageHighSrc": "cards/dp4-068-high.png"
+  },
+  {
+    "masterCardId": "3829",
+    "externalId": null,
+    "tcgdex_id": "dp4-67",
+    "localId": "067",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "067/106",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 067/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-067-low.png",
+    "imageHighSrc": "cards/dp4-067-high.png"
+  },
+  {
+    "masterCardId": "3825",
+    "externalId": null,
+    "tcgdex_id": "dp4-66",
+    "localId": "066",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "066/106",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 066/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-066-low.png",
+    "imageHighSrc": "cards/dp4-066-high.png"
+  },
+  {
+    "masterCardId": "3821",
+    "externalId": null,
+    "tcgdex_id": "dp4-65",
+    "localId": "065",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "065/106",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 065/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-065-low.png",
+    "imageHighSrc": "cards/dp4-065-high.png"
+  },
+  {
+    "masterCardId": "3817",
+    "externalId": null,
+    "tcgdex_id": "dp4-64",
+    "localId": "064",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "064/106",
+    "cardName": "Clamperl",
+    "fullDisplayName": "Clamperl 064/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      366
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-064-low.png",
+    "imageHighSrc": "cards/dp4-064-high.png"
+  },
+  {
+    "masterCardId": "3813",
+    "externalId": null,
+    "tcgdex_id": "dp4-63",
+    "localId": "063",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "063/106",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 063/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-063-low.png",
+    "imageHighSrc": "cards/dp4-063-high.png"
+  },
+  {
+    "masterCardId": "3809",
+    "externalId": null,
+    "tcgdex_id": "dp4-62",
+    "localId": "062",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "062/106",
+    "cardName": "Cacnea",
+    "fullDisplayName": "Cacnea 062/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      331
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-062-low.png",
+    "imageHighSrc": "cards/dp4-062-high.png"
+  },
+  {
+    "masterCardId": "3805",
+    "externalId": null,
+    "tcgdex_id": "dp4-61",
+    "localId": "061",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "061/106",
+    "cardName": "Buizel",
+    "fullDisplayName": "Buizel 061/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      418
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-061-low.png",
+    "imageHighSrc": "cards/dp4-061-high.png"
+  },
+  {
+    "masterCardId": "3800",
+    "externalId": null,
+    "tcgdex_id": "dp4-60",
+    "localId": "060",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "060/106",
+    "cardName": "Baltoy",
+    "fullDisplayName": "Baltoy 060/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-060-low.png",
+    "imageHighSrc": "cards/dp4-060-high.png"
+  },
+  {
+    "masterCardId": "3796",
+    "externalId": null,
+    "tcgdex_id": "dp4-59",
+    "localId": "059",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "059/106",
+    "cardName": "Zangoose",
+    "fullDisplayName": "Zangoose 059/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-059-low.png",
+    "imageHighSrc": "cards/dp4-059-high.png"
+  },
+  {
+    "masterCardId": "3792",
+    "externalId": null,
+    "tcgdex_id": "dp4-58",
+    "localId": "058",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "058/106",
+    "cardName": "Wailmer",
+    "fullDisplayName": "Wailmer 058/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      320
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Ohta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-058-low.png",
+    "imageHighSrc": "cards/dp4-058-high.png"
+  },
+  {
+    "masterCardId": "3788",
+    "externalId": null,
+    "tcgdex_id": "dp4-57",
+    "localId": "057",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "057/106",
+    "cardName": "Unown [G]",
+    "fullDisplayName": "Unown [G] 057/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp4-057-low.png",
+    "imageHighSrc": "cards/dp4-057-high.png"
+  },
+  {
+    "masterCardId": "3784",
+    "externalId": null,
+    "tcgdex_id": "dp4-56",
+    "localId": "056",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "056/106",
+    "cardName": "Unown [F]",
+    "fullDisplayName": "Unown [F] 056/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp4-056-low.png",
+    "imageHighSrc": "cards/dp4-056-high.png"
+  },
+  {
+    "masterCardId": "3780",
+    "externalId": null,
+    "tcgdex_id": "dp4-55",
+    "localId": "055",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "055/106",
+    "cardName": "Togetic",
+    "fullDisplayName": "Togetic 055/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      176
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togepi",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-055-low.png",
+    "imageHighSrc": "cards/dp4-055-high.png"
+  },
+  {
+    "masterCardId": "3776",
+    "externalId": null,
+    "tcgdex_id": "dp4-54",
+    "localId": "054",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "054/106",
+    "cardName": "Slowbro",
+    "fullDisplayName": "Slowbro 054/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-054-low.png",
+    "imageHighSrc": "cards/dp4-054-high.png"
+  },
+  {
+    "masterCardId": "3772",
+    "externalId": null,
+    "tcgdex_id": "dp4-53",
+    "localId": "053",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "053/106",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 053/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-053-low.png",
+    "imageHighSrc": "cards/dp4-053-high.png"
+  },
+  {
+    "masterCardId": "3769",
+    "externalId": null,
+    "tcgdex_id": "dp4-52",
+    "localId": "052",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "052/106",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 052/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-052-low.png",
+    "imageHighSrc": "cards/dp4-052-high.png"
+  },
+  {
+    "masterCardId": "3765",
+    "externalId": null,
+    "tcgdex_id": "dp4-51",
+    "localId": "051",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "051/106",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 051/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-051-low.png",
+    "imageHighSrc": "cards/dp4-051-high.png"
+  },
+  {
+    "masterCardId": "3761",
+    "externalId": null,
+    "tcgdex_id": "dp4-50",
+    "localId": "050",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "050/106",
+    "cardName": "Purugly",
+    "fullDisplayName": "Purugly 050/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      432
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Glameow",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-050-low.png",
+    "imageHighSrc": "cards/dp4-050-high.png"
+  },
+  {
+    "masterCardId": "3757",
+    "externalId": null,
+    "tcgdex_id": "dp4-49",
+    "localId": "049",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "049/106",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 049/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-049-low.png",
+    "imageHighSrc": "cards/dp4-049-high.png"
+  },
+  {
+    "masterCardId": "3753",
+    "externalId": null,
+    "tcgdex_id": "dp4-48",
+    "localId": "048",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "048/106",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 048/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-048-low.png",
+    "imageHighSrc": "cards/dp4-048-high.png"
+  },
+  {
+    "masterCardId": "3749",
+    "externalId": null,
+    "tcgdex_id": "dp4-47",
+    "localId": "047",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "047/106",
+    "cardName": "Metapod",
+    "fullDisplayName": "Metapod 047/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      11
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Caterpie",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-047-low.png",
+    "imageHighSrc": "cards/dp4-047-high.png"
+  },
+  {
+    "masterCardId": "3745",
+    "externalId": null,
+    "tcgdex_id": "dp4-46",
+    "localId": "046",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "046/106",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 046/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-046-low.png",
+    "imageHighSrc": "cards/dp4-046-high.png"
+  },
+  {
+    "masterCardId": "3741",
+    "externalId": null,
+    "tcgdex_id": "dp4-45",
+    "localId": "045",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "045/106",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 045/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-045-low.png",
+    "imageHighSrc": "cards/dp4-045-high.png"
+  },
+  {
+    "masterCardId": "3737",
+    "externalId": null,
+    "tcgdex_id": "dp4-44",
+    "localId": "044",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "044/106",
+    "cardName": "Loudred",
+    "fullDisplayName": "Loudred 044/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      294
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Whismur",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-044-low.png",
+    "imageHighSrc": "cards/dp4-044-high.png"
+  },
+  {
+    "masterCardId": "3733",
+    "externalId": null,
+    "tcgdex_id": "dp4-43",
+    "localId": "043",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "043/106",
+    "cardName": "Linoone",
+    "fullDisplayName": "Linoone 043/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      264
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zigzagoon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-043-low.png",
+    "imageHighSrc": "cards/dp4-043-high.png"
+  },
+  {
+    "masterCardId": "3729",
+    "externalId": null,
+    "tcgdex_id": "dp4-42",
+    "localId": "042",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "042/106",
+    "cardName": "Huntail",
+    "fullDisplayName": "Huntail 042/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      367
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clamperl",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-042-low.png",
+    "imageHighSrc": "cards/dp4-042-high.png"
+  },
+  {
+    "masterCardId": "3725",
+    "externalId": null,
+    "tcgdex_id": "dp4-41",
+    "localId": "041",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "041/106",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 041/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Makuhita",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-041-low.png",
+    "imageHighSrc": "cards/dp4-041-high.png"
+  },
+  {
+    "masterCardId": "3721",
+    "externalId": null,
+    "tcgdex_id": "dp4-40",
+    "localId": "040",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "040/106",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 040/106 Great Encounters",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-040-low.png",
+    "imageHighSrc": "cards/dp4-040-high.png"
+  },
+  {
+    "masterCardId": "3717",
+    "externalId": null,
+    "tcgdex_id": "dp4-39",
+    "localId": "039",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "039/106",
+    "cardName": "Granbull",
+    "fullDisplayName": "Granbull 039/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      210
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snubbull",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-039-low.png",
+    "imageHighSrc": "cards/dp4-039-high.png"
+  },
+  {
+    "masterCardId": "3713",
+    "externalId": null,
+    "tcgdex_id": "dp4-38",
+    "localId": "038",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "038/106",
+    "cardName": "Gorebyss",
+    "fullDisplayName": "Gorebyss 038/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      368
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clamperl",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-038-low.png",
+    "imageHighSrc": "cards/dp4-038-high.png"
+  },
+  {
+    "masterCardId": "3709",
+    "externalId": null,
+    "tcgdex_id": "dp4-37",
+    "localId": "037",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "037/106",
+    "cardName": "Floatzel",
+    "fullDisplayName": "Floatzel 037/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      419
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buizel",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-037-low.png",
+    "imageHighSrc": "cards/dp4-037-high.png"
+  },
+  {
+    "masterCardId": "3705",
+    "externalId": null,
+    "tcgdex_id": "dp4-36",
+    "localId": "036",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "036/106",
+    "cardName": "Delibird",
+    "fullDisplayName": "Delibird 036/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      225
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-036-low.png",
+    "imageHighSrc": "cards/dp4-036-high.png"
+  },
+  {
+    "masterCardId": "3701",
+    "externalId": null,
+    "tcgdex_id": "dp4-35",
+    "localId": "035",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "035/106",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 035/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-035-low.png",
+    "imageHighSrc": "cards/dp4-035-high.png"
+  },
+  {
+    "masterCardId": "3696",
+    "externalId": null,
+    "tcgdex_id": "dp4-34",
+    "localId": "034",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "034/106",
+    "cardName": "Cacturne",
+    "fullDisplayName": "Cacturne 034/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      332
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cacnea",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-034-low.png",
+    "imageHighSrc": "cards/dp4-034-high.png"
+  },
+  {
+    "masterCardId": "3691",
+    "externalId": null,
+    "tcgdex_id": "dp4-33",
+    "localId": "033",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "033/106",
+    "cardName": "Arbok",
+    "fullDisplayName": "Arbok 033/106 Great Encounters",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-033-low.png",
+    "imageHighSrc": "cards/dp4-033-high.png"
+  },
+  {
+    "masterCardId": "3686",
+    "externalId": null,
+    "tcgdex_id": "dp4-32",
+    "localId": "032",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "032/106",
+    "cardName": "Wigglytuff",
+    "fullDisplayName": "Wigglytuff 032/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-032-low.png",
+    "imageHighSrc": "cards/dp4-032-high.png"
+  },
+  {
+    "masterCardId": "3680",
+    "externalId": null,
+    "tcgdex_id": "dp4-31",
+    "localId": "031",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "031/106",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 031/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-031-low.png",
+    "imageHighSrc": "cards/dp4-031-high.png"
+  },
+  {
+    "masterCardId": "3676",
+    "externalId": null,
+    "tcgdex_id": "dp4-30",
+    "localId": "030",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "030/106",
+    "cardName": "Wailord",
+    "fullDisplayName": "Wailord 030/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 200,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wailmer",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-030-low.png",
+    "imageHighSrc": "cards/dp4-030-high.png"
+  },
+  {
+    "masterCardId": "3671",
+    "externalId": null,
+    "tcgdex_id": "dp4-29",
+    "localId": "029",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "029/106",
+    "cardName": "Unown [H]",
+    "fullDisplayName": "Unown [H] 029/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp4-029-low.png",
+    "imageHighSrc": "cards/dp4-029-high.png"
+  },
+  {
+    "masterCardId": "3666",
+    "externalId": null,
+    "tcgdex_id": "dp4-28",
+    "localId": "028",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "028/106",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 028/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-028-low.png",
+    "imageHighSrc": "cards/dp4-028-high.png"
+  },
+  {
+    "masterCardId": "3661",
+    "externalId": null,
+    "tcgdex_id": "dp4-27",
+    "localId": "027",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "027/106",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 027/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-027-low.png",
+    "imageHighSrc": "cards/dp4-027-high.png"
+  },
+  {
+    "masterCardId": "3656",
+    "externalId": null,
+    "tcgdex_id": "dp4-26",
+    "localId": "026",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "026/106",
+    "cardName": "Palkia",
+    "fullDisplayName": "Palkia 026/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      484
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-026-low.png",
+    "imageHighSrc": "cards/dp4-026-high.png"
+  },
+  {
+    "masterCardId": "3651",
+    "externalId": null,
+    "tcgdex_id": "dp4-25",
+    "localId": "025",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "025/106",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 025/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-025-low.png",
+    "imageHighSrc": "cards/dp4-025-high.png"
+  },
+  {
+    "masterCardId": "3646",
+    "externalId": null,
+    "tcgdex_id": "dp4-24",
+    "localId": "024",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "024/106",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 024/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-024-low.png",
+    "imageHighSrc": "cards/dp4-024-high.png"
+  },
+  {
+    "masterCardId": "3641",
+    "externalId": null,
+    "tcgdex_id": "dp4-23",
+    "localId": "023",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "023/106",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 023/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-023-low.png",
+    "imageHighSrc": "cards/dp4-023-high.png"
+  },
+  {
+    "masterCardId": "3638",
+    "externalId": null,
+    "tcgdex_id": "dp4-22",
+    "localId": "022",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "022/106",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 022/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-022-low.png",
+    "imageHighSrc": "cards/dp4-022-high.png"
+  },
+  {
+    "masterCardId": "3632",
+    "externalId": null,
+    "tcgdex_id": "dp4-21",
+    "localId": "021",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "021/106",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 021/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-021-low.png",
+    "imageHighSrc": "cards/dp4-021-high.png"
+  },
+  {
+    "masterCardId": "3628",
+    "externalId": null,
+    "tcgdex_id": "dp4-20",
+    "localId": "020",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "020/106",
+    "cardName": "Kingler",
+    "fullDisplayName": "Kingler 020/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      99
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Krabby",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-020-low.png",
+    "imageHighSrc": "cards/dp4-020-high.png"
+  },
+  {
+    "masterCardId": "3623",
+    "externalId": null,
+    "tcgdex_id": "dp4-19",
+    "localId": "019",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "019/106",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 019/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-019-low.png",
+    "imageHighSrc": "cards/dp4-019-high.png"
+  },
+  {
+    "masterCardId": "3616",
+    "externalId": null,
+    "tcgdex_id": "dp4-18",
+    "localId": "018",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "018/106",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 018/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-018-low.png",
+    "imageHighSrc": "cards/dp4-018-high.png"
+  },
+  {
+    "masterCardId": "3611",
+    "externalId": null,
+    "tcgdex_id": "dp4-17",
+    "localId": "017",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "017/106",
+    "cardName": "Exploud",
+    "fullDisplayName": "Exploud 017/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      295
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Loudred",
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-017-low.png",
+    "imageHighSrc": "cards/dp4-017-high.png"
+  },
+  {
+    "masterCardId": "3606",
+    "externalId": null,
+    "tcgdex_id": "dp4-16",
+    "localId": "016",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "016/106",
+    "cardName": "Dialga",
+    "fullDisplayName": "Dialga 016/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      483
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-016-low.png",
+    "imageHighSrc": "cards/dp4-016-high.png"
+  },
+  {
+    "masterCardId": "3600",
+    "externalId": null,
+    "tcgdex_id": "dp4-15",
+    "localId": "015",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "015/106",
+    "cardName": "Claydol",
+    "fullDisplayName": "Claydol 015/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Baltoy",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-015-low.png",
+    "imageHighSrc": "cards/dp4-015-high.png"
+  },
+  {
+    "masterCardId": "3594",
+    "externalId": null,
+    "tcgdex_id": "dp4-14",
+    "localId": "014",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "014/106",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 014/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-014-low.png",
+    "imageHighSrc": "cards/dp4-014-high.png"
+  },
+  {
+    "masterCardId": "3588",
+    "externalId": null,
+    "tcgdex_id": "dp4-13",
+    "localId": "013",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "013/106",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 013/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-013-low.png",
+    "imageHighSrc": "cards/dp4-013-high.png"
+  },
+  {
+    "masterCardId": "3582",
+    "externalId": null,
+    "tcgdex_id": "dp4-12",
+    "localId": "012",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "012/106",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 012/106 Great Encounters",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-012-low.png",
+    "imageHighSrc": "cards/dp4-012-high.png"
+  },
+  {
+    "masterCardId": "3576",
+    "externalId": null,
+    "tcgdex_id": "dp4-11",
+    "localId": "011",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "011/106",
+    "cardName": "Togekiss",
+    "fullDisplayName": "Togekiss 011/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      468
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togetic",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-011-low.png",
+    "imageHighSrc": "cards/dp4-011-high.png"
+  },
+  {
+    "masterCardId": "3570",
+    "externalId": null,
+    "tcgdex_id": "dp4-10",
+    "localId": "010",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "010/106",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 010/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-010-low.png",
+    "imageHighSrc": "cards/dp4-010-high.png"
+  },
+  {
+    "masterCardId": "3564",
+    "externalId": null,
+    "tcgdex_id": "dp4-9",
+    "localId": "009",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "009/106",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 009/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-009-low.png",
+    "imageHighSrc": "cards/dp4-009-high.png"
+  },
+  {
+    "masterCardId": "3558",
+    "externalId": null,
+    "tcgdex_id": "dp4-8",
+    "localId": "008",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "008/106",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 008/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-008-low.png",
+    "imageHighSrc": "cards/dp4-008-high.png"
+  },
+  {
+    "masterCardId": "3552",
+    "externalId": null,
+    "tcgdex_id": "dp4-7",
+    "localId": "007",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "007/106",
+    "cardName": "Rotom",
+    "fullDisplayName": "Rotom 007/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-007-low.png",
+    "imageHighSrc": "cards/dp4-007-high.png"
+  },
+  {
+    "masterCardId": "3546",
+    "externalId": null,
+    "tcgdex_id": "dp4-6",
+    "localId": "006",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "006/106",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z 006/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-006-low.png",
+    "imageHighSrc": "cards/dp4-006-high.png"
+  },
+  {
+    "masterCardId": "3540",
+    "externalId": null,
+    "tcgdex_id": "dp4-5",
+    "localId": "005",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "005/106",
+    "cardName": "Pachirisu",
+    "fullDisplayName": "Pachirisu 005/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      417
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-005-low.png",
+    "imageHighSrc": "cards/dp4-005-high.png"
+  },
+  {
+    "masterCardId": "3534",
+    "externalId": null,
+    "tcgdex_id": "dp4-4",
+    "localId": "004",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "004/106",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai 004/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-004-low.png",
+    "imageHighSrc": "cards/dp4-004-high.png"
+  },
+  {
+    "masterCardId": "3529",
+    "externalId": null,
+    "tcgdex_id": "dp4-3",
+    "localId": "003",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "003/106",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai 003/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-003-low.png",
+    "imageHighSrc": "cards/dp4-003-high.png"
+  },
+  {
+    "masterCardId": "3524",
+    "externalId": null,
+    "tcgdex_id": "dp4-2",
+    "localId": "002",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "002/106",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 002/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-002-low.png",
+    "imageHighSrc": "cards/dp4-002-high.png"
+  },
+  {
+    "masterCardId": "3519",
+    "externalId": null,
+    "tcgdex_id": "dp4-1",
+    "localId": "001",
+    "setCode": "dp4",
+    "setTcgdexId": "dp4",
+    "cardNumber": "001/106",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 001/106 Great Encounters",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp4-001-low.png",
+    "imageHighSrc": "cards/dp4-001-high.png"
+  }
+]

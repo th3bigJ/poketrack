@@ -1,0 +1,398 @@
+[
+  {
+    "masterCardId": "22000",
+    "externalId": null,
+    "tcgdex_id": "2017sm-12",
+    "localId": "012",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "012/12",
+    "cardName": "Yungoos",
+    "fullDisplayName": "Yungoos 012/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      734
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-012-low.jpg",
+    "imageHighSrc": "cards/2017sm-012-low.jpg"
+  },
+  {
+    "masterCardId": "21999",
+    "externalId": null,
+    "tcgdex_id": "2017sm-11",
+    "localId": "011",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "011/12",
+    "cardName": "Pikipek",
+    "fullDisplayName": "Pikipek 011/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      731
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-011-low.jpg",
+    "imageHighSrc": "cards/2017sm-011-low.jpg"
+  },
+  {
+    "masterCardId": "21998",
+    "externalId": null,
+    "tcgdex_id": "2017sm-10",
+    "localId": "010",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "010/12",
+    "cardName": "Cutiefly",
+    "fullDisplayName": "Cutiefly 010/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      742
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-010-low.jpg",
+    "imageHighSrc": "cards/2017sm-010-low.jpg"
+  },
+  {
+    "masterCardId": "21997",
+    "externalId": null,
+    "tcgdex_id": "2017sm-9",
+    "localId": "009",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "009/12",
+    "cardName": "Alolan Diglett",
+    "fullDisplayName": "Alolan Diglett 009/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-009-low.jpg",
+    "imageHighSrc": "cards/2017sm-009-low.jpg"
+  },
+  {
+    "masterCardId": "21996",
+    "externalId": null,
+    "tcgdex_id": "2017sm-8",
+    "localId": "008",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "008/12",
+    "cardName": "Alolan Meowth",
+    "fullDisplayName": "Alolan Meowth 008/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-008-low.jpg",
+    "imageHighSrc": "cards/2017sm-008-low.jpg"
+  },
+  {
+    "masterCardId": "21995",
+    "externalId": null,
+    "tcgdex_id": "2017sm-7",
+    "localId": "007",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "007/12",
+    "cardName": "Crabrawler",
+    "fullDisplayName": "Crabrawler 007/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      739
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-007-low.jpg",
+    "imageHighSrc": "cards/2017sm-007-low.jpg"
+  },
+  {
+    "masterCardId": "21994",
+    "externalId": null,
+    "tcgdex_id": "2017sm-6",
+    "localId": "006",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "006/12",
+    "cardName": "Cosmog",
+    "fullDisplayName": "Cosmog 006/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      789
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-006-low.jpg",
+    "imageHighSrc": "cards/2017sm-006-low.jpg"
+  },
+  {
+    "masterCardId": "21993",
+    "externalId": null,
+    "tcgdex_id": "2017sm-5",
+    "localId": "005",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "005/12",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 005/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-005-low.jpg",
+    "imageHighSrc": "cards/2017sm-005-low.jpg"
+  },
+  {
+    "masterCardId": "21992",
+    "externalId": null,
+    "tcgdex_id": "2017sm-4",
+    "localId": "004",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "004/12",
+    "cardName": "Popplio",
+    "fullDisplayName": "Popplio 004/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      728
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-004-low.jpg",
+    "imageHighSrc": "cards/2017sm-004-low.jpg"
+  },
+  {
+    "masterCardId": "21991",
+    "externalId": null,
+    "tcgdex_id": "2017sm-3",
+    "localId": "003",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "003/12",
+    "cardName": "Litten",
+    "fullDisplayName": "Litten 003/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      725
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-003-low.jpg",
+    "imageHighSrc": "cards/2017sm-003-low.jpg"
+  },
+  {
+    "masterCardId": "21990",
+    "externalId": null,
+    "tcgdex_id": "2017sm-2",
+    "localId": "002",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "002/12",
+    "cardName": "Grubbin",
+    "fullDisplayName": "Grubbin 002/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      736
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-002-low.jpg",
+    "imageHighSrc": "cards/2017sm-002-low.jpg"
+  },
+  {
+    "masterCardId": "21989",
+    "externalId": null,
+    "tcgdex_id": "2017sm-1",
+    "localId": "001",
+    "setCode": "2017sm",
+    "setTcgdexId": "2017sm",
+    "cardNumber": "001/12",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 001/12 Macdonald's Collection 2017",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2017sm-001-low.jpg",
+    "imageHighSrc": "cards/2017sm-001-low.jpg"
+  }
+]

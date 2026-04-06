@@ -1,0 +1,565 @@
+[
+  {
+    "masterCardId": "8455",
+    "externalId": null,
+    "tcgdex_id": "pop1-17",
+    "localId": "017",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "017/17",
+    "cardName": "Tyranitar ex",
+    "fullDisplayName": "Tyranitar ex 017/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      248
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pupitar",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-017-low.png",
+    "imageHighSrc": "cards/pop1-017-high.png"
+  },
+  {
+    "masterCardId": "8445",
+    "externalId": null,
+    "tcgdex_id": "pop1-16",
+    "localId": "016",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "016/17",
+    "cardName": "Armaldo ex",
+    "fullDisplayName": "Armaldo ex 016/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Anorith",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-016-low.png",
+    "imageHighSrc": "cards/pop1-016-high.png"
+  },
+  {
+    "masterCardId": "8435",
+    "externalId": null,
+    "tcgdex_id": "pop1-15",
+    "localId": "015",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "015/17",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 015/17 POP Series 1",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-015-low.png",
+    "imageHighSrc": "cards/pop1-015-high.png"
+  },
+  {
+    "masterCardId": "8426",
+    "externalId": null,
+    "tcgdex_id": "pop1-14",
+    "localId": "014",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "014/17",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 014/17 POP Series 1",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-014-low.png",
+    "imageHighSrc": "cards/pop1-014-high.png"
+  },
+  {
+    "masterCardId": "8419",
+    "externalId": null,
+    "tcgdex_id": "pop1-13",
+    "localId": "013",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "013/17",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 013/17 POP Series 1",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-013-low.png",
+    "imageHighSrc": "cards/pop1-013-high.png"
+  },
+  {
+    "masterCardId": "8411",
+    "externalId": null,
+    "tcgdex_id": "pop1-12",
+    "localId": "012",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "012/17",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 012/17 POP Series 1",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-012-low.png",
+    "imageHighSrc": "cards/pop1-012-high.png"
+  },
+  {
+    "masterCardId": "8402",
+    "externalId": null,
+    "tcgdex_id": "pop1-11",
+    "localId": "011",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "011/17",
+    "cardName": "Larvitar",
+    "fullDisplayName": "Larvitar 011/17 POP Series 1",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      246
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-011-low.png",
+    "imageHighSrc": "cards/pop1-011-high.png"
+  },
+  {
+    "masterCardId": "8394",
+    "externalId": null,
+    "tcgdex_id": "pop1-10",
+    "localId": "010",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "010/17",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 010/17 POP Series 1",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-010-low.png",
+    "imageHighSrc": "cards/pop1-010-high.png"
+  },
+  {
+    "masterCardId": "8386",
+    "externalId": null,
+    "tcgdex_id": "pop1-9",
+    "localId": "009",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "009/17",
+    "cardName": "Pupitar",
+    "fullDisplayName": "Pupitar 009/17 POP Series 1",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      247
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvitar",
+    "artist": "Hisao Nakamura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-009-low.png",
+    "imageHighSrc": "cards/pop1-009-high.png"
+  },
+  {
+    "masterCardId": "8377",
+    "externalId": null,
+    "tcgdex_id": "pop1-8",
+    "localId": "008",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "008/17",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 008/17 POP Series 1",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-008-low.png",
+    "imageHighSrc": "cards/pop1-008-high.png"
+  },
+  {
+    "masterCardId": "8360",
+    "externalId": null,
+    "tcgdex_id": "pop1-7",
+    "localId": "007",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "007/17",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 007/17 POP Series 1",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-007-low.png",
+    "imageHighSrc": "cards/pop1-007-high.png"
+  },
+  {
+    "masterCardId": "8349",
+    "externalId": null,
+    "tcgdex_id": "pop1-6",
+    "localId": "006",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "006/17",
+    "cardName": "Beautifly",
+    "fullDisplayName": "Beautifly 006/17 POP Series 1",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      267
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Silcoon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-006-low.png",
+    "imageHighSrc": "cards/pop1-006-high.png"
+  },
+  {
+    "masterCardId": "8338",
+    "externalId": null,
+    "tcgdex_id": "pop1-5",
+    "localId": "005",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "005/17",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 005/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-005-low.png",
+    "imageHighSrc": "cards/pop1-005-high.png"
+  },
+  {
+    "masterCardId": "8329",
+    "externalId": null,
+    "tcgdex_id": "pop1-4",
+    "localId": "004",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "004/17",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 004/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-004-low.png",
+    "imageHighSrc": "cards/pop1-004-high.png"
+  },
+  {
+    "masterCardId": "8319",
+    "externalId": null,
+    "tcgdex_id": "pop1-3",
+    "localId": "003",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "003/17",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 003/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-003-low.png",
+    "imageHighSrc": "cards/pop1-003-high.png"
+  },
+  {
+    "masterCardId": "8310",
+    "externalId": null,
+    "tcgdex_id": "pop1-2",
+    "localId": "002",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "002/17",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 002/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-002-low.png",
+    "imageHighSrc": "cards/pop1-002-high.png"
+  },
+  {
+    "masterCardId": "8302",
+    "externalId": null,
+    "tcgdex_id": "pop1-1",
+    "localId": "001",
+    "setCode": "pop1",
+    "setTcgdexId": "pop1",
+    "cardNumber": "001/17",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 001/17 POP Series 1",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop1-001-low.png",
+    "imageHighSrc": "cards/pop1-001-high.png"
+  }
+]

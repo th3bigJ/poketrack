@@ -1,0 +1,5314 @@
+[
+  {
+    "masterCardId": "20151",
+    "externalId": null,
+    "tcgdex_id": "xy5-164",
+    "localId": "164",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "164/160",
+    "cardName": "Weakness Policy",
+    "fullDisplayName": "Weakness Policy 164/160 Primal Clash",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-164-low.png",
+    "imageHighSrc": "cards/xy5-164-high.png"
+  },
+  {
+    "masterCardId": "20150",
+    "externalId": null,
+    "tcgdex_id": "xy5-163",
+    "localId": "163",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "163/160",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 163/160 Primal Clash",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-163-low.png",
+    "imageHighSrc": "cards/xy5-163-high.png"
+  },
+  {
+    "masterCardId": "20149",
+    "externalId": null,
+    "tcgdex_id": "xy5-162",
+    "localId": "162",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "162/160",
+    "cardName": "Enhanced Hammer",
+    "fullDisplayName": "Enhanced Hammer 162/160 Primal Clash",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-162-low.png",
+    "imageHighSrc": "cards/xy5-162-high.png"
+  },
+  {
+    "masterCardId": "20148",
+    "externalId": null,
+    "tcgdex_id": "xy5-161",
+    "localId": "161",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "161/160",
+    "cardName": "Dive Ball",
+    "fullDisplayName": "Dive Ball 161/160 Primal Clash",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-161-low.png",
+    "imageHighSrc": "cards/xy5-161-high.png"
+  },
+  {
+    "masterCardId": "20147",
+    "externalId": null,
+    "tcgdex_id": "xy5-160",
+    "localId": "160",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "160/160",
+    "cardName": "Teammates",
+    "fullDisplayName": "Teammates 160/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-160-low.png",
+    "imageHighSrc": "cards/xy5-160-high.png"
+  },
+  {
+    "masterCardId": "20146",
+    "externalId": null,
+    "tcgdex_id": "xy5-159",
+    "localId": "159",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "159/160",
+    "cardName": "Professor Birch's Observations",
+    "fullDisplayName": "Professor Birch's Observations 159/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-159-low.png",
+    "imageHighSrc": "cards/xy5-159-high.png"
+  },
+  {
+    "masterCardId": "20145",
+    "externalId": null,
+    "tcgdex_id": "xy5-158",
+    "localId": "158",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "158/160",
+    "cardName": "Maxie's Hidden Ball Trick",
+    "fullDisplayName": "Maxie's Hidden Ball Trick 158/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-158-low.png",
+    "imageHighSrc": "cards/xy5-158-high.png"
+  },
+  {
+    "masterCardId": "20144",
+    "externalId": null,
+    "tcgdex_id": "xy5-157",
+    "localId": "157",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "157/160",
+    "cardName": "Archie's Ace in the Hole",
+    "fullDisplayName": "Archie's Ace in the Hole 157/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-157-low.png",
+    "imageHighSrc": "cards/xy5-157-high.png"
+  },
+  {
+    "masterCardId": "20143",
+    "externalId": null,
+    "tcgdex_id": "xy5-156",
+    "localId": "156",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "156/160",
+    "cardName": "M Gardevoir-EX",
+    "fullDisplayName": "M Gardevoir-EX 156/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-156-low.png",
+    "imageHighSrc": "cards/xy5-156-high.png"
+  },
+  {
+    "masterCardId": "20142",
+    "externalId": null,
+    "tcgdex_id": "xy5-155",
+    "localId": "155",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "155/160",
+    "cardName": "Gardevoir-EX",
+    "fullDisplayName": "Gardevoir-EX 155/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-155-low.png",
+    "imageHighSrc": "cards/xy5-155-high.png"
+  },
+  {
+    "masterCardId": "20141",
+    "externalId": null,
+    "tcgdex_id": "xy5-154",
+    "localId": "154",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "154/160",
+    "cardName": "M Aggron-EX",
+    "fullDisplayName": "M Aggron-EX 154/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aggron-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-154-low.png",
+    "imageHighSrc": "cards/xy5-154-high.png"
+  },
+  {
+    "masterCardId": "20140",
+    "externalId": null,
+    "tcgdex_id": "xy5-153",
+    "localId": "153",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "153/160",
+    "cardName": "Aggron-EX",
+    "fullDisplayName": "Aggron-EX 153/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-153-low.png",
+    "imageHighSrc": "cards/xy5-153-high.png"
+  },
+  {
+    "masterCardId": "20139",
+    "externalId": null,
+    "tcgdex_id": "xy5-152",
+    "localId": "152",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "152/160",
+    "cardName": "Sharpedo-EX",
+    "fullDisplayName": "Sharpedo-EX 152/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-152-low.png",
+    "imageHighSrc": "cards/xy5-152-high.png"
+  },
+  {
+    "masterCardId": "20138",
+    "externalId": null,
+    "tcgdex_id": "xy5-151",
+    "localId": "151",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "151/160",
+    "cardName": "Primal Groudon-EX",
+    "fullDisplayName": "Primal Groudon-EX 151/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Groudon-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-151-low.png",
+    "imageHighSrc": "cards/xy5-151-high.png"
+  },
+  {
+    "masterCardId": "20137",
+    "externalId": null,
+    "tcgdex_id": "xy5-150",
+    "localId": "150",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "150/160",
+    "cardName": "Groudon-EX",
+    "fullDisplayName": "Groudon-EX 150/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-150-low.png",
+    "imageHighSrc": "cards/xy5-150-high.png"
+  },
+  {
+    "masterCardId": "20136",
+    "externalId": null,
+    "tcgdex_id": "xy5-149",
+    "localId": "149",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "149/160",
+    "cardName": "Primal Kyogre-EX",
+    "fullDisplayName": "Primal Kyogre-EX 149/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kyogre-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-149-low.png",
+    "imageHighSrc": "cards/xy5-149-high.png"
+  },
+  {
+    "masterCardId": "20135",
+    "externalId": null,
+    "tcgdex_id": "xy5-148",
+    "localId": "148",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "148/160",
+    "cardName": "Kyogre-EX",
+    "fullDisplayName": "Kyogre-EX 148/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-148-low.png",
+    "imageHighSrc": "cards/xy5-148-high.png"
+  },
+  {
+    "masterCardId": "20134",
+    "externalId": null,
+    "tcgdex_id": "xy5-147",
+    "localId": "147",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "147/160",
+    "cardName": "Wailord-EX",
+    "fullDisplayName": "Wailord-EX 147/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-147-low.png",
+    "imageHighSrc": "cards/xy5-147-high.png"
+  },
+  {
+    "masterCardId": "20133",
+    "externalId": null,
+    "tcgdex_id": "xy5-146",
+    "localId": "146",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "146/160",
+    "cardName": "Camerupt-EX",
+    "fullDisplayName": "Camerupt-EX 146/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-146-low.png",
+    "imageHighSrc": "cards/xy5-146-high.png"
+  },
+  {
+    "masterCardId": "20132",
+    "externalId": null,
+    "tcgdex_id": "xy5-145",
+    "localId": "145",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "145/160",
+    "cardName": "Trevenant-EX",
+    "fullDisplayName": "Trevenant-EX 145/160 Primal Clash",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      709
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-145-low.png",
+    "imageHighSrc": "cards/xy5-145-high.png"
+  },
+  {
+    "masterCardId": "20131",
+    "externalId": null,
+    "tcgdex_id": "xy5-144",
+    "localId": "144",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "144/160",
+    "cardName": "Wonder Energy",
+    "fullDisplayName": "Wonder Energy 144/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-144-low.png",
+    "imageHighSrc": "cards/xy5-144-high.png"
+  },
+  {
+    "masterCardId": "20129",
+    "externalId": null,
+    "tcgdex_id": "xy5-143",
+    "localId": "143",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "143/160",
+    "cardName": "Shield Energy",
+    "fullDisplayName": "Shield Energy 143/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-143-low.png",
+    "imageHighSrc": "cards/xy5-143-high.png"
+  },
+  {
+    "masterCardId": "20127",
+    "externalId": null,
+    "tcgdex_id": "xy5-142",
+    "localId": "142",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "142/160",
+    "cardName": "Weakness Policy",
+    "fullDisplayName": "Weakness Policy 142/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-142-low.png",
+    "imageHighSrc": "cards/xy5-142-high.png"
+  },
+  {
+    "masterCardId": "20125",
+    "externalId": null,
+    "tcgdex_id": "xy5-141",
+    "localId": "141",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "141/160",
+    "cardName": "Teammates",
+    "fullDisplayName": "Teammates 141/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-141-low.png",
+    "imageHighSrc": "cards/xy5-141-high.png"
+  },
+  {
+    "masterCardId": "20123",
+    "externalId": null,
+    "tcgdex_id": "xy5-140",
+    "localId": "140",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "140/160",
+    "cardName": "Silent Lab",
+    "fullDisplayName": "Silent Lab 140/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-140-low.png",
+    "imageHighSrc": "cards/xy5-140-high.png"
+  },
+  {
+    "masterCardId": "20121",
+    "externalId": null,
+    "tcgdex_id": "xy5-139",
+    "localId": "139",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "139/160",
+    "cardName": "Shrine of Memories",
+    "fullDisplayName": "Shrine of Memories 139/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-139-low.png",
+    "imageHighSrc": "cards/xy5-139-high.png"
+  },
+  {
+    "masterCardId": "20119",
+    "externalId": null,
+    "tcgdex_id": "xy5-138",
+    "localId": "138",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "138/160",
+    "cardName": "Scorched Earth",
+    "fullDisplayName": "Scorched Earth 138/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-138-low.png",
+    "imageHighSrc": "cards/xy5-138-high.png"
+  },
+  {
+    "masterCardId": "20117",
+    "externalId": null,
+    "tcgdex_id": "xy5-137",
+    "localId": "137",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "137/160",
+    "cardName": "Rough Seas",
+    "fullDisplayName": "Rough Seas 137/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-137-low.png",
+    "imageHighSrc": "cards/xy5-137-high.png"
+  },
+  {
+    "masterCardId": "20115",
+    "externalId": null,
+    "tcgdex_id": "xy5-136",
+    "localId": "136",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "136/160",
+    "cardName": "Repeat Ball",
+    "fullDisplayName": "Repeat Ball 136/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-136-low.png",
+    "imageHighSrc": "cards/xy5-136-high.png"
+  },
+  {
+    "masterCardId": "20113",
+    "externalId": null,
+    "tcgdex_id": "xy5-135",
+    "localId": "135",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "135/160",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 135/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-135-low.png",
+    "imageHighSrc": "cards/xy5-135-high.png"
+  },
+  {
+    "masterCardId": "20111",
+    "externalId": null,
+    "tcgdex_id": "xy5-134",
+    "localId": "134",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "134/160",
+    "cardName": "Professor Birch's Observations",
+    "fullDisplayName": "Professor Birch's Observations 134/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-134-low.png",
+    "imageHighSrc": "cards/xy5-134-high.png"
+  },
+  {
+    "masterCardId": "20109",
+    "externalId": null,
+    "tcgdex_id": "xy5-133",
+    "localId": "133",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "133/160",
+    "cardName": "Maxie's Hidden Ball Trick",
+    "fullDisplayName": "Maxie's Hidden Ball Trick 133/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-133-low.png",
+    "imageHighSrc": "cards/xy5-133-high.png"
+  },
+  {
+    "masterCardId": "20107",
+    "externalId": null,
+    "tcgdex_id": "xy5-132",
+    "localId": "132",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "132/160",
+    "cardName": "Kyogre Spirit Link",
+    "fullDisplayName": "Kyogre Spirit Link 132/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-132-low.png",
+    "imageHighSrc": "cards/xy5-132-high.png"
+  },
+  {
+    "masterCardId": "20105",
+    "externalId": null,
+    "tcgdex_id": "xy5-131",
+    "localId": "131",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "131/160",
+    "cardName": "Groudon Spirit Link",
+    "fullDisplayName": "Groudon Spirit Link 131/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-131-low.png",
+    "imageHighSrc": "cards/xy5-131-high.png"
+  },
+  {
+    "masterCardId": "20103",
+    "externalId": null,
+    "tcgdex_id": "xy5-130",
+    "localId": "130",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "130/160",
+    "cardName": "Gardevoir Spirit Link",
+    "fullDisplayName": "Gardevoir Spirit Link 130/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-130-low.png",
+    "imageHighSrc": "cards/xy5-130-high.png"
+  },
+  {
+    "masterCardId": "20101",
+    "externalId": null,
+    "tcgdex_id": "xy5-129",
+    "localId": "129",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "129/160",
+    "cardName": "Fresh Water Set",
+    "fullDisplayName": "Fresh Water Set 129/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-129-low.png",
+    "imageHighSrc": "cards/xy5-129-high.png"
+  },
+  {
+    "masterCardId": "20098",
+    "externalId": null,
+    "tcgdex_id": "xy5-128",
+    "localId": "128",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "128/160",
+    "cardName": "Exp. Share",
+    "fullDisplayName": "Exp. Share 128/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-128-low.png",
+    "imageHighSrc": "cards/xy5-128-high.png"
+  },
+  {
+    "masterCardId": "20095",
+    "externalId": null,
+    "tcgdex_id": "xy5-127",
+    "localId": "127",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "127/160",
+    "cardName": "Escape Rope",
+    "fullDisplayName": "Escape Rope 127/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-127-low.png",
+    "imageHighSrc": "cards/xy5-127-high.png"
+  },
+  {
+    "masterCardId": "20092",
+    "externalId": null,
+    "tcgdex_id": "xy5-126",
+    "localId": "126",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "126/160",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 126/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-126-low.png",
+    "imageHighSrc": "cards/xy5-126-high.png"
+  },
+  {
+    "masterCardId": "20088",
+    "externalId": null,
+    "tcgdex_id": "xy5-125",
+    "localId": "125",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "125/160",
+    "cardName": "Dive Ball",
+    "fullDisplayName": "Dive Ball 125/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-125-low.png",
+    "imageHighSrc": "cards/xy5-125-high.png"
+  },
+  {
+    "masterCardId": "20085",
+    "externalId": null,
+    "tcgdex_id": "xy5-124",
+    "localId": "124",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "124/160",
+    "cardName": "Archie's Ace in the Hole",
+    "fullDisplayName": "Archie's Ace in the Hole 124/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-124-low.png",
+    "imageHighSrc": "cards/xy5-124-high.png"
+  },
+  {
+    "masterCardId": "20082",
+    "externalId": null,
+    "tcgdex_id": "xy5-123",
+    "localId": "123",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "123/160",
+    "cardName": "Aggron Spirit Link",
+    "fullDisplayName": "Aggron Spirit Link 123/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-123-low.png",
+    "imageHighSrc": "cards/xy5-123-high.png"
+  },
+  {
+    "masterCardId": "20078",
+    "externalId": null,
+    "tcgdex_id": "xy5-122",
+    "localId": "122",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "122/160",
+    "cardName": "Acro Bike",
+    "fullDisplayName": "Acro Bike 122/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-122-low.png",
+    "imageHighSrc": "cards/xy5-122-high.png"
+  },
+  {
+    "masterCardId": "20074",
+    "externalId": null,
+    "tcgdex_id": "xy5-121",
+    "localId": "121",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "121/160",
+    "cardName": "Bunnelby",
+    "fullDisplayName": "Bunnelby 121/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      659
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-121-low.png",
+    "imageHighSrc": "cards/xy5-121-high.png"
+  },
+  {
+    "masterCardId": "20070",
+    "externalId": null,
+    "tcgdex_id": "xy5-120",
+    "localId": "120",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "120/160",
+    "cardName": "Bunnelby",
+    "fullDisplayName": "Bunnelby 120/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      659
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-120-low.png",
+    "imageHighSrc": "cards/xy5-120-high.png"
+  },
+  {
+    "masterCardId": "20066",
+    "externalId": null,
+    "tcgdex_id": "xy5-119",
+    "localId": "119",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "119/160",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 119/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Asanuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-119-low.png",
+    "imageHighSrc": "cards/xy5-119-high.png"
+  },
+  {
+    "masterCardId": "20062",
+    "externalId": null,
+    "tcgdex_id": "xy5-118",
+    "localId": "118",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "118/160",
+    "cardName": "Bibarel",
+    "fullDisplayName": "Bibarel 118/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      400
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bidoof",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-118-low.png",
+    "imageHighSrc": "cards/xy5-118-high.png"
+  },
+  {
+    "masterCardId": "20058",
+    "externalId": null,
+    "tcgdex_id": "xy5-117",
+    "localId": "117",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "117/160",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 117/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-117-low.png",
+    "imageHighSrc": "cards/xy5-117-high.png"
+  },
+  {
+    "masterCardId": "20054",
+    "externalId": null,
+    "tcgdex_id": "xy5-116",
+    "localId": "116",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "116/160",
+    "cardName": "Bidoof",
+    "fullDisplayName": "Bidoof 116/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      399
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-116-low.png",
+    "imageHighSrc": "cards/xy5-116-high.png"
+  },
+  {
+    "masterCardId": "20050",
+    "externalId": null,
+    "tcgdex_id": "xy5-115",
+    "localId": "115",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "115/160",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 115/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-115-low.png",
+    "imageHighSrc": "cards/xy5-115-high.png"
+  },
+  {
+    "masterCardId": "20046",
+    "externalId": null,
+    "tcgdex_id": "xy5-114",
+    "localId": "114",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "114/160",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 114/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-114-low.png",
+    "imageHighSrc": "cards/xy5-114-high.png"
+  },
+  {
+    "masterCardId": "20041",
+    "externalId": null,
+    "tcgdex_id": "xy5-113",
+    "localId": "113",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "113/160",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 113/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-113-low.png",
+    "imageHighSrc": "cards/xy5-113-high.png"
+  },
+  {
+    "masterCardId": "20036",
+    "externalId": null,
+    "tcgdex_id": "xy5-112",
+    "localId": "112",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "112/160",
+    "cardName": "Linoone",
+    "fullDisplayName": "Linoone 112/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      264
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zigzagoon",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-112-low.png",
+    "imageHighSrc": "cards/xy5-112-high.png"
+  },
+  {
+    "masterCardId": "20027",
+    "externalId": null,
+    "tcgdex_id": "xy5-111",
+    "localId": "111",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "111/160",
+    "cardName": "Zigzagoon",
+    "fullDisplayName": "Zigzagoon 111/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      263
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-111-low.png",
+    "imageHighSrc": "cards/xy5-111-high.png"
+  },
+  {
+    "masterCardId": "20019",
+    "externalId": null,
+    "tcgdex_id": "xy5-110",
+    "localId": "110",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "110/160",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 110/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-110-low.png",
+    "imageHighSrc": "cards/xy5-110-high.png"
+  },
+  {
+    "masterCardId": "20010",
+    "externalId": null,
+    "tcgdex_id": "xy5-109",
+    "localId": "109",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "109/160",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 109/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-109-low.png",
+    "imageHighSrc": "cards/xy5-109-high.png"
+  },
+  {
+    "masterCardId": "20001",
+    "externalId": null,
+    "tcgdex_id": "xy5-108",
+    "localId": "108",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "108/160",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 108/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-108-low.png",
+    "imageHighSrc": "cards/xy5-108-high.png"
+  },
+  {
+    "masterCardId": "19991",
+    "externalId": null,
+    "tcgdex_id": "xy5-107",
+    "localId": "107",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "107/160",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 107/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-107-low.png",
+    "imageHighSrc": "cards/xy5-107-high.png"
+  },
+  {
+    "masterCardId": "19982",
+    "externalId": null,
+    "tcgdex_id": "xy5-106",
+    "localId": "106",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "106/160",
+    "cardName": "M Gardevoir-EX",
+    "fullDisplayName": "M Gardevoir-EX 106/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 210,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-106-low.png",
+    "imageHighSrc": "cards/xy5-106-high.png"
+  },
+  {
+    "masterCardId": "19974",
+    "externalId": null,
+    "tcgdex_id": "xy5-105",
+    "localId": "105",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "105/160",
+    "cardName": "Gardevoir-EX",
+    "fullDisplayName": "Gardevoir-EX 105/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-105-low.png",
+    "imageHighSrc": "cards/xy5-105-high.png"
+  },
+  {
+    "masterCardId": "19965",
+    "externalId": null,
+    "tcgdex_id": "xy5-104",
+    "localId": "104",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "104/160",
+    "cardName": "Azumarill",
+    "fullDisplayName": "Azumarill 104/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      184
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marill",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-104-low.png",
+    "imageHighSrc": "cards/xy5-104-high.png"
+  },
+  {
+    "masterCardId": "19953",
+    "externalId": null,
+    "tcgdex_id": "xy5-103",
+    "localId": "103",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "103/160",
+    "cardName": "Azumarill",
+    "fullDisplayName": "Azumarill 103/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      184
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marill",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-103-low.png",
+    "imageHighSrc": "cards/xy5-103-high.png"
+  },
+  {
+    "masterCardId": "19944",
+    "externalId": null,
+    "tcgdex_id": "xy5-102",
+    "localId": "102",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "102/160",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 102/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-102-low.png",
+    "imageHighSrc": "cards/xy5-102-high.png"
+  },
+  {
+    "masterCardId": "19935",
+    "externalId": null,
+    "tcgdex_id": "xy5-101",
+    "localId": "101",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "101/160",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 101/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-101-low.png",
+    "imageHighSrc": "cards/xy5-101-high.png"
+  },
+  {
+    "masterCardId": "19926",
+    "externalId": null,
+    "tcgdex_id": "xy5-100",
+    "localId": "100",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "100/160",
+    "cardName": "Aegislash",
+    "fullDisplayName": "Aegislash 100/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      681
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Doublade",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-100-low.png",
+    "imageHighSrc": "cards/xy5-100-high.png"
+  },
+  {
+    "masterCardId": "19917",
+    "externalId": null,
+    "tcgdex_id": "xy5-99",
+    "localId": "099",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "099/160",
+    "cardName": "Doublade",
+    "fullDisplayName": "Doublade 099/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      680
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Honedge",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-099-low.png",
+    "imageHighSrc": "cards/xy5-099-high.png"
+  },
+  {
+    "masterCardId": "19908",
+    "externalId": null,
+    "tcgdex_id": "xy5-98",
+    "localId": "098",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "098/160",
+    "cardName": "Honedge",
+    "fullDisplayName": "Honedge 098/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      679
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-098-low.png",
+    "imageHighSrc": "cards/xy5-098-high.png"
+  },
+  {
+    "masterCardId": "19899",
+    "externalId": null,
+    "tcgdex_id": "xy5-97",
+    "localId": "097",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "097/160",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 097/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-097-low.png",
+    "imageHighSrc": "cards/xy5-097-high.png"
+  },
+  {
+    "masterCardId": "19890",
+    "externalId": null,
+    "tcgdex_id": "xy5-96",
+    "localId": "096",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "096/160",
+    "cardName": "Excadrill",
+    "fullDisplayName": "Excadrill 096/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drilbur",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-096-low.png",
+    "imageHighSrc": "cards/xy5-096-high.png"
+  },
+  {
+    "masterCardId": "19877",
+    "externalId": null,
+    "tcgdex_id": "xy5-95",
+    "localId": "095",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "095/160",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 095/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nosepass",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-095-low.png",
+    "imageHighSrc": "cards/xy5-095-high.png"
+  },
+  {
+    "masterCardId": "19868",
+    "externalId": null,
+    "tcgdex_id": "xy5-94",
+    "localId": "094",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "094/160",
+    "cardName": "M Aggron-EX",
+    "fullDisplayName": "M Aggron-EX 094/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Aggron-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-094-low.png",
+    "imageHighSrc": "cards/xy5-094-high.png"
+  },
+  {
+    "masterCardId": "19859",
+    "externalId": null,
+    "tcgdex_id": "xy5-93",
+    "localId": "093",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "093/160",
+    "cardName": "Aggron-EX",
+    "fullDisplayName": "Aggron-EX 093/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-093-low.png",
+    "imageHighSrc": "cards/xy5-093-high.png"
+  },
+  {
+    "masterCardId": "19850",
+    "externalId": null,
+    "tcgdex_id": "xy5-92",
+    "localId": "092",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "092/160",
+    "cardName": "Crawdaunt",
+    "fullDisplayName": "Crawdaunt 092/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Corphish",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-092-low.png",
+    "imageHighSrc": "cards/xy5-092-high.png"
+  },
+  {
+    "masterCardId": "19841",
+    "externalId": null,
+    "tcgdex_id": "xy5-91",
+    "localId": "091",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "091/160",
+    "cardName": "Sharpedo-EX",
+    "fullDisplayName": "Sharpedo-EX 091/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-091-low.png",
+    "imageHighSrc": "cards/xy5-091-high.png"
+  },
+  {
+    "masterCardId": "19832",
+    "externalId": null,
+    "tcgdex_id": "xy5-90",
+    "localId": "090",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "090/160",
+    "cardName": "Diggersby",
+    "fullDisplayName": "Diggersby 090/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      660
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bunnelby",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-090-low.png",
+    "imageHighSrc": "cards/xy5-090-high.png"
+  },
+  {
+    "masterCardId": "19823",
+    "externalId": null,
+    "tcgdex_id": "xy5-89",
+    "localId": "089",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "089/160",
+    "cardName": "Drilbur",
+    "fullDisplayName": "Drilbur 089/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      529
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-089-low.png",
+    "imageHighSrc": "cards/xy5-089-high.png"
+  },
+  {
+    "masterCardId": "19814",
+    "externalId": null,
+    "tcgdex_id": "xy5-88",
+    "localId": "088",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "088/160",
+    "cardName": "Hippowdon",
+    "fullDisplayName": "Hippowdon 088/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      450
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hippopotas",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-088-low.png",
+    "imageHighSrc": "cards/xy5-088-high.png"
+  },
+  {
+    "masterCardId": "19803",
+    "externalId": null,
+    "tcgdex_id": "xy5-87",
+    "localId": "087",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "087/160",
+    "cardName": "Hippopotas",
+    "fullDisplayName": "Hippopotas 087/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      449
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-087-low.png",
+    "imageHighSrc": "cards/xy5-087-high.png"
+  },
+  {
+    "masterCardId": "19797",
+    "externalId": null,
+    "tcgdex_id": "xy5-86",
+    "localId": "086",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "086/160",
+    "cardName": "Primal Groudon-EX",
+    "fullDisplayName": "Primal Groudon-EX 086/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Groudon-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-086-low.png",
+    "imageHighSrc": "cards/xy5-086-high.png"
+  },
+  {
+    "masterCardId": "19788",
+    "externalId": null,
+    "tcgdex_id": "xy5-85",
+    "localId": "085",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "085/160",
+    "cardName": "Groudon-EX",
+    "fullDisplayName": "Groudon-EX 085/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-085-low.png",
+    "imageHighSrc": "cards/xy5-085-high.png"
+  },
+  {
+    "masterCardId": "19777",
+    "externalId": null,
+    "tcgdex_id": "xy5-84",
+    "localId": "084",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "084/160",
+    "cardName": "Groudon",
+    "fullDisplayName": "Groudon 084/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-084-low.png",
+    "imageHighSrc": "cards/xy5-084-high.png"
+  },
+  {
+    "masterCardId": "19767",
+    "externalId": null,
+    "tcgdex_id": "xy5-83",
+    "localId": "083",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "083/160",
+    "cardName": "Solrock",
+    "fullDisplayName": "Solrock 083/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      338
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-083-low.png",
+    "imageHighSrc": "cards/xy5-083-high.png"
+  },
+  {
+    "masterCardId": "19758",
+    "externalId": null,
+    "tcgdex_id": "xy5-82",
+    "localId": "082",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "082/160",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 082/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-082-low.png",
+    "imageHighSrc": "cards/xy5-082-high.png"
+  },
+  {
+    "masterCardId": "19749",
+    "externalId": null,
+    "tcgdex_id": "xy5-81",
+    "localId": "081",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "081/160",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 081/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-081-low.png",
+    "imageHighSrc": "cards/xy5-081-high.png"
+  },
+  {
+    "masterCardId": "19740",
+    "externalId": null,
+    "tcgdex_id": "xy5-80",
+    "localId": "080",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "080/160",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 080/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meditite",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-080-low.png",
+    "imageHighSrc": "cards/xy5-080-high.png"
+  },
+  {
+    "masterCardId": "19731",
+    "externalId": null,
+    "tcgdex_id": "xy5-79",
+    "localId": "079",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "079/160",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 079/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-079-low.png",
+    "imageHighSrc": "cards/xy5-079-high.png"
+  },
+  {
+    "masterCardId": "19721",
+    "externalId": null,
+    "tcgdex_id": "xy5-78",
+    "localId": "078",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "078/160",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 078/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-078-low.png",
+    "imageHighSrc": "cards/xy5-078-high.png"
+  },
+  {
+    "masterCardId": "19712",
+    "externalId": null,
+    "tcgdex_id": "xy5-77",
+    "localId": "077",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "077/160",
+    "cardName": "Rhyperior",
+    "fullDisplayName": "Rhyperior 077/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhydon",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-077-low.png",
+    "imageHighSrc": "cards/xy5-077-high.png"
+  },
+  {
+    "masterCardId": "19703",
+    "externalId": null,
+    "tcgdex_id": "xy5-76",
+    "localId": "076",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "076/160",
+    "cardName": "Rhyperior",
+    "fullDisplayName": "Rhyperior 076/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhydon",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-076-low.png",
+    "imageHighSrc": "cards/xy5-076-high.png"
+  },
+  {
+    "masterCardId": "19693",
+    "externalId": null,
+    "tcgdex_id": "xy5-75",
+    "localId": "075",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "075/160",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 075/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyhorn",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-075-low.png",
+    "imageHighSrc": "cards/xy5-075-high.png"
+  },
+  {
+    "masterCardId": "19684",
+    "externalId": null,
+    "tcgdex_id": "xy5-74",
+    "localId": "074",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "074/160",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 074/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-074-low.png",
+    "imageHighSrc": "cards/xy5-074-high.png"
+  },
+  {
+    "masterCardId": "19676",
+    "externalId": null,
+    "tcgdex_id": "xy5-73",
+    "localId": "073",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "073/160",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 073/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-073-low.png",
+    "imageHighSrc": "cards/xy5-073-high.png"
+  },
+  {
+    "masterCardId": "19667",
+    "externalId": null,
+    "tcgdex_id": "xy5-72",
+    "localId": "072",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "072/160",
+    "cardName": "Tentacruel",
+    "fullDisplayName": "Tentacruel 072/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tentacool",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-072-low.png",
+    "imageHighSrc": "cards/xy5-072-high.png"
+  },
+  {
+    "masterCardId": "19659",
+    "externalId": null,
+    "tcgdex_id": "xy5-71",
+    "localId": "071",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "071/160",
+    "cardName": "Tentacool",
+    "fullDisplayName": "Tentacool 071/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-071-low.png",
+    "imageHighSrc": "cards/xy5-071-high.png"
+  },
+  {
+    "masterCardId": "19651",
+    "externalId": null,
+    "tcgdex_id": "xy5-70",
+    "localId": "070",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "070/160",
+    "cardName": "Tentacool",
+    "fullDisplayName": "Tentacool 070/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-070-low.png",
+    "imageHighSrc": "cards/xy5-070-high.png"
+  },
+  {
+    "masterCardId": "19642",
+    "externalId": null,
+    "tcgdex_id": "xy5-69",
+    "localId": "069",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "069/160",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 069/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-069-low.png",
+    "imageHighSrc": "cards/xy5-069-high.png"
+  },
+  {
+    "masterCardId": "19633",
+    "externalId": null,
+    "tcgdex_id": "xy5-68",
+    "localId": "068",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "068/160",
+    "cardName": "Nidoqueen",
+    "fullDisplayName": "Nidoqueen 068/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      31
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorina",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-068-low.png",
+    "imageHighSrc": "cards/xy5-068-high.png"
+  },
+  {
+    "masterCardId": "19624",
+    "externalId": null,
+    "tcgdex_id": "xy5-67",
+    "localId": "067",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "067/160",
+    "cardName": "Nidorina",
+    "fullDisplayName": "Nidorina 067/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      30
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♀",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-067-low.png",
+    "imageHighSrc": "cards/xy5-067-high.png"
+  },
+  {
+    "masterCardId": "19615",
+    "externalId": null,
+    "tcgdex_id": "xy5-66",
+    "localId": "066",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "066/160",
+    "cardName": "Nidoran ♀",
+    "fullDisplayName": "Nidoran ♀ 066/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      29
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy5-066-low.png",
+    "imageHighSrc": "cards/xy5-066-high.png"
+  },
+  {
+    "masterCardId": "19606",
+    "externalId": null,
+    "tcgdex_id": "xy5-65",
+    "localId": "065",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "065/160",
+    "cardName": "Eelektross",
+    "fullDisplayName": "Eelektross 065/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      604
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eelektrik",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-065-low.png",
+    "imageHighSrc": "cards/xy5-065-high.png"
+  },
+  {
+    "masterCardId": "19597",
+    "externalId": null,
+    "tcgdex_id": "xy5-64",
+    "localId": "064",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "064/160",
+    "cardName": "Eelektrik",
+    "fullDisplayName": "Eelektrik 064/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      603
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tynamo",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-064-low.png",
+    "imageHighSrc": "cards/xy5-064-high.png"
+  },
+  {
+    "masterCardId": "19588",
+    "externalId": null,
+    "tcgdex_id": "xy5-63",
+    "localId": "063",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "063/160",
+    "cardName": "Eelektrik",
+    "fullDisplayName": "Eelektrik 063/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      603
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tynamo",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-063-low.png",
+    "imageHighSrc": "cards/xy5-063-high.png"
+  },
+  {
+    "masterCardId": "19579",
+    "externalId": null,
+    "tcgdex_id": "xy5-62",
+    "localId": "062",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "062/160",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 062/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-062-low.png",
+    "imageHighSrc": "cards/xy5-062-high.png"
+  },
+  {
+    "masterCardId": "19570",
+    "externalId": null,
+    "tcgdex_id": "xy5-61",
+    "localId": "061",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "061/160",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 061/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-061-low.png",
+    "imageHighSrc": "cards/xy5-061-high.png"
+  },
+  {
+    "masterCardId": "19561",
+    "externalId": null,
+    "tcgdex_id": "xy5-60",
+    "localId": "060",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "060/160",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 060/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-060-low.png",
+    "imageHighSrc": "cards/xy5-060-high.png"
+  },
+  {
+    "masterCardId": "19552",
+    "externalId": null,
+    "tcgdex_id": "xy5-59",
+    "localId": "059",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "059/160",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 059/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-059-low.png",
+    "imageHighSrc": "cards/xy5-059-high.png"
+  },
+  {
+    "masterCardId": "19543",
+    "externalId": null,
+    "tcgdex_id": "xy5-58",
+    "localId": "058",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "058/160",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 058/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-058-low.png",
+    "imageHighSrc": "cards/xy5-058-high.png"
+  },
+  {
+    "masterCardId": "19534",
+    "externalId": null,
+    "tcgdex_id": "xy5-57",
+    "localId": "057",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "057/160",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 057/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-057-low.png",
+    "imageHighSrc": "cards/xy5-057-high.png"
+  },
+  {
+    "masterCardId": "19525",
+    "externalId": null,
+    "tcgdex_id": "xy5-56",
+    "localId": "056",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "056/160",
+    "cardName": "Manaphy",
+    "fullDisplayName": "Manaphy 056/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      490
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-056-low.png",
+    "imageHighSrc": "cards/xy5-056-high.png"
+  },
+  {
+    "masterCardId": "19516",
+    "externalId": null,
+    "tcgdex_id": "xy5-55",
+    "localId": "055",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "055/160",
+    "cardName": "Primal Kyogre-EX",
+    "fullDisplayName": "Primal Kyogre-EX 055/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 240,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kyogre-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-055-low.png",
+    "imageHighSrc": "cards/xy5-055-high.png"
+  },
+  {
+    "masterCardId": "19507",
+    "externalId": null,
+    "tcgdex_id": "xy5-54",
+    "localId": "054",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "054/160",
+    "cardName": "Kyogre-EX",
+    "fullDisplayName": "Kyogre-EX 054/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-054-low.png",
+    "imageHighSrc": "cards/xy5-054-high.png"
+  },
+  {
+    "masterCardId": "19497",
+    "externalId": null,
+    "tcgdex_id": "xy5-53",
+    "localId": "053",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "053/160",
+    "cardName": "Kyogre",
+    "fullDisplayName": "Kyogre 053/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-053-low.png",
+    "imageHighSrc": "cards/xy5-053-high.png"
+  },
+  {
+    "masterCardId": "19488",
+    "externalId": null,
+    "tcgdex_id": "xy5-52",
+    "localId": "052",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "052/160",
+    "cardName": "Gorebyss",
+    "fullDisplayName": "Gorebyss 052/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      368
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clamperl",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-052-low.png",
+    "imageHighSrc": "cards/xy5-052-high.png"
+  },
+  {
+    "masterCardId": "19479",
+    "externalId": null,
+    "tcgdex_id": "xy5-51",
+    "localId": "051",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "051/160",
+    "cardName": "Gorebyss",
+    "fullDisplayName": "Gorebyss 051/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      368
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clamperl",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-051-low.png",
+    "imageHighSrc": "cards/xy5-051-high.png"
+  },
+  {
+    "masterCardId": "19469",
+    "externalId": null,
+    "tcgdex_id": "xy5-50",
+    "localId": "050",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "050/160",
+    "cardName": "Huntail",
+    "fullDisplayName": "Huntail 050/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      367
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clamperl",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-050-low.png",
+    "imageHighSrc": "cards/xy5-050-high.png"
+  },
+  {
+    "masterCardId": "19461",
+    "externalId": null,
+    "tcgdex_id": "xy5-49",
+    "localId": "049",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "049/160",
+    "cardName": "Clamperl",
+    "fullDisplayName": "Clamperl 049/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      366
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-049-low.png",
+    "imageHighSrc": "cards/xy5-049-high.png"
+  },
+  {
+    "masterCardId": "19451",
+    "externalId": null,
+    "tcgdex_id": "xy5-48",
+    "localId": "048",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "048/160",
+    "cardName": "Walrein",
+    "fullDisplayName": "Walrein 048/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sealeo",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-048-low.png",
+    "imageHighSrc": "cards/xy5-048-high.png"
+  },
+  {
+    "masterCardId": "19441",
+    "externalId": null,
+    "tcgdex_id": "xy5-47",
+    "localId": "047",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "047/160",
+    "cardName": "Sealeo",
+    "fullDisplayName": "Sealeo 047/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spheal",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-047-low.png",
+    "imageHighSrc": "cards/xy5-047-high.png"
+  },
+  {
+    "masterCardId": "19431",
+    "externalId": null,
+    "tcgdex_id": "xy5-46",
+    "localId": "046",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "046/160",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 046/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-046-low.png",
+    "imageHighSrc": "cards/xy5-046-high.png"
+  },
+  {
+    "masterCardId": "19423",
+    "externalId": null,
+    "tcgdex_id": "xy5-45",
+    "localId": "045",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "045/160",
+    "cardName": "Spheal",
+    "fullDisplayName": "Spheal 045/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-045-low.png",
+    "imageHighSrc": "cards/xy5-045-high.png"
+  },
+  {
+    "masterCardId": "19414",
+    "externalId": null,
+    "tcgdex_id": "xy5-44",
+    "localId": "044",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "044/160",
+    "cardName": "Milotic",
+    "fullDisplayName": "Milotic 044/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      350
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Feebas",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-044-low.png",
+    "imageHighSrc": "cards/xy5-044-high.png"
+  },
+  {
+    "masterCardId": "19405",
+    "externalId": null,
+    "tcgdex_id": "xy5-43",
+    "localId": "043",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "043/160",
+    "cardName": "Feebas",
+    "fullDisplayName": "Feebas 043/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      349
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-043-low.png",
+    "imageHighSrc": "cards/xy5-043-high.png"
+  },
+  {
+    "masterCardId": "19396",
+    "externalId": null,
+    "tcgdex_id": "xy5-42",
+    "localId": "042",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "042/160",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 042/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-042-low.png",
+    "imageHighSrc": "cards/xy5-042-high.png"
+  },
+  {
+    "masterCardId": "19387",
+    "externalId": null,
+    "tcgdex_id": "xy5-41",
+    "localId": "041",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "041/160",
+    "cardName": "Whiscash",
+    "fullDisplayName": "Whiscash 041/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      340
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Barboach",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-041-low.png",
+    "imageHighSrc": "cards/xy5-041-high.png"
+  },
+  {
+    "masterCardId": "19378",
+    "externalId": null,
+    "tcgdex_id": "xy5-40",
+    "localId": "040",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "040/160",
+    "cardName": "Whiscash",
+    "fullDisplayName": "Whiscash 040/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      340
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Barboach",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-040-low.png",
+    "imageHighSrc": "cards/xy5-040-high.png"
+  },
+  {
+    "masterCardId": "19369",
+    "externalId": null,
+    "tcgdex_id": "xy5-39",
+    "localId": "039",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "039/160",
+    "cardName": "Barboach",
+    "fullDisplayName": "Barboach 039/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      339
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-039-low.png",
+    "imageHighSrc": "cards/xy5-039-high.png"
+  },
+  {
+    "masterCardId": "19359",
+    "externalId": null,
+    "tcgdex_id": "xy5-38",
+    "localId": "038",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "038/160",
+    "cardName": "Wailord-EX",
+    "fullDisplayName": "Wailord-EX 038/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 250,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-038-low.png",
+    "imageHighSrc": "cards/xy5-038-high.png"
+  },
+  {
+    "masterCardId": "19349",
+    "externalId": null,
+    "tcgdex_id": "xy5-37",
+    "localId": "037",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "037/160",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 037/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-037-low.png",
+    "imageHighSrc": "cards/xy5-037-high.png"
+  },
+  {
+    "masterCardId": "19338",
+    "externalId": null,
+    "tcgdex_id": "xy5-36",
+    "localId": "036",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "036/160",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 036/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-036-low.png",
+    "imageHighSrc": "cards/xy5-036-high.png"
+  },
+  {
+    "masterCardId": "19328",
+    "externalId": null,
+    "tcgdex_id": "xy5-35",
+    "localId": "035",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "035/160",
+    "cardName": "Swampert",
+    "fullDisplayName": "Swampert 035/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-035-low.png",
+    "imageHighSrc": "cards/xy5-035-high.png"
+  },
+  {
+    "masterCardId": "19318",
+    "externalId": null,
+    "tcgdex_id": "xy5-34",
+    "localId": "034",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "034/160",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 034/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-034-low.png",
+    "imageHighSrc": "cards/xy5-034-high.png"
+  },
+  {
+    "masterCardId": "19309",
+    "externalId": null,
+    "tcgdex_id": "xy5-33",
+    "localId": "033",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "033/160",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 033/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-033-low.png",
+    "imageHighSrc": "cards/xy5-033-high.png"
+  },
+  {
+    "masterCardId": "19299",
+    "externalId": null,
+    "tcgdex_id": "xy5-32",
+    "localId": "032",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "032/160",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 032/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-032-low.png",
+    "imageHighSrc": "cards/xy5-032-high.png"
+  },
+  {
+    "masterCardId": "19289",
+    "externalId": null,
+    "tcgdex_id": "xy5-31",
+    "localId": "031",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "031/160",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 031/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-031-low.png",
+    "imageHighSrc": "cards/xy5-031-high.png"
+  },
+  {
+    "masterCardId": "19279",
+    "externalId": null,
+    "tcgdex_id": "xy5-30",
+    "localId": "030",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "030/160",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 030/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-030-low.png",
+    "imageHighSrc": "cards/xy5-030-high.png"
+  },
+  {
+    "masterCardId": "19269",
+    "externalId": null,
+    "tcgdex_id": "xy5-29",
+    "localId": "029",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "029/160",
+    "cardName": "Camerupt-EX",
+    "fullDisplayName": "Camerupt-EX 029/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-029-low.png",
+    "imageHighSrc": "cards/xy5-029-high.png"
+  },
+  {
+    "masterCardId": "19259",
+    "externalId": null,
+    "tcgdex_id": "xy5-28",
+    "localId": "028",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "028/160",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 028/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-028-low.png",
+    "imageHighSrc": "cards/xy5-028-high.png"
+  },
+  {
+    "masterCardId": "19251",
+    "externalId": null,
+    "tcgdex_id": "xy5-27",
+    "localId": "027",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "027/160",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 027/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-027-low.png",
+    "imageHighSrc": "cards/xy5-027-high.png"
+  },
+  {
+    "masterCardId": "19241",
+    "externalId": null,
+    "tcgdex_id": "xy5-26",
+    "localId": "026",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "026/160",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 026/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-026-low.png",
+    "imageHighSrc": "cards/xy5-026-high.png"
+  },
+  {
+    "masterCardId": "19232",
+    "externalId": null,
+    "tcgdex_id": "xy5-25",
+    "localId": "025",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "025/160",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 025/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-025-low.png",
+    "imageHighSrc": "cards/xy5-025-high.png"
+  },
+  {
+    "masterCardId": "19222",
+    "externalId": null,
+    "tcgdex_id": "xy5-24",
+    "localId": "024",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "024/160",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 024/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-024-low.png",
+    "imageHighSrc": "cards/xy5-024-high.png"
+  },
+  {
+    "masterCardId": "19212",
+    "externalId": null,
+    "tcgdex_id": "xy5-23",
+    "localId": "023",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "023/160",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 023/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slugma",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-023-low.png",
+    "imageHighSrc": "cards/xy5-023-high.png"
+  },
+  {
+    "masterCardId": "19201",
+    "externalId": null,
+    "tcgdex_id": "xy5-22",
+    "localId": "022",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "022/160",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 022/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-022-low.png",
+    "imageHighSrc": "cards/xy5-022-high.png"
+  },
+  {
+    "masterCardId": "19192",
+    "externalId": null,
+    "tcgdex_id": "xy5-21",
+    "localId": "021",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "021/160",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 021/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-021-low.png",
+    "imageHighSrc": "cards/xy5-021-high.png"
+  },
+  {
+    "masterCardId": "19182",
+    "externalId": null,
+    "tcgdex_id": "xy5-20",
+    "localId": "020",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "020/160",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 020/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-020-low.png",
+    "imageHighSrc": "cards/xy5-020-high.png"
+  },
+  {
+    "masterCardId": "19171",
+    "externalId": null,
+    "tcgdex_id": "xy5-19",
+    "localId": "019",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "019/160",
+    "cardName": "Trevenant-EX",
+    "fullDisplayName": "Trevenant-EX 019/160 Primal Clash",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      709
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-019-low.png",
+    "imageHighSrc": "cards/xy5-019-high.png"
+  },
+  {
+    "masterCardId": "19160",
+    "externalId": null,
+    "tcgdex_id": "xy5-18",
+    "localId": "018",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "018/160",
+    "cardName": "Illumise",
+    "fullDisplayName": "Illumise 018/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      314
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-018-low.png",
+    "imageHighSrc": "cards/xy5-018-high.png"
+  },
+  {
+    "masterCardId": "19149",
+    "externalId": null,
+    "tcgdex_id": "xy5-17",
+    "localId": "017",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "017/160",
+    "cardName": "Volbeat",
+    "fullDisplayName": "Volbeat 017/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      313
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-017-low.png",
+    "imageHighSrc": "cards/xy5-017-high.png"
+  },
+  {
+    "masterCardId": "19139",
+    "externalId": null,
+    "tcgdex_id": "xy5-16",
+    "localId": "016",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "016/160",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 016/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-016-low.png",
+    "imageHighSrc": "cards/xy5-016-high.png"
+  },
+  {
+    "masterCardId": "19130",
+    "externalId": null,
+    "tcgdex_id": "xy5-15",
+    "localId": "015",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "015/160",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 015/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-015-low.png",
+    "imageHighSrc": "cards/xy5-015-high.png"
+  },
+  {
+    "masterCardId": "19119",
+    "externalId": null,
+    "tcgdex_id": "xy5-14",
+    "localId": "014",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "014/160",
+    "cardName": "Masquerain",
+    "fullDisplayName": "Masquerain 014/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      284
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Surskit",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-014-low.png",
+    "imageHighSrc": "cards/xy5-014-high.png"
+  },
+  {
+    "masterCardId": "19109",
+    "externalId": null,
+    "tcgdex_id": "xy5-13",
+    "localId": "013",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "013/160",
+    "cardName": "Surskit",
+    "fullDisplayName": "Surskit 013/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      283
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-013-low.png",
+    "imageHighSrc": "cards/xy5-013-high.png"
+  },
+  {
+    "masterCardId": "19100",
+    "externalId": null,
+    "tcgdex_id": "xy5-12",
+    "localId": "012",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "012/160",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 012/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-012-low.png",
+    "imageHighSrc": "cards/xy5-012-high.png"
+  },
+  {
+    "masterCardId": "19089",
+    "externalId": null,
+    "tcgdex_id": "xy5-11",
+    "localId": "011",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "011/160",
+    "cardName": "Lombre",
+    "fullDisplayName": "Lombre 011/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      271
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lotad",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-011-low.png",
+    "imageHighSrc": "cards/xy5-011-high.png"
+  },
+  {
+    "masterCardId": "19077",
+    "externalId": null,
+    "tcgdex_id": "xy5-10",
+    "localId": "010",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "010/160",
+    "cardName": "Lotad",
+    "fullDisplayName": "Lotad 010/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      270
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-010-low.png",
+    "imageHighSrc": "cards/xy5-010-high.png"
+  },
+  {
+    "masterCardId": "19066",
+    "externalId": null,
+    "tcgdex_id": "xy5-9",
+    "localId": "009",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "009/160",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 009/160 Primal Clash",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-009-low.png",
+    "imageHighSrc": "cards/xy5-009-high.png"
+  },
+  {
+    "masterCardId": "19055",
+    "externalId": null,
+    "tcgdex_id": "xy5-8",
+    "localId": "008",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "008/160",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 008/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-008-low.png",
+    "imageHighSrc": "cards/xy5-008-high.png"
+  },
+  {
+    "masterCardId": "19045",
+    "externalId": null,
+    "tcgdex_id": "xy5-7",
+    "localId": "007",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "007/160",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 007/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-007-low.png",
+    "imageHighSrc": "cards/xy5-007-high.png"
+  },
+  {
+    "masterCardId": "19035",
+    "externalId": null,
+    "tcgdex_id": "xy5-6",
+    "localId": "006",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "006/160",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 006/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-006-low.png",
+    "imageHighSrc": "cards/xy5-006-high.png"
+  },
+  {
+    "masterCardId": "19025",
+    "externalId": null,
+    "tcgdex_id": "xy5-5",
+    "localId": "005",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "005/160",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 005/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-005-low.png",
+    "imageHighSrc": "cards/xy5-005-high.png"
+  },
+  {
+    "masterCardId": "19015",
+    "externalId": null,
+    "tcgdex_id": "xy5-4",
+    "localId": "004",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "004/160",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 004/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-004-low.png",
+    "imageHighSrc": "cards/xy5-004-high.png"
+  },
+  {
+    "masterCardId": "19006",
+    "externalId": null,
+    "tcgdex_id": "xy5-3",
+    "localId": "003",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "003/160",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 003/160 Primal Clash",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-003-low.png",
+    "imageHighSrc": "cards/xy5-003-high.png"
+  },
+  {
+    "masterCardId": "18995",
+    "externalId": null,
+    "tcgdex_id": "xy5-2",
+    "localId": "002",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "002/160",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 002/160 Primal Clash",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-002-low.png",
+    "imageHighSrc": "cards/xy5-002-high.png"
+  },
+  {
+    "masterCardId": "18993",
+    "externalId": null,
+    "tcgdex_id": "xy5-1",
+    "localId": "001",
+    "setCode": "xy5",
+    "setTcgdexId": "xy5",
+    "cardNumber": "001/160",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 001/160 Primal Clash",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy5-001-low.png",
+    "imageHighSrc": "cards/xy5-001-high.png"
+  }
+]

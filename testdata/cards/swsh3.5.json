@@ -1,0 +1,2566 @@
+[
+  {
+    "masterCardId": "17035",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-80",
+    "localId": "080",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "080/73",
+    "cardName": "Suspicious Food Tin",
+    "fullDisplayName": "Suspicious Food Tin 080/73 Champion's Path",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-080-low.png",
+    "imageHighSrc": "cards/swsh35-080-high.png"
+  },
+  {
+    "masterCardId": "17028",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-79",
+    "localId": "079",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "079/73",
+    "cardName": "Charizard V",
+    "fullDisplayName": "Charizard V 079/73 Champion's Path",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-079-low.png",
+    "imageHighSrc": "cards/swsh35-079-high.png"
+  },
+  {
+    "masterCardId": "17022",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-78",
+    "localId": "078",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "078/73",
+    "cardName": "Piers",
+    "fullDisplayName": "Piers 078/73 Champion's Path",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-078-low.png",
+    "imageHighSrc": "cards/swsh35-078-high.png"
+  },
+  {
+    "masterCardId": "17015",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-77",
+    "localId": "077",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "077/73",
+    "cardName": "Kabu",
+    "fullDisplayName": "Kabu 077/73 Champion's Path",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-077-low.png",
+    "imageHighSrc": "cards/swsh35-077-high.png"
+  },
+  {
+    "masterCardId": "17009",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-76",
+    "localId": "076",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "076/73",
+    "cardName": "Gardevoir VMAX",
+    "fullDisplayName": "Gardevoir VMAX 076/73 Champion's Path",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-076-low.png",
+    "imageHighSrc": "cards/swsh35-076-high.png"
+  },
+  {
+    "masterCardId": "17003",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-75",
+    "localId": "075",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "075/73",
+    "cardName": "Drednaw VMAX",
+    "fullDisplayName": "Drednaw VMAX 075/73 Champion's Path",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      834
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drednaw V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-075-low.png",
+    "imageHighSrc": "cards/swsh35-075-high.png"
+  },
+  {
+    "masterCardId": "16999",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-74",
+    "localId": "074",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "074/73",
+    "cardName": "Charizard VMAX",
+    "fullDisplayName": "Charizard VMAX 074/73 Champion's Path",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-074-low.png",
+    "imageHighSrc": "cards/swsh35-074-high.png"
+  },
+  {
+    "masterCardId": "16988",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-73",
+    "localId": "073",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "073/73",
+    "cardName": "Hop",
+    "fullDisplayName": "Hop 073/73 Champion's Path",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-073-low.png",
+    "imageHighSrc": "cards/swsh35-073-high.png"
+  },
+  {
+    "masterCardId": "16980",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-72",
+    "localId": "072",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "072/73",
+    "cardName": "Grapploct V",
+    "fullDisplayName": "Grapploct V 072/73 Champion's Path",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      853
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-072-low.png",
+    "imageHighSrc": "cards/swsh35-072-high.png"
+  },
+  {
+    "masterCardId": "16976",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-71",
+    "localId": "071",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "071/73",
+    "cardName": "Galarian Cursola V",
+    "fullDisplayName": "Galarian Cursola V 071/73 Champion's Path",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      864
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-071-low.png",
+    "imageHighSrc": "cards/swsh35-071-high.png"
+  },
+  {
+    "masterCardId": "16970",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-70",
+    "localId": "070",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "070/73",
+    "cardName": "Gardevoir V",
+    "fullDisplayName": "Gardevoir V 070/73 Champion's Path",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-070-low.png",
+    "imageHighSrc": "cards/swsh35-070-high.png"
+  },
+  {
+    "masterCardId": "16963",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-69",
+    "localId": "069",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "069/73",
+    "cardName": "Drednaw V",
+    "fullDisplayName": "Drednaw V 069/73 Champion's Path",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      834
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-069-low.png",
+    "imageHighSrc": "cards/swsh35-069-high.png"
+  },
+  {
+    "masterCardId": "16955",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-68",
+    "localId": "068",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "068/73",
+    "cardName": "Turffield Stadium",
+    "fullDisplayName": "Turffield Stadium 068/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-068-low.png",
+    "imageHighSrc": "cards/swsh35-068-high.png"
+  },
+  {
+    "masterCardId": "16946",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-67",
+    "localId": "067",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "067/73",
+    "cardName": "Team Yell Grunt",
+    "fullDisplayName": "Team Yell Grunt 067/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-067-low.png",
+    "imageHighSrc": "cards/swsh35-067-high.png"
+  },
+  {
+    "masterCardId": "16938",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-66",
+    "localId": "066",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "066/73",
+    "cardName": "Suspicious Food Tin",
+    "fullDisplayName": "Suspicious Food Tin 066/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-066-low.png",
+    "imageHighSrc": "cards/swsh35-066-high.png"
+  },
+  {
+    "masterCardId": "16930",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-65",
+    "localId": "065",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "065/73",
+    "cardName": "Sonia",
+    "fullDisplayName": "Sonia 065/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-065-low.png",
+    "imageHighSrc": "cards/swsh35-065-high.png"
+  },
+  {
+    "masterCardId": "16923",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-64",
+    "localId": "064",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "064/73",
+    "cardName": "Rotom Phone",
+    "fullDisplayName": "Rotom Phone 064/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-064-low.png",
+    "imageHighSrc": "cards/swsh35-064-high.png"
+  },
+  {
+    "masterCardId": "16916",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-63",
+    "localId": "063",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "063/73",
+    "cardName": "Rotom Bike",
+    "fullDisplayName": "Rotom Bike 063/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-063-low.png",
+    "imageHighSrc": "cards/swsh35-063-high.png"
+  },
+  {
+    "masterCardId": "16908",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-62",
+    "localId": "062",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "062/73",
+    "cardName": "Professor's Research (Professor Magnolia)",
+    "fullDisplayName": "Professor's Research (Professor Magnolia) 062/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-062-low.png",
+    "imageHighSrc": "cards/swsh35-062-high.png"
+  },
+  {
+    "masterCardId": "16890",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-61",
+    "localId": "061",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "061/73",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 061/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-061-low.png",
+    "imageHighSrc": "cards/swsh35-061-high.png"
+  },
+  {
+    "masterCardId": "16882",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-60",
+    "localId": "060",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "060/73",
+    "cardName": "Pokémon Center Lady",
+    "fullDisplayName": "Pokémon Center Lady 060/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-060-low.png",
+    "imageHighSrc": "cards/swsh35-060-high.png"
+  },
+  {
+    "masterCardId": "16874",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-59",
+    "localId": "059",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "059/73",
+    "cardName": "Poké Ball",
+    "fullDisplayName": "Poké Ball 059/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-059-low.png",
+    "imageHighSrc": "cards/swsh35-059-high.png"
+  },
+  {
+    "masterCardId": "16868",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-58",
+    "localId": "058",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "058/73",
+    "cardName": "Piers",
+    "fullDisplayName": "Piers 058/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-058-low.png",
+    "imageHighSrc": "cards/swsh35-058-high.png"
+  },
+  {
+    "masterCardId": "16861",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-57",
+    "localId": "057",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "057/73",
+    "cardName": "Milo",
+    "fullDisplayName": "Milo 057/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-057-low.png",
+    "imageHighSrc": "cards/swsh35-057-high.png"
+  },
+  {
+    "masterCardId": "16855",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-56",
+    "localId": "056",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "056/73",
+    "cardName": "Marnie",
+    "fullDisplayName": "Marnie 056/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-056-low.png",
+    "imageHighSrc": "cards/swsh35-056-high.png"
+  },
+  {
+    "masterCardId": "16848",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-55",
+    "localId": "055",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "055/73",
+    "cardName": "Kabu",
+    "fullDisplayName": "Kabu 055/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "take",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-055-low.png",
+    "imageHighSrc": "cards/swsh35-055-high.png"
+  },
+  {
+    "masterCardId": "16842",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-54",
+    "localId": "054",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "054/73",
+    "cardName": "Hyper Potion",
+    "fullDisplayName": "Hyper Potion 054/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-054-low.png",
+    "imageHighSrc": "cards/swsh35-054-high.png"
+  },
+  {
+    "masterCardId": "16836",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-53",
+    "localId": "053",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "053/73",
+    "cardName": "Hop",
+    "fullDisplayName": "Hop 053/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-053-low.png",
+    "imageHighSrc": "cards/swsh35-053-high.png"
+  },
+  {
+    "masterCardId": "16827",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-52",
+    "localId": "052",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "052/73",
+    "cardName": "Great Ball",
+    "fullDisplayName": "Great Ball 052/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-052-low.png",
+    "imageHighSrc": "cards/swsh35-052-high.png"
+  },
+  {
+    "masterCardId": "16821",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-51",
+    "localId": "051",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "051/73",
+    "cardName": "Full Heal",
+    "fullDisplayName": "Full Heal 051/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yoshinobu Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-051-low.png",
+    "imageHighSrc": "cards/swsh35-051-high.png"
+  },
+  {
+    "masterCardId": "16814",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-50",
+    "localId": "050",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "050/73",
+    "cardName": "Bede",
+    "fullDisplayName": "Bede 050/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-050-low.png",
+    "imageHighSrc": "cards/swsh35-050-high.png"
+  },
+  {
+    "masterCardId": "16805",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-49",
+    "localId": "049",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "049/73",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 049/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-049-low.png",
+    "imageHighSrc": "cards/swsh35-049-high.png"
+  },
+  {
+    "masterCardId": "16799",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-48",
+    "localId": "048",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "048/73",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 048/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-048-low.png",
+    "imageHighSrc": "cards/swsh35-048-high.png"
+  },
+  {
+    "masterCardId": "16791",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-47",
+    "localId": "047",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "047/73",
+    "cardName": "Duraludon V",
+    "fullDisplayName": "Duraludon V 047/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      884
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-047-low.png",
+    "imageHighSrc": "cards/swsh35-047-high.png"
+  },
+  {
+    "masterCardId": "16782",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-46",
+    "localId": "046",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "046/73",
+    "cardName": "Nickit",
+    "fullDisplayName": "Nickit 046/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      827
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-046-low.png",
+    "imageHighSrc": "cards/swsh35-046-high.png"
+  },
+  {
+    "masterCardId": "16775",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-45",
+    "localId": "045",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "045/73",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar 045/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Inkay",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-045-low.png",
+    "imageHighSrc": "cards/swsh35-045-high.png"
+  },
+  {
+    "masterCardId": "16769",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-44",
+    "localId": "044",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "044/73",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 044/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-044-low.png",
+    "imageHighSrc": "cards/swsh35-044-high.png"
+  },
+  {
+    "masterCardId": "16761",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-43",
+    "localId": "043",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "043/73",
+    "cardName": "Trubbish",
+    "fullDisplayName": "Trubbish 043/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      568
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-043-low.png",
+    "imageHighSrc": "cards/swsh35-043-high.png"
+  },
+  {
+    "masterCardId": "16753",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-42",
+    "localId": "042",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "042/73",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 042/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "tetsuya koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-042-low.png",
+    "imageHighSrc": "cards/swsh35-042-high.png"
+  },
+  {
+    "masterCardId": "16745",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-41",
+    "localId": "041",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "041/73",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 041/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-041-low.png",
+    "imageHighSrc": "cards/swsh35-041-high.png"
+  },
+  {
+    "masterCardId": "16729",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-40",
+    "localId": "040",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "040/73",
+    "cardName": "Liepard",
+    "fullDisplayName": "Liepard 040/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      510
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Purrloin",
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-040-low.png",
+    "imageHighSrc": "cards/swsh35-040-high.png"
+  },
+  {
+    "masterCardId": "16723",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-39",
+    "localId": "039",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "039/73",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 039/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-039-low.png",
+    "imageHighSrc": "cards/swsh35-039-high.png"
+  },
+  {
+    "masterCardId": "16715",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-38",
+    "localId": "038",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "038/73",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 038/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-038-low.png",
+    "imageHighSrc": "cards/swsh35-038-high.png"
+  },
+  {
+    "masterCardId": "16707",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-37",
+    "localId": "037",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "037/73",
+    "cardName": "Galarian Obstagoon",
+    "fullDisplayName": "Galarian Obstagoon 037/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      862
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Galarian Linoone",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-037-low.png",
+    "imageHighSrc": "cards/swsh35-037-high.png"
+  },
+  {
+    "masterCardId": "16699",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-36",
+    "localId": "036",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "036/73",
+    "cardName": "Galarian Linoone",
+    "fullDisplayName": "Galarian Linoone 036/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      264
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Galarian Zigzagoon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-036-low.png",
+    "imageHighSrc": "cards/swsh35-036-high.png"
+  },
+  {
+    "masterCardId": "16691",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-35",
+    "localId": "035",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "035/73",
+    "cardName": "Galarian Zigzagoon",
+    "fullDisplayName": "Galarian Zigzagoon 035/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      263
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-035-low.png",
+    "imageHighSrc": "cards/swsh35-035-high.png"
+  },
+  {
+    "masterCardId": "16683",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-34",
+    "localId": "034",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "034/73",
+    "cardName": "Arbok",
+    "fullDisplayName": "Arbok 034/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-034-low.png",
+    "imageHighSrc": "cards/swsh35-034-high.png"
+  },
+  {
+    "masterCardId": "16675",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-33",
+    "localId": "033",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "033/73",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 033/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-033-low.png",
+    "imageHighSrc": "cards/swsh35-033-high.png"
+  },
+  {
+    "masterCardId": "16664",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-32",
+    "localId": "032",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "032/73",
+    "cardName": "Grapploct V",
+    "fullDisplayName": "Grapploct V 032/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      853
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-032-low.png",
+    "imageHighSrc": "cards/swsh35-032-high.png"
+  },
+  {
+    "masterCardId": "16656",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-31",
+    "localId": "031",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "031/73",
+    "cardName": "Rolycoly",
+    "fullDisplayName": "Rolycoly 031/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      837
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-031-low.png",
+    "imageHighSrc": "cards/swsh35-031-high.png"
+  },
+  {
+    "masterCardId": "16650",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-30",
+    "localId": "030",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "030/73",
+    "cardName": "Lycanroc",
+    "fullDisplayName": "Lycanroc 030/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      745
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rockruff",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-030-low.png",
+    "imageHighSrc": "cards/swsh35-030-high.png"
+  },
+  {
+    "masterCardId": "16642",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-29",
+    "localId": "029",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "029/73",
+    "cardName": "Rockruff",
+    "fullDisplayName": "Rockruff 029/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      744
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-029-low.png",
+    "imageHighSrc": "cards/swsh35-029-high.png"
+  },
+  {
+    "masterCardId": "16634",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-28",
+    "localId": "028",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "028/73",
+    "cardName": "Zygarde",
+    "fullDisplayName": "Zygarde 028/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      718
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-028-low.png",
+    "imageHighSrc": "cards/swsh35-028-high.png"
+  },
+  {
+    "masterCardId": "16627",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-27",
+    "localId": "027",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "027/73",
+    "cardName": "Lucario V",
+    "fullDisplayName": "Lucario V 027/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-027-low.png",
+    "imageHighSrc": "cards/swsh35-027-high.png"
+  },
+  {
+    "masterCardId": "16619",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-26",
+    "localId": "026",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "026/73",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 026/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-026-low.png",
+    "imageHighSrc": "cards/swsh35-026-high.png"
+  },
+  {
+    "masterCardId": "16611",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-25",
+    "localId": "025",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "025/73",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 025/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-025-low.png",
+    "imageHighSrc": "cards/swsh35-025-high.png"
+  },
+  {
+    "masterCardId": "16603",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-24",
+    "localId": "024",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "024/73",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 024/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-024-low.png",
+    "imageHighSrc": "cards/swsh35-024-high.png"
+  },
+  {
+    "masterCardId": "16596",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-23",
+    "localId": "023",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "023/73",
+    "cardName": "Alcremie VMAX",
+    "fullDisplayName": "Alcremie VMAX 023/73 Champion's Path",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      869
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Alcremie V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-023-low.png",
+    "imageHighSrc": "cards/swsh35-023-high.png"
+  },
+  {
+    "masterCardId": "16588",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-22",
+    "localId": "022",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "022/73",
+    "cardName": "Alcremie V",
+    "fullDisplayName": "Alcremie V 022/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      869
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-022-low.png",
+    "imageHighSrc": "cards/swsh35-022-high.png"
+  },
+  {
+    "masterCardId": "16580",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-21",
+    "localId": "021",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "021/73",
+    "cardName": "Galarian Cursola V",
+    "fullDisplayName": "Galarian Cursola V 021/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      864
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-021-low.png",
+    "imageHighSrc": "cards/swsh35-021-high.png"
+  },
+  {
+    "masterCardId": "16573",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-20",
+    "localId": "020",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "020/73",
+    "cardName": "Hatterene",
+    "fullDisplayName": "Hatterene 020/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      858
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hattrem",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-020-low.png",
+    "imageHighSrc": "cards/swsh35-020-high.png"
+  },
+  {
+    "masterCardId": "16564",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-19",
+    "localId": "019",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "019/73",
+    "cardName": "Hattrem",
+    "fullDisplayName": "Hattrem 019/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      857
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Hatenna",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-019-low.png",
+    "imageHighSrc": "cards/swsh35-019-high.png"
+  },
+  {
+    "masterCardId": "16557",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-18",
+    "localId": "018",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "018/73",
+    "cardName": "Hatenna",
+    "fullDisplayName": "Hatenna 018/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      856
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-018-low.png",
+    "imageHighSrc": "cards/swsh35-018-high.png"
+  },
+  {
+    "masterCardId": "16549",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-17",
+    "localId": "017",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "017/73",
+    "cardName": "Gardevoir VMAX",
+    "fullDisplayName": "Gardevoir VMAX 017/73 Champion's Path",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gardevoir V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-017-low.png",
+    "imageHighSrc": "cards/swsh35-017-high.png"
+  },
+  {
+    "masterCardId": "16541",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-16",
+    "localId": "016",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "016/73",
+    "cardName": "Gardevoir V",
+    "fullDisplayName": "Gardevoir V 016/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-016-low.png",
+    "imageHighSrc": "cards/swsh35-016-high.png"
+  },
+  {
+    "masterCardId": "16533",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-15",
+    "localId": "015",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "015/73",
+    "cardName": "Drednaw VMAX",
+    "fullDisplayName": "Drednaw VMAX 015/73 Champion's Path",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      834
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drednaw V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-015-low.png",
+    "imageHighSrc": "cards/swsh35-015-high.png"
+  },
+  {
+    "masterCardId": "16526",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-14",
+    "localId": "014",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "014/73",
+    "cardName": "Drednaw V",
+    "fullDisplayName": "Drednaw V 014/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      834
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-014-low.png",
+    "imageHighSrc": "cards/swsh35-014-high.png"
+  },
+  {
+    "masterCardId": "16519",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-13",
+    "localId": "013",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "013/73",
+    "cardName": "Wailord V",
+    "fullDisplayName": "Wailord V 013/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 280,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      321
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-013-low.png",
+    "imageHighSrc": "cards/swsh35-013-high.png"
+  },
+  {
+    "masterCardId": "16507",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-12",
+    "localId": "012",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "012/73",
+    "cardName": "Sharpedo",
+    "fullDisplayName": "Sharpedo 012/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Carvanha",
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-012-low.png",
+    "imageHighSrc": "cards/swsh35-012-high.png"
+  },
+  {
+    "masterCardId": "16500",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-11",
+    "localId": "011",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "011/73",
+    "cardName": "Carvanha",
+    "fullDisplayName": "Carvanha 011/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-011-low.png",
+    "imageHighSrc": "cards/swsh35-011-high.png"
+  },
+  {
+    "masterCardId": "16492",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-10",
+    "localId": "010",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "010/73",
+    "cardName": "Centiskorch",
+    "fullDisplayName": "Centiskorch 010/73 Champion's Path",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sizzlipede",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-010-low.png",
+    "imageHighSrc": "cards/swsh35-010-high.png"
+  },
+  {
+    "masterCardId": "16485",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-9",
+    "localId": "009",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "009/73",
+    "cardName": "Sizzlipede",
+    "fullDisplayName": "Sizzlipede 009/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      850
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-009-low.png",
+    "imageHighSrc": "cards/swsh35-009-high.png"
+  },
+  {
+    "masterCardId": "16478",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-8",
+    "localId": "008",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "008/73",
+    "cardName": "Incineroar V",
+    "fullDisplayName": "Incineroar V 008/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      727
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-008-low.png",
+    "imageHighSrc": "cards/swsh35-008-high.png"
+  },
+  {
+    "masterCardId": "16471",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-7",
+    "localId": "007",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "007/73",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 007/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-007-low.png",
+    "imageHighSrc": "cards/swsh35-007-high.png"
+  },
+  {
+    "masterCardId": "16463",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-6",
+    "localId": "006",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "006/73",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 006/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-006-low.png",
+    "imageHighSrc": "cards/swsh35-006-high.png"
+  },
+  {
+    "masterCardId": "16452",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-5",
+    "localId": "005",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "005/73",
+    "cardName": "Eldegoss V",
+    "fullDisplayName": "Eldegoss V 005/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      830
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-005-low.png",
+    "imageHighSrc": "cards/swsh35-005-high.png"
+  },
+  {
+    "masterCardId": "16445",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-4",
+    "localId": "004",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "004/73",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 004/73 Champion's Path",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-004-low.png",
+    "imageHighSrc": "cards/swsh35-004-high.png"
+  },
+  {
+    "masterCardId": "16437",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-3",
+    "localId": "003",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "003/73",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 003/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-003-low.png",
+    "imageHighSrc": "cards/swsh35-003-high.png"
+  },
+  {
+    "masterCardId": "16429",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-2",
+    "localId": "002",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "002/73",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 002/73 Champion's Path",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-002-low.png",
+    "imageHighSrc": "cards/swsh35-002-high.png"
+  },
+  {
+    "masterCardId": "16422",
+    "externalId": null,
+    "tcgdex_id": "swsh3.5-1",
+    "localId": "001",
+    "setCode": "swsh3.5",
+    "setTcgdexId": "swsh3.5",
+    "cardNumber": "001/73",
+    "cardName": "Venusaur V",
+    "fullDisplayName": "Venusaur V 001/73 Champion's Path",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh35-001-low.png",
+    "imageHighSrc": "cards/swsh35-001-high.png"
+  }
+]

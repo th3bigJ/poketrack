@@ -1,0 +1,4615 @@
+[
+  {
+    "masterCardId": "2329",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC25",
+    "localId": "RC25",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC25/113",
+    "cardName": "Meloetta-EX",
+    "fullDisplayName": "Meloetta-EX RC25/113 Legendary Treasures",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-RC25-low.png",
+    "imageHighSrc": "cards/bw11-RC25-high.png"
+  },
+  {
+    "masterCardId": "2328",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC24",
+    "localId": "RC24",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC24/113",
+    "cardName": "Mew-EX",
+    "fullDisplayName": "Mew-EX RC24/113 Legendary Treasures",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-RC24-low.png",
+    "imageHighSrc": "cards/bw11-RC24-high.png"
+  },
+  {
+    "masterCardId": "2327",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC23",
+    "localId": "RC23",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC23/113",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga RC23/113 Legendary Treasures",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC23-low.png",
+    "imageHighSrc": "cards/bw11-RC23-high.png"
+  },
+  {
+    "masterCardId": "2326",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC22",
+    "localId": "RC22",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC22/113",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram RC22/113 Legendary Treasures",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC22-low.png",
+    "imageHighSrc": "cards/bw11-RC22-high.png"
+  },
+  {
+    "masterCardId": "2325",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC21",
+    "localId": "RC21",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC21/113",
+    "cardName": "Shaymin-EX",
+    "fullDisplayName": "Shaymin-EX RC21/113 Legendary Treasures",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-RC21-low.png",
+    "imageHighSrc": "cards/bw11-RC21-high.png"
+  },
+  {
+    "masterCardId": "2324",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC20",
+    "localId": "RC20",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC20/113",
+    "cardName": "Elesa",
+    "fullDisplayName": "Elesa RC20/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC20-low.png",
+    "imageHighSrc": "cards/bw11-RC20-high.png"
+  },
+  {
+    "masterCardId": "2323",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC19",
+    "localId": "RC19",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC19/113",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino RC19/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC19-low.png",
+    "imageHighSrc": "cards/bw11-RC19-high.png"
+  },
+  {
+    "masterCardId": "2322",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC18",
+    "localId": "RC18",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC18/113",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino RC18/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC18-low.png",
+    "imageHighSrc": "cards/bw11-RC18-high.png"
+  },
+  {
+    "masterCardId": "2321",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC17",
+    "localId": "RC17",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC17/113",
+    "cardName": "Audino",
+    "fullDisplayName": "Audino RC17/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC17-low.png",
+    "imageHighSrc": "cards/bw11-RC17-high.png"
+  },
+  {
+    "masterCardId": "2320",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC16",
+    "localId": "RC16",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC16/113",
+    "cardName": "Ursaring",
+    "fullDisplayName": "Ursaring RC16/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      217
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Teddiursa",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC16-low.png",
+    "imageHighSrc": "cards/bw11-RC16-high.png"
+  },
+  {
+    "masterCardId": "2319",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC15",
+    "localId": "RC15",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC15/113",
+    "cardName": "Teddiursa",
+    "fullDisplayName": "Teddiursa RC15/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      216
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC15-low.png",
+    "imageHighSrc": "cards/bw11-RC15-high.png"
+  },
+  {
+    "masterCardId": "2318",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC14",
+    "localId": "RC14",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC14/113",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee RC14/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC14-low.png",
+    "imageHighSrc": "cards/bw11-RC14-high.png"
+  },
+  {
+    "masterCardId": "2317",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC13",
+    "localId": "RC13",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC13/113",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin RC13/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC13-low.png",
+    "imageHighSrc": "cards/bw11-RC13-high.png"
+  },
+  {
+    "masterCardId": "2316",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC12",
+    "localId": "RC12",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC12/113",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk RC12/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC12-low.png",
+    "imageHighSrc": "cards/bw11-RC12-high.png"
+  },
+  {
+    "masterCardId": "2315",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC11",
+    "localId": "RC11",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC11/113",
+    "cardName": "Meloetta-EX",
+    "fullDisplayName": "Meloetta-EX RC11/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-RC11-low.png",
+    "imageHighSrc": "cards/bw11-RC11-high.png"
+  },
+  {
+    "masterCardId": "2314",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC10",
+    "localId": "RC10",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC10/113",
+    "cardName": "Gardevoir",
+    "fullDisplayName": "Gardevoir RC10/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC10-low.png",
+    "imageHighSrc": "cards/bw11-RC10-high.png"
+  },
+  {
+    "masterCardId": "2313",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC9",
+    "localId": "RC9",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC9/113",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia RC9/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC9-low.png",
+    "imageHighSrc": "cards/bw11-RC9-high.png"
+  },
+  {
+    "masterCardId": "2312",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC8",
+    "localId": "RC8",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC8/113",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts RC8/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC8-low.png",
+    "imageHighSrc": "cards/bw11-RC8-high.png"
+  },
+  {
+    "masterCardId": "2311",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC7",
+    "localId": "RC7",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC7/113",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu RC7/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC7-low.png",
+    "imageHighSrc": "cards/bw11-RC7-high.png"
+  },
+  {
+    "masterCardId": "2310",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC6",
+    "localId": "RC6",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC6/113",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup RC6/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC6-low.png",
+    "imageHighSrc": "cards/bw11-RC6-high.png"
+  },
+  {
+    "masterCardId": "2309",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC5",
+    "localId": "RC5",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC5/113",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic RC5/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC5-low.png",
+    "imageHighSrc": "cards/bw11-RC5-high.png"
+  },
+  {
+    "masterCardId": "2308",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC4",
+    "localId": "RC4",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC4/113",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe RC4/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC4-low.png",
+    "imageHighSrc": "cards/bw11-RC4-high.png"
+  },
+  {
+    "masterCardId": "2307",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC3",
+    "localId": "RC3",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC3/113",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior RC3/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC3-low.png",
+    "imageHighSrc": "cards/bw11-RC3-high.png"
+  },
+  {
+    "masterCardId": "2306",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC2",
+    "localId": "RC2",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC2/113",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine RC2/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snivy",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC2-low.png",
+    "imageHighSrc": "cards/bw11-RC2-high.png"
+  },
+  {
+    "masterCardId": "2305",
+    "externalId": null,
+    "tcgdex_id": "bw11-RC1",
+    "localId": "RC1",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "RC1/113",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy RC1/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-RC1-low.png",
+    "imageHighSrc": "cards/bw11-RC1-high.png"
+  },
+  {
+    "masterCardId": "2304",
+    "externalId": null,
+    "tcgdex_id": "bw11-115",
+    "localId": "115",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "115/113",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 115/113 Legendary Treasures",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-115-low.png",
+    "imageHighSrc": "cards/bw11-115-high.png"
+  },
+  {
+    "masterCardId": "2303",
+    "externalId": null,
+    "tcgdex_id": "bw11-114",
+    "localId": "114",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "114/113",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 114/113 Legendary Treasures",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-114-low.png",
+    "imageHighSrc": "cards/bw11-114-high.png"
+  },
+  {
+    "masterCardId": "2302",
+    "externalId": null,
+    "tcgdex_id": "bw11-113",
+    "localId": "113",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "113/113",
+    "cardName": "Double Colorless Energy",
+    "fullDisplayName": "Double Colorless Energy 113/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-113-low.png",
+    "imageHighSrc": "cards/bw11-113-high.png"
+  },
+  {
+    "masterCardId": "2301",
+    "externalId": null,
+    "tcgdex_id": "bw11-112",
+    "localId": "112",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "112/113",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 112/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-112-low.png",
+    "imageHighSrc": "cards/bw11-112-high.png"
+  },
+  {
+    "masterCardId": "2300",
+    "externalId": null,
+    "tcgdex_id": "bw11-111",
+    "localId": "111",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "111/113",
+    "cardName": "Crushing Hammer",
+    "fullDisplayName": "Crushing Hammer 111/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-111-low.png",
+    "imageHighSrc": "cards/bw11-111-high.png"
+  },
+  {
+    "masterCardId": "2299",
+    "externalId": null,
+    "tcgdex_id": "bw11-110",
+    "localId": "110",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "110/113",
+    "cardName": "Cedric Juniper",
+    "fullDisplayName": "Cedric Juniper 110/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-110-low.png",
+    "imageHighSrc": "cards/bw11-110-high.png"
+  },
+  {
+    "masterCardId": "2298",
+    "externalId": null,
+    "tcgdex_id": "bw11-109",
+    "localId": "109",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "109/113",
+    "cardName": "Bianca",
+    "fullDisplayName": "Bianca 109/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-109-low.png",
+    "imageHighSrc": "cards/bw11-109-high.png"
+  },
+  {
+    "masterCardId": "2297",
+    "externalId": null,
+    "tcgdex_id": "bw11-108",
+    "localId": "108",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "108/113",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 108/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-108-low.png",
+    "imageHighSrc": "cards/bw11-108-high.png"
+  },
+  {
+    "masterCardId": "2296",
+    "externalId": null,
+    "tcgdex_id": "bw11-107",
+    "localId": "107",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "107/113",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 107/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-107-low.png",
+    "imageHighSrc": "cards/bw11-107-high.png"
+  },
+  {
+    "masterCardId": "2295",
+    "externalId": null,
+    "tcgdex_id": "bw11-106",
+    "localId": "106",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "106/113",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 106/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-106-low.png",
+    "imageHighSrc": "cards/bw11-106-high.png"
+  },
+  {
+    "masterCardId": "2294",
+    "externalId": null,
+    "tcgdex_id": "bw11-105",
+    "localId": "105",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "105/113",
+    "cardName": "Cinccino",
+    "fullDisplayName": "Cinccino 105/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      573
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Minccino",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-105-low.png",
+    "imageHighSrc": "cards/bw11-105-high.png"
+  },
+  {
+    "masterCardId": "2293",
+    "externalId": null,
+    "tcgdex_id": "bw11-104",
+    "localId": "104",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "104/113",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino 104/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-104-low.png",
+    "imageHighSrc": "cards/bw11-104-high.png"
+  },
+  {
+    "masterCardId": "2292",
+    "externalId": null,
+    "tcgdex_id": "bw11-103",
+    "localId": "103",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "103/113",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 103/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-103-low.png",
+    "imageHighSrc": "cards/bw11-103-high.png"
+  },
+  {
+    "masterCardId": "2291",
+    "externalId": null,
+    "tcgdex_id": "bw11-102",
+    "localId": "102",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "102/113",
+    "cardName": "Lugia-EX",
+    "fullDisplayName": "Lugia-EX 102/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-102-low.png",
+    "imageHighSrc": "cards/bw11-102-high.png"
+  },
+  {
+    "masterCardId": "2290",
+    "externalId": null,
+    "tcgdex_id": "bw11-101",
+    "localId": "101",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "101/113",
+    "cardName": "White Kyurem-EX",
+    "fullDisplayName": "White Kyurem-EX 101/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-101-low.png",
+    "imageHighSrc": "cards/bw11-101-high.png"
+  },
+  {
+    "masterCardId": "2289",
+    "externalId": null,
+    "tcgdex_id": "bw11-100",
+    "localId": "100",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "100/113",
+    "cardName": "Black Kyurem-EX",
+    "fullDisplayName": "Black Kyurem-EX 100/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-100-low.png",
+    "imageHighSrc": "cards/bw11-100-high.png"
+  },
+  {
+    "masterCardId": "2288",
+    "externalId": null,
+    "tcgdex_id": "bw11-99",
+    "localId": "099",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "099/113",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 099/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zweilous",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-099-low.png",
+    "imageHighSrc": "cards/bw11-099-high.png"
+  },
+  {
+    "masterCardId": "2287",
+    "externalId": null,
+    "tcgdex_id": "bw11-98",
+    "localId": "098",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "098/113",
+    "cardName": "Zweilous",
+    "fullDisplayName": "Zweilous 098/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      634
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Deino",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-098-low.png",
+    "imageHighSrc": "cards/bw11-098-high.png"
+  },
+  {
+    "masterCardId": "2286",
+    "externalId": null,
+    "tcgdex_id": "bw11-97",
+    "localId": "097",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "097/113",
+    "cardName": "Deino",
+    "fullDisplayName": "Deino 097/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      633
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-097-low.png",
+    "imageHighSrc": "cards/bw11-097-high.png"
+  },
+  {
+    "masterCardId": "2285",
+    "externalId": null,
+    "tcgdex_id": "bw11-96",
+    "localId": "096",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "096/113",
+    "cardName": "Garchomp",
+    "fullDisplayName": "Garchomp 096/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      445
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gabite",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-096-low.png",
+    "imageHighSrc": "cards/bw11-096-high.png"
+  },
+  {
+    "masterCardId": "2284",
+    "externalId": null,
+    "tcgdex_id": "bw11-95",
+    "localId": "095",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "095/113",
+    "cardName": "Gabite",
+    "fullDisplayName": "Gabite 095/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      444
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gible",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-095-low.png",
+    "imageHighSrc": "cards/bw11-095-high.png"
+  },
+  {
+    "masterCardId": "2283",
+    "externalId": null,
+    "tcgdex_id": "bw11-94",
+    "localId": "094",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "094/113",
+    "cardName": "Gible",
+    "fullDisplayName": "Gible 094/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      443
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-094-low.png",
+    "imageHighSrc": "cards/bw11-094-high.png"
+  },
+  {
+    "masterCardId": "2282",
+    "externalId": null,
+    "tcgdex_id": "bw11-93",
+    "localId": "093",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "093/113",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 093/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-093-low.png",
+    "imageHighSrc": "cards/bw11-093-high.png"
+  },
+  {
+    "masterCardId": "2281",
+    "externalId": null,
+    "tcgdex_id": "bw11-92",
+    "localId": "092",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "092/113",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 092/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-092-low.png",
+    "imageHighSrc": "cards/bw11-092-high.png"
+  },
+  {
+    "masterCardId": "2280",
+    "externalId": null,
+    "tcgdex_id": "bw11-91",
+    "localId": "091",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "091/113",
+    "cardName": "Cobalion",
+    "fullDisplayName": "Cobalion 091/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      638
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-091-low.png",
+    "imageHighSrc": "cards/bw11-091-high.png"
+  },
+  {
+    "masterCardId": "2279",
+    "externalId": null,
+    "tcgdex_id": "bw11-90",
+    "localId": "090",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "090/113",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark 090/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-090-low.png",
+    "imageHighSrc": "cards/bw11-090-high.png"
+  },
+  {
+    "masterCardId": "2278",
+    "externalId": null,
+    "tcgdex_id": "bw11-89",
+    "localId": "089",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "089/113",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 089/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-089-low.png",
+    "imageHighSrc": "cards/bw11-089-high.png"
+  },
+  {
+    "masterCardId": "2277",
+    "externalId": null,
+    "tcgdex_id": "bw11-88",
+    "localId": "088",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "088/113",
+    "cardName": "Darkrai-EX",
+    "fullDisplayName": "Darkrai-EX 088/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-088-low.png",
+    "imageHighSrc": "cards/bw11-088-high.png"
+  },
+  {
+    "masterCardId": "2276",
+    "externalId": null,
+    "tcgdex_id": "bw11-87",
+    "localId": "087",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "087/113",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 087/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-087-low.png",
+    "imageHighSrc": "cards/bw11-087-high.png"
+  },
+  {
+    "masterCardId": "2275",
+    "externalId": null,
+    "tcgdex_id": "bw11-86",
+    "localId": "086",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "086/113",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta 086/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-086-low.png",
+    "imageHighSrc": "cards/bw11-086-high.png"
+  },
+  {
+    "masterCardId": "2274",
+    "externalId": null,
+    "tcgdex_id": "bw11-85",
+    "localId": "085",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "085/113",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus 085/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-085-low.png",
+    "imageHighSrc": "cards/bw11-085-high.png"
+  },
+  {
+    "masterCardId": "2273",
+    "externalId": null,
+    "tcgdex_id": "bw11-84",
+    "localId": "084",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "084/113",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion 084/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-084-low.png",
+    "imageHighSrc": "cards/bw11-084-high.png"
+  },
+  {
+    "masterCardId": "2272",
+    "externalId": null,
+    "tcgdex_id": "bw11-83",
+    "localId": "083",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "083/113",
+    "cardName": "Stunfisk",
+    "fullDisplayName": "Stunfisk 083/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-083-low.png",
+    "imageHighSrc": "cards/bw11-083-high.png"
+  },
+  {
+    "masterCardId": "2271",
+    "externalId": null,
+    "tcgdex_id": "bw11-82",
+    "localId": "082",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "082/113",
+    "cardName": "Excadrill-EX",
+    "fullDisplayName": "Excadrill-EX 082/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      530
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-082-low.png",
+    "imageHighSrc": "cards/bw11-082-high.png"
+  },
+  {
+    "masterCardId": "2270",
+    "externalId": null,
+    "tcgdex_id": "bw11-81",
+    "localId": "081",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "081/113",
+    "cardName": "Gallade",
+    "fullDisplayName": "Gallade 081/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kirlia",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-081-low.png",
+    "imageHighSrc": "cards/bw11-081-high.png"
+  },
+  {
+    "masterCardId": "2269",
+    "externalId": null,
+    "tcgdex_id": "bw11-80",
+    "localId": "080",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "080/113",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 080/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-080-low.png",
+    "imageHighSrc": "cards/bw11-080-high.png"
+  },
+  {
+    "masterCardId": "2268",
+    "externalId": null,
+    "tcgdex_id": "bw11-79",
+    "localId": "079",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "079/113",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 079/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-079-low.png",
+    "imageHighSrc": "cards/bw11-079-high.png"
+  },
+  {
+    "masterCardId": "2267",
+    "externalId": null,
+    "tcgdex_id": "bw11-78",
+    "localId": "078",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "078/113",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta 078/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-078-low.png",
+    "imageHighSrc": "cards/bw11-078-high.png"
+  },
+  {
+    "masterCardId": "2266",
+    "externalId": null,
+    "tcgdex_id": "bw11-77",
+    "localId": "077",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "077/113",
+    "cardName": "Chandelure-EX",
+    "fullDisplayName": "Chandelure-EX 077/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-077-low.png",
+    "imageHighSrc": "cards/bw11-077-high.png"
+  },
+  {
+    "masterCardId": "2265",
+    "externalId": null,
+    "tcgdex_id": "bw11-76",
+    "localId": "076",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "076/113",
+    "cardName": "Reuniclus",
+    "fullDisplayName": "Reuniclus 076/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      579
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Duosion",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-076-low.png",
+    "imageHighSrc": "cards/bw11-076-high.png"
+  },
+  {
+    "masterCardId": "2264",
+    "externalId": null,
+    "tcgdex_id": "bw11-75",
+    "localId": "075",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "075/113",
+    "cardName": "Duosion",
+    "fullDisplayName": "Duosion 075/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      578
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Solosis",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-075-low.png",
+    "imageHighSrc": "cards/bw11-075-high.png"
+  },
+  {
+    "masterCardId": "2263",
+    "externalId": null,
+    "tcgdex_id": "bw11-74",
+    "localId": "074",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "074/113",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 074/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-074-low.png",
+    "imageHighSrc": "cards/bw11-074-high.png"
+  },
+  {
+    "masterCardId": "2262",
+    "externalId": null,
+    "tcgdex_id": "bw11-73",
+    "localId": "073",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "073/113",
+    "cardName": "Solosis",
+    "fullDisplayName": "Solosis 073/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      577
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-073-low.png",
+    "imageHighSrc": "cards/bw11-073-high.png"
+  },
+  {
+    "masterCardId": "2261",
+    "externalId": null,
+    "tcgdex_id": "bw11-72",
+    "localId": "072",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "072/113",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 072/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-072-low.png",
+    "imageHighSrc": "cards/bw11-072-high.png"
+  },
+  {
+    "masterCardId": "2260",
+    "externalId": null,
+    "tcgdex_id": "bw11-71",
+    "localId": "071",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "071/113",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 071/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-071-low.png",
+    "imageHighSrc": "cards/bw11-071-high.png"
+  },
+  {
+    "masterCardId": "2259",
+    "externalId": null,
+    "tcgdex_id": "bw11-70",
+    "localId": "070",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "070/113",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 070/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-070-low.png",
+    "imageHighSrc": "cards/bw11-070-high.png"
+  },
+  {
+    "masterCardId": "2258",
+    "externalId": null,
+    "tcgdex_id": "bw11-69",
+    "localId": "069",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "069/113",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 069/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-069-low.png",
+    "imageHighSrc": "cards/bw11-069-high.png"
+  },
+  {
+    "masterCardId": "2257",
+    "externalId": null,
+    "tcgdex_id": "bw11-68",
+    "localId": "068",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "068/113",
+    "cardName": "Garbodor",
+    "fullDisplayName": "Garbodor 068/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      569
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trubbish",
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-068-low.png",
+    "imageHighSrc": "cards/bw11-068-high.png"
+  },
+  {
+    "masterCardId": "2256",
+    "externalId": null,
+    "tcgdex_id": "bw11-67",
+    "localId": "067",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "067/113",
+    "cardName": "Trubbish",
+    "fullDisplayName": "Trubbish 067/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      568
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-067-low.png",
+    "imageHighSrc": "cards/bw11-067-high.png"
+  },
+  {
+    "masterCardId": "2255",
+    "externalId": null,
+    "tcgdex_id": "bw11-66",
+    "localId": "066",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "066/113",
+    "cardName": "Sigilyph",
+    "fullDisplayName": "Sigilyph 066/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      561
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-066-low.png",
+    "imageHighSrc": "cards/bw11-066-high.png"
+  },
+  {
+    "masterCardId": "2254",
+    "externalId": null,
+    "tcgdex_id": "bw11-65",
+    "localId": "065",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "065/113",
+    "cardName": "Swoobat",
+    "fullDisplayName": "Swoobat 065/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      528
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Woobat",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-065-low.png",
+    "imageHighSrc": "cards/bw11-065-high.png"
+  },
+  {
+    "masterCardId": "2253",
+    "externalId": null,
+    "tcgdex_id": "bw11-64",
+    "localId": "064",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "064/113",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 064/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-064-low.png",
+    "imageHighSrc": "cards/bw11-064-high.png"
+  },
+  {
+    "masterCardId": "2252",
+    "externalId": null,
+    "tcgdex_id": "bw11-63",
+    "localId": "063",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "063/113",
+    "cardName": "Toxicroak",
+    "fullDisplayName": "Toxicroak 063/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      454
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Croagunk",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-063-low.png",
+    "imageHighSrc": "cards/bw11-063-high.png"
+  },
+  {
+    "masterCardId": "2251",
+    "externalId": null,
+    "tcgdex_id": "bw11-62",
+    "localId": "062",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "062/113",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 062/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      453
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-062-low.png",
+    "imageHighSrc": "cards/bw11-062-high.png"
+  },
+  {
+    "masterCardId": "2250",
+    "externalId": null,
+    "tcgdex_id": "bw11-61",
+    "localId": "061",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "061/113",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 061/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Asanuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-061-low.png",
+    "imageHighSrc": "cards/bw11-061-high.png"
+  },
+  {
+    "masterCardId": "2249",
+    "externalId": null,
+    "tcgdex_id": "bw11-60",
+    "localId": "060",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "060/113",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 060/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-060-low.png",
+    "imageHighSrc": "cards/bw11-060-high.png"
+  },
+  {
+    "masterCardId": "2248",
+    "externalId": null,
+    "tcgdex_id": "bw11-59",
+    "localId": "059",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "059/113",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 059/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-059-low.png",
+    "imageHighSrc": "cards/bw11-059-high.png"
+  },
+  {
+    "masterCardId": "2247",
+    "externalId": null,
+    "tcgdex_id": "bw11-58",
+    "localId": "058",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "058/113",
+    "cardName": "Mismagius",
+    "fullDisplayName": "Mismagius 058/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      429
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Misdreavus",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-058-low.png",
+    "imageHighSrc": "cards/bw11-058-high.png"
+  },
+  {
+    "masterCardId": "2246",
+    "externalId": null,
+    "tcgdex_id": "bw11-57",
+    "localId": "057",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "057/113",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 057/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-057-low.png",
+    "imageHighSrc": "cards/bw11-057-high.png"
+  },
+  {
+    "masterCardId": "2245",
+    "externalId": null,
+    "tcgdex_id": "bw11-56",
+    "localId": "056",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "056/113",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 056/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-056-low.png",
+    "imageHighSrc": "cards/bw11-056-high.png"
+  },
+  {
+    "masterCardId": "2244",
+    "externalId": null,
+    "tcgdex_id": "bw11-55",
+    "localId": "055",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "055/113",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 055/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-055-low.png",
+    "imageHighSrc": "cards/bw11-055-high.png"
+  },
+  {
+    "masterCardId": "2243",
+    "externalId": null,
+    "tcgdex_id": "bw11-54",
+    "localId": "054",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "054/113",
+    "cardName": "Mewtwo-EX",
+    "fullDisplayName": "Mewtwo-EX 054/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-054-low.png",
+    "imageHighSrc": "cards/bw11-054-high.png"
+  },
+  {
+    "masterCardId": "2242",
+    "externalId": null,
+    "tcgdex_id": "bw11-53",
+    "localId": "053",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "053/113",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 053/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-053-low.png",
+    "imageHighSrc": "cards/bw11-053-high.png"
+  },
+  {
+    "masterCardId": "2241",
+    "externalId": null,
+    "tcgdex_id": "bw11-52",
+    "localId": "052",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "052/113",
+    "cardName": "Zekrom-EX",
+    "fullDisplayName": "Zekrom-EX 052/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-052-low.png",
+    "imageHighSrc": "cards/bw11-052-high.png"
+  },
+  {
+    "masterCardId": "2240",
+    "externalId": null,
+    "tcgdex_id": "bw11-51",
+    "localId": "051",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "051/113",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 051/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-051-low.png",
+    "imageHighSrc": "cards/bw11-051-high.png"
+  },
+  {
+    "masterCardId": "2239",
+    "externalId": null,
+    "tcgdex_id": "bw11-50",
+    "localId": "050",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "050/113",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus 050/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-050-low.png",
+    "imageHighSrc": "cards/bw11-050-high.png"
+  },
+  {
+    "masterCardId": "2238",
+    "externalId": null,
+    "tcgdex_id": "bw11-49",
+    "localId": "049",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "049/113",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga 049/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-049-low.png",
+    "imageHighSrc": "cards/bw11-049-high.png"
+  },
+  {
+    "masterCardId": "2237",
+    "externalId": null,
+    "tcgdex_id": "bw11-48",
+    "localId": "048",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "048/113",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 048/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-048-low.png",
+    "imageHighSrc": "cards/bw11-048-high.png"
+  },
+  {
+    "masterCardId": "2236",
+    "externalId": null,
+    "tcgdex_id": "bw11-47",
+    "localId": "047",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "047/113",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 047/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-047-low.png",
+    "imageHighSrc": "cards/bw11-047-high.png"
+  },
+  {
+    "masterCardId": "2235",
+    "externalId": null,
+    "tcgdex_id": "bw11-46",
+    "localId": "046",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "046/113",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 046/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-046-low.png",
+    "imageHighSrc": "cards/bw11-046-high.png"
+  },
+  {
+    "masterCardId": "2234",
+    "externalId": null,
+    "tcgdex_id": "bw11-45",
+    "localId": "045",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "045/113",
+    "cardName": "Keldeo-EX",
+    "fullDisplayName": "Keldeo-EX 045/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-045-low.png",
+    "imageHighSrc": "cards/bw11-045-high.png"
+  },
+  {
+    "masterCardId": "2233",
+    "externalId": null,
+    "tcgdex_id": "bw11-44",
+    "localId": "044",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "044/113",
+    "cardName": "Kyurem-EX",
+    "fullDisplayName": "Kyurem-EX 044/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-044-low.png",
+    "imageHighSrc": "cards/bw11-044-high.png"
+  },
+  {
+    "masterCardId": "2232",
+    "externalId": null,
+    "tcgdex_id": "bw11-43",
+    "localId": "043",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "043/113",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem 043/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-043-low.png",
+    "imageHighSrc": "cards/bw11-043-high.png"
+  },
+  {
+    "masterCardId": "2231",
+    "externalId": null,
+    "tcgdex_id": "bw11-42",
+    "localId": "042",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "042/113",
+    "cardName": "Seismitoad",
+    "fullDisplayName": "Seismitoad 042/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      537
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Palpitoad",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-042-low.png",
+    "imageHighSrc": "cards/bw11-042-high.png"
+  },
+  {
+    "masterCardId": "2230",
+    "externalId": null,
+    "tcgdex_id": "bw11-41",
+    "localId": "041",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "041/113",
+    "cardName": "Palpitoad",
+    "fullDisplayName": "Palpitoad 041/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      536
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tympole",
+    "artist": "Sachiko Adachi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-041-low.png",
+    "imageHighSrc": "cards/bw11-041-high.png"
+  },
+  {
+    "masterCardId": "2229",
+    "externalId": null,
+    "tcgdex_id": "bw11-40",
+    "localId": "040",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "040/113",
+    "cardName": "Tympole",
+    "fullDisplayName": "Tympole 040/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      535
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-040-low.png",
+    "imageHighSrc": "cards/bw11-040-high.png"
+  },
+  {
+    "masterCardId": "2228",
+    "externalId": null,
+    "tcgdex_id": "bw11-39",
+    "localId": "039",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "039/113",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott 039/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-039-low.png",
+    "imageHighSrc": "cards/bw11-039-high.png"
+  },
+  {
+    "masterCardId": "2227",
+    "externalId": null,
+    "tcgdex_id": "bw11-38",
+    "localId": "038",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "038/113",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 038/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oshawott",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-038-low.png",
+    "imageHighSrc": "cards/bw11-038-high.png"
+  },
+  {
+    "masterCardId": "2226",
+    "externalId": null,
+    "tcgdex_id": "bw11-37",
+    "localId": "037",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "037/113",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 037/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-037-low.png",
+    "imageHighSrc": "cards/bw11-037-high.png"
+  },
+  {
+    "masterCardId": "2225",
+    "externalId": null,
+    "tcgdex_id": "bw11-36",
+    "localId": "036",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "036/113",
+    "cardName": "Phione",
+    "fullDisplayName": "Phione 036/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      489
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-036-low.png",
+    "imageHighSrc": "cards/bw11-036-high.png"
+  },
+  {
+    "masterCardId": "2224",
+    "externalId": null,
+    "tcgdex_id": "bw11-35",
+    "localId": "035",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "035/113",
+    "cardName": "Empoleon",
+    "fullDisplayName": "Empoleon 035/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-035-low.png",
+    "imageHighSrc": "cards/bw11-035-high.png"
+  },
+  {
+    "masterCardId": "2223",
+    "externalId": null,
+    "tcgdex_id": "bw11-34",
+    "localId": "034",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "034/113",
+    "cardName": "Prinplup",
+    "fullDisplayName": "Prinplup 034/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      394
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piplup",
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-034-low.png",
+    "imageHighSrc": "cards/bw11-034-high.png"
+  },
+  {
+    "masterCardId": "2222",
+    "externalId": null,
+    "tcgdex_id": "bw11-33",
+    "localId": "033",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "033/113",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 033/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-033-low.png",
+    "imageHighSrc": "cards/bw11-033-high.png"
+  },
+  {
+    "masterCardId": "2221",
+    "externalId": null,
+    "tcgdex_id": "bw11-32",
+    "localId": "032",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "032/113",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 032/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-032-low.png",
+    "imageHighSrc": "cards/bw11-032-high.png"
+  },
+  {
+    "masterCardId": "2220",
+    "externalId": null,
+    "tcgdex_id": "bw11-31",
+    "localId": "031",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "031/113",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 031/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-031-low.png",
+    "imageHighSrc": "cards/bw11-031-high.png"
+  },
+  {
+    "masterCardId": "2219",
+    "externalId": null,
+    "tcgdex_id": "bw11-30",
+    "localId": "030",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "030/113",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 030/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-030-low.png",
+    "imageHighSrc": "cards/bw11-030-high.png"
+  },
+  {
+    "masterCardId": "2218",
+    "externalId": null,
+    "tcgdex_id": "bw11-29",
+    "localId": "029",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "029/113",
+    "cardName": "Reshiram-EX",
+    "fullDisplayName": "Reshiram-EX 029/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-029-low.png",
+    "imageHighSrc": "cards/bw11-029-high.png"
+  },
+  {
+    "masterCardId": "2217",
+    "externalId": null,
+    "tcgdex_id": "bw11-28",
+    "localId": "028",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "028/113",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 028/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-028-low.png",
+    "imageHighSrc": "cards/bw11-028-high.png"
+  },
+  {
+    "masterCardId": "2216",
+    "externalId": null,
+    "tcgdex_id": "bw11-27",
+    "localId": "027",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "027/113",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar 027/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-027-low.png",
+    "imageHighSrc": "cards/bw11-027-high.png"
+  },
+  {
+    "masterCardId": "2215",
+    "externalId": null,
+    "tcgdex_id": "bw11-26",
+    "localId": "026",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "026/113",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 026/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tepig",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-026-low.png",
+    "imageHighSrc": "cards/bw11-026-high.png"
+  },
+  {
+    "masterCardId": "2214",
+    "externalId": null,
+    "tcgdex_id": "bw11-25",
+    "localId": "025",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "025/113",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 025/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-025-low.png",
+    "imageHighSrc": "cards/bw11-025-high.png"
+  },
+  {
+    "masterCardId": "2213",
+    "externalId": null,
+    "tcgdex_id": "bw11-24",
+    "localId": "024",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "024/113",
+    "cardName": "Victini-EX",
+    "fullDisplayName": "Victini-EX 024/113 Legendary Treasures",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bw11-024-low.png",
+    "imageHighSrc": "cards/bw11-024-high.png"
+  },
+  {
+    "masterCardId": "2212",
+    "externalId": null,
+    "tcgdex_id": "bw11-23",
+    "localId": "023",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "023/113",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 023/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-023-low.png",
+    "imageHighSrc": "cards/bw11-023-high.png"
+  },
+  {
+    "masterCardId": "2211",
+    "externalId": null,
+    "tcgdex_id": "bw11-22",
+    "localId": "022",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "022/113",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 022/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-022-low.png",
+    "imageHighSrc": "cards/bw11-022-high.png"
+  },
+  {
+    "masterCardId": "2210",
+    "externalId": null,
+    "tcgdex_id": "bw11-21",
+    "localId": "021",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "021/113",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 021/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-021-low.png",
+    "imageHighSrc": "cards/bw11-021-high.png"
+  },
+  {
+    "masterCardId": "2209",
+    "externalId": null,
+    "tcgdex_id": "bw11-20",
+    "localId": "020",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "020/113",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 020/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-020-low.png",
+    "imageHighSrc": "cards/bw11-020-high.png"
+  },
+  {
+    "masterCardId": "2208",
+    "externalId": null,
+    "tcgdex_id": "bw11-19",
+    "localId": "019",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "019/113",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 019/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-019-low.png",
+    "imageHighSrc": "cards/bw11-019-high.png"
+  },
+  {
+    "masterCardId": "2207",
+    "externalId": null,
+    "tcgdex_id": "bw11-18",
+    "localId": "018",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "018/113",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 018/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-018-low.png",
+    "imageHighSrc": "cards/bw11-018-high.png"
+  },
+  {
+    "masterCardId": "2206",
+    "externalId": null,
+    "tcgdex_id": "bw11-17",
+    "localId": "017",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "017/113",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 017/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-017-low.png",
+    "imageHighSrc": "cards/bw11-017-high.png"
+  },
+  {
+    "masterCardId": "2205",
+    "externalId": null,
+    "tcgdex_id": "bw11-16",
+    "localId": "016",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "016/113",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect 016/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-016-low.png",
+    "imageHighSrc": "cards/bw11-016-high.png"
+  },
+  {
+    "masterCardId": "2204",
+    "externalId": null,
+    "tcgdex_id": "bw11-15",
+    "localId": "015",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "015/113",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion 015/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-015-low.png",
+    "imageHighSrc": "cards/bw11-015-high.png"
+  },
+  {
+    "masterCardId": "2203",
+    "externalId": null,
+    "tcgdex_id": "bw11-14",
+    "localId": "014",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "014/113",
+    "cardName": "Crustle",
+    "fullDisplayName": "Crustle 014/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      558
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dwebble",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-014-low.png",
+    "imageHighSrc": "cards/bw11-014-high.png"
+  },
+  {
+    "masterCardId": "2202",
+    "externalId": null,
+    "tcgdex_id": "bw11-13",
+    "localId": "013",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "013/113",
+    "cardName": "Dwebble",
+    "fullDisplayName": "Dwebble 013/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      557
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-013-low.png",
+    "imageHighSrc": "cards/bw11-013-high.png"
+  },
+  {
+    "masterCardId": "2201",
+    "externalId": null,
+    "tcgdex_id": "bw11-12",
+    "localId": "012",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "012/113",
+    "cardName": "Leavanny",
+    "fullDisplayName": "Leavanny 012/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      542
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swadloon",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-012-low.png",
+    "imageHighSrc": "cards/bw11-012-high.png"
+  },
+  {
+    "masterCardId": "2200",
+    "externalId": null,
+    "tcgdex_id": "bw11-11",
+    "localId": "011",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "011/113",
+    "cardName": "Swadloon",
+    "fullDisplayName": "Swadloon 011/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      541
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sewaddle",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-011-low.png",
+    "imageHighSrc": "cards/bw11-011-high.png"
+  },
+  {
+    "masterCardId": "2199",
+    "externalId": null,
+    "tcgdex_id": "bw11-10",
+    "localId": "010",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "010/113",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 010/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-010-low.png",
+    "imageHighSrc": "cards/bw11-010-high.png"
+  },
+  {
+    "masterCardId": "2198",
+    "externalId": null,
+    "tcgdex_id": "bw11-9",
+    "localId": "009",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "009/113",
+    "cardName": "Sewaddle",
+    "fullDisplayName": "Sewaddle 009/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      540
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-009-low.png",
+    "imageHighSrc": "cards/bw11-009-high.png"
+  },
+  {
+    "masterCardId": "2197",
+    "externalId": null,
+    "tcgdex_id": "bw11-8",
+    "localId": "008",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "008/113",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 008/113 Legendary Treasures",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-008-low.png",
+    "imageHighSrc": "cards/bw11-008-high.png"
+  },
+  {
+    "masterCardId": "2196",
+    "externalId": null,
+    "tcgdex_id": "bw11-7",
+    "localId": "007",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "007/113",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 007/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snivy",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-007-low.png",
+    "imageHighSrc": "cards/bw11-007-high.png"
+  },
+  {
+    "masterCardId": "2195",
+    "externalId": null,
+    "tcgdex_id": "bw11-6",
+    "localId": "006",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "006/113",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 006/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-006-low.png",
+    "imageHighSrc": "cards/bw11-006-high.png"
+  },
+  {
+    "masterCardId": "2194",
+    "externalId": null,
+    "tcgdex_id": "bw11-5",
+    "localId": "005",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "005/113",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 005/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-005-low.png",
+    "imageHighSrc": "cards/bw11-005-high.png"
+  },
+  {
+    "masterCardId": "2193",
+    "externalId": null,
+    "tcgdex_id": "bw11-4",
+    "localId": "004",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "004/113",
+    "cardName": "Cherubi",
+    "fullDisplayName": "Cherubi 004/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      420
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-004-low.png",
+    "imageHighSrc": "cards/bw11-004-high.png"
+  },
+  {
+    "masterCardId": "2192",
+    "externalId": null,
+    "tcgdex_id": "bw11-3",
+    "localId": "003",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "003/113",
+    "cardName": "Shuckle",
+    "fullDisplayName": "Shuckle 003/113 Legendary Treasures",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      213
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-003-low.png",
+    "imageHighSrc": "cards/bw11-003-high.png"
+  },
+  {
+    "masterCardId": "2191",
+    "externalId": null,
+    "tcgdex_id": "bw11-2",
+    "localId": "002",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "002/113",
+    "cardName": "Tangrowth",
+    "fullDisplayName": "Tangrowth 002/113 Legendary Treasures",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      465
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tangela",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-002-low.png",
+    "imageHighSrc": "cards/bw11-002-high.png"
+  },
+  {
+    "masterCardId": "2190",
+    "externalId": null,
+    "tcgdex_id": "bw11-1",
+    "localId": "001",
+    "setCode": "bw11",
+    "setTcgdexId": "bw11",
+    "cardNumber": "001/113",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 001/113 Legendary Treasures",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bw11-001-low.png",
+    "imageHighSrc": "cards/bw11-001-high.png"
+  }
+]

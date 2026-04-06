@@ -1,0 +1,1314 @@
+[
+  {
+    "masterCardId": "8634",
+    "externalId": null,
+    "tcgdex_id": "np-40",
+    "localId": "040",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "040/40",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 040/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-040-low.png",
+    "imageHighSrc": "cards/np-040-high.png"
+  },
+  {
+    "masterCardId": "8628",
+    "externalId": null,
+    "tcgdex_id": "np-39",
+    "localId": "039",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "039/40",
+    "cardName": "Rayquaza ex",
+    "fullDisplayName": "Rayquaza ex 039/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-039-low.png",
+    "imageHighSrc": "cards/np-039-high.png"
+  },
+  {
+    "masterCardId": "8621",
+    "externalId": null,
+    "tcgdex_id": "np-38",
+    "localId": "038",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "038/40",
+    "cardName": "Groudon ex",
+    "fullDisplayName": "Groudon ex 038/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-038-low.png",
+    "imageHighSrc": "cards/np-038-high.png"
+  },
+  {
+    "masterCardId": "8615",
+    "externalId": null,
+    "tcgdex_id": "np-37",
+    "localId": "037",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "037/40",
+    "cardName": "Kyogre ex",
+    "fullDisplayName": "Kyogre ex 037/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-037-low.png",
+    "imageHighSrc": "cards/np-037-high.png"
+  },
+  {
+    "masterCardId": "8608",
+    "externalId": null,
+    "tcgdex_id": "np-36",
+    "localId": "036",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "036/40",
+    "cardName": "Tropical Tidal Wave",
+    "fullDisplayName": "Tropical Tidal Wave 036/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-036-low.png",
+    "imageHighSrc": "cards/np-036-high.png"
+  },
+  {
+    "masterCardId": "8601",
+    "externalId": null,
+    "tcgdex_id": "np-35",
+    "localId": "035",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "035/40",
+    "cardName": "Pikachu δ",
+    "fullDisplayName": "Pikachu δ 035/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-035-low.png",
+    "imageHighSrc": "cards/np-035-high.png"
+  },
+  {
+    "masterCardId": "8596",
+    "externalId": null,
+    "tcgdex_id": "np-34",
+    "localId": "034",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "034/40",
+    "cardName": "Typhlosion",
+    "fullDisplayName": "Typhlosion 034/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      157
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Quilava",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-034-low.png",
+    "imageHighSrc": "cards/np-034-high.png"
+  },
+  {
+    "masterCardId": "8589",
+    "externalId": null,
+    "tcgdex_id": "np-33",
+    "localId": "033",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "033/40",
+    "cardName": "Zapdos ex",
+    "fullDisplayName": "Zapdos ex 033/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K. Hoshiba",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-033-low.png",
+    "imageHighSrc": "cards/np-033-high.png"
+  },
+  {
+    "masterCardId": "8577",
+    "externalId": null,
+    "tcgdex_id": "np-32",
+    "localId": "032",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "032/40",
+    "cardName": "Articuno ex",
+    "fullDisplayName": "Articuno ex 032/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-032-low.png",
+    "imageHighSrc": "cards/np-032-high.png"
+  },
+  {
+    "masterCardId": "8569",
+    "externalId": null,
+    "tcgdex_id": "np-31",
+    "localId": "031",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "031/40",
+    "cardName": "Moltres ex",
+    "fullDisplayName": "Moltres ex 031/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-031-low.png",
+    "imageHighSrc": "cards/np-031-high.png"
+  },
+  {
+    "masterCardId": "8562",
+    "externalId": null,
+    "tcgdex_id": "np-30",
+    "localId": "030",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "030/40",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 030/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-030-low.png",
+    "imageHighSrc": "cards/np-030-high.png"
+  },
+  {
+    "masterCardId": "8556",
+    "externalId": null,
+    "tcgdex_id": "np-29",
+    "localId": "029",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "029/40",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 029/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-029-low.png",
+    "imageHighSrc": "cards/np-029-high.png"
+  },
+  {
+    "masterCardId": "8550",
+    "externalId": null,
+    "tcgdex_id": "np-28",
+    "localId": "028",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "028/40",
+    "cardName": "Championship Arena",
+    "fullDisplayName": "Championship Arena 028/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-028-low.png",
+    "imageHighSrc": "cards/np-028-high.png"
+  },
+  {
+    "masterCardId": "8542",
+    "externalId": null,
+    "tcgdex_id": "np-27",
+    "localId": "027",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "027/40",
+    "cardName": "Tropical Tidal Wave",
+    "fullDisplayName": "Tropical Tidal Wave 027/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-027-low.png",
+    "imageHighSrc": "cards/np-027-high.png"
+  },
+  {
+    "masterCardId": "8536",
+    "externalId": null,
+    "tcgdex_id": "np-26",
+    "localId": "026",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "026/40",
+    "cardName": "Tropical Wind",
+    "fullDisplayName": "Tropical Wind 026/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-026-low.png",
+    "imageHighSrc": "cards/np-026-high.png"
+  },
+  {
+    "masterCardId": "8530",
+    "externalId": null,
+    "tcgdex_id": "np-25",
+    "localId": "025",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "025/40",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 025/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-025-low.png",
+    "imageHighSrc": "cards/np-025-high.png"
+  },
+  {
+    "masterCardId": "8523",
+    "externalId": null,
+    "tcgdex_id": "np-24",
+    "localId": "024",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "024/40",
+    "cardName": "Chimecho",
+    "fullDisplayName": "Chimecho 024/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      358
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-024-low.png",
+    "imageHighSrc": "cards/np-024-high.png"
+  },
+  {
+    "masterCardId": "8511",
+    "externalId": null,
+    "tcgdex_id": "np-23",
+    "localId": "023",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "023/40",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 023/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-023-low.png",
+    "imageHighSrc": "cards/np-023-high.png"
+  },
+  {
+    "masterCardId": "8504",
+    "externalId": null,
+    "tcgdex_id": "np-22",
+    "localId": "022",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "022/40",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 022/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-022-low.png",
+    "imageHighSrc": "cards/np-022-high.png"
+  },
+  {
+    "masterCardId": "8498",
+    "externalId": null,
+    "tcgdex_id": "np-21",
+    "localId": "021",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "021/40",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 021/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-021-low.png",
+    "imageHighSrc": "cards/np-021-high.png"
+  },
+  {
+    "masterCardId": "8487",
+    "externalId": null,
+    "tcgdex_id": "np-20",
+    "localId": "020",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "020/40",
+    "cardName": "Ludicolo",
+    "fullDisplayName": "Ludicolo 020/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      272
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lombre",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-020-low.png",
+    "imageHighSrc": "cards/np-020-high.png"
+  },
+  {
+    "masterCardId": "8481",
+    "externalId": null,
+    "tcgdex_id": "np-19",
+    "localId": "019",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "019/40",
+    "cardName": "Whismur",
+    "fullDisplayName": "Whismur 019/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      293
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-019-low.png",
+    "imageHighSrc": "cards/np-019-high.png"
+  },
+  {
+    "masterCardId": "8475",
+    "externalId": null,
+    "tcgdex_id": "np-18",
+    "localId": "018",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "018/40",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 018/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-018-low.png",
+    "imageHighSrc": "cards/np-018-high.png"
+  },
+  {
+    "masterCardId": "8464",
+    "externalId": null,
+    "tcgdex_id": "np-17",
+    "localId": "017",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "017/40",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 017/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-017-low.png",
+    "imageHighSrc": "cards/np-017-high.png"
+  },
+  {
+    "masterCardId": "8457",
+    "externalId": null,
+    "tcgdex_id": "np-16",
+    "localId": "016",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "016/40",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 016/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-016-low.png",
+    "imageHighSrc": "cards/np-016-high.png"
+  },
+  {
+    "masterCardId": "8448",
+    "externalId": null,
+    "tcgdex_id": "np-15",
+    "localId": "015",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "015/40",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 015/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-015-low.png",
+    "imageHighSrc": "cards/np-015-high.png"
+  },
+  {
+    "masterCardId": "8438",
+    "externalId": null,
+    "tcgdex_id": "np-14",
+    "localId": "014",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "014/40",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 014/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-014-low.png",
+    "imageHighSrc": "cards/np-014-high.png"
+  },
+  {
+    "masterCardId": "8429",
+    "externalId": null,
+    "tcgdex_id": "np-13",
+    "localId": "013",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "013/40",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 013/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-013-low.png",
+    "imageHighSrc": "cards/np-013-high.png"
+  },
+  {
+    "masterCardId": "8423",
+    "externalId": null,
+    "tcgdex_id": "np-12",
+    "localId": "012",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "012/40",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 012/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-012-low.png",
+    "imageHighSrc": "cards/np-012-high.png"
+  },
+  {
+    "masterCardId": "8401",
+    "externalId": null,
+    "tcgdex_id": "np-11",
+    "localId": "011",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "011/40",
+    "cardName": "Marshtomp",
+    "fullDisplayName": "Marshtomp 011/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      259
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mudkip",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-011-low.png",
+    "imageHighSrc": "cards/np-011-high.png"
+  },
+  {
+    "masterCardId": "8393",
+    "externalId": null,
+    "tcgdex_id": "np-10",
+    "localId": "010",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "010/40",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 010/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-010-low.png",
+    "imageHighSrc": "cards/np-010-high.png"
+  },
+  {
+    "masterCardId": "8383",
+    "externalId": null,
+    "tcgdex_id": "np-9",
+    "localId": "009",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "009/40",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 009/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-009-low.png",
+    "imageHighSrc": "cards/np-009-high.png"
+  },
+  {
+    "masterCardId": "8374",
+    "externalId": null,
+    "tcgdex_id": "np-8",
+    "localId": "008",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "008/40",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 008/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-008-low.png",
+    "imageHighSrc": "cards/np-008-high.png"
+  },
+  {
+    "masterCardId": "8366",
+    "externalId": null,
+    "tcgdex_id": "np-7",
+    "localId": "007",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "007/40",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 007/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-007-low.png",
+    "imageHighSrc": "cards/np-007-high.png"
+  },
+  {
+    "masterCardId": "8356",
+    "externalId": null,
+    "tcgdex_id": "np-6",
+    "localId": "006",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "006/40",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 006/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-006-low.png",
+    "imageHighSrc": "cards/np-006-high.png"
+  },
+  {
+    "masterCardId": "8346",
+    "externalId": null,
+    "tcgdex_id": "np-5",
+    "localId": "005",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "005/40",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 005/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-005-low.png",
+    "imageHighSrc": "cards/np-005-high.png"
+  },
+  {
+    "masterCardId": "8336",
+    "externalId": null,
+    "tcgdex_id": "np-4",
+    "localId": "004",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "004/40",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 004/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Treecko",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-004-low.png",
+    "imageHighSrc": "cards/np-004-high.png"
+  },
+  {
+    "masterCardId": "8323",
+    "externalId": null,
+    "tcgdex_id": "np-3",
+    "localId": "003",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "003/40",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 003/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-003-low.png",
+    "imageHighSrc": "cards/np-003-high.png"
+  },
+  {
+    "masterCardId": "8314",
+    "externalId": null,
+    "tcgdex_id": "np-2",
+    "localId": "002",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "002/40",
+    "cardName": "Groudon ex",
+    "fullDisplayName": "Groudon ex 002/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuo Yazawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-002-low.png",
+    "imageHighSrc": "cards/np-002-high.png"
+  },
+  {
+    "masterCardId": "8306",
+    "externalId": null,
+    "tcgdex_id": "np-1",
+    "localId": "001",
+    "setCode": "np",
+    "setTcgdexId": "np",
+    "cardNumber": "001/40",
+    "cardName": "Kyogre ex",
+    "fullDisplayName": "Kyogre ex 001/40 Nintendo Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/np-001-low.png",
+    "imageHighSrc": "cards/np-001-high.png"
+  }
+]

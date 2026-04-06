@@ -1,0 +1,1733 @@
+[
+  {
+    "masterCardId": "1960",
+    "externalId": null,
+    "tcgdex_id": "basep-53",
+    "localId": "053",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "053/53",
+    "cardName": "Suicune",
+    "fullDisplayName": "Suicune 053/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-053-low.png",
+    "imageHighSrc": "cards/basep-053-high.png"
+  },
+  {
+    "masterCardId": "1959",
+    "externalId": null,
+    "tcgdex_id": "basep-52",
+    "localId": "052",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "052/53",
+    "cardName": "Ho-oh",
+    "fullDisplayName": "Ho-oh 052/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-052-low.png",
+    "imageHighSrc": "cards/basep-052-high.png"
+  },
+  {
+    "masterCardId": "1958",
+    "externalId": null,
+    "tcgdex_id": "basep-51",
+    "localId": "051",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "051/53",
+    "cardName": "Rapidash",
+    "fullDisplayName": "Rapidash 051/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      78
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ponyta",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-051-low.png",
+    "imageHighSrc": "cards/basep-051-high.png"
+  },
+  {
+    "masterCardId": "1957",
+    "externalId": null,
+    "tcgdex_id": "basep-50",
+    "localId": "050",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "050/53",
+    "cardName": "Celebi",
+    "fullDisplayName": "Celebi 050/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      251
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-050-low.png",
+    "imageHighSrc": "cards/basep-050-high.png"
+  },
+  {
+    "masterCardId": "1956",
+    "externalId": null,
+    "tcgdex_id": "basep-49",
+    "localId": "049",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "049/53",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 049/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Craig Turvey",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-049-low.png",
+    "imageHighSrc": "cards/basep-049-high.png"
+  },
+  {
+    "masterCardId": "1955",
+    "externalId": null,
+    "tcgdex_id": "basep-48",
+    "localId": "048",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "048/53",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 048/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-048-low.png",
+    "imageHighSrc": "cards/basep-048-high.png"
+  },
+  {
+    "masterCardId": "1954",
+    "externalId": null,
+    "tcgdex_id": "basep-47",
+    "localId": "047",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "047/53",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 047/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-047-low.png",
+    "imageHighSrc": "cards/basep-047-high.png"
+  },
+  {
+    "masterCardId": "1953",
+    "externalId": null,
+    "tcgdex_id": "basep-46",
+    "localId": "046",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "046/53",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 046/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-046-low.png",
+    "imageHighSrc": "cards/basep-046-high.png"
+  },
+  {
+    "masterCardId": "1952",
+    "externalId": null,
+    "tcgdex_id": "basep-45",
+    "localId": "045",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "045/53",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 045/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-045-low.png",
+    "imageHighSrc": "cards/basep-045-high.png"
+  },
+  {
+    "masterCardId": "1951",
+    "externalId": null,
+    "tcgdex_id": "basep-44",
+    "localId": "044",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "044/53",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 044/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-044-low.png",
+    "imageHighSrc": "cards/basep-044-high.png"
+  },
+  {
+    "masterCardId": "1950",
+    "externalId": null,
+    "tcgdex_id": "basep-43",
+    "localId": "043",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "043/53",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 043/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-043-low.png",
+    "imageHighSrc": "cards/basep-043-high.png"
+  },
+  {
+    "masterCardId": "1949",
+    "externalId": null,
+    "tcgdex_id": "basep-42",
+    "localId": "042",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "042/53",
+    "cardName": "Pokémon Tower",
+    "fullDisplayName": "Pokémon Tower 042/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-042-low.png",
+    "imageHighSrc": "cards/basep-042-high.png"
+  },
+  {
+    "masterCardId": "1948",
+    "externalId": null,
+    "tcgdex_id": "basep-41",
+    "localId": "041",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "041/53",
+    "cardName": "Lucky Stadium",
+    "fullDisplayName": "Lucky Stadium 041/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "\"Big Mama\" Tagawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-041-low.png",
+    "imageHighSrc": "cards/basep-041-high.png"
+  },
+  {
+    "masterCardId": "1947",
+    "externalId": null,
+    "tcgdex_id": "basep-40",
+    "localId": "040",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "040/53",
+    "cardName": "Pokémon Center",
+    "fullDisplayName": "Pokémon Center 040/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "\"Big Mama\" Tagawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-040-low.png",
+    "imageHighSrc": "cards/basep-040-high.png"
+  },
+  {
+    "masterCardId": "1946",
+    "externalId": null,
+    "tcgdex_id": "basep-39",
+    "localId": "039",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "039/53",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 039/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-039-low.png",
+    "imageHighSrc": "cards/basep-039-high.png"
+  },
+  {
+    "masterCardId": "1945",
+    "externalId": null,
+    "tcgdex_id": "basep-38",
+    "localId": "038",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "038/53",
+    "cardName": "Unown [J]",
+    "fullDisplayName": "Unown [J] 038/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideki Kazama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-038-low.png",
+    "imageHighSrc": "cards/basep-038-high.png"
+  },
+  {
+    "masterCardId": "1944",
+    "externalId": null,
+    "tcgdex_id": "basep-37",
+    "localId": "037",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "037/53",
+    "cardName": "Hitmontop",
+    "fullDisplayName": "Hitmontop 037/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      237
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-037-low.png",
+    "imageHighSrc": "cards/basep-037-high.png"
+  },
+  {
+    "masterCardId": "1943",
+    "externalId": null,
+    "tcgdex_id": "basep-36",
+    "localId": "036",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "036/53",
+    "cardName": "Igglybuff",
+    "fullDisplayName": "Igglybuff 036/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      174
+    ],
+    "subtypes": [
+      "Baby"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-036-low.png",
+    "imageHighSrc": "cards/basep-036-high.png"
+  },
+  {
+    "masterCardId": "1942",
+    "externalId": null,
+    "tcgdex_id": "basep-35",
+    "localId": "035",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "035/53",
+    "cardName": "Pichu",
+    "fullDisplayName": "Pichu 035/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      172
+    ],
+    "subtypes": [
+      "Baby"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-035-low.png",
+    "imageHighSrc": "cards/basep-035-high.png"
+  },
+  {
+    "masterCardId": "1941",
+    "externalId": null,
+    "tcgdex_id": "basep-34",
+    "localId": "034",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "034/53",
+    "cardName": "Entei",
+    "fullDisplayName": "Entei 034/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-034-low.png",
+    "imageHighSrc": "cards/basep-034-high.png"
+  },
+  {
+    "masterCardId": "1940",
+    "externalId": null,
+    "tcgdex_id": "basep-33",
+    "localId": "033",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "033/53",
+    "cardName": "Scizor",
+    "fullDisplayName": "Scizor 033/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scyther",
+    "artist": "Hironobu Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-033-low.png",
+    "imageHighSrc": "cards/basep-033-high.png"
+  },
+  {
+    "masterCardId": "1939",
+    "externalId": null,
+    "tcgdex_id": "basep-32",
+    "localId": "032",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "032/53",
+    "cardName": "Smeargle",
+    "fullDisplayName": "Smeargle 032/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      235
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-032-low.png",
+    "imageHighSrc": "cards/basep-032-high.png"
+  },
+  {
+    "masterCardId": "1938",
+    "externalId": null,
+    "tcgdex_id": "basep-31",
+    "localId": "031",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "031/53",
+    "cardName": "Cleffa",
+    "fullDisplayName": "Cleffa 031/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      173
+    ],
+    "subtypes": [
+      "Baby"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-031-low.png",
+    "imageHighSrc": "cards/basep-031-high.png"
+  },
+  {
+    "masterCardId": "1937",
+    "externalId": null,
+    "tcgdex_id": "basep-30",
+    "localId": "030",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "030/53",
+    "cardName": "Togepi",
+    "fullDisplayName": "Togepi 030/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-030-low.png",
+    "imageHighSrc": "cards/basep-030-high.png"
+  },
+  {
+    "masterCardId": "1936",
+    "externalId": null,
+    "tcgdex_id": "basep-29",
+    "localId": "029",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "029/53",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 029/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-029-low.png",
+    "imageHighSrc": "cards/basep-029-high.png"
+  },
+  {
+    "masterCardId": "1935",
+    "externalId": null,
+    "tcgdex_id": "basep-28",
+    "localId": "028",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "028/53",
+    "cardName": "Surfing Pikachu",
+    "fullDisplayName": "Surfing Pikachu 028/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-028-low.png",
+    "imageHighSrc": "cards/basep-028-high.png"
+  },
+  {
+    "masterCardId": "1934",
+    "externalId": null,
+    "tcgdex_id": "basep-27",
+    "localId": "027",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "027/53",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 027/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-027-low.png",
+    "imageHighSrc": "cards/basep-027-high.png"
+  },
+  {
+    "masterCardId": "1933",
+    "externalId": null,
+    "tcgdex_id": "basep-26",
+    "localId": "026",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "026/53",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 026/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Gakuji Nomoto",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-026-low.png",
+    "imageHighSrc": "cards/basep-026-high.png"
+  },
+  {
+    "masterCardId": "1932",
+    "externalId": null,
+    "tcgdex_id": "basep-25",
+    "localId": "025",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "025/53",
+    "cardName": "Flying Pikachu",
+    "fullDisplayName": "Flying Pikachu 025/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-025-low.png",
+    "imageHighSrc": "cards/basep-025-high.png"
+  },
+  {
+    "masterCardId": "1931",
+    "externalId": null,
+    "tcgdex_id": "basep-24",
+    "localId": "024",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "024/53",
+    "cardName": "_____'s Pikachu",
+    "fullDisplayName": "_____'s Pikachu 024/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-024-low.png",
+    "imageHighSrc": "cards/basep-024-high.png"
+  },
+  {
+    "masterCardId": "1930",
+    "externalId": null,
+    "tcgdex_id": "basep-23",
+    "localId": "023",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "023/53",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 023/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-023-low.png",
+    "imageHighSrc": "cards/basep-023-high.png"
+  },
+  {
+    "masterCardId": "1929",
+    "externalId": null,
+    "tcgdex_id": "basep-22",
+    "localId": "022",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "022/53",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 022/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-022-low.png",
+    "imageHighSrc": "cards/basep-022-high.png"
+  },
+  {
+    "masterCardId": "1928",
+    "externalId": null,
+    "tcgdex_id": "basep-21",
+    "localId": "021",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "021/53",
+    "cardName": "Moltres",
+    "fullDisplayName": "Moltres 021/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      146
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-021-low.png",
+    "imageHighSrc": "cards/basep-021-high.png"
+  },
+  {
+    "masterCardId": "1927",
+    "externalId": null,
+    "tcgdex_id": "basep-20",
+    "localId": "020",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "020/53",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 020/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-020-low.png",
+    "imageHighSrc": "cards/basep-020-high.png"
+  },
+  {
+    "masterCardId": "1926",
+    "externalId": null,
+    "tcgdex_id": "basep-19",
+    "localId": "019",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "019/53",
+    "cardName": "Sabrina's Abra",
+    "fullDisplayName": "Sabrina's Abra 019/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      63
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-019-low.png",
+    "imageHighSrc": "cards/basep-019-high.png"
+  },
+  {
+    "masterCardId": "1925",
+    "externalId": null,
+    "tcgdex_id": "basep-18",
+    "localId": "018",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "018/53",
+    "cardName": "Team Rocket's Meowth",
+    "fullDisplayName": "Team Rocket's Meowth 018/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kunihiko Yuyama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-018-low.png",
+    "imageHighSrc": "cards/basep-018-high.png"
+  },
+  {
+    "masterCardId": "1924",
+    "externalId": null,
+    "tcgdex_id": "basep-17",
+    "localId": "017",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "017/53",
+    "cardName": "Dark Persian",
+    "fullDisplayName": "Dark Persian 017/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-017-low.png",
+    "imageHighSrc": "cards/basep-017-high.png"
+  },
+  {
+    "masterCardId": "1923",
+    "externalId": null,
+    "tcgdex_id": "basep-16",
+    "localId": "016",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "016/53",
+    "cardName": "Computer Error",
+    "fullDisplayName": "Computer Error 016/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Rocket's Secret Machine"
+    ],
+    "trainerType": "Rocket's Secret Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-016-low.png",
+    "imageHighSrc": "cards/basep-016-high.png"
+  },
+  {
+    "masterCardId": "1922",
+    "externalId": null,
+    "tcgdex_id": "basep-15",
+    "localId": "015",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "015/53",
+    "cardName": "Cool Porygon",
+    "fullDisplayName": "Cool Porygon 015/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-015-low.png",
+    "imageHighSrc": "cards/basep-015-high.png"
+  },
+  {
+    "masterCardId": "1921",
+    "externalId": null,
+    "tcgdex_id": "basep-14",
+    "localId": "014",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "014/53",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 014/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Benimaru Itoh",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-014-low.png",
+    "imageHighSrc": "cards/basep-014-high.png"
+  },
+  {
+    "masterCardId": "1920",
+    "externalId": null,
+    "tcgdex_id": "basep-13",
+    "localId": "013",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "013/53",
+    "cardName": "Venusaur",
+    "fullDisplayName": "Venusaur 013/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ivysaur",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-013-low.png",
+    "imageHighSrc": "cards/basep-013-high.png"
+  },
+  {
+    "masterCardId": "1919",
+    "externalId": null,
+    "tcgdex_id": "basep-12",
+    "localId": "012",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "012/53",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 012/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Christopher Rush",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-012-low.png",
+    "imageHighSrc": "cards/basep-012-high.png"
+  },
+  {
+    "masterCardId": "1918",
+    "externalId": null,
+    "tcgdex_id": "basep-11",
+    "localId": "011",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "011/53",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 011/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-011-low.png",
+    "imageHighSrc": "cards/basep-011-high.png"
+  },
+  {
+    "masterCardId": "1917",
+    "externalId": null,
+    "tcgdex_id": "basep-10",
+    "localId": "010",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "010/53",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 010/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-010-low.png",
+    "imageHighSrc": "cards/basep-010-high.png"
+  },
+  {
+    "masterCardId": "1916",
+    "externalId": null,
+    "tcgdex_id": "basep-9",
+    "localId": "009",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "009/53",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 009/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-009-low.png",
+    "imageHighSrc": "cards/basep-009-high.png"
+  },
+  {
+    "masterCardId": "1915",
+    "externalId": null,
+    "tcgdex_id": "basep-8",
+    "localId": "008",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "008/53",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 008/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-008-low.png",
+    "imageHighSrc": "cards/basep-008-high.png"
+  },
+  {
+    "masterCardId": "1914",
+    "externalId": null,
+    "tcgdex_id": "basep-7",
+    "localId": "007",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "007/53",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 007/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-007-low.png",
+    "imageHighSrc": "cards/basep-007-high.png"
+  },
+  {
+    "masterCardId": "1913",
+    "externalId": null,
+    "tcgdex_id": "basep-6",
+    "localId": "006",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "006/53",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 006/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-006-low.png",
+    "imageHighSrc": "cards/basep-006-high.png"
+  },
+  {
+    "masterCardId": "1912",
+    "externalId": null,
+    "tcgdex_id": "basep-5",
+    "localId": "005",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "005/53",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 005/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-005-low.png",
+    "imageHighSrc": "cards/basep-005-high.png"
+  },
+  {
+    "masterCardId": "1911",
+    "externalId": null,
+    "tcgdex_id": "basep-4",
+    "localId": "004",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "004/53",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 004/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-004-low.png",
+    "imageHighSrc": "cards/basep-004-high.png"
+  },
+  {
+    "masterCardId": "1910",
+    "externalId": null,
+    "tcgdex_id": "basep-3",
+    "localId": "003",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "003/53",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 003/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-003-low.png",
+    "imageHighSrc": "cards/basep-003-high.png"
+  },
+  {
+    "masterCardId": "1909",
+    "externalId": null,
+    "tcgdex_id": "basep-2",
+    "localId": "002",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "002/53",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 002/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-002-low.png",
+    "imageHighSrc": "cards/basep-002-high.png"
+  },
+  {
+    "masterCardId": "1908",
+    "externalId": null,
+    "tcgdex_id": "basep-1",
+    "localId": "001",
+    "setCode": "basep",
+    "setTcgdexId": "basep",
+    "cardNumber": "001/53",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 001/53 Wizards Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/basep-001-low.png",
+    "imageHighSrc": "cards/basep-001-high.png"
+  }
+]

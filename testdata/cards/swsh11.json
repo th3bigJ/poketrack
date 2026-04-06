@@ -1,0 +1,7993 @@
+[
+  {
+    "masterCardId": "21088",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG30",
+    "localId": "TG30",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG30/196",
+    "cardName": "Mew VMAX",
+    "fullDisplayName": "Mew VMAX TG30/196 Lost Origin",
+    "rarity": "Secret Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Mew V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG30-low.webp",
+    "imageHighSrc": "cards/swsh11-TG30-high.webp"
+  },
+  {
+    "masterCardId": "21087",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG29",
+    "localId": "TG29",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG29/196",
+    "cardName": "Pikachu VMAX",
+    "fullDisplayName": "Pikachu VMAX TG29/196 Lost Origin",
+    "rarity": "Secret Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Pikachu V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG29-low.webp",
+    "imageHighSrc": "cards/swsh11-TG29-high.webp"
+  },
+  {
+    "masterCardId": "21086",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG28",
+    "localId": "TG28",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG28/196",
+    "cardName": "Opal",
+    "fullDisplayName": "Opal TG28/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG28-low.webp",
+    "imageHighSrc": "cards/swsh11-TG28-high.webp"
+  },
+  {
+    "masterCardId": "21085",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG27",
+    "localId": "TG27",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG27/196",
+    "cardName": "Nessa",
+    "fullDisplayName": "Nessa TG27/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG27-low.webp",
+    "imageHighSrc": "cards/swsh11-TG27-high.webp"
+  },
+  {
+    "masterCardId": "21084",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG26",
+    "localId": "TG26",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG26/196",
+    "cardName": "Kabu",
+    "fullDisplayName": "Kabu TG26/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG26-low.webp",
+    "imageHighSrc": "cards/swsh11-TG26-high.webp"
+  },
+  {
+    "masterCardId": "21083",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG25",
+    "localId": "TG25",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG25/196",
+    "cardName": "Cook",
+    "fullDisplayName": "Cook TG25/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG25-low.webp",
+    "imageHighSrc": "cards/swsh11-TG25-high.webp"
+  },
+  {
+    "masterCardId": "21082",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG24",
+    "localId": "TG24",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG24/196",
+    "cardName": "Boss's Orders",
+    "fullDisplayName": "Boss's Orders TG24/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG24-low.webp",
+    "imageHighSrc": "cards/swsh11-TG24-high.webp"
+  },
+  {
+    "masterCardId": "21081",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG23",
+    "localId": "TG23",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG23/196",
+    "cardName": "Adventurer's Discovery",
+    "fullDisplayName": "Adventurer's Discovery TG23/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG23-low.webp",
+    "imageHighSrc": "cards/swsh11-TG23-high.webp"
+  },
+  {
+    "masterCardId": "21080",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG22",
+    "localId": "TG22",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG22/196",
+    "cardName": "Eternatus VMAX",
+    "fullDisplayName": "Eternatus VMAX TG22/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 340,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Eternatus V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG22-low.webp",
+    "imageHighSrc": "cards/swsh11-TG22-high.webp"
+  },
+  {
+    "masterCardId": "21079",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG21",
+    "localId": "TG21",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG21/196",
+    "cardName": "Eternatus V",
+    "fullDisplayName": "Eternatus V TG21/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      890
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG21-low.webp",
+    "imageHighSrc": "cards/swsh11-TG21-high.webp"
+  },
+  {
+    "masterCardId": "21078",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG20",
+    "localId": "TG20",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG20/196",
+    "cardName": "Crobat V",
+    "fullDisplayName": "Crobat V TG20/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG20-low.webp",
+    "imageHighSrc": "cards/swsh11-TG20-high.webp"
+  },
+  {
+    "masterCardId": "21077",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG19",
+    "localId": "TG19",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG19/196",
+    "cardName": "Gallade V",
+    "fullDisplayName": "Gallade V TG19/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG19-low.webp",
+    "imageHighSrc": "cards/swsh11-TG19-high.webp"
+  },
+  {
+    "masterCardId": "21076",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG18",
+    "localId": "TG18",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG18/196",
+    "cardName": "Enamorus V",
+    "fullDisplayName": "Enamorus V TG18/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      905
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG18-low.webp",
+    "imageHighSrc": "cards/swsh11-TG18-high.webp"
+  },
+  {
+    "masterCardId": "21075",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG17",
+    "localId": "TG17",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG17/196",
+    "cardName": "Pikachu VMAX",
+    "fullDisplayName": "Pikachu VMAX TG17/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Pikachu V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG17-low.webp",
+    "imageHighSrc": "cards/swsh11-TG17-high.webp"
+  },
+  {
+    "masterCardId": "21074",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG16",
+    "localId": "TG16",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG16/196",
+    "cardName": "Pikachu V",
+    "fullDisplayName": "Pikachu V TG16/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG16-low.webp",
+    "imageHighSrc": "cards/swsh11-TG16-high.webp"
+  },
+  {
+    "masterCardId": "21073",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG15",
+    "localId": "TG15",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG15/196",
+    "cardName": "Centiskorch VMAX",
+    "fullDisplayName": "Centiskorch VMAX TG15/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 320,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Centiskorch V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG15-low.webp",
+    "imageHighSrc": "cards/swsh11-TG15-high.webp"
+  },
+  {
+    "masterCardId": "21072",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG14",
+    "localId": "TG14",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG14/196",
+    "cardName": "Centiskorch V",
+    "fullDisplayName": "Centiskorch V TG14/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      851
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG14-low.webp",
+    "imageHighSrc": "cards/swsh11-TG14-high.webp"
+  },
+  {
+    "masterCardId": "21071",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG13",
+    "localId": "TG13",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG13/196",
+    "cardName": "Orbeetle VMAX",
+    "fullDisplayName": "Orbeetle VMAX TG13/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 310,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      826
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Orbeetle V",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG13-low.webp",
+    "imageHighSrc": "cards/swsh11-TG13-high.webp"
+  },
+  {
+    "masterCardId": "21070",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG12",
+    "localId": "TG12",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG12/196",
+    "cardName": "Orbeetle V",
+    "fullDisplayName": "Orbeetle V TG12/196 Lost Origin",
+    "rarity": "Ultra Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      826
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG12-low.webp",
+    "imageHighSrc": "cards/swsh11-TG12-high.webp"
+  },
+  {
+    "masterCardId": "21069",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG11",
+    "localId": "TG11",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG11/196",
+    "cardName": "Castform",
+    "fullDisplayName": "Castform TG11/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG11-low.webp",
+    "imageHighSrc": "cards/swsh11-TG11-high.webp"
+  },
+  {
+    "masterCardId": "21068",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG10",
+    "localId": "TG10",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG10/196",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax TG10/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG10-low.webp",
+    "imageHighSrc": "cards/swsh11-TG10-high.webp"
+  },
+  {
+    "masterCardId": "21067",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG09",
+    "localId": "TG09",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG09/196",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb TG09/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG09-low.webp",
+    "imageHighSrc": "cards/swsh11-TG09-high.webp"
+  },
+  {
+    "masterCardId": "21066",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG08",
+    "localId": "TG08",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG08/196",
+    "cardName": "Hisuian Arcanine",
+    "fullDisplayName": "Hisuian Arcanine TG08/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Growlithe",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG08-low.webp",
+    "imageHighSrc": "cards/swsh11-TG08-high.webp"
+  },
+  {
+    "masterCardId": "21065",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG07",
+    "localId": "TG07",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG07/196",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette TG07/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "E",
+    "evolveFrom": "Shuppet",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG07-low.webp",
+    "imageHighSrc": "cards/swsh11-TG07-high.webp"
+  },
+  {
+    "masterCardId": "21064",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG06",
+    "localId": "TG06",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG06/196",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar TG06/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Haunter",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG06-low.webp",
+    "imageHighSrc": "cards/swsh11-TG06-high.webp"
+  },
+  {
+    "masterCardId": "21063",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG05",
+    "localId": "TG05",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG05/196",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu TG05/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG05-low.webp",
+    "imageHighSrc": "cards/swsh11-TG05-high.webp"
+  },
+  {
+    "masterCardId": "21062",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG04",
+    "localId": "TG04",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG04/196",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure TG04/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lampent",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG04-low.webp",
+    "imageHighSrc": "cards/swsh11-TG04-high.webp"
+  },
+  {
+    "masterCardId": "21061",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG03",
+    "localId": "TG03",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG03/196",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard TG03/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage2",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "evolveFrom": "Charmeleon",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG03-low.webp",
+    "imageHighSrc": "cards/swsh11-TG03-high.webp"
+  },
+  {
+    "masterCardId": "21060",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG02",
+    "localId": "TG02",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG02/196",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade TG02/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Roselia",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG02-low.webp",
+    "imageHighSrc": "cards/swsh11-TG02-high.webp"
+  },
+  {
+    "masterCardId": "21059",
+    "externalId": null,
+    "tcgdex_id": "swsh11-TG01",
+    "localId": "TG01",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "TG01/196",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect TG01/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Paras",
+    "artist": null,
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/swsh11-TG01-low.webp",
+    "imageHighSrc": "cards/swsh11-TG01-high.webp"
+  },
+  {
+    "masterCardId": "16388",
+    "externalId": null,
+    "tcgdex_id": "swsh11-217",
+    "localId": "217",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "217/196",
+    "cardName": "Lost Vacuum",
+    "fullDisplayName": "Lost Vacuum 217/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-217-low.png",
+    "imageHighSrc": "cards/swsh11-217-high.png"
+  },
+  {
+    "masterCardId": "16386",
+    "externalId": null,
+    "tcgdex_id": "swsh11-216",
+    "localId": "216",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "216/196",
+    "cardName": "Dark Patch",
+    "fullDisplayName": "Dark Patch 216/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-216-low.png",
+    "imageHighSrc": "cards/swsh11-216-high.png"
+  },
+  {
+    "masterCardId": "16385",
+    "externalId": null,
+    "tcgdex_id": "swsh11-215",
+    "localId": "215",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "215/196",
+    "cardName": "Collapsed Stadium",
+    "fullDisplayName": "Collapsed Stadium 215/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-215-low.png",
+    "imageHighSrc": "cards/swsh11-215-high.png"
+  },
+  {
+    "masterCardId": "16383",
+    "externalId": null,
+    "tcgdex_id": "swsh11-214",
+    "localId": "214",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "214/196",
+    "cardName": "Box of Disaster",
+    "fullDisplayName": "Box of Disaster 214/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-214-low.png",
+    "imageHighSrc": "cards/swsh11-214-high.png"
+  },
+  {
+    "masterCardId": "16380",
+    "externalId": null,
+    "tcgdex_id": "swsh11-213",
+    "localId": "213",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "213/196",
+    "cardName": "Hisuian Zoroark VSTAR",
+    "fullDisplayName": "Hisuian Zoroark VSTAR 213/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Zoroark V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-213-low.png",
+    "imageHighSrc": "cards/swsh11-213-high.png"
+  },
+  {
+    "masterCardId": "16378",
+    "externalId": null,
+    "tcgdex_id": "swsh11-212",
+    "localId": "212",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "212/196",
+    "cardName": "Giratina VSTAR",
+    "fullDisplayName": "Giratina VSTAR 212/196 Lost Origin",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Giratina V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-212-low.png",
+    "imageHighSrc": "cards/swsh11-212-high.png"
+  },
+  {
+    "masterCardId": "16376",
+    "externalId": null,
+    "tcgdex_id": "swsh11-211",
+    "localId": "211",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "211/196",
+    "cardName": "Volo",
+    "fullDisplayName": "Volo 211/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-211-low.png",
+    "imageHighSrc": "cards/swsh11-211-high.png"
+  },
+  {
+    "masterCardId": "16372",
+    "externalId": null,
+    "tcgdex_id": "swsh11-210",
+    "localId": "210",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "210/196",
+    "cardName": "Thorton",
+    "fullDisplayName": "Thorton 210/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-210-low.png",
+    "imageHighSrc": "cards/swsh11-210-high.png"
+  },
+  {
+    "masterCardId": "16369",
+    "externalId": null,
+    "tcgdex_id": "swsh11-209",
+    "localId": "209",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "209/196",
+    "cardName": "Miss Fortune Sisters",
+    "fullDisplayName": "Miss Fortune Sisters 209/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souchirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-209-low.png",
+    "imageHighSrc": "cards/swsh11-209-high.png"
+  },
+  {
+    "masterCardId": "16364",
+    "externalId": null,
+    "tcgdex_id": "swsh11-208",
+    "localId": "208",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "208/196",
+    "cardName": "Lady",
+    "fullDisplayName": "Lady 208/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-208-low.png",
+    "imageHighSrc": "cards/swsh11-208-high.png"
+  },
+  {
+    "masterCardId": "16359",
+    "externalId": null,
+    "tcgdex_id": "swsh11-207",
+    "localId": "207",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "207/196",
+    "cardName": "Iscan",
+    "fullDisplayName": "Iscan 207/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-207-low.png",
+    "imageHighSrc": "cards/swsh11-207-high.png"
+  },
+  {
+    "masterCardId": "16354",
+    "externalId": null,
+    "tcgdex_id": "swsh11-206",
+    "localId": "206",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "206/196",
+    "cardName": "Fantina",
+    "fullDisplayName": "Fantina 206/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-206-low.png",
+    "imageHighSrc": "cards/swsh11-206-high.png"
+  },
+  {
+    "masterCardId": "16349",
+    "externalId": null,
+    "tcgdex_id": "swsh11-205",
+    "localId": "205",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "205/196",
+    "cardName": "Colress's Experiment",
+    "fullDisplayName": "Colress's Experiment 205/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-205-low.png",
+    "imageHighSrc": "cards/swsh11-205-high.png"
+  },
+  {
+    "masterCardId": "16344",
+    "externalId": null,
+    "tcgdex_id": "swsh11-204",
+    "localId": "204",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "204/196",
+    "cardName": "Arezu",
+    "fullDisplayName": "Arezu 204/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-204-low.png",
+    "imageHighSrc": "cards/swsh11-204-high.png"
+  },
+  {
+    "masterCardId": "16340",
+    "externalId": null,
+    "tcgdex_id": "swsh11-203",
+    "localId": "203",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "203/196",
+    "cardName": "Hisuian Zoroark VSTAR",
+    "fullDisplayName": "Hisuian Zoroark VSTAR 203/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Zoroark V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-203-low.png",
+    "imageHighSrc": "cards/swsh11-203-high.png"
+  },
+  {
+    "masterCardId": "16334",
+    "externalId": null,
+    "tcgdex_id": "swsh11-202",
+    "localId": "202",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "202/196",
+    "cardName": "Hisuian Goodra VSTAR",
+    "fullDisplayName": "Hisuian Goodra VSTAR 202/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Goodra V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-202-low.png",
+    "imageHighSrc": "cards/swsh11-202-high.png"
+  },
+  {
+    "masterCardId": "16328",
+    "externalId": null,
+    "tcgdex_id": "swsh11-201",
+    "localId": "201",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "201/196",
+    "cardName": "Giratina VSTAR",
+    "fullDisplayName": "Giratina VSTAR 201/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Giratina V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-201-low.png",
+    "imageHighSrc": "cards/swsh11-201-high.png"
+  },
+  {
+    "masterCardId": "16322",
+    "externalId": null,
+    "tcgdex_id": "swsh11-200",
+    "localId": "200",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "200/196",
+    "cardName": "Drapion VSTAR",
+    "fullDisplayName": "Drapion VSTAR 200/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Drapion V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-200-low.png",
+    "imageHighSrc": "cards/swsh11-200-high.png"
+  },
+  {
+    "masterCardId": "16315",
+    "externalId": null,
+    "tcgdex_id": "swsh11-199",
+    "localId": "199",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "199/196",
+    "cardName": "Aerodactyl VSTAR",
+    "fullDisplayName": "Aerodactyl VSTAR 199/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 260,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Aerodactyl V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-199-low.png",
+    "imageHighSrc": "cards/swsh11-199-high.png"
+  },
+  {
+    "masterCardId": "16308",
+    "externalId": null,
+    "tcgdex_id": "swsh11-198",
+    "localId": "198",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "198/196",
+    "cardName": "Magnezone VSTAR",
+    "fullDisplayName": "Magnezone VSTAR 198/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Magnezone V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-198-low.png",
+    "imageHighSrc": "cards/swsh11-198-high.png"
+  },
+  {
+    "masterCardId": "16302",
+    "externalId": null,
+    "tcgdex_id": "swsh11-197",
+    "localId": "197",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "197/196",
+    "cardName": "Kyurem VMAX",
+    "fullDisplayName": "Kyurem VMAX 197/196 Lost Origin",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Kyurem V",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-197-low.png",
+    "imageHighSrc": "cards/swsh11-197-high.png"
+  },
+  {
+    "masterCardId": "16296",
+    "externalId": null,
+    "tcgdex_id": "swsh11-196",
+    "localId": "196",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "196/196",
+    "cardName": "Volo",
+    "fullDisplayName": "Volo 196/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-196-low.png",
+    "imageHighSrc": "cards/swsh11-196-high.png"
+  },
+  {
+    "masterCardId": "16291",
+    "externalId": null,
+    "tcgdex_id": "swsh11-195",
+    "localId": "195",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "195/196",
+    "cardName": "Thorton",
+    "fullDisplayName": "Thorton 195/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-195-low.png",
+    "imageHighSrc": "cards/swsh11-195-high.png"
+  },
+  {
+    "masterCardId": "16286",
+    "externalId": null,
+    "tcgdex_id": "swsh11-194",
+    "localId": "194",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "194/196",
+    "cardName": "Miss Fortune Sisters",
+    "fullDisplayName": "Miss Fortune Sisters 194/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souchirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-194-low.png",
+    "imageHighSrc": "cards/swsh11-194-high.png"
+  },
+  {
+    "masterCardId": "16280",
+    "externalId": null,
+    "tcgdex_id": "swsh11-193",
+    "localId": "193",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "193/196",
+    "cardName": "Lady",
+    "fullDisplayName": "Lady 193/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-193-low.png",
+    "imageHighSrc": "cards/swsh11-193-high.png"
+  },
+  {
+    "masterCardId": "16274",
+    "externalId": null,
+    "tcgdex_id": "swsh11-192",
+    "localId": "192",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "192/196",
+    "cardName": "Iscan",
+    "fullDisplayName": "Iscan 192/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-192-low.png",
+    "imageHighSrc": "cards/swsh11-192-high.png"
+  },
+  {
+    "masterCardId": "16267",
+    "externalId": null,
+    "tcgdex_id": "swsh11-191",
+    "localId": "191",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "191/196",
+    "cardName": "Fantina",
+    "fullDisplayName": "Fantina 191/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-191-low.png",
+    "imageHighSrc": "cards/swsh11-191-high.png"
+  },
+  {
+    "masterCardId": "16259",
+    "externalId": null,
+    "tcgdex_id": "swsh11-190",
+    "localId": "190",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "190/196",
+    "cardName": "Colress's Experiment",
+    "fullDisplayName": "Colress's Experiment 190/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-190-low.png",
+    "imageHighSrc": "cards/swsh11-190-high.png"
+  },
+  {
+    "masterCardId": "16254",
+    "externalId": null,
+    "tcgdex_id": "swsh11-189",
+    "localId": "189",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "189/196",
+    "cardName": "Arezu",
+    "fullDisplayName": "Arezu 189/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-189-low.png",
+    "imageHighSrc": "cards/swsh11-189-high.png"
+  },
+  {
+    "masterCardId": "16249",
+    "externalId": null,
+    "tcgdex_id": "swsh11-188",
+    "localId": "188",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "188/196",
+    "cardName": "Pidgeot V",
+    "fullDisplayName": "Pidgeot V 188/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-188-low.png",
+    "imageHighSrc": "cards/swsh11-188-high.png"
+  },
+  {
+    "masterCardId": "16242",
+    "externalId": null,
+    "tcgdex_id": "swsh11-187",
+    "localId": "187",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "187/196",
+    "cardName": "Hisuian Goodra V",
+    "fullDisplayName": "Hisuian Goodra V 187/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-187-low.png",
+    "imageHighSrc": "cards/swsh11-187-high.png"
+  },
+  {
+    "masterCardId": "16236",
+    "externalId": null,
+    "tcgdex_id": "swsh11-186",
+    "localId": "186",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "186/196",
+    "cardName": "Giratina V",
+    "fullDisplayName": "Giratina V 186/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-186-low.png",
+    "imageHighSrc": "cards/swsh11-186-high.png"
+  },
+  {
+    "masterCardId": "16223",
+    "externalId": null,
+    "tcgdex_id": "swsh11-185",
+    "localId": "185",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "185/196",
+    "cardName": "Giratina V",
+    "fullDisplayName": "Giratina V 185/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-185-low.png",
+    "imageHighSrc": "cards/swsh11-185-high.png"
+  },
+  {
+    "masterCardId": "16217",
+    "externalId": null,
+    "tcgdex_id": "swsh11-184",
+    "localId": "184",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "184/196",
+    "cardName": "Galarian Perrserker V",
+    "fullDisplayName": "Galarian Perrserker V 184/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      863
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-184-low.png",
+    "imageHighSrc": "cards/swsh11-184-high.png"
+  },
+  {
+    "masterCardId": "16211",
+    "externalId": null,
+    "tcgdex_id": "swsh11-183",
+    "localId": "183",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "183/196",
+    "cardName": "Galarian Perrserker V",
+    "fullDisplayName": "Galarian Perrserker V 183/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      863
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-183-low.png",
+    "imageHighSrc": "cards/swsh11-183-high.png"
+  },
+  {
+    "masterCardId": "16203",
+    "externalId": null,
+    "tcgdex_id": "swsh11-182",
+    "localId": "182",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "182/196",
+    "cardName": "Drapion V",
+    "fullDisplayName": "Drapion V 182/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-182-low.png",
+    "imageHighSrc": "cards/swsh11-182-high.png"
+  },
+  {
+    "masterCardId": "16195",
+    "externalId": null,
+    "tcgdex_id": "swsh11-181",
+    "localId": "181",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "181/196",
+    "cardName": "Gallade V",
+    "fullDisplayName": "Gallade V 181/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-181-low.png",
+    "imageHighSrc": "cards/swsh11-181-high.png"
+  },
+  {
+    "masterCardId": "16187",
+    "externalId": null,
+    "tcgdex_id": "swsh11-180",
+    "localId": "180",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "180/196",
+    "cardName": "Aerodactyl V",
+    "fullDisplayName": "Aerodactyl V 180/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Nurikabe",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-180-low.png",
+    "imageHighSrc": "cards/swsh11-180-high.png"
+  },
+  {
+    "masterCardId": "16179",
+    "externalId": null,
+    "tcgdex_id": "swsh11-179",
+    "localId": "179",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "179/196",
+    "cardName": "Aerodactyl V",
+    "fullDisplayName": "Aerodactyl V 179/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-179-low.png",
+    "imageHighSrc": "cards/swsh11-179-high.png"
+  },
+  {
+    "masterCardId": "16171",
+    "externalId": null,
+    "tcgdex_id": "swsh11-178",
+    "localId": "178",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "178/196",
+    "cardName": "Enamorus V",
+    "fullDisplayName": "Enamorus V 178/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      905
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-178-low.png",
+    "imageHighSrc": "cards/swsh11-178-high.png"
+  },
+  {
+    "masterCardId": "16163",
+    "externalId": null,
+    "tcgdex_id": "swsh11-177",
+    "localId": "177",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "177/196",
+    "cardName": "Rotom V",
+    "fullDisplayName": "Rotom V 177/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-177-low.png",
+    "imageHighSrc": "cards/swsh11-177-high.png"
+  },
+  {
+    "masterCardId": "16149",
+    "externalId": null,
+    "tcgdex_id": "swsh11-176",
+    "localId": "176",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "176/196",
+    "cardName": "Rotom V",
+    "fullDisplayName": "Rotom V 176/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-176-low.png",
+    "imageHighSrc": "cards/swsh11-176-high.png"
+  },
+  {
+    "masterCardId": "16141",
+    "externalId": null,
+    "tcgdex_id": "swsh11-175",
+    "localId": "175",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "175/196",
+    "cardName": "Magnezone V",
+    "fullDisplayName": "Magnezone V 175/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-175-low.png",
+    "imageHighSrc": "cards/swsh11-175-high.png"
+  },
+  {
+    "masterCardId": "16133",
+    "externalId": null,
+    "tcgdex_id": "swsh11-174",
+    "localId": "174",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "174/196",
+    "cardName": "Kyurem V",
+    "fullDisplayName": "Kyurem V 174/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-174-low.png",
+    "imageHighSrc": "cards/swsh11-174-high.png"
+  },
+  {
+    "masterCardId": "16128",
+    "externalId": null,
+    "tcgdex_id": "swsh11-173",
+    "localId": "173",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "173/196",
+    "cardName": "Delphox V",
+    "fullDisplayName": "Delphox V 173/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      655
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-173-low.png",
+    "imageHighSrc": "cards/swsh11-173-high.png"
+  },
+  {
+    "masterCardId": "16121",
+    "externalId": null,
+    "tcgdex_id": "swsh11-172",
+    "localId": "172",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "172/196",
+    "cardName": "Hisuian Electrode V",
+    "fullDisplayName": "Hisuian Electrode V 172/196 Lost Origin",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-172-low.png",
+    "imageHighSrc": "cards/swsh11-172-high.png"
+  },
+  {
+    "masterCardId": "16110",
+    "externalId": null,
+    "tcgdex_id": "swsh11-171",
+    "localId": "171",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "171/196",
+    "cardName": "Gift Energy",
+    "fullDisplayName": "Gift Energy 171/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-171-low.png",
+    "imageHighSrc": "cards/swsh11-171-high.png"
+  },
+  {
+    "masterCardId": "16104",
+    "externalId": null,
+    "tcgdex_id": "swsh11-170",
+    "localId": "170",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "170/196",
+    "cardName": "Windup Arm",
+    "fullDisplayName": "Windup Arm 170/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-170-low.png",
+    "imageHighSrc": "cards/swsh11-170-high.png"
+  },
+  {
+    "masterCardId": "16096",
+    "externalId": null,
+    "tcgdex_id": "swsh11-169",
+    "localId": "169",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "169/196",
+    "cardName": "Volo",
+    "fullDisplayName": "Volo 169/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-169-low.png",
+    "imageHighSrc": "cards/swsh11-169-high.png"
+  },
+  {
+    "masterCardId": "16089",
+    "externalId": null,
+    "tcgdex_id": "swsh11-168",
+    "localId": "168",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "168/196",
+    "cardName": "Tool Box",
+    "fullDisplayName": "Tool Box 168/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-168-low.png",
+    "imageHighSrc": "cards/swsh11-168-high.png"
+  },
+  {
+    "masterCardId": "16081",
+    "externalId": null,
+    "tcgdex_id": "swsh11-167",
+    "localId": "167",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "167/196",
+    "cardName": "Thorton",
+    "fullDisplayName": "Thorton 167/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-167-low.png",
+    "imageHighSrc": "cards/swsh11-167-high.png"
+  },
+  {
+    "masterCardId": "16072",
+    "externalId": null,
+    "tcgdex_id": "swsh11-166",
+    "localId": "166",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "166/196",
+    "cardName": "Riley",
+    "fullDisplayName": "Riley 166/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-166-low.png",
+    "imageHighSrc": "cards/swsh11-166-high.png"
+  },
+  {
+    "masterCardId": "16064",
+    "externalId": null,
+    "tcgdex_id": "swsh11-165",
+    "localId": "165",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "165/196",
+    "cardName": "Panic Mask",
+    "fullDisplayName": "Panic Mask 165/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Studio Bora Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-165-low.png",
+    "imageHighSrc": "cards/swsh11-165-high.png"
+  },
+  {
+    "masterCardId": "16057",
+    "externalId": null,
+    "tcgdex_id": "swsh11-164",
+    "localId": "164",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "164/196",
+    "cardName": "Miss Fortune Sisters",
+    "fullDisplayName": "Miss Fortune Sisters 164/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souchirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-164-low.png",
+    "imageHighSrc": "cards/swsh11-164-high.png"
+  },
+  {
+    "masterCardId": "16049",
+    "externalId": null,
+    "tcgdex_id": "swsh11-163",
+    "localId": "163",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "163/196",
+    "cardName": "Mirage Gate",
+    "fullDisplayName": "Mirage Gate 163/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-163-low.png",
+    "imageHighSrc": "cards/swsh11-163-high.png"
+  },
+  {
+    "masterCardId": "16041",
+    "externalId": null,
+    "tcgdex_id": "swsh11-162",
+    "localId": "162",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "162/196",
+    "cardName": "Lost Vacuum",
+    "fullDisplayName": "Lost Vacuum 162/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-162-low.png",
+    "imageHighSrc": "cards/swsh11-162-high.png"
+  },
+  {
+    "masterCardId": "16034",
+    "externalId": null,
+    "tcgdex_id": "swsh11-161",
+    "localId": "161",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "161/196",
+    "cardName": "Lost City",
+    "fullDisplayName": "Lost City 161/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AYUMI ODASHIMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-161-low.png",
+    "imageHighSrc": "cards/swsh11-161-high.png"
+  },
+  {
+    "masterCardId": "16027",
+    "externalId": null,
+    "tcgdex_id": "swsh11-160",
+    "localId": "160",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "160/196",
+    "cardName": "Lake Acuity",
+    "fullDisplayName": "Lake Acuity 160/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-160-low.png",
+    "imageHighSrc": "cards/swsh11-160-high.png"
+  },
+  {
+    "masterCardId": "16020",
+    "externalId": null,
+    "tcgdex_id": "swsh11-159",
+    "localId": "159",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "159/196",
+    "cardName": "Lady",
+    "fullDisplayName": "Lady 159/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-159-low.png",
+    "imageHighSrc": "cards/swsh11-159-high.png"
+  },
+  {
+    "masterCardId": "16010",
+    "externalId": null,
+    "tcgdex_id": "swsh11-158",
+    "localId": "158",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "158/196",
+    "cardName": "Iscan",
+    "fullDisplayName": "Iscan 158/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-158-low.png",
+    "imageHighSrc": "cards/swsh11-158-high.png"
+  },
+  {
+    "masterCardId": "16001",
+    "externalId": null,
+    "tcgdex_id": "swsh11-157",
+    "localId": "157",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "157/196",
+    "cardName": "Fantina",
+    "fullDisplayName": "Fantina 157/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-157-low.png",
+    "imageHighSrc": "cards/swsh11-157-high.png"
+  },
+  {
+    "masterCardId": "15991",
+    "externalId": null,
+    "tcgdex_id": "swsh11-156",
+    "localId": "156",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "156/196",
+    "cardName": "Damage Pump",
+    "fullDisplayName": "Damage Pump 156/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sadaji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-156-low.png",
+    "imageHighSrc": "cards/swsh11-156-high.png"
+  },
+  {
+    "masterCardId": "15982",
+    "externalId": null,
+    "tcgdex_id": "swsh11-155",
+    "localId": "155",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "155/196",
+    "cardName": "Colress's Experiment",
+    "fullDisplayName": "Colress's Experiment 155/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-155-low.png",
+    "imageHighSrc": "cards/swsh11-155-high.png"
+  },
+  {
+    "masterCardId": "15973",
+    "externalId": null,
+    "tcgdex_id": "swsh11-154",
+    "localId": "154",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "154/196",
+    "cardName": "Box of Disaster",
+    "fullDisplayName": "Box of Disaster 154/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item",
+      "Pokémon Tool"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-154-low.png",
+    "imageHighSrc": "cards/swsh11-154-high.png"
+  },
+  {
+    "masterCardId": "15963",
+    "externalId": null,
+    "tcgdex_id": "swsh11-153",
+    "localId": "153",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "153/196",
+    "cardName": "Arezu",
+    "fullDisplayName": "Arezu 153/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-153-low.png",
+    "imageHighSrc": "cards/swsh11-153-high.png"
+  },
+  {
+    "masterCardId": "15955",
+    "externalId": null,
+    "tcgdex_id": "swsh11-152",
+    "localId": "152",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "152/196",
+    "cardName": "Arc Phone",
+    "fullDisplayName": "Arc Phone 152/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-152-low.png",
+    "imageHighSrc": "cards/swsh11-152-high.png"
+  },
+  {
+    "masterCardId": "15948",
+    "externalId": null,
+    "tcgdex_id": "swsh11-151",
+    "localId": "151",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "151/196",
+    "cardName": "Greedent",
+    "fullDisplayName": "Greedent 151/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      820
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Skwovet",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-151-low.png",
+    "imageHighSrc": "cards/swsh11-151-high.png"
+  },
+  {
+    "masterCardId": "15938",
+    "externalId": null,
+    "tcgdex_id": "swsh11-150",
+    "localId": "150",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "150/196",
+    "cardName": "Skwovet",
+    "fullDisplayName": "Skwovet 150/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      819
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-150-low.png",
+    "imageHighSrc": "cards/swsh11-150-high.png"
+  },
+  {
+    "masterCardId": "15928",
+    "externalId": null,
+    "tcgdex_id": "swsh11-149",
+    "localId": "149",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "149/196",
+    "cardName": "Komala",
+    "fullDisplayName": "Komala 149/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      775
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-149-low.png",
+    "imageHighSrc": "cards/swsh11-149-high.png"
+  },
+  {
+    "masterCardId": "15917",
+    "externalId": null,
+    "tcgdex_id": "swsh11-148",
+    "localId": "148",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "148/196",
+    "cardName": "Bouffalant",
+    "fullDisplayName": "Bouffalant 148/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      626
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-148-low.png",
+    "imageHighSrc": "cards/swsh11-148-high.png"
+  },
+  {
+    "masterCardId": "15907",
+    "externalId": null,
+    "tcgdex_id": "swsh11-147",
+    "localId": "147",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "147/196",
+    "cardName": "Hisuian Zoroark VSTAR",
+    "fullDisplayName": "Hisuian Zoroark VSTAR 147/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Zoroark V",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-147-low.png",
+    "imageHighSrc": "cards/swsh11-147-high.png"
+  },
+  {
+    "masterCardId": "15898",
+    "externalId": null,
+    "tcgdex_id": "swsh11-146",
+    "localId": "146",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "146/196",
+    "cardName": "Hisuian Zoroark V",
+    "fullDisplayName": "Hisuian Zoroark V 146/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-146-low.png",
+    "imageHighSrc": "cards/swsh11-146-high.png"
+  },
+  {
+    "masterCardId": "15887",
+    "externalId": null,
+    "tcgdex_id": "swsh11-145",
+    "localId": "145",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "145/196",
+    "cardName": "Ambipom",
+    "fullDisplayName": "Ambipom 145/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      424
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Aipom",
+    "artist": "Atsushi Furusawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-145-low.png",
+    "imageHighSrc": "cards/swsh11-145-high.png"
+  },
+  {
+    "masterCardId": "15877",
+    "externalId": null,
+    "tcgdex_id": "swsh11-144",
+    "localId": "144",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "144/196",
+    "cardName": "Aipom",
+    "fullDisplayName": "Aipom 144/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      190
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-144-low.png",
+    "imageHighSrc": "cards/swsh11-144-high.png"
+  },
+  {
+    "masterCardId": "15869",
+    "externalId": null,
+    "tcgdex_id": "swsh11-143",
+    "localId": "143",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "143/196",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 143/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-143-low.png",
+    "imageHighSrc": "cards/swsh11-143-high.png"
+  },
+  {
+    "masterCardId": "15851",
+    "externalId": null,
+    "tcgdex_id": "swsh11-142",
+    "localId": "142",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "142/196",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z 142/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Porygon2",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-142-low.png",
+    "imageHighSrc": "cards/swsh11-142-high.png"
+  },
+  {
+    "masterCardId": "15841",
+    "externalId": null,
+    "tcgdex_id": "swsh11-141",
+    "localId": "141",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "141/196",
+    "cardName": "Porygon2",
+    "fullDisplayName": "Porygon2 141/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      233
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Porygon",
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-141-low.png",
+    "imageHighSrc": "cards/swsh11-141-high.png"
+  },
+  {
+    "masterCardId": "15832",
+    "externalId": null,
+    "tcgdex_id": "swsh11-140",
+    "localId": "140",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "140/196",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 140/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-140-low.png",
+    "imageHighSrc": "cards/swsh11-140-high.png"
+  },
+  {
+    "masterCardId": "15822",
+    "externalId": null,
+    "tcgdex_id": "swsh11-139",
+    "localId": "139",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "139/196",
+    "cardName": "Lickilicky",
+    "fullDisplayName": "Lickilicky 139/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      463
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lickitung",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-139-low.png",
+    "imageHighSrc": "cards/swsh11-139-high.png"
+  },
+  {
+    "masterCardId": "15812",
+    "externalId": null,
+    "tcgdex_id": "swsh11-138",
+    "localId": "138",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "138/196",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 138/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "KIYOTAKA OSHIYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-138-low.png",
+    "imageHighSrc": "cards/swsh11-138-high.png"
+  },
+  {
+    "masterCardId": "15795",
+    "externalId": null,
+    "tcgdex_id": "swsh11-137",
+    "localId": "137",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "137/196",
+    "cardName": "Pidgeot V",
+    "fullDisplayName": "Pidgeot V 137/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saki Hayashiro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-137-low.png",
+    "imageHighSrc": "cards/swsh11-137-high.png"
+  },
+  {
+    "masterCardId": "15785",
+    "externalId": null,
+    "tcgdex_id": "swsh11-136",
+    "localId": "136",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "136/196",
+    "cardName": "Hisuian Goodra VSTAR",
+    "fullDisplayName": "Hisuian Goodra VSTAR 136/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Goodra V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-136-low.png",
+    "imageHighSrc": "cards/swsh11-136-high.png"
+  },
+  {
+    "masterCardId": "15776",
+    "externalId": null,
+    "tcgdex_id": "swsh11-135",
+    "localId": "135",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "135/196",
+    "cardName": "Hisuian Goodra V",
+    "fullDisplayName": "Hisuian Goodra V 135/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-135-low.png",
+    "imageHighSrc": "cards/swsh11-135-high.png"
+  },
+  {
+    "masterCardId": "15759",
+    "externalId": null,
+    "tcgdex_id": "swsh11-134",
+    "localId": "134",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "134/196",
+    "cardName": "Hisuian Goodra",
+    "fullDisplayName": "Hisuian Goodra 134/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      706
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Sliggoo",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-134-low.png",
+    "imageHighSrc": "cards/swsh11-134-high.png"
+  },
+  {
+    "masterCardId": "15747",
+    "externalId": null,
+    "tcgdex_id": "swsh11-133",
+    "localId": "133",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "133/196",
+    "cardName": "Hisuian Sliggoo",
+    "fullDisplayName": "Hisuian Sliggoo 133/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      705
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Goomy",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-133-low.png",
+    "imageHighSrc": "cards/swsh11-133-high.png"
+  },
+  {
+    "masterCardId": "15737",
+    "externalId": null,
+    "tcgdex_id": "swsh11-132",
+    "localId": "132",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "132/196",
+    "cardName": "Goomy",
+    "fullDisplayName": "Goomy 132/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      704
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-132-low.png",
+    "imageHighSrc": "cards/swsh11-132-high.png"
+  },
+  {
+    "masterCardId": "15728",
+    "externalId": null,
+    "tcgdex_id": "swsh11-131",
+    "localId": "131",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "131/196",
+    "cardName": "Giratina VSTAR",
+    "fullDisplayName": "Giratina VSTAR 131/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Giratina V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-131-low.png",
+    "imageHighSrc": "cards/swsh11-131-high.png"
+  },
+  {
+    "masterCardId": "15719",
+    "externalId": null,
+    "tcgdex_id": "swsh11-130",
+    "localId": "130",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "130/196",
+    "cardName": "Giratina V",
+    "fullDisplayName": "Giratina V 130/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-130-low.png",
+    "imageHighSrc": "cards/swsh11-130-high.png"
+  },
+  {
+    "masterCardId": "15710",
+    "externalId": null,
+    "tcgdex_id": "swsh11-129",
+    "localId": "129",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "129/196",
+    "cardName": "Galarian Perrserker V",
+    "fullDisplayName": "Galarian Perrserker V 129/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      863
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "PLANETA Yamashita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-129-low.png",
+    "imageHighSrc": "cards/swsh11-129-high.png"
+  },
+  {
+    "masterCardId": "15701",
+    "externalId": null,
+    "tcgdex_id": "swsh11-128",
+    "localId": "128",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "128/196",
+    "cardName": "Magearna",
+    "fullDisplayName": "Magearna 128/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      801
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Rianti Hidayat",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-128-low.png",
+    "imageHighSrc": "cards/swsh11-128-high.png"
+  },
+  {
+    "masterCardId": "15692",
+    "externalId": null,
+    "tcgdex_id": "swsh11-127",
+    "localId": "127",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "127/196",
+    "cardName": "Galarian Stunfisk",
+    "fullDisplayName": "Galarian Stunfisk 127/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      618
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-127-low.png",
+    "imageHighSrc": "cards/swsh11-127-high.png"
+  },
+  {
+    "masterCardId": "15683",
+    "externalId": null,
+    "tcgdex_id": "swsh11-126",
+    "localId": "126",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "126/196",
+    "cardName": "Bronzong",
+    "fullDisplayName": "Bronzong 126/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      437
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Bronzor",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-126-low.png",
+    "imageHighSrc": "cards/swsh11-126-high.png"
+  },
+  {
+    "masterCardId": "15657",
+    "externalId": null,
+    "tcgdex_id": "swsh11-125",
+    "localId": "125",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "125/196",
+    "cardName": "Bronzor",
+    "fullDisplayName": "Bronzor 125/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      436
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-125-low.png",
+    "imageHighSrc": "cards/swsh11-125-high.png"
+  },
+  {
+    "masterCardId": "15646",
+    "externalId": null,
+    "tcgdex_id": "swsh11-124",
+    "localId": "124",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "124/196",
+    "cardName": "Radiant Steelix",
+    "fullDisplayName": "Radiant Steelix 124/196 Lost Origin",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      208
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-124-low.png",
+    "imageHighSrc": "cards/swsh11-124-high.png"
+  },
+  {
+    "masterCardId": "15635",
+    "externalId": null,
+    "tcgdex_id": "swsh11-123",
+    "localId": "123",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "123/196",
+    "cardName": "Radiant Hisuian Sneasler",
+    "fullDisplayName": "Radiant Hisuian Sneasler 123/196 Lost Origin",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      903
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-123-low.png",
+    "imageHighSrc": "cards/swsh11-123-high.png"
+  },
+  {
+    "masterCardId": "15625",
+    "externalId": null,
+    "tcgdex_id": "swsh11-122",
+    "localId": "122",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "122/196",
+    "cardName": "Hoopa",
+    "fullDisplayName": "Hoopa 122/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      720
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-122-low.png",
+    "imageHighSrc": "cards/swsh11-122-high.png"
+  },
+  {
+    "masterCardId": "15610",
+    "externalId": null,
+    "tcgdex_id": "swsh11-121",
+    "localId": "121",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "121/196",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 121/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-121-low.png",
+    "imageHighSrc": "cards/swsh11-121-high.png"
+  },
+  {
+    "masterCardId": "15599",
+    "externalId": null,
+    "tcgdex_id": "swsh11-120",
+    "localId": "120",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "120/196",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai 120/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-120-low.png",
+    "imageHighSrc": "cards/swsh11-120-high.png"
+  },
+  {
+    "masterCardId": "15589",
+    "externalId": null,
+    "tcgdex_id": "swsh11-119",
+    "localId": "119",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "119/196",
+    "cardName": "Drapion VSTAR",
+    "fullDisplayName": "Drapion VSTAR 119/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Drapion V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-119-low.png",
+    "imageHighSrc": "cards/swsh11-119-high.png"
+  },
+  {
+    "masterCardId": "15579",
+    "externalId": null,
+    "tcgdex_id": "swsh11-118",
+    "localId": "118",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "118/196",
+    "cardName": "Drapion V",
+    "fullDisplayName": "Drapion V 118/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-118-low.png",
+    "imageHighSrc": "cards/swsh11-118-high.png"
+  },
+  {
+    "masterCardId": "15567",
+    "externalId": null,
+    "tcgdex_id": "swsh11-117",
+    "localId": "117",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "117/196",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 117/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-117-low.png",
+    "imageHighSrc": "cards/swsh11-117-high.png"
+  },
+  {
+    "masterCardId": "15556",
+    "externalId": null,
+    "tcgdex_id": "swsh11-116",
+    "localId": "116",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "116/196",
+    "cardName": "Seviper",
+    "fullDisplayName": "Seviper 116/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-116-low.png",
+    "imageHighSrc": "cards/swsh11-116-high.png"
+  },
+  {
+    "masterCardId": "15547",
+    "externalId": null,
+    "tcgdex_id": "swsh11-115",
+    "localId": "115",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "115/196",
+    "cardName": "Honchkrow",
+    "fullDisplayName": "Honchkrow 115/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      430
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Murkrow",
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-115-low.png",
+    "imageHighSrc": "cards/swsh11-115-high.png"
+  },
+  {
+    "masterCardId": "15537",
+    "externalId": null,
+    "tcgdex_id": "swsh11-114",
+    "localId": "114",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "114/196",
+    "cardName": "Murkrow",
+    "fullDisplayName": "Murkrow 114/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      198
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-114-low.png",
+    "imageHighSrc": "cards/swsh11-114-high.png"
+  },
+  {
+    "masterCardId": "15528",
+    "externalId": null,
+    "tcgdex_id": "swsh11-113",
+    "localId": "113",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "113/196",
+    "cardName": "Ariados",
+    "fullDisplayName": "Ariados 113/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      168
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Spinarak",
+    "artist": "Shinji Kanda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-113-low.png",
+    "imageHighSrc": "cards/swsh11-113-high.png"
+  },
+  {
+    "masterCardId": "15518",
+    "externalId": null,
+    "tcgdex_id": "swsh11-112",
+    "localId": "112",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "112/196",
+    "cardName": "Spinarak",
+    "fullDisplayName": "Spinarak 112/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      167
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-112-low.png",
+    "imageHighSrc": "cards/swsh11-112-high.png"
+  },
+  {
+    "masterCardId": "15509",
+    "externalId": null,
+    "tcgdex_id": "swsh11-111",
+    "localId": "111",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "111/196",
+    "cardName": "Stonjourner",
+    "fullDisplayName": "Stonjourner 111/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      874
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-111-low.png",
+    "imageHighSrc": "cards/swsh11-111-high.png"
+  },
+  {
+    "masterCardId": "15498",
+    "externalId": null,
+    "tcgdex_id": "swsh11-110",
+    "localId": "110",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "110/196",
+    "cardName": "Falinks",
+    "fullDisplayName": "Falinks 110/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      870
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-110-low.png",
+    "imageHighSrc": "cards/swsh11-110-high.png"
+  },
+  {
+    "masterCardId": "15489",
+    "externalId": null,
+    "tcgdex_id": "swsh11-109",
+    "localId": "109",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "109/196",
+    "cardName": "Rockruff",
+    "fullDisplayName": "Rockruff 109/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      744
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-109-low.png",
+    "imageHighSrc": "cards/swsh11-109-high.png"
+  },
+  {
+    "masterCardId": "15463",
+    "externalId": null,
+    "tcgdex_id": "swsh11-108",
+    "localId": "108",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "108/196",
+    "cardName": "Carbink",
+    "fullDisplayName": "Carbink 108/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-108-low.png",
+    "imageHighSrc": "cards/swsh11-108-high.png"
+  },
+  {
+    "masterCardId": "15452",
+    "externalId": null,
+    "tcgdex_id": "swsh11-107",
+    "localId": "107",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "107/196",
+    "cardName": "Barbaracle",
+    "fullDisplayName": "Barbaracle 107/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      689
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Binacle",
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-107-low.png",
+    "imageHighSrc": "cards/swsh11-107-high.png"
+  },
+  {
+    "masterCardId": "15443",
+    "externalId": null,
+    "tcgdex_id": "swsh11-106",
+    "localId": "106",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "106/196",
+    "cardName": "Binacle",
+    "fullDisplayName": "Binacle 106/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      688
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-106-low.png",
+    "imageHighSrc": "cards/swsh11-106-high.png"
+  },
+  {
+    "masterCardId": "15434",
+    "externalId": null,
+    "tcgdex_id": "swsh11-105",
+    "localId": "105",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "105/196",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus 105/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "KEIICHIRO ITO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-105-low.png",
+    "imageHighSrc": "cards/swsh11-105-high.png"
+  },
+  {
+    "masterCardId": "15421",
+    "externalId": null,
+    "tcgdex_id": "swsh11-104",
+    "localId": "104",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "104/196",
+    "cardName": "Mienshao",
+    "fullDisplayName": "Mienshao 104/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      620
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Mienfoo",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-104-low.png",
+    "imageHighSrc": "cards/swsh11-104-high.png"
+  },
+  {
+    "masterCardId": "15412",
+    "externalId": null,
+    "tcgdex_id": "swsh11-103",
+    "localId": "103",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "103/196",
+    "cardName": "Mienfoo",
+    "fullDisplayName": "Mienfoo 103/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      619
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-103-low.png",
+    "imageHighSrc": "cards/swsh11-103-high.png"
+  },
+  {
+    "masterCardId": "15401",
+    "externalId": null,
+    "tcgdex_id": "swsh11-102",
+    "localId": "102",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "102/196",
+    "cardName": "Gastrodon",
+    "fullDisplayName": "Gastrodon 102/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      423
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Shellos",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-102-low.png",
+    "imageHighSrc": "cards/swsh11-102-high.png"
+  },
+  {
+    "masterCardId": "15391",
+    "externalId": null,
+    "tcgdex_id": "swsh11-101",
+    "localId": "101",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "101/196",
+    "cardName": "Relicanth",
+    "fullDisplayName": "Relicanth 101/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      369
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-101-low.png",
+    "imageHighSrc": "cards/swsh11-101-high.png"
+  },
+  {
+    "masterCardId": "15380",
+    "externalId": null,
+    "tcgdex_id": "swsh11-100",
+    "localId": "100",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "100/196",
+    "cardName": "Medicham",
+    "fullDisplayName": "Medicham 100/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      308
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Meditite",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-100-low.png",
+    "imageHighSrc": "cards/swsh11-100-high.png"
+  },
+  {
+    "masterCardId": "15371",
+    "externalId": null,
+    "tcgdex_id": "swsh11-099",
+    "localId": "099",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "099/196",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 099/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-099-low.png",
+    "imageHighSrc": "cards/swsh11-099-high.png"
+  },
+  {
+    "masterCardId": "15361",
+    "externalId": null,
+    "tcgdex_id": "swsh11-098",
+    "localId": "098",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "098/196",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 098/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Makuhita",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-098-low.png",
+    "imageHighSrc": "cards/swsh11-098-high.png"
+  },
+  {
+    "masterCardId": "15351",
+    "externalId": null,
+    "tcgdex_id": "swsh11-097",
+    "localId": "097",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "097/196",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 097/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-097-low.png",
+    "imageHighSrc": "cards/swsh11-097-high.png"
+  },
+  {
+    "masterCardId": "15341",
+    "externalId": null,
+    "tcgdex_id": "swsh11-096",
+    "localId": "096",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "096/196",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 096/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Gligar",
+    "artist": "Shiburingaru",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-096-low.png",
+    "imageHighSrc": "cards/swsh11-096-high.png"
+  },
+  {
+    "masterCardId": "15331",
+    "externalId": null,
+    "tcgdex_id": "swsh11-095",
+    "localId": "095",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "095/196",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 095/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-095-low.png",
+    "imageHighSrc": "cards/swsh11-095-high.png"
+  },
+  {
+    "masterCardId": "15320",
+    "externalId": null,
+    "tcgdex_id": "swsh11-094",
+    "localId": "094",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "094/196",
+    "cardName": "Sudowoodo",
+    "fullDisplayName": "Sudowoodo 094/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      185
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-094-low.png",
+    "imageHighSrc": "cards/swsh11-094-high.png"
+  },
+  {
+    "masterCardId": "15310",
+    "externalId": null,
+    "tcgdex_id": "swsh11-093",
+    "localId": "093",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "093/196",
+    "cardName": "Aerodactyl VSTAR",
+    "fullDisplayName": "Aerodactyl VSTAR 093/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 260,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Aerodactyl V",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-093-low.png",
+    "imageHighSrc": "cards/swsh11-093-high.png"
+  },
+  {
+    "masterCardId": "15303",
+    "externalId": null,
+    "tcgdex_id": "swsh11-092",
+    "localId": "092",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "092/196",
+    "cardName": "Aerodactyl V",
+    "fullDisplayName": "Aerodactyl V 092/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      142
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-092-low.png",
+    "imageHighSrc": "cards/swsh11-092-high.png"
+  },
+  {
+    "masterCardId": "15292",
+    "externalId": null,
+    "tcgdex_id": "swsh11-091",
+    "localId": "091",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "091/196",
+    "cardName": "Rhyperior",
+    "fullDisplayName": "Rhyperior 091/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Rhydon",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-091-low.png",
+    "imageHighSrc": "cards/swsh11-091-high.png"
+  },
+  {
+    "masterCardId": "15281",
+    "externalId": null,
+    "tcgdex_id": "swsh11-090",
+    "localId": "090",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "090/196",
+    "cardName": "Rhydon",
+    "fullDisplayName": "Rhydon 090/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Rhyhorn",
+    "artist": "HYOGONOSUKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-090-low.png",
+    "imageHighSrc": "cards/swsh11-090-high.png"
+  },
+  {
+    "masterCardId": "15271",
+    "externalId": null,
+    "tcgdex_id": "swsh11-089",
+    "localId": "089",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "089/196",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 089/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-089-low.png",
+    "imageHighSrc": "cards/swsh11-089-high.png"
+  },
+  {
+    "masterCardId": "15263",
+    "externalId": null,
+    "tcgdex_id": "swsh11-088",
+    "localId": "088",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "088/196",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 088/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Machoke",
+    "artist": "Nisota Niso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-088-low.png",
+    "imageHighSrc": "cards/swsh11-088-high.png"
+  },
+  {
+    "masterCardId": "15253",
+    "externalId": null,
+    "tcgdex_id": "swsh11-087",
+    "localId": "087",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "087/196",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 087/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Machop",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-087-low.png",
+    "imageHighSrc": "cards/swsh11-087-high.png"
+  },
+  {
+    "masterCardId": "15243",
+    "externalId": null,
+    "tcgdex_id": "swsh11-086",
+    "localId": "086",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "086/196",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 086/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-086-low.png",
+    "imageHighSrc": "cards/swsh11-086-high.png"
+  },
+  {
+    "masterCardId": "15232",
+    "externalId": null,
+    "tcgdex_id": "swsh11-085",
+    "localId": "085",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "085/196",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 085/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Poliwhirl",
+    "artist": "Teeziro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-085-low.png",
+    "imageHighSrc": "cards/swsh11-085-high.png"
+  },
+  {
+    "masterCardId": "15223",
+    "externalId": null,
+    "tcgdex_id": "swsh11-084",
+    "localId": "084",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "084/196",
+    "cardName": "Hisuian Arcanine",
+    "fullDisplayName": "Hisuian Arcanine 084/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Growlithe",
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-084-low.png",
+    "imageHighSrc": "cards/swsh11-084-high.png"
+  },
+  {
+    "masterCardId": "15213",
+    "externalId": null,
+    "tcgdex_id": "swsh11-083",
+    "localId": "083",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "083/196",
+    "cardName": "Hisuian Growlithe",
+    "fullDisplayName": "Hisuian Growlithe 083/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-083-low.png",
+    "imageHighSrc": "cards/swsh11-083-high.png"
+  },
+  {
+    "masterCardId": "15204",
+    "externalId": null,
+    "tcgdex_id": "swsh11-082",
+    "localId": "082",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "082/196",
+    "cardName": "Enamorus V",
+    "fullDisplayName": "Enamorus V 082/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      905
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-082-low.png",
+    "imageHighSrc": "cards/swsh11-082-high.png"
+  },
+  {
+    "masterCardId": "15193",
+    "externalId": null,
+    "tcgdex_id": "swsh11-081",
+    "localId": "081",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "081/196",
+    "cardName": "Spectrier",
+    "fullDisplayName": "Spectrier 081/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      897
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-081-low.png",
+    "imageHighSrc": "cards/swsh11-081-high.png"
+  },
+  {
+    "masterCardId": "15183",
+    "externalId": null,
+    "tcgdex_id": "swsh11-080",
+    "localId": "080",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "080/196",
+    "cardName": "Mimikyu",
+    "fullDisplayName": "Mimikyu 080/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      778
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ligton",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-080-low.png",
+    "imageHighSrc": "cards/swsh11-080-high.png"
+  },
+  {
+    "masterCardId": "15174",
+    "externalId": null,
+    "tcgdex_id": "swsh11-079",
+    "localId": "079",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "079/196",
+    "cardName": "Comfey",
+    "fullDisplayName": "Comfey 079/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      764
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-079-low.png",
+    "imageHighSrc": "cards/swsh11-079-high.png"
+  },
+  {
+    "masterCardId": "15164",
+    "externalId": null,
+    "tcgdex_id": "swsh11-078",
+    "localId": "078",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "078/196",
+    "cardName": "Malamar",
+    "fullDisplayName": "Malamar 078/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      687
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Inkay",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-078-low.png",
+    "imageHighSrc": "cards/swsh11-078-high.png"
+  },
+  {
+    "masterCardId": "15154",
+    "externalId": null,
+    "tcgdex_id": "swsh11-077",
+    "localId": "077",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "077/196",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 077/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "miki kudo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-077-low.png",
+    "imageHighSrc": "cards/swsh11-077-high.png"
+  },
+  {
+    "masterCardId": "15144",
+    "externalId": null,
+    "tcgdex_id": "swsh11-076",
+    "localId": "076",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "076/196",
+    "cardName": "Hisuian Zoroark",
+    "fullDisplayName": "Hisuian Zoroark 076/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Zorua",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-076-low.png",
+    "imageHighSrc": "cards/swsh11-076-high.png"
+  },
+  {
+    "masterCardId": "15135",
+    "externalId": null,
+    "tcgdex_id": "swsh11-075",
+    "localId": "075",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "075/196",
+    "cardName": "Hisuian Zorua",
+    "fullDisplayName": "Hisuian Zorua 075/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-075-low.png",
+    "imageHighSrc": "cards/swsh11-075-high.png"
+  },
+  {
+    "masterCardId": "15126",
+    "externalId": null,
+    "tcgdex_id": "swsh11-074",
+    "localId": "074",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "074/196",
+    "cardName": "Cresselia",
+    "fullDisplayName": "Cresselia 074/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      488
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "saino misaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-074-low.png",
+    "imageHighSrc": "cards/swsh11-074-high.png"
+  },
+  {
+    "masterCardId": "15116",
+    "externalId": null,
+    "tcgdex_id": "swsh11-073",
+    "localId": "073",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "073/196",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 073/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Shuppet",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-073-low.png",
+    "imageHighSrc": "cards/swsh11-073-high.png"
+  },
+  {
+    "masterCardId": "15106",
+    "externalId": null,
+    "tcgdex_id": "swsh11-072",
+    "localId": "072",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "072/196",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 072/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-072-low.png",
+    "imageHighSrc": "cards/swsh11-072-high.png"
+  },
+  {
+    "masterCardId": "15096",
+    "externalId": null,
+    "tcgdex_id": "swsh11-071",
+    "localId": "071",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "071/196",
+    "cardName": "Mawile",
+    "fullDisplayName": "Mawile 071/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      303
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-071-low.png",
+    "imageHighSrc": "cards/swsh11-071-high.png"
+  },
+  {
+    "masterCardId": "15086",
+    "externalId": null,
+    "tcgdex_id": "swsh11-070",
+    "localId": "070",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "070/196",
+    "cardName": "Sableye",
+    "fullDisplayName": "Sableye 070/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      302
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-070-low.png",
+    "imageHighSrc": "cards/swsh11-070-high.png"
+  },
+  {
+    "masterCardId": "15078",
+    "externalId": null,
+    "tcgdex_id": "swsh11-069",
+    "localId": "069",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "069/196",
+    "cardName": "Radiant Gardevoir",
+    "fullDisplayName": "Radiant Gardevoir 069/196 Lost Origin",
+    "rarity": "Radiant Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "subtypes": [
+      "Basic",
+      "Radiant"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Ryuta Fuse",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-069-low.png",
+    "imageHighSrc": "cards/swsh11-069-high.png"
+  },
+  {
+    "masterCardId": "15068",
+    "externalId": null,
+    "tcgdex_id": "swsh11-068",
+    "localId": "068",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "068/196",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 068/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Nagomi Nijo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-068-low.png",
+    "imageHighSrc": "cards/swsh11-068-high.png"
+  },
+  {
+    "masterCardId": "15058",
+    "externalId": null,
+    "tcgdex_id": "swsh11-067",
+    "localId": "067",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "067/196",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 067/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Souichirou Gunjima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-067-low.png",
+    "imageHighSrc": "cards/swsh11-067-high.png"
+  },
+  {
+    "masterCardId": "15048",
+    "externalId": null,
+    "tcgdex_id": "swsh11-066",
+    "localId": "066",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "066/196",
+    "cardName": "Gengar",
+    "fullDisplayName": "Gengar 066/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      94
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Haunter",
+    "artist": "Narumi Sato",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-066-low.png",
+    "imageHighSrc": "cards/swsh11-066-high.png"
+  },
+  {
+    "masterCardId": "15038",
+    "externalId": null,
+    "tcgdex_id": "swsh11-065",
+    "localId": "065",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "065/196",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 065/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Gastly",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-065-low.png",
+    "imageHighSrc": "cards/swsh11-065-high.png"
+  },
+  {
+    "masterCardId": "15028",
+    "externalId": null,
+    "tcgdex_id": "swsh11-064",
+    "localId": "064",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "064/196",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 064/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-064-low.png",
+    "imageHighSrc": "cards/swsh11-064-high.png"
+  },
+  {
+    "masterCardId": "15017",
+    "externalId": null,
+    "tcgdex_id": "swsh11-063",
+    "localId": "063",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "063/196",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 063/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Clefairy",
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-063-low.png",
+    "imageHighSrc": "cards/swsh11-063-high.png"
+  },
+  {
+    "masterCardId": "15006",
+    "externalId": null,
+    "tcgdex_id": "swsh11-062",
+    "localId": "062",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "062/196",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 062/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-062-low.png",
+    "imageHighSrc": "cards/swsh11-062-high.png"
+  },
+  {
+    "masterCardId": "14997",
+    "externalId": null,
+    "tcgdex_id": "swsh11-061",
+    "localId": "061",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "061/196",
+    "cardName": "Eelektross",
+    "fullDisplayName": "Eelektross 061/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      604
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Eelektrik",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-061-low.png",
+    "imageHighSrc": "cards/swsh11-061-high.png"
+  },
+  {
+    "masterCardId": "14985",
+    "externalId": null,
+    "tcgdex_id": "swsh11-060",
+    "localId": "060",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "060/196",
+    "cardName": "Eelektrik",
+    "fullDisplayName": "Eelektrik 060/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      603
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Tynamo",
+    "artist": "Uta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-060-low.png",
+    "imageHighSrc": "cards/swsh11-060-high.png"
+  },
+  {
+    "masterCardId": "14975",
+    "externalId": null,
+    "tcgdex_id": "swsh11-059",
+    "localId": "059",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "059/196",
+    "cardName": "Tynamo",
+    "fullDisplayName": "Tynamo 059/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      602
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-059-low.png",
+    "imageHighSrc": "cards/swsh11-059-high.png"
+  },
+  {
+    "masterCardId": "14965",
+    "externalId": null,
+    "tcgdex_id": "swsh11-058",
+    "localId": "058",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "058/196",
+    "cardName": "Rotom V",
+    "fullDisplayName": "Rotom V 058/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 190,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      479
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-058-low.png",
+    "imageHighSrc": "cards/swsh11-058-high.png"
+  },
+  {
+    "masterCardId": "14955",
+    "externalId": null,
+    "tcgdex_id": "swsh11-057",
+    "localId": "057",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "057/196",
+    "cardName": "Magnezone VSTAR",
+    "fullDisplayName": "Magnezone VSTAR 057/196 Lost Origin",
+    "rarity": "Rare Holo VSTAR",
+    "category": "Pokémon",
+    "stage": "VSTAR",
+    "hp": 270,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "VSTAR"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Magnezone V",
+    "artist": "PLANETA Mochizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-057-low.png",
+    "imageHighSrc": "cards/swsh11-057-high.png"
+  },
+  {
+    "masterCardId": "14945",
+    "externalId": null,
+    "tcgdex_id": "swsh11-056",
+    "localId": "056",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "056/196",
+    "cardName": "Magnezone V",
+    "fullDisplayName": "Magnezone V 056/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-056-low.png",
+    "imageHighSrc": "cards/swsh11-056-high.png"
+  },
+  {
+    "masterCardId": "14935",
+    "externalId": null,
+    "tcgdex_id": "swsh11-055",
+    "localId": "055",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "055/196",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 055/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Electrike",
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-055-low.png",
+    "imageHighSrc": "cards/swsh11-055-high.png"
+  },
+  {
+    "masterCardId": "14925",
+    "externalId": null,
+    "tcgdex_id": "swsh11-054",
+    "localId": "054",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "054/196",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 054/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "otumami",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-054-low.png",
+    "imageHighSrc": "cards/swsh11-054-high.png"
+  },
+  {
+    "masterCardId": "14915",
+    "externalId": null,
+    "tcgdex_id": "swsh11-053",
+    "localId": "053",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "053/196",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 053/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Pikachu",
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-053-low.png",
+    "imageHighSrc": "cards/swsh11-053-high.png"
+  },
+  {
+    "masterCardId": "14906",
+    "externalId": null,
+    "tcgdex_id": "swsh11-052",
+    "localId": "052",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "052/196",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 052/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-052-low.png",
+    "imageHighSrc": "cards/swsh11-052-high.png"
+  },
+  {
+    "masterCardId": "14896",
+    "externalId": null,
+    "tcgdex_id": "swsh11-051",
+    "localId": "051",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "051/196",
+    "cardName": "Glastrier",
+    "fullDisplayName": "Glastrier 051/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      896
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-051-low.png",
+    "imageHighSrc": "cards/swsh11-051-high.png"
+  },
+  {
+    "masterCardId": "14883",
+    "externalId": null,
+    "tcgdex_id": "swsh11-050",
+    "localId": "050",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "050/196",
+    "cardName": "Cramorant",
+    "fullDisplayName": "Cramorant 050/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      845
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-050-low.png",
+    "imageHighSrc": "cards/swsh11-050-high.png"
+  },
+  {
+    "masterCardId": "14873",
+    "externalId": null,
+    "tcgdex_id": "swsh11-049",
+    "localId": "049",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "049/196",
+    "cardName": "Kyurem VMAX",
+    "fullDisplayName": "Kyurem VMAX 049/196 Lost Origin",
+    "rarity": "Rare Holo VMAX",
+    "category": "Pokémon",
+    "stage": "VMAX",
+    "hp": 330,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "VMAX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Kyurem V",
+    "artist": "N-DESIGN Inc.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-049-low.png",
+    "imageHighSrc": "cards/swsh11-049-high.png"
+  },
+  {
+    "masterCardId": "14863",
+    "externalId": null,
+    "tcgdex_id": "swsh11-048",
+    "localId": "048",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "048/196",
+    "cardName": "Kyurem V",
+    "fullDisplayName": "Kyurem V 048/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "takuyoa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-048-low.png",
+    "imageHighSrc": "cards/swsh11-048-high.png"
+  },
+  {
+    "masterCardId": "14854",
+    "externalId": null,
+    "tcgdex_id": "swsh11-047",
+    "localId": "047",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "047/196",
+    "cardName": "Swanna",
+    "fullDisplayName": "Swanna 047/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      581
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Ducklett",
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-047-low.png",
+    "imageHighSrc": "cards/swsh11-047-high.png"
+  },
+  {
+    "masterCardId": "14845",
+    "externalId": null,
+    "tcgdex_id": "swsh11-046",
+    "localId": "046",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "046/196",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett 046/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-046-low.png",
+    "imageHighSrc": "cards/swsh11-046-high.png"
+  },
+  {
+    "masterCardId": "14834",
+    "externalId": null,
+    "tcgdex_id": "swsh11-045",
+    "localId": "045",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "045/196",
+    "cardName": "Hisuian Basculegion",
+    "fullDisplayName": "Hisuian Basculegion 045/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      902
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Hisuian Basculin",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-045-low.png",
+    "imageHighSrc": "cards/swsh11-045-high.png"
+  },
+  {
+    "masterCardId": "14824",
+    "externalId": null,
+    "tcgdex_id": "swsh11-044",
+    "localId": "044",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "044/196",
+    "cardName": "Hisuian Basculin",
+    "fullDisplayName": "Hisuian Basculin 044/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      550
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Oswaldo KATO",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-044-low.png",
+    "imageHighSrc": "cards/swsh11-044-high.png"
+  },
+  {
+    "masterCardId": "14814",
+    "externalId": null,
+    "tcgdex_id": "swsh11-043",
+    "localId": "043",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "043/196",
+    "cardName": "Abomasnow",
+    "fullDisplayName": "Abomasnow 043/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      460
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Snover",
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-043-low.png",
+    "imageHighSrc": "cards/swsh11-043-high.png"
+  },
+  {
+    "masterCardId": "14805",
+    "externalId": null,
+    "tcgdex_id": "swsh11-042",
+    "localId": "042",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "042/196",
+    "cardName": "Snover",
+    "fullDisplayName": "Snover 042/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      459
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-042-low.png",
+    "imageHighSrc": "cards/swsh11-042-high.png"
+  },
+  {
+    "masterCardId": "14794",
+    "externalId": null,
+    "tcgdex_id": "swsh11-041",
+    "localId": "041",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "041/196",
+    "cardName": "Lumineon",
+    "fullDisplayName": "Lumineon 041/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      457
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Finneon",
+    "artist": "zig",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-041-low.png",
+    "imageHighSrc": "cards/swsh11-041-high.png"
+  },
+  {
+    "masterCardId": "14784",
+    "externalId": null,
+    "tcgdex_id": "swsh11-040",
+    "localId": "040",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "040/196",
+    "cardName": "Finneon",
+    "fullDisplayName": "Finneon 040/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      456
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Taira Akitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-040-low.png",
+    "imageHighSrc": "cards/swsh11-040-high.png"
+  },
+  {
+    "masterCardId": "14773",
+    "externalId": null,
+    "tcgdex_id": "swsh11-039",
+    "localId": "039",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "039/196",
+    "cardName": "Shellos",
+    "fullDisplayName": "Shellos 039/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      422
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-039-low.png",
+    "imageHighSrc": "cards/swsh11-039-high.png"
+  },
+  {
+    "masterCardId": "14762",
+    "externalId": null,
+    "tcgdex_id": "swsh11-038",
+    "localId": "038",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "038/196",
+    "cardName": "Luvdisc",
+    "fullDisplayName": "Luvdisc 038/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      370
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-038-low.png",
+    "imageHighSrc": "cards/swsh11-038-high.png"
+  },
+  {
+    "masterCardId": "14751",
+    "externalId": null,
+    "tcgdex_id": "swsh11-037",
+    "localId": "037",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "037/196",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 037/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Seadra",
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-037-low.png",
+    "imageHighSrc": "cards/swsh11-037-high.png"
+  },
+  {
+    "masterCardId": "14741",
+    "externalId": null,
+    "tcgdex_id": "swsh11-036",
+    "localId": "036",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "036/196",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 036/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Horsea",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-036-low.png",
+    "imageHighSrc": "cards/swsh11-036-high.png"
+  },
+  {
+    "masterCardId": "14731",
+    "externalId": null,
+    "tcgdex_id": "swsh11-035",
+    "localId": "035",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "035/196",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 035/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Tika Matsuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-035-low.png",
+    "imageHighSrc": "cards/swsh11-035-high.png"
+  },
+  {
+    "masterCardId": "14718",
+    "externalId": null,
+    "tcgdex_id": "swsh11-034",
+    "localId": "034",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "034/196",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 034/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Seel",
+    "artist": "chibi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-034-low.png",
+    "imageHighSrc": "cards/swsh11-034-high.png"
+  },
+  {
+    "masterCardId": "14708",
+    "externalId": null,
+    "tcgdex_id": "swsh11-033",
+    "localId": "033",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "033/196",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 033/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "GIDORA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-033-low.png",
+    "imageHighSrc": "cards/swsh11-033-high.png"
+  },
+  {
+    "masterCardId": "14698",
+    "externalId": null,
+    "tcgdex_id": "swsh11-032",
+    "localId": "032",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "032/196",
+    "cardName": "Politoed",
+    "fullDisplayName": "Politoed 032/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      186
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Poliwhirl",
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-032-low.png",
+    "imageHighSrc": "cards/swsh11-032-high.png"
+  },
+  {
+    "masterCardId": "14689",
+    "externalId": null,
+    "tcgdex_id": "swsh11-031",
+    "localId": "031",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "031/196",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 031/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Poliwag",
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-031-low.png",
+    "imageHighSrc": "cards/swsh11-031-high.png"
+  },
+  {
+    "masterCardId": "14679",
+    "externalId": null,
+    "tcgdex_id": "swsh11-030",
+    "localId": "030",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "030/196",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 030/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-030-low.png",
+    "imageHighSrc": "cards/swsh11-030-high.png"
+  },
+  {
+    "masterCardId": "14669",
+    "externalId": null,
+    "tcgdex_id": "swsh11-029",
+    "localId": "029",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "029/196",
+    "cardName": "Pyroar",
+    "fullDisplayName": "Pyroar 029/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      668
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Litleo",
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-029-low.png",
+    "imageHighSrc": "cards/swsh11-029-high.png"
+  },
+  {
+    "masterCardId": "14659",
+    "externalId": null,
+    "tcgdex_id": "swsh11-028",
+    "localId": "028",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "028/196",
+    "cardName": "Litleo",
+    "fullDisplayName": "Litleo 028/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      667
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Sekio",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-028-low.png",
+    "imageHighSrc": "cards/swsh11-028-high.png"
+  },
+  {
+    "masterCardId": "14649",
+    "externalId": null,
+    "tcgdex_id": "swsh11-027",
+    "localId": "027",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "027/196",
+    "cardName": "Delphox V",
+    "fullDisplayName": "Delphox V 027/196 Lost Origin",
+    "rarity": "Rare Holo V",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 210,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      655
+    ],
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-027-low.png",
+    "imageHighSrc": "cards/swsh11-027-high.png"
+  },
+  {
+    "masterCardId": "14639",
+    "externalId": null,
+    "tcgdex_id": "swsh11-026",
+    "localId": "026",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "026/196",
+    "cardName": "Chandelure",
+    "fullDisplayName": "Chandelure 026/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      609
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Lampent",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-026-low.png",
+    "imageHighSrc": "cards/swsh11-026-high.png"
+  },
+  {
+    "masterCardId": "14631",
+    "externalId": null,
+    "tcgdex_id": "swsh11-025",
+    "localId": "025",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "025/196",
+    "cardName": "Lampent",
+    "fullDisplayName": "Lampent 025/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      608
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Litwick",
+    "artist": "kurumitsu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-025-low.png",
+    "imageHighSrc": "cards/swsh11-025-high.png"
+  },
+  {
+    "masterCardId": "14621",
+    "externalId": null,
+    "tcgdex_id": "swsh11-024",
+    "localId": "024",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "024/196",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick 024/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-024-low.png",
+    "imageHighSrc": "cards/swsh11-024-high.png"
+  },
+  {
+    "masterCardId": "14611",
+    "externalId": null,
+    "tcgdex_id": "swsh11-023",
+    "localId": "023",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "023/196",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 023/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-023-low.png",
+    "imageHighSrc": "cards/swsh11-023-high.png"
+  },
+  {
+    "masterCardId": "14601",
+    "externalId": null,
+    "tcgdex_id": "swsh11-022",
+    "localId": "022",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "022/196",
+    "cardName": "Magcargo",
+    "fullDisplayName": "Magcargo 022/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      219
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Slugma",
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-022-low.png",
+    "imageHighSrc": "cards/swsh11-022-high.png"
+  },
+  {
+    "masterCardId": "14591",
+    "externalId": null,
+    "tcgdex_id": "swsh11-021",
+    "localId": "021",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "021/196",
+    "cardName": "Slugma",
+    "fullDisplayName": "Slugma 021/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      218
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Scav",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-021-low.png",
+    "imageHighSrc": "cards/swsh11-021-high.png"
+  },
+  {
+    "masterCardId": "14581",
+    "externalId": null,
+    "tcgdex_id": "swsh11-020",
+    "localId": "020",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "020/196",
+    "cardName": "Orbeetle",
+    "fullDisplayName": "Orbeetle 020/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      826
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Dottler",
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-020-low.png",
+    "imageHighSrc": "cards/swsh11-020-high.png"
+  },
+  {
+    "masterCardId": "14574",
+    "externalId": null,
+    "tcgdex_id": "swsh11-019",
+    "localId": "019",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "019/196",
+    "cardName": "Dottler",
+    "fullDisplayName": "Dottler 019/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      825
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Blipbug",
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-019-low.png",
+    "imageHighSrc": "cards/swsh11-019-high.png"
+  },
+  {
+    "masterCardId": "14563",
+    "externalId": null,
+    "tcgdex_id": "swsh11-018",
+    "localId": "018",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "018/196",
+    "cardName": "Blipbug",
+    "fullDisplayName": "Blipbug 018/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      824
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Asako Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-018-low.png",
+    "imageHighSrc": "cards/swsh11-018-high.png"
+  },
+  {
+    "masterCardId": "14557",
+    "externalId": null,
+    "tcgdex_id": "swsh11-017",
+    "localId": "017",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "017/196",
+    "cardName": "Trevenant",
+    "fullDisplayName": "Trevenant 017/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      709
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Phantump",
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-017-low.png",
+    "imageHighSrc": "cards/swsh11-017-high.png"
+  },
+  {
+    "masterCardId": "14546",
+    "externalId": null,
+    "tcgdex_id": "swsh11-016",
+    "localId": "016",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "016/196",
+    "cardName": "Phantump",
+    "fullDisplayName": "Phantump 016/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      708
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "AKIRA EGAWA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-016-low.png",
+    "imageHighSrc": "cards/swsh11-016-high.png"
+  },
+  {
+    "masterCardId": "14537",
+    "externalId": null,
+    "tcgdex_id": "swsh11-015",
+    "localId": "015",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "015/196",
+    "cardName": "Roserade",
+    "fullDisplayName": "Roserade 015/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      407
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Roselia",
+    "artist": "0313",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-015-low.png",
+    "imageHighSrc": "cards/swsh11-015-high.png"
+  },
+  {
+    "masterCardId": "14527",
+    "externalId": null,
+    "tcgdex_id": "swsh11-014",
+    "localId": "014",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "014/196",
+    "cardName": "Roselia",
+    "fullDisplayName": "Roselia 014/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      315
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-014-low.png",
+    "imageHighSrc": "cards/swsh11-014-high.png"
+  },
+  {
+    "masterCardId": "14516",
+    "externalId": null,
+    "tcgdex_id": "swsh11-013",
+    "localId": "013",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "013/196",
+    "cardName": "Shiftry",
+    "fullDisplayName": "Shiftry 013/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      275
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Nuzleaf",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-013-low.png",
+    "imageHighSrc": "cards/swsh11-013-high.png"
+  },
+  {
+    "masterCardId": "14507",
+    "externalId": null,
+    "tcgdex_id": "swsh11-012",
+    "localId": "012",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "012/196",
+    "cardName": "Nuzleaf",
+    "fullDisplayName": "Nuzleaf 012/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      274
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Seedot",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-012-low.png",
+    "imageHighSrc": "cards/swsh11-012-high.png"
+  },
+  {
+    "masterCardId": "14499",
+    "externalId": null,
+    "tcgdex_id": "swsh11-011",
+    "localId": "011",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "011/196",
+    "cardName": "Seedot",
+    "fullDisplayName": "Seedot 011/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      273
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-011-low.png",
+    "imageHighSrc": "cards/swsh11-011-high.png"
+  },
+  {
+    "masterCardId": "14488",
+    "externalId": null,
+    "tcgdex_id": "swsh11-010",
+    "localId": "010",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "010/196",
+    "cardName": "Dustox",
+    "fullDisplayName": "Dustox 010/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      269
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Cascoon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-010-low.png",
+    "imageHighSrc": "cards/swsh11-010-high.png"
+  },
+  {
+    "masterCardId": "14480",
+    "externalId": null,
+    "tcgdex_id": "swsh11-009",
+    "localId": "009",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "009/196",
+    "cardName": "Cascoon",
+    "fullDisplayName": "Cascoon 009/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      268
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Wurmple",
+    "artist": "GOSSAN",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-009-low.png",
+    "imageHighSrc": "cards/swsh11-009-high.png"
+  },
+  {
+    "masterCardId": "14472",
+    "externalId": null,
+    "tcgdex_id": "swsh11-008",
+    "localId": "008",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "008/196",
+    "cardName": "Beautifly",
+    "fullDisplayName": "Beautifly 008/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      267
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Silcoon",
+    "artist": "Yuu Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-008-low.png",
+    "imageHighSrc": "cards/swsh11-008-high.png"
+  },
+  {
+    "masterCardId": "14462",
+    "externalId": null,
+    "tcgdex_id": "swsh11-007",
+    "localId": "007",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "007/196",
+    "cardName": "Silcoon",
+    "fullDisplayName": "Silcoon 007/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      266
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Wurmple",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-007-low.png",
+    "imageHighSrc": "cards/swsh11-007-high.png"
+  },
+  {
+    "masterCardId": "14452",
+    "externalId": null,
+    "tcgdex_id": "swsh11-006",
+    "localId": "006",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "006/196",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 006/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "ryoma uratsuka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-006-low.png",
+    "imageHighSrc": "cards/swsh11-006-high.png"
+  },
+  {
+    "masterCardId": "14436",
+    "externalId": null,
+    "tcgdex_id": "swsh11-005",
+    "localId": "005",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "005/196",
+    "cardName": "Parasect",
+    "fullDisplayName": "Parasect 005/196 Lost Origin",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      47
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Paras",
+    "artist": "Pani Kobayashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-005-low.png",
+    "imageHighSrc": "cards/swsh11-005-high.png"
+  },
+  {
+    "masterCardId": "14426",
+    "externalId": null,
+    "tcgdex_id": "swsh11-004",
+    "localId": "004",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "004/196",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 004/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-004-low.png",
+    "imageHighSrc": "cards/swsh11-004-high.png"
+  },
+  {
+    "masterCardId": "14417",
+    "externalId": null,
+    "tcgdex_id": "swsh11-003",
+    "localId": "003",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "003/196",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 003/196 Lost Origin",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Gloom",
+    "artist": "Jiro Sasumo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-003-low.png",
+    "imageHighSrc": "cards/swsh11-003-high.png"
+  },
+  {
+    "masterCardId": "14408",
+    "externalId": null,
+    "tcgdex_id": "swsh11-002",
+    "localId": "002",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "002/196",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 002/196 Lost Origin",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": "Oddish",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-002-low.png",
+    "imageHighSrc": "cards/swsh11-002-high.png"
+  },
+  {
+    "masterCardId": "14400",
+    "externalId": null,
+    "tcgdex_id": "swsh11-001",
+    "localId": "001",
+    "setCode": "swsh11",
+    "setTcgdexId": "swsh11",
+    "cardNumber": "001/196",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 001/196 Lost Origin",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "F",
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/swsh11-001-low.png",
+    "imageHighSrc": "cards/swsh11-001-high.png"
+  }
+]

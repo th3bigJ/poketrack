@@ -1,0 +1,3639 @@
+[
+  {
+    "masterCardId": "20035",
+    "externalId": null,
+    "tcgdex_id": "xy6-110",
+    "localId": "110",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "110/108",
+    "cardName": "VS Seeker",
+    "fullDisplayName": "VS Seeker 110/108 Roaring Skies",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-110-low.png",
+    "imageHighSrc": "cards/xy6-110-high.png"
+  },
+  {
+    "masterCardId": "20028",
+    "externalId": null,
+    "tcgdex_id": "xy6-109",
+    "localId": "109",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "109/108",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 109/108 Roaring Skies",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-109-low.png",
+    "imageHighSrc": "cards/xy6-109-high.png"
+  },
+  {
+    "masterCardId": "20020",
+    "externalId": null,
+    "tcgdex_id": "xy6-108",
+    "localId": "108",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "108/108",
+    "cardName": "Winona",
+    "fullDisplayName": "Winona 108/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-108-low.png",
+    "imageHighSrc": "cards/xy6-108-high.png"
+  },
+  {
+    "masterCardId": "20011",
+    "externalId": null,
+    "tcgdex_id": "xy6-107",
+    "localId": "107",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "107/108",
+    "cardName": "Wally",
+    "fullDisplayName": "Wally 107/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Ando",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-107-low.png",
+    "imageHighSrc": "cards/xy6-107-high.png"
+  },
+  {
+    "masterCardId": "20002",
+    "externalId": null,
+    "tcgdex_id": "xy6-106",
+    "localId": "106",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "106/108",
+    "cardName": "Shaymin-EX",
+    "fullDisplayName": "Shaymin-EX 106/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-106-low.png",
+    "imageHighSrc": "cards/xy6-106-high.png"
+  },
+  {
+    "masterCardId": "19993",
+    "externalId": null,
+    "tcgdex_id": "xy6-105",
+    "localId": "105",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "105/108",
+    "cardName": "M Rayquaza-EX",
+    "fullDisplayName": "M Rayquaza-EX 105/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-105-low.png",
+    "imageHighSrc": "cards/xy6-105-high.png"
+  },
+  {
+    "masterCardId": "19984",
+    "externalId": null,
+    "tcgdex_id": "xy6-104",
+    "localId": "104",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "104/108",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX 104/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-104-low.png",
+    "imageHighSrc": "cards/xy6-104-high.png"
+  },
+  {
+    "masterCardId": "19975",
+    "externalId": null,
+    "tcgdex_id": "xy6-103",
+    "localId": "103",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "103/108",
+    "cardName": "Hydreigon-EX",
+    "fullDisplayName": "Hydreigon-EX 103/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-103-low.png",
+    "imageHighSrc": "cards/xy6-103-high.png"
+  },
+  {
+    "masterCardId": "19966",
+    "externalId": null,
+    "tcgdex_id": "xy6-102",
+    "localId": "102",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "102/108",
+    "cardName": "M Latios-EX",
+    "fullDisplayName": "M Latios-EX 102/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Latios-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-102-low.png",
+    "imageHighSrc": "cards/xy6-102-high.png"
+  },
+  {
+    "masterCardId": "19957",
+    "externalId": null,
+    "tcgdex_id": "xy6-101",
+    "localId": "101",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "101/108",
+    "cardName": "Latios-EX",
+    "fullDisplayName": "Latios-EX 101/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-101-low.png",
+    "imageHighSrc": "cards/xy6-101-high.png"
+  },
+  {
+    "masterCardId": "19948",
+    "externalId": null,
+    "tcgdex_id": "xy6-100",
+    "localId": "100",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "100/108",
+    "cardName": "M Gallade-EX",
+    "fullDisplayName": "M Gallade-EX 100/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gallade-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-100-low.png",
+    "imageHighSrc": "cards/xy6-100-high.png"
+  },
+  {
+    "masterCardId": "19939",
+    "externalId": null,
+    "tcgdex_id": "xy6-99",
+    "localId": "099",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "099/108",
+    "cardName": "Gallade-EX",
+    "fullDisplayName": "Gallade-EX 099/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-099-low.png",
+    "imageHighSrc": "cards/xy6-099-high.png"
+  },
+  {
+    "masterCardId": "19930",
+    "externalId": null,
+    "tcgdex_id": "xy6-98",
+    "localId": "098",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "098/108",
+    "cardName": "Thundurus-EX",
+    "fullDisplayName": "Thundurus-EX 098/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-098-low.png",
+    "imageHighSrc": "cards/xy6-098-high.png"
+  },
+  {
+    "masterCardId": "19921",
+    "externalId": null,
+    "tcgdex_id": "xy6-97",
+    "localId": "097",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "097/108",
+    "cardName": "Double Dragon Energy",
+    "fullDisplayName": "Double Dragon Energy 097/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-097-low.png",
+    "imageHighSrc": "cards/xy6-097-high.png"
+  },
+  {
+    "masterCardId": "19912",
+    "externalId": null,
+    "tcgdex_id": "xy6-96",
+    "localId": "096",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "096/108",
+    "cardName": "Winona",
+    "fullDisplayName": "Winona 096/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-096-low.png",
+    "imageHighSrc": "cards/xy6-096-high.png"
+  },
+  {
+    "masterCardId": "19902",
+    "externalId": null,
+    "tcgdex_id": "xy6-95",
+    "localId": "095",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "095/108",
+    "cardName": "Wide Lens",
+    "fullDisplayName": "Wide Lens 095/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-095-low.png",
+    "imageHighSrc": "cards/xy6-095-high.png"
+  },
+  {
+    "masterCardId": "19894",
+    "externalId": null,
+    "tcgdex_id": "xy6-94",
+    "localId": "094",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "094/108",
+    "cardName": "Wally",
+    "fullDisplayName": "Wally 094/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-094-low.png",
+    "imageHighSrc": "cards/xy6-094-high.png"
+  },
+  {
+    "masterCardId": "19885",
+    "externalId": null,
+    "tcgdex_id": "xy6-93",
+    "localId": "093",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "093/108",
+    "cardName": "Ultra Ball",
+    "fullDisplayName": "Ultra Ball 093/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-093-low.png",
+    "imageHighSrc": "cards/xy6-093-high.png"
+  },
+  {
+    "masterCardId": "19876",
+    "externalId": null,
+    "tcgdex_id": "xy6-92a",
+    "localId": "92a",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "92a/108",
+    "cardName": "Trainers' Mail",
+    "fullDisplayName": "Trainers' Mail 92a/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-92a-low.png",
+    "imageHighSrc": "cards/xy6-92a-high.png"
+  },
+  {
+    "masterCardId": "19867",
+    "externalId": null,
+    "tcgdex_id": "xy6-92",
+    "localId": "092",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "092/108",
+    "cardName": "Trainers' Mail",
+    "fullDisplayName": "Trainers' Mail 092/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-092-low.png",
+    "imageHighSrc": "cards/xy6-092-high.png"
+  },
+  {
+    "masterCardId": "19858",
+    "externalId": null,
+    "tcgdex_id": "xy6-91",
+    "localId": "091",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "091/108",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 091/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-091-low.png",
+    "imageHighSrc": "cards/xy6-091-high.png"
+  },
+  {
+    "masterCardId": "19849",
+    "externalId": null,
+    "tcgdex_id": "xy6-90",
+    "localId": "090",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "090/108",
+    "cardName": "Steven",
+    "fullDisplayName": "Steven 090/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-090-low.png",
+    "imageHighSrc": "cards/xy6-090-high.png"
+  },
+  {
+    "masterCardId": "19839",
+    "externalId": null,
+    "tcgdex_id": "xy6-89",
+    "localId": "089",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "089/108",
+    "cardName": "Sky Field",
+    "fullDisplayName": "Sky Field 089/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-089-low.png",
+    "imageHighSrc": "cards/xy6-089-high.png"
+  },
+  {
+    "masterCardId": "19829",
+    "externalId": null,
+    "tcgdex_id": "xy6-88",
+    "localId": "088",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "088/108",
+    "cardName": "Revive",
+    "fullDisplayName": "Revive 088/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-088-low.png",
+    "imageHighSrc": "cards/xy6-088-high.png"
+  },
+  {
+    "masterCardId": "19820",
+    "externalId": null,
+    "tcgdex_id": "xy6-87",
+    "localId": "087",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "087/108",
+    "cardName": "Rayquaza Spirit Link",
+    "fullDisplayName": "Rayquaza Spirit Link 087/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-087-low.png",
+    "imageHighSrc": "cards/xy6-087-high.png"
+  },
+  {
+    "masterCardId": "19811",
+    "externalId": null,
+    "tcgdex_id": "xy6-86",
+    "localId": "086",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "086/108",
+    "cardName": "Mega Turbo",
+    "fullDisplayName": "Mega Turbo 086/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-086-low.png",
+    "imageHighSrc": "cards/xy6-086-high.png"
+  },
+  {
+    "masterCardId": "19801",
+    "externalId": null,
+    "tcgdex_id": "xy6-85",
+    "localId": "085",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "085/108",
+    "cardName": "Latios Spirit Link",
+    "fullDisplayName": "Latios Spirit Link 085/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-085-low.png",
+    "imageHighSrc": "cards/xy6-085-high.png"
+  },
+  {
+    "masterCardId": "19792",
+    "externalId": null,
+    "tcgdex_id": "xy6-84",
+    "localId": "084",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "084/108",
+    "cardName": "Healing Scarf",
+    "fullDisplayName": "Healing Scarf 084/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-084-low.png",
+    "imageHighSrc": "cards/xy6-084-high.png"
+  },
+  {
+    "masterCardId": "19783",
+    "externalId": null,
+    "tcgdex_id": "xy6-83",
+    "localId": "083",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "083/108",
+    "cardName": "Gallade Spirit Link",
+    "fullDisplayName": "Gallade Spirit Link 083/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-083-low.png",
+    "imageHighSrc": "cards/xy6-083-high.png"
+  },
+  {
+    "masterCardId": "19774",
+    "externalId": null,
+    "tcgdex_id": "xy6-82",
+    "localId": "082",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "082/108",
+    "cardName": "Fletchling",
+    "fullDisplayName": "Fletchling 082/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      661
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-082-low.png",
+    "imageHighSrc": "cards/xy6-082-high.png"
+  },
+  {
+    "masterCardId": "19765",
+    "externalId": null,
+    "tcgdex_id": "xy6-81",
+    "localId": "081",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "081/108",
+    "cardName": "Unfezant",
+    "fullDisplayName": "Unfezant 081/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      521
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tranquill",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-081-low.png",
+    "imageHighSrc": "cards/xy6-081-high.png"
+  },
+  {
+    "masterCardId": "19755",
+    "externalId": null,
+    "tcgdex_id": "xy6-80",
+    "localId": "080",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "080/108",
+    "cardName": "Unfezant",
+    "fullDisplayName": "Unfezant 080/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      521
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tranquill",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-080-low.png",
+    "imageHighSrc": "cards/xy6-080-high.png"
+  },
+  {
+    "masterCardId": "19746",
+    "externalId": null,
+    "tcgdex_id": "xy6-79",
+    "localId": "079",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "079/108",
+    "cardName": "Tranquill",
+    "fullDisplayName": "Tranquill 079/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      520
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidove",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-079-low.png",
+    "imageHighSrc": "cards/xy6-079-high.png"
+  },
+  {
+    "masterCardId": "19737",
+    "externalId": null,
+    "tcgdex_id": "xy6-78",
+    "localId": "078",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "078/108",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove 078/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-078-low.png",
+    "imageHighSrc": "cards/xy6-078-high.png"
+  },
+  {
+    "masterCardId": "19727",
+    "externalId": null,
+    "tcgdex_id": "xy6-77a",
+    "localId": "77a",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "77a/108",
+    "cardName": "Shaymin-EX",
+    "fullDisplayName": "Shaymin-EX 77a/108 Roaring Skies",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-77a-low.png",
+    "imageHighSrc": "cards/xy6-77a-high.png"
+  },
+  {
+    "masterCardId": "19718",
+    "externalId": null,
+    "tcgdex_id": "xy6-77",
+    "localId": "077",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "077/108",
+    "cardName": "Shaymin-EX",
+    "fullDisplayName": "Shaymin-EX 077/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      492
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-077-low.png",
+    "imageHighSrc": "cards/xy6-077-high.png"
+  },
+  {
+    "masterCardId": "19709",
+    "externalId": null,
+    "tcgdex_id": "xy6-76",
+    "localId": "076",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "076/108",
+    "cardName": "M Rayquaza-EX",
+    "fullDisplayName": "M Rayquaza-EX 076/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-076-low.png",
+    "imageHighSrc": "cards/xy6-076-high.png"
+  },
+  {
+    "masterCardId": "19701",
+    "externalId": null,
+    "tcgdex_id": "xy6-75",
+    "localId": "075",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "075/108",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX 075/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-075-low.png",
+    "imageHighSrc": "cards/xy6-075-high.png"
+  },
+  {
+    "masterCardId": "19692",
+    "externalId": null,
+    "tcgdex_id": "xy6-74",
+    "localId": "074",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "074/108",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 074/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-074-low.png",
+    "imageHighSrc": "cards/xy6-074-high.png"
+  },
+  {
+    "masterCardId": "19683",
+    "externalId": null,
+    "tcgdex_id": "xy6-73",
+    "localId": "073",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "073/108",
+    "cardName": "Swablu",
+    "fullDisplayName": "Swablu 073/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      333
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-073-low.png",
+    "imageHighSrc": "cards/xy6-073-high.png"
+  },
+  {
+    "masterCardId": "19673",
+    "externalId": null,
+    "tcgdex_id": "xy6-72",
+    "localId": "072",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "072/108",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 072/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-072-low.png",
+    "imageHighSrc": "cards/xy6-072-high.png"
+  },
+  {
+    "masterCardId": "19664",
+    "externalId": null,
+    "tcgdex_id": "xy6-71",
+    "localId": "071",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "071/108",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 071/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-071-low.png",
+    "imageHighSrc": "cards/xy6-071-high.png"
+  },
+  {
+    "masterCardId": "19655",
+    "externalId": null,
+    "tcgdex_id": "xy6-70",
+    "localId": "070",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "070/108",
+    "cardName": "Taillow",
+    "fullDisplayName": "Taillow 070/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      276
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-070-low.png",
+    "imageHighSrc": "cards/xy6-070-high.png"
+  },
+  {
+    "masterCardId": "19648",
+    "externalId": null,
+    "tcgdex_id": "xy6-69",
+    "localId": "069",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "069/108",
+    "cardName": "Skarmory",
+    "fullDisplayName": "Skarmory 069/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      227
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-069-low.png",
+    "imageHighSrc": "cards/xy6-069-high.png"
+  },
+  {
+    "masterCardId": "19638",
+    "externalId": null,
+    "tcgdex_id": "xy6-68",
+    "localId": "068",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "068/108",
+    "cardName": "Dunsparce",
+    "fullDisplayName": "Dunsparce 068/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      206
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yuka Morii",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-068-low.png",
+    "imageHighSrc": "cards/xy6-068-high.png"
+  },
+  {
+    "masterCardId": "19628",
+    "externalId": null,
+    "tcgdex_id": "xy6-67",
+    "localId": "067",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "067/108",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 067/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-067-low.png",
+    "imageHighSrc": "cards/xy6-067-high.png"
+  },
+  {
+    "masterCardId": "19618",
+    "externalId": null,
+    "tcgdex_id": "xy6-66",
+    "localId": "066",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "066/108",
+    "cardName": "Fearow",
+    "fullDisplayName": "Fearow 066/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      22
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spearow",
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-066-low.png",
+    "imageHighSrc": "cards/xy6-066-high.png"
+  },
+  {
+    "masterCardId": "19609",
+    "externalId": null,
+    "tcgdex_id": "xy6-65",
+    "localId": "065",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "065/108",
+    "cardName": "Spearow",
+    "fullDisplayName": "Spearow 065/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      21
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-065-low.png",
+    "imageHighSrc": "cards/xy6-065-high.png"
+  },
+  {
+    "masterCardId": "19600",
+    "externalId": null,
+    "tcgdex_id": "xy6-64",
+    "localId": "064",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "064/108",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom 064/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-064-low.png",
+    "imageHighSrc": "cards/xy6-064-high.png"
+  },
+  {
+    "masterCardId": "19590",
+    "externalId": null,
+    "tcgdex_id": "xy6-63",
+    "localId": "063",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "063/108",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram 063/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-063-low.png",
+    "imageHighSrc": "cards/xy6-063-high.png"
+  },
+  {
+    "masterCardId": "19581",
+    "externalId": null,
+    "tcgdex_id": "xy6-62",
+    "localId": "062",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "062/108",
+    "cardName": "Hydreigon-EX",
+    "fullDisplayName": "Hydreigon-EX 062/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      635
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-062-low.png",
+    "imageHighSrc": "cards/xy6-062-high.png"
+  },
+  {
+    "masterCardId": "19572",
+    "externalId": null,
+    "tcgdex_id": "xy6-61",
+    "localId": "061",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "061/108",
+    "cardName": "M Rayquaza-EX",
+    "fullDisplayName": "M Rayquaza-EX 061/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rayquaza-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-061-low.png",
+    "imageHighSrc": "cards/xy6-061-high.png"
+  },
+  {
+    "masterCardId": "19563",
+    "externalId": null,
+    "tcgdex_id": "xy6-60",
+    "localId": "060",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "060/108",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX 060/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-060-low.png",
+    "imageHighSrc": "cards/xy6-060-high.png"
+  },
+  {
+    "masterCardId": "19554",
+    "externalId": null,
+    "tcgdex_id": "xy6-59",
+    "localId": "059",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "059/108",
+    "cardName": "M Latios-EX",
+    "fullDisplayName": "M Latios-EX 059/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Latios-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-059-low.png",
+    "imageHighSrc": "cards/xy6-059-high.png"
+  },
+  {
+    "masterCardId": "19545",
+    "externalId": null,
+    "tcgdex_id": "xy6-58",
+    "localId": "058",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "058/108",
+    "cardName": "Latios-EX",
+    "fullDisplayName": "Latios-EX 058/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-058-low.png",
+    "imageHighSrc": "cards/xy6-058-high.png"
+  },
+  {
+    "masterCardId": "19536",
+    "externalId": null,
+    "tcgdex_id": "xy6-57",
+    "localId": "057",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "057/108",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 057/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-057-low.png",
+    "imageHighSrc": "cards/xy6-057-high.png"
+  },
+  {
+    "masterCardId": "19527",
+    "externalId": null,
+    "tcgdex_id": "xy6-56",
+    "localId": "056",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "056/108",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 056/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-056-low.png",
+    "imageHighSrc": "cards/xy6-056-high.png"
+  },
+  {
+    "masterCardId": "19518",
+    "externalId": null,
+    "tcgdex_id": "xy6-55",
+    "localId": "055",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "055/108",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 055/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-055-low.png",
+    "imageHighSrc": "cards/xy6-055-high.png"
+  },
+  {
+    "masterCardId": "19509",
+    "externalId": null,
+    "tcgdex_id": "xy6-54",
+    "localId": "054",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "054/108",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 054/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-054-low.png",
+    "imageHighSrc": "cards/xy6-054-high.png"
+  },
+  {
+    "masterCardId": "19500",
+    "externalId": null,
+    "tcgdex_id": "xy6-53",
+    "localId": "053",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "053/108",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria 053/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-053-low.png",
+    "imageHighSrc": "cards/xy6-053-high.png"
+  },
+  {
+    "masterCardId": "19491",
+    "externalId": null,
+    "tcgdex_id": "xy6-52",
+    "localId": "052",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "052/108",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 052/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "hatachu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-052-low.png",
+    "imageHighSrc": "cards/xy6-052-high.png"
+  },
+  {
+    "masterCardId": "19482",
+    "externalId": null,
+    "tcgdex_id": "xy6-51",
+    "localId": "051",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "051/108",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 051/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-051-low.png",
+    "imageHighSrc": "cards/xy6-051-high.png"
+  },
+  {
+    "masterCardId": "19473",
+    "externalId": null,
+    "tcgdex_id": "xy6-50",
+    "localId": "050",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "050/108",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 050/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-050-low.png",
+    "imageHighSrc": "cards/xy6-050-high.png"
+  },
+  {
+    "masterCardId": "19464",
+    "externalId": null,
+    "tcgdex_id": "xy6-49",
+    "localId": "049",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "049/108",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 049/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Miki Tanaka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-049-low.png",
+    "imageHighSrc": "cards/xy6-049-high.png"
+  },
+  {
+    "masterCardId": "19455",
+    "externalId": null,
+    "tcgdex_id": "xy6-48",
+    "localId": "048",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "048/108",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 048/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-048-low.png",
+    "imageHighSrc": "cards/xy6-048-high.png"
+  },
+  {
+    "masterCardId": "19446",
+    "externalId": null,
+    "tcgdex_id": "xy6-47",
+    "localId": "047",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "047/108",
+    "cardName": "Carbink",
+    "fullDisplayName": "Carbink 047/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      703
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-047-low.png",
+    "imageHighSrc": "cards/xy6-047-high.png"
+  },
+  {
+    "masterCardId": "19437",
+    "externalId": null,
+    "tcgdex_id": "xy6-46",
+    "localId": "046",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "046/108",
+    "cardName": "Togekiss",
+    "fullDisplayName": "Togekiss 046/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      468
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togetic",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-046-low.png",
+    "imageHighSrc": "cards/xy6-046-high.png"
+  },
+  {
+    "masterCardId": "19428",
+    "externalId": null,
+    "tcgdex_id": "xy6-45",
+    "localId": "045",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "045/108",
+    "cardName": "Togekiss",
+    "fullDisplayName": "Togekiss 045/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      468
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togetic",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-045-low.png",
+    "imageHighSrc": "cards/xy6-045-high.png"
+  },
+  {
+    "masterCardId": "19420",
+    "externalId": null,
+    "tcgdex_id": "xy6-44",
+    "localId": "044",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "044/108",
+    "cardName": "Togetic",
+    "fullDisplayName": "Togetic 044/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      176
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Togepi",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-044-low.png",
+    "imageHighSrc": "cards/xy6-044-high.png"
+  },
+  {
+    "masterCardId": "19410",
+    "externalId": null,
+    "tcgdex_id": "xy6-43",
+    "localId": "043",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "043/108",
+    "cardName": "Togepi",
+    "fullDisplayName": "Togepi 043/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-043-low.png",
+    "imageHighSrc": "cards/xy6-043-high.png"
+  },
+  {
+    "masterCardId": "19402",
+    "externalId": null,
+    "tcgdex_id": "xy6-42",
+    "localId": "042",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "042/108",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 042/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-042-low.png",
+    "imageHighSrc": "cards/xy6-042-high.png"
+  },
+  {
+    "masterCardId": "19393",
+    "externalId": null,
+    "tcgdex_id": "xy6-41",
+    "localId": "041",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "041/108",
+    "cardName": "Inkay",
+    "fullDisplayName": "Inkay 041/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      686
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-041-low.png",
+    "imageHighSrc": "cards/xy6-041-high.png"
+  },
+  {
+    "masterCardId": "19383",
+    "externalId": null,
+    "tcgdex_id": "xy6-40",
+    "localId": "040",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "040/108",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 040/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-040-low.png",
+    "imageHighSrc": "cards/xy6-040-high.png"
+  },
+  {
+    "masterCardId": "19375",
+    "externalId": null,
+    "tcgdex_id": "xy6-39",
+    "localId": "039",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "039/108",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 039/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-039-low.png",
+    "imageHighSrc": "cards/xy6-039-high.png"
+  },
+  {
+    "masterCardId": "19365",
+    "externalId": null,
+    "tcgdex_id": "xy6-38",
+    "localId": "038",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "038/108",
+    "cardName": "Binacle",
+    "fullDisplayName": "Binacle 038/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      688
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-038-low.png",
+    "imageHighSrc": "cards/xy6-038-high.png"
+  },
+  {
+    "masterCardId": "19355",
+    "externalId": null,
+    "tcgdex_id": "xy6-37",
+    "localId": "037",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "037/108",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 037/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-037-low.png",
+    "imageHighSrc": "cards/xy6-037-high.png"
+  },
+  {
+    "masterCardId": "19345",
+    "externalId": null,
+    "tcgdex_id": "xy6-36",
+    "localId": "036",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "036/108",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 036/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-036-low.png",
+    "imageHighSrc": "cards/xy6-036-high.png"
+  },
+  {
+    "masterCardId": "19335",
+    "externalId": null,
+    "tcgdex_id": "xy6-35",
+    "localId": "035",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "035/108",
+    "cardName": "M Gallade-EX",
+    "fullDisplayName": "M Gallade-EX 035/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gallade-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-035-low.png",
+    "imageHighSrc": "cards/xy6-035-high.png"
+  },
+  {
+    "masterCardId": "19324",
+    "externalId": null,
+    "tcgdex_id": "xy6-34",
+    "localId": "034",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "034/108",
+    "cardName": "Gallade-EX",
+    "fullDisplayName": "Gallade-EX 034/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      475
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-034-low.png",
+    "imageHighSrc": "cards/xy6-034-high.png"
+  },
+  {
+    "masterCardId": "19315",
+    "externalId": null,
+    "tcgdex_id": "xy6-33",
+    "localId": "033",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "033/108",
+    "cardName": "Deoxys",
+    "fullDisplayName": "Deoxys 033/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-033-low.png",
+    "imageHighSrc": "cards/xy6-033-high.png"
+  },
+  {
+    "masterCardId": "19305",
+    "externalId": null,
+    "tcgdex_id": "xy6-32",
+    "localId": "032",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "032/108",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 032/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-032-low.png",
+    "imageHighSrc": "cards/xy6-032-high.png"
+  },
+  {
+    "masterCardId": "19294",
+    "externalId": null,
+    "tcgdex_id": "xy6-31",
+    "localId": "031",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "031/108",
+    "cardName": "Banette",
+    "fullDisplayName": "Banette 031/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      354
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shuppet",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-031-low.png",
+    "imageHighSrc": "cards/xy6-031-high.png"
+  },
+  {
+    "masterCardId": "19283",
+    "externalId": null,
+    "tcgdex_id": "xy6-30",
+    "localId": "030",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "030/108",
+    "cardName": "Shuppet",
+    "fullDisplayName": "Shuppet 030/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      353
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yukiko Baba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-030-low.png",
+    "imageHighSrc": "cards/xy6-030-high.png"
+  },
+  {
+    "masterCardId": "19272",
+    "externalId": null,
+    "tcgdex_id": "xy6-29",
+    "localId": "029",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "029/108",
+    "cardName": "Xatu",
+    "fullDisplayName": "Xatu 029/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      178
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Natu",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-029-low.png",
+    "imageHighSrc": "cards/xy6-029-high.png"
+  },
+  {
+    "masterCardId": "19262",
+    "externalId": null,
+    "tcgdex_id": "xy6-28",
+    "localId": "028",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "028/108",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 028/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-028-low.png",
+    "imageHighSrc": "cards/xy6-028-high.png"
+  },
+  {
+    "masterCardId": "19249",
+    "externalId": null,
+    "tcgdex_id": "xy6-27",
+    "localId": "027",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "027/108",
+    "cardName": "Natu",
+    "fullDisplayName": "Natu 027/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      177
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-027-low.png",
+    "imageHighSrc": "cards/xy6-027-high.png"
+  },
+  {
+    "masterCardId": "19239",
+    "externalId": null,
+    "tcgdex_id": "xy6-26",
+    "localId": "026",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "026/108",
+    "cardName": "Thundurus-EX",
+    "fullDisplayName": "Thundurus-EX 026/108 Roaring Skies",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-026-low.png",
+    "imageHighSrc": "cards/xy6-026-high.png"
+  },
+  {
+    "masterCardId": "19230",
+    "externalId": null,
+    "tcgdex_id": "xy6-25",
+    "localId": "025",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "025/108",
+    "cardName": "Manectric",
+    "fullDisplayName": "Manectric 025/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electrike",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-025-low.png",
+    "imageHighSrc": "cards/xy6-025-high.png"
+  },
+  {
+    "masterCardId": "19220",
+    "externalId": null,
+    "tcgdex_id": "xy6-24",
+    "localId": "024",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "024/108",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 024/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-024-low.png",
+    "imageHighSrc": "cards/xy6-024-high.png"
+  },
+  {
+    "masterCardId": "19210",
+    "externalId": null,
+    "tcgdex_id": "xy6-23",
+    "localId": "023",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "023/108",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 023/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-023-low.png",
+    "imageHighSrc": "cards/xy6-023-high.png"
+  },
+  {
+    "masterCardId": "19200",
+    "externalId": null,
+    "tcgdex_id": "xy6-22",
+    "localId": "022",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "022/108",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 022/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-022-low.png",
+    "imageHighSrc": "cards/xy6-022-high.png"
+  },
+  {
+    "masterCardId": "19190",
+    "externalId": null,
+    "tcgdex_id": "xy6-21",
+    "localId": "021",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "021/108",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 021/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-021-low.png",
+    "imageHighSrc": "cards/xy6-021-high.png"
+  },
+  {
+    "masterCardId": "19180",
+    "externalId": null,
+    "tcgdex_id": "xy6-20",
+    "localId": "020",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "020/108",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 020/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-020-low.png",
+    "imageHighSrc": "cards/xy6-020-high.png"
+  },
+  {
+    "masterCardId": "19172",
+    "externalId": null,
+    "tcgdex_id": "xy6-19",
+    "localId": "019",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "019/108",
+    "cardName": "Pelipper",
+    "fullDisplayName": "Pelipper 019/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-019-low.png",
+    "imageHighSrc": "cards/xy6-019-high.png"
+  },
+  {
+    "masterCardId": "19162",
+    "externalId": null,
+    "tcgdex_id": "xy6-18",
+    "localId": "018",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "018/108",
+    "cardName": "Wingull",
+    "fullDisplayName": "Wingull 018/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      278
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-018-low.png",
+    "imageHighSrc": "cards/xy6-018-high.png"
+  },
+  {
+    "masterCardId": "19151",
+    "externalId": null,
+    "tcgdex_id": "xy6-17",
+    "localId": "017",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "017/108",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 017/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-017-low.png",
+    "imageHighSrc": "cards/xy6-017-high.png"
+  },
+  {
+    "masterCardId": "19141",
+    "externalId": null,
+    "tcgdex_id": "xy6-16",
+    "localId": "016",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "016/108",
+    "cardName": "Articuno",
+    "fullDisplayName": "Articuno 016/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      144
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-016-low.png",
+    "imageHighSrc": "cards/xy6-016-high.png"
+  },
+  {
+    "masterCardId": "19131",
+    "externalId": null,
+    "tcgdex_id": "xy6-15",
+    "localId": "015",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "015/108",
+    "cardName": "Talonflame",
+    "fullDisplayName": "Talonflame 015/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      663
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchinder",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-015-low.png",
+    "imageHighSrc": "cards/xy6-015-high.png"
+  },
+  {
+    "masterCardId": "19122",
+    "externalId": null,
+    "tcgdex_id": "xy6-14",
+    "localId": "014",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "014/108",
+    "cardName": "Fletchinder",
+    "fullDisplayName": "Fletchinder 014/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      662
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fletchling",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-014-low.png",
+    "imageHighSrc": "cards/xy6-014-high.png"
+  },
+  {
+    "masterCardId": "19111",
+    "externalId": null,
+    "tcgdex_id": "xy6-13",
+    "localId": "013",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "013/108",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini 013/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-013-low.png",
+    "imageHighSrc": "cards/xy6-013-high.png"
+  },
+  {
+    "masterCardId": "19101",
+    "externalId": null,
+    "tcgdex_id": "xy6-12",
+    "localId": "012",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "012/108",
+    "cardName": "Tropius",
+    "fullDisplayName": "Tropius 012/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      357
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-012-low.png",
+    "imageHighSrc": "cards/xy6-012-high.png"
+  },
+  {
+    "masterCardId": "19092",
+    "externalId": null,
+    "tcgdex_id": "xy6-11",
+    "localId": "011",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "011/108",
+    "cardName": "Shedinja",
+    "fullDisplayName": "Shedinja 011/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 30,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      292
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Aya Kusube",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-011-low.png",
+    "imageHighSrc": "cards/xy6-011-high.png"
+  },
+  {
+    "masterCardId": "19083",
+    "externalId": null,
+    "tcgdex_id": "xy6-10",
+    "localId": "010",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "010/108",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 010/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-010-low.png",
+    "imageHighSrc": "cards/xy6-010-high.png"
+  },
+  {
+    "masterCardId": "19073",
+    "externalId": null,
+    "tcgdex_id": "xy6-9",
+    "localId": "009",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "009/108",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 009/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-009-low.png",
+    "imageHighSrc": "cards/xy6-009-high.png"
+  },
+  {
+    "masterCardId": "19062",
+    "externalId": null,
+    "tcgdex_id": "xy6-8",
+    "localId": "008",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "008/108",
+    "cardName": "Dustox",
+    "fullDisplayName": "Dustox 008/108 Roaring Skies",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      269
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cascoon",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-008-low.png",
+    "imageHighSrc": "cards/xy6-008-high.png"
+  },
+  {
+    "masterCardId": "19052",
+    "externalId": null,
+    "tcgdex_id": "xy6-7",
+    "localId": "007",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "007/108",
+    "cardName": "Dustox",
+    "fullDisplayName": "Dustox 007/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      269
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cascoon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-007-low.png",
+    "imageHighSrc": "cards/xy6-007-high.png"
+  },
+  {
+    "masterCardId": "19042",
+    "externalId": null,
+    "tcgdex_id": "xy6-6",
+    "localId": "006",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "006/108",
+    "cardName": "Cascoon",
+    "fullDisplayName": "Cascoon 006/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      268
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-006-low.png",
+    "imageHighSrc": "cards/xy6-006-high.png"
+  },
+  {
+    "masterCardId": "19032",
+    "externalId": null,
+    "tcgdex_id": "xy6-5",
+    "localId": "005",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "005/108",
+    "cardName": "Beautifly",
+    "fullDisplayName": "Beautifly 005/108 Roaring Skies",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      267
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Silcoon",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-005-low.png",
+    "imageHighSrc": "cards/xy6-005-high.png"
+  },
+  {
+    "masterCardId": "19022",
+    "externalId": null,
+    "tcgdex_id": "xy6-4",
+    "localId": "004",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "004/108",
+    "cardName": "Silcoon",
+    "fullDisplayName": "Silcoon 004/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      266
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wurmple",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-004-low.png",
+    "imageHighSrc": "cards/xy6-004-high.png"
+  },
+  {
+    "masterCardId": "19013",
+    "externalId": null,
+    "tcgdex_id": "xy6-3",
+    "localId": "003",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "003/108",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 003/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-003-low.png",
+    "imageHighSrc": "cards/xy6-003-high.png"
+  },
+  {
+    "masterCardId": "19003",
+    "externalId": null,
+    "tcgdex_id": "xy6-2",
+    "localId": "002",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "002/108",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 002/108 Roaring Skies",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-002-low.png",
+    "imageHighSrc": "cards/xy6-002-high.png"
+  },
+  {
+    "masterCardId": "18989",
+    "externalId": null,
+    "tcgdex_id": "xy6-1",
+    "localId": "001",
+    "setCode": "xy6",
+    "setTcgdexId": "xy6",
+    "cardNumber": "001/108",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 001/108 Roaring Skies",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy6-001-low.png",
+    "imageHighSrc": "cards/xy6-001-high.png"
+  }
+]

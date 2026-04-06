@@ -1,0 +1,497 @@
+[
+  {
+    "masterCardId": "22360",
+    "externalId": "mcd23-15",
+    "tcgdex_id": "2023sv-15",
+    "localId": "015",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "015/15",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 015/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ralts",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-015-low.jpg",
+    "imageHighSrc": "cards/2023sv-015-low.jpg"
+  },
+  {
+    "masterCardId": "22359",
+    "externalId": "mcd23-14",
+    "tcgdex_id": "2023sv-14",
+    "localId": "014",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "014/15",
+    "cardName": "Cyclizar",
+    "fullDisplayName": "Cyclizar 014/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      967
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryota Murayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-014-low.jpg",
+    "imageHighSrc": "cards/2023sv-014-low.jpg"
+  },
+  {
+    "masterCardId": "22358",
+    "externalId": "mcd23-13",
+    "tcgdex_id": "2023sv-13",
+    "localId": "013",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "013/15",
+    "cardName": "Tandemaus",
+    "fullDisplayName": "Tandemaus 013/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      924
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "yuu",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-013-low.jpg",
+    "imageHighSrc": "cards/2023sv-013-low.jpg"
+  },
+  {
+    "masterCardId": "22357",
+    "externalId": "mcd23-12",
+    "tcgdex_id": "2023sv-12",
+    "localId": "012",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "012/15",
+    "cardName": "Blissey",
+    "fullDisplayName": "Blissey 012/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      242
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chansey",
+    "artist": "chibi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-012-low.jpg",
+    "imageHighSrc": "cards/2023sv-012-low.jpg"
+  },
+  {
+    "masterCardId": "22356",
+    "externalId": "mcd23-11",
+    "tcgdex_id": "2023sv-11",
+    "localId": "011",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "011/15",
+    "cardName": "Klawf",
+    "fullDisplayName": "Klawf 011/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      950
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-011-low.jpg",
+    "imageHighSrc": "cards/2023sv-011-low.jpg"
+  },
+  {
+    "masterCardId": "22355",
+    "externalId": "mcd23-10",
+    "tcgdex_id": "2023sv-10",
+    "localId": "010",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "010/15",
+    "cardName": "Sandaconda",
+    "fullDisplayName": "Sandaconda 010/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      844
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Silicobra",
+    "artist": "Yuya Oka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-010-low.jpg",
+    "imageHighSrc": "cards/2023sv-010-low.jpg"
+  },
+  {
+    "masterCardId": "22354",
+    "externalId": "mcd23-9",
+    "tcgdex_id": "2023sv-9",
+    "localId": "009",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "009/15",
+    "cardName": "Flittle",
+    "fullDisplayName": "Flittle 009/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      955
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-009-low.jpg",
+    "imageHighSrc": "cards/2023sv-009-low.jpg"
+  },
+  {
+    "masterCardId": "22353",
+    "externalId": "mcd23-8",
+    "tcgdex_id": "2023sv-8",
+    "localId": "008",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "008/15",
+    "cardName": "Kilowattrel",
+    "fullDisplayName": "Kilowattrel 008/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      941
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wattrel",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-008-low.jpg",
+    "imageHighSrc": "cards/2023sv-008-low.jpg"
+  },
+  {
+    "masterCardId": "22352",
+    "externalId": "mcd23-7",
+    "tcgdex_id": "2023sv-7",
+    "localId": "007",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "007/15",
+    "cardName": "Pawmi",
+    "fullDisplayName": "Pawmi 007/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      921
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kantaro",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-007-low.jpg",
+    "imageHighSrc": "cards/2023sv-007-low.jpg"
+  },
+  {
+    "masterCardId": "22351",
+    "externalId": "mcd23-6",
+    "tcgdex_id": "2023sv-6",
+    "localId": "006",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "006/15",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 006/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OKACHEKE",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-006-low.jpg",
+    "imageHighSrc": "cards/2023sv-006-low.jpg"
+  },
+  {
+    "masterCardId": "22350",
+    "externalId": "mcd23-5",
+    "tcgdex_id": "2023sv-5",
+    "localId": "005",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "005/15",
+    "cardName": "Cetitan",
+    "fullDisplayName": "Cetitan 005/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 160,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      975
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cetoddle",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-005-low.jpg",
+    "imageHighSrc": "cards/2023sv-005-low.jpg"
+  },
+  {
+    "masterCardId": "22349",
+    "externalId": "mcd23-4",
+    "tcgdex_id": "2023sv-4",
+    "localId": "004",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "004/15",
+    "cardName": "Cetoddle",
+    "fullDisplayName": "Cetoddle 004/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      974
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-004-low.jpg",
+    "imageHighSrc": "cards/2023sv-004-low.jpg"
+  },
+  {
+    "masterCardId": "22348",
+    "externalId": "mcd23-3",
+    "tcgdex_id": "2023sv-3",
+    "localId": "003",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "003/15",
+    "cardName": "Quaxly",
+    "fullDisplayName": "Quaxly 003/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      912
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-003-low.jpg",
+    "imageHighSrc": "cards/2023sv-003-low.jpg"
+  },
+  {
+    "masterCardId": "22347",
+    "externalId": "mcd23-2",
+    "tcgdex_id": "2023sv-2",
+    "localId": "002",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "002/15",
+    "cardName": "Fuecoco",
+    "fullDisplayName": "Fuecoco 002/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      909
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-002-low.jpg",
+    "imageHighSrc": "cards/2023sv-002-low.jpg"
+  },
+  {
+    "masterCardId": "22346",
+    "externalId": "mcd23-1",
+    "tcgdex_id": "2023sv-1",
+    "localId": "001",
+    "setCode": "2023sv",
+    "setTcgdexId": "2023sv",
+    "cardNumber": "001/15",
+    "cardName": "Sprigatito",
+    "fullDisplayName": "Sprigatito 001/15 McDonald's Collection 2023",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      906
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/2023sv-001-low.jpg",
+    "imageHighSrc": "cards/2023sv-001-low.jpg"
+  }
+]

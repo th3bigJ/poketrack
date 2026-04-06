@@ -1,0 +1,3632 @@
+[
+  {
+    "masterCardId": "20014",
+    "externalId": null,
+    "tcgdex_id": "xy12-113",
+    "localId": "113",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "113/108",
+    "cardName": "Here Comes Team Rocket!",
+    "fullDisplayName": "Here Comes Team Rocket! 113/108 Evolutions",
+    "rarity": "Rare Secret",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-113-low.png",
+    "imageHighSrc": "cards/xy12-113-high.png"
+  },
+  {
+    "masterCardId": "20004",
+    "externalId": null,
+    "tcgdex_id": "xy12-112",
+    "localId": "112",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "112/108",
+    "cardName": "Imakuni?'s Doduo",
+    "fullDisplayName": "Imakuni?'s Doduo 112/108 Evolutions",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Imakuni?",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-112-low.png",
+    "imageHighSrc": "cards/xy12-112-high.png"
+  },
+  {
+    "masterCardId": "19996",
+    "externalId": null,
+    "tcgdex_id": "xy12-111",
+    "localId": "111",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "111/108",
+    "cardName": "Surfing Pikachu",
+    "fullDisplayName": "Surfing Pikachu 111/108 Evolutions",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-111-low.png",
+    "imageHighSrc": "cards/xy12-111-high.png"
+  },
+  {
+    "masterCardId": "19987",
+    "externalId": null,
+    "tcgdex_id": "xy12-110",
+    "localId": "110",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "110/108",
+    "cardName": "Flying Pikachu",
+    "fullDisplayName": "Flying Pikachu 110/108 Evolutions",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toshinao Aoki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-110-low.png",
+    "imageHighSrc": "cards/xy12-110-high.png"
+  },
+  {
+    "masterCardId": "19978",
+    "externalId": null,
+    "tcgdex_id": "xy12-109",
+    "localId": "109",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "109/108",
+    "cardName": "ナッシー[Exeggutor]",
+    "fullDisplayName": "ナッシー[Exeggutor] 109/108 Evolutions",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "タマタマ[Exeggcute]",
+    "artist": "Dr.Ooyama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy12-109-low.png",
+    "imageHighSrc": "cards/xy12-109-high.png"
+  },
+  {
+    "masterCardId": "19970",
+    "externalId": null,
+    "tcgdex_id": "xy12-108",
+    "localId": "108",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "108/108",
+    "cardName": "Misty's Determination",
+    "fullDisplayName": "Misty's Determination 108/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-108-low.png",
+    "imageHighSrc": "cards/xy12-108-high.png"
+  },
+  {
+    "masterCardId": "19961",
+    "externalId": null,
+    "tcgdex_id": "xy12-107",
+    "localId": "107",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "107/108",
+    "cardName": "Brock's Grit",
+    "fullDisplayName": "Brock's Grit 107/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-107-low.png",
+    "imageHighSrc": "cards/xy12-107-high.png"
+  },
+  {
+    "masterCardId": "19952",
+    "externalId": null,
+    "tcgdex_id": "xy12-106",
+    "localId": "106",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "106/108",
+    "cardName": "Dragonite-EX",
+    "fullDisplayName": "Dragonite-EX 106/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-106-low.png",
+    "imageHighSrc": "cards/xy12-106-high.png"
+  },
+  {
+    "masterCardId": "19943",
+    "externalId": null,
+    "tcgdex_id": "xy12-105",
+    "localId": "105",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "105/108",
+    "cardName": "M Pidgeot-EX",
+    "fullDisplayName": "M Pidgeot-EX 105/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeot-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-105-low.png",
+    "imageHighSrc": "cards/xy12-105-high.png"
+  },
+  {
+    "masterCardId": "19934",
+    "externalId": null,
+    "tcgdex_id": "xy12-104",
+    "localId": "104",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "104/108",
+    "cardName": "Pidgeot-EX",
+    "fullDisplayName": "Pidgeot-EX 104/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-104-low.png",
+    "imageHighSrc": "cards/xy12-104-high.png"
+  },
+  {
+    "masterCardId": "19925",
+    "externalId": null,
+    "tcgdex_id": "xy12-103",
+    "localId": "103",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "103/108",
+    "cardName": "Mewtwo-EX",
+    "fullDisplayName": "Mewtwo-EX 103/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-103-low.png",
+    "imageHighSrc": "cards/xy12-103-high.png"
+  },
+  {
+    "masterCardId": "19916",
+    "externalId": null,
+    "tcgdex_id": "xy12-102",
+    "localId": "102",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "102/108",
+    "cardName": "M Blastoise-EX",
+    "fullDisplayName": "M Blastoise-EX 102/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blastoise-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-102-low.png",
+    "imageHighSrc": "cards/xy12-102-high.png"
+  },
+  {
+    "masterCardId": "19907",
+    "externalId": null,
+    "tcgdex_id": "xy12-101",
+    "localId": "101",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "101/108",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 101/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-101-low.png",
+    "imageHighSrc": "cards/xy12-101-high.png"
+  },
+  {
+    "masterCardId": "19898",
+    "externalId": null,
+    "tcgdex_id": "xy12-100",
+    "localId": "100",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "100/108",
+    "cardName": "M Venusaur-EX",
+    "fullDisplayName": "M Venusaur-EX 100/108 Evolutions",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venusaur-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-100-low.png",
+    "imageHighSrc": "cards/xy12-100-high.png"
+  },
+  {
+    "masterCardId": "19889",
+    "externalId": null,
+    "tcgdex_id": "xy12-99",
+    "localId": "099",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "099/108",
+    "cardName": "Fairy Energy",
+    "fullDisplayName": "Fairy Energy 099/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-099-low.png",
+    "imageHighSrc": "cards/xy12-099-high.png"
+  },
+  {
+    "masterCardId": "19881",
+    "externalId": null,
+    "tcgdex_id": "xy12-98",
+    "localId": "098",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "098/108",
+    "cardName": "Metal Energy",
+    "fullDisplayName": "Metal Energy 098/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-098-low.png",
+    "imageHighSrc": "cards/xy12-098-high.png"
+  },
+  {
+    "masterCardId": "19872",
+    "externalId": null,
+    "tcgdex_id": "xy12-97",
+    "localId": "097",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "097/108",
+    "cardName": "Darkness Energy",
+    "fullDisplayName": "Darkness Energy 097/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-097-low.png",
+    "imageHighSrc": "cards/xy12-097-high.png"
+  },
+  {
+    "masterCardId": "19861",
+    "externalId": null,
+    "tcgdex_id": "xy12-96",
+    "localId": "096",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "096/108",
+    "cardName": "Fighting Energy",
+    "fullDisplayName": "Fighting Energy 096/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-096-low.png",
+    "imageHighSrc": "cards/xy12-096-high.png"
+  },
+  {
+    "masterCardId": "19853",
+    "externalId": null,
+    "tcgdex_id": "xy12-95",
+    "localId": "095",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "095/108",
+    "cardName": "Psychic Energy",
+    "fullDisplayName": "Psychic Energy 095/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-095-low.png",
+    "imageHighSrc": "cards/xy12-095-high.png"
+  },
+  {
+    "masterCardId": "19844",
+    "externalId": null,
+    "tcgdex_id": "xy12-94",
+    "localId": "094",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "094/108",
+    "cardName": "Lightning Energy",
+    "fullDisplayName": "Lightning Energy 094/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-094-low.png",
+    "imageHighSrc": "cards/xy12-094-high.png"
+  },
+  {
+    "masterCardId": "19835",
+    "externalId": null,
+    "tcgdex_id": "xy12-93",
+    "localId": "093",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "093/108",
+    "cardName": "Water Energy",
+    "fullDisplayName": "Water Energy 093/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-093-low.png",
+    "imageHighSrc": "cards/xy12-093-high.png"
+  },
+  {
+    "masterCardId": "19827",
+    "externalId": null,
+    "tcgdex_id": "xy12-92",
+    "localId": "092",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "092/108",
+    "cardName": "Fire Energy",
+    "fullDisplayName": "Fire Energy 092/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-092-low.png",
+    "imageHighSrc": "cards/xy12-092-high.png"
+  },
+  {
+    "masterCardId": "19818",
+    "externalId": null,
+    "tcgdex_id": "xy12-91",
+    "localId": "091",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "091/108",
+    "cardName": "Grass Energy",
+    "fullDisplayName": "Grass Energy 091/108 Evolutions",
+    "rarity": "Common",
+    "category": "Energy",
+    "stage": "Basic",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": "Basic",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": null,
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-091-low.png",
+    "imageHighSrc": "cards/xy12-091-high.png"
+  },
+  {
+    "masterCardId": "19809",
+    "externalId": null,
+    "tcgdex_id": "xy12-90",
+    "localId": "090",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "090/108",
+    "cardName": "Double Colorless Energy",
+    "fullDisplayName": "Double Colorless Energy 090/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-090-low.png",
+    "imageHighSrc": "cards/xy12-090-high.png"
+  },
+  {
+    "masterCardId": "19799",
+    "externalId": null,
+    "tcgdex_id": "xy12-89",
+    "localId": "089",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "089/108",
+    "cardName": "Venusaur Spirit Link",
+    "fullDisplayName": "Venusaur Spirit Link 089/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-089-low.png",
+    "imageHighSrc": "cards/xy12-089-high.png"
+  },
+  {
+    "masterCardId": "19791",
+    "externalId": null,
+    "tcgdex_id": "xy12-88",
+    "localId": "088",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "088/108",
+    "cardName": "Switch",
+    "fullDisplayName": "Switch 088/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-088-low.png",
+    "imageHighSrc": "cards/xy12-088-high.png"
+  },
+  {
+    "masterCardId": "19782",
+    "externalId": null,
+    "tcgdex_id": "xy12-87",
+    "localId": "087",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "087/108",
+    "cardName": "Super Potion",
+    "fullDisplayName": "Super Potion 087/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-087-low.png",
+    "imageHighSrc": "cards/xy12-087-high.png"
+  },
+  {
+    "masterCardId": "19773",
+    "externalId": null,
+    "tcgdex_id": "xy12-86",
+    "localId": "086",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "086/108",
+    "cardName": "Slowbro Spirit Link",
+    "fullDisplayName": "Slowbro Spirit Link 086/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-086-low.png",
+    "imageHighSrc": "cards/xy12-086-high.png"
+  },
+  {
+    "masterCardId": "19764",
+    "externalId": null,
+    "tcgdex_id": "xy12-85",
+    "localId": "085",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "085/108",
+    "cardName": "Revive",
+    "fullDisplayName": "Revive 085/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-085-low.png",
+    "imageHighSrc": "cards/xy12-085-high.png"
+  },
+  {
+    "masterCardId": "19757",
+    "externalId": null,
+    "tcgdex_id": "xy12-84",
+    "localId": "084",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "084/108",
+    "cardName": "Professor Oak's Hint",
+    "fullDisplayName": "Professor Oak's Hint 084/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-084-low.png",
+    "imageHighSrc": "cards/xy12-084-high.png"
+  },
+  {
+    "masterCardId": "19747",
+    "externalId": null,
+    "tcgdex_id": "xy12-83",
+    "localId": "083",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "083/108",
+    "cardName": "Potion",
+    "fullDisplayName": "Potion 083/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-083-low.png",
+    "imageHighSrc": "cards/xy12-083-high.png"
+  },
+  {
+    "masterCardId": "19739",
+    "externalId": null,
+    "tcgdex_id": "xy12-82",
+    "localId": "082",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "082/108",
+    "cardName": "Pokédex",
+    "fullDisplayName": "Pokédex 082/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-082-low.png",
+    "imageHighSrc": "cards/xy12-082-high.png"
+  },
+  {
+    "masterCardId": "19730",
+    "externalId": null,
+    "tcgdex_id": "xy12-81",
+    "localId": "081",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "081/108",
+    "cardName": "Pidgeot Spirit Link",
+    "fullDisplayName": "Pidgeot Spirit Link 081/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-081-low.png",
+    "imageHighSrc": "cards/xy12-081-high.png"
+  },
+  {
+    "masterCardId": "19722",
+    "externalId": null,
+    "tcgdex_id": "xy12-80",
+    "localId": "080",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "080/108",
+    "cardName": "Misty's Determination",
+    "fullDisplayName": "Misty's Determination 080/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-080-low.png",
+    "imageHighSrc": "cards/xy12-080-high.png"
+  },
+  {
+    "masterCardId": "19714",
+    "externalId": null,
+    "tcgdex_id": "xy12-79",
+    "localId": "079",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "079/108",
+    "cardName": "Maintenance",
+    "fullDisplayName": "Maintenance 079/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-079-low.png",
+    "imageHighSrc": "cards/xy12-079-high.png"
+  },
+  {
+    "masterCardId": "19707",
+    "externalId": null,
+    "tcgdex_id": "xy12-78",
+    "localId": "078",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "078/108",
+    "cardName": "Full Heal",
+    "fullDisplayName": "Full Heal 078/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-078-low.png",
+    "imageHighSrc": "cards/xy12-078-high.png"
+  },
+  {
+    "masterCardId": "19698",
+    "externalId": null,
+    "tcgdex_id": "xy12-77",
+    "localId": "077",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "077/108",
+    "cardName": "Energy Retrieval",
+    "fullDisplayName": "Energy Retrieval 077/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-077-low.png",
+    "imageHighSrc": "cards/xy12-077-high.png"
+  },
+  {
+    "masterCardId": "19689",
+    "externalId": null,
+    "tcgdex_id": "xy12-76",
+    "localId": "076",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "076/108",
+    "cardName": "Devolution Spray",
+    "fullDisplayName": "Devolution Spray 076/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-076-low.png",
+    "imageHighSrc": "cards/xy12-076-high.png"
+  },
+  {
+    "masterCardId": "19680",
+    "externalId": null,
+    "tcgdex_id": "xy12-75",
+    "localId": "075",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "075/108",
+    "cardName": "Charizard Spirit Link",
+    "fullDisplayName": "Charizard Spirit Link 075/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-075-low.png",
+    "imageHighSrc": "cards/xy12-075-high.png"
+  },
+  {
+    "masterCardId": "19671",
+    "externalId": null,
+    "tcgdex_id": "xy12-74",
+    "localId": "074",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "074/108",
+    "cardName": "Brock's Grit",
+    "fullDisplayName": "Brock's Grit 074/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-074-low.png",
+    "imageHighSrc": "cards/xy12-074-high.png"
+  },
+  {
+    "masterCardId": "19662",
+    "externalId": null,
+    "tcgdex_id": "xy12-73",
+    "localId": "073",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "073/108",
+    "cardName": "Blastoise Spirit Link",
+    "fullDisplayName": "Blastoise Spirit Link 073/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-073-low.png",
+    "imageHighSrc": "cards/xy12-073-high.png"
+  },
+  {
+    "masterCardId": "19653",
+    "externalId": null,
+    "tcgdex_id": "xy12-72",
+    "localId": "072",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "072/108",
+    "cardName": "Dragonite-EX",
+    "fullDisplayName": "Dragonite-EX 072/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-072-low.png",
+    "imageHighSrc": "cards/xy12-072-high.png"
+  },
+  {
+    "masterCardId": "19644",
+    "externalId": null,
+    "tcgdex_id": "xy12-71",
+    "localId": "071",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "071/108",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 071/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomoaki Imakuni",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-071-low.png",
+    "imageHighSrc": "cards/xy12-071-high.png"
+  },
+  {
+    "masterCardId": "19635",
+    "externalId": null,
+    "tcgdex_id": "xy12-70",
+    "localId": "070",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "070/108",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 070/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-070-low.png",
+    "imageHighSrc": "cards/xy12-070-high.png"
+  },
+  {
+    "masterCardId": "19626",
+    "externalId": null,
+    "tcgdex_id": "xy12-69",
+    "localId": "069",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "069/108",
+    "cardName": "Doduo",
+    "fullDisplayName": "Doduo 069/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      84
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-069-low.png",
+    "imageHighSrc": "cards/xy12-069-high.png"
+  },
+  {
+    "masterCardId": "19621",
+    "externalId": null,
+    "tcgdex_id": "xy12-68",
+    "localId": "068",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "068/108",
+    "cardName": "Farfetch'd",
+    "fullDisplayName": "Farfetch'd 068/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      83
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-068-low.png",
+    "imageHighSrc": "cards/xy12-068-high.png"
+  },
+  {
+    "masterCardId": "19611",
+    "externalId": null,
+    "tcgdex_id": "xy12-67",
+    "localId": "067",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "067/108",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 067/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-067-low.png",
+    "imageHighSrc": "cards/xy12-067-high.png"
+  },
+  {
+    "masterCardId": "19602",
+    "externalId": null,
+    "tcgdex_id": "xy12-66",
+    "localId": "066",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "066/108",
+    "cardName": "Rattata",
+    "fullDisplayName": "Rattata 066/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      19
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-066-low.png",
+    "imageHighSrc": "cards/xy12-066-high.png"
+  },
+  {
+    "masterCardId": "19595",
+    "externalId": null,
+    "tcgdex_id": "xy12-65",
+    "localId": "065",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "065/108",
+    "cardName": "M Pidgeot-EX",
+    "fullDisplayName": "M Pidgeot-EX 065/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeot-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-065-low.png",
+    "imageHighSrc": "cards/xy12-065-high.png"
+  },
+  {
+    "masterCardId": "19585",
+    "externalId": null,
+    "tcgdex_id": "xy12-64",
+    "localId": "064",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "064/108",
+    "cardName": "Pidgeot-EX",
+    "fullDisplayName": "Pidgeot-EX 064/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-064-low.png",
+    "imageHighSrc": "cards/xy12-064-high.png"
+  },
+  {
+    "masterCardId": "19578",
+    "externalId": null,
+    "tcgdex_id": "xy12-63",
+    "localId": "063",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "063/108",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 063/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-063-low.png",
+    "imageHighSrc": "cards/xy12-063-high.png"
+  },
+  {
+    "masterCardId": "19569",
+    "externalId": null,
+    "tcgdex_id": "xy12-62",
+    "localId": "062",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "062/108",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 062/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-062-low.png",
+    "imageHighSrc": "cards/xy12-062-high.png"
+  },
+  {
+    "masterCardId": "19558",
+    "externalId": null,
+    "tcgdex_id": "xy12-61",
+    "localId": "061",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "061/108",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 061/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-061-low.png",
+    "imageHighSrc": "cards/xy12-061-high.png"
+  },
+  {
+    "masterCardId": "19551",
+    "externalId": null,
+    "tcgdex_id": "xy12-60",
+    "localId": "060",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "060/108",
+    "cardName": "Machamp BREAK",
+    "fullDisplayName": "Machamp BREAK 060/108 Evolutions",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 190,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machamp",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-060-low.png",
+    "imageHighSrc": "cards/xy12-060-high.png"
+  },
+  {
+    "masterCardId": "19542",
+    "externalId": null,
+    "tcgdex_id": "xy12-59",
+    "localId": "059",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "059/108",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 059/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 160,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-059-low.png",
+    "imageHighSrc": "cards/xy12-059-high.png"
+  },
+  {
+    "masterCardId": "19531",
+    "externalId": null,
+    "tcgdex_id": "xy12-58",
+    "localId": "058",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "058/108",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 058/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-058-low.png",
+    "imageHighSrc": "cards/xy12-058-high.png"
+  },
+  {
+    "masterCardId": "19522",
+    "externalId": null,
+    "tcgdex_id": "xy12-57",
+    "localId": "057",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "057/108",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 057/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-057-low.png",
+    "imageHighSrc": "cards/xy12-057-high.png"
+  },
+  {
+    "masterCardId": "19515",
+    "externalId": null,
+    "tcgdex_id": "xy12-56",
+    "localId": "056",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "056/108",
+    "cardName": "Dugtrio",
+    "fullDisplayName": "Dugtrio 056/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      51
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Diglett",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-056-low.png",
+    "imageHighSrc": "cards/xy12-056-high.png"
+  },
+  {
+    "masterCardId": "19505",
+    "externalId": null,
+    "tcgdex_id": "xy12-55",
+    "localId": "055",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "055/108",
+    "cardName": "Diglett",
+    "fullDisplayName": "Diglett 055/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      50
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-055-low.png",
+    "imageHighSrc": "cards/xy12-055-high.png"
+  },
+  {
+    "masterCardId": "19496",
+    "externalId": null,
+    "tcgdex_id": "xy12-54",
+    "localId": "054",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "054/108",
+    "cardName": "Sandshrew",
+    "fullDisplayName": "Sandshrew 054/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      27
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-054-low.png",
+    "imageHighSrc": "cards/xy12-054-high.png"
+  },
+  {
+    "masterCardId": "19487",
+    "externalId": null,
+    "tcgdex_id": "xy12-53",
+    "localId": "053",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "053/108",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 053/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-053-low.png",
+    "imageHighSrc": "cards/xy12-053-high.png"
+  },
+  {
+    "masterCardId": "19478",
+    "externalId": null,
+    "tcgdex_id": "xy12-52",
+    "localId": "052",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "052/108",
+    "cardName": "Mewtwo-EX",
+    "fullDisplayName": "Mewtwo-EX 052/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-052-low.png",
+    "imageHighSrc": "cards/xy12-052-high.png"
+  },
+  {
+    "masterCardId": "19470",
+    "externalId": null,
+    "tcgdex_id": "xy12-51",
+    "localId": "051",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "051/108",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 051/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-051-low.png",
+    "imageHighSrc": "cards/xy12-051-high.png"
+  },
+  {
+    "masterCardId": "19459",
+    "externalId": null,
+    "tcgdex_id": "xy12-50",
+    "localId": "050",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "050/108",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 050/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-050-low.png",
+    "imageHighSrc": "cards/xy12-050-high.png"
+  },
+  {
+    "masterCardId": "19452",
+    "externalId": null,
+    "tcgdex_id": "xy12-49",
+    "localId": "049",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "049/108",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 049/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-049-low.png",
+    "imageHighSrc": "cards/xy12-049-high.png"
+  },
+  {
+    "masterCardId": "19443",
+    "externalId": null,
+    "tcgdex_id": "xy12-48",
+    "localId": "048",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "048/108",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 048/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      93
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gastly",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-048-low.png",
+    "imageHighSrc": "cards/xy12-048-high.png"
+  },
+  {
+    "masterCardId": "19434",
+    "externalId": null,
+    "tcgdex_id": "xy12-47",
+    "localId": "047",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "047/108",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 047/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-047-low.png",
+    "imageHighSrc": "cards/xy12-047-high.png"
+  },
+  {
+    "masterCardId": "19426",
+    "externalId": null,
+    "tcgdex_id": "xy12-46",
+    "localId": "046",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "046/108",
+    "cardName": "Nidoking BREAK",
+    "fullDisplayName": "Nidoking BREAK 046/108 Evolutions",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoking",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-046-low.png",
+    "imageHighSrc": "cards/xy12-046-high.png"
+  },
+  {
+    "masterCardId": "19418",
+    "externalId": null,
+    "tcgdex_id": "xy12-45",
+    "localId": "045",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "045/108",
+    "cardName": "Nidoking",
+    "fullDisplayName": "Nidoking 045/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      34
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidorino",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-045-low.png",
+    "imageHighSrc": "cards/xy12-045-high.png"
+  },
+  {
+    "masterCardId": "19409",
+    "externalId": null,
+    "tcgdex_id": "xy12-44",
+    "localId": "044",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "044/108",
+    "cardName": "Nidorino",
+    "fullDisplayName": "Nidorino 044/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      33
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nidoran ♂",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-044-low.png",
+    "imageHighSrc": "cards/xy12-044-high.png"
+  },
+  {
+    "masterCardId": "19400",
+    "externalId": null,
+    "tcgdex_id": "xy12-43",
+    "localId": "043",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "043/108",
+    "cardName": "Nidoran ♂",
+    "fullDisplayName": "Nidoran ♂ 043/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      32
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy12-043-low.png",
+    "imageHighSrc": "cards/xy12-043-high.png"
+  },
+  {
+    "masterCardId": "19391",
+    "externalId": null,
+    "tcgdex_id": "xy12-42",
+    "localId": "042",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "042/108",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 042/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-042-low.png",
+    "imageHighSrc": "cards/xy12-042-high.png"
+  },
+  {
+    "masterCardId": "19382",
+    "externalId": null,
+    "tcgdex_id": "xy12-41",
+    "localId": "041",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "041/108",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 041/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-041-low.png",
+    "imageHighSrc": "cards/xy12-041-high.png"
+  },
+  {
+    "masterCardId": "19371",
+    "externalId": null,
+    "tcgdex_id": "xy12-40",
+    "localId": "040",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "040/108",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 040/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-040-low.png",
+    "imageHighSrc": "cards/xy12-040-high.png"
+  },
+  {
+    "masterCardId": "19362",
+    "externalId": null,
+    "tcgdex_id": "xy12-39",
+    "localId": "039",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "039/108",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 039/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-039-low.png",
+    "imageHighSrc": "cards/xy12-039-high.png"
+  },
+  {
+    "masterCardId": "19353",
+    "externalId": null,
+    "tcgdex_id": "xy12-38",
+    "localId": "038",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "038/108",
+    "cardName": "Magneton",
+    "fullDisplayName": "Magneton 038/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      82
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnemite",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-038-low.png",
+    "imageHighSrc": "cards/xy12-038-high.png"
+  },
+  {
+    "masterCardId": "19344",
+    "externalId": null,
+    "tcgdex_id": "xy12-37",
+    "localId": "037",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "037/108",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 037/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      81
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-037-low.png",
+    "imageHighSrc": "cards/xy12-037-high.png"
+  },
+  {
+    "masterCardId": "19333",
+    "externalId": null,
+    "tcgdex_id": "xy12-36",
+    "localId": "036",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "036/108",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 036/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-036-low.png",
+    "imageHighSrc": "cards/xy12-036-high.png"
+  },
+  {
+    "masterCardId": "19323",
+    "externalId": null,
+    "tcgdex_id": "xy12-35",
+    "localId": "035",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "035/108",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 035/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-035-low.png",
+    "imageHighSrc": "cards/xy12-035-high.png"
+  },
+  {
+    "masterCardId": "19313",
+    "externalId": null,
+    "tcgdex_id": "xy12-34",
+    "localId": "034",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "034/108",
+    "cardName": "Gyarados",
+    "fullDisplayName": "Gyarados 034/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-034-low.png",
+    "imageHighSrc": "cards/xy12-034-high.png"
+  },
+  {
+    "masterCardId": "19303",
+    "externalId": null,
+    "tcgdex_id": "xy12-33",
+    "localId": "033",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "033/108",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 033/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-033-low.png",
+    "imageHighSrc": "cards/xy12-033-high.png"
+  },
+  {
+    "masterCardId": "19293",
+    "externalId": null,
+    "tcgdex_id": "xy12-32",
+    "localId": "032",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "032/108",
+    "cardName": "Starmie BREAK",
+    "fullDisplayName": "Starmie BREAK 032/108 Evolutions",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Starmie",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-032-low.png",
+    "imageHighSrc": "cards/xy12-032-high.png"
+  },
+  {
+    "masterCardId": "19284",
+    "externalId": null,
+    "tcgdex_id": "xy12-31",
+    "localId": "031",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "031/108",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 031/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-031-low.png",
+    "imageHighSrc": "cards/xy12-031-high.png"
+  },
+  {
+    "masterCardId": "19274",
+    "externalId": null,
+    "tcgdex_id": "xy12-30",
+    "localId": "030",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "030/108",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 030/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-030-low.png",
+    "imageHighSrc": "cards/xy12-030-high.png"
+  },
+  {
+    "masterCardId": "19264",
+    "externalId": null,
+    "tcgdex_id": "xy12-29",
+    "localId": "029",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "029/108",
+    "cardName": "Dewgong",
+    "fullDisplayName": "Dewgong 029/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      87
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seel",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-029-low.png",
+    "imageHighSrc": "cards/xy12-029-high.png"
+  },
+  {
+    "masterCardId": "19252",
+    "externalId": null,
+    "tcgdex_id": "xy12-28",
+    "localId": "028",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "028/108",
+    "cardName": "Seel",
+    "fullDisplayName": "Seel 028/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      86
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-028-low.png",
+    "imageHighSrc": "cards/xy12-028-high.png"
+  },
+  {
+    "masterCardId": "19242",
+    "externalId": null,
+    "tcgdex_id": "xy12-27",
+    "localId": "027",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "027/108",
+    "cardName": "M Slowbro-EX",
+    "fullDisplayName": "M Slowbro-EX 027/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowbro-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-027-low.png",
+    "imageHighSrc": "cards/xy12-027-high.png"
+  },
+  {
+    "masterCardId": "19231",
+    "externalId": null,
+    "tcgdex_id": "xy12-26",
+    "localId": "026",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "026/108",
+    "cardName": "Slowbro-EX",
+    "fullDisplayName": "Slowbro-EX 026/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      80
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ayaka Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-026-low.png",
+    "imageHighSrc": "cards/xy12-026-high.png"
+  },
+  {
+    "masterCardId": "19221",
+    "externalId": null,
+    "tcgdex_id": "xy12-25",
+    "localId": "025",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "025/108",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 025/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-025-low.png",
+    "imageHighSrc": "cards/xy12-025-high.png"
+  },
+  {
+    "masterCardId": "19211",
+    "externalId": null,
+    "tcgdex_id": "xy12-24",
+    "localId": "024",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "024/108",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 024/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwag",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-024-low.png",
+    "imageHighSrc": "cards/xy12-024-high.png"
+  },
+  {
+    "masterCardId": "19203",
+    "externalId": null,
+    "tcgdex_id": "xy12-23",
+    "localId": "023",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "023/108",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 023/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-023-low.png",
+    "imageHighSrc": "cards/xy12-023-high.png"
+  },
+  {
+    "masterCardId": "19193",
+    "externalId": null,
+    "tcgdex_id": "xy12-22",
+    "localId": "022",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "022/108",
+    "cardName": "M Blastoise-EX",
+    "fullDisplayName": "M Blastoise-EX 022/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Blastoise-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-022-low.png",
+    "imageHighSrc": "cards/xy12-022-high.png"
+  },
+  {
+    "masterCardId": "19183",
+    "externalId": null,
+    "tcgdex_id": "xy12-21",
+    "localId": "021",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "021/108",
+    "cardName": "Blastoise-EX",
+    "fullDisplayName": "Blastoise-EX 021/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      9
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-021-low.png",
+    "imageHighSrc": "cards/xy12-021-high.png"
+  },
+  {
+    "masterCardId": "19174",
+    "externalId": null,
+    "tcgdex_id": "xy12-20",
+    "localId": "020",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "020/108",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 020/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-020-low.png",
+    "imageHighSrc": "cards/xy12-020-high.png"
+  },
+  {
+    "masterCardId": "19164",
+    "externalId": null,
+    "tcgdex_id": "xy12-19",
+    "localId": "019",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "019/108",
+    "cardName": "Ponyta",
+    "fullDisplayName": "Ponyta 019/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      77
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-019-low.png",
+    "imageHighSrc": "cards/xy12-019-high.png"
+  },
+  {
+    "masterCardId": "19154",
+    "externalId": null,
+    "tcgdex_id": "xy12-18",
+    "localId": "018",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "018/108",
+    "cardName": "Arcanine",
+    "fullDisplayName": "Arcanine 018/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      59
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Growlithe",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-018-low.png",
+    "imageHighSrc": "cards/xy12-018-high.png"
+  },
+  {
+    "masterCardId": "19144",
+    "externalId": null,
+    "tcgdex_id": "xy12-17",
+    "localId": "017",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "017/108",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 017/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-017-low.png",
+    "imageHighSrc": "cards/xy12-017-high.png"
+  },
+  {
+    "masterCardId": "19134",
+    "externalId": null,
+    "tcgdex_id": "xy12-16",
+    "localId": "016",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "016/108",
+    "cardName": "Ninetales BREAK",
+    "fullDisplayName": "Ninetales BREAK 016/108 Evolutions",
+    "rarity": "Rare BREAK",
+    "category": "Pokémon",
+    "stage": "BREAK",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "BREAK"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ninetales",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-016-low.png",
+    "imageHighSrc": "cards/xy12-016-high.png"
+  },
+  {
+    "masterCardId": "19125",
+    "externalId": null,
+    "tcgdex_id": "xy12-15",
+    "localId": "015",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "015/108",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales 015/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-015-low.png",
+    "imageHighSrc": "cards/xy12-015-high.png"
+  },
+  {
+    "masterCardId": "19115",
+    "externalId": null,
+    "tcgdex_id": "xy12-14",
+    "localId": "014",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "014/108",
+    "cardName": "Vulpix",
+    "fullDisplayName": "Vulpix 014/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      37
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-014-low.png",
+    "imageHighSrc": "cards/xy12-014-high.png"
+  },
+  {
+    "masterCardId": "19105",
+    "externalId": null,
+    "tcgdex_id": "xy12-13",
+    "localId": "013",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "013/108",
+    "cardName": "M Charizard-EX",
+    "fullDisplayName": "M Charizard-EX 013/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charizard-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-013-low.png",
+    "imageHighSrc": "cards/xy12-013-high.png"
+  },
+  {
+    "masterCardId": "19095",
+    "externalId": null,
+    "tcgdex_id": "xy12-12",
+    "localId": "012",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "012/108",
+    "cardName": "Charizard-EX",
+    "fullDisplayName": "Charizard-EX 012/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-012-low.png",
+    "imageHighSrc": "cards/xy12-012-high.png"
+  },
+  {
+    "masterCardId": "19085",
+    "externalId": null,
+    "tcgdex_id": "xy12-11",
+    "localId": "011",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "011/108",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 011/108 Evolutions",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-011-low.png",
+    "imageHighSrc": "cards/xy12-011-high.png"
+  },
+  {
+    "masterCardId": "19075",
+    "externalId": null,
+    "tcgdex_id": "xy12-10",
+    "localId": "010",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "010/108",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 010/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-010-low.png",
+    "imageHighSrc": "cards/xy12-010-high.png"
+  },
+  {
+    "masterCardId": "19065",
+    "externalId": null,
+    "tcgdex_id": "xy12-9",
+    "localId": "009",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "009/108",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 009/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-009-low.png",
+    "imageHighSrc": "cards/xy12-009-high.png"
+  },
+  {
+    "masterCardId": "19056",
+    "externalId": null,
+    "tcgdex_id": "xy12-8",
+    "localId": "008",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "008/108",
+    "cardName": "Tangela",
+    "fullDisplayName": "Tangela 008/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      114
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-008-low.png",
+    "imageHighSrc": "cards/xy12-008-high.png"
+  },
+  {
+    "masterCardId": "19046",
+    "externalId": null,
+    "tcgdex_id": "xy12-7",
+    "localId": "007",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "007/108",
+    "cardName": "Beedrill",
+    "fullDisplayName": "Beedrill 007/108 Evolutions",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      15
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Kakuna",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-007-low.png",
+    "imageHighSrc": "cards/xy12-007-high.png"
+  },
+  {
+    "masterCardId": "19037",
+    "externalId": null,
+    "tcgdex_id": "xy12-6",
+    "localId": "006",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "006/108",
+    "cardName": "Kakuna",
+    "fullDisplayName": "Kakuna 006/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      14
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weedle",
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-006-low.png",
+    "imageHighSrc": "cards/xy12-006-high.png"
+  },
+  {
+    "masterCardId": "19027",
+    "externalId": null,
+    "tcgdex_id": "xy12-5",
+    "localId": "005",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "005/108",
+    "cardName": "Weedle",
+    "fullDisplayName": "Weedle 005/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      13
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-005-low.png",
+    "imageHighSrc": "cards/xy12-005-high.png"
+  },
+  {
+    "masterCardId": "19017",
+    "externalId": null,
+    "tcgdex_id": "xy12-4",
+    "localId": "004",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "004/108",
+    "cardName": "Metapod",
+    "fullDisplayName": "Metapod 004/108 Evolutions",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      11
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Caterpie",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-004-low.png",
+    "imageHighSrc": "cards/xy12-004-high.png"
+  },
+  {
+    "masterCardId": "19009",
+    "externalId": null,
+    "tcgdex_id": "xy12-3",
+    "localId": "003",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "003/108",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 003/108 Evolutions",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-003-low.png",
+    "imageHighSrc": "cards/xy12-003-high.png"
+  },
+  {
+    "masterCardId": "18997",
+    "externalId": null,
+    "tcgdex_id": "xy12-2",
+    "localId": "002",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "002/108",
+    "cardName": "M Venusaur-EX",
+    "fullDisplayName": "M Venusaur-EX 002/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 230,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Venusaur-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-002-low.png",
+    "imageHighSrc": "cards/xy12-002-high.png"
+  },
+  {
+    "masterCardId": "18988",
+    "externalId": null,
+    "tcgdex_id": "xy12-1",
+    "localId": "001",
+    "setCode": "xy12",
+    "setTcgdexId": "xy12",
+    "cardNumber": "001/108",
+    "cardName": "Venusaur-EX",
+    "fullDisplayName": "Venusaur-EX 001/108 Evolutions",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy12-001-low.png",
+    "imageHighSrc": "cards/xy12-001-high.png"
+  }
+]

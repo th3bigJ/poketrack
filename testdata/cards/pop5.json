@@ -1,0 +1,545 @@
+[
+  {
+    "masterCardId": "9258",
+    "externalId": null,
+    "tcgdex_id": "pop5-17",
+    "localId": "017",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "017/17",
+    "cardName": "Umbreon ★",
+    "fullDisplayName": "Umbreon ★ 017/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pop5-017-low.png",
+    "imageHighSrc": "cards/pop5-017-high.png"
+  },
+  {
+    "masterCardId": "9248",
+    "externalId": null,
+    "tcgdex_id": "pop5-16",
+    "localId": "016",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "016/17",
+    "cardName": "Espeon ★",
+    "fullDisplayName": "Espeon ★ 016/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Basic",
+      "Star"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pop5-016-low.png",
+    "imageHighSrc": "cards/pop5-016-high.png"
+  },
+  {
+    "masterCardId": "9242",
+    "externalId": null,
+    "tcgdex_id": "pop5-15",
+    "localId": "015",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "015/17",
+    "cardName": "Zangoose δ",
+    "fullDisplayName": "Zangoose δ 015/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-015-low.png",
+    "imageHighSrc": "cards/pop5-015-high.png"
+  },
+  {
+    "masterCardId": "9233",
+    "externalId": null,
+    "tcgdex_id": "pop5-14",
+    "localId": "014",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "014/17",
+    "cardName": "Pelipper δ",
+    "fullDisplayName": "Pelipper δ 014/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      279
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Wingull",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-014-low.png",
+    "imageHighSrc": "cards/pop5-014-high.png"
+  },
+  {
+    "masterCardId": "9224",
+    "externalId": null,
+    "tcgdex_id": "pop5-13",
+    "localId": "013",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "013/17",
+    "cardName": "Pikachu δ",
+    "fullDisplayName": "Pikachu δ 013/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-013-low.png",
+    "imageHighSrc": "cards/pop5-013-high.png"
+  },
+  {
+    "masterCardId": "9211",
+    "externalId": null,
+    "tcgdex_id": "pop5-12",
+    "localId": "012",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "012/17",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 012/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-012-low.png",
+    "imageHighSrc": "cards/pop5-012-high.png"
+  },
+  {
+    "masterCardId": "9201",
+    "externalId": null,
+    "tcgdex_id": "pop5-11",
+    "localId": "011",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "011/17",
+    "cardName": "Meowth δ",
+    "fullDisplayName": "Meowth δ 011/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-011-low.png",
+    "imageHighSrc": "cards/pop5-011-high.png"
+  },
+  {
+    "masterCardId": "9192",
+    "externalId": null,
+    "tcgdex_id": "pop5-10",
+    "localId": "010",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "010/17",
+    "cardName": "Charmander δ",
+    "fullDisplayName": "Charmander δ 010/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-010-low.png",
+    "imageHighSrc": "cards/pop5-010-high.png"
+  },
+  {
+    "masterCardId": "9185",
+    "externalId": null,
+    "tcgdex_id": "pop5-9",
+    "localId": "009",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "009/17",
+    "cardName": "δ Rainbow Energy",
+    "fullDisplayName": "δ Rainbow Energy 009/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pop5-009-low.png",
+    "imageHighSrc": "cards/pop5-009-high.png"
+  },
+  {
+    "masterCardId": "9174",
+    "externalId": null,
+    "tcgdex_id": "pop5-8",
+    "localId": "008",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "008/17",
+    "cardName": "Boost Energy",
+    "fullDisplayName": "Boost Energy 008/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-008-low.png",
+    "imageHighSrc": "cards/pop5-008-high.png"
+  },
+  {
+    "masterCardId": "9165",
+    "externalId": null,
+    "tcgdex_id": "pop5-7",
+    "localId": "007",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "007/17",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 007/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-007-low.png",
+    "imageHighSrc": "cards/pop5-007-high.png"
+  },
+  {
+    "masterCardId": "9158",
+    "externalId": null,
+    "tcgdex_id": "pop5-6",
+    "localId": "006",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "006/17",
+    "cardName": "Bill's Maintenance",
+    "fullDisplayName": "Bill's Maintenance 006/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/pop5-006-low.png",
+    "imageHighSrc": "cards/pop5-006-high.png"
+  },
+  {
+    "masterCardId": "9150",
+    "externalId": null,
+    "tcgdex_id": "pop5-5",
+    "localId": "005",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "005/17",
+    "cardName": "Charmeleon δ",
+    "fullDisplayName": "Charmeleon δ 005/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-005-low.png",
+    "imageHighSrc": "cards/pop5-005-high.png"
+  },
+  {
+    "masterCardId": "9140",
+    "externalId": null,
+    "tcgdex_id": "pop5-4",
+    "localId": "004",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "004/17",
+    "cardName": "Double Rainbow Energy",
+    "fullDisplayName": "Double Rainbow Energy 004/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-004-low.png",
+    "imageHighSrc": "cards/pop5-004-high.png"
+  },
+  {
+    "masterCardId": "9131",
+    "externalId": null,
+    "tcgdex_id": "pop5-3",
+    "localId": "003",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "003/17",
+    "cardName": "Mew δ",
+    "fullDisplayName": "Mew δ 003/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-003-low.png",
+    "imageHighSrc": "cards/pop5-003-high.png"
+  },
+  {
+    "masterCardId": "9123",
+    "externalId": null,
+    "tcgdex_id": "pop5-2",
+    "localId": "002",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "002/17",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 002/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-002-low.png",
+    "imageHighSrc": "cards/pop5-002-high.png"
+  },
+  {
+    "masterCardId": "9109",
+    "externalId": null,
+    "tcgdex_id": "pop5-1",
+    "localId": "001",
+    "setCode": "pop5",
+    "setTcgdexId": "pop5",
+    "cardNumber": "001/17",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 001/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/pop5-001-low.png",
+    "imageHighSrc": "cards/pop5-001-high.png"
+  }
+]

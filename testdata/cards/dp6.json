@@ -1,0 +1,4776 @@
+[
+  {
+    "masterCardId": "5169",
+    "externalId": null,
+    "tcgdex_id": "dp6-146",
+    "localId": "146",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "146/146",
+    "cardName": "Uxie LV.X",
+    "fullDisplayName": "Uxie LV.X 146/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      480
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Uxie",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-146-low.png",
+    "imageHighSrc": "cards/dp6-146-high.png"
+  },
+  {
+    "masterCardId": "5165",
+    "externalId": null,
+    "tcgdex_id": "dp6-145",
+    "localId": "145",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "145/146",
+    "cardName": "Rhyperior LV.X",
+    "fullDisplayName": "Rhyperior LV.X 145/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      464
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rhyperior",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-145-low.png",
+    "imageHighSrc": "cards/dp6-145-high.png"
+  },
+  {
+    "masterCardId": "5161",
+    "externalId": null,
+    "tcgdex_id": "dp6-144",
+    "localId": "144",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "144/146",
+    "cardName": "Mewtwo LV.X",
+    "fullDisplayName": "Mewtwo LV.X 144/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mewtwo",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-144-low.png",
+    "imageHighSrc": "cards/dp6-144-high.png"
+  },
+  {
+    "masterCardId": "5157",
+    "externalId": null,
+    "tcgdex_id": "dp6-143",
+    "localId": "143",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "143/146",
+    "cardName": "Mesprit LV.X",
+    "fullDisplayName": "Mesprit LV.X 143/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      481
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mesprit",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-143-low.png",
+    "imageHighSrc": "cards/dp6-143-high.png"
+  },
+  {
+    "masterCardId": "5150",
+    "externalId": null,
+    "tcgdex_id": "dp6-142",
+    "localId": "142",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "142/146",
+    "cardName": "Magnezone LV.X",
+    "fullDisplayName": "Magnezone LV.X 142/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 140,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      462
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magnezone",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-142-low.png",
+    "imageHighSrc": "cards/dp6-142-high.png"
+  },
+  {
+    "masterCardId": "5145",
+    "externalId": null,
+    "tcgdex_id": "dp6-141",
+    "localId": "141",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "141/146",
+    "cardName": "Gliscor LV.X",
+    "fullDisplayName": "Gliscor LV.X 141/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gliscor",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-141-low.png",
+    "imageHighSrc": "cards/dp6-141-high.png"
+  },
+  {
+    "masterCardId": "5140",
+    "externalId": null,
+    "tcgdex_id": "dp6-140",
+    "localId": "140",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "140/146",
+    "cardName": "Azelf LV.X",
+    "fullDisplayName": "Azelf LV.X 140/146 Legends Awakened",
+    "rarity": "Rare Holo LV.X",
+    "category": "Pokémon",
+    "stage": "Level-Up",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      482
+    ],
+    "subtypes": [
+      "Level-Up"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Azelf",
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-140-low.png",
+    "imageHighSrc": "cards/dp6-140-high.png"
+  },
+  {
+    "masterCardId": "5135",
+    "externalId": null,
+    "tcgdex_id": "dp6-139",
+    "localId": "139",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "139/146",
+    "cardName": "Root Fossil",
+    "fullDisplayName": "Root Fossil 139/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-139-low.png",
+    "imageHighSrc": "cards/dp6-139-high.png"
+  },
+  {
+    "masterCardId": "5130",
+    "externalId": null,
+    "tcgdex_id": "dp6-138",
+    "localId": "138",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "138/146",
+    "cardName": "Claw Fossil",
+    "fullDisplayName": "Claw Fossil 138/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": 40,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-138-low.png",
+    "imageHighSrc": "cards/dp6-138-high.png"
+  },
+  {
+    "masterCardId": "5125",
+    "externalId": null,
+    "tcgdex_id": "dp6-137",
+    "localId": "137",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "137/146",
+    "cardName": "Technical Machine TS-2",
+    "fullDisplayName": "Technical Machine TS-2 137/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Technical Machine"
+    ],
+    "trainerType": "Technical Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-137-low.png",
+    "imageHighSrc": "cards/dp6-137-high.png"
+  },
+  {
+    "masterCardId": "5120",
+    "externalId": null,
+    "tcgdex_id": "dp6-136",
+    "localId": "136",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "136/146",
+    "cardName": "Technical Machine TS-1",
+    "fullDisplayName": "Technical Machine TS-1 136/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Technical Machine"
+    ],
+    "trainerType": "Technical Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-136-low.png",
+    "imageHighSrc": "cards/dp6-136-high.png"
+  },
+  {
+    "masterCardId": "5115",
+    "externalId": null,
+    "tcgdex_id": "dp6-135",
+    "localId": "135",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "135/146",
+    "cardName": "Stark Mountain",
+    "fullDisplayName": "Stark Mountain 135/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-135-low.png",
+    "imageHighSrc": "cards/dp6-135-high.png"
+  },
+  {
+    "masterCardId": "5110",
+    "externalId": null,
+    "tcgdex_id": "dp6-134",
+    "localId": "134",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "134/146",
+    "cardName": "Snowpoint Temple",
+    "fullDisplayName": "Snowpoint Temple 134/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-134-low.png",
+    "imageHighSrc": "cards/dp6-134-high.png"
+  },
+  {
+    "masterCardId": "5105",
+    "externalId": null,
+    "tcgdex_id": "dp6-133",
+    "localId": "133",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "133/146",
+    "cardName": "Poké Radar",
+    "fullDisplayName": "Poké Radar 133/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-133-low.png",
+    "imageHighSrc": "cards/dp6-133-high.png"
+  },
+  {
+    "masterCardId": "5098",
+    "externalId": null,
+    "tcgdex_id": "dp6-132",
+    "localId": "132",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "132/146",
+    "cardName": "Energy Pickup",
+    "fullDisplayName": "Energy Pickup 132/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-132-low.png",
+    "imageHighSrc": "cards/dp6-132-high.png"
+  },
+  {
+    "masterCardId": "5092",
+    "externalId": null,
+    "tcgdex_id": "dp6-131",
+    "localId": "131",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "131/146",
+    "cardName": "Cynthia's Feelings",
+    "fullDisplayName": "Cynthia's Feelings 131/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-131-low.png",
+    "imageHighSrc": "cards/dp6-131-high.png"
+  },
+  {
+    "masterCardId": "5088",
+    "externalId": null,
+    "tcgdex_id": "dp6-130",
+    "localId": "130",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "130/146",
+    "cardName": "Buck's Training",
+    "fullDisplayName": "Buck's Training 130/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-130-low.png",
+    "imageHighSrc": "cards/dp6-130-high.png"
+  },
+  {
+    "masterCardId": "5083",
+    "externalId": null,
+    "tcgdex_id": "dp6-129",
+    "localId": "129",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "129/146",
+    "cardName": "Bubble Coat",
+    "fullDisplayName": "Bubble Coat 129/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Daisuke Ito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-129-low.png",
+    "imageHighSrc": "cards/dp6-129-high.png"
+  },
+  {
+    "masterCardId": "5077",
+    "externalId": null,
+    "tcgdex_id": "dp6-128",
+    "localId": "128",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "128/146",
+    "cardName": "Yanma",
+    "fullDisplayName": "Yanma 128/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      193
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-128-low.png",
+    "imageHighSrc": "cards/dp6-128-high.png"
+  },
+  {
+    "masterCardId": "5072",
+    "externalId": null,
+    "tcgdex_id": "dp6-127",
+    "localId": "127",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "127/146",
+    "cardName": "Weepinbell",
+    "fullDisplayName": "Weepinbell 127/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      70
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bellsprout",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-127-low.png",
+    "imageHighSrc": "cards/dp6-127-high.png"
+  },
+  {
+    "masterCardId": "5067",
+    "externalId": null,
+    "tcgdex_id": "dp6-126",
+    "localId": "126",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "126/146",
+    "cardName": "Tyrogue",
+    "fullDisplayName": "Tyrogue 126/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      236
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-126-low.png",
+    "imageHighSrc": "cards/dp6-126-high.png"
+  },
+  {
+    "masterCardId": "5061",
+    "externalId": null,
+    "tcgdex_id": "dp6-125",
+    "localId": "125",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "125/146",
+    "cardName": "Tentacool",
+    "fullDisplayName": "Tentacool 125/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      72
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-125-low.png",
+    "imageHighSrc": "cards/dp6-125-high.png"
+  },
+  {
+    "masterCardId": "5056",
+    "externalId": null,
+    "tcgdex_id": "dp6-124",
+    "localId": "124",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "124/146",
+    "cardName": "Taillow",
+    "fullDisplayName": "Taillow 124/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      276
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takao Unno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-124-low.png",
+    "imageHighSrc": "cards/dp6-124-high.png"
+  },
+  {
+    "masterCardId": "5052",
+    "externalId": null,
+    "tcgdex_id": "dp6-123",
+    "localId": "123",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "123/146",
+    "cardName": "Swinub",
+    "fullDisplayName": "Swinub 123/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      220
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-123-low.png",
+    "imageHighSrc": "cards/dp6-123-high.png"
+  },
+  {
+    "masterCardId": "5047",
+    "externalId": null,
+    "tcgdex_id": "dp6-122",
+    "localId": "122",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "122/146",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 122/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-122-low.png",
+    "imageHighSrc": "cards/dp6-122-high.png"
+  },
+  {
+    "masterCardId": "5042",
+    "externalId": null,
+    "tcgdex_id": "dp6-121",
+    "localId": "121",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "121/146",
+    "cardName": "Spoink",
+    "fullDisplayName": "Spoink 121/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      325
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-121-low.png",
+    "imageHighSrc": "cards/dp6-121-high.png"
+  },
+  {
+    "masterCardId": "5037",
+    "externalId": null,
+    "tcgdex_id": "dp6-120",
+    "localId": "120",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "120/146",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 120/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-120-low.png",
+    "imageHighSrc": "cards/dp6-120-high.png"
+  },
+  {
+    "masterCardId": "5032",
+    "externalId": null,
+    "tcgdex_id": "dp6-119",
+    "localId": "119",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "119/146",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 119/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-119-low.png",
+    "imageHighSrc": "cards/dp6-119-high.png"
+  },
+  {
+    "masterCardId": "5027",
+    "externalId": null,
+    "tcgdex_id": "dp6-118",
+    "localId": "118",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "118/146",
+    "cardName": "Shinx",
+    "fullDisplayName": "Shinx 118/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      403
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-118-low.png",
+    "imageHighSrc": "cards/dp6-118-high.png"
+  },
+  {
+    "masterCardId": "5022",
+    "externalId": null,
+    "tcgdex_id": "dp6-117",
+    "localId": "117",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "117/146",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 117/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-117-low.png",
+    "imageHighSrc": "cards/dp6-117-high.png"
+  },
+  {
+    "masterCardId": "5018",
+    "externalId": null,
+    "tcgdex_id": "dp6-116",
+    "localId": "116",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "116/146",
+    "cardName": "Poochyena",
+    "fullDisplayName": "Poochyena 116/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-116-low.png",
+    "imageHighSrc": "cards/dp6-116-high.png"
+  },
+  {
+    "masterCardId": "5013",
+    "externalId": null,
+    "tcgdex_id": "dp6-115",
+    "localId": "115",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "115/146",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 115/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwag",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-115-low.png",
+    "imageHighSrc": "cards/dp6-115-high.png"
+  },
+  {
+    "masterCardId": "5008",
+    "externalId": null,
+    "tcgdex_id": "dp6-114",
+    "localId": "114",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "114/146",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 114/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-114-low.png",
+    "imageHighSrc": "cards/dp6-114-high.png"
+  },
+  {
+    "masterCardId": "5003",
+    "externalId": null,
+    "tcgdex_id": "dp6-113",
+    "localId": "113",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "113/146",
+    "cardName": "Pineco",
+    "fullDisplayName": "Pineco 113/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      204
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-113-low.png",
+    "imageHighSrc": "cards/dp6-113-high.png"
+  },
+  {
+    "masterCardId": "4998",
+    "externalId": null,
+    "tcgdex_id": "dp6-112",
+    "localId": "112",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "112/146",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 112/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-112-low.png",
+    "imageHighSrc": "cards/dp6-112-high.png"
+  },
+  {
+    "masterCardId": "4993",
+    "externalId": null,
+    "tcgdex_id": "dp6-111",
+    "localId": "111",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "111/146",
+    "cardName": "Oddish",
+    "fullDisplayName": "Oddish 111/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      43
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiroki Fuchino",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-111-low.png",
+    "imageHighSrc": "cards/dp6-111-high.png"
+  },
+  {
+    "masterCardId": "4988",
+    "externalId": null,
+    "tcgdex_id": "dp6-110",
+    "localId": "110",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "110/146",
+    "cardName": "Numel",
+    "fullDisplayName": "Numel 110/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-110-low.png",
+    "imageHighSrc": "cards/dp6-110-high.png"
+  },
+  {
+    "masterCardId": "4983",
+    "externalId": null,
+    "tcgdex_id": "dp6-109",
+    "localId": "109",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "109/146",
+    "cardName": "Nosepass",
+    "fullDisplayName": "Nosepass 109/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      299
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-109-low.png",
+    "imageHighSrc": "cards/dp6-109-high.png"
+  },
+  {
+    "masterCardId": "4978",
+    "externalId": null,
+    "tcgdex_id": "dp6-108",
+    "localId": "108",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "108/146",
+    "cardName": "Nincada",
+    "fullDisplayName": "Nincada 108/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      290
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-108-low.png",
+    "imageHighSrc": "cards/dp6-108-high.png"
+  },
+  {
+    "masterCardId": "4973",
+    "externalId": null,
+    "tcgdex_id": "dp6-107",
+    "localId": "107",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "107/146",
+    "cardName": "Misdreavus",
+    "fullDisplayName": "Misdreavus 107/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      200
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-107-low.png",
+    "imageHighSrc": "cards/dp6-107-high.png"
+  },
+  {
+    "masterCardId": "4968",
+    "externalId": null,
+    "tcgdex_id": "dp6-106",
+    "localId": "106",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "106/146",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 106/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-106-low.png",
+    "imageHighSrc": "cards/dp6-106-high.png"
+  },
+  {
+    "masterCardId": "4963",
+    "externalId": null,
+    "tcgdex_id": "dp6-105",
+    "localId": "105",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "105/146",
+    "cardName": "Lileep",
+    "fullDisplayName": "Lileep 105/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      345
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Root Fossil",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-105-low.png",
+    "imageHighSrc": "cards/dp6-105-high.png"
+  },
+  {
+    "masterCardId": "4956",
+    "externalId": null,
+    "tcgdex_id": "dp6-104",
+    "localId": "104",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "104/146",
+    "cardName": "Ledyba",
+    "fullDisplayName": "Ledyba 104/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-104-low.png",
+    "imageHighSrc": "cards/dp6-104-high.png"
+  },
+  {
+    "masterCardId": "4952",
+    "externalId": null,
+    "tcgdex_id": "dp6-103",
+    "localId": "103",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "103/146",
+    "cardName": "Houndour",
+    "fullDisplayName": "Houndour 103/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-103-low.png",
+    "imageHighSrc": "cards/dp6-103-high.png"
+  },
+  {
+    "masterCardId": "4945",
+    "externalId": null,
+    "tcgdex_id": "dp6-102",
+    "localId": "102",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "102/146",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 102/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-102-low.png",
+    "imageHighSrc": "cards/dp6-102-high.png"
+  },
+  {
+    "masterCardId": "4938",
+    "externalId": null,
+    "tcgdex_id": "dp6-101",
+    "localId": "101",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "101/146",
+    "cardName": "Hitmontop",
+    "fullDisplayName": "Hitmontop 101/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      237
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-101-low.png",
+    "imageHighSrc": "cards/dp6-101-high.png"
+  },
+  {
+    "masterCardId": "4931",
+    "externalId": null,
+    "tcgdex_id": "dp6-100",
+    "localId": "100",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "100/146",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 100/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-100-low.png",
+    "imageHighSrc": "cards/dp6-100-high.png"
+  },
+  {
+    "masterCardId": "4924",
+    "externalId": null,
+    "tcgdex_id": "dp6-99",
+    "localId": "099",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "099/146",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 099/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-099-low.png",
+    "imageHighSrc": "cards/dp6-099-high.png"
+  },
+  {
+    "masterCardId": "4916",
+    "externalId": null,
+    "tcgdex_id": "dp6-98",
+    "localId": "098",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "098/146",
+    "cardName": "Gulpin",
+    "fullDisplayName": "Gulpin 098/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      316
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-098-low.png",
+    "imageHighSrc": "cards/dp6-098-high.png"
+  },
+  {
+    "masterCardId": "4908",
+    "externalId": null,
+    "tcgdex_id": "dp6-97",
+    "localId": "097",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "097/146",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 097/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-097-low.png",
+    "imageHighSrc": "cards/dp6-097-high.png"
+  },
+  {
+    "masterCardId": "4900",
+    "externalId": null,
+    "tcgdex_id": "dp6-96",
+    "localId": "096",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "096/146",
+    "cardName": "Gloom",
+    "fullDisplayName": "Gloom 096/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      44
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Oddish",
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-096-low.png",
+    "imageHighSrc": "cards/dp6-096-high.png"
+  },
+  {
+    "masterCardId": "4892",
+    "externalId": null,
+    "tcgdex_id": "dp6-95",
+    "localId": "095",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "095/146",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 095/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-095-low.png",
+    "imageHighSrc": "cards/dp6-095-high.png"
+  },
+  {
+    "masterCardId": "4884",
+    "externalId": null,
+    "tcgdex_id": "dp6-94",
+    "localId": "094",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "094/146",
+    "cardName": "Gligar",
+    "fullDisplayName": "Gligar 094/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      207
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-094-low.png",
+    "imageHighSrc": "cards/dp6-094-high.png"
+  },
+  {
+    "masterCardId": "4876",
+    "externalId": null,
+    "tcgdex_id": "dp6-93",
+    "localId": "093",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "093/146",
+    "cardName": "Exeggcute",
+    "fullDisplayName": "Exeggcute 093/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      102
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-093-low.png",
+    "imageHighSrc": "cards/dp6-093-high.png"
+  },
+  {
+    "masterCardId": "4868",
+    "externalId": null,
+    "tcgdex_id": "dp6-92",
+    "localId": "092",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "092/146",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 092/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      425
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-092-low.png",
+    "imageHighSrc": "cards/dp6-092-high.png"
+  },
+  {
+    "masterCardId": "4860",
+    "externalId": null,
+    "tcgdex_id": "dp6-91",
+    "localId": "091",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "091/146",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 091/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-091-low.png",
+    "imageHighSrc": "cards/dp6-091-high.png"
+  },
+  {
+    "masterCardId": "4852",
+    "externalId": null,
+    "tcgdex_id": "dp6-90",
+    "localId": "090",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "090/146",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 090/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-090-low.png",
+    "imageHighSrc": "cards/dp6-090-high.png"
+  },
+  {
+    "masterCardId": "4844",
+    "externalId": null,
+    "tcgdex_id": "dp6-89",
+    "localId": "089",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "089/146",
+    "cardName": "Corphish",
+    "fullDisplayName": "Corphish 089/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-089-low.png",
+    "imageHighSrc": "cards/dp6-089-high.png"
+  },
+  {
+    "masterCardId": "4836",
+    "externalId": null,
+    "tcgdex_id": "dp6-88",
+    "localId": "088",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "088/146",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 088/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-088-low.png",
+    "imageHighSrc": "cards/dp6-088-high.png"
+  },
+  {
+    "masterCardId": "4828",
+    "externalId": null,
+    "tcgdex_id": "dp6-87",
+    "localId": "087",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "087/146",
+    "cardName": "Chinchou",
+    "fullDisplayName": "Chinchou 087/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-087-low.png",
+    "imageHighSrc": "cards/dp6-087-high.png"
+  },
+  {
+    "masterCardId": "4820",
+    "externalId": null,
+    "tcgdex_id": "dp6-86",
+    "localId": "086",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "086/146",
+    "cardName": "Buneary",
+    "fullDisplayName": "Buneary 086/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      427
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-086-low.png",
+    "imageHighSrc": "cards/dp6-086-high.png"
+  },
+  {
+    "masterCardId": "4811",
+    "externalId": null,
+    "tcgdex_id": "dp6-85",
+    "localId": "085",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "085/146",
+    "cardName": "Bellsprout",
+    "fullDisplayName": "Bellsprout 085/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      69
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-085-low.png",
+    "imageHighSrc": "cards/dp6-085-high.png"
+  },
+  {
+    "masterCardId": "4802",
+    "externalId": null,
+    "tcgdex_id": "dp6-84",
+    "localId": "084",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "084/146",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 084/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-084-low.png",
+    "imageHighSrc": "cards/dp6-084-high.png"
+  },
+  {
+    "masterCardId": "4795",
+    "externalId": null,
+    "tcgdex_id": "dp6-83",
+    "localId": "083",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "083/146",
+    "cardName": "Beldum",
+    "fullDisplayName": "Beldum 083/146 Legends Awakened",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      374
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-083-low.png",
+    "imageHighSrc": "cards/dp6-083-high.png"
+  },
+  {
+    "masterCardId": "4786",
+    "externalId": null,
+    "tcgdex_id": "dp6-82",
+    "localId": "082",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "082/146",
+    "cardName": "Unown [?]",
+    "fullDisplayName": "Unown [?] 082/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-082-low.png",
+    "imageHighSrc": "cards/dp6-082-high.png"
+  },
+  {
+    "masterCardId": "4778",
+    "externalId": null,
+    "tcgdex_id": "dp6-81",
+    "localId": "081",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "081/146",
+    "cardName": "Unown [Y]",
+    "fullDisplayName": "Unown [Y] 081/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-081-low.png",
+    "imageHighSrc": "cards/dp6-081-high.png"
+  },
+  {
+    "masterCardId": "4770",
+    "externalId": null,
+    "tcgdex_id": "dp6-80",
+    "localId": "080",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "080/146",
+    "cardName": "Unown [W]",
+    "fullDisplayName": "Unown [W] 080/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-080-low.png",
+    "imageHighSrc": "cards/dp6-080-high.png"
+  },
+  {
+    "masterCardId": "4762",
+    "externalId": null,
+    "tcgdex_id": "dp6-79",
+    "localId": "079",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "079/146",
+    "cardName": "Unown [V]",
+    "fullDisplayName": "Unown [V] 079/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-079-low.png",
+    "imageHighSrc": "cards/dp6-079-high.png"
+  },
+  {
+    "masterCardId": "4754",
+    "externalId": null,
+    "tcgdex_id": "dp6-78",
+    "localId": "078",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "078/146",
+    "cardName": "Unown [U]",
+    "fullDisplayName": "Unown [U] 078/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-078-low.png",
+    "imageHighSrc": "cards/dp6-078-high.png"
+  },
+  {
+    "masterCardId": "4746",
+    "externalId": null,
+    "tcgdex_id": "dp6-77",
+    "localId": "077",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "077/146",
+    "cardName": "Unown [R]",
+    "fullDisplayName": "Unown [R] 077/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-077-low.png",
+    "imageHighSrc": "cards/dp6-077-high.png"
+  },
+  {
+    "masterCardId": "4738",
+    "externalId": null,
+    "tcgdex_id": "dp6-76",
+    "localId": "076",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "076/146",
+    "cardName": "Unown [J]",
+    "fullDisplayName": "Unown [J] 076/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-076-low.png",
+    "imageHighSrc": "cards/dp6-076-high.png"
+  },
+  {
+    "masterCardId": "4730",
+    "externalId": null,
+    "tcgdex_id": "dp6-75",
+    "localId": "075",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "075/146",
+    "cardName": "Tentacruel",
+    "fullDisplayName": "Tentacruel 075/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tentacool",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-075-low.png",
+    "imageHighSrc": "cards/dp6-075-high.png"
+  },
+  {
+    "masterCardId": "4722",
+    "externalId": null,
+    "tcgdex_id": "dp6-74",
+    "localId": "074",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "074/146",
+    "cardName": "Tauros",
+    "fullDisplayName": "Tauros 074/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      128
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-074-low.png",
+    "imageHighSrc": "cards/dp6-074-high.png"
+  },
+  {
+    "masterCardId": "4700",
+    "externalId": null,
+    "tcgdex_id": "dp6-73",
+    "localId": "073",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "073/146",
+    "cardName": "Swellow",
+    "fullDisplayName": "Swellow 073/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      277
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Taillow",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-073-low.png",
+    "imageHighSrc": "cards/dp6-073-high.png"
+  },
+  {
+    "masterCardId": "4692",
+    "externalId": null,
+    "tcgdex_id": "dp6-72",
+    "localId": "072",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "072/146",
+    "cardName": "Swalot",
+    "fullDisplayName": "Swalot 072/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      317
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gulpin",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-072-low.png",
+    "imageHighSrc": "cards/dp6-072-high.png"
+  },
+  {
+    "masterCardId": "4683",
+    "externalId": null,
+    "tcgdex_id": "dp6-71",
+    "localId": "071",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "071/146",
+    "cardName": "Starmie",
+    "fullDisplayName": "Starmie 071/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-071-low.png",
+    "imageHighSrc": "cards/dp6-071-high.png"
+  },
+  {
+    "masterCardId": "4675",
+    "externalId": null,
+    "tcgdex_id": "dp6-70",
+    "localId": "070",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "070/146",
+    "cardName": "Seadra",
+    "fullDisplayName": "Seadra 070/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      117
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Horsea",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-070-low.png",
+    "imageHighSrc": "cards/dp6-070-high.png"
+  },
+  {
+    "masterCardId": "4667",
+    "externalId": null,
+    "tcgdex_id": "dp6-69",
+    "localId": "069",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "069/146",
+    "cardName": "Piloswine",
+    "fullDisplayName": "Piloswine 069/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      221
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swinub",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-069-low.png",
+    "imageHighSrc": "cards/dp6-069-high.png"
+  },
+  {
+    "masterCardId": "4660",
+    "externalId": null,
+    "tcgdex_id": "dp6-68",
+    "localId": "068",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "068/146",
+    "cardName": "Persian",
+    "fullDisplayName": "Persian 068/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      53
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Meowth",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-068-low.png",
+    "imageHighSrc": "cards/dp6-068-high.png"
+  },
+  {
+    "masterCardId": "4652",
+    "externalId": null,
+    "tcgdex_id": "dp6-67",
+    "localId": "067",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "067/146",
+    "cardName": "Ninjask",
+    "fullDisplayName": "Ninjask 067/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      291
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-067-low.png",
+    "imageHighSrc": "cards/dp6-067-high.png"
+  },
+  {
+    "masterCardId": "4643",
+    "externalId": null,
+    "tcgdex_id": "dp6-66",
+    "localId": "066",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "066/146",
+    "cardName": "Mightyena",
+    "fullDisplayName": "Mightyena 066/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poochyena",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-066-low.png",
+    "imageHighSrc": "cards/dp6-066-high.png"
+  },
+  {
+    "masterCardId": "4634",
+    "externalId": null,
+    "tcgdex_id": "dp6-65",
+    "localId": "065",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "065/146",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 065/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-065-low.png",
+    "imageHighSrc": "cards/dp6-065-high.png"
+  },
+  {
+    "masterCardId": "4626",
+    "externalId": null,
+    "tcgdex_id": "dp6-64",
+    "localId": "064",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "064/146",
+    "cardName": "Metang",
+    "fullDisplayName": "Metang 064/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      375
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Beldum",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-064-low.png",
+    "imageHighSrc": "cards/dp6-064-high.png"
+  },
+  {
+    "masterCardId": "4618",
+    "externalId": null,
+    "tcgdex_id": "dp6-63",
+    "localId": "063",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "063/146",
+    "cardName": "Marowak",
+    "fullDisplayName": "Marowak 063/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      105
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubone",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-063-low.png",
+    "imageHighSrc": "cards/dp6-063-high.png"
+  },
+  {
+    "masterCardId": "4610",
+    "externalId": null,
+    "tcgdex_id": "dp6-62",
+    "localId": "062",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "062/146",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 062/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shinx",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-062-low.png",
+    "imageHighSrc": "cards/dp6-062-high.png"
+  },
+  {
+    "masterCardId": "4602",
+    "externalId": null,
+    "tcgdex_id": "dp6-61",
+    "localId": "061",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "061/146",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 061/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-061-low.png",
+    "imageHighSrc": "cards/dp6-061-high.png"
+  },
+  {
+    "masterCardId": "4593",
+    "externalId": null,
+    "tcgdex_id": "dp6-60",
+    "localId": "060",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "060/146",
+    "cardName": "Ledian",
+    "fullDisplayName": "Ledian 060/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      166
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ledyba",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-060-low.png",
+    "imageHighSrc": "cards/dp6-060-high.png"
+  },
+  {
+    "masterCardId": "4587",
+    "externalId": null,
+    "tcgdex_id": "dp6-59",
+    "localId": "059",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "059/146",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 059/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-059-low.png",
+    "imageHighSrc": "cards/dp6-059-high.png"
+  },
+  {
+    "masterCardId": "4578",
+    "externalId": null,
+    "tcgdex_id": "dp6-58",
+    "localId": "058",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "058/146",
+    "cardName": "Lanturn",
+    "fullDisplayName": "Lanturn 058/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Chinchou",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-058-low.png",
+    "imageHighSrc": "cards/dp6-058-high.png"
+  },
+  {
+    "masterCardId": "4568",
+    "externalId": null,
+    "tcgdex_id": "dp6-57",
+    "localId": "057",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "057/146",
+    "cardName": "Houndoom",
+    "fullDisplayName": "Houndoom 057/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Houndour",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-057-low.png",
+    "imageHighSrc": "cards/dp6-057-high.png"
+  },
+  {
+    "masterCardId": "4559",
+    "externalId": null,
+    "tcgdex_id": "dp6-56",
+    "localId": "056",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "056/146",
+    "cardName": "Grumpig",
+    "fullDisplayName": "Grumpig 056/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      326
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Spoink",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-056-low.png",
+    "imageHighSrc": "cards/dp6-056-high.png"
+  },
+  {
+    "masterCardId": "4551",
+    "externalId": null,
+    "tcgdex_id": "dp6-55",
+    "localId": "055",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "055/146",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 055/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-055-low.png",
+    "imageHighSrc": "cards/dp6-055-high.png"
+  },
+  {
+    "masterCardId": "4544",
+    "externalId": null,
+    "tcgdex_id": "dp6-54",
+    "localId": "054",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "054/146",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 054/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-054-low.png",
+    "imageHighSrc": "cards/dp6-054-high.png"
+  },
+  {
+    "masterCardId": "4535",
+    "externalId": null,
+    "tcgdex_id": "dp6-53",
+    "localId": "053",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "053/146",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 053/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-053-low.png",
+    "imageHighSrc": "cards/dp6-053-high.png"
+  },
+  {
+    "masterCardId": "4526",
+    "externalId": null,
+    "tcgdex_id": "dp6-52",
+    "localId": "052",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "052/146",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 052/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-052-low.png",
+    "imageHighSrc": "cards/dp6-052-high.png"
+  },
+  {
+    "masterCardId": "4517",
+    "externalId": null,
+    "tcgdex_id": "dp6-51",
+    "localId": "051",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "051/146",
+    "cardName": "Castform Sunny Form",
+    "fullDisplayName": "Castform Sunny Form 051/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Lee HyunJung",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-051-low.png",
+    "imageHighSrc": "cards/dp6-051-high.png"
+  },
+  {
+    "masterCardId": "4508",
+    "externalId": null,
+    "tcgdex_id": "dp6-50",
+    "localId": "050",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "050/146",
+    "cardName": "Castform Snow-Cloud Form",
+    "fullDisplayName": "Castform Snow-Cloud Form 050/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-050-low.png",
+    "imageHighSrc": "cards/dp6-050-high.png"
+  },
+  {
+    "masterCardId": "4498",
+    "externalId": null,
+    "tcgdex_id": "dp6-49",
+    "localId": "049",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "049/146",
+    "cardName": "Castform Rain Form",
+    "fullDisplayName": "Castform Rain Form 049/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Emi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-049-low.png",
+    "imageHighSrc": "cards/dp6-049-high.png"
+  },
+  {
+    "masterCardId": "4491",
+    "externalId": null,
+    "tcgdex_id": "dp6-48",
+    "localId": "048",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "048/146",
+    "cardName": "Castform",
+    "fullDisplayName": "Castform 048/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      351
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-048-low.png",
+    "imageHighSrc": "cards/dp6-048-high.png"
+  },
+  {
+    "masterCardId": "4483",
+    "externalId": null,
+    "tcgdex_id": "dp6-47",
+    "localId": "047",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "047/146",
+    "cardName": "Camerupt",
+    "fullDisplayName": "Camerupt 047/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Numel",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-047-low.png",
+    "imageHighSrc": "cards/dp6-047-high.png"
+  },
+  {
+    "masterCardId": "4472",
+    "externalId": null,
+    "tcgdex_id": "dp6-46",
+    "localId": "046",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "046/146",
+    "cardName": "Anorith",
+    "fullDisplayName": "Anorith 046/146 Legends Awakened",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      347
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Claw Fossil",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-046-low.png",
+    "imageHighSrc": "cards/dp6-046-high.png"
+  },
+  {
+    "masterCardId": "4464",
+    "externalId": null,
+    "tcgdex_id": "dp6-45",
+    "localId": "045",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "045/146",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 045/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-045-low.png",
+    "imageHighSrc": "cards/dp6-045-high.png"
+  },
+  {
+    "masterCardId": "4453",
+    "externalId": null,
+    "tcgdex_id": "dp6-44",
+    "localId": "044",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "044/146",
+    "cardName": "Victreebel",
+    "fullDisplayName": "Victreebel 044/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      71
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weepinbell",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-044-low.png",
+    "imageHighSrc": "cards/dp6-044-high.png"
+  },
+  {
+    "masterCardId": "4444",
+    "externalId": null,
+    "tcgdex_id": "dp6-43",
+    "localId": "043",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "043/146",
+    "cardName": "Uxie",
+    "fullDisplayName": "Uxie 043/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      480
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-043-low.png",
+    "imageHighSrc": "cards/dp6-043-high.png"
+  },
+  {
+    "masterCardId": "4435",
+    "externalId": null,
+    "tcgdex_id": "dp6-42",
+    "localId": "042",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "042/146",
+    "cardName": "Unown [!]",
+    "fullDisplayName": "Unown [!] 042/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      201
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/dp6-042-low.png",
+    "imageHighSrc": "cards/dp6-042-high.png"
+  },
+  {
+    "masterCardId": "4426",
+    "externalId": null,
+    "tcgdex_id": "dp6-41",
+    "localId": "041",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "041/146",
+    "cardName": "Torkoal",
+    "fullDisplayName": "Torkoal 041/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-041-low.png",
+    "imageHighSrc": "cards/dp6-041-high.png"
+  },
+  {
+    "masterCardId": "4416",
+    "externalId": null,
+    "tcgdex_id": "dp6-40",
+    "localId": "040",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "040/146",
+    "cardName": "Shedinja",
+    "fullDisplayName": "Shedinja 040/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      292
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nincada",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-040-low.png",
+    "imageHighSrc": "cards/dp6-040-high.png"
+  },
+  {
+    "masterCardId": "4408",
+    "externalId": null,
+    "tcgdex_id": "dp6-39",
+    "localId": "039",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "039/146",
+    "cardName": "Registeel",
+    "fullDisplayName": "Registeel 039/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      379
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-039-low.png",
+    "imageHighSrc": "cards/dp6-039-high.png"
+  },
+  {
+    "masterCardId": "4399",
+    "externalId": null,
+    "tcgdex_id": "dp6-38",
+    "localId": "038",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "038/146",
+    "cardName": "Regirock",
+    "fullDisplayName": "Regirock 038/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      377
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-038-low.png",
+    "imageHighSrc": "cards/dp6-038-high.png"
+  },
+  {
+    "masterCardId": "4390",
+    "externalId": null,
+    "tcgdex_id": "dp6-37",
+    "localId": "037",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "037/146",
+    "cardName": "Regigigas",
+    "fullDisplayName": "Regigigas 037/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-037-low.png",
+    "imageHighSrc": "cards/dp6-037-high.png"
+  },
+  {
+    "masterCardId": "4380",
+    "externalId": null,
+    "tcgdex_id": "dp6-36",
+    "localId": "036",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "036/146",
+    "cardName": "Regice",
+    "fullDisplayName": "Regice 036/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      378
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-036-low.png",
+    "imageHighSrc": "cards/dp6-036-high.png"
+  },
+  {
+    "masterCardId": "4369",
+    "externalId": null,
+    "tcgdex_id": "dp6-35",
+    "localId": "035",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "035/146",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 035/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-035-low.png",
+    "imageHighSrc": "cards/dp6-035-high.png"
+  },
+  {
+    "masterCardId": "4360",
+    "externalId": null,
+    "tcgdex_id": "dp6-34",
+    "localId": "034",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "034/146",
+    "cardName": "Mesprit",
+    "fullDisplayName": "Mesprit 034/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      481
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-034-low.png",
+    "imageHighSrc": "cards/dp6-034-high.png"
+  },
+  {
+    "masterCardId": "4349",
+    "externalId": null,
+    "tcgdex_id": "dp6-33",
+    "localId": "033",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "033/146",
+    "cardName": "Lopunny",
+    "fullDisplayName": "Lopunny 033/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      428
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Buneary",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-033-low.png",
+    "imageHighSrc": "cards/dp6-033-high.png"
+  },
+  {
+    "masterCardId": "4340",
+    "externalId": null,
+    "tcgdex_id": "dp6-32",
+    "localId": "032",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "032/146",
+    "cardName": "Kyogre",
+    "fullDisplayName": "Kyogre 032/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-032-low.png",
+    "imageHighSrc": "cards/dp6-032-high.png"
+  },
+  {
+    "masterCardId": "4332",
+    "externalId": null,
+    "tcgdex_id": "dp6-31",
+    "localId": "031",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "031/146",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 031/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Ohta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-031-low.png",
+    "imageHighSrc": "cards/dp6-031-high.png"
+  },
+  {
+    "masterCardId": "4323",
+    "externalId": null,
+    "tcgdex_id": "dp6-30",
+    "localId": "030",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "030/146",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 030/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-030-low.png",
+    "imageHighSrc": "cards/dp6-030-high.png"
+  },
+  {
+    "masterCardId": "4313",
+    "externalId": null,
+    "tcgdex_id": "dp6-29",
+    "localId": "029",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "029/146",
+    "cardName": "Groudon",
+    "fullDisplayName": "Groudon 029/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-029-low.png",
+    "imageHighSrc": "cards/dp6-029-high.png"
+  },
+  {
+    "masterCardId": "4305",
+    "externalId": null,
+    "tcgdex_id": "dp6-28",
+    "localId": "028",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "028/146",
+    "cardName": "Forretress",
+    "fullDisplayName": "Forretress 028/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      205
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pineco",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-028-low.png",
+    "imageHighSrc": "cards/dp6-028-high.png"
+  },
+  {
+    "masterCardId": "4297",
+    "externalId": null,
+    "tcgdex_id": "dp6-27",
+    "localId": "027",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "027/146",
+    "cardName": "Ditto",
+    "fullDisplayName": "Ditto 027/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      132
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-027-low.png",
+    "imageHighSrc": "cards/dp6-027-high.png"
+  },
+  {
+    "masterCardId": "4288",
+    "externalId": null,
+    "tcgdex_id": "dp6-26",
+    "localId": "026",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "026/146",
+    "cardName": "Deoxys Speed Forme",
+    "fullDisplayName": "Deoxys Speed Forme 026/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-026-low.png",
+    "imageHighSrc": "cards/dp6-026-high.png"
+  },
+  {
+    "masterCardId": "4279",
+    "externalId": null,
+    "tcgdex_id": "dp6-25",
+    "localId": "025",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "025/146",
+    "cardName": "Deoxys Defense Forme",
+    "fullDisplayName": "Deoxys Defense Forme 025/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-025-low.png",
+    "imageHighSrc": "cards/dp6-025-high.png"
+  },
+  {
+    "masterCardId": "4270",
+    "externalId": null,
+    "tcgdex_id": "dp6-24",
+    "localId": "024",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "024/146",
+    "cardName": "Deoxys Attack Forme",
+    "fullDisplayName": "Deoxys Attack Forme 024/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-024-low.png",
+    "imageHighSrc": "cards/dp6-024-high.png"
+  },
+  {
+    "masterCardId": "4261",
+    "externalId": null,
+    "tcgdex_id": "dp6-23",
+    "localId": "023",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "023/146",
+    "cardName": "Delcatty",
+    "fullDisplayName": "Delcatty 023/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      301
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skitty",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-023-low.png",
+    "imageHighSrc": "cards/dp6-023-high.png"
+  },
+  {
+    "masterCardId": "4252",
+    "externalId": null,
+    "tcgdex_id": "dp6-22",
+    "localId": "022",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "022/146",
+    "cardName": "Crawdaunt",
+    "fullDisplayName": "Crawdaunt 022/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Corphish",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-022-low.png",
+    "imageHighSrc": "cards/dp6-022-high.png"
+  },
+  {
+    "masterCardId": "4243",
+    "externalId": null,
+    "tcgdex_id": "dp6-21",
+    "localId": "021",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "021/146",
+    "cardName": "Cradily",
+    "fullDisplayName": "Cradily 021/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-021-low.png",
+    "imageHighSrc": "cards/dp6-021-high.png"
+  },
+  {
+    "masterCardId": "4234",
+    "externalId": null,
+    "tcgdex_id": "dp6-20",
+    "localId": "020",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "020/146",
+    "cardName": "Bellossom",
+    "fullDisplayName": "Bellossom 020/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      182
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-020-low.png",
+    "imageHighSrc": "cards/dp6-020-high.png"
+  },
+  {
+    "masterCardId": "4226",
+    "externalId": null,
+    "tcgdex_id": "dp6-19",
+    "localId": "019",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "019/146",
+    "cardName": "Azelf",
+    "fullDisplayName": "Azelf 019/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      482
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-019-low.png",
+    "imageHighSrc": "cards/dp6-019-high.png"
+  },
+  {
+    "masterCardId": "4217",
+    "externalId": null,
+    "tcgdex_id": "dp6-18",
+    "localId": "018",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "018/146",
+    "cardName": "Armaldo",
+    "fullDisplayName": "Armaldo 018/146 Legends Awakened",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      348
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Anorith",
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-018-low.png",
+    "imageHighSrc": "cards/dp6-018-high.png"
+  },
+  {
+    "masterCardId": "4208",
+    "externalId": null,
+    "tcgdex_id": "dp6-17",
+    "localId": "017",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "017/146",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 017/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Yanma",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-017-low.png",
+    "imageHighSrc": "cards/dp6-017-high.png"
+  },
+  {
+    "masterCardId": "4198",
+    "externalId": null,
+    "tcgdex_id": "dp6-16",
+    "localId": "016",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "016/146",
+    "cardName": "Spiritomb",
+    "fullDisplayName": "Spiritomb 016/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      442
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-016-low.png",
+    "imageHighSrc": "cards/dp6-016-high.png"
+  },
+  {
+    "masterCardId": "4188",
+    "externalId": null,
+    "tcgdex_id": "dp6-15",
+    "localId": "015",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "015/146",
+    "cardName": "Regigigas",
+    "fullDisplayName": "Regigigas 015/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      486
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-015-low.png",
+    "imageHighSrc": "cards/dp6-015-high.png"
+  },
+  {
+    "masterCardId": "4179",
+    "externalId": null,
+    "tcgdex_id": "dp6-14",
+    "localId": "014",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "014/146",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 014/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-014-low.png",
+    "imageHighSrc": "cards/dp6-014-high.png"
+  },
+  {
+    "masterCardId": "4171",
+    "externalId": null,
+    "tcgdex_id": "dp6-13",
+    "localId": "013",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "013/146",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 013/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      476
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Nosepass",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-013-low.png",
+    "imageHighSrc": "cards/dp6-013-high.png"
+  },
+  {
+    "masterCardId": "4162",
+    "externalId": null,
+    "tcgdex_id": "dp6-12",
+    "localId": "012",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "012/146",
+    "cardName": "Politoed",
+    "fullDisplayName": "Politoed 012/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      186
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-012-low.png",
+    "imageHighSrc": "cards/dp6-012-high.png"
+  },
+  {
+    "masterCardId": "4153",
+    "externalId": null,
+    "tcgdex_id": "dp6-11",
+    "localId": "011",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "011/146",
+    "cardName": "Mewtwo",
+    "fullDisplayName": "Mewtwo 011/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-011-low.png",
+    "imageHighSrc": "cards/dp6-011-high.png"
+  },
+  {
+    "masterCardId": "4144",
+    "externalId": null,
+    "tcgdex_id": "dp6-10",
+    "localId": "010",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "010/146",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross 010/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-010-low.png",
+    "imageHighSrc": "cards/dp6-010-high.png"
+  },
+  {
+    "masterCardId": "4134",
+    "externalId": null,
+    "tcgdex_id": "dp6-9",
+    "localId": "009",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "009/146",
+    "cardName": "Mamoswine",
+    "fullDisplayName": "Mamoswine 009/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      473
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Piloswine",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-009-low.png",
+    "imageHighSrc": "cards/dp6-009-high.png"
+  },
+  {
+    "masterCardId": "4125",
+    "externalId": null,
+    "tcgdex_id": "dp6-8",
+    "localId": "008",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "008/146",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 008/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Luxio",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-008-low.png",
+    "imageHighSrc": "cards/dp6-008-high.png"
+  },
+  {
+    "masterCardId": "4117",
+    "externalId": null,
+    "tcgdex_id": "dp6-7",
+    "localId": "007",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "007/146",
+    "cardName": "Kingdra",
+    "fullDisplayName": "Kingdra 007/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      230
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Seadra",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-007-low.png",
+    "imageHighSrc": "cards/dp6-007-high.png"
+  },
+  {
+    "masterCardId": "4107",
+    "externalId": null,
+    "tcgdex_id": "dp6-6",
+    "localId": "006",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "006/146",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 006/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-006-low.png",
+    "imageHighSrc": "cards/dp6-006-high.png"
+  },
+  {
+    "masterCardId": "4096",
+    "externalId": null,
+    "tcgdex_id": "dp6-5",
+    "localId": "005",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "005/146",
+    "cardName": "Gliscor",
+    "fullDisplayName": "Gliscor 005/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      472
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gligar",
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-005-low.png",
+    "imageHighSrc": "cards/dp6-005-high.png"
+  },
+  {
+    "masterCardId": "4089",
+    "externalId": null,
+    "tcgdex_id": "dp6-4",
+    "localId": "004",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "004/146",
+    "cardName": "Giratina",
+    "fullDisplayName": "Giratina 004/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuaki Aihara",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-004-low.png",
+    "imageHighSrc": "cards/dp6-004-high.png"
+  },
+  {
+    "masterCardId": "4081",
+    "externalId": null,
+    "tcgdex_id": "dp6-3",
+    "localId": "003",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "003/146",
+    "cardName": "Froslass",
+    "fullDisplayName": "Froslass 003/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      478
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Snorunt",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-003-low.png",
+    "imageHighSrc": "cards/dp6-003-high.png"
+  },
+  {
+    "masterCardId": "4072",
+    "externalId": null,
+    "tcgdex_id": "dp6-2",
+    "localId": "002",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "002/146",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 002/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-002-low.png",
+    "imageHighSrc": "cards/dp6-002-high.png"
+  },
+  {
+    "masterCardId": "4063",
+    "externalId": null,
+    "tcgdex_id": "dp6-1",
+    "localId": "001",
+    "setCode": "dp6",
+    "setTcgdexId": "dp6",
+    "cardNumber": "001/146",
+    "cardName": "Deoxys Normal Forme",
+    "fullDisplayName": "Deoxys Normal Forme 001/146 Legends Awakened",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kent Kanetsuna",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dp6-001-low.png",
+    "imageHighSrc": "cards/dp6-001-high.png"
+  }
+]

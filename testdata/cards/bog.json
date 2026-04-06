@@ -1,0 +1,293 @@
+[
+  {
+    "masterCardId": "1969",
+    "externalId": null,
+    "tcgdex_id": "bog-9",
+    "localId": "009",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "009/9",
+    "cardName": "Rocket's Hitmonchan",
+    "fullDisplayName": "Rocket's Hitmonchan 009/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bp-009-low.png",
+    "imageHighSrc": "cards/bp-009-high.png"
+  },
+  {
+    "masterCardId": "1968",
+    "externalId": null,
+    "tcgdex_id": "bog-8",
+    "localId": "008",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "008/9",
+    "cardName": "Rocket's Mewtwo",
+    "fullDisplayName": "Rocket's Mewtwo 008/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bp-008-low.png",
+    "imageHighSrc": "cards/bp-008-high.png"
+  },
+  {
+    "masterCardId": "1967",
+    "externalId": null,
+    "tcgdex_id": "bog-7",
+    "localId": "007",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "007/9",
+    "cardName": "Dark Venusaur",
+    "fullDisplayName": "Dark Venusaur 007/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dark Ivysaur",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bp-007-low.png",
+    "imageHighSrc": "cards/bp-007-high.png"
+  },
+  {
+    "masterCardId": "1966",
+    "externalId": null,
+    "tcgdex_id": "bog-6",
+    "localId": "006",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "006/9",
+    "cardName": "Dark Ivysaur",
+    "fullDisplayName": "Dark Ivysaur 006/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Shin-ichi Yoshida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bp-006-low.png",
+    "imageHighSrc": "cards/bp-006-high.png"
+  },
+  {
+    "masterCardId": "1965",
+    "externalId": null,
+    "tcgdex_id": "bog-5",
+    "localId": "005",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "005/9",
+    "cardName": "Rocket's Sneasel",
+    "fullDisplayName": "Rocket's Sneasel 005/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bp-005-low.png",
+    "imageHighSrc": "cards/bp-005-high.png"
+  },
+  {
+    "masterCardId": "1964",
+    "externalId": null,
+    "tcgdex_id": "bog-4",
+    "localId": "004",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "004/9",
+    "cardName": "Rocket's Scizor",
+    "fullDisplayName": "Rocket's Scizor 004/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K Hoshiba",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bp-004-low.png",
+    "imageHighSrc": "cards/bp-004-high.png"
+  },
+  {
+    "masterCardId": "1963",
+    "externalId": null,
+    "tcgdex_id": "bog-3",
+    "localId": "003",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "003/9",
+    "cardName": "Professor Elm",
+    "fullDisplayName": "Professor Elm 003/9 Best of game",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bp-003-low.png",
+    "imageHighSrc": "cards/bp-003-high.png"
+  },
+  {
+    "masterCardId": "1962",
+    "externalId": null,
+    "tcgdex_id": "bog-2",
+    "localId": "002",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "002/9",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 002/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bp-002-low.png",
+    "imageHighSrc": "cards/bp-002-high.png"
+  },
+  {
+    "masterCardId": "1961",
+    "externalId": null,
+    "tcgdex_id": "bog-1",
+    "localId": "001",
+    "setCode": "bog",
+    "setTcgdexId": "bog",
+    "cardNumber": "001/9",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 001/9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/bp-001-low.png",
+    "imageHighSrc": "cards/bp-001-high.png"
+  }
+]

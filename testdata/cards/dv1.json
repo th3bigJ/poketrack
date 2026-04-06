@@ -1,0 +1,683 @@
+[
+  {
+    "masterCardId": "7737",
+    "externalId": null,
+    "tcgdex_id": "dv1-21",
+    "localId": "021",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "021/20",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem 021/20 Dragon Vault",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-021-low.png",
+    "imageHighSrc": "cards/dv1-021-high.png"
+  },
+  {
+    "masterCardId": "7731",
+    "externalId": null,
+    "tcgdex_id": "dv1-20",
+    "localId": "020",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "020/20",
+    "cardName": "Super Rod",
+    "fullDisplayName": "Super Rod 020/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-020-low.png",
+    "imageHighSrc": "cards/dv1-020-high.png"
+  },
+  {
+    "masterCardId": "7725",
+    "externalId": null,
+    "tcgdex_id": "dv1-19",
+    "localId": "019",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "019/20",
+    "cardName": "First Ticket",
+    "fullDisplayName": "First Ticket 019/20 Dragon Vault",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-019-low.png",
+    "imageHighSrc": "cards/dv1-019-high.png"
+  },
+  {
+    "masterCardId": "7718",
+    "externalId": null,
+    "tcgdex_id": "dv1-18",
+    "localId": "018",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "018/20",
+    "cardName": "Exp. Share",
+    "fullDisplayName": "Exp. Share 018/20 Dragon Vault",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-018-low.png",
+    "imageHighSrc": "cards/dv1-018-high.png"
+  },
+  {
+    "masterCardId": "7712",
+    "externalId": null,
+    "tcgdex_id": "dv1-17",
+    "localId": "017",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "017/20",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 017/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-017-low.png",
+    "imageHighSrc": "cards/dv1-017-high.png"
+  },
+  {
+    "masterCardId": "7706",
+    "externalId": null,
+    "tcgdex_id": "dv1-16",
+    "localId": "016",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "016/20",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus 016/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      612
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fraxure",
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-016-low.png",
+    "imageHighSrc": "cards/dv1-016-high.png"
+  },
+  {
+    "masterCardId": "7700",
+    "externalId": null,
+    "tcgdex_id": "dv1-15",
+    "localId": "015",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "015/20",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 015/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Axew",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-015-low.png",
+    "imageHighSrc": "cards/dv1-015-high.png"
+  },
+  {
+    "masterCardId": "7694",
+    "externalId": null,
+    "tcgdex_id": "dv1-14",
+    "localId": "014",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "014/20",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 014/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Axew",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-014-low.png",
+    "imageHighSrc": "cards/dv1-014-high.png"
+  },
+  {
+    "masterCardId": "7688",
+    "externalId": null,
+    "tcgdex_id": "dv1-13",
+    "localId": "013",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "013/20",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 013/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-013-low.png",
+    "imageHighSrc": "cards/dv1-013-high.png"
+  },
+  {
+    "masterCardId": "7682",
+    "externalId": null,
+    "tcgdex_id": "dv1-12",
+    "localId": "012",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "012/20",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 012/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-012-low.png",
+    "imageHighSrc": "cards/dv1-012-high.png"
+  },
+  {
+    "masterCardId": "7676",
+    "externalId": null,
+    "tcgdex_id": "dv1-11",
+    "localId": "011",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "011/20",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 011/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-011-low.png",
+    "imageHighSrc": "cards/dv1-011-high.png"
+  },
+  {
+    "masterCardId": "7670",
+    "externalId": null,
+    "tcgdex_id": "dv1-10",
+    "localId": "010",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "010/20",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 010/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-010-low.png",
+    "imageHighSrc": "cards/dv1-010-high.png"
+  },
+  {
+    "masterCardId": "7664",
+    "externalId": null,
+    "tcgdex_id": "dv1-9",
+    "localId": "009",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "009/20",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 009/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      380
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-009-low.png",
+    "imageHighSrc": "cards/dv1-009-high.png"
+  },
+  {
+    "masterCardId": "7658",
+    "externalId": null,
+    "tcgdex_id": "dv1-8",
+    "localId": "008",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "008/20",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 008/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelgon",
+    "artist": "BERUBURI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-008-low.png",
+    "imageHighSrc": "cards/dv1-008-high.png"
+  },
+  {
+    "masterCardId": "7652",
+    "externalId": null,
+    "tcgdex_id": "dv1-7",
+    "localId": "007",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "007/20",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 007/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      372
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bagon",
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-007-low.png",
+    "imageHighSrc": "cards/dv1-007-high.png"
+  },
+  {
+    "masterCardId": "7647",
+    "externalId": null,
+    "tcgdex_id": "dv1-6",
+    "localId": "006",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "006/20",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 006/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-006-low.png",
+    "imageHighSrc": "cards/dv1-006-high.png"
+  },
+  {
+    "masterCardId": "7641",
+    "externalId": null,
+    "tcgdex_id": "dv1-5",
+    "localId": "005",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "005/20",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 005/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dragonair",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-005-low.png",
+    "imageHighSrc": "cards/dv1-005-high.png"
+  },
+  {
+    "masterCardId": "7637",
+    "externalId": null,
+    "tcgdex_id": "dv1-4",
+    "localId": "004",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "004/20",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 004/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-004-low.png",
+    "imageHighSrc": "cards/dv1-004-high.png"
+  },
+  {
+    "masterCardId": "7631",
+    "externalId": null,
+    "tcgdex_id": "dv1-3",
+    "localId": "003",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "003/20",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 003/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dratini",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-003-low.png",
+    "imageHighSrc": "cards/dv1-003-high.png"
+  },
+  {
+    "masterCardId": "7625",
+    "externalId": null,
+    "tcgdex_id": "dv1-2",
+    "localId": "002",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "002/20",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 002/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-002-low.png",
+    "imageHighSrc": "cards/dv1-002-high.png"
+  },
+  {
+    "masterCardId": "7619",
+    "externalId": null,
+    "tcgdex_id": "dv1-1",
+    "localId": "001",
+    "setCode": "dv1",
+    "setTcgdexId": "dv1",
+    "cardNumber": "001/20",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 001/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/dv1-001-low.png",
+    "imageHighSrc": "cards/dv1-001-high.png"
+  }
+]

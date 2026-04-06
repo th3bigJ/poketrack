@@ -1,0 +1,2231 @@
+[
+  {
+    "masterCardId": "10039",
+    "externalId": null,
+    "tcgdex_id": "sm115-69",
+    "localId": "069",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "069/68",
+    "cardName": "Moltres & Zapdos & Articuno-GX",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 069/68 Hidden Fates",
+    "rarity": "Rare Rainbow",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 300,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      144,
+      145,
+      146
+    ],
+    "subtypes": [
+      "Basic",
+      "TAG TEAM",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-069-low.png",
+    "imageHighSrc": "cards/sm115-069-high.png"
+  },
+  {
+    "masterCardId": "10030",
+    "externalId": null,
+    "tcgdex_id": "sm115-68",
+    "localId": "068",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "068/68",
+    "cardName": "Jessie & James",
+    "fullDisplayName": "Jessie & James 068/68 Hidden Fates",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-068-low.png",
+    "imageHighSrc": "cards/sm115-068-high.png"
+  },
+  {
+    "masterCardId": "10021",
+    "externalId": null,
+    "tcgdex_id": "sm115-67",
+    "localId": "067",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "067/68",
+    "cardName": "Giovanni's Exile",
+    "fullDisplayName": "Giovanni's Exile 067/68 Hidden Fates",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-067-low.png",
+    "imageHighSrc": "cards/sm115-067-high.png"
+  },
+  {
+    "masterCardId": "9994",
+    "externalId": null,
+    "tcgdex_id": "sm115-66",
+    "localId": "066",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "066/68",
+    "cardName": "Moltres & Zapdos & Articuno-GX",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 066/68 Hidden Fates",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 300,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      144,
+      145,
+      146
+    ],
+    "subtypes": [
+      "Basic",
+      "TAG TEAM",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-066-low.png",
+    "imageHighSrc": "cards/sm115-066-high.png"
+  },
+  {
+    "masterCardId": "9982",
+    "externalId": null,
+    "tcgdex_id": "sm115-65",
+    "localId": "065",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "065/68",
+    "cardName": "Sabrina's Suggestion",
+    "fullDisplayName": "Sabrina's Suggestion 065/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-065-low.png",
+    "imageHighSrc": "cards/sm115-065-high.png"
+  },
+  {
+    "masterCardId": "9974",
+    "externalId": null,
+    "tcgdex_id": "sm115-64",
+    "localId": "064",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "064/68",
+    "cardName": "Pokémon Center Lady",
+    "fullDisplayName": "Pokémon Center Lady 064/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-064-low.png",
+    "imageHighSrc": "cards/sm115-064-high.png"
+  },
+  {
+    "masterCardId": "9965",
+    "externalId": null,
+    "tcgdex_id": "sm115-63",
+    "localId": "063",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "063/68",
+    "cardName": "Misty's Water Command",
+    "fullDisplayName": "Misty's Water Command 063/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-063-low.png",
+    "imageHighSrc": "cards/sm115-063-high.png"
+  },
+  {
+    "masterCardId": "9956",
+    "externalId": null,
+    "tcgdex_id": "sm115-62",
+    "localId": "062",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "062/68",
+    "cardName": "Misty's Determination",
+    "fullDisplayName": "Misty's Determination 062/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-062-low.png",
+    "imageHighSrc": "cards/sm115-062-high.png"
+  },
+  {
+    "masterCardId": "9947",
+    "externalId": null,
+    "tcgdex_id": "sm115-61",
+    "localId": "061",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "061/68",
+    "cardName": "Misty's Cerulean City Gym",
+    "fullDisplayName": "Misty's Cerulean City Gym 061/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-061-low.png",
+    "imageHighSrc": "cards/sm115-061-high.png"
+  },
+  {
+    "masterCardId": "9938",
+    "externalId": null,
+    "tcgdex_id": "sm115-60",
+    "localId": "060",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "060/68",
+    "cardName": "Lt. Surge's Strategy",
+    "fullDisplayName": "Lt. Surge's Strategy 060/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-060-low.png",
+    "imageHighSrc": "cards/sm115-060-high.png"
+  },
+  {
+    "masterCardId": "9929",
+    "externalId": null,
+    "tcgdex_id": "sm115-59",
+    "localId": "059",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "059/68",
+    "cardName": "Koga's Trap",
+    "fullDisplayName": "Koga's Trap 059/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-059-low.png",
+    "imageHighSrc": "cards/sm115-059-high.png"
+  },
+  {
+    "masterCardId": "9920",
+    "externalId": null,
+    "tcgdex_id": "sm115-58",
+    "localId": "058",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "058/68",
+    "cardName": "Jessie & James",
+    "fullDisplayName": "Jessie & James 058/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-058-low.png",
+    "imageHighSrc": "cards/sm115-058-high.png"
+  },
+  {
+    "masterCardId": "9911",
+    "externalId": null,
+    "tcgdex_id": "sm115-57",
+    "localId": "057",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "057/68",
+    "cardName": "Giovanni's Exile",
+    "fullDisplayName": "Giovanni's Exile 057/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-057-low.png",
+    "imageHighSrc": "cards/sm115-057-high.png"
+  },
+  {
+    "masterCardId": "9904",
+    "externalId": null,
+    "tcgdex_id": "sm115-56",
+    "localId": "056",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "056/68",
+    "cardName": "Erika's Hospitality",
+    "fullDisplayName": "Erika's Hospitality 056/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-056-low.png",
+    "imageHighSrc": "cards/sm115-056-high.png"
+  },
+  {
+    "masterCardId": "9897",
+    "externalId": null,
+    "tcgdex_id": "sm115-55",
+    "localId": "055",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "055/68",
+    "cardName": "Brock's Training",
+    "fullDisplayName": "Brock's Training 055/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-055-low.png",
+    "imageHighSrc": "cards/sm115-055-high.png"
+  },
+  {
+    "masterCardId": "9889",
+    "externalId": null,
+    "tcgdex_id": "sm115-54",
+    "localId": "054",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "054/68",
+    "cardName": "Brock's Pewter City Gym",
+    "fullDisplayName": "Brock's Pewter City Gym 054/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-054-low.png",
+    "imageHighSrc": "cards/sm115-054-high.png"
+  },
+  {
+    "masterCardId": "9879",
+    "externalId": null,
+    "tcgdex_id": "sm115-53",
+    "localId": "053",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "053/68",
+    "cardName": "Brock's Grit",
+    "fullDisplayName": "Brock's Grit 053/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-053-low.png",
+    "imageHighSrc": "cards/sm115-053-high.png"
+  },
+  {
+    "masterCardId": "9873",
+    "externalId": null,
+    "tcgdex_id": "sm115-52",
+    "localId": "052",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "052/68",
+    "cardName": "Blaine's Last Stand",
+    "fullDisplayName": "Blaine's Last Stand 052/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-052-low.png",
+    "imageHighSrc": "cards/sm115-052-high.png"
+  },
+  {
+    "masterCardId": "9864",
+    "externalId": null,
+    "tcgdex_id": "sm115-51",
+    "localId": "051",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "051/68",
+    "cardName": "Bill's Analysis",
+    "fullDisplayName": "Bill's Analysis 051/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-051-low.png",
+    "imageHighSrc": "cards/sm115-051-high.png"
+  },
+  {
+    "masterCardId": "9855",
+    "externalId": null,
+    "tcgdex_id": "sm115-50",
+    "localId": "050",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "050/68",
+    "cardName": "Snorlax",
+    "fullDisplayName": "Snorlax 050/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      143
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-050-low.png",
+    "imageHighSrc": "cards/sm115-050-high.png"
+  },
+  {
+    "masterCardId": "9846",
+    "externalId": null,
+    "tcgdex_id": "sm115-49",
+    "localId": "049",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "049/68",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 049/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-049-low.png",
+    "imageHighSrc": "cards/sm115-049-high.png"
+  },
+  {
+    "masterCardId": "9837",
+    "externalId": null,
+    "tcgdex_id": "sm115-48",
+    "localId": "048",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "048/68",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 048/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-048-low.png",
+    "imageHighSrc": "cards/sm115-048-high.png"
+  },
+  {
+    "masterCardId": "9828",
+    "externalId": null,
+    "tcgdex_id": "sm115-47",
+    "localId": "047",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "047/68",
+    "cardName": "Kangaskhan",
+    "fullDisplayName": "Kangaskhan 047/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      115
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "You Iribi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-047-low.png",
+    "imageHighSrc": "cards/sm115-047-high.png"
+  },
+  {
+    "masterCardId": "9820",
+    "externalId": null,
+    "tcgdex_id": "sm115-46",
+    "localId": "046",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "046/68",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 046/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sowsow",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-046-low.png",
+    "imageHighSrc": "cards/sm115-046-high.png"
+  },
+  {
+    "masterCardId": "9811",
+    "externalId": null,
+    "tcgdex_id": "sm115-45",
+    "localId": "045",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "045/68",
+    "cardName": "Farfetch'd",
+    "fullDisplayName": "Farfetch'd 045/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      83
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eri Yamaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-045-low.png",
+    "imageHighSrc": "cards/sm115-045-high.png"
+  },
+  {
+    "masterCardId": "9803",
+    "externalId": null,
+    "tcgdex_id": "sm115-44",
+    "localId": "044",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "044/68",
+    "cardName": "Moltres & Zapdos & Articuno-GX",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 044/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 300,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      144,
+      145,
+      146
+    ],
+    "subtypes": [
+      "Basic",
+      "TAG TEAM",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-044-low.png",
+    "imageHighSrc": "cards/sm115-044-high.png"
+  },
+  {
+    "masterCardId": "9794",
+    "externalId": null,
+    "tcgdex_id": "sm115-43",
+    "localId": "043",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "043/68",
+    "cardName": "Mr. Mime",
+    "fullDisplayName": "Mr. Mime 043/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      122
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-043-low.png",
+    "imageHighSrc": "cards/sm115-043-high.png"
+  },
+  {
+    "masterCardId": "9787",
+    "externalId": null,
+    "tcgdex_id": "sm115-42",
+    "localId": "042",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "042/68",
+    "cardName": "Wigglytuff-GX",
+    "fullDisplayName": "Wigglytuff-GX 042/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      40
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jigglypuff",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-042-low.png",
+    "imageHighSrc": "cards/sm115-042-high.png"
+  },
+  {
+    "masterCardId": "9778",
+    "externalId": null,
+    "tcgdex_id": "sm115-41",
+    "localId": "041",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "041/68",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 041/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-041-low.png",
+    "imageHighSrc": "cards/sm115-041-high.png"
+  },
+  {
+    "masterCardId": "9769",
+    "externalId": null,
+    "tcgdex_id": "sm115-40",
+    "localId": "040",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "040/68",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 040/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-040-low.png",
+    "imageHighSrc": "cards/sm115-040-high.png"
+  },
+  {
+    "masterCardId": "9760",
+    "externalId": null,
+    "tcgdex_id": "sm115-39",
+    "localId": "039",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "039/68",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 039/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-039-low.png",
+    "imageHighSrc": "cards/sm115-039-high.png"
+  },
+  {
+    "masterCardId": "9751",
+    "externalId": null,
+    "tcgdex_id": "sm115-38",
+    "localId": "038",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "038/68",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 038/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-038-low.png",
+    "imageHighSrc": "cards/sm115-038-high.png"
+  },
+  {
+    "masterCardId": "9744",
+    "externalId": null,
+    "tcgdex_id": "sm115-37",
+    "localId": "037",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "037/68",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 037/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-037-low.png",
+    "imageHighSrc": "cards/sm115-037-high.png"
+  },
+  {
+    "masterCardId": "9736",
+    "externalId": null,
+    "tcgdex_id": "sm115-36",
+    "localId": "036",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "036/68",
+    "cardName": "Onix-GX",
+    "fullDisplayName": "Onix-GX 036/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 200,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA Igarashi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-036-low.png",
+    "imageHighSrc": "cards/sm115-036-high.png"
+  },
+  {
+    "masterCardId": "9713",
+    "externalId": null,
+    "tcgdex_id": "sm115-35",
+    "localId": "035",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "035/68",
+    "cardName": "Golem",
+    "fullDisplayName": "Golem 035/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 170,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      76
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Graveler",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-035-low.png",
+    "imageHighSrc": "cards/sm115-035-high.png"
+  },
+  {
+    "masterCardId": "9704",
+    "externalId": null,
+    "tcgdex_id": "sm115-34",
+    "localId": "034",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "034/68",
+    "cardName": "Graveler",
+    "fullDisplayName": "Graveler 034/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      75
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Geodude",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-034-low.png",
+    "imageHighSrc": "cards/sm115-034-high.png"
+  },
+  {
+    "masterCardId": "9694",
+    "externalId": null,
+    "tcgdex_id": "sm115-33",
+    "localId": "033",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "033/68",
+    "cardName": "Geodude",
+    "fullDisplayName": "Geodude 033/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      74
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-033-low.png",
+    "imageHighSrc": "cards/sm115-033-high.png"
+  },
+  {
+    "masterCardId": "9686",
+    "externalId": null,
+    "tcgdex_id": "sm115-32",
+    "localId": "032",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "032/68",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 032/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-032-low.png",
+    "imageHighSrc": "cards/sm115-032-high.png"
+  },
+  {
+    "masterCardId": "9678",
+    "externalId": null,
+    "tcgdex_id": "sm115-31",
+    "localId": "031",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "031/68",
+    "cardName": "Mewtwo-GX",
+    "fullDisplayName": "Mewtwo-GX 031/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-031-low.png",
+    "imageHighSrc": "cards/sm115-031-high.png"
+  },
+  {
+    "masterCardId": "9668",
+    "externalId": null,
+    "tcgdex_id": "sm115-30",
+    "localId": "030",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "030/68",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 030/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-030-low.png",
+    "imageHighSrc": "cards/sm115-030-high.png"
+  },
+  {
+    "masterCardId": "9659",
+    "externalId": null,
+    "tcgdex_id": "sm115-29",
+    "localId": "029",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "029/68",
+    "cardName": "Weezing",
+    "fullDisplayName": "Weezing 029/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      110
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Koffing",
+    "artist": "Hideki Ishikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-029-low.png",
+    "imageHighSrc": "cards/sm115-029-high.png"
+  },
+  {
+    "masterCardId": "9650",
+    "externalId": null,
+    "tcgdex_id": "sm115-28",
+    "localId": "028",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "028/68",
+    "cardName": "Koffing",
+    "fullDisplayName": "Koffing 028/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      109
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Saya Tsuruta",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-028-low.png",
+    "imageHighSrc": "cards/sm115-028-high.png"
+  },
+  {
+    "masterCardId": "9642",
+    "externalId": null,
+    "tcgdex_id": "sm115-27",
+    "localId": "027",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "027/68",
+    "cardName": "Arbok",
+    "fullDisplayName": "Arbok 027/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      24
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Ekans",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-027-low.png",
+    "imageHighSrc": "cards/sm115-027-high.png"
+  },
+  {
+    "masterCardId": "9634",
+    "externalId": null,
+    "tcgdex_id": "sm115-26",
+    "localId": "026",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "026/68",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 026/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-026-low.png",
+    "imageHighSrc": "cards/sm115-026-high.png"
+  },
+  {
+    "masterCardId": "9625",
+    "externalId": null,
+    "tcgdex_id": "sm115-25",
+    "localId": "025",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "025/68",
+    "cardName": "Ekans",
+    "fullDisplayName": "Ekans 025/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      23
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-025-low.png",
+    "imageHighSrc": "cards/sm115-025-high.png"
+  },
+  {
+    "masterCardId": "9617",
+    "externalId": null,
+    "tcgdex_id": "sm115-24",
+    "localId": "024",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "024/68",
+    "cardName": "Zapdos",
+    "fullDisplayName": "Zapdos 024/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      145
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-024-low.png",
+    "imageHighSrc": "cards/sm115-024-high.png"
+  },
+  {
+    "masterCardId": "9609",
+    "externalId": null,
+    "tcgdex_id": "sm115-23",
+    "localId": "023",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "023/68",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon 023/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-023-low.png",
+    "imageHighSrc": "cards/sm115-023-high.png"
+  },
+  {
+    "masterCardId": "9600",
+    "externalId": null,
+    "tcgdex_id": "sm115-22",
+    "localId": "022",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "022/68",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode 022/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "Anesaki Dynamic",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-022-low.png",
+    "imageHighSrc": "cards/sm115-022-high.png"
+  },
+  {
+    "masterCardId": "9591",
+    "externalId": null,
+    "tcgdex_id": "sm115-21",
+    "localId": "021",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "021/68",
+    "cardName": "Voltorb",
+    "fullDisplayName": "Voltorb 021/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      100
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "SATOSHI NAKAI",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-021-low.png",
+    "imageHighSrc": "cards/sm115-021-high.png"
+  },
+  {
+    "masterCardId": "9582",
+    "externalId": null,
+    "tcgdex_id": "sm115-20",
+    "localId": "020",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "020/68",
+    "cardName": "Raichu-GX",
+    "fullDisplayName": "Raichu-GX 020/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 210,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-020-low.png",
+    "imageHighSrc": "cards/sm115-020-high.png"
+  },
+  {
+    "masterCardId": "9574",
+    "externalId": null,
+    "tcgdex_id": "sm115-19",
+    "localId": "019",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "019/68",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 019/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-019-low.png",
+    "imageHighSrc": "cards/sm115-019-high.png"
+  },
+  {
+    "masterCardId": "9564",
+    "externalId": null,
+    "tcgdex_id": "sm115-18",
+    "localId": "018",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "018/68",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon 018/68 Hidden Fates",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-018-low.png",
+    "imageHighSrc": "cards/sm115-018-high.png"
+  },
+  {
+    "masterCardId": "9556",
+    "externalId": null,
+    "tcgdex_id": "sm115-17",
+    "localId": "017",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "017/68",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 017/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kodama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-017-low.png",
+    "imageHighSrc": "cards/sm115-017-high.png"
+  },
+  {
+    "masterCardId": "9545",
+    "externalId": null,
+    "tcgdex_id": "sm115-16",
+    "localId": "016",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "016/68",
+    "cardName": "Gyarados-GX",
+    "fullDisplayName": "Gyarados-GX 016/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 230,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      130
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magikarp",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-016-low.png",
+    "imageHighSrc": "cards/sm115-016-high.png"
+  },
+  {
+    "masterCardId": "9537",
+    "externalId": null,
+    "tcgdex_id": "sm115-15",
+    "localId": "015",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "015/68",
+    "cardName": "Magikarp",
+    "fullDisplayName": "Magikarp 015/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      129
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-015-low.png",
+    "imageHighSrc": "cards/sm115-015-high.png"
+  },
+  {
+    "masterCardId": "9528",
+    "externalId": null,
+    "tcgdex_id": "sm115-14",
+    "localId": "014",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "014/68",
+    "cardName": "Starmie-GX",
+    "fullDisplayName": "Starmie-GX 014/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 190,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      121
+    ],
+    "subtypes": [
+      "Stage 1",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Staryu",
+    "artist": "PLANETA Otani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-014-low.png",
+    "imageHighSrc": "cards/sm115-014-high.png"
+  },
+  {
+    "masterCardId": "9521",
+    "externalId": null,
+    "tcgdex_id": "sm115-13",
+    "localId": "013",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "013/68",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 013/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-013-low.png",
+    "imageHighSrc": "cards/sm115-013-high.png"
+  },
+  {
+    "masterCardId": "9513",
+    "externalId": null,
+    "tcgdex_id": "sm115-12",
+    "localId": "012",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "012/68",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 012/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Misa Tsutsui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-012-low.png",
+    "imageHighSrc": "cards/sm115-012-high.png"
+  },
+  {
+    "masterCardId": "9507",
+    "externalId": null,
+    "tcgdex_id": "sm115-11",
+    "localId": "011",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "011/68",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 011/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "nagimiso",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-011-low.png",
+    "imageHighSrc": "cards/sm115-011-high.png"
+  },
+  {
+    "masterCardId": "9496",
+    "externalId": null,
+    "tcgdex_id": "sm115-10",
+    "localId": "010",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "010/68",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 010/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Satoshi Shirai",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-010-low.png",
+    "imageHighSrc": "cards/sm115-010-high.png"
+  },
+  {
+    "masterCardId": "9488",
+    "externalId": null,
+    "tcgdex_id": "sm115-9",
+    "localId": "009",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "009/68",
+    "cardName": "Charizard-GX",
+    "fullDisplayName": "Charizard-GX 009/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 250,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "subtypes": [
+      "Stage 2",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmeleon",
+    "artist": "aky CG Works",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-009-low.png",
+    "imageHighSrc": "cards/sm115-009-high.png"
+  },
+  {
+    "masterCardId": "9481",
+    "externalId": null,
+    "tcgdex_id": "sm115-8",
+    "localId": "008",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "008/68",
+    "cardName": "Charmeleon",
+    "fullDisplayName": "Charmeleon 008/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      5
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Charmander",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-008-low.png",
+    "imageHighSrc": "cards/sm115-008-high.png"
+  },
+  {
+    "masterCardId": "9472",
+    "externalId": null,
+    "tcgdex_id": "sm115-7",
+    "localId": "007",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "007/68",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 007/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Megumi Mizutani",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-007-low.png",
+    "imageHighSrc": "cards/sm115-007-high.png"
+  },
+  {
+    "masterCardId": "9465",
+    "externalId": null,
+    "tcgdex_id": "sm115-6",
+    "localId": "006",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "006/68",
+    "cardName": "Pinsir-GX",
+    "fullDisplayName": "Pinsir-GX 006/68 Hidden Fates",
+    "rarity": "Rare Holo GX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      127
+    ],
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-006-low.png",
+    "imageHighSrc": "cards/sm115-006-high.png"
+  },
+  {
+    "masterCardId": "9456",
+    "externalId": null,
+    "tcgdex_id": "sm115-5",
+    "localId": "005",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "005/68",
+    "cardName": "Scyther",
+    "fullDisplayName": "Scyther 005/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      123
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hasuno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-005-low.png",
+    "imageHighSrc": "cards/sm115-005-high.png"
+  },
+  {
+    "masterCardId": "9447",
+    "externalId": null,
+    "tcgdex_id": "sm115-4",
+    "localId": "004",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "004/68",
+    "cardName": "Paras",
+    "fullDisplayName": "Paras 004/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      46
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "OOYAMA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-004-low.png",
+    "imageHighSrc": "cards/sm115-004-high.png"
+  },
+  {
+    "masterCardId": "9440",
+    "externalId": null,
+    "tcgdex_id": "sm115-3",
+    "localId": "003",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "003/68",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 003/68 Hidden Fates",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-003-low.png",
+    "imageHighSrc": "cards/sm115-003-high.png"
+  },
+  {
+    "masterCardId": "9430",
+    "externalId": null,
+    "tcgdex_id": "sm115-2",
+    "localId": "002",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "002/68",
+    "cardName": "Metapod",
+    "fullDisplayName": "Metapod 002/68 Hidden Fates",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      11
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Caterpie",
+    "artist": "Shibuzoh.",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-002-low.png",
+    "imageHighSrc": "cards/sm115-002-high.png"
+  },
+  {
+    "masterCardId": "9420",
+    "externalId": null,
+    "tcgdex_id": "sm115-1",
+    "localId": "001",
+    "setCode": "sm115",
+    "setTcgdexId": "sm115",
+    "cardNumber": "001/68",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 001/68 Hidden Fates",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "tetsuya koizumi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/sm115-001-low.png",
+    "imageHighSrc": "cards/sm115-001-high.png"
+  }
+]

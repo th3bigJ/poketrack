@@ -1,0 +1,3328 @@
+[
+  {
+    "masterCardId": "3385",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW101",
+    "localId": "BW101",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW101/101",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect BW101/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW101-low.png",
+    "imageHighSrc": "cards/bwp-BW101-high.png"
+  },
+  {
+    "masterCardId": "3384",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW100",
+    "localId": "BW100",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW100/101",
+    "cardName": "N",
+    "fullDisplayName": "N BW100/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW100-low.png",
+    "imageHighSrc": "cards/bwp-BW100-high.png"
+  },
+  {
+    "masterCardId": "3383",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW99",
+    "localId": "BW99",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW99/101",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect BW99/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW99-low.png",
+    "imageHighSrc": "cards/bwp-BW99-high.png"
+  },
+  {
+    "masterCardId": "3382",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW98",
+    "localId": "BW98",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW98/101",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew BW98/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW98-low.png",
+    "imageHighSrc": "cards/bwp-BW98-high.png"
+  },
+  {
+    "masterCardId": "3381",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW97",
+    "localId": "BW97",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW97/101",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee BW97/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW97-low.png",
+    "imageHighSrc": "cards/bwp-BW97-high.png"
+  },
+  {
+    "masterCardId": "3380",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW96",
+    "localId": "BW96",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW96/101",
+    "cardName": "Tornadus-EX",
+    "fullDisplayName": "Tornadus-EX BW96/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW96-low.png",
+    "imageHighSrc": "cards/bwp-BW96-high.png"
+  },
+  {
+    "masterCardId": "3379",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW95",
+    "localId": "BW95",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW95/101",
+    "cardName": "Champions Festival",
+    "fullDisplayName": "Champions Festival BW95/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW95-low.png",
+    "imageHighSrc": "cards/bwp-BW95-high.png"
+  },
+  {
+    "masterCardId": "3378",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW94",
+    "localId": "BW94",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW94/101",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee BW94/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW94-low.png",
+    "imageHighSrc": "cards/bwp-BW94-high.png"
+  },
+  {
+    "masterCardId": "3377",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW93",
+    "localId": "BW93",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW93/101",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon BW93/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW93-low.png",
+    "imageHighSrc": "cards/bwp-BW93-high.png"
+  },
+  {
+    "masterCardId": "3376",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW92",
+    "localId": "BW92",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW92/101",
+    "cardName": "Espeon",
+    "fullDisplayName": "Espeon BW92/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW92-low.png",
+    "imageHighSrc": "cards/bwp-BW92-high.png"
+  },
+  {
+    "masterCardId": "3375",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW91",
+    "localId": "BW91",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW91/101",
+    "cardName": "Jolteon",
+    "fullDisplayName": "Jolteon BW91/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      135
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW91-low.png",
+    "imageHighSrc": "cards/bwp-BW91-high.png"
+  },
+  {
+    "masterCardId": "3374",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW90",
+    "localId": "BW90",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW90/101",
+    "cardName": "Glaceon",
+    "fullDisplayName": "Glaceon BW90/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW90-low.png",
+    "imageHighSrc": "cards/bwp-BW90-high.png"
+  },
+  {
+    "masterCardId": "3373",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW89",
+    "localId": "BW89",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW89/101",
+    "cardName": "Vaporeon",
+    "fullDisplayName": "Vaporeon BW89/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      134
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW89-low.png",
+    "imageHighSrc": "cards/bwp-BW89-high.png"
+  },
+  {
+    "masterCardId": "3372",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW88",
+    "localId": "BW88",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW88/101",
+    "cardName": "Flareon",
+    "fullDisplayName": "Flareon BW88/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      136
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW88-low.png",
+    "imageHighSrc": "cards/bwp-BW88-high.png"
+  },
+  {
+    "masterCardId": "3371",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW87",
+    "localId": "BW87",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW87/101",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon BW87/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "The Pokémon Company Art Team",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW87-low.png",
+    "imageHighSrc": "cards/bwp-BW87-high.png"
+  },
+  {
+    "masterCardId": "3370",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW86",
+    "localId": "BW86",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW86/101",
+    "cardName": "Genesect",
+    "fullDisplayName": "Genesect BW86/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      649
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW86-low.png",
+    "imageHighSrc": "cards/bwp-BW86-high.png"
+  },
+  {
+    "masterCardId": "3369",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW85",
+    "localId": "BW85",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW85/101",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario BW85/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Riolu",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW85-low.png",
+    "imageHighSrc": "cards/bwp-BW85-high.png"
+  },
+  {
+    "masterCardId": "3368",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW84",
+    "localId": "BW84",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW84/101",
+    "cardName": "Porygon-Z",
+    "fullDisplayName": "Porygon-Z BW84/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      474
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Porygon2",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW84-low.png",
+    "imageHighSrc": "cards/bwp-BW84-high.png"
+  },
+  {
+    "masterCardId": "3367",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW83",
+    "localId": "BW83",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW83/101",
+    "cardName": "Lugia-EX",
+    "fullDisplayName": "Lugia-EX BW83/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      249
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW83-low.png",
+    "imageHighSrc": "cards/bwp-BW83-high.png"
+  },
+  {
+    "masterCardId": "3366",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW82",
+    "localId": "BW82",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW82/101",
+    "cardName": "Deoxys-EX",
+    "fullDisplayName": "Deoxys-EX BW82/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW82-low.png",
+    "imageHighSrc": "cards/bwp-BW82-high.png"
+  },
+  {
+    "masterCardId": "3365",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW81",
+    "localId": "BW81",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW81/101",
+    "cardName": "Thundurus-EX",
+    "fullDisplayName": "Thundurus-EX BW81/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW81-low.png",
+    "imageHighSrc": "cards/bwp-BW81-high.png"
+  },
+  {
+    "masterCardId": "3364",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW80",
+    "localId": "BW80",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW80/101",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon BW80/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW80-low.png",
+    "imageHighSrc": "cards/bwp-BW80-high.png"
+  },
+  {
+    "masterCardId": "3363",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW79",
+    "localId": "BW79",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW79/101",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus BW79/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW79-low.png",
+    "imageHighSrc": "cards/bwp-BW79-high.png"
+  },
+  {
+    "masterCardId": "3362",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW78",
+    "localId": "BW78",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW78/101",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu BW78/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW78-low.png",
+    "imageHighSrc": "cards/bwp-BW78-high.png"
+  },
+  {
+    "masterCardId": "3361",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW77",
+    "localId": "BW77",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW77/101",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu BW77/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW77-low.png",
+    "imageHighSrc": "cards/bwp-BW77-high.png"
+  },
+  {
+    "masterCardId": "3360",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW76",
+    "localId": "BW76",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW76/101",
+    "cardName": "Electrode",
+    "fullDisplayName": "Electrode BW76/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      101
+    ],
+    "subtypes": [
+      "Stage 1",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Voltorb",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW76-low.png",
+    "imageHighSrc": "cards/bwp-BW76-high.png"
+  },
+  {
+    "masterCardId": "3359",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW75",
+    "localId": "BW75",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW75/101",
+    "cardName": "Metagross",
+    "fullDisplayName": "Metagross BW75/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      376
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metang",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW75-low.png",
+    "imageHighSrc": "cards/bwp-BW75-high.png"
+  },
+  {
+    "masterCardId": "3358",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW74",
+    "localId": "BW74",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW74/101",
+    "cardName": "Giratina",
+    "fullDisplayName": "Giratina BW74/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      487
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW74-low.png",
+    "imageHighSrc": "cards/bwp-BW74-high.png"
+  },
+  {
+    "masterCardId": "3357",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW73",
+    "localId": "BW73",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW73/101",
+    "cardName": "Darkrai",
+    "fullDisplayName": "Darkrai BW73/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW73-low.png",
+    "imageHighSrc": "cards/bwp-BW73-high.png"
+  },
+  {
+    "masterCardId": "3356",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW72",
+    "localId": "BW72",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW72/101",
+    "cardName": "Cobalion",
+    "fullDisplayName": "Cobalion BW72/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      638
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW72-low.png",
+    "imageHighSrc": "cards/bwp-BW72-high.png"
+  },
+  {
+    "masterCardId": "3355",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW71",
+    "localId": "BW71",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW71/101",
+    "cardName": "Terrakion",
+    "fullDisplayName": "Terrakion BW71/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      639
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW71-low.png",
+    "imageHighSrc": "cards/bwp-BW71-high.png"
+  },
+  {
+    "masterCardId": "3354",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW70",
+    "localId": "BW70",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW70/101",
+    "cardName": "Virizion",
+    "fullDisplayName": "Virizion BW70/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      640
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW70-low.png",
+    "imageHighSrc": "cards/bwp-BW70-high.png"
+  },
+  {
+    "masterCardId": "3353",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW69",
+    "localId": "BW69",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW69/101",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta BW69/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW69-low.png",
+    "imageHighSrc": "cards/bwp-BW69-high.png"
+  },
+  {
+    "masterCardId": "3352",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW68",
+    "localId": "BW68",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW68/101",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta BW68/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      648
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW68-low.png",
+    "imageHighSrc": "cards/bwp-BW68-high.png"
+  },
+  {
+    "masterCardId": "3351",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW67",
+    "localId": "BW67",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW67/101",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos BW67/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Flaaffy",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW67-low.png",
+    "imageHighSrc": "cards/bwp-BW67-high.png"
+  },
+  {
+    "masterCardId": "3350",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW66",
+    "localId": "BW66",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW66/101",
+    "cardName": "Ninetales",
+    "fullDisplayName": "Ninetales BW66/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      38
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vulpix",
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW66-low.png",
+    "imageHighSrc": "cards/bwp-BW66-high.png"
+  },
+  {
+    "masterCardId": "3349",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW65",
+    "localId": "BW65",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW65/101",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff BW65/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW65-low.png",
+    "imageHighSrc": "cards/bwp-BW65-high.png"
+  },
+  {
+    "masterCardId": "3348",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW64",
+    "localId": "BW64",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW64/101",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim BW64/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      426
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drifloon",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW64-low.png",
+    "imageHighSrc": "cards/bwp-BW64-high.png"
+  },
+  {
+    "masterCardId": "3347",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW63",
+    "localId": "BW63",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW63/101",
+    "cardName": "White Kyurem-EX",
+    "fullDisplayName": "White Kyurem-EX BW63/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW63-low.png",
+    "imageHighSrc": "cards/bwp-BW63-high.png"
+  },
+  {
+    "masterCardId": "3346",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW62",
+    "localId": "BW62",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW62/101",
+    "cardName": "Black Kyurem-EX",
+    "fullDisplayName": "Black Kyurem-EX BW62/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW62-low.png",
+    "imageHighSrc": "cards/bwp-BW62-high.png"
+  },
+  {
+    "masterCardId": "3345",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW61",
+    "localId": "BW61",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW61/101",
+    "cardName": "Keldeo-EX",
+    "fullDisplayName": "Keldeo-EX BW61/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW61-low.png",
+    "imageHighSrc": "cards/bwp-BW61-high.png"
+  },
+  {
+    "masterCardId": "3344",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW60",
+    "localId": "BW60",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW60/101",
+    "cardName": "Keldeo",
+    "fullDisplayName": "Keldeo BW60/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      647
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW60-low.png",
+    "imageHighSrc": "cards/bwp-BW60-high.png"
+  },
+  {
+    "masterCardId": "3343",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW59",
+    "localId": "BW59",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW59/101",
+    "cardName": "White Kyurem",
+    "fullDisplayName": "White Kyurem BW59/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW59-low.png",
+    "imageHighSrc": "cards/bwp-BW59-high.png"
+  },
+  {
+    "masterCardId": "3342",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW58",
+    "localId": "BW58",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW58/101",
+    "cardName": "Black Kyurem",
+    "fullDisplayName": "Black Kyurem BW58/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW58-low.png",
+    "imageHighSrc": "cards/bwp-BW58-high.png"
+  },
+  {
+    "masterCardId": "3341",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW57",
+    "localId": "BW57",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW57/101",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus BW57/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      612
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Fraxure",
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW57-low.png",
+    "imageHighSrc": "cards/bwp-BW57-high.png"
+  },
+  {
+    "masterCardId": "3340",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW56",
+    "localId": "BW56",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW56/101",
+    "cardName": "Empoleon",
+    "fullDisplayName": "Empoleon BW56/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      395
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Prinplup",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW56-low.png",
+    "imageHighSrc": "cards/bwp-BW56-high.png"
+  },
+  {
+    "masterCardId": "3339",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW55",
+    "localId": "BW55",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW55/101",
+    "cardName": "Elgyem",
+    "fullDisplayName": "Elgyem BW55/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      605
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW55-low.png",
+    "imageHighSrc": "cards/bwp-BW55-high.png"
+  },
+  {
+    "masterCardId": "3338",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW54",
+    "localId": "BW54",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW54/101",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu BW54/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW54-low.png",
+    "imageHighSrc": "cards/bwp-BW54-high.png"
+  },
+  {
+    "masterCardId": "3337",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW53",
+    "localId": "BW53",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW53/101",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon BW53/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "BERUBURI",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW53-low.png",
+    "imageHighSrc": "cards/bwp-BW53-high.png"
+  },
+  {
+    "masterCardId": "3336",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW52",
+    "localId": "BW52",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW52/101",
+    "cardName": "Lillipup",
+    "fullDisplayName": "Lillipup BW52/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      506
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW52-low.png",
+    "imageHighSrc": "cards/bwp-BW52-high.png"
+  },
+  {
+    "masterCardId": "3335",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW51",
+    "localId": "BW51",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW51/101",
+    "cardName": "Crobat",
+    "fullDisplayName": "Crobat BW51/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      169
+    ],
+    "subtypes": [
+      "Stage 2",
+      "Team Plasma"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golbat",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW51-low.png",
+    "imageHighSrc": "cards/bwp-BW51-high.png"
+  },
+  {
+    "masterCardId": "3334",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW50",
+    "localId": "BW50",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW50/101",
+    "cardName": "Tropical Beach",
+    "fullDisplayName": "Tropical Beach BW50/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW50-low.png",
+    "imageHighSrc": "cards/bwp-BW50-high.png"
+  },
+  {
+    "masterCardId": "3333",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW49",
+    "localId": "BW49",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW49/101",
+    "cardName": "Lilligant",
+    "fullDisplayName": "Lilligant BW49/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      549
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Petilil",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW49-low.png",
+    "imageHighSrc": "cards/bwp-BW49-high.png"
+  },
+  {
+    "masterCardId": "3332",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW48",
+    "localId": "BW48",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW48/101",
+    "cardName": "Altaria",
+    "fullDisplayName": "Altaria BW48/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      334
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Swablu",
+    "artist": "HiRON",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW48-low.png",
+    "imageHighSrc": "cards/bwp-BW48-high.png"
+  },
+  {
+    "masterCardId": "3331",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW47",
+    "localId": "BW47",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW47/101",
+    "cardName": "Rayquaza-EX",
+    "fullDisplayName": "Rayquaza-EX BW47/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW47-low.png",
+    "imageHighSrc": "cards/bwp-BW47-high.png"
+  },
+  {
+    "masterCardId": "3330",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW46",
+    "localId": "BW46",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW46/101",
+    "cardName": "Darkrai-EX",
+    "fullDisplayName": "Darkrai-EX BW46/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      491
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW46-low.png",
+    "imageHighSrc": "cards/bwp-BW46-high.png"
+  },
+  {
+    "masterCardId": "3329",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW45",
+    "localId": "BW45",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW45/101",
+    "cardName": "Mewtwo-EX",
+    "fullDisplayName": "Mewtwo-EX BW45/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW45-low.png",
+    "imageHighSrc": "cards/bwp-BW45-high.png"
+  },
+  {
+    "masterCardId": "3328",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW44",
+    "localId": "BW44",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW44/101",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem BW44/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW44-low.png",
+    "imageHighSrc": "cards/bwp-BW44-high.png"
+  },
+  {
+    "masterCardId": "3327",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW43",
+    "localId": "BW43",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW43/101",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus BW43/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW43-low.png",
+    "imageHighSrc": "cards/bwp-BW43-high.png"
+  },
+  {
+    "masterCardId": "3326",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW42",
+    "localId": "BW42",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW42/101",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus BW42/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW42-low.png",
+    "imageHighSrc": "cards/bwp-BW42-high.png"
+  },
+  {
+    "masterCardId": "3325",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW41",
+    "localId": "BW41",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW41/101",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus BW41/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW41-low.png",
+    "imageHighSrc": "cards/bwp-BW41-high.png"
+  },
+  {
+    "masterCardId": "3324",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW40",
+    "localId": "BW40",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW40/101",
+    "cardName": "Volcarona",
+    "fullDisplayName": "Volcarona BW40/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      637
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Larvesta",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW40-low.png",
+    "imageHighSrc": "cards/bwp-BW40-high.png"
+  },
+  {
+    "masterCardId": "3323",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW39",
+    "localId": "BW39",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW39/101",
+    "cardName": "Battle City",
+    "fullDisplayName": "Battle City BW39/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hideaki Hakozaki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW39-low.png",
+    "imageHighSrc": "cards/bwp-BW39-high.png"
+  },
+  {
+    "masterCardId": "3322",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW38",
+    "localId": "BW38",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW38/101",
+    "cardName": "Zekrom-EX",
+    "fullDisplayName": "Zekrom-EX BW38/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW38-low.png",
+    "imageHighSrc": "cards/bwp-BW38-high.png"
+  },
+  {
+    "masterCardId": "3321",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW37",
+    "localId": "BW37",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW37/101",
+    "cardName": "Kyurem-EX",
+    "fullDisplayName": "Kyurem-EX BW37/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      646
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW37-low.png",
+    "imageHighSrc": "cards/bwp-BW37-high.png"
+  },
+  {
+    "masterCardId": "3320",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW36",
+    "localId": "BW36",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW36/101",
+    "cardName": "Reshiram-EX",
+    "fullDisplayName": "Reshiram-EX BW36/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW36-low.png",
+    "imageHighSrc": "cards/bwp-BW36-high.png"
+  },
+  {
+    "masterCardId": "3319",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW35",
+    "localId": "BW35",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW35/101",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth BW35/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW35-low.png",
+    "imageHighSrc": "cards/bwp-BW35-high.png"
+  },
+  {
+    "masterCardId": "3318",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW34",
+    "localId": "BW34",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW34/101",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio BW34/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shinx",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW34-low.png",
+    "imageHighSrc": "cards/bwp-BW34-high.png"
+  },
+  {
+    "masterCardId": "3317",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW33",
+    "localId": "BW33",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW33/101",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu BW33/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW33-low.png",
+    "imageHighSrc": "cards/bwp-BW33-high.png"
+  },
+  {
+    "masterCardId": "3316",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW32",
+    "localId": "BW32",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW32/101",
+    "cardName": "Victini",
+    "fullDisplayName": "Victini BW32/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      494
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW32-low.png",
+    "imageHighSrc": "cards/bwp-BW32-high.png"
+  },
+  {
+    "masterCardId": "3315",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW31",
+    "localId": "BW31",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW31/101",
+    "cardName": "Victory Cup",
+    "fullDisplayName": "Victory Cup BW31/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW31-low.png",
+    "imageHighSrc": "cards/bwp-BW31-high.png"
+  },
+  {
+    "masterCardId": "3314",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW30",
+    "localId": "BW30",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW30/101",
+    "cardName": "Victory Cup",
+    "fullDisplayName": "Victory Cup BW30/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW30-low.png",
+    "imageHighSrc": "cards/bwp-BW30-high.png"
+  },
+  {
+    "masterCardId": "3313",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW29",
+    "localId": "BW29",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW29/101",
+    "cardName": "Victory Cup",
+    "fullDisplayName": "Victory Cup BW29/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW29-low.png",
+    "imageHighSrc": "cards/bwp-BW29-high.png"
+  },
+  {
+    "masterCardId": "3312",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW28",
+    "localId": "BW28",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW28/101",
+    "cardName": "Tropical Beach",
+    "fullDisplayName": "Tropical Beach BW28/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW28-low.png",
+    "imageHighSrc": "cards/bwp-BW28-high.png"
+  },
+  {
+    "masterCardId": "3311",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW27",
+    "localId": "BW27",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW27/101",
+    "cardName": "Litwick",
+    "fullDisplayName": "Litwick BW27/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      607
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW27-low.png",
+    "imageHighSrc": "cards/bwp-BW27-high.png"
+  },
+  {
+    "masterCardId": "3310",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW26",
+    "localId": "BW26",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW26/101",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew BW26/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW26-low.png",
+    "imageHighSrc": "cards/bwp-BW26-high.png"
+  },
+  {
+    "masterCardId": "3309",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW25",
+    "localId": "BW25",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW25/101",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy BW25/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW25-low.png",
+    "imageHighSrc": "cards/bwp-BW25-high.png"
+  },
+  {
+    "masterCardId": "3308",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW24",
+    "localId": "BW24",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW24/101",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom BW24/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW24-low.png",
+    "imageHighSrc": "cards/bwp-BW24-high.png"
+  },
+  {
+    "masterCardId": "3307",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW23",
+    "localId": "BW23",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW23/101",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram BW23/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW23-low.png",
+    "imageHighSrc": "cards/bwp-BW23-high.png"
+  },
+  {
+    "masterCardId": "3306",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW22",
+    "localId": "BW22",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW22/101",
+    "cardName": "Samurott",
+    "fullDisplayName": "Samurott BW22/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      503
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Dewott",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW22-low.png",
+    "imageHighSrc": "cards/bwp-BW22-high.png"
+  },
+  {
+    "masterCardId": "3305",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW21",
+    "localId": "BW21",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW21/101",
+    "cardName": "Emboar",
+    "fullDisplayName": "Emboar BW21/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      500
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pignite",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW21-low.png",
+    "imageHighSrc": "cards/bwp-BW21-high.png"
+  },
+  {
+    "masterCardId": "3304",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW20",
+    "localId": "BW20",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW20/101",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior BW20/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Servine",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW20-low.png",
+    "imageHighSrc": "cards/bwp-BW20-high.png"
+  },
+  {
+    "masterCardId": "3303",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW19",
+    "localId": "BW19",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW19/101",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark BW19/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW19-low.png",
+    "imageHighSrc": "cards/bwp-BW19-high.png"
+  },
+  {
+    "masterCardId": "3302",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW18",
+    "localId": "BW18",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW18/101",
+    "cardName": "Darumaka",
+    "fullDisplayName": "Darumaka BW18/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      554
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW18-low.png",
+    "imageHighSrc": "cards/bwp-BW18-high.png"
+  },
+  {
+    "masterCardId": "3301",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW17",
+    "localId": "BW17",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW17/101",
+    "cardName": "Ducklett",
+    "fullDisplayName": "Ducklett BW17/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      580
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW17-low.png",
+    "imageHighSrc": "cards/bwp-BW17-high.png"
+  },
+  {
+    "masterCardId": "3300",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW16",
+    "localId": "BW16",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW16/101",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew BW16/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW16-low.png",
+    "imageHighSrc": "cards/bwp-BW16-high.png"
+  },
+  {
+    "masterCardId": "3299",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW15",
+    "localId": "BW15",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW15/101",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove BW15/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW15-low.png",
+    "imageHighSrc": "cards/bwp-BW15-high.png"
+  },
+  {
+    "masterCardId": "3298",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW14",
+    "localId": "BW14",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW14/101",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage BW14/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW14-low.png",
+    "imageHighSrc": "cards/bwp-BW14-high.png"
+  },
+  {
+    "masterCardId": "3297",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW13",
+    "localId": "BW13",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW13/101",
+    "cardName": "Minccino",
+    "fullDisplayName": "Minccino BW13/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      572
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW13-low.png",
+    "imageHighSrc": "cards/bwp-BW13-high.png"
+  },
+  {
+    "masterCardId": "3296",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW12",
+    "localId": "BW12",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW12/101",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua BW12/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW12-low.png",
+    "imageHighSrc": "cards/bwp-BW12-high.png"
+  },
+  {
+    "masterCardId": "3295",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW11",
+    "localId": "BW11",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW11/101",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage BW11/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW11-low.png",
+    "imageHighSrc": "cards/bwp-BW11-high.png"
+  },
+  {
+    "masterCardId": "3294",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW10",
+    "localId": "BW10",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW10/101",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew BW10/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      610
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW10-low.png",
+    "imageHighSrc": "cards/bwp-BW10-high.png"
+  },
+  {
+    "masterCardId": "3293",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW09",
+    "localId": "BW09",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW09/101",
+    "cardName": "Zoroark",
+    "fullDisplayName": "Zoroark BW09/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      571
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Zorua",
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW09-low.png",
+    "imageHighSrc": "cards/bwp-BW09-high.png"
+  },
+  {
+    "masterCardId": "3292",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW08",
+    "localId": "BW08",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW08/101",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott BW08/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW08-low.png",
+    "imageHighSrc": "cards/bwp-BW08-high.png"
+  },
+  {
+    "masterCardId": "3291",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW07",
+    "localId": "BW07",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW07/101",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig BW07/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW07-low.png",
+    "imageHighSrc": "cards/bwp-BW07-high.png"
+  },
+  {
+    "masterCardId": "3290",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW06",
+    "localId": "BW06",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW06/101",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy BW06/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shizurow",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW06-low.png",
+    "imageHighSrc": "cards/bwp-BW06-high.png"
+  },
+  {
+    "masterCardId": "3289",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW04",
+    "localId": "BW005",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW005/101",
+    "cardName": "Zekrom",
+    "fullDisplayName": "Zekrom BW005/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      644
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW005-low.png",
+    "imageHighSrc": "cards/bwp-BW005-high.png"
+  },
+  {
+    "masterCardId": "3288",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW03",
+    "localId": "BW004",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW004/101",
+    "cardName": "Reshiram",
+    "fullDisplayName": "Reshiram BW004/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      643
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW004-low.png",
+    "imageHighSrc": "cards/bwp-BW004-high.png"
+  },
+  {
+    "masterCardId": "3287",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW03",
+    "localId": "BW03",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW03/101",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott BW03/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW03-low.png",
+    "imageHighSrc": "cards/bwp-BW03-high.png"
+  },
+  {
+    "masterCardId": "3286",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW02",
+    "localId": "BW02",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW02/101",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig BW02/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW02-low.png",
+    "imageHighSrc": "cards/bwp-BW02-high.png"
+  },
+  {
+    "masterCardId": "3285",
+    "externalId": null,
+    "tcgdex_id": "bwp-BW01",
+    "localId": "BW01",
+    "setCode": "bwp",
+    "setTcgdexId": "bwp",
+    "cardNumber": "BW01/101",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy BW01/101 BW Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/bwp-BW01-low.png",
+    "imageHighSrc": "cards/bwp-BW01-high.png"
+  }
+]

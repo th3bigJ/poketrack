@@ -1,0 +1,167 @@
+[
+  {
+    "masterCardId": "22380",
+    "externalId": "wb1-5",
+    "tcgdex_id": "ex5.5-5",
+    "localId": "005",
+    "setCode": "ex5.5",
+    "setTcgdexId": "ex5.5",
+    "cardNumber": "005/5",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 005/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sylvia Forrest",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex5.5-005-low.jpg",
+    "imageHighSrc": "cards/ex5.5-005-low.jpg"
+  },
+  {
+    "masterCardId": "22379",
+    "externalId": "wb1-4",
+    "tcgdex_id": "ex5.5-4",
+    "localId": "004",
+    "setCode": "ex5.5",
+    "setTcgdexId": "ex5.5",
+    "cardNumber": "004/5",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 004/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Rowan Laidlaw",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex5.5-004-low.jpg",
+    "imageHighSrc": "cards/ex5.5-004-low.jpg"
+  },
+  {
+    "masterCardId": "22378",
+    "externalId": "wb1-3",
+    "tcgdex_id": "ex5.5-3",
+    "localId": "003",
+    "setCode": "ex5.5",
+    "setTcgdexId": "ex5.5",
+    "cardNumber": "003/5",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 003/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "May Do",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex5.5-003-low.jpg",
+    "imageHighSrc": "cards/ex5.5-003-low.jpg"
+  },
+  {
+    "masterCardId": "22377",
+    "externalId": "wb1-2",
+    "tcgdex_id": "ex5.5-2",
+    "localId": "002",
+    "setCode": "ex5.5",
+    "setTcgdexId": "ex5.5",
+    "cardNumber": "002/5",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 002/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katie Gross",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex5.5-002-low.jpg",
+    "imageHighSrc": "cards/ex5.5-002-low.jpg"
+  },
+  {
+    "masterCardId": "22376",
+    "externalId": "wb1-1",
+    "tcgdex_id": "ex5.5-1",
+    "localId": "001",
+    "setCode": "ex5.5",
+    "setTcgdexId": "ex5.5",
+    "cardNumber": "001/5",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 001/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mark Kraus",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex5.5-001-low.jpg",
+    "imageHighSrc": "cards/ex5.5-001-low.jpg"
+  }
+]

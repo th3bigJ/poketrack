@@ -1,0 +1,3698 @@
+[
+  {
+    "masterCardId": "20029",
+    "externalId": null,
+    "tcgdex_id": "xy3-113",
+    "localId": "113",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "113/111",
+    "cardName": "M Lucario-EX",
+    "fullDisplayName": "M Lucario-EX 113/111 Furious Fists",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lucario-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-113-low.png",
+    "imageHighSrc": "cards/xy3-113-high.png"
+  },
+  {
+    "masterCardId": "20022",
+    "externalId": null,
+    "tcgdex_id": "xy3-112",
+    "localId": "112",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "112/111",
+    "cardName": "M Heracross-EX",
+    "fullDisplayName": "M Heracross-EX 112/111 Furious Fists",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Heracross-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-112-low.png",
+    "imageHighSrc": "cards/xy3-112-high.png"
+  },
+  {
+    "masterCardId": "20013",
+    "externalId": null,
+    "tcgdex_id": "xy3-111",
+    "localId": "111",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "111/111",
+    "cardName": "Korrina",
+    "fullDisplayName": "Korrina 111/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-111-low.png",
+    "imageHighSrc": "cards/xy3-111-high.png"
+  },
+  {
+    "masterCardId": "20005",
+    "externalId": null,
+    "tcgdex_id": "xy3-110",
+    "localId": "110",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "110/111",
+    "cardName": "Fossil Researcher",
+    "fullDisplayName": "Fossil Researcher 110/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-110-low.png",
+    "imageHighSrc": "cards/xy3-110-high.png"
+  },
+  {
+    "masterCardId": "19995",
+    "externalId": null,
+    "tcgdex_id": "xy3-109",
+    "localId": "109",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "109/111",
+    "cardName": "Battle Reporter",
+    "fullDisplayName": "Battle Reporter 109/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-109-low.png",
+    "imageHighSrc": "cards/xy3-109-high.png"
+  },
+  {
+    "masterCardId": "19986",
+    "externalId": null,
+    "tcgdex_id": "xy3-108",
+    "localId": "108",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "108/111",
+    "cardName": "Dragonite-EX",
+    "fullDisplayName": "Dragonite-EX 108/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-108-low.png",
+    "imageHighSrc": "cards/xy3-108-high.png"
+  },
+  {
+    "masterCardId": "19977",
+    "externalId": null,
+    "tcgdex_id": "xy3-107",
+    "localId": "107",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "107/111",
+    "cardName": "Lucario-EX",
+    "fullDisplayName": "Lucario-EX 107/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-107-low.png",
+    "imageHighSrc": "cards/xy3-107-high.png"
+  },
+  {
+    "masterCardId": "19968",
+    "externalId": null,
+    "tcgdex_id": "xy3-106",
+    "localId": "106",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "106/111",
+    "cardName": "Seismitoad-EX",
+    "fullDisplayName": "Seismitoad-EX 106/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      537
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-106-low.png",
+    "imageHighSrc": "cards/xy3-106-high.png"
+  },
+  {
+    "masterCardId": "19960",
+    "externalId": null,
+    "tcgdex_id": "xy3-105",
+    "localId": "105",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "105/111",
+    "cardName": "Heracross-EX",
+    "fullDisplayName": "Heracross-EX 105/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-105-low.png",
+    "imageHighSrc": "cards/xy3-105-high.png"
+  },
+  {
+    "masterCardId": "19951",
+    "externalId": null,
+    "tcgdex_id": "xy3-104",
+    "localId": "104",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "104/111",
+    "cardName": "Strong Energy",
+    "fullDisplayName": "Strong Energy 104/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-104-low.png",
+    "imageHighSrc": "cards/xy3-104-high.png"
+  },
+  {
+    "masterCardId": "19942",
+    "externalId": null,
+    "tcgdex_id": "xy3-103",
+    "localId": "103",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "103/111",
+    "cardName": "Herbal Energy",
+    "fullDisplayName": "Herbal Energy 103/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-103-low.png",
+    "imageHighSrc": "cards/xy3-103-high.png"
+  },
+  {
+    "masterCardId": "19933",
+    "externalId": null,
+    "tcgdex_id": "xy3-102",
+    "localId": "102",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "102/111",
+    "cardName": "Training Center",
+    "fullDisplayName": "Training Center 102/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-102-low.png",
+    "imageHighSrc": "cards/xy3-102-high.png"
+  },
+  {
+    "masterCardId": "19924",
+    "externalId": null,
+    "tcgdex_id": "xy3-101",
+    "localId": "101",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "101/111",
+    "cardName": "Tool Retriever",
+    "fullDisplayName": "Tool Retriever 101/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-101-low.png",
+    "imageHighSrc": "cards/xy3-101-high.png"
+  },
+  {
+    "masterCardId": "19914",
+    "externalId": null,
+    "tcgdex_id": "xy3-100",
+    "localId": "100",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "100/111",
+    "cardName": "Super Scoop Up",
+    "fullDisplayName": "Super Scoop Up 100/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-100-low.png",
+    "imageHighSrc": "cards/xy3-100-high.png"
+  },
+  {
+    "masterCardId": "19904",
+    "externalId": null,
+    "tcgdex_id": "xy3-99",
+    "localId": "099",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "099/111",
+    "cardName": "Sparkling Robe",
+    "fullDisplayName": "Sparkling Robe 099/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-099-low.png",
+    "imageHighSrc": "cards/xy3-099-high.png"
+  },
+  {
+    "masterCardId": "19897",
+    "externalId": null,
+    "tcgdex_id": "xy3-98",
+    "localId": "098",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "098/111",
+    "cardName": "Sail Fossil",
+    "fullDisplayName": "Sail Fossil 098/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-098-low.png",
+    "imageHighSrc": "cards/xy3-098-high.png"
+  },
+  {
+    "masterCardId": "19888",
+    "externalId": null,
+    "tcgdex_id": "xy3-97",
+    "localId": "097",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "097/111",
+    "cardName": "Mountain Ring",
+    "fullDisplayName": "Mountain Ring 097/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-097-low.png",
+    "imageHighSrc": "cards/xy3-097-high.png"
+  },
+  {
+    "masterCardId": "19879",
+    "externalId": null,
+    "tcgdex_id": "xy3-96",
+    "localId": "096",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "096/111",
+    "cardName": "Maintenance",
+    "fullDisplayName": "Maintenance 096/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-096-low.png",
+    "imageHighSrc": "cards/xy3-096-high.png"
+  },
+  {
+    "masterCardId": "19870",
+    "externalId": null,
+    "tcgdex_id": "xy3-95",
+    "localId": "095",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "095/111",
+    "cardName": "Korrina",
+    "fullDisplayName": "Korrina 095/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yusuke Ohmura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-095-low.png",
+    "imageHighSrc": "cards/xy3-095-high.png"
+  },
+  {
+    "masterCardId": "19862",
+    "externalId": null,
+    "tcgdex_id": "xy3-94",
+    "localId": "094",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "094/111",
+    "cardName": "Jaw Fossil",
+    "fullDisplayName": "Jaw Fossil 094/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-094-low.png",
+    "imageHighSrc": "cards/xy3-094-high.png"
+  },
+  {
+    "masterCardId": "19852",
+    "externalId": null,
+    "tcgdex_id": "xy3-93",
+    "localId": "093",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "093/111",
+    "cardName": "Full Heal",
+    "fullDisplayName": "Full Heal 093/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-093-low.png",
+    "imageHighSrc": "cards/xy3-093-high.png"
+  },
+  {
+    "masterCardId": "19843",
+    "externalId": null,
+    "tcgdex_id": "xy3-92",
+    "localId": "092",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "092/111",
+    "cardName": "Fossil Researcher",
+    "fullDisplayName": "Fossil Researcher 092/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-092-low.png",
+    "imageHighSrc": "cards/xy3-092-high.png"
+  },
+  {
+    "masterCardId": "19834",
+    "externalId": null,
+    "tcgdex_id": "xy3-91",
+    "localId": "091",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "091/111",
+    "cardName": "Focus Sash",
+    "fullDisplayName": "Focus Sash 091/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Toyste Beach",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-091-low.png",
+    "imageHighSrc": "cards/xy3-091-high.png"
+  },
+  {
+    "masterCardId": "19825",
+    "externalId": null,
+    "tcgdex_id": "xy3-90",
+    "localId": "090",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "090/111",
+    "cardName": "Fighting Stadium",
+    "fullDisplayName": "Fighting Stadium 090/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-090-low.png",
+    "imageHighSrc": "cards/xy3-090-high.png"
+  },
+  {
+    "masterCardId": "19816",
+    "externalId": null,
+    "tcgdex_id": "xy3-89",
+    "localId": "089",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "089/111",
+    "cardName": "Energy Switch",
+    "fullDisplayName": "Energy Switch 089/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-089-low.png",
+    "imageHighSrc": "cards/xy3-089-high.png"
+  },
+  {
+    "masterCardId": "19807",
+    "externalId": null,
+    "tcgdex_id": "xy3-88",
+    "localId": "088",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "088/111",
+    "cardName": "Battle Reporter",
+    "fullDisplayName": "Battle Reporter 088/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-088-low.png",
+    "imageHighSrc": "cards/xy3-088-high.png"
+  },
+  {
+    "masterCardId": "19798",
+    "externalId": null,
+    "tcgdex_id": "xy3-87",
+    "localId": "087",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "087/111",
+    "cardName": "Noibat",
+    "fullDisplayName": "Noibat 087/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      714
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-087-low.png",
+    "imageHighSrc": "cards/xy3-087-high.png"
+  },
+  {
+    "masterCardId": "19789",
+    "externalId": null,
+    "tcgdex_id": "xy3-86",
+    "localId": "086",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "086/111",
+    "cardName": "Tornadus",
+    "fullDisplayName": "Tornadus 086/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      641
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-086-low.png",
+    "imageHighSrc": "cards/xy3-086-high.png"
+  },
+  {
+    "masterCardId": "19780",
+    "externalId": null,
+    "tcgdex_id": "xy3-85",
+    "localId": "085",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "085/111",
+    "cardName": "Watchog",
+    "fullDisplayName": "Watchog 085/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      505
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Patrat",
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-085-low.png",
+    "imageHighSrc": "cards/xy3-085-high.png"
+  },
+  {
+    "masterCardId": "19771",
+    "externalId": null,
+    "tcgdex_id": "xy3-84",
+    "localId": "084",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "084/111",
+    "cardName": "Patrat",
+    "fullDisplayName": "Patrat 084/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      504
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-084-low.png",
+    "imageHighSrc": "cards/xy3-084-high.png"
+  },
+  {
+    "masterCardId": "19762",
+    "externalId": null,
+    "tcgdex_id": "xy3-83",
+    "localId": "083",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "083/111",
+    "cardName": "Slaking",
+    "fullDisplayName": "Slaking 083/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      289
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vigoroth",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-083-low.png",
+    "imageHighSrc": "cards/xy3-083-high.png"
+  },
+  {
+    "masterCardId": "19753",
+    "externalId": null,
+    "tcgdex_id": "xy3-82",
+    "localId": "082",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "082/111",
+    "cardName": "Vigoroth",
+    "fullDisplayName": "Vigoroth 082/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      288
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slakoth",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-082-low.png",
+    "imageHighSrc": "cards/xy3-082-high.png"
+  },
+  {
+    "masterCardId": "19745",
+    "externalId": null,
+    "tcgdex_id": "xy3-81",
+    "localId": "081",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "081/111",
+    "cardName": "Slakoth",
+    "fullDisplayName": "Slakoth 081/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      287
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Midori Harada",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-081-low.png",
+    "imageHighSrc": "cards/xy3-081-high.png"
+  },
+  {
+    "masterCardId": "19735",
+    "externalId": null,
+    "tcgdex_id": "xy3-80",
+    "localId": "080",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "080/111",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 080/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-080-low.png",
+    "imageHighSrc": "cards/xy3-080-high.png"
+  },
+  {
+    "masterCardId": "19726",
+    "externalId": null,
+    "tcgdex_id": "xy3-79",
+    "localId": "079",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "079/111",
+    "cardName": "Lickilicky",
+    "fullDisplayName": "Lickilicky 079/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      463
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lickitung",
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-079-low.png",
+    "imageHighSrc": "cards/xy3-079-high.png"
+  },
+  {
+    "masterCardId": "19717",
+    "externalId": null,
+    "tcgdex_id": "xy3-78",
+    "localId": "078",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "078/111",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 078/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-078-low.png",
+    "imageHighSrc": "cards/xy3-078-high.png"
+  },
+  {
+    "masterCardId": "19708",
+    "externalId": null,
+    "tcgdex_id": "xy3-77",
+    "localId": "077",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "077/111",
+    "cardName": "Noivern",
+    "fullDisplayName": "Noivern 077/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      715
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Noibat",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-077-low.png",
+    "imageHighSrc": "cards/xy3-077-high.png"
+  },
+  {
+    "masterCardId": "19700",
+    "externalId": null,
+    "tcgdex_id": "xy3-76",
+    "localId": "076",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "076/111",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 076/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      330
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Vibrava",
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-076-low.png",
+    "imageHighSrc": "cards/xy3-076-high.png"
+  },
+  {
+    "masterCardId": "19691",
+    "externalId": null,
+    "tcgdex_id": "xy3-75",
+    "localId": "075",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "075/111",
+    "cardName": "Vibrava",
+    "fullDisplayName": "Vibrava 075/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      329
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Trapinch",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-075-low.png",
+    "imageHighSrc": "cards/xy3-075-high.png"
+  },
+  {
+    "masterCardId": "19682",
+    "externalId": null,
+    "tcgdex_id": "xy3-74",
+    "localId": "074",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "074/111",
+    "cardName": "Dragonite-EX",
+    "fullDisplayName": "Dragonite-EX 074/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-074-low.png",
+    "imageHighSrc": "cards/xy3-074-high.png"
+  },
+  {
+    "masterCardId": "19674",
+    "externalId": null,
+    "tcgdex_id": "xy3-73",
+    "localId": "073",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "073/111",
+    "cardName": "Klefki",
+    "fullDisplayName": "Klefki 073/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      707
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-073-low.png",
+    "imageHighSrc": "cards/xy3-073-high.png"
+  },
+  {
+    "masterCardId": "19666",
+    "externalId": null,
+    "tcgdex_id": "xy3-72",
+    "localId": "072",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "072/111",
+    "cardName": "Sylveon",
+    "fullDisplayName": "Sylveon 072/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      700
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-072-low.png",
+    "imageHighSrc": "cards/xy3-072-high.png"
+  },
+  {
+    "masterCardId": "19656",
+    "externalId": null,
+    "tcgdex_id": "xy3-71",
+    "localId": "071",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "071/111",
+    "cardName": "Clefable",
+    "fullDisplayName": "Clefable 071/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      36
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clefairy",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-071-low.png",
+    "imageHighSrc": "cards/xy3-071-high.png"
+  },
+  {
+    "masterCardId": "19646",
+    "externalId": null,
+    "tcgdex_id": "xy3-70",
+    "localId": "070",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "070/111",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 070/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-070-low.png",
+    "imageHighSrc": "cards/xy3-070-high.png"
+  },
+  {
+    "masterCardId": "19640",
+    "externalId": null,
+    "tcgdex_id": "xy3-69",
+    "localId": "069",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "069/111",
+    "cardName": "Clefairy",
+    "fullDisplayName": "Clefairy 069/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      35
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-069-low.png",
+    "imageHighSrc": "cards/xy3-069-high.png"
+  },
+  {
+    "masterCardId": "19630",
+    "externalId": null,
+    "tcgdex_id": "xy3-68",
+    "localId": "068",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "068/111",
+    "cardName": "Pangoro",
+    "fullDisplayName": "Pangoro 068/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      675
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pancham",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-068-low.png",
+    "imageHighSrc": "cards/xy3-068-high.png"
+  },
+  {
+    "masterCardId": "19622",
+    "externalId": null,
+    "tcgdex_id": "xy3-67",
+    "localId": "067",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "067/111",
+    "cardName": "Scrafty",
+    "fullDisplayName": "Scrafty 067/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      560
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Scraggy",
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-067-low.png",
+    "imageHighSrc": "cards/xy3-067-high.png"
+  },
+  {
+    "masterCardId": "19612",
+    "externalId": null,
+    "tcgdex_id": "xy3-66",
+    "localId": "066",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "066/111",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 066/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Tomokazu Komiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-066-low.png",
+    "imageHighSrc": "cards/xy3-066-high.png"
+  },
+  {
+    "masterCardId": "19603",
+    "externalId": null,
+    "tcgdex_id": "xy3-65",
+    "localId": "065",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "065/111",
+    "cardName": "Drapion",
+    "fullDisplayName": "Drapion 065/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      452
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Skorupi",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-065-low.png",
+    "imageHighSrc": "cards/xy3-065-high.png"
+  },
+  {
+    "masterCardId": "19593",
+    "externalId": null,
+    "tcgdex_id": "xy3-64",
+    "localId": "064",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "064/111",
+    "cardName": "Hawlucha-EX",
+    "fullDisplayName": "Hawlucha-EX 064/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-064-low.png",
+    "imageHighSrc": "cards/xy3-064-high.png"
+  },
+  {
+    "masterCardId": "19587",
+    "externalId": null,
+    "tcgdex_id": "xy3-63",
+    "localId": "063",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "063/111",
+    "cardName": "Hawlucha",
+    "fullDisplayName": "Hawlucha 063/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      701
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-063-low.png",
+    "imageHighSrc": "cards/xy3-063-high.png"
+  },
+  {
+    "masterCardId": "19576",
+    "externalId": null,
+    "tcgdex_id": "xy3-62",
+    "localId": "062",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "062/111",
+    "cardName": "Tyrantrum",
+    "fullDisplayName": "Tyrantrum 062/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      697
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tyrunt",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-062-low.png",
+    "imageHighSrc": "cards/xy3-062-high.png"
+  },
+  {
+    "masterCardId": "19567",
+    "externalId": null,
+    "tcgdex_id": "xy3-61",
+    "localId": "061",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "061/111",
+    "cardName": "Tyrunt",
+    "fullDisplayName": "Tyrunt 061/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      696
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Jaw Fossil",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-061-low.png",
+    "imageHighSrc": "cards/xy3-061-high.png"
+  },
+  {
+    "masterCardId": "19560",
+    "externalId": null,
+    "tcgdex_id": "xy3-60",
+    "localId": "060",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "060/111",
+    "cardName": "Pancham",
+    "fullDisplayName": "Pancham 060/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      674
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-060-low.png",
+    "imageHighSrc": "cards/xy3-060-high.png"
+  },
+  {
+    "masterCardId": "19546",
+    "externalId": null,
+    "tcgdex_id": "xy3-59",
+    "localId": "059",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "059/111",
+    "cardName": "Pancham",
+    "fullDisplayName": "Pancham 059/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      674
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-059-low.png",
+    "imageHighSrc": "cards/xy3-059-high.png"
+  },
+  {
+    "masterCardId": "19537",
+    "externalId": null,
+    "tcgdex_id": "xy3-58",
+    "localId": "058",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "058/111",
+    "cardName": "Landorus",
+    "fullDisplayName": "Landorus 058/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      645
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-058-low.png",
+    "imageHighSrc": "cards/xy3-058-high.png"
+  },
+  {
+    "masterCardId": "19528",
+    "externalId": null,
+    "tcgdex_id": "xy3-57",
+    "localId": "057",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "057/111",
+    "cardName": "Mienshao",
+    "fullDisplayName": "Mienshao 057/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      620
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mienfoo",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-057-low.png",
+    "imageHighSrc": "cards/xy3-057-high.png"
+  },
+  {
+    "masterCardId": "19520",
+    "externalId": null,
+    "tcgdex_id": "xy3-56",
+    "localId": "056",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "056/111",
+    "cardName": "Mienfoo",
+    "fullDisplayName": "Mienfoo 056/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      619
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-056-low.png",
+    "imageHighSrc": "cards/xy3-056-high.png"
+  },
+  {
+    "masterCardId": "19511",
+    "externalId": null,
+    "tcgdex_id": "xy3-55a",
+    "localId": "55a",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "55a/111",
+    "cardName": "M Lucario-EX",
+    "fullDisplayName": "M Lucario-EX 55a/111 Furious Fists",
+    "rarity": "Rare Ultra",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lucario-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/xy3-55a-low.png",
+    "imageHighSrc": "cards/xy3-55a-high.png"
+  },
+  {
+    "masterCardId": "19503",
+    "externalId": null,
+    "tcgdex_id": "xy3-55",
+    "localId": "055",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "055/111",
+    "cardName": "M Lucario-EX",
+    "fullDisplayName": "M Lucario-EX 055/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lucario-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-055-low.png",
+    "imageHighSrc": "cards/xy3-055-high.png"
+  },
+  {
+    "masterCardId": "19494",
+    "externalId": null,
+    "tcgdex_id": "xy3-54",
+    "localId": "054",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "054/111",
+    "cardName": "Lucario-EX",
+    "fullDisplayName": "Lucario-EX 054/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-054-low.png",
+    "imageHighSrc": "cards/xy3-054-high.png"
+  },
+  {
+    "masterCardId": "19485",
+    "externalId": null,
+    "tcgdex_id": "xy3-53",
+    "localId": "053",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "053/111",
+    "cardName": "Trapinch",
+    "fullDisplayName": "Trapinch 053/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      328
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-053-low.png",
+    "imageHighSrc": "cards/xy3-053-high.png"
+  },
+  {
+    "masterCardId": "19476",
+    "externalId": null,
+    "tcgdex_id": "xy3-52",
+    "localId": "052",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "052/111",
+    "cardName": "Hariyama",
+    "fullDisplayName": "Hariyama 052/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      297
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Makuhita",
+    "artist": "TOKIYA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-052-low.png",
+    "imageHighSrc": "cards/xy3-052-high.png"
+  },
+  {
+    "masterCardId": "19468",
+    "externalId": null,
+    "tcgdex_id": "xy3-51",
+    "localId": "051",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "051/111",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 051/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Masakazu Fukuda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-051-low.png",
+    "imageHighSrc": "cards/xy3-051-high.png"
+  },
+  {
+    "masterCardId": "19460",
+    "externalId": null,
+    "tcgdex_id": "xy3-50",
+    "localId": "050",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "050/111",
+    "cardName": "Breloom",
+    "fullDisplayName": "Breloom 050/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      286
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shroomish",
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-050-low.png",
+    "imageHighSrc": "cards/xy3-050-high.png"
+  },
+  {
+    "masterCardId": "19449",
+    "externalId": null,
+    "tcgdex_id": "xy3-49",
+    "localId": "049",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "049/111",
+    "cardName": "Hitmontop",
+    "fullDisplayName": "Hitmontop 049/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      237
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kawayoo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-049-low.png",
+    "imageHighSrc": "cards/xy3-049-high.png"
+  },
+  {
+    "masterCardId": "19442",
+    "externalId": null,
+    "tcgdex_id": "xy3-48",
+    "localId": "048",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "048/111",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 048/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "match",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-048-low.png",
+    "imageHighSrc": "cards/xy3-048-high.png"
+  },
+  {
+    "masterCardId": "19433",
+    "externalId": null,
+    "tcgdex_id": "xy3-47",
+    "localId": "047",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "047/111",
+    "cardName": "Hitmonlee",
+    "fullDisplayName": "Hitmonlee 047/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      106
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hitoshi Ariga",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-047-low.png",
+    "imageHighSrc": "cards/xy3-047-high.png"
+  },
+  {
+    "masterCardId": "19424",
+    "externalId": null,
+    "tcgdex_id": "xy3-46",
+    "localId": "046",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "046/111",
+    "cardName": "Machamp",
+    "fullDisplayName": "Machamp 046/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      68
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machoke",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-046-low.png",
+    "imageHighSrc": "cards/xy3-046-high.png"
+  },
+  {
+    "masterCardId": "19415",
+    "externalId": null,
+    "tcgdex_id": "xy3-45",
+    "localId": "045",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "045/111",
+    "cardName": "Machoke",
+    "fullDisplayName": "Machoke 045/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      67
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Machop",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-045-low.png",
+    "imageHighSrc": "cards/xy3-045-high.png"
+  },
+  {
+    "masterCardId": "19406",
+    "externalId": null,
+    "tcgdex_id": "xy3-44",
+    "localId": "044",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "044/111",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 044/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kouki Saitou",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-044-low.png",
+    "imageHighSrc": "cards/xy3-044-high.png"
+  },
+  {
+    "masterCardId": "19397",
+    "externalId": null,
+    "tcgdex_id": "xy3-43",
+    "localId": "043",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "043/111",
+    "cardName": "Golurk",
+    "fullDisplayName": "Golurk 043/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      623
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Golett",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-043-low.png",
+    "imageHighSrc": "cards/xy3-043-high.png"
+  },
+  {
+    "masterCardId": "19388",
+    "externalId": null,
+    "tcgdex_id": "xy3-42",
+    "localId": "042",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "042/111",
+    "cardName": "Golett",
+    "fullDisplayName": "Golett 042/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      622
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-042-low.png",
+    "imageHighSrc": "cards/xy3-042-high.png"
+  },
+  {
+    "masterCardId": "19379",
+    "externalId": null,
+    "tcgdex_id": "xy3-41",
+    "localId": "041",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "041/111",
+    "cardName": "Gothitelle",
+    "fullDisplayName": "Gothitelle 041/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      576
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothorita",
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-041-low.png",
+    "imageHighSrc": "cards/xy3-041-high.png"
+  },
+  {
+    "masterCardId": "19368",
+    "externalId": null,
+    "tcgdex_id": "xy3-40",
+    "localId": "040",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "040/111",
+    "cardName": "Gothorita",
+    "fullDisplayName": "Gothorita 040/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      575
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gothita",
+    "artist": "Suwama Chiaki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-040-low.png",
+    "imageHighSrc": "cards/xy3-040-high.png"
+  },
+  {
+    "masterCardId": "19358",
+    "externalId": null,
+    "tcgdex_id": "xy3-39",
+    "localId": "039",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "039/111",
+    "cardName": "Gothita",
+    "fullDisplayName": "Gothita 039/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      574
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-039-low.png",
+    "imageHighSrc": "cards/xy3-039-high.png"
+  },
+  {
+    "masterCardId": "19348",
+    "externalId": null,
+    "tcgdex_id": "xy3-38",
+    "localId": "038",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "038/111",
+    "cardName": "Skorupi",
+    "fullDisplayName": "Skorupi 038/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      451
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-038-low.png",
+    "imageHighSrc": "cards/xy3-038-high.png"
+  },
+  {
+    "masterCardId": "19339",
+    "externalId": null,
+    "tcgdex_id": "xy3-37",
+    "localId": "037",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "037/111",
+    "cardName": "Jynx",
+    "fullDisplayName": "Jynx 037/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      124
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-037-low.png",
+    "imageHighSrc": "cards/xy3-037-high.png"
+  },
+  {
+    "masterCardId": "19329",
+    "externalId": null,
+    "tcgdex_id": "xy3-36",
+    "localId": "036",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "036/111",
+    "cardName": "Hypno",
+    "fullDisplayName": "Hypno 036/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      97
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Drowzee",
+    "artist": "Shigenori Negishi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-036-low.png",
+    "imageHighSrc": "cards/xy3-036-high.png"
+  },
+  {
+    "masterCardId": "19320",
+    "externalId": null,
+    "tcgdex_id": "xy3-35",
+    "localId": "035",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "035/111",
+    "cardName": "Drowzee",
+    "fullDisplayName": "Drowzee 035/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      96
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sumiyoshi Kizuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-035-low.png",
+    "imageHighSrc": "cards/xy3-035-high.png"
+  },
+  {
+    "masterCardId": "19312",
+    "externalId": null,
+    "tcgdex_id": "xy3-34",
+    "localId": "034",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "034/111",
+    "cardName": "Dedenne",
+    "fullDisplayName": "Dedenne 034/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      702
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-034-low.png",
+    "imageHighSrc": "cards/xy3-034-high.png"
+  },
+  {
+    "masterCardId": "19301",
+    "externalId": null,
+    "tcgdex_id": "xy3-33",
+    "localId": "033",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "033/111",
+    "cardName": "Thundurus",
+    "fullDisplayName": "Thundurus 033/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      642
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hajime Kusajima",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-033-low.png",
+    "imageHighSrc": "cards/xy3-033-high.png"
+  },
+  {
+    "masterCardId": "19291",
+    "externalId": null,
+    "tcgdex_id": "xy3-32",
+    "localId": "032",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "032/111",
+    "cardName": "Minun",
+    "fullDisplayName": "Minun 032/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      312
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-032-low.png",
+    "imageHighSrc": "cards/xy3-032-high.png"
+  },
+  {
+    "masterCardId": "19281",
+    "externalId": null,
+    "tcgdex_id": "xy3-31",
+    "localId": "031",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "031/111",
+    "cardName": "Plusle",
+    "fullDisplayName": "Plusle 031/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      311
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Akira Komayama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-031-low.png",
+    "imageHighSrc": "cards/xy3-031-high.png"
+  },
+  {
+    "masterCardId": "19271",
+    "externalId": null,
+    "tcgdex_id": "xy3-30",
+    "localId": "030",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "030/111",
+    "cardName": "Electivire",
+    "fullDisplayName": "Electivire 030/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      466
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Electabuzz",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-030-low.png",
+    "imageHighSrc": "cards/xy3-030-high.png"
+  },
+  {
+    "masterCardId": "19261",
+    "externalId": null,
+    "tcgdex_id": "xy3-29",
+    "localId": "029",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "029/111",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 029/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoki Saito",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-029-low.png",
+    "imageHighSrc": "cards/xy3-029-high.png"
+  },
+  {
+    "masterCardId": "19253",
+    "externalId": null,
+    "tcgdex_id": "xy3-28",
+    "localId": "028",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "028/111",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 028/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-028-low.png",
+    "imageHighSrc": "cards/xy3-028-high.png"
+  },
+  {
+    "masterCardId": "19243",
+    "externalId": null,
+    "tcgdex_id": "xy3-27",
+    "localId": "027",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "027/111",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 027/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-027-low.png",
+    "imageHighSrc": "cards/xy3-027-high.png"
+  },
+  {
+    "masterCardId": "19233",
+    "externalId": null,
+    "tcgdex_id": "xy3-26",
+    "localId": "026",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "026/111",
+    "cardName": "Aurorus",
+    "fullDisplayName": "Aurorus 026/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      699
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Amaura",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-026-low.png",
+    "imageHighSrc": "cards/xy3-026-high.png"
+  },
+  {
+    "masterCardId": "19224",
+    "externalId": null,
+    "tcgdex_id": "xy3-25",
+    "localId": "025",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "025/111",
+    "cardName": "Amaura",
+    "fullDisplayName": "Amaura 025/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "RESTORED",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      698
+    ],
+    "subtypes": [
+      "Restored"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Sail Fossil",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-025-low.png",
+    "imageHighSrc": "cards/xy3-025-high.png"
+  },
+  {
+    "masterCardId": "19214",
+    "externalId": null,
+    "tcgdex_id": "xy3-24",
+    "localId": "024",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "024/111",
+    "cardName": "Clawitzer",
+    "fullDisplayName": "Clawitzer 024/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      693
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Clauncher",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-024-low.png",
+    "imageHighSrc": "cards/xy3-024-high.png"
+  },
+  {
+    "masterCardId": "19204",
+    "externalId": null,
+    "tcgdex_id": "xy3-23",
+    "localId": "023",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "023/111",
+    "cardName": "Clauncher",
+    "fullDisplayName": "Clauncher 023/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      692
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-023-low.png",
+    "imageHighSrc": "cards/xy3-023-high.png"
+  },
+  {
+    "masterCardId": "19194",
+    "externalId": null,
+    "tcgdex_id": "xy3-22",
+    "localId": "022",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "022/111",
+    "cardName": "Beartic",
+    "fullDisplayName": "Beartic 022/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      614
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Cubchoo",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-022-low.png",
+    "imageHighSrc": "cards/xy3-022-high.png"
+  },
+  {
+    "masterCardId": "19185",
+    "externalId": null,
+    "tcgdex_id": "xy3-21",
+    "localId": "021",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "021/111",
+    "cardName": "Cubchoo",
+    "fullDisplayName": "Cubchoo 021/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      613
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "kirisAki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-021-low.png",
+    "imageHighSrc": "cards/xy3-021-high.png"
+  },
+  {
+    "masterCardId": "19175",
+    "externalId": null,
+    "tcgdex_id": "xy3-20",
+    "localId": "020",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "020/111",
+    "cardName": "Seismitoad-EX",
+    "fullDisplayName": "Seismitoad-EX 020/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 180,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      537
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-020-low.png",
+    "imageHighSrc": "cards/xy3-020-high.png"
+  },
+  {
+    "masterCardId": "19165",
+    "externalId": null,
+    "tcgdex_id": "xy3-19",
+    "localId": "019",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "019/111",
+    "cardName": "Glaceon",
+    "fullDisplayName": "Glaceon 019/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      471
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Kagemaru Himeno",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-019-low.png",
+    "imageHighSrc": "cards/xy3-019-high.png"
+  },
+  {
+    "masterCardId": "19155",
+    "externalId": null,
+    "tcgdex_id": "xy3-18",
+    "localId": "018",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "018/111",
+    "cardName": "Politoed",
+    "fullDisplayName": "Politoed 018/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      186
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Atsuko Nishida",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-018-low.png",
+    "imageHighSrc": "cards/xy3-018-high.png"
+  },
+  {
+    "masterCardId": "19146",
+    "externalId": null,
+    "tcgdex_id": "xy3-17",
+    "localId": "017",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "017/111",
+    "cardName": "Poliwrath",
+    "fullDisplayName": "Poliwrath 017/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      62
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwhirl",
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-017-low.png",
+    "imageHighSrc": "cards/xy3-017-high.png"
+  },
+  {
+    "masterCardId": "19136",
+    "externalId": null,
+    "tcgdex_id": "xy3-16",
+    "localId": "016",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "016/111",
+    "cardName": "Poliwhirl",
+    "fullDisplayName": "Poliwhirl 016/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      61
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Poliwag",
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-016-low.png",
+    "imageHighSrc": "cards/xy3-016-high.png"
+  },
+  {
+    "masterCardId": "19126",
+    "externalId": null,
+    "tcgdex_id": "xy3-15",
+    "localId": "015",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "015/111",
+    "cardName": "Poliwag",
+    "fullDisplayName": "Poliwag 015/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      60
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-015-low.png",
+    "imageHighSrc": "cards/xy3-015-high.png"
+  },
+  {
+    "masterCardId": "19116",
+    "externalId": null,
+    "tcgdex_id": "xy3-14",
+    "localId": "014",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "014/111",
+    "cardName": "Blaziken",
+    "fullDisplayName": "Blaziken 014/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-014-low.png",
+    "imageHighSrc": "cards/xy3-014-high.png"
+  },
+  {
+    "masterCardId": "19107",
+    "externalId": null,
+    "tcgdex_id": "xy3-13",
+    "localId": "013",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "013/111",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 013/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Torchic",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-013-low.png",
+    "imageHighSrc": "cards/xy3-013-high.png"
+  },
+  {
+    "masterCardId": "19097",
+    "externalId": null,
+    "tcgdex_id": "xy3-12",
+    "localId": "012",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "012/111",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 012/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-012-low.png",
+    "imageHighSrc": "cards/xy3-012-high.png"
+  },
+  {
+    "masterCardId": "19087",
+    "externalId": null,
+    "tcgdex_id": "xy3-11",
+    "localId": "011",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "011/111",
+    "cardName": "Magmortar",
+    "fullDisplayName": "Magmortar 011/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 120,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      467
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Magmar",
+    "artist": "PLANETA",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-011-low.png",
+    "imageHighSrc": "cards/xy3-011-high.png"
+  },
+  {
+    "masterCardId": "19078",
+    "externalId": null,
+    "tcgdex_id": "xy3-10",
+    "localId": "010",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "010/111",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 010/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "MAHOU",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-010-low.png",
+    "imageHighSrc": "cards/xy3-010-high.png"
+  },
+  {
+    "masterCardId": "19068",
+    "externalId": null,
+    "tcgdex_id": "xy3-9",
+    "localId": "009",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "009/111",
+    "cardName": "Accelgor",
+    "fullDisplayName": "Accelgor 009/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      617
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Shelmet",
+    "artist": "Shin Nagasawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-009-low.png",
+    "imageHighSrc": "cards/xy3-009-high.png"
+  },
+  {
+    "masterCardId": "19058",
+    "externalId": null,
+    "tcgdex_id": "xy3-8",
+    "localId": "008",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "008/111",
+    "cardName": "Shelmet",
+    "fullDisplayName": "Shelmet 008/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      616
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "sui",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-008-low.png",
+    "imageHighSrc": "cards/xy3-008-high.png"
+  },
+  {
+    "masterCardId": "19049",
+    "externalId": null,
+    "tcgdex_id": "xy3-7",
+    "localId": "007",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "007/111",
+    "cardName": "Leafeon",
+    "fullDisplayName": "Leafeon 007/111 Furious Fists",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      470
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Eevee",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-007-low.png",
+    "imageHighSrc": "cards/xy3-007-high.png"
+  },
+  {
+    "masterCardId": "19038",
+    "externalId": null,
+    "tcgdex_id": "xy3-6",
+    "localId": "006",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "006/111",
+    "cardName": "Shroomish",
+    "fullDisplayName": "Shroomish 006/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      285
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kyoko Umemoto",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-006-low.png",
+    "imageHighSrc": "cards/xy3-006-high.png"
+  },
+  {
+    "masterCardId": "19029",
+    "externalId": null,
+    "tcgdex_id": "xy3-5",
+    "localId": "005",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "005/111",
+    "cardName": "M Heracross-EX",
+    "fullDisplayName": "M Heracross-EX 005/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "MEGA",
+    "hp": 220,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "MEGA",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Heracross-EX",
+    "artist": "5ban Graphics",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-005-low.png",
+    "imageHighSrc": "cards/xy3-005-high.png"
+  },
+  {
+    "masterCardId": "19019",
+    "externalId": null,
+    "tcgdex_id": "xy3-4",
+    "localId": "004",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "004/111",
+    "cardName": "Heracross-EX",
+    "fullDisplayName": "Heracross-EX 004/111 Furious Fists",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 170,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      214
+    ],
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Eske Yoshinob",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-004-low.png",
+    "imageHighSrc": "cards/xy3-004-high.png"
+  },
+  {
+    "masterCardId": "19007",
+    "externalId": null,
+    "tcgdex_id": "xy3-3",
+    "localId": "003",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "003/111",
+    "cardName": "Victreebel",
+    "fullDisplayName": "Victreebel 003/111 Furious Fists",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 130,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      71
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Weepinbell",
+    "artist": "Sanosuke Sakuma",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-003-low.png",
+    "imageHighSrc": "cards/xy3-003-high.png"
+  },
+  {
+    "masterCardId": "18998",
+    "externalId": null,
+    "tcgdex_id": "xy3-2",
+    "localId": "002",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "002/111",
+    "cardName": "Weepinbell",
+    "fullDisplayName": "Weepinbell 002/111 Furious Fists",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      70
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bellsprout",
+    "artist": "Mizue",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-002-low.png",
+    "imageHighSrc": "cards/xy3-002-high.png"
+  },
+  {
+    "masterCardId": "18990",
+    "externalId": null,
+    "tcgdex_id": "xy3-1",
+    "localId": "001",
+    "setCode": "xy3",
+    "setTcgdexId": "xy3",
+    "cardNumber": "001/111",
+    "cardName": "Bellsprout",
+    "fullDisplayName": "Bellsprout 001/111 Furious Fists",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      69
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kanako Eo",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/xy3-001-low.png",
+    "imageHighSrc": "cards/xy3-001-high.png"
+  }
+]

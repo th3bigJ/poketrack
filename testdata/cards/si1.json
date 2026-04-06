@@ -1,0 +1,596 @@
+[
+  {
+    "masterCardId": "9260",
+    "externalId": null,
+    "tcgdex_id": "si1-18",
+    "localId": "018",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "018/18",
+    "cardName": "Primeape",
+    "fullDisplayName": "Primeape 018/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      57
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Mankey",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-018-low.png",
+    "imageHighSrc": "cards/si1-018-high.png"
+  },
+  {
+    "masterCardId": "9255",
+    "externalId": null,
+    "tcgdex_id": "si1-17",
+    "localId": "017",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "017/18",
+    "cardName": "Vileplume",
+    "fullDisplayName": "Vileplume 017/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      45
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Gloom",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-017-low.png",
+    "imageHighSrc": "cards/si1-017-high.png"
+  },
+  {
+    "masterCardId": "9246",
+    "externalId": null,
+    "tcgdex_id": "si1-16",
+    "localId": "016",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "016/18",
+    "cardName": "Lickitung",
+    "fullDisplayName": "Lickitung 016/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      108
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-016-low.png",
+    "imageHighSrc": "cards/si1-016-high.png"
+  },
+  {
+    "masterCardId": "9237",
+    "externalId": null,
+    "tcgdex_id": "si1-15",
+    "localId": "015",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "015/18",
+    "cardName": "Wartortle",
+    "fullDisplayName": "Wartortle 015/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      8
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Squirtle",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-015-low.png",
+    "imageHighSrc": "cards/si1-015-high.png"
+  },
+  {
+    "masterCardId": "9228",
+    "externalId": null,
+    "tcgdex_id": "si1-14",
+    "localId": "014",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "014/18",
+    "cardName": "Slowking",
+    "fullDisplayName": "Slowking 014/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      199
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Slowpoke",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-014-low.png",
+    "imageHighSrc": "cards/si1-014-high.png"
+  },
+  {
+    "masterCardId": "9219",
+    "externalId": null,
+    "tcgdex_id": "si1-13",
+    "localId": "013",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "013/18",
+    "cardName": "Exeggutor",
+    "fullDisplayName": "Exeggutor 013/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Exeggcute",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-013-low.png",
+    "imageHighSrc": "cards/si1-013-high.png"
+  },
+  {
+    "masterCardId": "9210",
+    "externalId": null,
+    "tcgdex_id": "si1-12",
+    "localId": "012",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "012/18",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 012/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-012-low.png",
+    "imageHighSrc": "cards/si1-012-high.png"
+  },
+  {
+    "masterCardId": "9202",
+    "externalId": null,
+    "tcgdex_id": "si1-11",
+    "localId": "011",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "011/18",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 011/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      183
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-011-low.png",
+    "imageHighSrc": "cards/si1-011-high.png"
+  },
+  {
+    "masterCardId": "9193",
+    "externalId": null,
+    "tcgdex_id": "si1-10",
+    "localId": "010",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "010/18",
+    "cardName": "Tentacruel",
+    "fullDisplayName": "Tentacruel 010/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      73
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Tentacool",
+    "artist": "Naoyo Kimura",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-010-low.png",
+    "imageHighSrc": "cards/si1-010-high.png"
+  },
+  {
+    "masterCardId": "9186",
+    "externalId": null,
+    "tcgdex_id": "si1-9",
+    "localId": "009",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "009/18",
+    "cardName": "Butterfree",
+    "fullDisplayName": "Butterfree 009/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      12
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Metapod",
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-009-low.png",
+    "imageHighSrc": "cards/si1-009-high.png"
+  },
+  {
+    "masterCardId": "9177",
+    "externalId": null,
+    "tcgdex_id": "si1-8",
+    "localId": "008",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "008/18",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 008/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-008-low.png",
+    "imageHighSrc": "cards/si1-008-high.png"
+  },
+  {
+    "masterCardId": "9168",
+    "externalId": null,
+    "tcgdex_id": "si1-7",
+    "localId": "007",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "007/18",
+    "cardName": "Ledyba",
+    "fullDisplayName": "Ledyba 007/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      165
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-007-low.png",
+    "imageHighSrc": "cards/si1-007-high.png"
+  },
+  {
+    "masterCardId": "9156",
+    "externalId": null,
+    "tcgdex_id": "si1-6",
+    "localId": "006",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "006/18",
+    "cardName": "Raticate",
+    "fullDisplayName": "Raticate 006/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      20
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Rattata",
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-006-low.png",
+    "imageHighSrc": "cards/si1-006-high.png"
+  },
+  {
+    "masterCardId": "9147",
+    "externalId": null,
+    "tcgdex_id": "si1-5",
+    "localId": "005",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "005/18",
+    "cardName": "Ivysaur",
+    "fullDisplayName": "Ivysaur 005/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Bulbasaur",
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-005-low.png",
+    "imageHighSrc": "cards/si1-005-high.png"
+  },
+  {
+    "masterCardId": "9139",
+    "externalId": null,
+    "tcgdex_id": "si1-4",
+    "localId": "004",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "004/18",
+    "cardName": "Togepi",
+    "fullDisplayName": "Togepi 004/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      175
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-004-low.png",
+    "imageHighSrc": "cards/si1-004-high.png"
+  },
+  {
+    "masterCardId": "9130",
+    "externalId": null,
+    "tcgdex_id": "si1-3",
+    "localId": "003",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "003/18",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 003/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-003-low.png",
+    "imageHighSrc": "cards/si1-003-high.png"
+  },
+  {
+    "masterCardId": "9122",
+    "externalId": null,
+    "tcgdex_id": "si1-2",
+    "localId": "002",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "002/18",
+    "cardName": "Pidgeot",
+    "fullDisplayName": "Pidgeot 002/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      18
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pidgeotto",
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-002-low.png",
+    "imageHighSrc": "cards/si1-002-high.png"
+  },
+  {
+    "masterCardId": "9116",
+    "externalId": null,
+    "tcgdex_id": "si1-1",
+    "localId": "001",
+    "setCode": "si1",
+    "setTcgdexId": "si1",
+    "cardNumber": "001/18",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 001/18 Southern Islands",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 30,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiko Fukuyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/si1-001-low.png",
+    "imageHighSrc": "cards/si1-001-high.png"
+  }
+]

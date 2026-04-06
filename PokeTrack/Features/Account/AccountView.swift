@@ -59,34 +59,8 @@ struct AccountView: View {
                     }
                 }
             }
-
-            Section("About") {
-                LabeledContent("R2 base URL") {
-                    Text(AppConfiguration.r2BaseURL.absoluteString)
-                        .font(.caption2)
-                        .lineLimit(2)
-                }
-                LabeledContent("Catalog prefix") {
-                    Text(AppConfiguration.r2CatalogPathPrefix.isEmpty ? "(root)" : AppConfiguration.r2CatalogPathPrefix)
-                        .font(.caption2)
-                }
-                LabeledContent("Pricing prefix") {
-                    Text(AppConfiguration.r2PricingPathPrefix.isEmpty ? "(root)" : AppConfiguration.r2PricingPathPrefix)
-                        .font(.caption2)
-                }
-                LabeledContent("Sets JSON") {
-                    Text(AppConfiguration.r2CatalogURL(path: "sets.json").absoluteString)
-                        .font(.caption2)
-                        .lineLimit(3)
-                }
-                LabeledContent("Sample pricing") {
-                    Text(AppConfiguration.r2PricingURL(path: "pricing/sv01.json").absoluteString)
-                        .font(.caption2)
-                        .lineLimit(3)
-                }
-            }
         }
-        .navigationTitle("Account")
+        .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)

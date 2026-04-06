@@ -1,0 +1,3143 @@
+[
+  {
+    "masterCardId": "6100",
+    "externalId": null,
+    "tcgdex_id": "ex4-97",
+    "localId": "097",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "097/95",
+    "cardName": "Jirachi",
+    "fullDisplayName": "Jirachi 097/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      385
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-097-low.png",
+    "imageHighSrc": "cards/ex4-097-high.png"
+  },
+  {
+    "masterCardId": "6092",
+    "externalId": null,
+    "tcgdex_id": "ex4-96",
+    "localId": "096",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "096/95",
+    "cardName": "Absol",
+    "fullDisplayName": "Absol 096/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Secret",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      359
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-096-low.png",
+    "imageHighSrc": "cards/ex4-096-high.png"
+  },
+  {
+    "masterCardId": "6084",
+    "externalId": null,
+    "tcgdex_id": "ex4-95",
+    "localId": "095",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "095/95",
+    "cardName": "Swampert ex",
+    "fullDisplayName": "Swampert ex 095/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      260
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Marshtomp",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-095-low.png",
+    "imageHighSrc": "cards/ex4-095-high.png"
+  },
+  {
+    "masterCardId": "6076",
+    "externalId": null,
+    "tcgdex_id": "ex4-94",
+    "localId": "094",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "094/95",
+    "cardName": "Suicune ex",
+    "fullDisplayName": "Suicune ex 094/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      245
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-094-low.png",
+    "imageHighSrc": "cards/ex4-094-high.png"
+  },
+  {
+    "masterCardId": "6067",
+    "externalId": null,
+    "tcgdex_id": "ex4-93",
+    "localId": "093",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "093/95",
+    "cardName": "Sceptile ex",
+    "fullDisplayName": "Sceptile ex 093/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Grovyle",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-093-low.png",
+    "imageHighSrc": "cards/ex4-093-high.png"
+  },
+  {
+    "masterCardId": "6058",
+    "externalId": null,
+    "tcgdex_id": "ex4-92",
+    "localId": "092",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "092/95",
+    "cardName": "Raikou ex",
+    "fullDisplayName": "Raikou ex 092/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      243
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-092-low.png",
+    "imageHighSrc": "cards/ex4-092-high.png"
+  },
+  {
+    "masterCardId": "6049",
+    "externalId": null,
+    "tcgdex_id": "ex4-91",
+    "localId": "091",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "091/95",
+    "cardName": "Entei ex",
+    "fullDisplayName": "Entei ex 091/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      244
+    ],
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-091-low.png",
+    "imageHighSrc": "cards/ex4-091-high.png"
+  },
+  {
+    "masterCardId": "6037",
+    "externalId": null,
+    "tcgdex_id": "ex4-90",
+    "localId": "090",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "090/95",
+    "cardName": "Cradily ex",
+    "fullDisplayName": "Cradily ex 090/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      346
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Lileep",
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-090-low.png",
+    "imageHighSrc": "cards/ex4-090-high.png"
+  },
+  {
+    "masterCardId": "6028",
+    "externalId": null,
+    "tcgdex_id": "ex4-89",
+    "localId": "089",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "089/95",
+    "cardName": "Blaziken ex",
+    "fullDisplayName": "Blaziken ex 089/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo EX",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 150,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      257
+    ],
+    "subtypes": [
+      "Stage 2",
+      "ex"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Combusken",
+    "artist": "Hikaru Koike",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-089-low.png",
+    "imageHighSrc": "cards/ex4-089-high.png"
+  },
+  {
+    "masterCardId": "6019",
+    "externalId": null,
+    "tcgdex_id": "ex4-88",
+    "localId": "088",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "088/95",
+    "cardName": "Double Rainbow Energy",
+    "fullDisplayName": "Double Rainbow Energy 088/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-088-low.png",
+    "imageHighSrc": "cards/ex4-088-high.png"
+  },
+  {
+    "masterCardId": "6010",
+    "externalId": null,
+    "tcgdex_id": "ex4-87",
+    "localId": "087",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "087/95",
+    "cardName": "Magma Energy",
+    "fullDisplayName": "Magma Energy 087/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-087-low.png",
+    "imageHighSrc": "cards/ex4-087-high.png"
+  },
+  {
+    "masterCardId": "6002",
+    "externalId": null,
+    "tcgdex_id": "ex4-86",
+    "localId": "086",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "086/95",
+    "cardName": "Aqua Energy",
+    "fullDisplayName": "Aqua Energy 086/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Special"
+    ],
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Takumi Akabane",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-086-low.png",
+    "imageHighSrc": "cards/ex4-086-high.png"
+  },
+  {
+    "masterCardId": "5993",
+    "externalId": null,
+    "tcgdex_id": "ex4-85",
+    "localId": "085",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "085/95",
+    "cardName": "Warp Point",
+    "fullDisplayName": "Warp Point 085/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-085-low.png",
+    "imageHighSrc": "cards/ex4-085-high.png"
+  },
+  {
+    "masterCardId": "5984",
+    "externalId": null,
+    "tcgdex_id": "ex4-84",
+    "localId": "084",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "084/95",
+    "cardName": "Team Magma Technical Machine 01",
+    "fullDisplayName": "Team Magma Technical Machine 01 084/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Technical Machine"
+    ],
+    "trainerType": "Technical Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex4-084-low.png",
+    "imageHighSrc": "cards/ex4-084-high.png"
+  },
+  {
+    "masterCardId": "5975",
+    "externalId": null,
+    "tcgdex_id": "ex4-83",
+    "localId": "083",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "083/95",
+    "cardName": "Team Magma Hideout",
+    "fullDisplayName": "Team Magma Hideout 083/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-083-low.png",
+    "imageHighSrc": "cards/ex4-083-high.png"
+  },
+  {
+    "masterCardId": "5968",
+    "externalId": null,
+    "tcgdex_id": "ex4-82",
+    "localId": "082",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "082/95",
+    "cardName": "Team Magma Conspirator",
+    "fullDisplayName": "Team Magma Conspirator 082/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-082-low.png",
+    "imageHighSrc": "cards/ex4-082-high.png"
+  },
+  {
+    "masterCardId": "5960",
+    "externalId": null,
+    "tcgdex_id": "ex4-81",
+    "localId": "081",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "081/95",
+    "cardName": "Team Magma Belt",
+    "fullDisplayName": "Team Magma Belt 081/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-081-low.png",
+    "imageHighSrc": "cards/ex4-081-high.png"
+  },
+  {
+    "masterCardId": "5951",
+    "externalId": null,
+    "tcgdex_id": "ex4-80",
+    "localId": "080",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "080/95",
+    "cardName": "Team Magma Ball",
+    "fullDisplayName": "Team Magma Ball 080/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-080-low.png",
+    "imageHighSrc": "cards/ex4-080-high.png"
+  },
+  {
+    "masterCardId": "5942",
+    "externalId": null,
+    "tcgdex_id": "ex4-79",
+    "localId": "079",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "079/95",
+    "cardName": "Team Aqua Technical Machine 01",
+    "fullDisplayName": "Team Aqua Technical Machine 01 079/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Technical Machine"
+    ],
+    "trainerType": "Technical Machine",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": true,
+    "imageLowSrc": "cards/ex4-079-low.png",
+    "imageHighSrc": "cards/ex4-079-high.png"
+  },
+  {
+    "masterCardId": "5932",
+    "externalId": null,
+    "tcgdex_id": "ex4-78",
+    "localId": "078",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "078/95",
+    "cardName": "Team Aqua Hideout",
+    "fullDisplayName": "Team Aqua Hideout 078/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Stadium"
+    ],
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-078-low.png",
+    "imageHighSrc": "cards/ex4-078-high.png"
+  },
+  {
+    "masterCardId": "5921",
+    "externalId": null,
+    "tcgdex_id": "ex4-77",
+    "localId": "077",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "077/95",
+    "cardName": "Team Aqua Conspirator",
+    "fullDisplayName": "Team Aqua Conspirator 077/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-077-low.png",
+    "imageHighSrc": "cards/ex4-077-high.png"
+  },
+  {
+    "masterCardId": "5913",
+    "externalId": null,
+    "tcgdex_id": "ex4-76",
+    "localId": "076",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "076/95",
+    "cardName": "Team Aqua Belt",
+    "fullDisplayName": "Team Aqua Belt 076/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mitsuhiro Arita",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-076-low.png",
+    "imageHighSrc": "cards/ex4-076-high.png"
+  },
+  {
+    "masterCardId": "5904",
+    "externalId": null,
+    "tcgdex_id": "ex4-75",
+    "localId": "075",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "075/95",
+    "cardName": "Team Aqua Ball",
+    "fullDisplayName": "Team Aqua Ball 075/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ryo Ueda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-075-low.png",
+    "imageHighSrc": "cards/ex4-075-high.png"
+  },
+  {
+    "masterCardId": "5895",
+    "externalId": null,
+    "tcgdex_id": "ex4-74",
+    "localId": "074",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "074/95",
+    "cardName": "Strength Charm",
+    "fullDisplayName": "Strength Charm 074/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Pokémon Tool"
+    ],
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Keiji Kinebuchi",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-074-low.png",
+    "imageHighSrc": "cards/ex4-074-high.png"
+  },
+  {
+    "masterCardId": "5886",
+    "externalId": null,
+    "tcgdex_id": "ex4-73",
+    "localId": "073",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "073/95",
+    "cardName": "Maxie",
+    "fullDisplayName": "Maxie 073/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-073-low.png",
+    "imageHighSrc": "cards/ex4-073-high.png"
+  },
+  {
+    "masterCardId": "5878",
+    "externalId": null,
+    "tcgdex_id": "ex4-72",
+    "localId": "072",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "072/95",
+    "cardName": "Dual Ball",
+    "fullDisplayName": "Dual Ball 072/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Item"
+    ],
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "\"Big Mama\" Tagawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-072-low.png",
+    "imageHighSrc": "cards/ex4-072-high.png"
+  },
+  {
+    "masterCardId": "5870",
+    "externalId": null,
+    "tcgdex_id": "ex4-71",
+    "localId": "071",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "071/95",
+    "cardName": "Archie",
+    "fullDisplayName": "Archie 071/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-071-low.png",
+    "imageHighSrc": "cards/ex4-071-high.png"
+  },
+  {
+    "masterCardId": "5861",
+    "externalId": null,
+    "tcgdex_id": "ex4-70",
+    "localId": "070",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "070/95",
+    "cardName": "Team Magma Schemer",
+    "fullDisplayName": "Team Magma Schemer 070/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-070-low.png",
+    "imageHighSrc": "cards/ex4-070-high.png"
+  },
+  {
+    "masterCardId": "5853",
+    "externalId": null,
+    "tcgdex_id": "ex4-69",
+    "localId": "069",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "069/95",
+    "cardName": "Team Aqua Schemer",
+    "fullDisplayName": "Team Aqua Schemer 069/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Trainer",
+    "stage": null,
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "subtypes": [
+      "Supporter"
+    ],
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-069-low.png",
+    "imageHighSrc": "cards/ex4-069-high.png"
+  },
+  {
+    "masterCardId": "5844",
+    "externalId": null,
+    "tcgdex_id": "ex4-68",
+    "localId": "068",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "068/95",
+    "cardName": "Team Magma's Rhyhorn",
+    "fullDisplayName": "Team Magma's Rhyhorn 068/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yosuke Da Silva",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-068-low.png",
+    "imageHighSrc": "cards/ex4-068-high.png"
+  },
+  {
+    "masterCardId": "5835",
+    "externalId": null,
+    "tcgdex_id": "ex4-67",
+    "localId": "067",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "067/95",
+    "cardName": "Team Magma's Rhyhorn",
+    "fullDisplayName": "Team Magma's Rhyhorn 067/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yosuke Da Silva",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-067-low.png",
+    "imageHighSrc": "cards/ex4-067-high.png"
+  },
+  {
+    "masterCardId": "5828",
+    "externalId": null,
+    "tcgdex_id": "ex4-66",
+    "localId": "066",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "066/95",
+    "cardName": "Team Magma's Poochyena",
+    "fullDisplayName": "Team Magma's Poochyena 066/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-066-low.png",
+    "imageHighSrc": "cards/ex4-066-high.png"
+  },
+  {
+    "masterCardId": "5819",
+    "externalId": null,
+    "tcgdex_id": "ex4-65",
+    "localId": "065",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "065/95",
+    "cardName": "Team Magma's Poochyena",
+    "fullDisplayName": "Team Magma's Poochyena 065/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-065-low.png",
+    "imageHighSrc": "cards/ex4-065-high.png"
+  },
+  {
+    "masterCardId": "5810",
+    "externalId": null,
+    "tcgdex_id": "ex4-64",
+    "localId": "064",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "064/95",
+    "cardName": "Team Magma's Numel",
+    "fullDisplayName": "Team Magma's Numel 064/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      322
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-064-low.png",
+    "imageHighSrc": "cards/ex4-064-high.png"
+  },
+  {
+    "masterCardId": "5802",
+    "externalId": null,
+    "tcgdex_id": "ex4-63",
+    "localId": "063",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "063/95",
+    "cardName": "Team Magma's Houndour",
+    "fullDisplayName": "Team Magma's Houndour 063/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-063-low.png",
+    "imageHighSrc": "cards/ex4-063-high.png"
+  },
+  {
+    "masterCardId": "5793",
+    "externalId": null,
+    "tcgdex_id": "ex4-62",
+    "localId": "062",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "062/95",
+    "cardName": "Team Magma's Houndour",
+    "fullDisplayName": "Team Magma's Houndour 062/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-062-low.png",
+    "imageHighSrc": "cards/ex4-062-high.png"
+  },
+  {
+    "masterCardId": "5783",
+    "externalId": null,
+    "tcgdex_id": "ex4-61",
+    "localId": "061",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "061/95",
+    "cardName": "Team Magma's Baltoy",
+    "fullDisplayName": "Team Magma's Baltoy 061/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-061-low.png",
+    "imageHighSrc": "cards/ex4-061-high.png"
+  },
+  {
+    "masterCardId": "5775",
+    "externalId": null,
+    "tcgdex_id": "ex4-60",
+    "localId": "060",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "060/95",
+    "cardName": "Team Magma's Baltoy",
+    "fullDisplayName": "Team Magma's Baltoy 060/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-060-low.png",
+    "imageHighSrc": "cards/ex4-060-high.png"
+  },
+  {
+    "masterCardId": "5766",
+    "externalId": null,
+    "tcgdex_id": "ex4-59",
+    "localId": "059",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "059/95",
+    "cardName": "Team Magma's Aron",
+    "fullDisplayName": "Team Magma's Aron 059/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-059-low.png",
+    "imageHighSrc": "cards/ex4-059-high.png"
+  },
+  {
+    "masterCardId": "5757",
+    "externalId": null,
+    "tcgdex_id": "ex4-58",
+    "localId": "058",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "058/95",
+    "cardName": "Team Magma's Aron",
+    "fullDisplayName": "Team Magma's Aron 058/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      304
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-058-low.png",
+    "imageHighSrc": "cards/ex4-058-high.png"
+  },
+  {
+    "masterCardId": "5748",
+    "externalId": null,
+    "tcgdex_id": "ex4-57",
+    "localId": "057",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "057/95",
+    "cardName": "Team Aqua's Spheal",
+    "fullDisplayName": "Team Aqua's Spheal 057/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-057-low.png",
+    "imageHighSrc": "cards/ex4-057-high.png"
+  },
+  {
+    "masterCardId": "5738",
+    "externalId": null,
+    "tcgdex_id": "ex4-56",
+    "localId": "056",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "056/95",
+    "cardName": "Team Aqua's Spheal",
+    "fullDisplayName": "Team Aqua's Spheal 056/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      363
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-056-low.png",
+    "imageHighSrc": "cards/ex4-056-high.png"
+  },
+  {
+    "masterCardId": "5729",
+    "externalId": null,
+    "tcgdex_id": "ex4-55",
+    "localId": "055",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "055/95",
+    "cardName": "Team Aqua's Poochyena",
+    "fullDisplayName": "Team Aqua's Poochyena 055/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-055-low.png",
+    "imageHighSrc": "cards/ex4-055-high.png"
+  },
+  {
+    "masterCardId": "5720",
+    "externalId": null,
+    "tcgdex_id": "ex4-54",
+    "localId": "054",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "054/95",
+    "cardName": "Team Aqua's Poochyena",
+    "fullDisplayName": "Team Aqua's Poochyena 054/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      261
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-054-low.png",
+    "imageHighSrc": "cards/ex4-054-high.png"
+  },
+  {
+    "masterCardId": "5711",
+    "externalId": null,
+    "tcgdex_id": "ex4-53",
+    "localId": "053",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "053/95",
+    "cardName": "Team Aqua's Electrike",
+    "fullDisplayName": "Team Aqua's Electrike 053/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "M. Akiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-053-low.png",
+    "imageHighSrc": "cards/ex4-053-high.png"
+  },
+  {
+    "masterCardId": "5702",
+    "externalId": null,
+    "tcgdex_id": "ex4-52",
+    "localId": "052",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "052/95",
+    "cardName": "Team Aqua's Electrike",
+    "fullDisplayName": "Team Aqua's Electrike 052/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "M. Akiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-052-low.png",
+    "imageHighSrc": "cards/ex4-052-high.png"
+  },
+  {
+    "masterCardId": "5695",
+    "externalId": null,
+    "tcgdex_id": "ex4-51",
+    "localId": "051",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "051/95",
+    "cardName": "Team Aqua's Corphish",
+    "fullDisplayName": "Team Aqua's Corphish 051/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jungo Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-051-low.png",
+    "imageHighSrc": "cards/ex4-051-high.png"
+  },
+  {
+    "masterCardId": "5685",
+    "externalId": null,
+    "tcgdex_id": "ex4-50",
+    "localId": "050",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "050/95",
+    "cardName": "Team Aqua's Corphish",
+    "fullDisplayName": "Team Aqua's Corphish 050/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jungo Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-050-low.png",
+    "imageHighSrc": "cards/ex4-050-high.png"
+  },
+  {
+    "masterCardId": "5677",
+    "externalId": null,
+    "tcgdex_id": "ex4-49",
+    "localId": "049",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "049/95",
+    "cardName": "Team Aqua's Chinchou",
+    "fullDisplayName": "Team Aqua's Chinchou 049/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      170
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuo Yazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-049-low.png",
+    "imageHighSrc": "cards/ex4-049-high.png"
+  },
+  {
+    "masterCardId": "5668",
+    "externalId": null,
+    "tcgdex_id": "ex4-48",
+    "localId": "048",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "048/95",
+    "cardName": "Team Aqua's Carvanha",
+    "fullDisplayName": "Team Aqua's Carvanha 048/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-048-low.png",
+    "imageHighSrc": "cards/ex4-048-high.png"
+  },
+  {
+    "masterCardId": "5659",
+    "externalId": null,
+    "tcgdex_id": "ex4-47",
+    "localId": "047",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "047/95",
+    "cardName": "Team Aqua's Carvanha",
+    "fullDisplayName": "Team Aqua's Carvanha 047/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Yosuke Da Silva",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-047-low.png",
+    "imageHighSrc": "cards/ex4-047-high.png"
+  },
+  {
+    "masterCardId": "5650",
+    "externalId": null,
+    "tcgdex_id": "ex4-46",
+    "localId": "046",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "046/95",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 046/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-046-low.png",
+    "imageHighSrc": "cards/ex4-046-high.png"
+  },
+  {
+    "masterCardId": "5641",
+    "externalId": null,
+    "tcgdex_id": "ex4-45",
+    "localId": "045",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "045/95",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 045/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-045-low.png",
+    "imageHighSrc": "cards/ex4-045-high.png"
+  },
+  {
+    "masterCardId": "5632",
+    "externalId": null,
+    "tcgdex_id": "ex4-44",
+    "localId": "044",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "044/95",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 044/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 40,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-044-low.png",
+    "imageHighSrc": "cards/ex4-044-high.png"
+  },
+  {
+    "masterCardId": "5623",
+    "externalId": null,
+    "tcgdex_id": "ex4-43",
+    "localId": "043",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "043/95",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 043/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-043-low.png",
+    "imageHighSrc": "cards/ex4-043-high.png"
+  },
+  {
+    "masterCardId": "5614",
+    "externalId": null,
+    "tcgdex_id": "ex4-42",
+    "localId": "042",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "042/95",
+    "cardName": "Meowth",
+    "fullDisplayName": "Meowth 042/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      52
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-042-low.png",
+    "imageHighSrc": "cards/ex4-042-high.png"
+  },
+  {
+    "masterCardId": "5607",
+    "externalId": null,
+    "tcgdex_id": "ex4-41",
+    "localId": "041",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "041/95",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 041/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      39
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-041-low.png",
+    "imageHighSrc": "cards/ex4-041-high.png"
+  },
+  {
+    "masterCardId": "5597",
+    "externalId": null,
+    "tcgdex_id": "ex4-40",
+    "localId": "040",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "040/95",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 040/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-040-low.png",
+    "imageHighSrc": "cards/ex4-040-high.png"
+  },
+  {
+    "masterCardId": "5588",
+    "externalId": null,
+    "tcgdex_id": "ex4-39",
+    "localId": "039",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "039/95",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 039/95 Team Magma vs Team Aqua",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-039-low.png",
+    "imageHighSrc": "cards/ex4-039-high.png"
+  },
+  {
+    "masterCardId": "5580",
+    "externalId": null,
+    "tcgdex_id": "ex4-38",
+    "localId": "038",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "038/95",
+    "cardName": "Team Magma's Rhyhorn",
+    "fullDisplayName": "Team Magma's Rhyhorn 038/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mt. TBT",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-038-low.png",
+    "imageHighSrc": "cards/ex4-038-high.png"
+  },
+  {
+    "masterCardId": "5571",
+    "externalId": null,
+    "tcgdex_id": "ex4-37",
+    "localId": "037",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "037/95",
+    "cardName": "Team Magma's Mightyena",
+    "fullDisplayName": "Team Magma's Mightyena 037/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Poochyena",
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-037-low.png",
+    "imageHighSrc": "cards/ex4-037-high.png"
+  },
+  {
+    "masterCardId": "5562",
+    "externalId": null,
+    "tcgdex_id": "ex4-36",
+    "localId": "036",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "036/95",
+    "cardName": "Team Magma's Lairon",
+    "fullDisplayName": "Team Magma's Lairon 036/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Aron",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-036-low.png",
+    "imageHighSrc": "cards/ex4-036-high.png"
+  },
+  {
+    "masterCardId": "5553",
+    "externalId": null,
+    "tcgdex_id": "ex4-35",
+    "localId": "035",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "035/95",
+    "cardName": "Team Magma's Houndour",
+    "fullDisplayName": "Team Magma's Houndour 035/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      228
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-035-low.png",
+    "imageHighSrc": "cards/ex4-035-high.png"
+  },
+  {
+    "masterCardId": "5544",
+    "externalId": null,
+    "tcgdex_id": "ex4-34",
+    "localId": "034",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "034/95",
+    "cardName": "Team Magma's Houndoom",
+    "fullDisplayName": "Team Magma's Houndoom 034/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Houndour",
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-034-low.png",
+    "imageHighSrc": "cards/ex4-034-high.png"
+  },
+  {
+    "masterCardId": "5534",
+    "externalId": null,
+    "tcgdex_id": "ex4-33",
+    "localId": "033",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "033/95",
+    "cardName": "Team Magma's Claydol",
+    "fullDisplayName": "Team Magma's Claydol 033/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Baltoy",
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-033-low.png",
+    "imageHighSrc": "cards/ex4-033-high.png"
+  },
+  {
+    "masterCardId": "5525",
+    "externalId": null,
+    "tcgdex_id": "ex4-32",
+    "localId": "032",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "032/95",
+    "cardName": "Team Magma's Baltoy",
+    "fullDisplayName": "Team Magma's Baltoy 032/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      343
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Atsuko Ujiie",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-032-low.png",
+    "imageHighSrc": "cards/ex4-032-high.png"
+  },
+  {
+    "masterCardId": "5517",
+    "externalId": null,
+    "tcgdex_id": "ex4-31",
+    "localId": "031",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "031/95",
+    "cardName": "Team Aqua's Sealeo",
+    "fullDisplayName": "Team Aqua's Sealeo 031/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Spheal",
+    "artist": "T. Honda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-031-low.png",
+    "imageHighSrc": "cards/ex4-031-high.png"
+  },
+  {
+    "masterCardId": "5508",
+    "externalId": null,
+    "tcgdex_id": "ex4-30",
+    "localId": "030",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "030/95",
+    "cardName": "Team Aqua's Mightyena",
+    "fullDisplayName": "Team Aqua's Mightyena 030/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Poochyena",
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-030-low.png",
+    "imageHighSrc": "cards/ex4-030-high.png"
+  },
+  {
+    "masterCardId": "5500",
+    "externalId": null,
+    "tcgdex_id": "ex4-29",
+    "localId": "029",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "029/95",
+    "cardName": "Team Aqua's Manectric",
+    "fullDisplayName": "Team Aqua's Manectric 029/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Electrike",
+    "artist": "K. Utsunomiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-029-low.png",
+    "imageHighSrc": "cards/ex4-029-high.png"
+  },
+  {
+    "masterCardId": "5491",
+    "externalId": null,
+    "tcgdex_id": "ex4-28",
+    "localId": "028",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "028/95",
+    "cardName": "Team Aqua's Lanturn",
+    "fullDisplayName": "Team Aqua's Lanturn 028/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      171
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Chinchou",
+    "artist": "Jungo Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-028-low.png",
+    "imageHighSrc": "cards/ex4-028-high.png"
+  },
+  {
+    "masterCardId": "5482",
+    "externalId": null,
+    "tcgdex_id": "ex4-27",
+    "localId": "027",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "027/95",
+    "cardName": "Team Aqua's Electrike",
+    "fullDisplayName": "Team Aqua's Electrike 027/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "M. Akiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-027-low.png",
+    "imageHighSrc": "cards/ex4-027-high.png"
+  },
+  {
+    "masterCardId": "5473",
+    "externalId": null,
+    "tcgdex_id": "ex4-26",
+    "localId": "026",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "026/95",
+    "cardName": "Team Aqua's Corphish",
+    "fullDisplayName": "Team Aqua's Corphish 026/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      341
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jungo Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-026-low.png",
+    "imageHighSrc": "cards/ex4-026-high.png"
+  },
+  {
+    "masterCardId": "5464",
+    "externalId": null,
+    "tcgdex_id": "ex4-25",
+    "localId": "025",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "025/95",
+    "cardName": "Team Aqua's Carvanha",
+    "fullDisplayName": "Team Aqua's Carvanha 025/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      318
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Mt. TBT",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-025-low.png",
+    "imageHighSrc": "cards/ex4-025-high.png"
+  },
+  {
+    "masterCardId": "5456",
+    "externalId": null,
+    "tcgdex_id": "ex4-24",
+    "localId": "024",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "024/95",
+    "cardName": "Team Aqua's Cacnea",
+    "fullDisplayName": "Team Aqua's Cacnea 024/95 Team Magma vs Team Aqua",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 50,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      331
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K. Utsunomiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-024-low.png",
+    "imageHighSrc": "cards/ex4-024-high.png"
+  },
+  {
+    "masterCardId": "5447",
+    "externalId": null,
+    "tcgdex_id": "ex4-23",
+    "localId": "023",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "023/95",
+    "cardName": "Team Magma's Zangoose",
+    "fullDisplayName": "Team Magma's Zangoose 023/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      335
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-023-low.png",
+    "imageHighSrc": "cards/ex4-023-high.png"
+  },
+  {
+    "masterCardId": "5438",
+    "externalId": null,
+    "tcgdex_id": "ex4-22",
+    "localId": "022",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "022/95",
+    "cardName": "Team Magma's Rhydon",
+    "fullDisplayName": "Team Magma's Rhydon 022/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Rhyhorn",
+    "artist": "T. Honda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-022-low.png",
+    "imageHighSrc": "cards/ex4-022-high.png"
+  },
+  {
+    "masterCardId": "5429",
+    "externalId": null,
+    "tcgdex_id": "ex4-21",
+    "localId": "021",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "021/95",
+    "cardName": "Team Magma's Mightyena",
+    "fullDisplayName": "Team Magma's Mightyena 021/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Poochyena",
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-021-low.png",
+    "imageHighSrc": "cards/ex4-021-high.png"
+  },
+  {
+    "masterCardId": "5420",
+    "externalId": null,
+    "tcgdex_id": "ex4-20",
+    "localId": "020",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "020/95",
+    "cardName": "Team Magma's Lairon",
+    "fullDisplayName": "Team Magma's Lairon 020/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      305
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Aron",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-020-low.png",
+    "imageHighSrc": "cards/ex4-020-high.png"
+  },
+  {
+    "masterCardId": "5411",
+    "externalId": null,
+    "tcgdex_id": "ex4-19",
+    "localId": "019",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "019/95",
+    "cardName": "Team Magma's Camerupt",
+    "fullDisplayName": "Team Magma's Camerupt 019/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      323
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Numel",
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-019-low.png",
+    "imageHighSrc": "cards/ex4-019-high.png"
+  },
+  {
+    "masterCardId": "5402",
+    "externalId": null,
+    "tcgdex_id": "ex4-18",
+    "localId": "018",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "018/95",
+    "cardName": "Team Aqua's Sharpedo",
+    "fullDisplayName": "Team Aqua's Sharpedo 018/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Carvanha",
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-018-low.png",
+    "imageHighSrc": "cards/ex4-018-high.png"
+  },
+  {
+    "masterCardId": "5394",
+    "externalId": null,
+    "tcgdex_id": "ex4-17",
+    "localId": "017",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "017/95",
+    "cardName": "Team Aqua's Seviper",
+    "fullDisplayName": "Team Aqua's Seviper 017/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      336
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Jungo Suzuki",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-017-low.png",
+    "imageHighSrc": "cards/ex4-017-high.png"
+  },
+  {
+    "masterCardId": "5385",
+    "externalId": null,
+    "tcgdex_id": "ex4-16",
+    "localId": "016",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "016/95",
+    "cardName": "Team Aqua's Sealeo",
+    "fullDisplayName": "Team Aqua's Sealeo 016/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      364
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Spheal",
+    "artist": "T. Honda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-016-low.png",
+    "imageHighSrc": "cards/ex4-016-high.png"
+  },
+  {
+    "masterCardId": "5376",
+    "externalId": null,
+    "tcgdex_id": "ex4-15",
+    "localId": "015",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "015/95",
+    "cardName": "Team Aqua's Mightyena",
+    "fullDisplayName": "Team Aqua's Mightyena 015/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      262
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Poochyena",
+    "artist": "Shin-ichi Yoshikawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-015-low.png",
+    "imageHighSrc": "cards/ex4-015-high.png"
+  },
+  {
+    "masterCardId": "5368",
+    "externalId": null,
+    "tcgdex_id": "ex4-14",
+    "localId": "014",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "014/95",
+    "cardName": "Team Aqua's Crawdaunt",
+    "fullDisplayName": "Team Aqua's Crawdaunt 014/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Corphish",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-014-low.png",
+    "imageHighSrc": "cards/ex4-014-high.png"
+  },
+  {
+    "masterCardId": "5358",
+    "externalId": null,
+    "tcgdex_id": "ex4-13",
+    "localId": "013",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "013/95",
+    "cardName": "Raichu",
+    "fullDisplayName": "Raichu 013/95 Team Magma vs Team Aqua",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      26
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Pikachu",
+    "artist": "Ken Sugimori",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-013-low.png",
+    "imageHighSrc": "cards/ex4-013-high.png"
+  },
+  {
+    "masterCardId": "5349",
+    "externalId": null,
+    "tcgdex_id": "ex4-12",
+    "localId": "012",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "012/95",
+    "cardName": "Team Magma's Torkoal",
+    "fullDisplayName": "Team Magma's Torkoal 012/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 80,
+    "elementTypes": [
+      "Fire",
+      "Darkness"
+    ],
+    "dexIds": [
+      324
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K. Hoshiba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-012-low.png",
+    "imageHighSrc": "cards/ex4-012-high.png"
+  },
+  {
+    "masterCardId": "5341",
+    "externalId": null,
+    "tcgdex_id": "ex4-11",
+    "localId": "011",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "011/95",
+    "cardName": "Team Magma's Rhydon",
+    "fullDisplayName": "Team Magma's Rhydon 011/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      112
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Rhyhorn",
+    "artist": "T. Honda",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-011-low.png",
+    "imageHighSrc": "cards/ex4-011-high.png"
+  },
+  {
+    "masterCardId": "5330",
+    "externalId": null,
+    "tcgdex_id": "ex4-10",
+    "localId": "010",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "010/95",
+    "cardName": "Team Magma's Houndoom",
+    "fullDisplayName": "Team Magma's Houndoom 010/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Fire",
+      "Darkness"
+    ],
+    "dexIds": [
+      229
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Houndour",
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-010-low.png",
+    "imageHighSrc": "cards/ex4-010-high.png"
+  },
+  {
+    "masterCardId": "5321",
+    "externalId": null,
+    "tcgdex_id": "ex4-9",
+    "localId": "009",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "009/95",
+    "cardName": "Team Magma's Groudon",
+    "fullDisplayName": "Team Magma's Groudon 009/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      383
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "Kazuo Yazawa",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-009-low.png",
+    "imageHighSrc": "cards/ex4-009-high.png"
+  },
+  {
+    "masterCardId": "5312",
+    "externalId": null,
+    "tcgdex_id": "ex4-8",
+    "localId": "008",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "008/95",
+    "cardName": "Team Magma's Claydol",
+    "fullDisplayName": "Team Magma's Claydol 008/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic",
+      "Darkness"
+    ],
+    "dexIds": [
+      344
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Baltoy",
+    "artist": "Zu-Ka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-008-low.png",
+    "imageHighSrc": "cards/ex4-008-high.png"
+  },
+  {
+    "masterCardId": "5303",
+    "externalId": null,
+    "tcgdex_id": "ex4-7",
+    "localId": "007",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "007/95",
+    "cardName": "Team Magma's Aggron",
+    "fullDisplayName": "Team Magma's Aggron 007/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting",
+      "Darkness"
+    ],
+    "dexIds": [
+      306
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Magma's Lairon",
+    "artist": "Hiromichi Sugiyama",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-007-low.png",
+    "imageHighSrc": "cards/ex4-007-high.png"
+  },
+  {
+    "masterCardId": "5296",
+    "externalId": null,
+    "tcgdex_id": "ex4-6",
+    "localId": "006",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "006/95",
+    "cardName": "Team Aqua's Walrein",
+    "fullDisplayName": "Team Aqua's Walrein 006/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 2",
+    "hp": 120,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      365
+    ],
+    "subtypes": [
+      "Stage 2"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Sealeo",
+    "artist": "Ken Ikuji",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-006-low.png",
+    "imageHighSrc": "cards/ex4-006-high.png"
+  },
+  {
+    "masterCardId": "5287",
+    "externalId": null,
+    "tcgdex_id": "ex4-5",
+    "localId": "005",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "005/95",
+    "cardName": "Team Aqua's Sharpedo",
+    "fullDisplayName": "Team Aqua's Sharpedo 005/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      319
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Carvanha",
+    "artist": "Katsura Tabata",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-005-low.png",
+    "imageHighSrc": "cards/ex4-005-high.png"
+  },
+  {
+    "masterCardId": "5279",
+    "externalId": null,
+    "tcgdex_id": "ex4-4",
+    "localId": "004",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "004/95",
+    "cardName": "Team Aqua's Manectric",
+    "fullDisplayName": "Team Aqua's Manectric 004/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning",
+      "Darkness"
+    ],
+    "dexIds": [
+      310
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Electrike",
+    "artist": "K. Utsunomiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-004-low.png",
+    "imageHighSrc": "cards/ex4-004-high.png"
+  },
+  {
+    "masterCardId": "5270",
+    "externalId": null,
+    "tcgdex_id": "ex4-3",
+    "localId": "003",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "003/95",
+    "cardName": "Team Aqua's Kyogre",
+    "fullDisplayName": "Team Aqua's Kyogre 003/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Basic",
+    "hp": 100,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      382
+    ],
+    "subtypes": [
+      "Basic"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": null,
+    "artist": "K. Hoshiba",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-003-low.png",
+    "imageHighSrc": "cards/ex4-003-high.png"
+  },
+  {
+    "masterCardId": "5261",
+    "externalId": null,
+    "tcgdex_id": "ex4-2",
+    "localId": "002",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "002/95",
+    "cardName": "Team Aqua's Crawdaunt",
+    "fullDisplayName": "Team Aqua's Crawdaunt 002/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Water",
+      "Darkness"
+    ],
+    "dexIds": [
+      342
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Corphish",
+    "artist": "Nakaoka",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-002-low.png",
+    "imageHighSrc": "cards/ex4-002-high.png"
+  },
+  {
+    "masterCardId": "5254",
+    "externalId": null,
+    "tcgdex_id": "ex4-1",
+    "localId": "001",
+    "setCode": "ex4",
+    "setTcgdexId": "ex4",
+    "cardNumber": "001/95",
+    "cardName": "Team Aqua's Cacturne",
+    "fullDisplayName": "Team Aqua's Cacturne 001/95 Team Magma vs Team Aqua",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "stage": "Stage 1",
+    "hp": 80,
+    "elementTypes": [
+      "Grass",
+      "Darkness"
+    ],
+    "dexIds": [
+      332
+    ],
+    "subtypes": [
+      "Stage 1"
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "evolveFrom": "Team Aqua's Cacnea",
+    "artist": "K. Utsunomiya",
+    "isActive": true,
+    "noPricing": false,
+    "imageLowSrc": "cards/ex4-001-low.png",
+    "imageHighSrc": "cards/ex4-001-high.png"
+  }
+]
