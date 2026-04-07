@@ -1,0 +1,5151 @@
+[
+    {
+        "masterCardId": "16208",
+        "externalId": "sv8pt5-180",
+        "localId": "180",
+        "setCode": "sv8pt5",
+        "cardNumber": "180/131",
+        "cardName": "Terapagos ex",
+        "fullDisplayName": "Terapagos ex 180/131 Prismatic Evolutions",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            1024
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-180-low.png",
+        "imageHighSrc": "cards/sv8pt5-180-high.png",
+        "attacks": [
+            {
+                "name": "Unified Beatdown",
+                "damage": "30×"
+            },
+            {
+                "name": "Crown Opal",
+                "damage": "180"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16200",
+        "externalId": "sv8pt5-179",
+        "localId": "179",
+        "setCode": "sv8pt5",
+        "cardNumber": "179/131",
+        "cardName": "Pikachu ex",
+        "fullDisplayName": "Pikachu ex 179/131 Prismatic Evolutions",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-179-low.png",
+        "imageHighSrc": "cards/sv8pt5-179-high.png",
+        "attacks": [
+            {
+                "name": "Topaz Bolt",
+                "damage": "300"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16186",
+        "externalId": "sv8pt5-178",
+        "localId": "178",
+        "setCode": "sv8pt5",
+        "cardNumber": "178/131",
+        "cardName": "Walking Wake ex",
+        "fullDisplayName": "Walking Wake ex 178/131 Prismatic Evolutions",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-178-low.png",
+        "imageHighSrc": "cards/sv8pt5-178-high.png",
+        "attacks": [
+            {
+                "name": "Catharsis Roar",
+                "damage": "120+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16178",
+        "externalId": "sv8pt5-177",
+        "localId": "177",
+        "setCode": "sv8pt5",
+        "cardNumber": "177/131",
+        "cardName": "Teal Mask Ogerpon ex",
+        "fullDisplayName": "Teal Mask Ogerpon ex 177/131 Prismatic Evolutions",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-177-low.png",
+        "imageHighSrc": "cards/sv8pt5-177-high.png",
+        "attacks": [
+            {
+                "name": "Myriad Leaf Shower",
+                "damage": "30+"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16169",
+        "externalId": "sv8pt5-176",
+        "localId": "176",
+        "setCode": "sv8pt5",
+        "cardNumber": "176/131",
+        "cardName": "Iron Leaves ex",
+        "fullDisplayName": "Iron Leaves ex 176/131 Prismatic Evolutions",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-176-low.png",
+        "imageHighSrc": "cards/sv8pt5-176-high.png",
+        "attacks": [
+            {
+                "name": "Prism Edge",
+                "damage": "180"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16162",
+        "externalId": "sv8pt5-175",
+        "localId": "175",
+        "setCode": "sv8pt5",
+        "cardNumber": "175/131",
+        "cardName": "Lacey",
+        "fullDisplayName": "Lacey 175/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-175-low.png",
+        "imageHighSrc": "cards/sv8pt5-175-high.png",
+        "rules": "Shuffle your hand into your deck. Then, draw 4 cards. If your opponent has 3 or fewer Prize cards remaining, draw 8 cards instead.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16156",
+        "externalId": "sv8pt5-174",
+        "localId": "174",
+        "setCode": "sv8pt5",
+        "cardNumber": "174/131",
+        "cardName": "Kieran",
+        "fullDisplayName": "Kieran 174/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-174-low.png",
+        "imageHighSrc": "cards/sv8pt5-174-high.png",
+        "rules": "Choose 1:    • Switch your Active Pokémon with 1 of your Benched Pokémon.  • During this turn, attacks used by your Pokémon do 30 more damage to your opponent's Active Pokémon ex and Active Pokémon V (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16147",
+        "externalId": "sv8pt5-173",
+        "localId": "173",
+        "setCode": "sv8pt5",
+        "cardNumber": "173/131",
+        "cardName": "Janine's Secret Art",
+        "fullDisplayName": "Janine's Secret Art 173/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-173-low.png",
+        "imageHighSrc": "cards/sv8pt5-173-high.png",
+        "rules": "Choose up to 2 of your Darkness Pokémon. For each of those Pokémon, search your deck for a Basic Darkness Energy card and attach it to that Pokémon. Then, shuffle your deck. If you attached Energy to your Active Pokémon in this way, it is now Poisoned.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16137",
+        "externalId": "sv8pt5-172",
+        "localId": "172",
+        "setCode": "sv8pt5",
+        "cardNumber": "172/131",
+        "cardName": "Drayton",
+        "fullDisplayName": "Drayton 172/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-172-low.png",
+        "imageHighSrc": "cards/sv8pt5-172-high.png",
+        "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon and a Trainer card you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16117",
+        "externalId": "sv8pt5-171",
+        "localId": "171",
+        "setCode": "sv8pt5",
+        "cardNumber": "171/131",
+        "cardName": "Crispin",
+        "fullDisplayName": "Crispin 171/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-171-low.png",
+        "imageHighSrc": "cards/sv8pt5-171-high.png",
+        "rules": "Search your deck for up to 2 Basic Energy cards of different types, reveal them, and put 1 of them into your hand. Attach the other to 1 of your Pokémon. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16109",
+        "externalId": "sv8pt5-170",
+        "localId": "170",
+        "setCode": "sv8pt5",
+        "cardNumber": "170/131",
+        "cardName": "Amarys",
+        "fullDisplayName": "Amarys 170/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-170-low.png",
+        "imageHighSrc": "cards/sv8pt5-170-high.png",
+        "rules": "Draw 4 cards. At the end of this turn, if you have 5 or more cards in your hand, discard your hand.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "16102",
+        "externalId": "sv8pt5-169",
+        "localId": "169",
+        "setCode": "sv8pt5",
+        "cardNumber": "169/131",
+        "cardName": "Terapagos ex",
+        "fullDisplayName": "Terapagos ex 169/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            1024
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-169-low.png",
+        "imageHighSrc": "cards/sv8pt5-169-high.png",
+        "attacks": [
+            {
+                "name": "Unified Beatdown",
+                "damage": "30×"
+            },
+            {
+                "name": "Crown Opal",
+                "damage": "180"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16095",
+        "externalId": "sv8pt5-168",
+        "localId": "168",
+        "setCode": "sv8pt5",
+        "cardNumber": "168/131",
+        "cardName": "Bloodmoon Ursaluna ex",
+        "fullDisplayName": "Bloodmoon Ursaluna ex 168/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            901
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-168-low.png",
+        "imageHighSrc": "cards/sv8pt5-168-high.png",
+        "attacks": [
+            {
+                "name": "Blood Moon",
+                "damage": "240"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16087",
+        "externalId": "sv8pt5-167",
+        "localId": "167",
+        "setCode": "sv8pt5",
+        "cardNumber": "167/131",
+        "cardName": "Eevee ex",
+        "fullDisplayName": "Eevee ex 167/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-167-low.png",
+        "imageHighSrc": "cards/sv8pt5-167-high.png",
+        "attacks": [
+            {
+                "name": "Coruscating Quartz",
+                "damage": "200"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16079",
+        "externalId": "sv8pt5-166",
+        "localId": "166",
+        "setCode": "sv8pt5",
+        "cardNumber": "166/131",
+        "cardName": "Raging Bolt ex",
+        "fullDisplayName": "Raging Bolt ex 166/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 240,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-166-low.png",
+        "imageHighSrc": "cards/sv8pt5-166-high.png",
+        "attacks": [
+            {
+                "name": "Burst Roar",
+                "damage": null
+            },
+            {
+                "name": "Bellowing Thunder",
+                "damage": "70×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16070",
+        "externalId": "sv8pt5-165",
+        "localId": "165",
+        "setCode": "sv8pt5",
+        "cardNumber": "165/131",
+        "cardName": "Dragapult ex",
+        "fullDisplayName": "Dragapult ex 165/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 320,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            887
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-165-low.png",
+        "imageHighSrc": "cards/sv8pt5-165-high.png",
+        "attacks": [
+            {
+                "name": "Jet Headbutt",
+                "damage": "70"
+            },
+            {
+                "name": "Phantom Dive",
+                "damage": "200"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16055",
+        "externalId": "sv8pt5-164",
+        "localId": "164",
+        "setCode": "sv8pt5",
+        "cardNumber": "164/131",
+        "cardName": "Gholdengo ex",
+        "fullDisplayName": "Gholdengo ex 164/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            1000
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-164-low.png",
+        "imageHighSrc": "cards/sv8pt5-164-high.png",
+        "attacks": [
+            {
+                "name": "Make It Rain",
+                "damage": "50×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16045",
+        "externalId": "sv8pt5-163",
+        "localId": "163",
+        "setCode": "sv8pt5",
+        "cardNumber": "163/131",
+        "cardName": "Pecharunt ex",
+        "fullDisplayName": "Pecharunt ex 163/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            1025
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-163-low.png",
+        "imageHighSrc": "cards/sv8pt5-163-high.png",
+        "attacks": [
+            {
+                "name": "Irritated Outburst",
+                "damage": "60×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16037",
+        "externalId": "sv8pt5-162",
+        "localId": "162",
+        "setCode": "sv8pt5",
+        "cardNumber": "162/131",
+        "cardName": "Roaring Moon ex",
+        "fullDisplayName": "Roaring Moon ex 162/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-162-low.png",
+        "imageHighSrc": "cards/sv8pt5-162-high.png",
+        "attacks": [
+            {
+                "name": "Frenzied Gouging",
+                "damage": null
+            },
+            {
+                "name": "Calamity Storm",
+                "damage": "100+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16012",
+        "externalId": "sv8pt5-161",
+        "localId": "161",
+        "setCode": "sv8pt5",
+        "cardNumber": "161/131",
+        "cardName": "Umbreon ex",
+        "fullDisplayName": "Umbreon ex 161/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            197
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-161-low.png",
+        "imageHighSrc": "cards/sv8pt5-161-high.png",
+        "attacks": [
+            {
+                "name": "Moon Mirage",
+                "damage": "160"
+            },
+            {
+                "name": "Onyx",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "16002",
+        "externalId": "sv8pt5-160",
+        "localId": "160",
+        "setCode": "sv8pt5",
+        "cardNumber": "160/131",
+        "cardName": "Cornerstone Mask Ogerpon ex",
+        "fullDisplayName": "Cornerstone Mask Ogerpon ex 160/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-160-low.png",
+        "imageHighSrc": "cards/sv8pt5-160-high.png",
+        "attacks": [
+            {
+                "name": "Demolish",
+                "damage": "140"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15992",
+        "externalId": "sv8pt5-159",
+        "localId": "159",
+        "setCode": "sv8pt5",
+        "cardNumber": "159/131",
+        "cardName": "Sandy Shocks ex",
+        "fullDisplayName": "Sandy Shocks ex 159/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-159-low.png",
+        "imageHighSrc": "cards/sv8pt5-159-high.png",
+        "attacks": [
+            {
+                "name": "Earthen Spike",
+                "damage": "200"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15986",
+        "externalId": "sv8pt5-158",
+        "localId": "158",
+        "setCode": "sv8pt5",
+        "cardNumber": "158/131",
+        "cardName": "Iron Crown ex",
+        "fullDisplayName": "Iron Crown ex 158/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-158-low.png",
+        "imageHighSrc": "cards/sv8pt5-158-high.png",
+        "attacks": [
+            {
+                "name": "Twin Shotels",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15976",
+        "externalId": "sv8pt5-157",
+        "localId": "157",
+        "setCode": "sv8pt5",
+        "cardNumber": "157/131",
+        "cardName": "Iron Valiant ex",
+        "fullDisplayName": "Iron Valiant ex 157/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-157-low.png",
+        "imageHighSrc": "cards/sv8pt5-157-high.png",
+        "attacks": [
+            {
+                "name": "Laser Blade",
+                "damage": "200"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15965",
+        "externalId": "sv8pt5-156",
+        "localId": "156",
+        "setCode": "sv8pt5",
+        "cardNumber": "156/131",
+        "cardName": "Sylveon ex",
+        "fullDisplayName": "Sylveon ex 156/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            700
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-156-low.png",
+        "imageHighSrc": "cards/sv8pt5-156-high.png",
+        "attacks": [
+            {
+                "name": "Magical Charm",
+                "damage": "160"
+            },
+            {
+                "name": "Angelite",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15958",
+        "externalId": "sv8pt5-155",
+        "localId": "155",
+        "setCode": "sv8pt5",
+        "cardNumber": "155/131",
+        "cardName": "Espeon ex",
+        "fullDisplayName": "Espeon ex 155/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            196
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-155-low.png",
+        "imageHighSrc": "cards/sv8pt5-155-high.png",
+        "attacks": [
+            {
+                "name": "Psych Out",
+                "damage": "160"
+            },
+            {
+                "name": "Amazez",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15951",
+        "externalId": "sv8pt5-154",
+        "localId": "154",
+        "setCode": "sv8pt5",
+        "cardNumber": "154/131",
+        "cardName": "Iron Hands ex",
+        "fullDisplayName": "Iron Hands ex 154/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-154-low.png",
+        "imageHighSrc": "cards/sv8pt5-154-high.png",
+        "attacks": [
+            {
+                "name": "Arm Press",
+                "damage": "160"
+            },
+            {
+                "name": "Amp You Very Much",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15941",
+        "externalId": "sv8pt5-153",
+        "localId": "153",
+        "setCode": "sv8pt5",
+        "cardNumber": "153/131",
+        "cardName": "Jolteon ex",
+        "fullDisplayName": "Jolteon ex 153/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-153-low.png",
+        "imageHighSrc": "cards/sv8pt5-153-high.png",
+        "attacks": [
+            {
+                "name": "Flashing Spear",
+                "damage": "60+"
+            },
+            {
+                "name": "Dravite",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15933",
+        "externalId": "sv8pt5-152",
+        "localId": "152",
+        "setCode": "sv8pt5",
+        "cardNumber": "152/131",
+        "cardName": "Wellspring Mask Ogerpon ex",
+        "fullDisplayName": "Wellspring Mask Ogerpon ex 152/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-152-low.png",
+        "imageHighSrc": "cards/sv8pt5-152-high.png",
+        "attacks": [
+            {
+                "name": "Sob",
+                "damage": "20"
+            },
+            {
+                "name": "Torrential Pump",
+                "damage": "100"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15923",
+        "externalId": "sv8pt5-151",
+        "localId": "151",
+        "setCode": "sv8pt5",
+        "cardNumber": "151/131",
+        "cardName": "Palafin ex",
+        "fullDisplayName": "Palafin ex 151/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 340,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            964
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-151-low.png",
+        "imageHighSrc": "cards/sv8pt5-151-high.png",
+        "attacks": [
+            {
+                "name": "Giga Impact",
+                "damage": "250"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15914",
+        "externalId": "sv8pt5-150",
+        "localId": "150",
+        "setCode": "sv8pt5",
+        "cardNumber": "150/131",
+        "cardName": "Glaceon ex",
+        "fullDisplayName": "Glaceon ex 150/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            471
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-150-low.png",
+        "imageHighSrc": "cards/sv8pt5-150-high.png",
+        "attacks": [
+            {
+                "name": "Frost Bullet",
+                "damage": "110"
+            },
+            {
+                "name": "Euclase",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15904",
+        "externalId": "sv8pt5-149",
+        "localId": "149",
+        "setCode": "sv8pt5",
+        "cardNumber": "149/131",
+        "cardName": "Vaporeon ex",
+        "fullDisplayName": "Vaporeon ex 149/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-149-low.png",
+        "imageHighSrc": "cards/sv8pt5-149-high.png",
+        "attacks": [
+            {
+                "name": "Severe Squall",
+                "damage": null
+            },
+            {
+                "name": "Aquamarine",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15896",
+        "externalId": "sv8pt5-148",
+        "localId": "148",
+        "setCode": "sv8pt5",
+        "cardNumber": "148/131",
+        "cardName": "Hearthflame Mask Ogerpon ex",
+        "fullDisplayName": "Hearthflame Mask Ogerpon ex 148/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-148-low.png",
+        "imageHighSrc": "cards/sv8pt5-148-high.png",
+        "attacks": [
+            {
+                "name": "Wrathful Hearth",
+                "damage": "20×"
+            },
+            {
+                "name": "Dynamic Blaze",
+                "damage": "140+"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15886",
+        "externalId": "sv8pt5-147",
+        "localId": "147",
+        "setCode": "sv8pt5",
+        "cardNumber": "147/131",
+        "cardName": "Ceruledge ex",
+        "fullDisplayName": "Ceruledge ex 147/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            937
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-147-low.png",
+        "imageHighSrc": "cards/sv8pt5-147-high.png",
+        "attacks": [
+            {
+                "name": "Abyssal Flames",
+                "damage": "30+"
+            },
+            {
+                "name": "Raging Amethyst",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15868",
+        "externalId": "sv8pt5-146",
+        "localId": "146",
+        "setCode": "sv8pt5",
+        "cardNumber": "146/131",
+        "cardName": "Flareon ex",
+        "fullDisplayName": "Flareon ex 146/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-146-low.png",
+        "imageHighSrc": "cards/sv8pt5-146-high.png",
+        "attacks": [
+            {
+                "name": "Burning Charge",
+                "damage": "130"
+            },
+            {
+                "name": "Carnelian",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15859",
+        "externalId": "sv8pt5-145",
+        "localId": "145",
+        "setCode": "sv8pt5",
+        "cardNumber": "145/131",
+        "cardName": "Teal Mask Ogerpon ex",
+        "fullDisplayName": "Teal Mask Ogerpon ex 145/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-145-low.png",
+        "imageHighSrc": "cards/sv8pt5-145-high.png",
+        "attacks": [
+            {
+                "name": "Myriad Leaf Shower",
+                "damage": "30+"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15850",
+        "externalId": "sv8pt5-144",
+        "localId": "144",
+        "setCode": "sv8pt5",
+        "cardNumber": "144/131",
+        "cardName": "Leafeon ex",
+        "fullDisplayName": "Leafeon ex 144/131 Prismatic Evolutions",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            470
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-144-low.png",
+        "imageHighSrc": "cards/sv8pt5-144-high.png",
+        "attacks": [
+            {
+                "name": "Verdant Storm",
+                "damage": "60×"
+            },
+            {
+                "name": "Moss Agate",
+                "damage": "230"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15842",
+        "externalId": "sv8pt5-143",
+        "localId": "143",
+        "setCode": "sv8pt5",
+        "cardNumber": "143/131",
+        "cardName": "Tyme",
+        "fullDisplayName": "Tyme 143/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-143-low.png",
+        "imageHighSrc": "cards/sv8pt5-143-high.png",
+        "rules": "Tell your opponent the name of a Pokémon in your hand and put that Pokémon face down in front of you. Your opponent guesses that Pokémon's HP, and then you reveal it. If your opponent guessed right, they draw 4 cards. If they guessed wrong, you draw 4 cards. Then, return the Pokémon to your hand.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15831",
+        "externalId": "sv8pt5-142",
+        "localId": "142",
+        "setCode": "sv8pt5",
+        "cardNumber": "142/131",
+        "cardName": "Raifort",
+        "fullDisplayName": "Raifort 142/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-142-low.png",
+        "imageHighSrc": "cards/sv8pt5-142-high.png",
+        "rules": "Look at the top 5 cards of your deck and discard any number of them. Put the other cards back in any order.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15821",
+        "externalId": "sv8pt5-141",
+        "localId": "141",
+        "setCode": "sv8pt5",
+        "cardNumber": "141/131",
+        "cardName": "Ortega",
+        "fullDisplayName": "Ortega 141/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-141-low.png",
+        "imageHighSrc": "cards/sv8pt5-141-high.png",
+        "rules": "Your opponent reveals their hand, and you choose a card you find there and put it on the bottom of their deck. If you put a card on the bottom of your opponent's deck in this way, your opponent may draw a card.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15810",
+        "externalId": "sv8pt5-140",
+        "localId": "140",
+        "setCode": "sv8pt5",
+        "cardNumber": "140/131",
+        "cardName": "Mela",
+        "fullDisplayName": "Mela 140/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-140-low.png",
+        "imageHighSrc": "cards/sv8pt5-140-high.png",
+        "rules": "You can use this card only if any of your Pokémon were Knocked Out during your opponent's last turn.  Attach a Basic Fire Energy card from your discard pile to 1 of your Pokémon. If you do, draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15802",
+        "externalId": "sv8pt5-139",
+        "localId": "139",
+        "setCode": "sv8pt5",
+        "cardNumber": "139/131",
+        "cardName": "Larry's Skill",
+        "fullDisplayName": "Larry's Skill 139/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-139-low.png",
+        "imageHighSrc": "cards/sv8pt5-139-high.png",
+        "rules": "Discard your hand and search your deck for a Pokémon, a Supporter card, and a Basic Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15791",
+        "externalId": "sv8pt5-138",
+        "localId": "138",
+        "setCode": "sv8pt5",
+        "cardNumber": "138/131",
+        "cardName": "Giacomo",
+        "fullDisplayName": "Giacomo 138/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-138-low.png",
+        "imageHighSrc": "cards/sv8pt5-138-high.png",
+        "rules": "Discard a Special Energy from each of your opponent's Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15782",
+        "externalId": "sv8pt5-137",
+        "localId": "137",
+        "setCode": "sv8pt5",
+        "cardNumber": "137/131",
+        "cardName": "Friends in Paldea",
+        "fullDisplayName": "Friends in Paldea 137/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-137-low.png",
+        "imageHighSrc": "cards/sv8pt5-137-high.png",
+        "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15772",
+        "externalId": "sv8pt5-136",
+        "localId": "136",
+        "setCode": "sv8pt5",
+        "cardNumber": "136/131",
+        "cardName": "Eri",
+        "fullDisplayName": "Eri 136/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-136-low.png",
+        "imageHighSrc": "cards/sv8pt5-136-high.png",
+        "rules": "Your opponent reveals their hand, and you discard up to 2 Item cards you find there.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15763",
+        "externalId": "sv8pt5-135",
+        "localId": "135",
+        "setCode": "sv8pt5",
+        "cardNumber": "135/131",
+        "cardName": "Brassius",
+        "fullDisplayName": "Brassius 135/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-135-low.png",
+        "imageHighSrc": "cards/sv8pt5-135-high.png",
+        "rules": "Count the cards in your hand, shuffle those cards into your deck, then draw that many cards plus 1.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15753",
+        "externalId": "sv8pt5-134",
+        "localId": "134",
+        "setCode": "sv8pt5",
+        "cardNumber": "134/131",
+        "cardName": "Atticus",
+        "fullDisplayName": "Atticus 134/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-134-low.png",
+        "imageHighSrc": "cards/sv8pt5-134-high.png",
+        "rules": "You can use this card only if your opponent's Active Pokémon is Poisoned.  Shuffle your hand into your deck. Then, draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15741",
+        "externalId": "sv8pt5-133",
+        "localId": "133",
+        "setCode": "sv8pt5",
+        "cardNumber": "133/131",
+        "cardName": "Atticus",
+        "fullDisplayName": "Atticus 133/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-133-low.png",
+        "imageHighSrc": "cards/sv8pt5-133-high.png",
+        "rules": "You can use this card only if your opponent's Active Pokémon is Poisoned.  Shuffle your hand into your deck. Then, draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15732",
+        "externalId": "sv8pt5-132",
+        "localId": "132",
+        "setCode": "sv8pt5",
+        "cardNumber": "132/131",
+        "cardName": "Amarys",
+        "fullDisplayName": "Amarys 132/131 Prismatic Evolutions",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-132-low.png",
+        "imageHighSrc": "cards/sv8pt5-132-high.png",
+        "rules": "Draw 4 cards. At the end of this turn, if you have 5 or more cards in your hand, discard your hand.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15723",
+        "externalId": "sv8pt5-131",
+        "localId": "131",
+        "setCode": "sv8pt5",
+        "cardNumber": "131/131",
+        "cardName": "Treasure Tracker",
+        "fullDisplayName": "Treasure Tracker 131/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-131-low.png",
+        "imageHighSrc": "cards/sv8pt5-131-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nSearch your deck for up to 5 Pokémon Tool cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15715",
+        "externalId": "sv8pt5-130",
+        "localId": "130",
+        "setCode": "sv8pt5",
+        "cardNumber": "130/131",
+        "cardName": "Techno Radar",
+        "fullDisplayName": "Techno Radar 130/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-130-low.png",
+        "imageHighSrc": "cards/sv8pt5-130-high.png",
+        "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 2 Future Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15703",
+        "externalId": "sv8pt5-129",
+        "localId": "129",
+        "setCode": "sv8pt5",
+        "cardNumber": "129/131",
+        "cardName": "Sparkling Crystal",
+        "fullDisplayName": "Sparkling Crystal 129/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-129-low.png",
+        "imageHighSrc": "cards/sv8pt5-129-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nWhen the Tera Pokémon this card is attached to uses an attack, that attack costs 1 Energy less. (The Energy can be of any type.)\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "15681",
+        "externalId": "sv8pt5-128",
+        "localId": "128",
+        "setCode": "sv8pt5",
+        "cardNumber": "128/131",
+        "cardName": "Scoop Up Cyclone",
+        "fullDisplayName": "Scoop Up Cyclone 128/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-128-low.png",
+        "imageHighSrc": "cards/sv8pt5-128-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nPut 1 of your Pokémon and all attached cards into your hand.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15665",
+        "externalId": "sv8pt5-127",
+        "localId": "127",
+        "setCode": "sv8pt5",
+        "cardNumber": "127/131",
+        "cardName": "Roto-Stick",
+        "fullDisplayName": "Roto-Stick 127/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-127-low.png",
+        "imageHighSrc": "cards/sv8pt5-127-high.png",
+        "rules": "Look at the top 4 cards of your deck. You may reveal any number of Supporter cards you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15655",
+        "externalId": "sv8pt5-126",
+        "localId": "126",
+        "setCode": "sv8pt5",
+        "cardNumber": "126/131",
+        "cardName": "Rescue Board",
+        "fullDisplayName": "Rescue Board 126/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-126-low.png",
+        "imageHighSrc": "cards/sv8pt5-126-high.png",
+        "rules": "The Retreat Cost of the Pokémon this card is attached to is Colorless less. If that Pokémon's remaining HP is 30 or less, it has no Retreat Cost.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "15645",
+        "externalId": "sv8pt5-125",
+        "localId": "125",
+        "setCode": "sv8pt5",
+        "cardNumber": "125/131",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 125/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-125-low.png",
+        "imageHighSrc": "cards/sv8pt5-125-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15636",
+        "externalId": "sv8pt5-124",
+        "localId": "124",
+        "setCode": "sv8pt5",
+        "cardNumber": "124/131",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 124/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-124-low.png",
+        "imageHighSrc": "cards/sv8pt5-124-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15627",
+        "externalId": "sv8pt5-123",
+        "localId": "123",
+        "setCode": "sv8pt5",
+        "cardNumber": "123/131",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 123/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-123-low.png",
+        "imageHighSrc": "cards/sv8pt5-123-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15616",
+        "externalId": "sv8pt5-122",
+        "localId": "122",
+        "setCode": "sv8pt5",
+        "cardNumber": "122/131",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 122/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-122-low.png",
+        "imageHighSrc": "cards/sv8pt5-122-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15607",
+        "externalId": "sv8pt5-121",
+        "localId": "121",
+        "setCode": "sv8pt5",
+        "cardNumber": "121/131",
+        "cardName": "Professor Turo's Scenario",
+        "fullDisplayName": "Professor Turo's Scenario 121/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-121-low.png",
+        "imageHighSrc": "cards/sv8pt5-121-high.png",
+        "rules": "Put 1 of your Pokémon in play into your hand. (Discard all cards attached to that Pokémon.)\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15598",
+        "externalId": "sv8pt5-120",
+        "localId": "120",
+        "setCode": "sv8pt5",
+        "cardNumber": "120/131",
+        "cardName": "Professor Sada's Vitality",
+        "fullDisplayName": "Professor Sada's Vitality 120/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-120-low.png",
+        "imageHighSrc": "cards/sv8pt5-120-high.png",
+        "rules": "Choose up to 2 of your Ancient Pokémon and attach a Basic Energy card from your discard pile to each of them. If you attached any Energy in this way, draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15588",
+        "externalId": "sv8pt5-119",
+        "localId": "119",
+        "setCode": "sv8pt5",
+        "cardNumber": "119/131",
+        "cardName": "Prime Catcher",
+        "fullDisplayName": "Prime Catcher 119/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-119-low.png",
+        "imageHighSrc": "cards/sv8pt5-119-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nSwitch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15578",
+        "externalId": "sv8pt5-118",
+        "localId": "118",
+        "setCode": "sv8pt5",
+        "cardNumber": "118/131",
+        "cardName": "Ogre's Mask",
+        "fullDisplayName": "Ogre's Mask 118/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-118-low.png",
+        "imageHighSrc": "cards/sv8pt5-118-high.png",
+        "rules": "Choose a Pokémon ex in your discard pile that has \"Ogerpon\" in its name, and switch it with 1 of your Pokémon ex in play that has \"Ogerpon\" in its name. Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15570",
+        "externalId": "sv8pt5-117",
+        "localId": "117",
+        "setCode": "sv8pt5",
+        "cardNumber": "117/131",
+        "cardName": "Maximum Belt",
+        "fullDisplayName": "Maximum Belt 117/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-117-low.png",
+        "imageHighSrc": "cards/sv8pt5-117-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nAttacks used by the Pokémon this card is attached to do 50 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "15561",
+        "externalId": "sv8pt5-116",
+        "localId": "116",
+        "setCode": "sv8pt5",
+        "cardNumber": "116/131",
+        "cardName": "Max Rod",
+        "fullDisplayName": "Max Rod 116/131 Prismatic Evolutions",
+        "rarity": "ACE SPEC Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-116-low.png",
+        "imageHighSrc": "cards/sv8pt5-116-high.png",
+        "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nPut up to 5 in any combination of Pokémon and Basic Energy cards from your discard pile into your hand.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15551",
+        "externalId": "sv8pt5-115",
+        "localId": "115",
+        "setCode": "sv8pt5",
+        "cardNumber": "115/131",
+        "cardName": "Larry's Skill",
+        "fullDisplayName": "Larry's Skill 115/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-115-low.png",
+        "imageHighSrc": "cards/sv8pt5-115-high.png",
+        "rules": "Discard your hand and search your deck for a Pokémon, a Supporter card, and a Basic Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15541",
+        "externalId": "sv8pt5-114",
+        "localId": "114",
+        "setCode": "sv8pt5",
+        "cardNumber": "114/131",
+        "cardName": "Lacey",
+        "fullDisplayName": "Lacey 114/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-114-low.png",
+        "imageHighSrc": "cards/sv8pt5-114-high.png",
+        "rules": "Shuffle your hand into your deck. Then, draw 4 cards. If your opponent has 3 or fewer Prize cards remaining, draw 8 cards instead.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15531",
+        "externalId": "sv8pt5-113",
+        "localId": "113",
+        "setCode": "sv8pt5",
+        "cardNumber": "113/131",
+        "cardName": "Kieran",
+        "fullDisplayName": "Kieran 113/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-113-low.png",
+        "imageHighSrc": "cards/sv8pt5-113-high.png",
+        "rules": "Choose 1:    • Switch your Active Pokémon with 1 of your Benched Pokémon.  • During this turn, attacks used by your Pokémon do 30 more damage to your opponent's Active Pokémon ex and Active Pokémon V (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15521",
+        "externalId": "sv8pt5-112",
+        "localId": "112",
+        "setCode": "sv8pt5",
+        "cardNumber": "112/131",
+        "cardName": "Janine's Secret Art",
+        "fullDisplayName": "Janine's Secret Art 112/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-112-low.png",
+        "imageHighSrc": "cards/sv8pt5-112-high.png",
+        "rules": "Choose up to 2 of your Darkness Pokémon. For each of those Pokémon, search your deck for a Basic Darkness Energy card and attach it to that Pokémon. Then, shuffle your deck. If you attached Energy to your Active Pokémon in this way, it is now Poisoned.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15511",
+        "externalId": "sv8pt5-111",
+        "localId": "111",
+        "setCode": "sv8pt5",
+        "cardNumber": "111/131",
+        "cardName": "Haban Berry",
+        "fullDisplayName": "Haban Berry 111/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-111-low.png",
+        "imageHighSrc": "cards/sv8pt5-111-high.png",
+        "rules": "If the Pokémon this card is attached to is damaged by an attack from your opponent's Dragon Pokémon, it takes 60 less damage (after applying Weakness and Resistance), and discard this card.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "15501",
+        "externalId": "sv8pt5-110",
+        "localId": "110",
+        "setCode": "sv8pt5",
+        "cardNumber": "110/131",
+        "cardName": "Glass Trumpet",
+        "fullDisplayName": "Glass Trumpet 110/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-110-low.png",
+        "imageHighSrc": "cards/sv8pt5-110-high.png",
+        "rules": "You can use this card only if you have any Tera Pokémon in play.  Choose up to 2 of your Benched Colorless Pokémon and attach a Basic Energy card from your discard pile to each of them.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15492",
+        "externalId": "sv8pt5-109",
+        "localId": "109",
+        "setCode": "sv8pt5",
+        "cardNumber": "109/131",
+        "cardName": "Friends in Paldea",
+        "fullDisplayName": "Friends in Paldea 109/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-109-low.png",
+        "imageHighSrc": "cards/sv8pt5-109-high.png",
+        "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15483",
+        "externalId": "sv8pt5-108",
+        "localId": "108",
+        "setCode": "sv8pt5",
+        "cardNumber": "108/131",
+        "cardName": "Festival Grounds",
+        "fullDisplayName": "Festival Grounds 108/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-108-low.png",
+        "imageHighSrc": "cards/sv8pt5-108-high.png",
+        "rules": "Each Pokémon that has any Energy attached (both yours and your opponent's) recovers from all Special Conditions and can't be affected by any Special Conditions.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+    },
+    {
+        "masterCardId": "15475",
+        "externalId": "sv8pt5-107",
+        "localId": "107",
+        "setCode": "sv8pt5",
+        "cardNumber": "107/131",
+        "cardName": "Explorer's Guidance",
+        "fullDisplayName": "Explorer's Guidance 107/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-107-low.png",
+        "imageHighSrc": "cards/sv8pt5-107-high.png",
+        "rules": "Look at the top 6 cards of your deck and put 2 of them into your hand. Discard the other cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15466",
+        "externalId": "sv8pt5-106",
+        "localId": "106",
+        "setCode": "sv8pt5",
+        "cardNumber": "106/131",
+        "cardName": "Earthen Vessel",
+        "fullDisplayName": "Earthen Vessel 106/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-106-low.png",
+        "imageHighSrc": "cards/sv8pt5-106-high.png",
+        "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15456",
+        "externalId": "sv8pt5-105",
+        "localId": "105",
+        "setCode": "sv8pt5",
+        "cardNumber": "105/131",
+        "cardName": "Crispin",
+        "fullDisplayName": "Crispin 105/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-105-low.png",
+        "imageHighSrc": "cards/sv8pt5-105-high.png",
+        "rules": "Search your deck for up to 2 Basic Energy cards of different types, reveal them, and put 1 of them into your hand. Attach the other to 1 of your Pokémon. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15447",
+        "externalId": "sv8pt5-104",
+        "localId": "104",
+        "setCode": "sv8pt5",
+        "cardNumber": "104/131",
+        "cardName": "Ciphermaniac's Codebreaking",
+        "fullDisplayName": "Ciphermaniac's Codebreaking 104/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-104-low.png",
+        "imageHighSrc": "cards/sv8pt5-104-high.png",
+        "rules": "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15437",
+        "externalId": "sv8pt5-103",
+        "localId": "103",
+        "setCode": "sv8pt5",
+        "cardNumber": "103/131",
+        "cardName": "Carmine",
+        "fullDisplayName": "Carmine 103/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-103-low.png",
+        "imageHighSrc": "cards/sv8pt5-103-high.png",
+        "rules": "If you go first, you may use this card during your first turn.  Discard your hand and draw 5 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15427",
+        "externalId": "sv8pt5-102",
+        "localId": "102",
+        "setCode": "sv8pt5",
+        "cardNumber": "102/131",
+        "cardName": "Bug Catching Set",
+        "fullDisplayName": "Bug Catching Set 102/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-102-low.png",
+        "imageHighSrc": "cards/sv8pt5-102-high.png",
+        "rules": "Look at the top 7 cards of your deck. You may reveal up to 2 in any combination of Grass Pokémon and Basic Grass Energy cards you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15415",
+        "externalId": "sv8pt5-101",
+        "localId": "101",
+        "setCode": "sv8pt5",
+        "cardNumber": "101/131",
+        "cardName": "Buddy-Buddy Poffin",
+        "fullDisplayName": "Buddy-Buddy Poffin 101/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-101-low.png",
+        "imageHighSrc": "cards/sv8pt5-101-high.png",
+        "rules": "Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "15404",
+        "externalId": "sv8pt5-100",
+        "localId": "100",
+        "setCode": "sv8pt5",
+        "cardNumber": "100/131",
+        "cardName": "Briar",
+        "fullDisplayName": "Briar 100/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-100-low.png",
+        "imageHighSrc": "cards/sv8pt5-100-high.png",
+        "rules": "You can use this card only if your opponent has exactly 2 Prize cards remaining.    During this turn, if your opponent's Active Pokémon is Knocked Out by damage from an attack used by your Tera Pokémon, take 1 more Prize card.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15394",
+        "externalId": "sv8pt5-99",
+        "localId": "099",
+        "setCode": "sv8pt5",
+        "cardNumber": "099/131",
+        "cardName": "Black Belt's Training",
+        "fullDisplayName": "Black Belt's Training 099/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-099-low.png",
+        "imageHighSrc": "cards/sv8pt5-099-high.png",
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15385",
+        "externalId": "sv8pt5-98",
+        "localId": "098",
+        "setCode": "sv8pt5",
+        "cardNumber": "098/131",
+        "cardName": "Black Belt's Training",
+        "fullDisplayName": "Black Belt's Training 098/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-098-low.png",
+        "imageHighSrc": "cards/sv8pt5-098-high.png",
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15374",
+        "externalId": "sv8pt5-97",
+        "localId": "097",
+        "setCode": "sv8pt5",
+        "cardNumber": "097/131",
+        "cardName": "Black Belt's Training",
+        "fullDisplayName": "Black Belt's Training 097/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-097-low.png",
+        "imageHighSrc": "cards/sv8pt5-097-high.png",
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15364",
+        "externalId": "sv8pt5-96",
+        "localId": "096",
+        "setCode": "sv8pt5",
+        "cardNumber": "096/131",
+        "cardName": "Black Belt's Training",
+        "fullDisplayName": "Black Belt's Training 096/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-096-low.png",
+        "imageHighSrc": "cards/sv8pt5-096-high.png",
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15355",
+        "externalId": "sv8pt5-95",
+        "localId": "095",
+        "setCode": "sv8pt5",
+        "cardNumber": "095/131",
+        "cardName": "Binding Mochi",
+        "fullDisplayName": "Binding Mochi 095/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-095-low.png",
+        "imageHighSrc": "cards/sv8pt5-095-high.png",
+        "rules": "Attacks used by the Poisoned Pokémon this card is attached to do 40 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "15347",
+        "externalId": "sv8pt5-94",
+        "localId": "094",
+        "setCode": "sv8pt5",
+        "cardNumber": "094/131",
+        "cardName": "Area Zero Underdepths",
+        "fullDisplayName": "Area Zero Underdepths 094/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-094-low.png",
+        "imageHighSrc": "cards/sv8pt5-094-high.png",
+        "rules": "Each player who has any Tera Pokémon in play can have up to 8 Pokémon on their Bench.  If a player no longer has any Tera Pokémon in play, that player discards Pokémon from their Bench until they have 5. When this card leaves play, both players discard Pokémon from their Bench until they have 5, and the player who played this card discards first.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+    },
+    {
+        "masterCardId": "15338",
+        "externalId": "sv8pt5-93",
+        "localId": "093",
+        "setCode": "sv8pt5",
+        "cardNumber": "093/131",
+        "cardName": "Amarys",
+        "fullDisplayName": "Amarys 093/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-093-low.png",
+        "imageHighSrc": "cards/sv8pt5-093-high.png",
+        "rules": "Draw 4 cards. At the end of this turn, if you have 5 or more cards in your hand, discard your hand.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "15327",
+        "externalId": "sv8pt5-92",
+        "localId": "092",
+        "setCode": "sv8pt5",
+        "cardNumber": "092/131",
+        "cardName": "Terapagos ex",
+        "fullDisplayName": "Terapagos ex 092/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            1024
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-092-low.png",
+        "imageHighSrc": "cards/sv8pt5-092-high.png",
+        "attacks": [
+            {
+                "name": "Unified Beatdown",
+                "damage": "30×"
+            },
+            {
+                "name": "Crown Opal",
+                "damage": "180"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15317",
+        "externalId": "sv8pt5-91",
+        "localId": "091",
+        "setCode": "sv8pt5",
+        "cardNumber": "091/131",
+        "cardName": "Noivern ex",
+        "fullDisplayName": "Noivern ex 091/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            715
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-091-low.png",
+        "imageHighSrc": "cards/sv8pt5-091-high.png",
+        "attacks": [
+            {
+                "name": "Strafe",
+                "damage": "50"
+            },
+            {
+                "name": "Sonic Blast",
+                "damage": "220"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15307",
+        "externalId": "sv8pt5-90",
+        "localId": "090",
+        "setCode": "sv8pt5",
+        "cardNumber": "090/131",
+        "cardName": "Noibat",
+        "fullDisplayName": "Noibat 090/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            714
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-090-low.png",
+        "imageHighSrc": "cards/sv8pt5-090-high.png",
+        "attacks": [
+            {
+                "name": "Flap",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15299",
+        "externalId": "sv8pt5-89",
+        "localId": "089",
+        "setCode": "sv8pt5",
+        "cardNumber": "089/131",
+        "cardName": "Hawlucha",
+        "fullDisplayName": "Hawlucha 089/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            701
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-089-low.png",
+        "imageHighSrc": "cards/sv8pt5-089-high.png",
+        "attacks": [
+            {
+                "name": "Rising Tackle",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15289",
+        "externalId": "sv8pt5-88",
+        "localId": "088",
+        "setCode": "sv8pt5",
+        "cardNumber": "088/131",
+        "cardName": "Furfrou",
+        "fullDisplayName": "Furfrou 088/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            676
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-088-low.png",
+        "imageHighSrc": "cards/sv8pt5-088-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15280",
+        "externalId": "sv8pt5-87",
+        "localId": "087",
+        "setCode": "sv8pt5",
+        "cardNumber": "087/131",
+        "cardName": "Shaymin",
+        "fullDisplayName": "Shaymin 087/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            492
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-087-low.png",
+        "imageHighSrc": "cards/sv8pt5-087-high.png",
+        "attacks": [
+            {
+                "name": "Reflect Energy",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15261",
+        "externalId": "sv8pt5-86",
+        "localId": "086",
+        "setCode": "sv8pt5",
+        "cardNumber": "086/131",
+        "cardName": "Regigigas",
+        "fullDisplayName": "Regigigas 086/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            486
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-086-low.png",
+        "imageHighSrc": "cards/sv8pt5-086-high.png",
+        "attacks": [
+            {
+                "name": "Jewel Breaker",
+                "damage": "100+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15251",
+        "externalId": "sv8pt5-85",
+        "localId": "085",
+        "setCode": "sv8pt5",
+        "cardNumber": "085/131",
+        "cardName": "Fan Rotom",
+        "fullDisplayName": "Fan Rotom 085/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            479
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-085-low.png",
+        "imageHighSrc": "cards/sv8pt5-085-high.png",
+        "attacks": [
+            {
+                "name": "Assault Landing",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15241",
+        "externalId": "sv8pt5-84",
+        "localId": "084",
+        "setCode": "sv8pt5",
+        "cardNumber": "084/131",
+        "cardName": "Lopunny",
+        "fullDisplayName": "Lopunny 084/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            428
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-084-low.png",
+        "imageHighSrc": "cards/sv8pt5-084-high.png",
+        "attacks": [
+            {
+                "name": "Rear Kick",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15231",
+        "externalId": "sv8pt5-83",
+        "localId": "083",
+        "setCode": "sv8pt5",
+        "cardNumber": "083/131",
+        "cardName": "Buneary",
+        "fullDisplayName": "Buneary 083/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            427
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-083-low.png",
+        "imageHighSrc": "cards/sv8pt5-083-high.png",
+        "attacks": [
+            {
+                "name": "Smash Kick",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15222",
+        "externalId": "sv8pt5-82",
+        "localId": "082",
+        "setCode": "sv8pt5",
+        "cardNumber": "082/131",
+        "cardName": "Lugia ex",
+        "fullDisplayName": "Lugia ex 082/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            249
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-082-low.png",
+        "imageHighSrc": "cards/sv8pt5-082-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Whirlpool",
+                "damage": "140"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15210",
+        "externalId": "sv8pt5-81",
+        "localId": "081",
+        "setCode": "sv8pt5",
+        "cardNumber": "081/131",
+        "cardName": "Miltank",
+        "fullDisplayName": "Miltank 081/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            241
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-081-low.png",
+        "imageHighSrc": "cards/sv8pt5-081-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "20"
+            },
+            {
+                "name": "Moomoo Rolling",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15197",
+        "externalId": "sv8pt5-80",
+        "localId": "080",
+        "setCode": "sv8pt5",
+        "cardNumber": "080/131",
+        "cardName": "Dudunsparce",
+        "fullDisplayName": "Dudunsparce 080/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            982
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-080-low.png",
+        "imageHighSrc": "cards/sv8pt5-080-high.png",
+        "attacks": [
+            {
+                "name": "Land Crush",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15189",
+        "externalId": "sv8pt5-79",
+        "localId": "079",
+        "setCode": "sv8pt5",
+        "cardNumber": "079/131",
+        "cardName": "Dunsparce",
+        "fullDisplayName": "Dunsparce 079/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            206
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-079-low.png",
+        "imageHighSrc": "cards/sv8pt5-079-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            },
+            {
+                "name": "Dig",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15178",
+        "externalId": "sv8pt5-78",
+        "localId": "078",
+        "setCode": "sv8pt5",
+        "cardNumber": "078/131",
+        "cardName": "Noctowl",
+        "fullDisplayName": "Noctowl 078/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            164
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-078-low.png",
+        "imageHighSrc": "cards/sv8pt5-078-high.png",
+        "attacks": [
+            {
+                "name": "Speed Wing",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15167",
+        "externalId": "sv8pt5-77",
+        "localId": "077",
+        "setCode": "sv8pt5",
+        "cardNumber": "077/131",
+        "cardName": "Hoothoot",
+        "fullDisplayName": "Hoothoot 077/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            163
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-077-low.png",
+        "imageHighSrc": "cards/sv8pt5-077-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15158",
+        "externalId": "sv8pt5-76",
+        "localId": "076",
+        "setCode": "sv8pt5",
+        "cardNumber": "076/131",
+        "cardName": "Snorlax ex",
+        "fullDisplayName": "Snorlax ex 076/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            143
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-076-low.png",
+        "imageHighSrc": "cards/sv8pt5-076-high.png",
+        "attacks": [
+            {
+                "name": "Strength",
+                "damage": "80"
+            },
+            {
+                "name": "Toss-and-Turn Press",
+                "damage": "120×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15150",
+        "externalId": "sv8pt5-75",
+        "localId": "075",
+        "setCode": "sv8pt5",
+        "cardNumber": "075/131",
+        "cardName": "Eevee ex",
+        "fullDisplayName": "Eevee ex 075/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-075-low.png",
+        "imageHighSrc": "cards/sv8pt5-075-high.png",
+        "attacks": [
+            {
+                "name": "Coruscating Quartz",
+                "damage": "200"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15138",
+        "externalId": "sv8pt5-74",
+        "localId": "074",
+        "setCode": "sv8pt5",
+        "cardNumber": "074/131",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 074/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-074-low.png",
+        "imageHighSrc": "cards/sv8pt5-074-high.png",
+        "attacks": [
+            {
+                "name": "Reckless Charge",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15129",
+        "externalId": "sv8pt5-73",
+        "localId": "073",
+        "setCode": "sv8pt5",
+        "cardNumber": "073/131",
+        "cardName": "Dragapult ex",
+        "fullDisplayName": "Dragapult ex 073/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 320,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            887
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-073-low.png",
+        "imageHighSrc": "cards/sv8pt5-073-high.png",
+        "attacks": [
+            {
+                "name": "Jet Headbutt",
+                "damage": "70"
+            },
+            {
+                "name": "Phantom Dive",
+                "damage": "200"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15120",
+        "externalId": "sv8pt5-72",
+        "localId": "072",
+        "setCode": "sv8pt5",
+        "cardNumber": "072/131",
+        "cardName": "Drakloak",
+        "fullDisplayName": "Drakloak 072/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            886
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-072-low.png",
+        "imageHighSrc": "cards/sv8pt5-072-high.png",
+        "attacks": [
+            {
+                "name": "Dragon Headbutt",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15111",
+        "externalId": "sv8pt5-71",
+        "localId": "071",
+        "setCode": "sv8pt5",
+        "cardNumber": "071/131",
+        "cardName": "Dreepy",
+        "fullDisplayName": "Dreepy 071/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            885
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-071-low.png",
+        "imageHighSrc": "cards/sv8pt5-071-high.png",
+        "attacks": [
+            {
+                "name": "Petty Grudge",
+                "damage": "10"
+            },
+            {
+                "name": "Bite",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15101",
+        "externalId": "sv8pt5-70",
+        "localId": "070",
+        "setCode": "sv8pt5",
+        "cardNumber": "070/131",
+        "cardName": "Archaludon",
+        "fullDisplayName": "Archaludon 070/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            1018
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-070-low.png",
+        "imageHighSrc": "cards/sv8pt5-070-high.png",
+        "attacks": [
+            {
+                "name": "Iron Blaster",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15090",
+        "externalId": "sv8pt5-69",
+        "localId": "069",
+        "setCode": "sv8pt5",
+        "cardNumber": "069/131",
+        "cardName": "Duraludon",
+        "fullDisplayName": "Duraludon 069/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            884
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-069-low.png",
+        "imageHighSrc": "cards/sv8pt5-069-high.png",
+        "attacks": [
+            {
+                "name": "Hammer In",
+                "damage": "30"
+            },
+            {
+                "name": "Raging Hammer",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15080",
+        "externalId": "sv8pt5-68",
+        "localId": "068",
+        "setCode": "sv8pt5",
+        "cardNumber": "068/131",
+        "cardName": "Heatran",
+        "fullDisplayName": "Heatran 068/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            485
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-068-low.png",
+        "imageHighSrc": "cards/sv8pt5-068-high.png",
+        "attacks": [
+            {
+                "name": "Wrack Down",
+                "damage": "40"
+            },
+            {
+                "name": "Iron Buster",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15070",
+        "externalId": "sv8pt5-67",
+        "localId": "067",
+        "setCode": "sv8pt5",
+        "cardNumber": "067/131",
+        "cardName": "Bronzong",
+        "fullDisplayName": "Bronzong 067/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            437
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-067-low.png",
+        "imageHighSrc": "cards/sv8pt5-067-high.png",
+        "attacks": [
+            {
+                "name": "Heavy Impact",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15060",
+        "externalId": "sv8pt5-66",
+        "localId": "066",
+        "setCode": "sv8pt5",
+        "cardNumber": "066/131",
+        "cardName": "Bronzor",
+        "fullDisplayName": "Bronzor 066/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            436
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-066-low.png",
+        "imageHighSrc": "cards/sv8pt5-066-high.png",
+        "attacks": [
+            {
+                "name": "Hammer In",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15051",
+        "externalId": "sv8pt5-65",
+        "localId": "065",
+        "setCode": "sv8pt5",
+        "cardNumber": "065/131",
+        "cardName": "Roaring Moon",
+        "fullDisplayName": "Roaring Moon 065/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-065-low.png",
+        "imageHighSrc": "cards/sv8pt5-065-high.png",
+        "attacks": [
+            {
+                "name": "Vengeance Fletching",
+                "damage": "70+"
+            },
+            {
+                "name": "Speed Wing",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15041",
+        "externalId": "sv8pt5-64",
+        "localId": "064",
+        "setCode": "sv8pt5",
+        "cardNumber": "064/131",
+        "cardName": "Tyranitar ex",
+        "fullDisplayName": "Tyranitar ex 064/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 340,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            248
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-064-low.png",
+        "imageHighSrc": "cards/sv8pt5-064-high.png",
+        "attacks": [
+            {
+                "name": "Grind",
+                "damage": "50×"
+            },
+            {
+                "name": "Tyrannical Crush",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "15032",
+        "externalId": "sv8pt5-63",
+        "localId": "063",
+        "setCode": "sv8pt5",
+        "cardNumber": "063/131",
+        "cardName": "Houndoom",
+        "fullDisplayName": "Houndoom 063/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            229
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-063-low.png",
+        "imageHighSrc": "cards/sv8pt5-063-high.png",
+        "attacks": [
+            {
+                "name": "Call to Muster",
+                "damage": null
+            },
+            {
+                "name": "Pitch-Black Fangs",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15023",
+        "externalId": "sv8pt5-62",
+        "localId": "062",
+        "setCode": "sv8pt5",
+        "cardNumber": "062/131",
+        "cardName": "Houndour",
+        "fullDisplayName": "Houndour 062/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            228
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-062-low.png",
+        "imageHighSrc": "cards/sv8pt5-062-high.png",
+        "attacks": [
+            {
+                "name": "Playful Kick",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15013",
+        "externalId": "sv8pt5-61",
+        "localId": "061",
+        "setCode": "sv8pt5",
+        "cardNumber": "061/131",
+        "cardName": "Sneasel",
+        "fullDisplayName": "Sneasel 061/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            215
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-061-low.png",
+        "imageHighSrc": "cards/sv8pt5-061-high.png",
+        "attacks": [
+            {
+                "name": "Claw Slash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "15002",
+        "externalId": "sv8pt5-60",
+        "localId": "060",
+        "setCode": "sv8pt5",
+        "cardNumber": "060/131",
+        "cardName": "Umbreon ex",
+        "fullDisplayName": "Umbreon ex 060/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            197
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-060-low.png",
+        "imageHighSrc": "cards/sv8pt5-060-high.png",
+        "attacks": [
+            {
+                "name": "Moon Mirage",
+                "damage": "160"
+            },
+            {
+                "name": "Onyx",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14989",
+        "externalId": "sv8pt5-59",
+        "localId": "059",
+        "setCode": "sv8pt5",
+        "cardNumber": "059/131",
+        "cardName": "Umbreon",
+        "fullDisplayName": "Umbreon 059/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            197
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-059-low.png",
+        "imageHighSrc": "cards/sv8pt5-059-high.png",
+        "attacks": [
+            {
+                "name": "Feint Attack",
+                "damage": null
+            },
+            {
+                "name": "Pitch-Black Blade",
+                "damage": "140"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14979",
+        "externalId": "sv8pt5-58",
+        "localId": "058",
+        "setCode": "sv8pt5",
+        "cardNumber": "058/131",
+        "cardName": "Cornerstone Mask Ogerpon ex",
+        "fullDisplayName": "Cornerstone Mask Ogerpon ex 058/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-058-low.png",
+        "imageHighSrc": "cards/sv8pt5-058-high.png",
+        "attacks": [
+            {
+                "name": "Demolish",
+                "damage": "140"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14969",
+        "externalId": "sv8pt5-57",
+        "localId": "057",
+        "setCode": "sv8pt5",
+        "cardNumber": "057/131",
+        "cardName": "Okidogi",
+        "fullDisplayName": "Okidogi 057/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-057-low.png",
+        "imageHighSrc": "cards/sv8pt5-057-high.png",
+        "attacks": [
+            {
+                "name": "Good Punch",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14959",
+        "externalId": "sv8pt5-56",
+        "localId": "056",
+        "setCode": "sv8pt5",
+        "cardNumber": "056/131",
+        "cardName": "Sandy Shocks ex",
+        "fullDisplayName": "Sandy Shocks ex 056/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-056-low.png",
+        "imageHighSrc": "cards/sv8pt5-056-high.png",
+        "attacks": [
+            {
+                "name": "Earthen Spike",
+                "damage": "200"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14948",
+        "externalId": "sv8pt5-55",
+        "localId": "055",
+        "setCode": "sv8pt5",
+        "cardNumber": "055/131",
+        "cardName": "Great Tusk",
+        "fullDisplayName": "Great Tusk 055/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-055-low.png",
+        "imageHighSrc": "cards/sv8pt5-055-high.png",
+        "attacks": [
+            {
+                "name": "Land Collapse",
+                "damage": null
+            },
+            {
+                "name": "Giant Tusk",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14938",
+        "externalId": "sv8pt5-54",
+        "localId": "054",
+        "setCode": "sv8pt5",
+        "cardNumber": "054/131",
+        "cardName": "Bloodmoon Ursaluna",
+        "fullDisplayName": "Bloodmoon Ursaluna 054/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            901
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-054-low.png",
+        "imageHighSrc": "cards/sv8pt5-054-high.png",
+        "attacks": [
+            {
+                "name": "Mad Bite",
+                "damage": "100+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14929",
+        "externalId": "sv8pt5-53",
+        "localId": "053",
+        "setCode": "sv8pt5",
+        "cardNumber": "053/131",
+        "cardName": "Hippowdon",
+        "fullDisplayName": "Hippowdon 053/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            450
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-053-low.png",
+        "imageHighSrc": "cards/sv8pt5-053-high.png",
+        "attacks": [
+            {
+                "name": "Sand Spray",
+                "damage": "90"
+            },
+            {
+                "name": "Land Crush",
+                "damage": "140"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14919",
+        "externalId": "sv8pt5-52",
+        "localId": "052",
+        "setCode": "sv8pt5",
+        "cardNumber": "052/131",
+        "cardName": "Hippopotas",
+        "fullDisplayName": "Hippopotas 052/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            449
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-052-low.png",
+        "imageHighSrc": "cards/sv8pt5-052-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14909",
+        "externalId": "sv8pt5-51",
+        "localId": "051",
+        "setCode": "sv8pt5",
+        "cardNumber": "051/131",
+        "cardName": "Lucario ex",
+        "fullDisplayName": "Lucario ex 051/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            448
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-051-low.png",
+        "imageHighSrc": "cards/sv8pt5-051-high.png",
+        "attacks": [
+            {
+                "name": "Aura Uppercut",
+                "damage": "50"
+            },
+            {
+                "name": "Tornado Rush",
+                "damage": "100"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14898",
+        "externalId": "sv8pt5-50",
+        "localId": "050",
+        "setCode": "sv8pt5",
+        "cardNumber": "050/131",
+        "cardName": "Riolu",
+        "fullDisplayName": "Riolu 050/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            447
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-050-low.png",
+        "imageHighSrc": "cards/sv8pt5-050-high.png",
+        "attacks": [
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14888",
+        "externalId": "sv8pt5-49",
+        "localId": "049",
+        "setCode": "sv8pt5",
+        "cardNumber": "049/131",
+        "cardName": "Groudon",
+        "fullDisplayName": "Groudon 049/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            383
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-049-low.png",
+        "imageHighSrc": "cards/sv8pt5-049-high.png",
+        "attacks": [
+            {
+                "name": "Swelling Power",
+                "damage": null
+            },
+            {
+                "name": "Magma Purge",
+                "damage": "60×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14878",
+        "externalId": "sv8pt5-48",
+        "localId": "048",
+        "setCode": "sv8pt5",
+        "cardNumber": "048/131",
+        "cardName": "Pupitar",
+        "fullDisplayName": "Pupitar 048/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            247
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-048-low.png",
+        "imageHighSrc": "cards/sv8pt5-048-high.png",
+        "attacks": [
+            {
+                "name": "Sand Spray",
+                "damage": "20"
+            },
+            {
+                "name": "Hammer In",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14867",
+        "externalId": "sv8pt5-47",
+        "localId": "047",
+        "setCode": "sv8pt5",
+        "cardNumber": "047/131",
+        "cardName": "Larvitar",
+        "fullDisplayName": "Larvitar 047/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            246
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-047-low.png",
+        "imageHighSrc": "cards/sv8pt5-047-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14852",
+        "externalId": "sv8pt5-46",
+        "localId": "046",
+        "setCode": "sv8pt5",
+        "cardNumber": "046/131",
+        "cardName": "Iron Boulder",
+        "fullDisplayName": "Iron Boulder 046/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-046-low.png",
+        "imageHighSrc": "cards/sv8pt5-046-high.png",
+        "attacks": [
+            {
+                "name": "Adjusted Horn",
+                "damage": "170"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14844",
+        "externalId": "sv8pt5-45",
+        "localId": "045",
+        "setCode": "sv8pt5",
+        "cardNumber": "045/131",
+        "cardName": "Fezandipiti",
+        "fullDisplayName": "Fezandipiti 045/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            1016
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-045-low.png",
+        "imageHighSrc": "cards/sv8pt5-045-high.png",
+        "attacks": [
+            {
+                "name": "Energy Feather",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14835",
+        "externalId": "sv8pt5-44",
+        "localId": "044",
+        "setCode": "sv8pt5",
+        "cardNumber": "044/131",
+        "cardName": "Munkidori",
+        "fullDisplayName": "Munkidori 044/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            1015
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-044-low.png",
+        "imageHighSrc": "cards/sv8pt5-044-high.png",
+        "attacks": [
+            {
+                "name": "Mind Bend",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14822",
+        "externalId": "sv8pt5-43",
+        "localId": "043",
+        "setCode": "sv8pt5",
+        "cardNumber": "043/131",
+        "cardName": "Flutter Mane",
+        "fullDisplayName": "Flutter Mane 043/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-043-low.png",
+        "imageHighSrc": "cards/sv8pt5-043-high.png",
+        "attacks": [
+            {
+                "name": "Hex Hurl",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14813",
+        "externalId": "sv8pt5-42",
+        "localId": "042",
+        "setCode": "sv8pt5",
+        "cardNumber": "042/131",
+        "cardName": "Scream Tail",
+        "fullDisplayName": "Scream Tail 042/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-042-low.png",
+        "imageHighSrc": "cards/sv8pt5-042-high.png",
+        "attacks": [
+            {
+                "name": "Slap",
+                "damage": "30"
+            },
+            {
+                "name": "Roaring Scream",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "14803",
+        "externalId": "sv8pt5-41",
+        "localId": "041",
+        "setCode": "sv8pt5",
+        "cardNumber": "041/131",
+        "cardName": "Sylveon ex",
+        "fullDisplayName": "Sylveon ex 041/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            700
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-041-low.png",
+        "imageHighSrc": "cards/sv8pt5-041-high.png",
+        "attacks": [
+            {
+                "name": "Magical Charm",
+                "damage": "160"
+            },
+            {
+                "name": "Angelite",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14792",
+        "externalId": "sv8pt5-40",
+        "localId": "040",
+        "setCode": "sv8pt5",
+        "cardNumber": "040/131",
+        "cardName": "Sylveon",
+        "fullDisplayName": "Sylveon 040/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            700
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-040-low.png",
+        "imageHighSrc": "cards/sv8pt5-040-high.png",
+        "attacks": [
+            {
+                "name": "Magical Shot",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14780",
+        "externalId": "sv8pt5-39",
+        "localId": "039",
+        "setCode": "sv8pt5",
+        "cardNumber": "039/131",
+        "cardName": "Aromatisse",
+        "fullDisplayName": "Aromatisse 039/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            683
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-039-low.png",
+        "imageHighSrc": "cards/sv8pt5-039-high.png",
+        "attacks": [
+            {
+                "name": "Perfume Press",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14769",
+        "externalId": "sv8pt5-38",
+        "localId": "038",
+        "setCode": "sv8pt5",
+        "cardNumber": "038/131",
+        "cardName": "Spritzee",
+        "fullDisplayName": "Spritzee 038/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            682
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-038-low.png",
+        "imageHighSrc": "cards/sv8pt5-038-high.png",
+        "attacks": [
+            {
+                "name": "Fairy Wind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14756",
+        "externalId": "sv8pt5-37",
+        "localId": "037",
+        "setCode": "sv8pt5",
+        "cardNumber": "037/131",
+        "cardName": "Dusknoir",
+        "fullDisplayName": "Dusknoir 037/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            477
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-037-low.png",
+        "imageHighSrc": "cards/sv8pt5-037-high.png",
+        "attacks": [
+            {
+                "name": "Shadow Bind",
+                "damage": "150"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14746",
+        "externalId": "sv8pt5-36",
+        "localId": "036",
+        "setCode": "sv8pt5",
+        "cardNumber": "036/131",
+        "cardName": "Dusclops",
+        "fullDisplayName": "Dusclops 036/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            356
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-036-low.png",
+        "imageHighSrc": "cards/sv8pt5-036-high.png",
+        "attacks": [
+            {
+                "name": "Will-O-Wisp",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14737",
+        "externalId": "sv8pt5-35",
+        "localId": "035",
+        "setCode": "sv8pt5",
+        "cardNumber": "035/131",
+        "cardName": "Duskull",
+        "fullDisplayName": "Duskull 035/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            355
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-035-low.png",
+        "imageHighSrc": "cards/sv8pt5-035-high.png",
+        "attacks": [
+            {
+                "name": "Come and Get You",
+                "damage": null
+            },
+            {
+                "name": "Mumble",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14727",
+        "externalId": "sv8pt5-34",
+        "localId": "034",
+        "setCode": "sv8pt5",
+        "cardNumber": "034/131",
+        "cardName": "Espeon ex",
+        "fullDisplayName": "Espeon ex 034/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            196
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-034-low.png",
+        "imageHighSrc": "cards/sv8pt5-034-high.png",
+        "attacks": [
+            {
+                "name": "Psych Out",
+                "damage": "160"
+            },
+            {
+                "name": "Amazez",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14717",
+        "externalId": "sv8pt5-33",
+        "localId": "033",
+        "setCode": "sv8pt5",
+        "cardNumber": "033/131",
+        "cardName": "Espeon",
+        "fullDisplayName": "Espeon 033/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            196
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-033-low.png",
+        "imageHighSrc": "cards/sv8pt5-033-high.png",
+        "attacks": [
+            {
+                "name": "Psychic Assault",
+                "damage": "30+"
+            },
+            {
+                "name": "Psy Bolt",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14705",
+        "externalId": "sv8pt5-32",
+        "localId": "032",
+        "setCode": "sv8pt5",
+        "cardNumber": "032/131",
+        "cardName": "Iron Thorns ex",
+        "fullDisplayName": "Iron Thorns ex 032/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-032-low.png",
+        "imageHighSrc": "cards/sv8pt5-032-high.png",
+        "attacks": [
+            {
+                "name": "Volt Cyclone",
+                "damage": "140"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14695",
+        "externalId": "sv8pt5-31",
+        "localId": "031",
+        "setCode": "sv8pt5",
+        "cardNumber": "031/131",
+        "cardName": "Iron Hands ex",
+        "fullDisplayName": "Iron Hands ex 031/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-031-low.png",
+        "imageHighSrc": "cards/sv8pt5-031-high.png",
+        "attacks": [
+            {
+                "name": "Arm Press",
+                "damage": "160"
+            },
+            {
+                "name": "Amp You Very Much",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14687",
+        "externalId": "sv8pt5-30",
+        "localId": "030",
+        "setCode": "sv8pt5",
+        "cardNumber": "030/131",
+        "cardName": "Jolteon ex",
+        "fullDisplayName": "Jolteon ex 030/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-030-low.png",
+        "imageHighSrc": "cards/sv8pt5-030-high.png",
+        "attacks": [
+            {
+                "name": "Flashing Spear",
+                "damage": "60+"
+            },
+            {
+                "name": "Dravite",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14678",
+        "externalId": "sv8pt5-29",
+        "localId": "029",
+        "setCode": "sv8pt5",
+        "cardNumber": "029/131",
+        "cardName": "Jolteon",
+        "fullDisplayName": "Jolteon 029/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-029-low.png",
+        "imageHighSrc": "cards/sv8pt5-029-high.png",
+        "attacks": [
+            {
+                "name": "Linear Attack",
+                "damage": null
+            },
+            {
+                "name": "Fighting Lightning",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14670",
+        "externalId": "sv8pt5-28",
+        "localId": "028",
+        "setCode": "sv8pt5",
+        "cardNumber": "028/131",
+        "cardName": "Pikachu ex",
+        "fullDisplayName": "Pikachu ex 028/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-028-low.png",
+        "imageHighSrc": "cards/sv8pt5-028-high.png",
+        "attacks": [
+            {
+                "name": "Tail Whap",
+                "damage": "30"
+            },
+            {
+                "name": "Thunder",
+                "damage": "220"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14661",
+        "externalId": "sv8pt5-27",
+        "localId": "027",
+        "setCode": "sv8pt5",
+        "cardNumber": "027/131",
+        "cardName": "Wellspring Mask Ogerpon ex",
+        "fullDisplayName": "Wellspring Mask Ogerpon ex 027/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-027-low.png",
+        "imageHighSrc": "cards/sv8pt5-027-high.png",
+        "attacks": [
+            {
+                "name": "Sob",
+                "damage": "20"
+            },
+            {
+                "name": "Torrential Pump",
+                "damage": "100"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14646",
+        "externalId": "sv8pt5-26",
+        "localId": "026",
+        "setCode": "sv8pt5",
+        "cardNumber": "026/131",
+        "cardName": "Glaceon ex",
+        "fullDisplayName": "Glaceon ex 026/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            471
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-026-low.png",
+        "imageHighSrc": "cards/sv8pt5-026-high.png",
+        "attacks": [
+            {
+                "name": "Frost Bullet",
+                "damage": "110"
+            },
+            {
+                "name": "Euclase",
+                "damage": null
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14637",
+        "externalId": "sv8pt5-25",
+        "localId": "025",
+        "setCode": "sv8pt5",
+        "cardNumber": "025/131",
+        "cardName": "Glaceon",
+        "fullDisplayName": "Glaceon 025/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            471
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-025-low.png",
+        "imageHighSrc": "cards/sv8pt5-025-high.png",
+        "attacks": [
+            {
+                "name": "Permeating Chill",
+                "damage": "30"
+            },
+            {
+                "name": "Icicle Missile",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14624",
+        "externalId": "sv8pt5-24",
+        "localId": "024",
+        "setCode": "sv8pt5",
+        "cardNumber": "024/131",
+        "cardName": "Suicune",
+        "fullDisplayName": "Suicune 024/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            245
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-024-low.png",
+        "imageHighSrc": "cards/sv8pt5-024-high.png",
+        "attacks": [
+            {
+                "name": "Overrun",
+                "damage": "30"
+            },
+            {
+                "name": "Aurora Beam",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14615",
+        "externalId": "sv8pt5-23",
+        "localId": "023",
+        "setCode": "sv8pt5",
+        "cardNumber": "023/131",
+        "cardName": "Vaporeon ex",
+        "fullDisplayName": "Vaporeon ex 023/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-023-low.png",
+        "imageHighSrc": "cards/sv8pt5-023-high.png",
+        "attacks": [
+            {
+                "name": "Severe Squall",
+                "damage": null
+            },
+            {
+                "name": "Aquamarine",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14605",
+        "externalId": "sv8pt5-22",
+        "localId": "022",
+        "setCode": "sv8pt5",
+        "cardNumber": "022/131",
+        "cardName": "Vaporeon",
+        "fullDisplayName": "Vaporeon 022/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-022-low.png",
+        "imageHighSrc": "cards/sv8pt5-022-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Drain",
+                "damage": "30"
+            },
+            {
+                "name": "Fighting Whirlpool",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14594",
+        "externalId": "sv8pt5-21",
+        "localId": "021",
+        "setCode": "sv8pt5",
+        "cardNumber": "021/131",
+        "cardName": "Seaking",
+        "fullDisplayName": "Seaking 021/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            119
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-021-low.png",
+        "imageHighSrc": "cards/sv8pt5-021-high.png",
+        "attacks": [
+            {
+                "name": "Rapid Draw",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14584",
+        "externalId": "sv8pt5-20",
+        "localId": "020",
+        "setCode": "sv8pt5",
+        "cardNumber": "020/131",
+        "cardName": "Goldeen",
+        "fullDisplayName": "Goldeen 020/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            118
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-020-low.png",
+        "imageHighSrc": "cards/sv8pt5-020-high.png",
+        "attacks": [
+            {
+                "name": "Whirlpool",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14578",
+        "externalId": "sv8pt5-19",
+        "localId": "019",
+        "setCode": "sv8pt5",
+        "cardNumber": "019/131",
+        "cardName": "Slowking",
+        "fullDisplayName": "Slowking 019/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            199
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-019-low.png",
+        "imageHighSrc": "cards/sv8pt5-019-high.png",
+        "attacks": [
+            {
+                "name": "Wash the Slate Clean",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14568",
+        "externalId": "sv8pt5-18",
+        "localId": "018",
+        "setCode": "sv8pt5",
+        "cardNumber": "018/131",
+        "cardName": "Slowpoke",
+        "fullDisplayName": "Slowpoke 018/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            79
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-018-low.png",
+        "imageHighSrc": "cards/sv8pt5-018-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "10"
+            },
+            {
+                "name": "Tail Whap",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14552",
+        "externalId": "sv8pt5-17",
+        "localId": "017",
+        "setCode": "sv8pt5",
+        "cardNumber": "017/131",
+        "cardName": "Hearthflame Mask Ogerpon ex",
+        "fullDisplayName": "Hearthflame Mask Ogerpon ex 017/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-017-low.png",
+        "imageHighSrc": "cards/sv8pt5-017-high.png",
+        "attacks": [
+            {
+                "name": "Wrathful Hearth",
+                "damage": "20×"
+            },
+            {
+                "name": "Dynamic Blaze",
+                "damage": "140+"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14543",
+        "externalId": "sv8pt5-16",
+        "localId": "016",
+        "setCode": "sv8pt5",
+        "cardNumber": "016/131",
+        "cardName": "Pyroar",
+        "fullDisplayName": "Pyroar 016/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            668
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-016-low.png",
+        "imageHighSrc": "cards/sv8pt5-016-high.png",
+        "attacks": [
+            {
+                "name": "Fire Mane",
+                "damage": "50"
+            },
+            {
+                "name": "Flame Tackle",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14534",
+        "externalId": "sv8pt5-15",
+        "localId": "015",
+        "setCode": "sv8pt5",
+        "cardNumber": "015/131",
+        "cardName": "Litleo",
+        "fullDisplayName": "Litleo 015/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            667
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-015-low.png",
+        "imageHighSrc": "cards/sv8pt5-015-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "10"
+            },
+            {
+                "name": "Headbutt",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14523",
+        "externalId": "sv8pt5-14",
+        "localId": "014",
+        "setCode": "sv8pt5",
+        "cardNumber": "014/131",
+        "cardName": "Flareon ex",
+        "fullDisplayName": "Flareon ex 014/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-014-low.png",
+        "imageHighSrc": "cards/sv8pt5-014-high.png",
+        "attacks": [
+            {
+                "name": "Burning Charge",
+                "damage": "130"
+            },
+            {
+                "name": "Carnelian",
+                "damage": "280"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14514",
+        "externalId": "sv8pt5-13",
+        "localId": "013",
+        "setCode": "sv8pt5",
+        "cardNumber": "013/131",
+        "cardName": "Flareon",
+        "fullDisplayName": "Flareon 013/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-013-low.png",
+        "imageHighSrc": "cards/sv8pt5-013-high.png",
+        "attacks": [
+            {
+                "name": "Destructive Flame",
+                "damage": "30"
+            },
+            {
+                "name": "Fighting Blaze",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14504",
+        "externalId": "sv8pt5-12",
+        "localId": "012",
+        "setCode": "sv8pt5",
+        "cardNumber": "012/131",
+        "cardName": "Teal Mask Ogerpon ex",
+        "fullDisplayName": "Teal Mask Ogerpon ex 012/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1017
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-012-low.png",
+        "imageHighSrc": "cards/sv8pt5-012-high.png",
+        "attacks": [
+            {
+                "name": "Myriad Leaf Shower",
+                "damage": "30+"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14496",
+        "externalId": "sv8pt5-11",
+        "localId": "011",
+        "setCode": "sv8pt5",
+        "cardNumber": "011/131",
+        "cardName": "Hydrapple ex",
+        "fullDisplayName": "Hydrapple ex 011/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1019
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-011-low.png",
+        "imageHighSrc": "cards/sv8pt5-011-high.png",
+        "attacks": [
+            {
+                "name": "Syrup Storm",
+                "damage": "30+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14487",
+        "externalId": "sv8pt5-10",
+        "localId": "010",
+        "setCode": "sv8pt5",
+        "cardNumber": "010/131",
+        "cardName": "Dipplin",
+        "fullDisplayName": "Dipplin 010/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1011
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-010-low.png",
+        "imageHighSrc": "cards/sv8pt5-010-high.png",
+        "attacks": [
+            {
+                "name": "Do the Wave",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14479",
+        "externalId": "sv8pt5-9",
+        "localId": "009",
+        "setCode": "sv8pt5",
+        "cardNumber": "009/131",
+        "cardName": "Applin",
+        "fullDisplayName": "Applin 009/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            840
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-009-low.png",
+        "imageHighSrc": "cards/sv8pt5-009-high.png",
+        "attacks": [
+            {
+                "name": "Spray Fluid",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14470",
+        "externalId": "sv8pt5-8",
+        "localId": "008",
+        "setCode": "sv8pt5",
+        "cardNumber": "008/131",
+        "cardName": "Whimsicott",
+        "fullDisplayName": "Whimsicott 008/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            547
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-008-low.png",
+        "imageHighSrc": "cards/sv8pt5-008-high.png",
+        "attacks": [
+            {
+                "name": "Seed Bomb",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14460",
+        "externalId": "sv8pt5-7",
+        "localId": "007",
+        "setCode": "sv8pt5",
+        "cardNumber": "007/131",
+        "cardName": "Cottonee",
+        "fullDisplayName": "Cottonee 007/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            546
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-007-low.png",
+        "imageHighSrc": "cards/sv8pt5-007-high.png",
+        "attacks": [
+            {
+                "name": "Triple Spin",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14450",
+        "externalId": "sv8pt5-6",
+        "localId": "006",
+        "setCode": "sv8pt5",
+        "cardNumber": "006/131",
+        "cardName": "Leafeon ex",
+        "fullDisplayName": "Leafeon ex 006/131 Prismatic Evolutions",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            470
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-006-low.png",
+        "imageHighSrc": "cards/sv8pt5-006-high.png",
+        "attacks": [
+            {
+                "name": "Verdant Storm",
+                "damage": "60×"
+            },
+            {
+                "name": "Moss Agate",
+                "damage": "230"
+            }
+        ],
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14440",
+        "externalId": "sv8pt5-5",
+        "localId": "005",
+        "setCode": "sv8pt5",
+        "cardNumber": "005/131",
+        "cardName": "Leafeon",
+        "fullDisplayName": "Leafeon 005/131 Prismatic Evolutions",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            470
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-005-low.png",
+        "imageHighSrc": "cards/sv8pt5-005-high.png",
+        "attacks": [
+            {
+                "name": "Leaflet Blessings",
+                "damage": null
+            },
+            {
+                "name": "Solar Beam",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14428",
+        "externalId": "sv8pt5-4",
+        "localId": "004",
+        "setCode": "sv8pt5",
+        "cardNumber": "004/131",
+        "cardName": "Budew",
+        "fullDisplayName": "Budew 004/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            406
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-004-low.png",
+        "imageHighSrc": "cards/sv8pt5-004-high.png",
+        "attacks": [
+            {
+                "name": "Itchy Pollen",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14420",
+        "externalId": "sv8pt5-3",
+        "localId": "003",
+        "setCode": "sv8pt5",
+        "cardNumber": "003/131",
+        "cardName": "Pinsir",
+        "fullDisplayName": "Pinsir 003/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            127
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-003-low.png",
+        "imageHighSrc": "cards/sv8pt5-003-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14413",
+        "externalId": "sv8pt5-2",
+        "localId": "002",
+        "setCode": "sv8pt5",
+        "cardNumber": "002/131",
+        "cardName": "Exeggutor",
+        "fullDisplayName": "Exeggutor 002/131 Prismatic Evolutions",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            103
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-002-low.png",
+        "imageHighSrc": "cards/sv8pt5-002-high.png",
+        "attacks": [
+            {
+                "name": "Mega Drain",
+                "damage": "50"
+            },
+            {
+                "name": "Solar Beam",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "14405",
+        "externalId": "sv8pt5-1",
+        "localId": "001",
+        "setCode": "sv8pt5",
+        "cardNumber": "001/131",
+        "cardName": "Exeggcute",
+        "fullDisplayName": "Exeggcute 001/131 Prismatic Evolutions",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            102
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv8pt5-001-low.png",
+        "imageHighSrc": "cards/sv8pt5-001-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "30"
+            }
+        ]
+    }
+]

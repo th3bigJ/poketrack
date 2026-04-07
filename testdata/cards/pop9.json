@@ -1,721 +1,568 @@
 [
-  {
-    "masterCardId": "9250",
-    "externalId": "pop9-17",
-    "tcgdex_id": "pop9-17",
-    "localId": "017",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "17/17",
-    "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 17/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      387
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-017-low.png",
-    "imageHighSrc": "cards/pop9-017-high.png",
-    "attacks": [
-      {
-        "name": "Absorb",
-        "damage": "10"
-      },
-      {
-        "name": "Parboil",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9240",
-    "externalId": "pop9-16",
-    "tcgdex_id": "pop9-16",
-    "localId": "016",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "16/17",
-    "cardName": "Piplup",
-    "fullDisplayName": "Piplup 16/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      393
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-016-low.png",
-    "imageHighSrc": "cards/pop9-016-high.png",
-    "attacks": [
-      {
-        "name": "Water Sport",
-        "damage": "10+"
-      },
-      {
-        "name": "Wavelet",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9231",
-    "externalId": "pop9-15",
-    "tcgdex_id": "pop9-15",
-    "localId": "015",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "15/17",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 15/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-015-low.png",
-    "imageHighSrc": "cards/pop9-015-high.png",
-    "attacks": [
-      {
-        "name": "Growl",
-        "damage": null
-      },
-      {
-        "name": "Numb",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9222",
-    "externalId": "pop9-14",
-    "tcgdex_id": "pop9-14",
-    "localId": "014",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "14/17",
-    "cardName": "Gible",
-    "fullDisplayName": "Gible 14/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      443
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hiroki Fuchino",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-014-low.png",
-    "imageHighSrc": "cards/pop9-014-high.png",
-    "attacks": [
-      {
-        "name": "Push Down",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9215",
-    "externalId": "pop9-13",
-    "tcgdex_id": "pop9-13",
-    "localId": "013",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "13/17",
-    "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 13/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      390
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-013-low.png",
-    "imageHighSrc": "cards/pop9-013-high.png",
-    "attacks": [
-      {
-        "name": "Serial Swipes",
-        "damage": "10×"
-      },
-      {
-        "name": "Sleepy",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9205",
-    "externalId": "pop9-12",
-    "tcgdex_id": "pop9-12",
-    "localId": "012",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "12/17",
-    "cardName": "Buneary",
-    "fullDisplayName": "Buneary 12/17 POP Series 9",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      427
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-012-low.png",
-    "imageHighSrc": "cards/pop9-012-high.png",
-    "attacks": [
-      {
-        "name": "Dizzy Punch",
-        "damage": "10×"
-      },
-      {
-        "name": "Defense Curl",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "9196",
-    "externalId": "pop9-11",
-    "tcgdex_id": "pop9-11",
-    "localId": "011",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "11/17",
-    "cardName": "Pichu",
-    "fullDisplayName": "Pichu 11/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      172
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-011-low.png",
-    "imageHighSrc": "cards/pop9-011-high.png",
-    "attacks": [
-      {
-        "name": "Find a Friend",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "9188",
-    "externalId": "pop9-10",
-    "tcgdex_id": "pop9-10",
-    "localId": "010",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "10/17",
-    "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 10/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      417
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-010-low.png",
-    "imageHighSrc": "cards/pop9-010-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Wave",
-        "damage": "10"
-      },
-      {
-        "name": "Poison Berry",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9179",
-    "externalId": "pop9-9",
-    "tcgdex_id": "pop9-9",
-    "localId": "009",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "9/17",
-    "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 9/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      428
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Buneary",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-009-low.png",
-    "imageHighSrc": "cards/pop9-009-high.png",
-    "attacks": [
-      {
-        "name": "Jump Kick",
-        "damage": "20"
-      },
-      {
-        "name": "Jazzed",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9170",
-    "externalId": "pop9-8",
-    "tcgdex_id": "pop9-8",
-    "localId": "008",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "8/17",
-    "cardName": "Gabite",
-    "fullDisplayName": "Gabite 8/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      444
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gible",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-008-low.png",
-    "imageHighSrc": "cards/pop9-008-high.png",
-    "attacks": [
-      {
-        "name": "Burrow",
-        "damage": null
-      },
-      {
-        "name": "Distored Wave",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9161",
-    "externalId": "pop9-7",
-    "tcgdex_id": "pop9-7",
-    "localId": "007",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "7/17",
-    "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 7/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      453
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-007-low.png",
-    "imageHighSrc": "cards/pop9-007-high.png",
-    "attacks": [
-      {
-        "name": "Knock Off",
-        "damage": null
-      },
-      {
-        "name": "Nimble",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9153",
-    "externalId": "pop9-6",
-    "tcgdex_id": "pop9-6",
-    "localId": "006",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "6/17",
-    "cardName": "Buizel",
-    "fullDisplayName": "Buizel 6/17 POP Series 9",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      418
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-006-low.png",
-    "imageHighSrc": "cards/pop9-006-high.png",
-    "attacks": [
-      {
-        "name": "Whirlpool",
-        "damage": null
-      },
-      {
-        "name": "Super Fast",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9144",
-    "externalId": "pop9-5",
-    "tcgdex_id": "pop9-5",
-    "localId": "005",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "5/17",
-    "cardName": "Rotom",
-    "fullDisplayName": "Rotom 5/17 POP Series 9",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      479
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-005-low.png",
-    "imageHighSrc": "cards/pop9-005-high.png",
-    "attacks": [
-      {
-        "name": "Poltergeist",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9137",
-    "externalId": "pop9-4",
-    "tcgdex_id": "pop9-4",
-    "localId": "004",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "4/17",
-    "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 4/17 POP Series 9",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      486
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kent Kanetsuna",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-004-low.png",
-    "imageHighSrc": "cards/pop9-004-high.png",
-    "attacks": [
-      {
-        "name": "Body Slam",
-        "damage": "20"
-      },
-      {
-        "name": "Double Stomp",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9126",
-    "externalId": "pop9-3",
-    "tcgdex_id": "pop9-3",
-    "localId": "003",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "3/17",
-    "cardName": "Raichu",
-    "fullDisplayName": "Raichu 3/17 POP Series 9",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      26
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pikachu",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-003-low.png",
-    "imageHighSrc": "cards/pop9-003-high.png",
-    "attacks": [
-      {
-        "name": "Slam",
-        "damage": "30×"
-      },
-      {
-        "name": "High Volt",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "9119",
-    "externalId": "pop9-2",
-    "tcgdex_id": "pop9-2",
-    "localId": "002",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "2/17",
-    "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 2/17 POP Series 9",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      490
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-002-low.png",
-    "imageHighSrc": "cards/pop9-002-high.png",
-    "attacks": [
-      {
-        "name": "Dive",
-        "damage": null
-      },
-      {
-        "name": "Water Glow",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "9110",
-    "externalId": "pop9-1",
-    "tcgdex_id": "pop9-1",
-    "localId": "001",
-    "setCode": "pop9",
-    "setTcgdexId": "pop9",
-    "cardNumber": "1/17",
-    "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 1/17 POP Series 9",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      445
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gabite",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop9-001-low.png",
-    "imageHighSrc": "cards/pop9-001-high.png",
-    "attacks": [
-      {
-        "name": "Dragon Rage",
-        "damage": "80"
-      },
-      {
-        "name": "Jet Sword",
-        "damage": "100"
-      }
-    ]
-  }
+    {
+        "masterCardId": "9250",
+        "externalId": "pop9-17",
+        "localId": "017",
+        "setCode": "pop9",
+        "cardNumber": "17/17",
+        "cardName": "Turtwig",
+        "fullDisplayName": "Turtwig 17/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            387
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-017-low.png",
+        "imageHighSrc": "cards/pop9-017-high.png",
+        "attacks": [
+            {
+                "name": "Absorb",
+                "damage": "10"
+            },
+            {
+                "name": "Parboil",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9240",
+        "externalId": "pop9-16",
+        "localId": "016",
+        "setCode": "pop9",
+        "cardNumber": "16/17",
+        "cardName": "Piplup",
+        "fullDisplayName": "Piplup 16/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            393
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-016-low.png",
+        "imageHighSrc": "cards/pop9-016-high.png",
+        "attacks": [
+            {
+                "name": "Water Sport",
+                "damage": "10+"
+            },
+            {
+                "name": "Wavelet",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9231",
+        "externalId": "pop9-15",
+        "localId": "015",
+        "setCode": "pop9",
+        "cardNumber": "15/17",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 15/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-015-low.png",
+        "imageHighSrc": "cards/pop9-015-high.png",
+        "attacks": [
+            {
+                "name": "Growl",
+                "damage": null
+            },
+            {
+                "name": "Numb",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9222",
+        "externalId": "pop9-14",
+        "localId": "014",
+        "setCode": "pop9",
+        "cardNumber": "14/17",
+        "cardName": "Gible",
+        "fullDisplayName": "Gible 14/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            443
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hiroki Fuchino",
+        "imageLowSrc": "cards/pop9-014-low.png",
+        "imageHighSrc": "cards/pop9-014-high.png",
+        "attacks": [
+            {
+                "name": "Push Down",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9215",
+        "externalId": "pop9-13",
+        "localId": "013",
+        "setCode": "pop9",
+        "cardNumber": "13/17",
+        "cardName": "Chimchar",
+        "fullDisplayName": "Chimchar 13/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            390
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-013-low.png",
+        "imageHighSrc": "cards/pop9-013-high.png",
+        "attacks": [
+            {
+                "name": "Serial Swipes",
+                "damage": "10×"
+            },
+            {
+                "name": "Sleepy",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9205",
+        "externalId": "pop9-12",
+        "localId": "012",
+        "setCode": "pop9",
+        "cardNumber": "12/17",
+        "cardName": "Buneary",
+        "fullDisplayName": "Buneary 12/17 POP Series 9",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            427
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-012-low.png",
+        "imageHighSrc": "cards/pop9-012-high.png",
+        "attacks": [
+            {
+                "name": "Dizzy Punch",
+                "damage": "10×"
+            },
+            {
+                "name": "Defense Curl",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "9196",
+        "externalId": "pop9-11",
+        "localId": "011",
+        "setCode": "pop9",
+        "cardNumber": "11/17",
+        "cardName": "Pichu",
+        "fullDisplayName": "Pichu 11/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            172
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-011-low.png",
+        "imageHighSrc": "cards/pop9-011-high.png",
+        "attacks": [
+            {
+                "name": "Find a Friend",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "9188",
+        "externalId": "pop9-10",
+        "localId": "010",
+        "setCode": "pop9",
+        "cardNumber": "10/17",
+        "cardName": "Pachirisu",
+        "fullDisplayName": "Pachirisu 10/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            417
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-010-low.png",
+        "imageHighSrc": "cards/pop9-010-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Wave",
+                "damage": "10"
+            },
+            {
+                "name": "Poison Berry",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9179",
+        "externalId": "pop9-9",
+        "localId": "009",
+        "setCode": "pop9",
+        "cardNumber": "9/17",
+        "cardName": "Lopunny",
+        "fullDisplayName": "Lopunny 9/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            428
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-009-low.png",
+        "imageHighSrc": "cards/pop9-009-high.png",
+        "attacks": [
+            {
+                "name": "Jump Kick",
+                "damage": "20"
+            },
+            {
+                "name": "Jazzed",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9170",
+        "externalId": "pop9-8",
+        "localId": "008",
+        "setCode": "pop9",
+        "cardNumber": "8/17",
+        "cardName": "Gabite",
+        "fullDisplayName": "Gabite 8/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            444
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/pop9-008-low.png",
+        "imageHighSrc": "cards/pop9-008-high.png",
+        "attacks": [
+            {
+                "name": "Burrow",
+                "damage": null
+            },
+            {
+                "name": "Distored Wave",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9161",
+        "externalId": "pop9-7",
+        "localId": "007",
+        "setCode": "pop9",
+        "cardNumber": "7/17",
+        "cardName": "Croagunk",
+        "fullDisplayName": "Croagunk 7/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            453
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-007-low.png",
+        "imageHighSrc": "cards/pop9-007-high.png",
+        "attacks": [
+            {
+                "name": "Knock Off",
+                "damage": null
+            },
+            {
+                "name": "Nimble",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9153",
+        "externalId": "pop9-6",
+        "localId": "006",
+        "setCode": "pop9",
+        "cardNumber": "6/17",
+        "cardName": "Buizel",
+        "fullDisplayName": "Buizel 6/17 POP Series 9",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            418
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-006-low.png",
+        "imageHighSrc": "cards/pop9-006-high.png",
+        "attacks": [
+            {
+                "name": "Whirlpool",
+                "damage": null
+            },
+            {
+                "name": "Super Fast",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9144",
+        "externalId": "pop9-5",
+        "localId": "005",
+        "setCode": "pop9",
+        "cardNumber": "5/17",
+        "cardName": "Rotom",
+        "fullDisplayName": "Rotom 5/17 POP Series 9",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            479
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop9-005-low.png",
+        "imageHighSrc": "cards/pop9-005-high.png",
+        "attacks": [
+            {
+                "name": "Poltergeist",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9137",
+        "externalId": "pop9-4",
+        "localId": "004",
+        "setCode": "pop9",
+        "cardNumber": "4/17",
+        "cardName": "Regigigas",
+        "fullDisplayName": "Regigigas 4/17 POP Series 9",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            486
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kent Kanetsuna",
+        "imageLowSrc": "cards/pop9-004-low.png",
+        "imageHighSrc": "cards/pop9-004-high.png",
+        "attacks": [
+            {
+                "name": "Body Slam",
+                "damage": "20"
+            },
+            {
+                "name": "Double Stomp",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9126",
+        "externalId": "pop9-3",
+        "localId": "003",
+        "setCode": "pop9",
+        "cardNumber": "3/17",
+        "cardName": "Raichu",
+        "fullDisplayName": "Raichu 3/17 POP Series 9",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            26
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop9-003-low.png",
+        "imageHighSrc": "cards/pop9-003-high.png",
+        "attacks": [
+            {
+                "name": "Slam",
+                "damage": "30×"
+            },
+            {
+                "name": "High Volt",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "9119",
+        "externalId": "pop9-2",
+        "localId": "002",
+        "setCode": "pop9",
+        "cardNumber": "2/17",
+        "cardName": "Manaphy",
+        "fullDisplayName": "Manaphy 2/17 POP Series 9",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            490
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop9-002-low.png",
+        "imageHighSrc": "cards/pop9-002-high.png",
+        "attacks": [
+            {
+                "name": "Dive",
+                "damage": null
+            },
+            {
+                "name": "Water Glow",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "9110",
+        "externalId": "pop9-1",
+        "localId": "001",
+        "setCode": "pop9",
+        "cardNumber": "1/17",
+        "cardName": "Garchomp",
+        "fullDisplayName": "Garchomp 1/17 POP Series 9",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            445
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/pop9-001-low.png",
+        "imageHighSrc": "cards/pop9-001-high.png",
+        "attacks": [
+            {
+                "name": "Dragon Rage",
+                "damage": "80"
+            },
+            {
+                "name": "Jet Sword",
+                "damage": "100"
+            }
+        ]
+    }
 ]

@@ -1,4235 +1,3296 @@
 [
-  {
-    "masterCardId": "2632",
-    "externalId": "bw4-103",
-    "tcgdex_id": "bw4-103",
-    "localId": "103",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "103/99",
-    "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 103/99 Next Destinies",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      635
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zweilous",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-103-low.png",
-    "imageHighSrc": "cards/bw4-103-high.png",
-    "attacks": [
-      {
-        "name": "Berserker Blade",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2631",
-    "externalId": "bw4-102",
-    "tcgdex_id": "bw4-102",
-    "localId": "102",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "102/99",
-    "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 102/99 Next Destinies",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      571
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zorua",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-102-low.png",
-    "imageHighSrc": "cards/bw4-102-high.png",
-    "attacks": [
-      {
-        "name": "Nasty Plot",
-        "damage": null
-      },
-      {
-        "name": "Foul Play",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2630",
-    "externalId": "bw4-101",
-    "tcgdex_id": "bw4-101",
-    "localId": "101",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "101/99",
-    "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 101/99 Next Destinies",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      609
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lampent",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-101-low.png",
-    "imageHighSrc": "cards/bw4-101-high.png",
-    "attacks": [
-      {
-        "name": "Eerie Glow",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2629",
-    "externalId": "bw4-100",
-    "tcgdex_id": "bw4-100",
-    "localId": "100",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "100/99",
-    "cardName": "Emboar",
-    "fullDisplayName": "Emboar 100/99 Next Destinies",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      500
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pignite",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-100-low.png",
-    "imageHighSrc": "cards/bw4-100-high.png",
-    "attacks": [
-      {
-        "name": "Heat Crash",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2628",
-    "externalId": "bw4-99",
-    "tcgdex_id": "bw4-99",
-    "localId": "099",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "99/99",
-    "cardName": "Regigigas-EX",
-    "fullDisplayName": "Regigigas-EX 99/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      486
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-099-low.png",
-    "imageHighSrc": "cards/bw4-099-high.png",
-    "attacks": [
-      {
-        "name": "Giga Power",
-        "damage": "60+"
-      },
-      {
-        "name": "Raging Hammer",
-        "damage": "50+"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2627",
-    "externalId": "bw4-98",
-    "tcgdex_id": "bw4-98",
-    "localId": "098",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "98/99",
-    "cardName": "Mewtwo-EX",
-    "fullDisplayName": "Mewtwo-EX 98/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-098-low.png",
-    "imageHighSrc": "cards/bw4-098-high.png",
-    "attacks": [
-      {
-        "name": "X Ball",
-        "damage": "20×"
-      },
-      {
-        "name": "Psydrive",
-        "damage": "120"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2626",
-    "externalId": "bw4-97",
-    "tcgdex_id": "bw4-97",
-    "localId": "097",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "97/99",
-    "cardName": "Zekrom-EX",
-    "fullDisplayName": "Zekrom-EX 97/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      644
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-097-low.png",
-    "imageHighSrc": "cards/bw4-097-high.png",
-    "attacks": [
-      {
-        "name": "Glinting Claw",
-        "damage": "50+"
-      },
-      {
-        "name": "Strong Volt",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2625",
-    "externalId": "bw4-96",
-    "tcgdex_id": "bw4-96",
-    "localId": "096",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "96/99",
-    "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 96/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      646
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-096-low.png",
-    "imageHighSrc": "cards/bw4-096-high.png",
-    "attacks": [
-      {
-        "name": "Frozen Wings",
-        "damage": "60"
-      },
-      {
-        "name": "Hail Blizzard",
-        "damage": "120"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2624",
-    "externalId": "bw4-95",
-    "tcgdex_id": "bw4-95",
-    "localId": "095",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "95/99",
-    "cardName": "Reshiram-EX",
-    "fullDisplayName": "Reshiram-EX 95/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      643
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-095-low.png",
-    "imageHighSrc": "cards/bw4-095-high.png",
-    "attacks": [
-      {
-        "name": "Glinting Claw",
-        "damage": "50+"
-      },
-      {
-        "name": "Brave Fire",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2623",
-    "externalId": "bw4-94",
-    "tcgdex_id": "bw4-94",
-    "localId": "094",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "94/99",
-    "cardName": "Shaymin-EX",
-    "fullDisplayName": "Shaymin-EX 94/99 Next Destinies",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      492
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-094-low.png",
-    "imageHighSrc": "cards/bw4-094-high.png",
-    "attacks": [
-      {
-        "name": "Synthesis",
-        "damage": null
-      },
-      {
-        "name": "Revenge Blast",
-        "damage": "30+"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2622",
-    "externalId": "bw4-93",
-    "tcgdex_id": "bw4-93",
-    "localId": "093",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "93/99",
-    "cardName": "Prism Energy",
-    "fullDisplayName": "Prism Energy 93/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-093-low.png",
-    "imageHighSrc": "cards/bw4-093-high.png",
-    "rules": "This card provides Colorless Energy.\n\nIf the Pokémon this card is attached to is a Basic Pokémon, this card provides every type of Energy but provides only 1 Energy at a time."
-  },
-  {
-    "masterCardId": "2621",
-    "externalId": "bw4-92",
-    "tcgdex_id": "bw4-92",
-    "localId": "092",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "92/99",
-    "cardName": "Double Colorless Energy",
-    "fullDisplayName": "Double Colorless Energy 92/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-092-low.png",
-    "imageHighSrc": "cards/bw4-092-high.png",
-    "rules": "Double Colorless Energy provides ColorlessColorless Energy."
-  },
-  {
-    "masterCardId": "2620",
-    "externalId": "bw4-91",
-    "tcgdex_id": "bw4-91",
-    "localId": "091",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "91/99",
-    "cardName": "Skyarrow Bridge",
-    "fullDisplayName": "Skyarrow Bridge 91/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-091-low.png",
-    "imageHighSrc": "cards/bw4-091-high.png",
-    "rules": "The Retreat Cost of each Basic Pokémon is play is Colorless less.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "2619",
-    "externalId": "bw4-90",
-    "tcgdex_id": "bw4-90",
-    "localId": "090",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "90/99",
-    "cardName": "Pokémon Center",
-    "fullDisplayName": "Pokémon Center 90/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-090-low.png",
-    "imageHighSrc": "cards/bw4-090-high.png",
-    "rules": "Once during each player's turn, that player may heal 20 damage from 1 of his or her Benched Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "2618",
-    "externalId": "bw4-89",
-    "tcgdex_id": "bw4-89",
-    "localId": "089",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "89/99",
-    "cardName": "Level Ball",
-    "fullDisplayName": "Level Ball 89/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-089-low.png",
-    "imageHighSrc": "cards/bw4-089-high.png",
-    "rules": "Search your deck for a Pokémon with 90 HP or less, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2617",
-    "externalId": "bw4-88",
-    "tcgdex_id": "bw4-88",
-    "localId": "088",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "88/99",
-    "cardName": "Heavy Ball",
-    "fullDisplayName": "Heavy Ball 88/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-088-low.png",
-    "imageHighSrc": "cards/bw4-088-high.png",
-    "rules": "Search your deck for a Pokémon with a Retreat Cost of 3 or more, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2616",
-    "externalId": "bw4-87",
-    "tcgdex_id": "bw4-87",
-    "localId": "087",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "87/99",
-    "cardName": "Exp. Share",
-    "fullDisplayName": "Exp. Share 87/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-087-low.png",
-    "imageHighSrc": "cards/bw4-087-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card that was attached to that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2615",
-    "externalId": "bw4-86",
-    "tcgdex_id": "bw4-86",
-    "localId": "086",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "86/99",
-    "cardName": "Cilan",
-    "fullDisplayName": "Cilan 86/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-086-low.png",
-    "imageHighSrc": "cards/bw4-086-high.png",
-    "rules": "Search your deck for up to 3 basic Energy cards, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2614",
-    "externalId": "bw4-85",
-    "tcgdex_id": "bw4-85",
-    "localId": "085",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "85/99",
-    "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino 85/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      573
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Minccino",
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-085-low.png",
-    "imageHighSrc": "cards/bw4-085-high.png",
-    "attacks": [
-      {
-        "name": "Echoed Voice",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2613",
-    "externalId": "bw4-84",
-    "tcgdex_id": "bw4-84",
-    "localId": "084",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "84/99",
-    "cardName": "Minccino",
-    "fullDisplayName": "Minccino 84/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      572
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomohiro Kitakaze",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-084-low.png",
-    "imageHighSrc": "cards/bw4-084-high.png",
-    "attacks": [
-      {
-        "name": "Call for Family",
-        "damage": null
-      },
-      {
-        "name": "Tail Smack",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2612",
-    "externalId": "bw4-83",
-    "tcgdex_id": "bw4-83",
-    "localId": "083",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "83/99",
-    "cardName": "Pidove",
-    "fullDisplayName": "Pidove 83/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      519
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-083-low.png",
-    "imageHighSrc": "cards/bw4-083-high.png",
-    "attacks": [
-      {
-        "name": "Scout",
-        "damage": null
-      },
-      {
-        "name": "Gust",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2611",
-    "externalId": "bw4-82",
-    "tcgdex_id": "bw4-82",
-    "localId": "082",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "82/99",
-    "cardName": "Regigigas-EX",
-    "fullDisplayName": "Regigigas-EX 82/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      486
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-082-low.png",
-    "imageHighSrc": "cards/bw4-082-high.png",
-    "attacks": [
-      {
-        "name": "Giga Power",
-        "damage": "60+"
-      },
-      {
-        "name": "Raging Hammer",
-        "damage": "50+"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2610",
-    "externalId": "bw4-81",
-    "tcgdex_id": "bw4-81",
-    "localId": "081",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "81/99",
-    "cardName": "Persian",
-    "fullDisplayName": "Persian 81/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      53
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Meowth",
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-081-low.png",
-    "imageHighSrc": "cards/bw4-081-high.png",
-    "attacks": [
-      {
-        "name": "Nasty Plot",
-        "damage": null
-      },
-      {
-        "name": "Shadow Claw",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2609",
-    "externalId": "bw4-80",
-    "tcgdex_id": "bw4-80",
-    "localId": "080",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "80/99",
-    "cardName": "Meowth",
-    "fullDisplayName": "Meowth 80/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      52
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-080-low.png",
-    "imageHighSrc": "cards/bw4-080-high.png",
-    "attacks": [
-      {
-        "name": "Double Scratch",
-        "damage": "10×"
-      },
-      {
-        "name": "Cat Kick",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2608",
-    "externalId": "bw4-79",
-    "tcgdex_id": "bw4-79",
-    "localId": "079",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "79/99",
-    "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 79/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      40
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Jigglypuff",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-079-low.png",
-    "imageHighSrc": "cards/bw4-079-high.png",
-    "attacks": [
-      {
-        "name": "Round",
-        "damage": "20×"
-      },
-      {
-        "name": "Hypnoblast",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2607",
-    "externalId": "bw4-78",
-    "tcgdex_id": "bw4-78",
-    "localId": "078",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "78/99",
-    "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 78/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      39
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-078-low.png",
-    "imageHighSrc": "cards/bw4-078-high.png",
-    "attacks": [
-      {
-        "name": "Sing",
-        "damage": null
-      },
-      {
-        "name": "Double Slap",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2606",
-    "externalId": "bw4-77",
-    "tcgdex_id": "bw4-77",
-    "localId": "077",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "77/99",
-    "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 77/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      597
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-077-low.png",
-    "imageHighSrc": "cards/bw4-077-high.png",
-    "attacks": [
-      {
-        "name": "Self Destruct",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2605",
-    "externalId": "bw4-76",
-    "tcgdex_id": "bw4-76",
-    "localId": "076",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "76/99",
-    "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 76/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      437
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Bronzor",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-076-low.png",
-    "imageHighSrc": "cards/bw4-076-high.png",
-    "attacks": [
-      {
-        "name": "Oracle Inflict",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2604",
-    "externalId": "bw4-75",
-    "tcgdex_id": "bw4-75",
-    "localId": "075",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "75/99",
-    "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 75/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      436
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-075-low.png",
-    "imageHighSrc": "cards/bw4-075-high.png",
-    "attacks": [
-      {
-        "name": "Knock Away",
-        "damage": "10+"
-      },
-      {
-        "name": "Spinning Attack",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2603",
-    "externalId": "bw4-74",
-    "tcgdex_id": "bw4-74",
-    "localId": "074",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "74/99",
-    "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 74/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      560
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Scraggy",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-074-low.png",
-    "imageHighSrc": "cards/bw4-074-high.png",
-    "attacks": [
-      {
-        "name": "Rock Head",
-        "damage": "20"
-      },
-      {
-        "name": "Hammer Kick",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2602",
-    "externalId": "bw4-73",
-    "tcgdex_id": "bw4-73",
-    "localId": "073",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "73/99",
-    "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 73/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      559
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-073-low.png",
-    "imageHighSrc": "cards/bw4-073-high.png",
-    "attacks": [
-      {
-        "name": "Shed Skin",
-        "damage": null
-      },
-      {
-        "name": "Lunge",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2601",
-    "externalId": "bw4-72",
-    "tcgdex_id": "bw4-72",
-    "localId": "072",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "72/99",
-    "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 72/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      275
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nuzleaf",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-072-low.png",
-    "imageHighSrc": "cards/bw4-072-high.png",
-    "attacks": [
-      {
-        "name": "Whirlwind",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2600",
-    "externalId": "bw4-71",
-    "tcgdex_id": "bw4-71",
-    "localId": "071",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "71/99",
-    "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 71/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      274
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Seedot",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-071-low.png",
-    "imageHighSrc": "cards/bw4-071-high.png",
-    "attacks": [
-      {
-        "name": "Surprise Punch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2599",
-    "externalId": "bw4-70",
-    "tcgdex_id": "bw4-70",
-    "localId": "070",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "70/99",
-    "cardName": "Weavile",
-    "fullDisplayName": "Weavile 70/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      461
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sneasel",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-070-low.png",
-    "imageHighSrc": "cards/bw4-070-high.png",
-    "attacks": [
-      {
-        "name": "Dark Penalty",
-        "damage": "90"
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2598",
-    "externalId": "bw4-69",
-    "tcgdex_id": "bw4-69",
-    "localId": "069",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "69/99",
-    "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 69/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      215
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-069-low.png",
-    "imageHighSrc": "cards/bw4-069-high.png",
-    "attacks": [
-      {
-        "name": "Corner",
-        "damage": "10"
-      },
-      {
-        "name": "Scratch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2597",
-    "externalId": "bw4-68",
-    "tcgdex_id": "bw4-68",
-    "localId": "068",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "68/99",
-    "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 68/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      620
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mienfoo",
-    "artist": "Suwama Chiaki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-068-low.png",
-    "imageHighSrc": "cards/bw4-068-high.png",
-    "attacks": [
-      {
-        "name": "Haul In",
-        "damage": null
-      },
-      {
-        "name": "Meditate",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2596",
-    "externalId": "bw4-67",
-    "tcgdex_id": "bw4-67",
-    "localId": "067",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "67/99",
-    "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 67/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      619
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-067-low.png",
-    "imageHighSrc": "cards/bw4-067-high.png",
-    "attacks": [
-      {
-        "name": "Triple Smash",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2595",
-    "externalId": "bw4-66",
-    "tcgdex_id": "bw4-66",
-    "localId": "066",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "66/99",
-    "cardName": "Hippowdon",
-    "fullDisplayName": "Hippowdon 66/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      450
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Hippopotas",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-066-low.png",
-    "imageHighSrc": "cards/bw4-066-high.png",
-    "attacks": [
-      {
-        "name": "Sand Bazooka",
-        "damage": "70"
-      },
-      {
-        "name": "Rock Tumble",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2594",
-    "externalId": "bw4-65",
-    "tcgdex_id": "bw4-65",
-    "localId": "065",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "65/99",
-    "cardName": "Hippopotas",
-    "fullDisplayName": "Hippopotas 65/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      449
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-065-low.png",
-    "imageHighSrc": "cards/bw4-065-high.png",
-    "attacks": [
-      {
-        "name": "Sand Jet",
-        "damage": null
-      },
-      {
-        "name": "Bite",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2593",
-    "externalId": "bw4-64",
-    "tcgdex_id": "bw4-64",
-    "localId": "064",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "64/99",
-    "cardName": "Lucario",
-    "fullDisplayName": "Lucario 64/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      448
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Riolu",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-064-low.png",
-    "imageHighSrc": "cards/bw4-064-high.png",
-    "attacks": [
-      {
-        "name": "Aura Sphere",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2592",
-    "externalId": "bw4-63",
-    "tcgdex_id": "bw4-63",
-    "localId": "063",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "63/99",
-    "cardName": "Riolu",
-    "fullDisplayName": "Riolu 63/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      447
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-063-low.png",
-    "imageHighSrc": "cards/bw4-063-high.png",
-    "attacks": [
-      {
-        "name": "Punch",
-        "damage": "10"
-      },
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2591",
-    "externalId": "bw4-62",
-    "tcgdex_id": "bw4-62",
-    "localId": "062",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "62/99",
-    "cardName": "Beheeyem",
-    "fullDisplayName": "Beheeyem 62/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      606
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Elgyem",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-062-low.png",
-    "imageHighSrc": "cards/bw4-062-high.png",
-    "attacks": [
-      {
-        "name": "Brain Control",
-        "damage": null
-      },
-      {
-        "name": "Psybeam",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2590",
-    "externalId": "bw4-61",
-    "tcgdex_id": "bw4-61",
-    "localId": "061",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "61/99",
-    "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 61/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      605
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-061-low.png",
-    "imageHighSrc": "cards/bw4-061-high.png",
-    "attacks": [
-      {
-        "name": "Psy Bolt",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2589",
-    "externalId": "bw4-60",
-    "tcgdex_id": "bw4-60",
-    "localId": "060",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "60/99",
-    "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 60/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      555
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Darumaka",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-060-low.png",
-    "imageHighSrc": "cards/bw4-060-high.png",
-    "attacks": [
-      {
-        "name": "Synchrodraw",
-        "damage": null
-      },
-      {
-        "name": "DarMAXitan",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2588",
-    "externalId": "bw4-59",
-    "tcgdex_id": "bw4-59",
-    "localId": "059",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "59/99",
-    "cardName": "Musharna",
-    "fullDisplayName": "Musharna 59/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      518
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Munna",
-    "artist": "Maiko Fujiwara",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-059-low.png",
-    "imageHighSrc": "cards/bw4-059-high.png",
-    "attacks": [
-      {
-        "name": "Fluffy Dream",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2587",
-    "externalId": "bw4-58",
-    "tcgdex_id": "bw4-58",
-    "localId": "058",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "58/99",
-    "cardName": "Munna",
-    "fullDisplayName": "Munna 58/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      517
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-058-low.png",
-    "imageHighSrc": "cards/bw4-058-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2586",
-    "externalId": "bw4-57",
-    "tcgdex_id": "bw4-57",
-    "localId": "057",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "57/99",
-    "cardName": "Gardevoir",
-    "fullDisplayName": "Gardevoir 57/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 110,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      282
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Kirlia",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-057-low.png",
-    "imageHighSrc": "cards/bw4-057-high.png",
-    "attacks": [
-      {
-        "name": "Mind Shock",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2585",
-    "externalId": "bw4-56",
-    "tcgdex_id": "bw4-56",
-    "localId": "056",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "56/99",
-    "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 56/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      281
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ralts",
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-056-low.png",
-    "imageHighSrc": "cards/bw4-056-high.png",
-    "attacks": [
-      {
-        "name": "Smack",
-        "damage": "20"
-      },
-      {
-        "name": "Psychic",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2584",
-    "externalId": "bw4-55",
-    "tcgdex_id": "bw4-55",
-    "localId": "055",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "55/99",
-    "cardName": "Ralts",
-    "fullDisplayName": "Ralts 55/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      280
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-055-low.png",
-    "imageHighSrc": "cards/bw4-055-high.png",
-    "attacks": [
-      {
-        "name": "Psyshot",
-        "damage": "10"
-      },
-      {
-        "name": "Smack",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2583",
-    "externalId": "bw4-54",
-    "tcgdex_id": "bw4-54",
-    "localId": "054",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "54/99",
-    "cardName": "Mewtwo-EX",
-    "fullDisplayName": "Mewtwo-EX 54/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-054-low.png",
-    "imageHighSrc": "cards/bw4-054-high.png",
-    "attacks": [
-      {
-        "name": "X Ball",
-        "damage": "20×"
-      },
-      {
-        "name": "Psydrive",
-        "damage": "120"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2582",
-    "externalId": "bw4-53",
-    "tcgdex_id": "bw4-53",
-    "localId": "053",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "53/99",
-    "cardName": "Muk",
-    "fullDisplayName": "Muk 53/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      89
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Grimer",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-053-low.png",
-    "imageHighSrc": "cards/bw4-053-high.png",
-    "attacks": [
-      {
-        "name": "Gentle Wrap",
-        "damage": "20"
-      },
-      {
-        "name": "Toxic Secretion",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2581",
-    "externalId": "bw4-52",
-    "tcgdex_id": "bw4-52",
-    "localId": "052",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "52/99",
-    "cardName": "Grimer",
-    "fullDisplayName": "Grimer 52/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      88
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-052-low.png",
-    "imageHighSrc": "cards/bw4-052-high.png",
-    "attacks": [
-      {
-        "name": "Nasty Goo",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2580",
-    "externalId": "bw4-51",
-    "tcgdex_id": "bw4-51",
-    "localId": "051",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "51/99",
-    "cardName": "Zekrom-EX",
-    "fullDisplayName": "Zekrom-EX 51/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      644
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-051-low.png",
-    "imageHighSrc": "cards/bw4-051-high.png",
-    "attacks": [
-      {
-        "name": "Glinting Claw",
-        "damage": "50+"
-      },
-      {
-        "name": "Strong Volt",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2579",
-    "externalId": "bw4-50",
-    "tcgdex_id": "bw4-50",
-    "localId": "050",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "50/99",
-    "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 50/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      644
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-050-low.png",
-    "imageHighSrc": "cards/bw4-050-high.png",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "20+"
-      },
-      {
-        "name": "Bolt Strike",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2578",
-    "externalId": "bw4-49",
-    "tcgdex_id": "bw4-49",
-    "localId": "049",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "49/99",
-    "cardName": "Emolga",
-    "fullDisplayName": "Emolga 49/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      587
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-049-low.png",
-    "imageHighSrc": "cards/bw4-049-high.png",
-    "attacks": [
-      {
-        "name": "Bounce",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2577",
-    "externalId": "bw4-48",
-    "tcgdex_id": "bw4-48",
-    "localId": "048",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "48/99",
-    "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 48/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      523
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Blitzle",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-048-low.png",
-    "imageHighSrc": "cards/bw4-048-high.png",
-    "attacks": [
-      {
-        "name": "Disconnect",
-        "damage": "40"
-      },
-      {
-        "name": "Lightning Crash",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2576",
-    "externalId": "bw4-47",
-    "tcgdex_id": "bw4-47",
-    "localId": "047",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "47/99",
-    "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 47/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      522
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-047-low.png",
-    "imageHighSrc": "cards/bw4-047-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Jolt",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2575",
-    "externalId": "bw4-46",
-    "tcgdex_id": "bw4-46",
-    "localId": "046",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "46/99",
-    "cardName": "Luxray",
-    "fullDisplayName": "Luxray 46/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      405
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Luxio",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-046-low.png",
-    "imageHighSrc": "cards/bw4-046-high.png",
-    "attacks": [
-      {
-        "name": "Flash Impact",
-        "damage": "60"
-      },
-      {
-        "name": "Crunch",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2574",
-    "externalId": "bw4-45",
-    "tcgdex_id": "bw4-45",
-    "localId": "045",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "45/99",
-    "cardName": "Luxio",
-    "fullDisplayName": "Luxio 45/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      404
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shinx",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-045-low.png",
-    "imageHighSrc": "cards/bw4-045-high.png",
-    "attacks": [
-      {
-        "name": "Quick Turn",
-        "damage": "20×"
-      },
-      {
-        "name": "Bite",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2573",
-    "externalId": "bw4-44",
-    "tcgdex_id": "bw4-44",
-    "localId": "044",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "44/99",
-    "cardName": "Luxio",
-    "fullDisplayName": "Luxio 44/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      404
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shinx",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-044-low.png",
-    "imageHighSrc": "cards/bw4-044-high.png",
-    "attacks": [
-      {
-        "name": "Jump On",
-        "damage": "20+"
-      },
-      {
-        "name": "Wild Charge",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2572",
-    "externalId": "bw4-43",
-    "tcgdex_id": "bw4-43",
-    "localId": "043",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "43/99",
-    "cardName": "Shinx",
-    "fullDisplayName": "Shinx 43/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      403
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-043-low.png",
-    "imageHighSrc": "cards/bw4-043-high.png",
-    "attacks": [
-      {
-        "name": "Reckless Charge",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2571",
-    "externalId": "bw4-42",
-    "tcgdex_id": "bw4-42",
-    "localId": "042",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "42/99",
-    "cardName": "Shinx",
-    "fullDisplayName": "Shinx 42/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      403
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-042-low.png",
-    "imageHighSrc": "cards/bw4-042-high.png",
-    "attacks": [
-      {
-        "name": "Jump On",
-        "damage": "10+"
-      },
-      {
-        "name": "Static Shock",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2570",
-    "externalId": "bw4-41",
-    "tcgdex_id": "bw4-41",
-    "localId": "041",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "41/99",
-    "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 41/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      145
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-041-low.png",
-    "imageHighSrc": "cards/bw4-041-high.png",
-    "attacks": [
-      {
-        "name": "Random Spark",
-        "damage": null
-      },
-      {
-        "name": "Thundering Hurricane",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2569",
-    "externalId": "bw4-40",
-    "tcgdex_id": "bw4-40",
-    "localId": "040",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "40/99",
-    "cardName": "Raichu",
-    "fullDisplayName": "Raichu 40/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      26
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pikachu",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-040-low.png",
-    "imageHighSrc": "cards/bw4-040-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "20"
-      },
-      {
-        "name": "Slam",
-        "damage": "80×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2568",
-    "externalId": "bw4-39",
-    "tcgdex_id": "bw4-39",
-    "localId": "039",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "39/99",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 39/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-039-low.png",
-    "imageHighSrc": "cards/bw4-039-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "10"
-      },
-      {
-        "name": "Tail Whap",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2567",
-    "externalId": "bw4-38",
-    "tcgdex_id": "bw4-38",
-    "localId": "038",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "38/99",
-    "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 38/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      646
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-038-low.png",
-    "imageHighSrc": "cards/bw4-038-high.png",
-    "attacks": [
-      {
-        "name": "Frozen Wings",
-        "damage": "60"
-      },
-      {
-        "name": "Hail Blizzard",
-        "damage": "120"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2566",
-    "externalId": "bw4-37",
-    "tcgdex_id": "bw4-37",
-    "localId": "037",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "37/99",
-    "cardName": "Beartic",
-    "fullDisplayName": "Beartic 37/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      614
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cubchoo",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-037-low.png",
-    "imageHighSrc": "cards/bw4-037-high.png",
-    "attacks": [
-      {
-        "name": "Daunt",
-        "damage": "40"
-      },
-      {
-        "name": "Ambush",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2565",
-    "externalId": "bw4-36",
-    "tcgdex_id": "bw4-36",
-    "localId": "036",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "36/99",
-    "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 36/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      613
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-036-low.png",
-    "imageHighSrc": "cards/bw4-036-high.png",
-    "attacks": [
-      {
-        "name": "Sniffle",
-        "damage": null
-      },
-      {
-        "name": "Belt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2564",
-    "externalId": "bw4-35",
-    "tcgdex_id": "bw4-35",
-    "localId": "035",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "35/99",
-    "cardName": "Jellicent",
-    "fullDisplayName": "Jellicent 35/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      593
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Frillish",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-035-low.png",
-    "imageHighSrc": "cards/bw4-035-high.png",
-    "attacks": [
-      {
-        "name": "Vengeful Wish",
-        "damage": null
-      },
-      {
-        "name": "Absorb Life",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2563",
-    "externalId": "bw4-34",
-    "tcgdex_id": "bw4-34",
-    "localId": "034",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "34/99",
-    "cardName": "Frillish",
-    "fullDisplayName": "Frillish 34/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      592
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Suwama Chiaki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-034-low.png",
-    "imageHighSrc": "cards/bw4-034-high.png",
-    "attacks": [
-      {
-        "name": "Bubble",
-        "damage": null
-      },
-      {
-        "name": "Spit Poison",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2562",
-    "externalId": "bw4-33",
-    "tcgdex_id": "bw4-33",
-    "localId": "033",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "33/99",
-    "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 33/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      584
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vanillish",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-033-low.png",
-    "imageHighSrc": "cards/bw4-033-high.png",
-    "attacks": [
-      {
-        "name": "Crushing Ice",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2561",
-    "externalId": "bw4-32",
-    "tcgdex_id": "bw4-32",
-    "localId": "032",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "32/99",
-    "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 32/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      583
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vanillite",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-032-low.png",
-    "imageHighSrc": "cards/bw4-032-high.png",
-    "attacks": [
-      {
-        "name": "Icy Snow",
-        "damage": "20"
-      },
-      {
-        "name": "Icy Wind",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2560",
-    "externalId": "bw4-31",
-    "tcgdex_id": "bw4-31",
-    "localId": "031",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "31/99",
-    "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 31/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      582
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-031-low.png",
-    "imageHighSrc": "cards/bw4-031-high.png",
-    "attacks": [
-      {
-        "name": "Beat",
-        "damage": "10"
-      },
-      {
-        "name": "Icy Snow",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2559",
-    "externalId": "bw4-30",
-    "tcgdex_id": "bw4-30",
-    "localId": "030",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "30/99",
-    "cardName": "Basculin",
-    "fullDisplayName": "Basculin 30/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      550
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-030-low.png",
-    "imageHighSrc": "cards/bw4-030-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "10"
-      },
-      {
-        "name": "Bared Fangs",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2558",
-    "externalId": "bw4-29",
-    "tcgdex_id": "bw4-29",
-    "localId": "029",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "29/99",
-    "cardName": "Simipour",
-    "fullDisplayName": "Simipour 29/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      516
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Panpour",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-029-low.png",
-    "imageHighSrc": "cards/bw4-029-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Stadium Wave",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2557",
-    "externalId": "bw4-28",
-    "tcgdex_id": "bw4-28",
-    "localId": "028",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "28/99",
-    "cardName": "Panpour",
-    "fullDisplayName": "Panpour 28/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      515
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Reiko Tanoue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-028-low.png",
-    "imageHighSrc": "cards/bw4-028-high.png",
-    "attacks": [
-      {
-        "name": "Water Gun",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2556",
-    "externalId": "bw4-27",
-    "tcgdex_id": "bw4-27",
-    "localId": "027",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "27/99",
-    "cardName": "Articuno",
-    "fullDisplayName": "Articuno 27/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      144
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-027-low.png",
-    "imageHighSrc": "cards/bw4-027-high.png",
-    "attacks": [
-      {
-        "name": "Ice Beam",
-        "damage": "50"
-      },
-      {
-        "name": "Ice Wing",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2555",
-    "externalId": "bw4-26",
-    "tcgdex_id": "bw4-26",
-    "localId": "026",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "26/99",
-    "cardName": "Lapras",
-    "fullDisplayName": "Lapras 26/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      131
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-026-low.png",
-    "imageHighSrc": "cards/bw4-026-high.png",
-    "attacks": [
-      {
-        "name": "Water Arrow",
-        "damage": null
-      },
-      {
-        "name": "Surf",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2554",
-    "externalId": "bw4-25",
-    "tcgdex_id": "bw4-25",
-    "localId": "025",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "25/99",
-    "cardName": "Lapras",
-    "fullDisplayName": "Lapras 25/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      131
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-025-low.png",
-    "imageHighSrc": "cards/bw4-025-high.png",
-    "attacks": [
-      {
-        "name": "Call for Family",
-        "damage": null
-      },
-      {
-        "name": "Reckless Charge",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2553",
-    "externalId": "bw4-24",
-    "tcgdex_id": "bw4-24",
-    "localId": "024",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "24/99",
-    "cardName": "Starmie",
-    "fullDisplayName": "Starmie 24/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      121
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Staryu",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-024-low.png",
-    "imageHighSrc": "cards/bw4-024-high.png",
-    "attacks": [
-      {
-        "name": "Confuse Ray",
-        "damage": null
-      },
-      {
-        "name": "Swift",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2552",
-    "externalId": "bw4-23",
-    "tcgdex_id": "bw4-23",
-    "localId": "023",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "23/99",
-    "cardName": "Staryu",
-    "fullDisplayName": "Staryu 23/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      120
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-023-low.png",
-    "imageHighSrc": "cards/bw4-023-high.png",
-    "attacks": [
-      {
-        "name": "Recover",
-        "damage": null
-      },
-      {
-        "name": "Water Gun",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2551",
-    "externalId": "bw4-22",
-    "tcgdex_id": "bw4-22",
-    "localId": "022",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "22/99",
-    "cardName": "Reshiram-EX",
-    "fullDisplayName": "Reshiram-EX 22/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      643
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-022-low.png",
-    "imageHighSrc": "cards/bw4-022-high.png",
-    "attacks": [
-      {
-        "name": "Glinting Claw",
-        "damage": "50+"
-      },
-      {
-        "name": "Brave Fire",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2550",
-    "externalId": "bw4-21",
-    "tcgdex_id": "bw4-21",
-    "localId": "021",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "21/99",
-    "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 21/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      643
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-021-low.png",
-    "imageHighSrc": "cards/bw4-021-high.png",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "20+"
-      },
-      {
-        "name": "Blue Flare",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2549",
-    "externalId": "bw4-20",
-    "tcgdex_id": "bw4-20",
-    "localId": "020",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "20/99",
-    "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 20/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      609
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lampent",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-020-low.png",
-    "imageHighSrc": "cards/bw4-020-high.png",
-    "attacks": [
-      {
-        "name": "Flame Burst",
-        "damage": "30"
-      },
-      {
-        "name": "Inferno",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2548",
-    "externalId": "bw4-19",
-    "tcgdex_id": "bw4-19",
-    "localId": "019",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "19/99",
-    "cardName": "Lampent",
-    "fullDisplayName": "Lampent 19/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      608
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Litwick",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-019-low.png",
-    "imageHighSrc": "cards/bw4-019-high.png",
-    "attacks": [
-      {
-        "name": "Ember",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2547",
-    "externalId": "bw4-18",
-    "tcgdex_id": "bw4-18",
-    "localId": "018",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "18/99",
-    "cardName": "Litwick",
-    "fullDisplayName": "Litwick 18/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      607
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-018-low.png",
-    "imageHighSrc": "cards/bw4-018-high.png",
-    "attacks": [
-      {
-        "name": "Flare",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2546",
-    "externalId": "bw4-17",
-    "tcgdex_id": "bw4-17",
-    "localId": "017",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "17/99",
-    "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 17/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      554
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-017-low.png",
-    "imageHighSrc": "cards/bw4-017-high.png",
-    "attacks": [
-      {
-        "name": "Hammer In",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2545",
-    "externalId": "bw4-16",
-    "tcgdex_id": "bw4-16",
-    "localId": "016",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "16/99",
-    "cardName": "Simisear",
-    "fullDisplayName": "Simisear 16/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      514
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pansear",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-016-low.png",
-    "imageHighSrc": "cards/bw4-016-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Stadium Burn",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2544",
-    "externalId": "bw4-15",
-    "tcgdex_id": "bw4-15",
-    "localId": "015",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "15/99",
-    "cardName": "Pansear",
-    "fullDisplayName": "Pansear 15/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      513
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "James Turner",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-015-low.png",
-    "imageHighSrc": "cards/bw4-015-high.png",
-    "attacks": [
-      {
-        "name": "Flare",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2543",
-    "externalId": "bw4-14",
-    "tcgdex_id": "bw4-14",
-    "localId": "014",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "14/99",
-    "cardName": "Moltres",
-    "fullDisplayName": "Moltres 14/99 Next Destinies",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      146
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-014-low.png",
-    "imageHighSrc": "cards/bw4-014-high.png",
-    "attacks": [
-      {
-        "name": "Searing Flame",
-        "damage": "50"
-      },
-      {
-        "name": "Fire Blast",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2542",
-    "externalId": "bw4-13",
-    "tcgdex_id": "bw4-13",
-    "localId": "013",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "13/99",
-    "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 13/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      59
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Growlithe",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-013-low.png",
-    "imageHighSrc": "cards/bw4-013-high.png",
-    "attacks": [
-      {
-        "name": "Crunch",
-        "damage": "30"
-      },
-      {
-        "name": "Heat Blast",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2541",
-    "externalId": "bw4-12",
-    "tcgdex_id": "bw4-12",
-    "localId": "012",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "12/99",
-    "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 12/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      59
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Growlithe",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-012-low.png",
-    "imageHighSrc": "cards/bw4-012-high.png",
-    "attacks": [
-      {
-        "name": "Fire Spin",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2540",
-    "externalId": "bw4-11",
-    "tcgdex_id": "bw4-11",
-    "localId": "011",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "11/99",
-    "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 11/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      58
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-011-low.png",
-    "imageHighSrc": "cards/bw4-011-high.png",
-    "attacks": [
-      {
-        "name": "Combustion",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2539",
-    "externalId": "bw4-10",
-    "tcgdex_id": "bw4-10",
-    "localId": "010",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "10/99",
-    "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 10/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      58
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-010-low.png",
-    "imageHighSrc": "cards/bw4-010-high.png",
-    "attacks": [
-      {
-        "name": "Stoke",
-        "damage": null
-      },
-      {
-        "name": "Firebreathing",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2538",
-    "externalId": "bw4-9",
-    "tcgdex_id": "bw4-9",
-    "localId": "009",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "9/99",
-    "cardName": "Amoonguss",
-    "fullDisplayName": "Amoonguss 9/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      591
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Foongus",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-009-low.png",
-    "imageHighSrc": "cards/bw4-009-high.png",
-    "attacks": [
-      {
-        "name": "Rising Lunge",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2537",
-    "externalId": "bw4-8",
-    "tcgdex_id": "bw4-8",
-    "localId": "008",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "8/99",
-    "cardName": "Foongus",
-    "fullDisplayName": "Foongus 8/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      590
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-008-low.png",
-    "imageHighSrc": "cards/bw4-008-high.png",
-    "attacks": [
-      {
-        "name": "Find a Friend",
-        "damage": null
-      },
-      {
-        "name": "Rising Lunge",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2536",
-    "externalId": "bw4-7",
-    "tcgdex_id": "bw4-7",
-    "localId": "007",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "7/99",
-    "cardName": "Simisage",
-    "fullDisplayName": "Simisage 7/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      512
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pansage",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-007-low.png",
-    "imageHighSrc": "cards/bw4-007-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Stadium Drain",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2535",
-    "externalId": "bw4-6",
-    "tcgdex_id": "bw4-6",
-    "localId": "006",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "6/99",
-    "cardName": "Pansage",
-    "fullDisplayName": "Pansage 6/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      511
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Megumi Mizutani",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-006-low.png",
-    "imageHighSrc": "cards/bw4-006-high.png",
-    "attacks": [
-      {
-        "name": "Seed Bomb",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2534",
-    "externalId": "bw4-5",
-    "tcgdex_id": "bw4-5",
-    "localId": "005",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "5/99",
-    "cardName": "Shaymin-EX",
-    "fullDisplayName": "Shaymin-EX 5/99 Next Destinies",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      492
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw4-005-low.png",
-    "imageHighSrc": "cards/bw4-005-high.png",
-    "attacks": [
-      {
-        "name": "Synthesis",
-        "damage": null
-      },
-      {
-        "name": "Revenge Blast",
-        "damage": "30+"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2533",
-    "externalId": "bw4-4",
-    "tcgdex_id": "bw4-4",
-    "localId": "004",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "4/99",
-    "cardName": "Kricketune",
-    "fullDisplayName": "Kricketune 4/99 Next Destinies",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      402
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Kricketot",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-004-low.png",
-    "imageHighSrc": "cards/bw4-004-high.png",
-    "attacks": [
-      {
-        "name": "White Noise",
-        "damage": "20"
-      },
-      {
-        "name": "Draining Cut",
-        "damage": "40×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2532",
-    "externalId": "bw4-3",
-    "tcgdex_id": "bw4-3",
-    "localId": "003",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "3/99",
-    "cardName": "Kricketot",
-    "fullDisplayName": "Kricketot 3/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      401
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-003-low.png",
-    "imageHighSrc": "cards/bw4-003-high.png",
-    "attacks": [
-      {
-        "name": "Beat",
-        "damage": "10"
-      },
-      {
-        "name": "Double Headbutt",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2531",
-    "externalId": "bw4-2",
-    "tcgdex_id": "bw4-2",
-    "localId": "002",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "2/99",
-    "cardName": "Seedot",
-    "fullDisplayName": "Seedot 2/99 Next Destinies",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      273
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-002-low.png",
-    "imageHighSrc": "cards/bw4-002-high.png",
-    "attacks": [
-      {
-        "name": "Trip Over",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2530",
-    "externalId": "bw4-1",
-    "tcgdex_id": "bw4-1",
-    "localId": "001",
-    "setCode": "bw4",
-    "setTcgdexId": "bw4",
-    "cardNumber": "1/99",
-    "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 1/99 Next Destinies",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      127
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw4-001-low.png",
-    "imageHighSrc": "cards/bw4-001-high.png",
-    "attacks": [
-      {
-        "name": "Power Pinch",
-        "damage": null
-      },
-      {
-        "name": "Grip and Squeeze",
-        "damage": "70"
-      }
-    ]
-  }
+    {
+        "masterCardId": "2632",
+        "externalId": "bw4-103",
+        "localId": "103",
+        "setCode": "bw4",
+        "cardNumber": "103/99",
+        "cardName": "Hydreigon",
+        "fullDisplayName": "Hydreigon 103/99 Next Destinies",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            635
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-103-low.png",
+        "imageHighSrc": "cards/bw4-103-high.png",
+        "attacks": [
+            {
+                "name": "Berserker Blade",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2631",
+        "externalId": "bw4-102",
+        "localId": "102",
+        "setCode": "bw4",
+        "cardNumber": "102/99",
+        "cardName": "Zoroark",
+        "fullDisplayName": "Zoroark 102/99 Next Destinies",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            571
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-102-low.png",
+        "imageHighSrc": "cards/bw4-102-high.png",
+        "attacks": [
+            {
+                "name": "Nasty Plot",
+                "damage": null
+            },
+            {
+                "name": "Foul Play",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2630",
+        "externalId": "bw4-101",
+        "localId": "101",
+        "setCode": "bw4",
+        "cardNumber": "101/99",
+        "cardName": "Chandelure",
+        "fullDisplayName": "Chandelure 101/99 Next Destinies",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            609
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-101-low.png",
+        "imageHighSrc": "cards/bw4-101-high.png",
+        "attacks": [
+            {
+                "name": "Eerie Glow",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2629",
+        "externalId": "bw4-100",
+        "localId": "100",
+        "setCode": "bw4",
+        "cardNumber": "100/99",
+        "cardName": "Emboar",
+        "fullDisplayName": "Emboar 100/99 Next Destinies",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            500
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-100-low.png",
+        "imageHighSrc": "cards/bw4-100-high.png",
+        "attacks": [
+            {
+                "name": "Heat Crash",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2628",
+        "externalId": "bw4-99",
+        "localId": "099",
+        "setCode": "bw4",
+        "cardNumber": "99/99",
+        "cardName": "Regigigas-EX",
+        "fullDisplayName": "Regigigas-EX 99/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            486
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-099-low.png",
+        "imageHighSrc": "cards/bw4-099-high.png",
+        "attacks": [
+            {
+                "name": "Giga Power",
+                "damage": "60+"
+            },
+            {
+                "name": "Raging Hammer",
+                "damage": "50+"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2627",
+        "externalId": "bw4-98",
+        "localId": "098",
+        "setCode": "bw4",
+        "cardNumber": "98/99",
+        "cardName": "Mewtwo-EX",
+        "fullDisplayName": "Mewtwo-EX 98/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-098-low.png",
+        "imageHighSrc": "cards/bw4-098-high.png",
+        "attacks": [
+            {
+                "name": "X Ball",
+                "damage": "20×"
+            },
+            {
+                "name": "Psydrive",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2626",
+        "externalId": "bw4-97",
+        "localId": "097",
+        "setCode": "bw4",
+        "cardNumber": "97/99",
+        "cardName": "Zekrom-EX",
+        "fullDisplayName": "Zekrom-EX 97/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            644
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-097-low.png",
+        "imageHighSrc": "cards/bw4-097-high.png",
+        "attacks": [
+            {
+                "name": "Glinting Claw",
+                "damage": "50+"
+            },
+            {
+                "name": "Strong Volt",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2625",
+        "externalId": "bw4-96",
+        "localId": "096",
+        "setCode": "bw4",
+        "cardNumber": "96/99",
+        "cardName": "Kyurem-EX",
+        "fullDisplayName": "Kyurem-EX 96/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            646
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-096-low.png",
+        "imageHighSrc": "cards/bw4-096-high.png",
+        "attacks": [
+            {
+                "name": "Frozen Wings",
+                "damage": "60"
+            },
+            {
+                "name": "Hail Blizzard",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2624",
+        "externalId": "bw4-95",
+        "localId": "095",
+        "setCode": "bw4",
+        "cardNumber": "95/99",
+        "cardName": "Reshiram-EX",
+        "fullDisplayName": "Reshiram-EX 95/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            643
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-095-low.png",
+        "imageHighSrc": "cards/bw4-095-high.png",
+        "attacks": [
+            {
+                "name": "Glinting Claw",
+                "damage": "50+"
+            },
+            {
+                "name": "Brave Fire",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2623",
+        "externalId": "bw4-94",
+        "localId": "094",
+        "setCode": "bw4",
+        "cardNumber": "94/99",
+        "cardName": "Shaymin-EX",
+        "fullDisplayName": "Shaymin-EX 94/99 Next Destinies",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            492
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-094-low.png",
+        "imageHighSrc": "cards/bw4-094-high.png",
+        "attacks": [
+            {
+                "name": "Synthesis",
+                "damage": null
+            },
+            {
+                "name": "Revenge Blast",
+                "damage": "30+"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2622",
+        "externalId": "bw4-93",
+        "localId": "093",
+        "setCode": "bw4",
+        "cardNumber": "93/99",
+        "cardName": "Prism Energy",
+        "fullDisplayName": "Prism Energy 93/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-093-low.png",
+        "imageHighSrc": "cards/bw4-093-high.png",
+        "rules": "This card provides Colorless Energy.\n\nIf the Pokémon this card is attached to is a Basic Pokémon, this card provides every type of Energy but provides only 1 Energy at a time."
+    },
+    {
+        "masterCardId": "2621",
+        "externalId": "bw4-92",
+        "localId": "092",
+        "setCode": "bw4",
+        "cardNumber": "92/99",
+        "cardName": "Double Colorless Energy",
+        "fullDisplayName": "Double Colorless Energy 92/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-092-low.png",
+        "imageHighSrc": "cards/bw4-092-high.png",
+        "rules": "Double Colorless Energy provides ColorlessColorless Energy."
+    },
+    {
+        "masterCardId": "2620",
+        "externalId": "bw4-91",
+        "localId": "091",
+        "setCode": "bw4",
+        "cardNumber": "91/99",
+        "cardName": "Skyarrow Bridge",
+        "fullDisplayName": "Skyarrow Bridge 91/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-091-low.png",
+        "imageHighSrc": "cards/bw4-091-high.png",
+        "rules": "The Retreat Cost of each Basic Pokémon is play is Colorless less.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "2619",
+        "externalId": "bw4-90",
+        "localId": "090",
+        "setCode": "bw4",
+        "cardNumber": "90/99",
+        "cardName": "Pokémon Center",
+        "fullDisplayName": "Pokémon Center 90/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-090-low.png",
+        "imageHighSrc": "cards/bw4-090-high.png",
+        "rules": "Once during each player's turn, that player may heal 20 damage from 1 of his or her Benched Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "2618",
+        "externalId": "bw4-89",
+        "localId": "089",
+        "setCode": "bw4",
+        "cardNumber": "89/99",
+        "cardName": "Level Ball",
+        "fullDisplayName": "Level Ball 89/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-089-low.png",
+        "imageHighSrc": "cards/bw4-089-high.png",
+        "rules": "Search your deck for a Pokémon with 90 HP or less, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2617",
+        "externalId": "bw4-88",
+        "localId": "088",
+        "setCode": "bw4",
+        "cardNumber": "88/99",
+        "cardName": "Heavy Ball",
+        "fullDisplayName": "Heavy Ball 88/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-088-low.png",
+        "imageHighSrc": "cards/bw4-088-high.png",
+        "rules": "Search your deck for a Pokémon with a Retreat Cost of 3 or more, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2616",
+        "externalId": "bw4-87",
+        "localId": "087",
+        "setCode": "bw4",
+        "cardNumber": "87/99",
+        "cardName": "Exp. Share",
+        "fullDisplayName": "Exp. Share 87/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-087-low.png",
+        "imageHighSrc": "cards/bw4-087-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card that was attached to that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2615",
+        "externalId": "bw4-86",
+        "localId": "086",
+        "setCode": "bw4",
+        "cardNumber": "86/99",
+        "cardName": "Cilan",
+        "fullDisplayName": "Cilan 86/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/bw4-086-low.png",
+        "imageHighSrc": "cards/bw4-086-high.png",
+        "rules": "Search your deck for up to 3 basic Energy cards, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2614",
+        "externalId": "bw4-85",
+        "localId": "085",
+        "setCode": "bw4",
+        "cardNumber": "85/99",
+        "cardName": "Cinccino",
+        "fullDisplayName": "Cinccino 85/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            573
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/bw4-085-low.png",
+        "imageHighSrc": "cards/bw4-085-high.png",
+        "attacks": [
+            {
+                "name": "Echoed Voice",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2613",
+        "externalId": "bw4-84",
+        "localId": "084",
+        "setCode": "bw4",
+        "cardNumber": "84/99",
+        "cardName": "Minccino",
+        "fullDisplayName": "Minccino 84/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            572
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomohiro Kitakaze",
+        "imageLowSrc": "cards/bw4-084-low.png",
+        "imageHighSrc": "cards/bw4-084-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Tail Smack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2612",
+        "externalId": "bw4-83",
+        "localId": "083",
+        "setCode": "bw4",
+        "cardNumber": "83/99",
+        "cardName": "Pidove",
+        "fullDisplayName": "Pidove 83/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            519
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw4-083-low.png",
+        "imageHighSrc": "cards/bw4-083-high.png",
+        "attacks": [
+            {
+                "name": "Scout",
+                "damage": null
+            },
+            {
+                "name": "Gust",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2611",
+        "externalId": "bw4-82",
+        "localId": "082",
+        "setCode": "bw4",
+        "cardNumber": "82/99",
+        "cardName": "Regigigas-EX",
+        "fullDisplayName": "Regigigas-EX 82/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            486
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-082-low.png",
+        "imageHighSrc": "cards/bw4-082-high.png",
+        "attacks": [
+            {
+                "name": "Giga Power",
+                "damage": "60+"
+            },
+            {
+                "name": "Raging Hammer",
+                "damage": "50+"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2610",
+        "externalId": "bw4-81",
+        "localId": "081",
+        "setCode": "bw4",
+        "cardNumber": "81/99",
+        "cardName": "Persian",
+        "fullDisplayName": "Persian 81/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            53
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw4-081-low.png",
+        "imageHighSrc": "cards/bw4-081-high.png",
+        "attacks": [
+            {
+                "name": "Nasty Plot",
+                "damage": null
+            },
+            {
+                "name": "Shadow Claw",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2609",
+        "externalId": "bw4-80",
+        "localId": "080",
+        "setCode": "bw4",
+        "cardNumber": "80/99",
+        "cardName": "Meowth",
+        "fullDisplayName": "Meowth 80/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            52
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-080-low.png",
+        "imageHighSrc": "cards/bw4-080-high.png",
+        "attacks": [
+            {
+                "name": "Double Scratch",
+                "damage": "10×"
+            },
+            {
+                "name": "Cat Kick",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2608",
+        "externalId": "bw4-79",
+        "localId": "079",
+        "setCode": "bw4",
+        "cardNumber": "79/99",
+        "cardName": "Wigglytuff",
+        "fullDisplayName": "Wigglytuff 79/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            40
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw4-079-low.png",
+        "imageHighSrc": "cards/bw4-079-high.png",
+        "attacks": [
+            {
+                "name": "Round",
+                "damage": "20×"
+            },
+            {
+                "name": "Hypnoblast",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2607",
+        "externalId": "bw4-78",
+        "localId": "078",
+        "setCode": "bw4",
+        "cardNumber": "78/99",
+        "cardName": "Jigglypuff",
+        "fullDisplayName": "Jigglypuff 78/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            39
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw4-078-low.png",
+        "imageHighSrc": "cards/bw4-078-high.png",
+        "attacks": [
+            {
+                "name": "Sing",
+                "damage": null
+            },
+            {
+                "name": "Double Slap",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2606",
+        "externalId": "bw4-77",
+        "localId": "077",
+        "setCode": "bw4",
+        "cardNumber": "77/99",
+        "cardName": "Ferroseed",
+        "fullDisplayName": "Ferroseed 77/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            597
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw4-077-low.png",
+        "imageHighSrc": "cards/bw4-077-high.png",
+        "attacks": [
+            {
+                "name": "Self Destruct",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2605",
+        "externalId": "bw4-76",
+        "localId": "076",
+        "setCode": "bw4",
+        "cardNumber": "76/99",
+        "cardName": "Bronzong",
+        "fullDisplayName": "Bronzong 76/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            437
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-076-low.png",
+        "imageHighSrc": "cards/bw4-076-high.png",
+        "attacks": [
+            {
+                "name": "Oracle Inflict",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2604",
+        "externalId": "bw4-75",
+        "localId": "075",
+        "setCode": "bw4",
+        "cardNumber": "75/99",
+        "cardName": "Bronzor",
+        "fullDisplayName": "Bronzor 75/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            436
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-075-low.png",
+        "imageHighSrc": "cards/bw4-075-high.png",
+        "attacks": [
+            {
+                "name": "Knock Away",
+                "damage": "10+"
+            },
+            {
+                "name": "Spinning Attack",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2603",
+        "externalId": "bw4-74",
+        "localId": "074",
+        "setCode": "bw4",
+        "cardNumber": "74/99",
+        "cardName": "Scrafty",
+        "fullDisplayName": "Scrafty 74/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            560
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-074-low.png",
+        "imageHighSrc": "cards/bw4-074-high.png",
+        "attacks": [
+            {
+                "name": "Rock Head",
+                "damage": "20"
+            },
+            {
+                "name": "Hammer Kick",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2602",
+        "externalId": "bw4-73",
+        "localId": "073",
+        "setCode": "bw4",
+        "cardNumber": "73/99",
+        "cardName": "Scraggy",
+        "fullDisplayName": "Scraggy 73/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            559
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw4-073-low.png",
+        "imageHighSrc": "cards/bw4-073-high.png",
+        "attacks": [
+            {
+                "name": "Shed Skin",
+                "damage": null
+            },
+            {
+                "name": "Lunge",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2601",
+        "externalId": "bw4-72",
+        "localId": "072",
+        "setCode": "bw4",
+        "cardNumber": "72/99",
+        "cardName": "Shiftry",
+        "fullDisplayName": "Shiftry 72/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            275
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw4-072-low.png",
+        "imageHighSrc": "cards/bw4-072-high.png",
+        "attacks": [
+            {
+                "name": "Whirlwind",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2600",
+        "externalId": "bw4-71",
+        "localId": "071",
+        "setCode": "bw4",
+        "cardNumber": "71/99",
+        "cardName": "Nuzleaf",
+        "fullDisplayName": "Nuzleaf 71/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            274
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw4-071-low.png",
+        "imageHighSrc": "cards/bw4-071-high.png",
+        "attacks": [
+            {
+                "name": "Surprise Punch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2599",
+        "externalId": "bw4-70",
+        "localId": "070",
+        "setCode": "bw4",
+        "cardNumber": "70/99",
+        "cardName": "Weavile",
+        "fullDisplayName": "Weavile 70/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            461
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw4-070-low.png",
+        "imageHighSrc": "cards/bw4-070-high.png",
+        "attacks": [
+            {
+                "name": "Dark Penalty",
+                "damage": "90"
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2598",
+        "externalId": "bw4-69",
+        "localId": "069",
+        "setCode": "bw4",
+        "cardNumber": "69/99",
+        "cardName": "Sneasel",
+        "fullDisplayName": "Sneasel 69/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            215
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw4-069-low.png",
+        "imageHighSrc": "cards/bw4-069-high.png",
+        "attacks": [
+            {
+                "name": "Corner",
+                "damage": "10"
+            },
+            {
+                "name": "Scratch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2597",
+        "externalId": "bw4-68",
+        "localId": "068",
+        "setCode": "bw4",
+        "cardNumber": "68/99",
+        "cardName": "Mienshao",
+        "fullDisplayName": "Mienshao 68/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            620
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Suwama Chiaki",
+        "imageLowSrc": "cards/bw4-068-low.png",
+        "imageHighSrc": "cards/bw4-068-high.png",
+        "attacks": [
+            {
+                "name": "Haul In",
+                "damage": null
+            },
+            {
+                "name": "Meditate",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2596",
+        "externalId": "bw4-67",
+        "localId": "067",
+        "setCode": "bw4",
+        "cardNumber": "67/99",
+        "cardName": "Mienfoo",
+        "fullDisplayName": "Mienfoo 67/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            619
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw4-067-low.png",
+        "imageHighSrc": "cards/bw4-067-high.png",
+        "attacks": [
+            {
+                "name": "Triple Smash",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2595",
+        "externalId": "bw4-66",
+        "localId": "066",
+        "setCode": "bw4",
+        "cardNumber": "66/99",
+        "cardName": "Hippowdon",
+        "fullDisplayName": "Hippowdon 66/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            450
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-066-low.png",
+        "imageHighSrc": "cards/bw4-066-high.png",
+        "attacks": [
+            {
+                "name": "Sand Bazooka",
+                "damage": "70"
+            },
+            {
+                "name": "Rock Tumble",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2594",
+        "externalId": "bw4-65",
+        "localId": "065",
+        "setCode": "bw4",
+        "cardNumber": "65/99",
+        "cardName": "Hippopotas",
+        "fullDisplayName": "Hippopotas 65/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            449
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw4-065-low.png",
+        "imageHighSrc": "cards/bw4-065-high.png",
+        "attacks": [
+            {
+                "name": "Sand Jet",
+                "damage": null
+            },
+            {
+                "name": "Bite",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2593",
+        "externalId": "bw4-64",
+        "localId": "064",
+        "setCode": "bw4",
+        "cardNumber": "64/99",
+        "cardName": "Lucario",
+        "fullDisplayName": "Lucario 64/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            448
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-064-low.png",
+        "imageHighSrc": "cards/bw4-064-high.png",
+        "attacks": [
+            {
+                "name": "Aura Sphere",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2592",
+        "externalId": "bw4-63",
+        "localId": "063",
+        "setCode": "bw4",
+        "cardNumber": "63/99",
+        "cardName": "Riolu",
+        "fullDisplayName": "Riolu 63/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            447
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw4-063-low.png",
+        "imageHighSrc": "cards/bw4-063-high.png",
+        "attacks": [
+            {
+                "name": "Punch",
+                "damage": "10"
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2591",
+        "externalId": "bw4-62",
+        "localId": "062",
+        "setCode": "bw4",
+        "cardNumber": "62/99",
+        "cardName": "Beheeyem",
+        "fullDisplayName": "Beheeyem 62/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            606
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-062-low.png",
+        "imageHighSrc": "cards/bw4-062-high.png",
+        "attacks": [
+            {
+                "name": "Brain Control",
+                "damage": null
+            },
+            {
+                "name": "Psybeam",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2590",
+        "externalId": "bw4-61",
+        "localId": "061",
+        "setCode": "bw4",
+        "cardNumber": "61/99",
+        "cardName": "Elgyem",
+        "fullDisplayName": "Elgyem 61/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            605
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw4-061-low.png",
+        "imageHighSrc": "cards/bw4-061-high.png",
+        "attacks": [
+            {
+                "name": "Psy Bolt",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2589",
+        "externalId": "bw4-60",
+        "localId": "060",
+        "setCode": "bw4",
+        "cardNumber": "60/99",
+        "cardName": "Darmanitan",
+        "fullDisplayName": "Darmanitan 60/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            555
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw4-060-low.png",
+        "imageHighSrc": "cards/bw4-060-high.png",
+        "attacks": [
+            {
+                "name": "Synchrodraw",
+                "damage": null
+            },
+            {
+                "name": "DarMAXitan",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2588",
+        "externalId": "bw4-59",
+        "localId": "059",
+        "setCode": "bw4",
+        "cardNumber": "59/99",
+        "cardName": "Musharna",
+        "fullDisplayName": "Musharna 59/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            518
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Maiko Fujiwara",
+        "imageLowSrc": "cards/bw4-059-low.png",
+        "imageHighSrc": "cards/bw4-059-high.png",
+        "attacks": [
+            {
+                "name": "Fluffy Dream",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2587",
+        "externalId": "bw4-58",
+        "localId": "058",
+        "setCode": "bw4",
+        "cardNumber": "58/99",
+        "cardName": "Munna",
+        "fullDisplayName": "Munna 58/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            517
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw4-058-low.png",
+        "imageHighSrc": "cards/bw4-058-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2586",
+        "externalId": "bw4-57",
+        "localId": "057",
+        "setCode": "bw4",
+        "cardNumber": "57/99",
+        "cardName": "Gardevoir",
+        "fullDisplayName": "Gardevoir 57/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            282
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw4-057-low.png",
+        "imageHighSrc": "cards/bw4-057-high.png",
+        "attacks": [
+            {
+                "name": "Mind Shock",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2585",
+        "externalId": "bw4-56",
+        "localId": "056",
+        "setCode": "bw4",
+        "cardNumber": "56/99",
+        "cardName": "Kirlia",
+        "fullDisplayName": "Kirlia 56/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            281
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw4-056-low.png",
+        "imageHighSrc": "cards/bw4-056-high.png",
+        "attacks": [
+            {
+                "name": "Smack",
+                "damage": "20"
+            },
+            {
+                "name": "Psychic",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2584",
+        "externalId": "bw4-55",
+        "localId": "055",
+        "setCode": "bw4",
+        "cardNumber": "55/99",
+        "cardName": "Ralts",
+        "fullDisplayName": "Ralts 55/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            280
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw4-055-low.png",
+        "imageHighSrc": "cards/bw4-055-high.png",
+        "attacks": [
+            {
+                "name": "Psyshot",
+                "damage": "10"
+            },
+            {
+                "name": "Smack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2583",
+        "externalId": "bw4-54",
+        "localId": "054",
+        "setCode": "bw4",
+        "cardNumber": "54/99",
+        "cardName": "Mewtwo-EX",
+        "fullDisplayName": "Mewtwo-EX 54/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-054-low.png",
+        "imageHighSrc": "cards/bw4-054-high.png",
+        "attacks": [
+            {
+                "name": "X Ball",
+                "damage": "20×"
+            },
+            {
+                "name": "Psydrive",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2582",
+        "externalId": "bw4-53",
+        "localId": "053",
+        "setCode": "bw4",
+        "cardNumber": "53/99",
+        "cardName": "Muk",
+        "fullDisplayName": "Muk 53/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            89
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw4-053-low.png",
+        "imageHighSrc": "cards/bw4-053-high.png",
+        "attacks": [
+            {
+                "name": "Gentle Wrap",
+                "damage": "20"
+            },
+            {
+                "name": "Toxic Secretion",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2581",
+        "externalId": "bw4-52",
+        "localId": "052",
+        "setCode": "bw4",
+        "cardNumber": "52/99",
+        "cardName": "Grimer",
+        "fullDisplayName": "Grimer 52/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            88
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw4-052-low.png",
+        "imageHighSrc": "cards/bw4-052-high.png",
+        "attacks": [
+            {
+                "name": "Nasty Goo",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2580",
+        "externalId": "bw4-51",
+        "localId": "051",
+        "setCode": "bw4",
+        "cardNumber": "51/99",
+        "cardName": "Zekrom-EX",
+        "fullDisplayName": "Zekrom-EX 51/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            644
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-051-low.png",
+        "imageHighSrc": "cards/bw4-051-high.png",
+        "attacks": [
+            {
+                "name": "Glinting Claw",
+                "damage": "50+"
+            },
+            {
+                "name": "Strong Volt",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2579",
+        "externalId": "bw4-50",
+        "localId": "050",
+        "setCode": "bw4",
+        "cardNumber": "50/99",
+        "cardName": "Zekrom",
+        "fullDisplayName": "Zekrom 50/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            644
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-050-low.png",
+        "imageHighSrc": "cards/bw4-050-high.png",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "20+"
+            },
+            {
+                "name": "Bolt Strike",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2578",
+        "externalId": "bw4-49",
+        "localId": "049",
+        "setCode": "bw4",
+        "cardNumber": "49/99",
+        "cardName": "Emolga",
+        "fullDisplayName": "Emolga 49/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            587
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw4-049-low.png",
+        "imageHighSrc": "cards/bw4-049-high.png",
+        "attacks": [
+            {
+                "name": "Bounce",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2577",
+        "externalId": "bw4-48",
+        "localId": "048",
+        "setCode": "bw4",
+        "cardNumber": "48/99",
+        "cardName": "Zebstrika",
+        "fullDisplayName": "Zebstrika 48/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            523
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-048-low.png",
+        "imageHighSrc": "cards/bw4-048-high.png",
+        "attacks": [
+            {
+                "name": "Disconnect",
+                "damage": "40"
+            },
+            {
+                "name": "Lightning Crash",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2576",
+        "externalId": "bw4-47",
+        "localId": "047",
+        "setCode": "bw4",
+        "cardNumber": "47/99",
+        "cardName": "Blitzle",
+        "fullDisplayName": "Blitzle 47/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            522
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw4-047-low.png",
+        "imageHighSrc": "cards/bw4-047-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Jolt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2575",
+        "externalId": "bw4-46",
+        "localId": "046",
+        "setCode": "bw4",
+        "cardNumber": "46/99",
+        "cardName": "Luxray",
+        "fullDisplayName": "Luxray 46/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            405
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw4-046-low.png",
+        "imageHighSrc": "cards/bw4-046-high.png",
+        "attacks": [
+            {
+                "name": "Flash Impact",
+                "damage": "60"
+            },
+            {
+                "name": "Crunch",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2574",
+        "externalId": "bw4-45",
+        "localId": "045",
+        "setCode": "bw4",
+        "cardNumber": "45/99",
+        "cardName": "Luxio",
+        "fullDisplayName": "Luxio 45/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            404
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-045-low.png",
+        "imageHighSrc": "cards/bw4-045-high.png",
+        "attacks": [
+            {
+                "name": "Quick Turn",
+                "damage": "20×"
+            },
+            {
+                "name": "Bite",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2573",
+        "externalId": "bw4-44",
+        "localId": "044",
+        "setCode": "bw4",
+        "cardNumber": "44/99",
+        "cardName": "Luxio",
+        "fullDisplayName": "Luxio 44/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            404
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-044-low.png",
+        "imageHighSrc": "cards/bw4-044-high.png",
+        "attacks": [
+            {
+                "name": "Jump On",
+                "damage": "20+"
+            },
+            {
+                "name": "Wild Charge",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2572",
+        "externalId": "bw4-43",
+        "localId": "043",
+        "setCode": "bw4",
+        "cardNumber": "43/99",
+        "cardName": "Shinx",
+        "fullDisplayName": "Shinx 43/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            403
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-043-low.png",
+        "imageHighSrc": "cards/bw4-043-high.png",
+        "attacks": [
+            {
+                "name": "Reckless Charge",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2571",
+        "externalId": "bw4-42",
+        "localId": "042",
+        "setCode": "bw4",
+        "cardNumber": "42/99",
+        "cardName": "Shinx",
+        "fullDisplayName": "Shinx 42/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            403
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw4-042-low.png",
+        "imageHighSrc": "cards/bw4-042-high.png",
+        "attacks": [
+            {
+                "name": "Jump On",
+                "damage": "10+"
+            },
+            {
+                "name": "Static Shock",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2570",
+        "externalId": "bw4-41",
+        "localId": "041",
+        "setCode": "bw4",
+        "cardNumber": "41/99",
+        "cardName": "Zapdos",
+        "fullDisplayName": "Zapdos 41/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-041-low.png",
+        "imageHighSrc": "cards/bw4-041-high.png",
+        "attacks": [
+            {
+                "name": "Random Spark",
+                "damage": null
+            },
+            {
+                "name": "Thundering Hurricane",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2569",
+        "externalId": "bw4-40",
+        "localId": "040",
+        "setCode": "bw4",
+        "cardNumber": "40/99",
+        "cardName": "Raichu",
+        "fullDisplayName": "Raichu 40/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            26
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw4-040-low.png",
+        "imageHighSrc": "cards/bw4-040-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "20"
+            },
+            {
+                "name": "Slam",
+                "damage": "80×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2568",
+        "externalId": "bw4-39",
+        "localId": "039",
+        "setCode": "bw4",
+        "cardNumber": "39/99",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 39/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw4-039-low.png",
+        "imageHighSrc": "cards/bw4-039-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "10"
+            },
+            {
+                "name": "Tail Whap",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2567",
+        "externalId": "bw4-38",
+        "localId": "038",
+        "setCode": "bw4",
+        "cardNumber": "38/99",
+        "cardName": "Kyurem-EX",
+        "fullDisplayName": "Kyurem-EX 38/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            646
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-038-low.png",
+        "imageHighSrc": "cards/bw4-038-high.png",
+        "attacks": [
+            {
+                "name": "Frozen Wings",
+                "damage": "60"
+            },
+            {
+                "name": "Hail Blizzard",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2566",
+        "externalId": "bw4-37",
+        "localId": "037",
+        "setCode": "bw4",
+        "cardNumber": "37/99",
+        "cardName": "Beartic",
+        "fullDisplayName": "Beartic 37/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            614
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw4-037-low.png",
+        "imageHighSrc": "cards/bw4-037-high.png",
+        "attacks": [
+            {
+                "name": "Daunt",
+                "damage": "40"
+            },
+            {
+                "name": "Ambush",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2565",
+        "externalId": "bw4-36",
+        "localId": "036",
+        "setCode": "bw4",
+        "cardNumber": "36/99",
+        "cardName": "Cubchoo",
+        "fullDisplayName": "Cubchoo 36/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            613
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw4-036-low.png",
+        "imageHighSrc": "cards/bw4-036-high.png",
+        "attacks": [
+            {
+                "name": "Sniffle",
+                "damage": null
+            },
+            {
+                "name": "Belt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2564",
+        "externalId": "bw4-35",
+        "localId": "035",
+        "setCode": "bw4",
+        "cardNumber": "35/99",
+        "cardName": "Jellicent",
+        "fullDisplayName": "Jellicent 35/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            593
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw4-035-low.png",
+        "imageHighSrc": "cards/bw4-035-high.png",
+        "attacks": [
+            {
+                "name": "Vengeful Wish",
+                "damage": null
+            },
+            {
+                "name": "Absorb Life",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2563",
+        "externalId": "bw4-34",
+        "localId": "034",
+        "setCode": "bw4",
+        "cardNumber": "34/99",
+        "cardName": "Frillish",
+        "fullDisplayName": "Frillish 34/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            592
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Suwama Chiaki",
+        "imageLowSrc": "cards/bw4-034-low.png",
+        "imageHighSrc": "cards/bw4-034-high.png",
+        "attacks": [
+            {
+                "name": "Bubble",
+                "damage": null
+            },
+            {
+                "name": "Spit Poison",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2562",
+        "externalId": "bw4-33",
+        "localId": "033",
+        "setCode": "bw4",
+        "cardNumber": "33/99",
+        "cardName": "Vanilluxe",
+        "fullDisplayName": "Vanilluxe 33/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            584
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw4-033-low.png",
+        "imageHighSrc": "cards/bw4-033-high.png",
+        "attacks": [
+            {
+                "name": "Crushing Ice",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2561",
+        "externalId": "bw4-32",
+        "localId": "032",
+        "setCode": "bw4",
+        "cardNumber": "32/99",
+        "cardName": "Vanillish",
+        "fullDisplayName": "Vanillish 32/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            583
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw4-032-low.png",
+        "imageHighSrc": "cards/bw4-032-high.png",
+        "attacks": [
+            {
+                "name": "Icy Snow",
+                "damage": "20"
+            },
+            {
+                "name": "Icy Wind",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2560",
+        "externalId": "bw4-31",
+        "localId": "031",
+        "setCode": "bw4",
+        "cardNumber": "31/99",
+        "cardName": "Vanillite",
+        "fullDisplayName": "Vanillite 31/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            582
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/bw4-031-low.png",
+        "imageHighSrc": "cards/bw4-031-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "10"
+            },
+            {
+                "name": "Icy Snow",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2559",
+        "externalId": "bw4-30",
+        "localId": "030",
+        "setCode": "bw4",
+        "cardNumber": "30/99",
+        "cardName": "Basculin",
+        "fullDisplayName": "Basculin 30/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            550
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw4-030-low.png",
+        "imageHighSrc": "cards/bw4-030-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "10"
+            },
+            {
+                "name": "Bared Fangs",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2558",
+        "externalId": "bw4-29",
+        "localId": "029",
+        "setCode": "bw4",
+        "cardNumber": "29/99",
+        "cardName": "Simipour",
+        "fullDisplayName": "Simipour 29/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            516
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw4-029-low.png",
+        "imageHighSrc": "cards/bw4-029-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Stadium Wave",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2557",
+        "externalId": "bw4-28",
+        "localId": "028",
+        "setCode": "bw4",
+        "cardNumber": "28/99",
+        "cardName": "Panpour",
+        "fullDisplayName": "Panpour 28/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            515
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Reiko Tanoue",
+        "imageLowSrc": "cards/bw4-028-low.png",
+        "imageHighSrc": "cards/bw4-028-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2556",
+        "externalId": "bw4-27",
+        "localId": "027",
+        "setCode": "bw4",
+        "cardNumber": "27/99",
+        "cardName": "Articuno",
+        "fullDisplayName": "Articuno 27/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-027-low.png",
+        "imageHighSrc": "cards/bw4-027-high.png",
+        "attacks": [
+            {
+                "name": "Ice Beam",
+                "damage": "50"
+            },
+            {
+                "name": "Ice Wing",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2555",
+        "externalId": "bw4-26",
+        "localId": "026",
+        "setCode": "bw4",
+        "cardNumber": "26/99",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras 26/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw4-026-low.png",
+        "imageHighSrc": "cards/bw4-026-high.png",
+        "attacks": [
+            {
+                "name": "Water Arrow",
+                "damage": null
+            },
+            {
+                "name": "Surf",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2554",
+        "externalId": "bw4-25",
+        "localId": "025",
+        "setCode": "bw4",
+        "cardNumber": "25/99",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras 25/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-025-low.png",
+        "imageHighSrc": "cards/bw4-025-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Reckless Charge",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2553",
+        "externalId": "bw4-24",
+        "localId": "024",
+        "setCode": "bw4",
+        "cardNumber": "24/99",
+        "cardName": "Starmie",
+        "fullDisplayName": "Starmie 24/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            121
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw4-024-low.png",
+        "imageHighSrc": "cards/bw4-024-high.png",
+        "attacks": [
+            {
+                "name": "Confuse Ray",
+                "damage": null
+            },
+            {
+                "name": "Swift",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2552",
+        "externalId": "bw4-23",
+        "localId": "023",
+        "setCode": "bw4",
+        "cardNumber": "23/99",
+        "cardName": "Staryu",
+        "fullDisplayName": "Staryu 23/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            120
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw4-023-low.png",
+        "imageHighSrc": "cards/bw4-023-high.png",
+        "attacks": [
+            {
+                "name": "Recover",
+                "damage": null
+            },
+            {
+                "name": "Water Gun",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2551",
+        "externalId": "bw4-22",
+        "localId": "022",
+        "setCode": "bw4",
+        "cardNumber": "22/99",
+        "cardName": "Reshiram-EX",
+        "fullDisplayName": "Reshiram-EX 22/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            643
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-022-low.png",
+        "imageHighSrc": "cards/bw4-022-high.png",
+        "attacks": [
+            {
+                "name": "Glinting Claw",
+                "damage": "50+"
+            },
+            {
+                "name": "Brave Fire",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2550",
+        "externalId": "bw4-21",
+        "localId": "021",
+        "setCode": "bw4",
+        "cardNumber": "21/99",
+        "cardName": "Reshiram",
+        "fullDisplayName": "Reshiram 21/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            643
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-021-low.png",
+        "imageHighSrc": "cards/bw4-021-high.png",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "20+"
+            },
+            {
+                "name": "Blue Flare",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2549",
+        "externalId": "bw4-20",
+        "localId": "020",
+        "setCode": "bw4",
+        "cardNumber": "20/99",
+        "cardName": "Chandelure",
+        "fullDisplayName": "Chandelure 20/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            609
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw4-020-low.png",
+        "imageHighSrc": "cards/bw4-020-high.png",
+        "attacks": [
+            {
+                "name": "Flame Burst",
+                "damage": "30"
+            },
+            {
+                "name": "Inferno",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2548",
+        "externalId": "bw4-19",
+        "localId": "019",
+        "setCode": "bw4",
+        "cardNumber": "19/99",
+        "cardName": "Lampent",
+        "fullDisplayName": "Lampent 19/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            608
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw4-019-low.png",
+        "imageHighSrc": "cards/bw4-019-high.png",
+        "attacks": [
+            {
+                "name": "Ember",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2547",
+        "externalId": "bw4-18",
+        "localId": "018",
+        "setCode": "bw4",
+        "cardNumber": "18/99",
+        "cardName": "Litwick",
+        "fullDisplayName": "Litwick 18/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            607
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/bw4-018-low.png",
+        "imageHighSrc": "cards/bw4-018-high.png",
+        "attacks": [
+            {
+                "name": "Flare",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2546",
+        "externalId": "bw4-17",
+        "localId": "017",
+        "setCode": "bw4",
+        "cardNumber": "17/99",
+        "cardName": "Darumaka",
+        "fullDisplayName": "Darumaka 17/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            554
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw4-017-low.png",
+        "imageHighSrc": "cards/bw4-017-high.png",
+        "attacks": [
+            {
+                "name": "Hammer In",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2545",
+        "externalId": "bw4-16",
+        "localId": "016",
+        "setCode": "bw4",
+        "cardNumber": "16/99",
+        "cardName": "Simisear",
+        "fullDisplayName": "Simisear 16/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            514
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-016-low.png",
+        "imageHighSrc": "cards/bw4-016-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Stadium Burn",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2544",
+        "externalId": "bw4-15",
+        "localId": "015",
+        "setCode": "bw4",
+        "cardNumber": "15/99",
+        "cardName": "Pansear",
+        "fullDisplayName": "Pansear 15/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            513
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "James Turner",
+        "imageLowSrc": "cards/bw4-015-low.png",
+        "imageHighSrc": "cards/bw4-015-high.png",
+        "attacks": [
+            {
+                "name": "Flare",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2543",
+        "externalId": "bw4-14",
+        "localId": "014",
+        "setCode": "bw4",
+        "cardNumber": "14/99",
+        "cardName": "Moltres",
+        "fullDisplayName": "Moltres 14/99 Next Destinies",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            146
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-014-low.png",
+        "imageHighSrc": "cards/bw4-014-high.png",
+        "attacks": [
+            {
+                "name": "Searing Flame",
+                "damage": "50"
+            },
+            {
+                "name": "Fire Blast",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2542",
+        "externalId": "bw4-13",
+        "localId": "013",
+        "setCode": "bw4",
+        "cardNumber": "13/99",
+        "cardName": "Arcanine",
+        "fullDisplayName": "Arcanine 13/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            59
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw4-013-low.png",
+        "imageHighSrc": "cards/bw4-013-high.png",
+        "attacks": [
+            {
+                "name": "Crunch",
+                "damage": "30"
+            },
+            {
+                "name": "Heat Blast",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2541",
+        "externalId": "bw4-12",
+        "localId": "012",
+        "setCode": "bw4",
+        "cardNumber": "12/99",
+        "cardName": "Arcanine",
+        "fullDisplayName": "Arcanine 12/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            59
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw4-012-low.png",
+        "imageHighSrc": "cards/bw4-012-high.png",
+        "attacks": [
+            {
+                "name": "Fire Spin",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2540",
+        "externalId": "bw4-11",
+        "localId": "011",
+        "setCode": "bw4",
+        "cardNumber": "11/99",
+        "cardName": "Growlithe",
+        "fullDisplayName": "Growlithe 11/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            58
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw4-011-low.png",
+        "imageHighSrc": "cards/bw4-011-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2539",
+        "externalId": "bw4-10",
+        "localId": "010",
+        "setCode": "bw4",
+        "cardNumber": "10/99",
+        "cardName": "Growlithe",
+        "fullDisplayName": "Growlithe 10/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            58
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw4-010-low.png",
+        "imageHighSrc": "cards/bw4-010-high.png",
+        "attacks": [
+            {
+                "name": "Stoke",
+                "damage": null
+            },
+            {
+                "name": "Firebreathing",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2538",
+        "externalId": "bw4-9",
+        "localId": "009",
+        "setCode": "bw4",
+        "cardNumber": "9/99",
+        "cardName": "Amoonguss",
+        "fullDisplayName": "Amoonguss 9/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            591
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw4-009-low.png",
+        "imageHighSrc": "cards/bw4-009-high.png",
+        "attacks": [
+            {
+                "name": "Rising Lunge",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2537",
+        "externalId": "bw4-8",
+        "localId": "008",
+        "setCode": "bw4",
+        "cardNumber": "8/99",
+        "cardName": "Foongus",
+        "fullDisplayName": "Foongus 8/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            590
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw4-008-low.png",
+        "imageHighSrc": "cards/bw4-008-high.png",
+        "attacks": [
+            {
+                "name": "Find a Friend",
+                "damage": null
+            },
+            {
+                "name": "Rising Lunge",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2536",
+        "externalId": "bw4-7",
+        "localId": "007",
+        "setCode": "bw4",
+        "cardNumber": "7/99",
+        "cardName": "Simisage",
+        "fullDisplayName": "Simisage 7/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            512
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw4-007-low.png",
+        "imageHighSrc": "cards/bw4-007-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Stadium Drain",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2535",
+        "externalId": "bw4-6",
+        "localId": "006",
+        "setCode": "bw4",
+        "cardNumber": "6/99",
+        "cardName": "Pansage",
+        "fullDisplayName": "Pansage 6/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            511
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Megumi Mizutani",
+        "imageLowSrc": "cards/bw4-006-low.png",
+        "imageHighSrc": "cards/bw4-006-high.png",
+        "attacks": [
+            {
+                "name": "Seed Bomb",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2534",
+        "externalId": "bw4-5",
+        "localId": "005",
+        "setCode": "bw4",
+        "cardNumber": "5/99",
+        "cardName": "Shaymin-EX",
+        "fullDisplayName": "Shaymin-EX 5/99 Next Destinies",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            492
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/bw4-005-low.png",
+        "imageHighSrc": "cards/bw4-005-high.png",
+        "attacks": [
+            {
+                "name": "Synthesis",
+                "damage": null
+            },
+            {
+                "name": "Revenge Blast",
+                "damage": "30+"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2533",
+        "externalId": "bw4-4",
+        "localId": "004",
+        "setCode": "bw4",
+        "cardNumber": "4/99",
+        "cardName": "Kricketune",
+        "fullDisplayName": "Kricketune 4/99 Next Destinies",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            402
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw4-004-low.png",
+        "imageHighSrc": "cards/bw4-004-high.png",
+        "attacks": [
+            {
+                "name": "White Noise",
+                "damage": "20"
+            },
+            {
+                "name": "Draining Cut",
+                "damage": "40×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2532",
+        "externalId": "bw4-3",
+        "localId": "003",
+        "setCode": "bw4",
+        "cardNumber": "3/99",
+        "cardName": "Kricketot",
+        "fullDisplayName": "Kricketot 3/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            401
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw4-003-low.png",
+        "imageHighSrc": "cards/bw4-003-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "10"
+            },
+            {
+                "name": "Double Headbutt",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2531",
+        "externalId": "bw4-2",
+        "localId": "002",
+        "setCode": "bw4",
+        "cardNumber": "2/99",
+        "cardName": "Seedot",
+        "fullDisplayName": "Seedot 2/99 Next Destinies",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            273
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw4-002-low.png",
+        "imageHighSrc": "cards/bw4-002-high.png",
+        "attacks": [
+            {
+                "name": "Trip Over",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2530",
+        "externalId": "bw4-1",
+        "localId": "001",
+        "setCode": "bw4",
+        "cardNumber": "1/99",
+        "cardName": "Pinsir",
+        "fullDisplayName": "Pinsir 1/99 Next Destinies",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            127
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw4-001-low.png",
+        "imageHighSrc": "cards/bw4-001-high.png",
+        "attacks": [
+            {
+                "name": "Power Pinch",
+                "damage": null
+            },
+            {
+                "name": "Grip and Squeeze",
+                "damage": "70"
+            }
+        ]
+    }
 ]

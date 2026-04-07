@@ -1,4053 +1,3171 @@
 [
-  {
-    "masterCardId": "2427",
-    "externalId": "bw2-98",
-    "tcgdex_id": "bw2-98",
-    "localId": "098",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "98/98",
-    "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 98/98 Emerging Powers",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      641
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-098-low.png",
-    "imageHighSrc": "cards/bw2-098-high.png",
-    "attacks": [
-      {
-        "name": "Energy Wheel",
-        "damage": null
-      },
-      {
-        "name": "Hurricane",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2426",
-    "externalId": "bw2-97",
-    "tcgdex_id": "bw2-97",
-    "localId": "097",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "97/98",
-    "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 97/98 Emerging Powers",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      642
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-097-low.png",
-    "imageHighSrc": "cards/bw2-097-high.png",
-    "attacks": [
-      {
-        "name": "Charge",
-        "damage": null
-      },
-      {
-        "name": "Disaster Volt",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2425",
-    "externalId": "bw2-96",
-    "tcgdex_id": "bw2-96",
-    "localId": "096",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "96/98",
-    "cardName": "Recycle",
-    "fullDisplayName": "Recycle 96/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-096-low.png",
-    "imageHighSrc": "cards/bw2-096-high.png",
-    "rules": "Flip a coin. If heads, put a card from your discard pile on top of your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2424",
-    "externalId": "bw2-95",
-    "tcgdex_id": "bw2-95",
-    "localId": "095",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "95/98",
-    "cardName": "Pokémon Catcher",
-    "fullDisplayName": "Pokémon Catcher 95/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-095-low.png",
-    "imageHighSrc": "cards/bw2-095-high.png",
-    "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2423",
-    "externalId": "bw2-94",
-    "tcgdex_id": "bw2-94",
-    "localId": "094",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "94/98",
-    "cardName": "Max Potion",
-    "fullDisplayName": "Max Potion 94/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-094-low.png",
-    "imageHighSrc": "cards/bw2-094-high.png",
-    "rules": "Heal all damage from 1 of your Pokémon. Then, discard all Energy attached to that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2422",
-    "externalId": "bw2-93",
-    "tcgdex_id": "bw2-93",
-    "localId": "093",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "93/98",
-    "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 93/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-093-low.png",
-    "imageHighSrc": "cards/bw2-093-high.png",
-    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2421",
-    "externalId": "bw2-92",
-    "tcgdex_id": "bw2-92",
-    "localId": "092",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "92/98",
-    "cardName": "Crushing Hammer",
-    "fullDisplayName": "Crushing Hammer 92/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-092-low.png",
-    "imageHighSrc": "cards/bw2-092-high.png",
-    "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2420",
-    "externalId": "bw2-91",
-    "tcgdex_id": "bw2-91",
-    "localId": "091",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "91/98",
-    "cardName": "Cheren",
-    "fullDisplayName": "Cheren 91/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-091-low.png",
-    "imageHighSrc": "cards/bw2-091-high.png",
-    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2419",
-    "externalId": "bw2-90",
-    "tcgdex_id": "bw2-90",
-    "localId": "090",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "90/98",
-    "cardName": "Bianca",
-    "fullDisplayName": "Bianca 90/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-090-low.png",
-    "imageHighSrc": "cards/bw2-090-high.png",
-    "rules": "Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2418",
-    "externalId": "bw2-89",
-    "tcgdex_id": "bw2-89",
-    "localId": "089",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "89/98",
-    "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 89/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      641
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-089-low.png",
-    "imageHighSrc": "cards/bw2-089-high.png",
-    "attacks": [
-      {
-        "name": "Energy Wheel",
-        "damage": null
-      },
-      {
-        "name": "Hurricane",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2417",
-    "externalId": "bw2-88",
-    "tcgdex_id": "bw2-88",
-    "localId": "088",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "88/98",
-    "cardName": "Braviary",
-    "fullDisplayName": "Braviary 88/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      628
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Rufflet",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-088-low.png",
-    "imageHighSrc": "cards/bw2-088-high.png",
-    "attacks": [
-      {
-        "name": "Wing Attack",
-        "damage": "40"
-      },
-      {
-        "name": "Brave Bird",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2416",
-    "externalId": "bw2-87",
-    "tcgdex_id": "bw2-87",
-    "localId": "087",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "87/98",
-    "cardName": "Rufflet",
-    "fullDisplayName": "Rufflet 87/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      627
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-087-low.png",
-    "imageHighSrc": "cards/bw2-087-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "10"
-      },
-      {
-        "name": "Claw",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2415",
-    "externalId": "bw2-86",
-    "tcgdex_id": "bw2-86",
-    "localId": "086",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "86/98",
-    "cardName": "Rufflet",
-    "fullDisplayName": "Rufflet 86/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      627
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-086-low.png",
-    "imageHighSrc": "cards/bw2-086-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "10"
-      },
-      {
-        "name": "Slash",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2414",
-    "externalId": "bw2-85",
-    "tcgdex_id": "bw2-85",
-    "localId": "085",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "85/98",
-    "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino 85/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      573
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Minccino",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-085-low.png",
-    "imageHighSrc": "cards/bw2-085-high.png",
-    "attacks": [
-      {
-        "name": "Captivate",
-        "damage": null
-      },
-      {
-        "name": "Fluffy Tail",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2413",
-    "externalId": "bw2-84",
-    "tcgdex_id": "bw2-84",
-    "localId": "084",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "84/98",
-    "cardName": "Minccino",
-    "fullDisplayName": "Minccino 84/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      572
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-084-low.png",
-    "imageHighSrc": "cards/bw2-084-high.png",
-    "attacks": [
-      {
-        "name": "Last Resort",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2412",
-    "externalId": "bw2-83",
-    "tcgdex_id": "bw2-83",
-    "localId": "083",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "83/98",
-    "cardName": "Audino",
-    "fullDisplayName": "Audino 83/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      531
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-083-low.png",
-    "imageHighSrc": "cards/bw2-083-high.png",
-    "attacks": [
-      {
-        "name": "Powerful Slap",
-        "damage": "40×"
-      },
-      {
-        "name": "Heal Pulse",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2411",
-    "externalId": "bw2-82",
-    "tcgdex_id": "bw2-82",
-    "localId": "082",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "82/98",
-    "cardName": "Unfezant",
-    "fullDisplayName": "Unfezant 82/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      521
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tranquill",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-082-low.png",
-    "imageHighSrc": "cards/bw2-082-high.png",
-    "attacks": [
-      {
-        "name": "Tailwind",
-        "damage": null
-      },
-      {
-        "name": "Feather Strike",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2410",
-    "externalId": "bw2-81",
-    "tcgdex_id": "bw2-81",
-    "localId": "081",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "81/98",
-    "cardName": "Tranquill",
-    "fullDisplayName": "Tranquill 81/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      520
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pidove",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-081-low.png",
-    "imageHighSrc": "cards/bw2-081-high.png",
-    "attacks": [
-      {
-        "name": "Claw",
-        "damage": "30"
-      },
-      {
-        "name": "Wing Attack",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2409",
-    "externalId": "bw2-80",
-    "tcgdex_id": "bw2-80",
-    "localId": "080",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "80/98",
-    "cardName": "Pidove",
-    "fullDisplayName": "Pidove 80/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      519
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-080-low.png",
-    "imageHighSrc": "cards/bw2-080-high.png",
-    "attacks": [
-      {
-        "name": "Gust",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2408",
-    "externalId": "bw2-79",
-    "tcgdex_id": "bw2-79",
-    "localId": "079",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "79/98",
-    "cardName": "Watchog",
-    "fullDisplayName": "Watchog 79/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      505
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Patrat",
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-079-low.png",
-    "imageHighSrc": "cards/bw2-079-high.png",
-    "attacks": [
-      {
-        "name": "Watcheck",
-        "damage": null
-      },
-      {
-        "name": "Quick Tail Smash",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2407",
-    "externalId": "bw2-78",
-    "tcgdex_id": "bw2-78",
-    "localId": "078",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "78/98",
-    "cardName": "Patrat",
-    "fullDisplayName": "Patrat 78/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      504
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-078-low.png",
-    "imageHighSrc": "cards/bw2-078-high.png",
-    "attacks": [
-      {
-        "name": "Hyper Fang",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2406",
-    "externalId": "bw2-77",
-    "tcgdex_id": "bw2-77",
-    "localId": "077",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "77/98",
-    "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 77/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      638
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-077-low.png",
-    "imageHighSrc": "cards/bw2-077-high.png",
-    "attacks": [
-      {
-        "name": "Metal Horns",
-        "damage": "30"
-      },
-      {
-        "name": "Sacred Sword",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2405",
-    "externalId": "bw2-76",
-    "tcgdex_id": "bw2-76",
-    "localId": "076",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "76/98",
-    "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 76/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      601
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Klang",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-076-low.png",
-    "imageHighSrc": "cards/bw2-076-high.png",
-    "attacks": [
-      {
-        "name": "Charge Beam",
-        "damage": "30"
-      },
-      {
-        "name": "Zap Cannon",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2404",
-    "externalId": "bw2-75",
-    "tcgdex_id": "bw2-75",
-    "localId": "075",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "75/98",
-    "cardName": "Klang",
-    "fullDisplayName": "Klang 75/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      600
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Klink",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-075-low.png",
-    "imageHighSrc": "cards/bw2-075-high.png",
-    "attacks": [
-      {
-        "name": "Metal Sound",
-        "damage": null
-      },
-      {
-        "name": "Guard Press",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2403",
-    "externalId": "bw2-74",
-    "tcgdex_id": "bw2-74",
-    "localId": "074",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "74/98",
-    "cardName": "Klink",
-    "fullDisplayName": "Klink 74/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      599
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-074-low.png",
-    "imageHighSrc": "cards/bw2-074-high.png",
-    "attacks": [
-      {
-        "name": "Spinning Attack",
-        "damage": "10"
-      },
-      {
-        "name": "Gear Grind",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2402",
-    "externalId": "bw2-73",
-    "tcgdex_id": "bw2-73",
-    "localId": "073",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "73/98",
-    "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 73/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      598
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ferroseed",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-073-low.png",
-    "imageHighSrc": "cards/bw2-073-high.png",
-    "attacks": [
-      {
-        "name": "Iron Defense",
-        "damage": null
-      },
-      {
-        "name": "Power Whip",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2401",
-    "externalId": "bw2-72",
-    "tcgdex_id": "bw2-72",
-    "localId": "072",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "72/98",
-    "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 72/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      598
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ferroseed",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-072-low.png",
-    "imageHighSrc": "cards/bw2-072-high.png",
-    "attacks": [
-      {
-        "name": "Steel Feelers",
-        "damage": "30×"
-      },
-      {
-        "name": "Gyro Ball",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2400",
-    "externalId": "bw2-71",
-    "tcgdex_id": "bw2-71",
-    "localId": "071",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "71/98",
-    "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 71/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      597
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-071-low.png",
-    "imageHighSrc": "cards/bw2-071-high.png",
-    "attacks": [
-      {
-        "name": "Pierce",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2399",
-    "externalId": "bw2-70",
-    "tcgdex_id": "bw2-70",
-    "localId": "070",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "70/98",
-    "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 70/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      597
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-070-low.png",
-    "imageHighSrc": "cards/bw2-070-high.png",
-    "attacks": [
-      {
-        "name": "Pin Missile",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2398",
-    "externalId": "bw2-69",
-    "tcgdex_id": "bw2-69",
-    "localId": "069",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "69/98",
-    "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 69/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      630
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vullaby",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-069-low.png",
-    "imageHighSrc": "cards/bw2-069-high.png",
-    "attacks": [
-      {
-        "name": "Bone Rush",
-        "damage": "30×"
-      },
-      {
-        "name": "Dark Pulse",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2397",
-    "externalId": "bw2-68",
-    "tcgdex_id": "bw2-68",
-    "localId": "068",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "68/98",
-    "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 68/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      629
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-068-low.png",
-    "imageHighSrc": "cards/bw2-068-high.png",
-    "attacks": [
-      {
-        "name": "Rear Guard",
-        "damage": null
-      },
-      {
-        "name": "Gust",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2396",
-    "externalId": "bw2-67",
-    "tcgdex_id": "bw2-67",
-    "localId": "067",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "67/98",
-    "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 67/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      571
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zorua",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-067-low.png",
-    "imageHighSrc": "cards/bw2-067-high.png",
-    "attacks": [
-      {
-        "name": "Fury Swipes",
-        "damage": "20×"
-      },
-      {
-        "name": "Night Daze",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2395",
-    "externalId": "bw2-66",
-    "tcgdex_id": "bw2-66",
-    "localId": "066",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "66/98",
-    "cardName": "Zorua",
-    "fullDisplayName": "Zorua 66/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      570
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-066-low.png",
-    "imageHighSrc": "cards/bw2-066-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      },
-      {
-        "name": "Rising Lunge",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2394",
-    "externalId": "bw2-65",
-    "tcgdex_id": "bw2-65",
-    "localId": "065",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "65/98",
-    "cardName": "Liepard",
-    "fullDisplayName": "Liepard 65/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      510
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Purrloin",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-065-low.png",
-    "imageHighSrc": "cards/bw2-065-high.png",
-    "attacks": [
-      {
-        "name": "Feint Attack",
-        "damage": null
-      },
-      {
-        "name": "Claw Rend",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2393",
-    "externalId": "bw2-64",
-    "tcgdex_id": "bw2-64",
-    "localId": "064",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "64/98",
-    "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 64/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      509
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-064-low.png",
-    "imageHighSrc": "cards/bw2-064-high.png",
-    "attacks": [
-      {
-        "name": "Knock Off",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2392",
-    "externalId": "bw2-63",
-    "tcgdex_id": "bw2-63",
-    "localId": "063",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "63/98",
-    "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 63/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      639
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-063-low.png",
-    "imageHighSrc": "cards/bw2-063-high.png",
-    "attacks": [
-      {
-        "name": "Boulder Crush",
-        "damage": "40"
-      },
-      {
-        "name": "Sacred Sword",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2391",
-    "externalId": "bw2-62",
-    "tcgdex_id": "bw2-62",
-    "localId": "062",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "62/98",
-    "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 62/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      553
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Krokorok",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-062-low.png",
-    "imageHighSrc": "cards/bw2-062-high.png",
-    "attacks": [
-      {
-        "name": "Thrash",
-        "damage": "70+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2390",
-    "externalId": "bw2-61",
-    "tcgdex_id": "bw2-61",
-    "localId": "061",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "61/98",
-    "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 61/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      552
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sandile",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-061-low.png",
-    "imageHighSrc": "cards/bw2-061-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "20"
-      },
-      {
-        "name": "Crunch",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2389",
-    "externalId": "bw2-60",
-    "tcgdex_id": "bw2-60",
-    "localId": "060",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "60/98",
-    "cardName": "Sandile",
-    "fullDisplayName": "Sandile 60/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      551
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-060-low.png",
-    "imageHighSrc": "cards/bw2-060-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2388",
-    "externalId": "bw2-59",
-    "tcgdex_id": "bw2-59",
-    "localId": "059",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "59/98",
-    "cardName": "Sawk",
-    "fullDisplayName": "Sawk 59/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      539
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-059-low.png",
-    "imageHighSrc": "cards/bw2-059-high.png",
-    "attacks": [
-      {
-        "name": "Five Fierce Chops",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2387",
-    "externalId": "bw2-58",
-    "tcgdex_id": "bw2-58",
-    "localId": "058",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "58/98",
-    "cardName": "Throh",
-    "fullDisplayName": "Throh 58/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      538
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-058-low.png",
-    "imageHighSrc": "cards/bw2-058-high.png",
-    "attacks": [
-      {
-        "name": "Scarf Hold",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2386",
-    "externalId": "bw2-57",
-    "tcgdex_id": "bw2-57",
-    "localId": "057",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "57/98",
-    "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 57/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      530
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Drilbur",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-057-low.png",
-    "imageHighSrc": "cards/bw2-057-high.png",
-    "attacks": [
-      {
-        "name": "Dig",
-        "damage": "30"
-      },
-      {
-        "name": "Earthquake",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2385",
-    "externalId": "bw2-56",
-    "tcgdex_id": "bw2-56",
-    "localId": "056",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "56/98",
-    "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 56/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      530
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Drilbur",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-056-low.png",
-    "imageHighSrc": "cards/bw2-056-high.png",
-    "attacks": [
-      {
-        "name": "Metal Claw",
-        "damage": "30"
-      },
-      {
-        "name": "Drill Run",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2384",
-    "externalId": "bw2-55",
-    "tcgdex_id": "bw2-55",
-    "localId": "055",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "55/98",
-    "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 55/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      529
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-055-low.png",
-    "imageHighSrc": "cards/bw2-055-high.png",
-    "attacks": [
-      {
-        "name": "Mud-Slap",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2383",
-    "externalId": "bw2-54",
-    "tcgdex_id": "bw2-54",
-    "localId": "054",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "54/98",
-    "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 54/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      529
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-054-low.png",
-    "imageHighSrc": "cards/bw2-054-high.png",
-    "attacks": [
-      {
-        "name": "Hone Claws",
-        "damage": null
-      },
-      {
-        "name": "Scratch",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2382",
-    "externalId": "bw2-53",
-    "tcgdex_id": "bw2-53",
-    "localId": "053",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "53/98",
-    "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 53/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      526
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Boldore",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-053-low.png",
-    "imageHighSrc": "cards/bw2-053-high.png",
-    "attacks": [
-      {
-        "name": "Shear",
-        "damage": null
-      },
-      {
-        "name": "Rock Bullet",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2381",
-    "externalId": "bw2-52",
-    "tcgdex_id": "bw2-52",
-    "localId": "052",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "52/98",
-    "cardName": "Boldore",
-    "fullDisplayName": "Boldore 52/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      525
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Roggenrola",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-052-low.png",
-    "imageHighSrc": "cards/bw2-052-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "30"
-      },
-      {
-        "name": "Hard Crash",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2380",
-    "externalId": "bw2-51",
-    "tcgdex_id": "bw2-51",
-    "localId": "051",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "51/98",
-    "cardName": "Boldore",
-    "fullDisplayName": "Boldore 51/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      525
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Roggenrola",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-051-low.png",
-    "imageHighSrc": "cards/bw2-051-high.png",
-    "attacks": [
-      {
-        "name": "Smack Down",
-        "damage": "20+"
-      },
-      {
-        "name": "Power Gem",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2379",
-    "externalId": "bw2-50",
-    "tcgdex_id": "bw2-50",
-    "localId": "050",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "50/98",
-    "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 50/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      524
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-050-low.png",
-    "imageHighSrc": "cards/bw2-050-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "10"
-      },
-      {
-        "name": "Reckless Charge",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2378",
-    "externalId": "bw2-49",
-    "tcgdex_id": "bw2-49",
-    "localId": "049",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "49/98",
-    "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 49/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      524
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-049-low.png",
-    "imageHighSrc": "cards/bw2-049-high.png",
-    "attacks": [
-      {
-        "name": "Harden",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2377",
-    "externalId": "bw2-48",
-    "tcgdex_id": "bw2-48",
-    "localId": "048",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "48/98",
-    "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 48/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      576
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gothorita",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-048-low.png",
-    "imageHighSrc": "cards/bw2-048-high.png",
-    "attacks": [
-      {
-        "name": "Smack",
-        "damage": "30"
-      },
-      {
-        "name": "Mental Shock",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2376",
-    "externalId": "bw2-47",
-    "tcgdex_id": "bw2-47",
-    "localId": "047",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "47/98",
-    "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 47/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      576
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gothorita",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-047-low.png",
-    "imageHighSrc": "cards/bw2-047-high.png",
-    "attacks": [
-      {
-        "name": "Madkinesis",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2375",
-    "externalId": "bw2-46",
-    "tcgdex_id": "bw2-46",
-    "localId": "046",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "46/98",
-    "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 46/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      575
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gothita",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-046-low.png",
-    "imageHighSrc": "cards/bw2-046-high.png",
-    "attacks": [
-      {
-        "name": "Deleting Glare",
-        "damage": null
-      },
-      {
-        "name": "Super Psy Bolt",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2374",
-    "externalId": "bw2-45",
-    "tcgdex_id": "bw2-45",
-    "localId": "045",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "45/98",
-    "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 45/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      575
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gothita",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-045-low.png",
-    "imageHighSrc": "cards/bw2-045-high.png",
-    "attacks": [
-      {
-        "name": "Double Slap",
-        "damage": "20×"
-      },
-      {
-        "name": "Psybeam",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2373",
-    "externalId": "bw2-44",
-    "tcgdex_id": "bw2-44",
-    "localId": "044",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "44/98",
-    "cardName": "Gothita",
-    "fullDisplayName": "Gothita 44/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      574
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-044-low.png",
-    "imageHighSrc": "cards/bw2-044-high.png",
-    "attacks": [
-      {
-        "name": "Smack",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2372",
-    "externalId": "bw2-43",
-    "tcgdex_id": "bw2-43",
-    "localId": "043",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "43/98",
-    "cardName": "Gothita",
-    "fullDisplayName": "Gothita 43/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      574
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-043-low.png",
-    "imageHighSrc": "cards/bw2-043-high.png",
-    "attacks": [
-      {
-        "name": "Hypnotic Gaze",
-        "damage": null
-      },
-      {
-        "name": "Double Slap",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2371",
-    "externalId": "bw2-42",
-    "tcgdex_id": "bw2-42",
-    "localId": "042",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "42/98",
-    "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 42/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      561
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-042-low.png",
-    "imageHighSrc": "cards/bw2-042-high.png",
-    "attacks": [
-      {
-        "name": "Quick Turn",
-        "damage": "10×"
-      },
-      {
-        "name": "Psychic Assault",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2370",
-    "externalId": "bw2-41",
-    "tcgdex_id": "bw2-41",
-    "localId": "041",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "41/98",
-    "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 41/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      561
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-041-low.png",
-    "imageHighSrc": "cards/bw2-041-high.png",
-    "attacks": [
-      {
-        "name": "Reflect",
-        "damage": null
-      },
-      {
-        "name": "Telekinesis",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2369",
-    "externalId": "bw2-40",
-    "tcgdex_id": "bw2-40",
-    "localId": "040",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "40/98",
-    "cardName": "Scolipede",
-    "fullDisplayName": "Scolipede 40/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      545
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Whirlipede",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-040-low.png",
-    "imageHighSrc": "cards/bw2-040-high.png",
-    "attacks": [
-      {
-        "name": "Toxic Claws",
-        "damage": "30"
-      },
-      {
-        "name": "Wild Horn",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2368",
-    "externalId": "bw2-39",
-    "tcgdex_id": "bw2-39",
-    "localId": "039",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "39/98",
-    "cardName": "Whirlipede",
-    "fullDisplayName": "Whirlipede 39/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      544
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Venipede",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-039-low.png",
-    "imageHighSrc": "cards/bw2-039-high.png",
-    "attacks": [
-      {
-        "name": "Venoshock",
-        "damage": "10+"
-      },
-      {
-        "name": "Steamroller",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2367",
-    "externalId": "bw2-38",
-    "tcgdex_id": "bw2-38",
-    "localId": "038",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "38/98",
-    "cardName": "Venipede",
-    "fullDisplayName": "Venipede 38/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      543
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-038-low.png",
-    "imageHighSrc": "cards/bw2-038-high.png",
-    "attacks": [
-      {
-        "name": "Poison Sting",
-        "damage": null
-      },
-      {
-        "name": "Tackle",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2366",
-    "externalId": "bw2-37",
-    "tcgdex_id": "bw2-37",
-    "localId": "037",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "37/98",
-    "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 37/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      528
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Woobat",
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-037-low.png",
-    "imageHighSrc": "cards/bw2-037-high.png",
-    "attacks": [
-      {
-        "name": "Psyshot",
-        "damage": "30"
-      },
-      {
-        "name": "Phat Sound",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2365",
-    "externalId": "bw2-36",
-    "tcgdex_id": "bw2-36",
-    "localId": "036",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "36/98",
-    "cardName": "Woobat",
-    "fullDisplayName": "Woobat 36/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      527
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-036-low.png",
-    "imageHighSrc": "cards/bw2-036-high.png",
-    "attacks": [
-      {
-        "name": "Psy Bolt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2364",
-    "externalId": "bw2-35",
-    "tcgdex_id": "bw2-35",
-    "localId": "035",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "35/98",
-    "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 35/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      642
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-035-low.png",
-    "imageHighSrc": "cards/bw2-035-high.png",
-    "attacks": [
-      {
-        "name": "Charge",
-        "damage": null
-      },
-      {
-        "name": "Disaster Volt",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2363",
-    "externalId": "bw2-34",
-    "tcgdex_id": "bw2-34",
-    "localId": "034",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "34/98",
-    "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 34/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      596
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Joltik",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-034-low.png",
-    "imageHighSrc": "cards/bw2-034-high.png",
-    "attacks": [
-      {
-        "name": "Gnaw",
-        "damage": "20"
-      },
-      {
-        "name": "Stun Needle",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2362",
-    "externalId": "bw2-33",
-    "tcgdex_id": "bw2-33",
-    "localId": "033",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "33/98",
-    "cardName": "Joltik",
-    "fullDisplayName": "Joltik 33/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      595
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-033-low.png",
-    "imageHighSrc": "cards/bw2-033-high.png",
-    "attacks": [
-      {
-        "name": "Gnaw",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2361",
-    "externalId": "bw2-32",
-    "tcgdex_id": "bw2-32",
-    "localId": "032",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "32/98",
-    "cardName": "Emolga",
-    "fullDisplayName": "Emolga 32/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      587
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-032-low.png",
-    "imageHighSrc": "cards/bw2-032-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "10"
-      },
-      {
-        "name": "Acrobatics",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2360",
-    "externalId": "bw2-31",
-    "tcgdex_id": "bw2-31",
-    "localId": "031",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "31/98",
-    "cardName": "Beartic",
-    "fullDisplayName": "Beartic 31/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      614
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cubchoo",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-031-low.png",
-    "imageHighSrc": "cards/bw2-031-high.png",
-    "attacks": [
-      {
-        "name": "Icy Wind",
-        "damage": "30"
-      },
-      {
-        "name": "Superpower",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2359",
-    "externalId": "bw2-30",
-    "tcgdex_id": "bw2-30",
-    "localId": "030",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "30/98",
-    "cardName": "Beartic",
-    "fullDisplayName": "Beartic 30/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      614
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cubchoo",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-030-low.png",
-    "imageHighSrc": "cards/bw2-030-high.png",
-    "attacks": [
-      {
-        "name": "Sheer Cold",
-        "damage": "50"
-      },
-      {
-        "name": "Icicle Crash",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2358",
-    "externalId": "bw2-29",
-    "tcgdex_id": "bw2-29",
-    "localId": "029",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "29/98",
-    "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 29/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      613
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-029-low.png",
-    "imageHighSrc": "cards/bw2-029-high.png",
-    "attacks": [
-      {
-        "name": "Icicle Punch",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2357",
-    "externalId": "bw2-28",
-    "tcgdex_id": "bw2-28",
-    "localId": "028",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "28/98",
-    "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 28/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      613
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-028-low.png",
-    "imageHighSrc": "cards/bw2-028-high.png",
-    "attacks": [
-      {
-        "name": "Powder Snow",
-        "damage": "10"
-      },
-      {
-        "name": "Rest",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2356",
-    "externalId": "bw2-27",
-    "tcgdex_id": "bw2-27",
-    "localId": "027",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "27/98",
-    "cardName": "Swanna",
-    "fullDisplayName": "Swanna 27/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      581
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ducklett",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-027-low.png",
-    "imageHighSrc": "cards/bw2-027-high.png",
-    "attacks": [
-      {
-        "name": "Wing Dance",
-        "damage": "30"
-      },
-      {
-        "name": "Air Slash",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2355",
-    "externalId": "bw2-26",
-    "tcgdex_id": "bw2-26",
-    "localId": "026",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "26/98",
-    "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 26/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      580
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-026-low.png",
-    "imageHighSrc": "cards/bw2-026-high.png",
-    "attacks": [
-      {
-        "name": "Roost",
-        "damage": null
-      },
-      {
-        "name": "Rain Splash",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2354",
-    "externalId": "bw2-25",
-    "tcgdex_id": "bw2-25",
-    "localId": "025",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "25/98",
-    "cardName": "Basculin",
-    "fullDisplayName": "Basculin 25/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      550
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-025-low.png",
-    "imageHighSrc": "cards/bw2-025-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Splatter",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2353",
-    "externalId": "bw2-24",
-    "tcgdex_id": "bw2-24",
-    "localId": "024",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "24/98",
-    "cardName": "Basculin",
-    "fullDisplayName": "Basculin 24/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      550
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-024-low.png",
-    "imageHighSrc": "cards/bw2-024-high.png",
-    "attacks": [
-      {
-        "name": "Flail",
-        "damage": "10×"
-      },
-      {
-        "name": "Final Gambit",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2352",
-    "externalId": "bw2-23",
-    "tcgdex_id": "bw2-23",
-    "localId": "023",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "23/98",
-    "cardName": "Simipour",
-    "fullDisplayName": "Simipour 23/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      516
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Panpour",
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-023-low.png",
-    "imageHighSrc": "cards/bw2-023-high.png",
-    "attacks": [
-      {
-        "name": "Grass' Power",
-        "damage": "30"
-      },
-      {
-        "name": "Rushing Water",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2351",
-    "externalId": "bw2-22",
-    "tcgdex_id": "bw2-22",
-    "localId": "022",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "22/98",
-    "cardName": "Panpour",
-    "fullDisplayName": "Panpour 22/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      515
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-022-low.png",
-    "imageHighSrc": "cards/bw2-022-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Scratch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2350",
-    "externalId": "bw2-21",
-    "tcgdex_id": "bw2-21",
-    "localId": "021",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "21/98",
-    "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 21/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      555
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Darumaka",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-021-low.png",
-    "imageHighSrc": "cards/bw2-021-high.png",
-    "attacks": [
-      {
-        "name": "Rock Smash",
-        "damage": "20+"
-      },
-      {
-        "name": "Fire Punch",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2349",
-    "externalId": "bw2-20",
-    "tcgdex_id": "bw2-20",
-    "localId": "020",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "20/98",
-    "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 20/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      554
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-020-low.png",
-    "imageHighSrc": "cards/bw2-020-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Combustion",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2348",
-    "externalId": "bw2-19",
-    "tcgdex_id": "bw2-19",
-    "localId": "019",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "19/98",
-    "cardName": "Simisear",
-    "fullDisplayName": "Simisear 19/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      514
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pansear",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-019-low.png",
-    "imageHighSrc": "cards/bw2-019-high.png",
-    "attacks": [
-      {
-        "name": "Water's Power",
-        "damage": "30"
-      },
-      {
-        "name": "Flamethrower",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2347",
-    "externalId": "bw2-18",
-    "tcgdex_id": "bw2-18",
-    "localId": "018",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "18/98",
-    "cardName": "Pansear",
-    "fullDisplayName": "Pansear 18/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      513
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-018-low.png",
-    "imageHighSrc": "cards/bw2-018-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Scratch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2346",
-    "externalId": "bw2-17",
-    "tcgdex_id": "bw2-17",
-    "localId": "017",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "17/98",
-    "cardName": "Virizion",
-    "fullDisplayName": "Virizion 17/98 Emerging Powers",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-017-low.png",
-    "imageHighSrc": "cards/bw2-017-high.png",
-    "attacks": [
-      {
-        "name": "Giga Drain",
-        "damage": "30"
-      },
-      {
-        "name": "Sacred Sword",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2345",
-    "externalId": "bw2-16",
-    "tcgdex_id": "bw2-16",
-    "localId": "016",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "16/98",
-    "cardName": "Sawsbuck",
-    "fullDisplayName": "Sawsbuck 16/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      586
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Deerling",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-016-low.png",
-    "imageHighSrc": "cards/bw2-016-high.png",
-    "attacks": [
-      {
-        "name": "Push Down",
-        "damage": "30"
-      },
-      {
-        "name": "Take Down",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2344",
-    "externalId": "bw2-15",
-    "tcgdex_id": "bw2-15",
-    "localId": "015",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "15/98",
-    "cardName": "Deerling",
-    "fullDisplayName": "Deerling 15/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      585
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-015-low.png",
-    "imageHighSrc": "cards/bw2-015-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Wild Kick",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2343",
-    "externalId": "bw2-14",
-    "tcgdex_id": "bw2-14",
-    "localId": "014",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "14/98",
-    "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 14/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      549
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Petilil",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-014-low.png",
-    "imageHighSrc": "cards/bw2-014-high.png",
-    "attacks": [
-      {
-        "name": "Bemusing Aroma",
-        "damage": "20"
-      },
-      {
-        "name": "Cut",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2342",
-    "externalId": "bw2-13",
-    "tcgdex_id": "bw2-13",
-    "localId": "013",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "13/98",
-    "cardName": "Petilil",
-    "fullDisplayName": "Petilil 13/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      548
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-013-low.png",
-    "imageHighSrc": "cards/bw2-013-high.png",
-    "attacks": [
-      {
-        "name": "Stun Spore",
-        "damage": null
-      },
-      {
-        "name": "Cut",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2341",
-    "externalId": "bw2-12",
-    "tcgdex_id": "bw2-12",
-    "localId": "012",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "12/98",
-    "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 12/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      547
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cottonee",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-012-low.png",
-    "imageHighSrc": "cards/bw2-012-high.png",
-    "attacks": [
-      {
-        "name": "Encore",
-        "damage": "20"
-      },
-      {
-        "name": "U-turn",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2340",
-    "externalId": "bw2-11",
-    "tcgdex_id": "bw2-11",
-    "localId": "011",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "11/98",
-    "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 11/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      547
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cottonee",
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-011-low.png",
-    "imageHighSrc": "cards/bw2-011-high.png",
-    "attacks": [
-      {
-        "name": "Helping Hand",
-        "damage": null
-      },
-      {
-        "name": "Cotton Guard",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2339",
-    "externalId": "bw2-10",
-    "tcgdex_id": "bw2-10",
-    "localId": "010",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "10/98",
-    "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 10/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      546
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-010-low.png",
-    "imageHighSrc": "cards/bw2-010-high.png",
-    "attacks": [
-      {
-        "name": "Cotton Guard",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2338",
-    "externalId": "bw2-9",
-    "tcgdex_id": "bw2-9",
-    "localId": "009",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "9/98",
-    "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 9/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      546
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-009-low.png",
-    "imageHighSrc": "cards/bw2-009-high.png",
-    "attacks": [
-      {
-        "name": "Absorb",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2337",
-    "externalId": "bw2-8",
-    "tcgdex_id": "bw2-8",
-    "localId": "008",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "8/98",
-    "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 8/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      542
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swadloon",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-008-low.png",
-    "imageHighSrc": "cards/bw2-008-high.png",
-    "attacks": [
-      {
-        "name": "Slash",
-        "damage": "30"
-      },
-      {
-        "name": "Triple Cutter",
-        "damage": "60×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2336",
-    "externalId": "bw2-7",
-    "tcgdex_id": "bw2-7",
-    "localId": "007",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "7/98",
-    "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 7/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      542
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swadloon",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-007-low.png",
-    "imageHighSrc": "cards/bw2-007-high.png",
-    "attacks": [
-      {
-        "name": "Nurturing",
-        "damage": null
-      },
-      {
-        "name": "X-Scissor",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2335",
-    "externalId": "bw2-6",
-    "tcgdex_id": "bw2-6",
-    "localId": "006",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "6/98",
-    "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 6/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      541
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sewaddle",
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-006-low.png",
-    "imageHighSrc": "cards/bw2-006-high.png",
-    "attacks": [
-      {
-        "name": "Grass Cocooning",
-        "damage": null
-      },
-      {
-        "name": "Razor Leaf",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2334",
-    "externalId": "bw2-5",
-    "tcgdex_id": "bw2-5",
-    "localId": "005",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "5/98",
-    "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 5/98 Emerging Powers",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      541
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sewaddle",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-005-low.png",
-    "imageHighSrc": "cards/bw2-005-high.png",
-    "attacks": [
-      {
-        "name": "Gnaw",
-        "damage": "20"
-      },
-      {
-        "name": "Double Razor Leaf",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2333",
-    "externalId": "bw2-4",
-    "tcgdex_id": "bw2-4",
-    "localId": "004",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "4/98",
-    "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 4/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      540
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-004-low.png",
-    "imageHighSrc": "cards/bw2-004-high.png",
-    "attacks": [
-      {
-        "name": "Gnaw",
-        "damage": "10"
-      },
-      {
-        "name": "Razor Leaf",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2332",
-    "externalId": "bw2-3",
-    "tcgdex_id": "bw2-3",
-    "localId": "003",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "3/98",
-    "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 3/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      540
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-003-low.png",
-    "imageHighSrc": "cards/bw2-003-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "String Shot",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2331",
-    "externalId": "bw2-2",
-    "tcgdex_id": "bw2-2",
-    "localId": "002",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "2/98",
-    "cardName": "Simisage",
-    "fullDisplayName": "Simisage 2/98 Emerging Powers",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      512
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pansage",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-002-low.png",
-    "imageHighSrc": "cards/bw2-002-high.png",
-    "attacks": [
-      {
-        "name": "Fire's Power",
-        "damage": "30"
-      },
-      {
-        "name": "Seed Bomb",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2330",
-    "externalId": "bw2-1",
-    "tcgdex_id": "bw2-1",
-    "localId": "001",
-    "setCode": "bw2",
-    "setTcgdexId": "bw2",
-    "cardNumber": "1/98",
-    "cardName": "Pansage",
-    "fullDisplayName": "Pansage 1/98 Emerging Powers",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      511
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw2-001-low.png",
-    "imageHighSrc": "cards/bw2-001-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Scratch",
-        "damage": "20"
-      }
-    ]
-  }
+    {
+        "masterCardId": "2427",
+        "externalId": "bw2-98",
+        "localId": "098",
+        "setCode": "bw2",
+        "cardNumber": "98/98",
+        "cardName": "Tornadus",
+        "fullDisplayName": "Tornadus 98/98 Emerging Powers",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            641
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-098-low.png",
+        "imageHighSrc": "cards/bw2-098-high.png",
+        "attacks": [
+            {
+                "name": "Energy Wheel",
+                "damage": null
+            },
+            {
+                "name": "Hurricane",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2426",
+        "externalId": "bw2-97",
+        "localId": "097",
+        "setCode": "bw2",
+        "cardNumber": "97/98",
+        "cardName": "Thundurus",
+        "fullDisplayName": "Thundurus 97/98 Emerging Powers",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            642
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-097-low.png",
+        "imageHighSrc": "cards/bw2-097-high.png",
+        "attacks": [
+            {
+                "name": "Charge",
+                "damage": null
+            },
+            {
+                "name": "Disaster Volt",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2425",
+        "externalId": "bw2-96",
+        "localId": "096",
+        "setCode": "bw2",
+        "cardNumber": "96/98",
+        "cardName": "Recycle",
+        "fullDisplayName": "Recycle 96/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw2-096-low.png",
+        "imageHighSrc": "cards/bw2-096-high.png",
+        "rules": "Flip a coin. If heads, put a card from your discard pile on top of your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2424",
+        "externalId": "bw2-95",
+        "localId": "095",
+        "setCode": "bw2",
+        "cardNumber": "95/98",
+        "cardName": "Pokémon Catcher",
+        "fullDisplayName": "Pokémon Catcher 95/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-095-low.png",
+        "imageHighSrc": "cards/bw2-095-high.png",
+        "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2423",
+        "externalId": "bw2-94",
+        "localId": "094",
+        "setCode": "bw2",
+        "cardNumber": "94/98",
+        "cardName": "Max Potion",
+        "fullDisplayName": "Max Potion 94/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-094-low.png",
+        "imageHighSrc": "cards/bw2-094-high.png",
+        "rules": "Heal all damage from 1 of your Pokémon. Then, discard all Energy attached to that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2422",
+        "externalId": "bw2-93",
+        "localId": "093",
+        "setCode": "bw2",
+        "cardNumber": "93/98",
+        "cardName": "Great Ball",
+        "fullDisplayName": "Great Ball 93/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-093-low.png",
+        "imageHighSrc": "cards/bw2-093-high.png",
+        "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2421",
+        "externalId": "bw2-92",
+        "localId": "092",
+        "setCode": "bw2",
+        "cardNumber": "92/98",
+        "cardName": "Crushing Hammer",
+        "fullDisplayName": "Crushing Hammer 92/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-092-low.png",
+        "imageHighSrc": "cards/bw2-092-high.png",
+        "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2420",
+        "externalId": "bw2-91",
+        "localId": "091",
+        "setCode": "bw2",
+        "cardNumber": "91/98",
+        "cardName": "Cheren",
+        "fullDisplayName": "Cheren 91/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/bw2-091-low.png",
+        "imageHighSrc": "cards/bw2-091-high.png",
+        "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2419",
+        "externalId": "bw2-90",
+        "localId": "090",
+        "setCode": "bw2",
+        "cardNumber": "90/98",
+        "cardName": "Bianca",
+        "fullDisplayName": "Bianca 90/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/bw2-090-low.png",
+        "imageHighSrc": "cards/bw2-090-high.png",
+        "rules": "Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2418",
+        "externalId": "bw2-89",
+        "localId": "089",
+        "setCode": "bw2",
+        "cardNumber": "89/98",
+        "cardName": "Tornadus",
+        "fullDisplayName": "Tornadus 89/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            641
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-089-low.png",
+        "imageHighSrc": "cards/bw2-089-high.png",
+        "attacks": [
+            {
+                "name": "Energy Wheel",
+                "damage": null
+            },
+            {
+                "name": "Hurricane",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2417",
+        "externalId": "bw2-88",
+        "localId": "088",
+        "setCode": "bw2",
+        "cardNumber": "88/98",
+        "cardName": "Braviary",
+        "fullDisplayName": "Braviary 88/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            628
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-088-low.png",
+        "imageHighSrc": "cards/bw2-088-high.png",
+        "attacks": [
+            {
+                "name": "Wing Attack",
+                "damage": "40"
+            },
+            {
+                "name": "Brave Bird",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2416",
+        "externalId": "bw2-87",
+        "localId": "087",
+        "setCode": "bw2",
+        "cardNumber": "87/98",
+        "cardName": "Rufflet",
+        "fullDisplayName": "Rufflet 87/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            627
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw2-087-low.png",
+        "imageHighSrc": "cards/bw2-087-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            },
+            {
+                "name": "Claw",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2415",
+        "externalId": "bw2-86",
+        "localId": "086",
+        "setCode": "bw2",
+        "cardNumber": "86/98",
+        "cardName": "Rufflet",
+        "fullDisplayName": "Rufflet 86/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            627
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-086-low.png",
+        "imageHighSrc": "cards/bw2-086-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            },
+            {
+                "name": "Slash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2414",
+        "externalId": "bw2-85",
+        "localId": "085",
+        "setCode": "bw2",
+        "cardNumber": "85/98",
+        "cardName": "Cinccino",
+        "fullDisplayName": "Cinccino 85/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            573
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw2-085-low.png",
+        "imageHighSrc": "cards/bw2-085-high.png",
+        "attacks": [
+            {
+                "name": "Captivate",
+                "damage": null
+            },
+            {
+                "name": "Fluffy Tail",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2413",
+        "externalId": "bw2-84",
+        "localId": "084",
+        "setCode": "bw2",
+        "cardNumber": "84/98",
+        "cardName": "Minccino",
+        "fullDisplayName": "Minccino 84/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            572
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw2-084-low.png",
+        "imageHighSrc": "cards/bw2-084-high.png",
+        "attacks": [
+            {
+                "name": "Last Resort",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2412",
+        "externalId": "bw2-83",
+        "localId": "083",
+        "setCode": "bw2",
+        "cardNumber": "83/98",
+        "cardName": "Audino",
+        "fullDisplayName": "Audino 83/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            531
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-083-low.png",
+        "imageHighSrc": "cards/bw2-083-high.png",
+        "attacks": [
+            {
+                "name": "Powerful Slap",
+                "damage": "40×"
+            },
+            {
+                "name": "Heal Pulse",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2411",
+        "externalId": "bw2-82",
+        "localId": "082",
+        "setCode": "bw2",
+        "cardNumber": "82/98",
+        "cardName": "Unfezant",
+        "fullDisplayName": "Unfezant 82/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            521
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw2-082-low.png",
+        "imageHighSrc": "cards/bw2-082-high.png",
+        "attacks": [
+            {
+                "name": "Tailwind",
+                "damage": null
+            },
+            {
+                "name": "Feather Strike",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2410",
+        "externalId": "bw2-81",
+        "localId": "081",
+        "setCode": "bw2",
+        "cardNumber": "81/98",
+        "cardName": "Tranquill",
+        "fullDisplayName": "Tranquill 81/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            520
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw2-081-low.png",
+        "imageHighSrc": "cards/bw2-081-high.png",
+        "attacks": [
+            {
+                "name": "Claw",
+                "damage": "30"
+            },
+            {
+                "name": "Wing Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2409",
+        "externalId": "bw2-80",
+        "localId": "080",
+        "setCode": "bw2",
+        "cardNumber": "80/98",
+        "cardName": "Pidove",
+        "fullDisplayName": "Pidove 80/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            519
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-080-low.png",
+        "imageHighSrc": "cards/bw2-080-high.png",
+        "attacks": [
+            {
+                "name": "Gust",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2408",
+        "externalId": "bw2-79",
+        "localId": "079",
+        "setCode": "bw2",
+        "cardNumber": "79/98",
+        "cardName": "Watchog",
+        "fullDisplayName": "Watchog 79/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            505
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw2-079-low.png",
+        "imageHighSrc": "cards/bw2-079-high.png",
+        "attacks": [
+            {
+                "name": "Watcheck",
+                "damage": null
+            },
+            {
+                "name": "Quick Tail Smash",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2407",
+        "externalId": "bw2-78",
+        "localId": "078",
+        "setCode": "bw2",
+        "cardNumber": "78/98",
+        "cardName": "Patrat",
+        "fullDisplayName": "Patrat 78/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            504
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-078-low.png",
+        "imageHighSrc": "cards/bw2-078-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Fang",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2406",
+        "externalId": "bw2-77",
+        "localId": "077",
+        "setCode": "bw2",
+        "cardNumber": "77/98",
+        "cardName": "Cobalion",
+        "fullDisplayName": "Cobalion 77/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            638
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-077-low.png",
+        "imageHighSrc": "cards/bw2-077-high.png",
+        "attacks": [
+            {
+                "name": "Metal Horns",
+                "damage": "30"
+            },
+            {
+                "name": "Sacred Sword",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2405",
+        "externalId": "bw2-76",
+        "localId": "076",
+        "setCode": "bw2",
+        "cardNumber": "76/98",
+        "cardName": "Klinklang",
+        "fullDisplayName": "Klinklang 76/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            601
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw2-076-low.png",
+        "imageHighSrc": "cards/bw2-076-high.png",
+        "attacks": [
+            {
+                "name": "Charge Beam",
+                "damage": "30"
+            },
+            {
+                "name": "Zap Cannon",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2404",
+        "externalId": "bw2-75",
+        "localId": "075",
+        "setCode": "bw2",
+        "cardNumber": "75/98",
+        "cardName": "Klang",
+        "fullDisplayName": "Klang 75/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            600
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-075-low.png",
+        "imageHighSrc": "cards/bw2-075-high.png",
+        "attacks": [
+            {
+                "name": "Metal Sound",
+                "damage": null
+            },
+            {
+                "name": "Guard Press",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2403",
+        "externalId": "bw2-74",
+        "localId": "074",
+        "setCode": "bw2",
+        "cardNumber": "74/98",
+        "cardName": "Klink",
+        "fullDisplayName": "Klink 74/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            599
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-074-low.png",
+        "imageHighSrc": "cards/bw2-074-high.png",
+        "attacks": [
+            {
+                "name": "Spinning Attack",
+                "damage": "10"
+            },
+            {
+                "name": "Gear Grind",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2402",
+        "externalId": "bw2-73",
+        "localId": "073",
+        "setCode": "bw2",
+        "cardNumber": "73/98",
+        "cardName": "Ferrothorn",
+        "fullDisplayName": "Ferrothorn 73/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            598
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-073-low.png",
+        "imageHighSrc": "cards/bw2-073-high.png",
+        "attacks": [
+            {
+                "name": "Iron Defense",
+                "damage": null
+            },
+            {
+                "name": "Power Whip",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2401",
+        "externalId": "bw2-72",
+        "localId": "072",
+        "setCode": "bw2",
+        "cardNumber": "72/98",
+        "cardName": "Ferrothorn",
+        "fullDisplayName": "Ferrothorn 72/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            598
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-072-low.png",
+        "imageHighSrc": "cards/bw2-072-high.png",
+        "attacks": [
+            {
+                "name": "Steel Feelers",
+                "damage": "30×"
+            },
+            {
+                "name": "Gyro Ball",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2400",
+        "externalId": "bw2-71",
+        "localId": "071",
+        "setCode": "bw2",
+        "cardNumber": "71/98",
+        "cardName": "Ferroseed",
+        "fullDisplayName": "Ferroseed 71/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            597
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw2-071-low.png",
+        "imageHighSrc": "cards/bw2-071-high.png",
+        "attacks": [
+            {
+                "name": "Pierce",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2399",
+        "externalId": "bw2-70",
+        "localId": "070",
+        "setCode": "bw2",
+        "cardNumber": "70/98",
+        "cardName": "Ferroseed",
+        "fullDisplayName": "Ferroseed 70/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            597
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw2-070-low.png",
+        "imageHighSrc": "cards/bw2-070-high.png",
+        "attacks": [
+            {
+                "name": "Pin Missile",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2398",
+        "externalId": "bw2-69",
+        "localId": "069",
+        "setCode": "bw2",
+        "cardNumber": "69/98",
+        "cardName": "Mandibuzz",
+        "fullDisplayName": "Mandibuzz 69/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            630
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw2-069-low.png",
+        "imageHighSrc": "cards/bw2-069-high.png",
+        "attacks": [
+            {
+                "name": "Bone Rush",
+                "damage": "30×"
+            },
+            {
+                "name": "Dark Pulse",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2397",
+        "externalId": "bw2-68",
+        "localId": "068",
+        "setCode": "bw2",
+        "cardNumber": "68/98",
+        "cardName": "Vullaby",
+        "fullDisplayName": "Vullaby 68/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            629
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw2-068-low.png",
+        "imageHighSrc": "cards/bw2-068-high.png",
+        "attacks": [
+            {
+                "name": "Rear Guard",
+                "damage": null
+            },
+            {
+                "name": "Gust",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2396",
+        "externalId": "bw2-67",
+        "localId": "067",
+        "setCode": "bw2",
+        "cardNumber": "67/98",
+        "cardName": "Zoroark",
+        "fullDisplayName": "Zoroark 67/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            571
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-067-low.png",
+        "imageHighSrc": "cards/bw2-067-high.png",
+        "attacks": [
+            {
+                "name": "Fury Swipes",
+                "damage": "20×"
+            },
+            {
+                "name": "Night Daze",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2395",
+        "externalId": "bw2-66",
+        "localId": "066",
+        "setCode": "bw2",
+        "cardNumber": "66/98",
+        "cardName": "Zorua",
+        "fullDisplayName": "Zorua 66/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            570
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-066-low.png",
+        "imageHighSrc": "cards/bw2-066-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            },
+            {
+                "name": "Rising Lunge",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2394",
+        "externalId": "bw2-65",
+        "localId": "065",
+        "setCode": "bw2",
+        "cardNumber": "65/98",
+        "cardName": "Liepard",
+        "fullDisplayName": "Liepard 65/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            510
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw2-065-low.png",
+        "imageHighSrc": "cards/bw2-065-high.png",
+        "attacks": [
+            {
+                "name": "Feint Attack",
+                "damage": null
+            },
+            {
+                "name": "Claw Rend",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2393",
+        "externalId": "bw2-64",
+        "localId": "064",
+        "setCode": "bw2",
+        "cardNumber": "64/98",
+        "cardName": "Purrloin",
+        "fullDisplayName": "Purrloin 64/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            509
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw2-064-low.png",
+        "imageHighSrc": "cards/bw2-064-high.png",
+        "attacks": [
+            {
+                "name": "Knock Off",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2392",
+        "externalId": "bw2-63",
+        "localId": "063",
+        "setCode": "bw2",
+        "cardNumber": "63/98",
+        "cardName": "Terrakion",
+        "fullDisplayName": "Terrakion 63/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            639
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-063-low.png",
+        "imageHighSrc": "cards/bw2-063-high.png",
+        "attacks": [
+            {
+                "name": "Boulder Crush",
+                "damage": "40"
+            },
+            {
+                "name": "Sacred Sword",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2391",
+        "externalId": "bw2-62",
+        "localId": "062",
+        "setCode": "bw2",
+        "cardNumber": "62/98",
+        "cardName": "Krookodile",
+        "fullDisplayName": "Krookodile 62/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            553
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-062-low.png",
+        "imageHighSrc": "cards/bw2-062-high.png",
+        "attacks": [
+            {
+                "name": "Thrash",
+                "damage": "70+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2390",
+        "externalId": "bw2-61",
+        "localId": "061",
+        "setCode": "bw2",
+        "cardNumber": "61/98",
+        "cardName": "Krokorok",
+        "fullDisplayName": "Krokorok 61/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            552
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-061-low.png",
+        "imageHighSrc": "cards/bw2-061-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "20"
+            },
+            {
+                "name": "Crunch",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2389",
+        "externalId": "bw2-60",
+        "localId": "060",
+        "setCode": "bw2",
+        "cardNumber": "60/98",
+        "cardName": "Sandile",
+        "fullDisplayName": "Sandile 60/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            551
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-060-low.png",
+        "imageHighSrc": "cards/bw2-060-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2388",
+        "externalId": "bw2-59",
+        "localId": "059",
+        "setCode": "bw2",
+        "cardNumber": "59/98",
+        "cardName": "Sawk",
+        "fullDisplayName": "Sawk 59/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            539
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-059-low.png",
+        "imageHighSrc": "cards/bw2-059-high.png",
+        "attacks": [
+            {
+                "name": "Five Fierce Chops",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2387",
+        "externalId": "bw2-58",
+        "localId": "058",
+        "setCode": "bw2",
+        "cardNumber": "58/98",
+        "cardName": "Throh",
+        "fullDisplayName": "Throh 58/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            538
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw2-058-low.png",
+        "imageHighSrc": "cards/bw2-058-high.png",
+        "attacks": [
+            {
+                "name": "Scarf Hold",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2386",
+        "externalId": "bw2-57",
+        "localId": "057",
+        "setCode": "bw2",
+        "cardNumber": "57/98",
+        "cardName": "Excadrill",
+        "fullDisplayName": "Excadrill 57/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            530
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-057-low.png",
+        "imageHighSrc": "cards/bw2-057-high.png",
+        "attacks": [
+            {
+                "name": "Dig",
+                "damage": "30"
+            },
+            {
+                "name": "Earthquake",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2385",
+        "externalId": "bw2-56",
+        "localId": "056",
+        "setCode": "bw2",
+        "cardNumber": "56/98",
+        "cardName": "Excadrill",
+        "fullDisplayName": "Excadrill 56/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            530
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-056-low.png",
+        "imageHighSrc": "cards/bw2-056-high.png",
+        "attacks": [
+            {
+                "name": "Metal Claw",
+                "damage": "30"
+            },
+            {
+                "name": "Drill Run",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2384",
+        "externalId": "bw2-55",
+        "localId": "055",
+        "setCode": "bw2",
+        "cardNumber": "55/98",
+        "cardName": "Drilbur",
+        "fullDisplayName": "Drilbur 55/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            529
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw2-055-low.png",
+        "imageHighSrc": "cards/bw2-055-high.png",
+        "attacks": [
+            {
+                "name": "Mud-Slap",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2383",
+        "externalId": "bw2-54",
+        "localId": "054",
+        "setCode": "bw2",
+        "cardNumber": "54/98",
+        "cardName": "Drilbur",
+        "fullDisplayName": "Drilbur 54/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            529
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw2-054-low.png",
+        "imageHighSrc": "cards/bw2-054-high.png",
+        "attacks": [
+            {
+                "name": "Hone Claws",
+                "damage": null
+            },
+            {
+                "name": "Scratch",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2382",
+        "externalId": "bw2-53",
+        "localId": "053",
+        "setCode": "bw2",
+        "cardNumber": "53/98",
+        "cardName": "Gigalith",
+        "fullDisplayName": "Gigalith 53/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            526
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-053-low.png",
+        "imageHighSrc": "cards/bw2-053-high.png",
+        "attacks": [
+            {
+                "name": "Shear",
+                "damage": null
+            },
+            {
+                "name": "Rock Bullet",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2381",
+        "externalId": "bw2-52",
+        "localId": "052",
+        "setCode": "bw2",
+        "cardNumber": "52/98",
+        "cardName": "Boldore",
+        "fullDisplayName": "Boldore 52/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            525
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-052-low.png",
+        "imageHighSrc": "cards/bw2-052-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "30"
+            },
+            {
+                "name": "Hard Crash",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2380",
+        "externalId": "bw2-51",
+        "localId": "051",
+        "setCode": "bw2",
+        "cardNumber": "51/98",
+        "cardName": "Boldore",
+        "fullDisplayName": "Boldore 51/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            525
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-051-low.png",
+        "imageHighSrc": "cards/bw2-051-high.png",
+        "attacks": [
+            {
+                "name": "Smack Down",
+                "damage": "20+"
+            },
+            {
+                "name": "Power Gem",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2379",
+        "externalId": "bw2-50",
+        "localId": "050",
+        "setCode": "bw2",
+        "cardNumber": "50/98",
+        "cardName": "Roggenrola",
+        "fullDisplayName": "Roggenrola 50/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            524
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-050-low.png",
+        "imageHighSrc": "cards/bw2-050-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            },
+            {
+                "name": "Reckless Charge",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2378",
+        "externalId": "bw2-49",
+        "localId": "049",
+        "setCode": "bw2",
+        "cardNumber": "49/98",
+        "cardName": "Roggenrola",
+        "fullDisplayName": "Roggenrola 49/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            524
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-049-low.png",
+        "imageHighSrc": "cards/bw2-049-high.png",
+        "attacks": [
+            {
+                "name": "Harden",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2377",
+        "externalId": "bw2-48",
+        "localId": "048",
+        "setCode": "bw2",
+        "cardNumber": "48/98",
+        "cardName": "Gothitelle",
+        "fullDisplayName": "Gothitelle 48/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            576
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-048-low.png",
+        "imageHighSrc": "cards/bw2-048-high.png",
+        "attacks": [
+            {
+                "name": "Smack",
+                "damage": "30"
+            },
+            {
+                "name": "Mental Shock",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2376",
+        "externalId": "bw2-47",
+        "localId": "047",
+        "setCode": "bw2",
+        "cardNumber": "47/98",
+        "cardName": "Gothitelle",
+        "fullDisplayName": "Gothitelle 47/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            576
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-047-low.png",
+        "imageHighSrc": "cards/bw2-047-high.png",
+        "attacks": [
+            {
+                "name": "Madkinesis",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2375",
+        "externalId": "bw2-46",
+        "localId": "046",
+        "setCode": "bw2",
+        "cardNumber": "46/98",
+        "cardName": "Gothorita",
+        "fullDisplayName": "Gothorita 46/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            575
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-046-low.png",
+        "imageHighSrc": "cards/bw2-046-high.png",
+        "attacks": [
+            {
+                "name": "Deleting Glare",
+                "damage": null
+            },
+            {
+                "name": "Super Psy Bolt",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2374",
+        "externalId": "bw2-45",
+        "localId": "045",
+        "setCode": "bw2",
+        "cardNumber": "45/98",
+        "cardName": "Gothorita",
+        "fullDisplayName": "Gothorita 45/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            575
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw2-045-low.png",
+        "imageHighSrc": "cards/bw2-045-high.png",
+        "attacks": [
+            {
+                "name": "Double Slap",
+                "damage": "20×"
+            },
+            {
+                "name": "Psybeam",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2373",
+        "externalId": "bw2-44",
+        "localId": "044",
+        "setCode": "bw2",
+        "cardNumber": "44/98",
+        "cardName": "Gothita",
+        "fullDisplayName": "Gothita 44/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            574
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw2-044-low.png",
+        "imageHighSrc": "cards/bw2-044-high.png",
+        "attacks": [
+            {
+                "name": "Smack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2372",
+        "externalId": "bw2-43",
+        "localId": "043",
+        "setCode": "bw2",
+        "cardNumber": "43/98",
+        "cardName": "Gothita",
+        "fullDisplayName": "Gothita 43/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            574
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw2-043-low.png",
+        "imageHighSrc": "cards/bw2-043-high.png",
+        "attacks": [
+            {
+                "name": "Hypnotic Gaze",
+                "damage": null
+            },
+            {
+                "name": "Double Slap",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2371",
+        "externalId": "bw2-42",
+        "localId": "042",
+        "setCode": "bw2",
+        "cardNumber": "42/98",
+        "cardName": "Sigilyph",
+        "fullDisplayName": "Sigilyph 42/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            561
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw2-042-low.png",
+        "imageHighSrc": "cards/bw2-042-high.png",
+        "attacks": [
+            {
+                "name": "Quick Turn",
+                "damage": "10×"
+            },
+            {
+                "name": "Psychic Assault",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2370",
+        "externalId": "bw2-41",
+        "localId": "041",
+        "setCode": "bw2",
+        "cardNumber": "41/98",
+        "cardName": "Sigilyph",
+        "fullDisplayName": "Sigilyph 41/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            561
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw2-041-low.png",
+        "imageHighSrc": "cards/bw2-041-high.png",
+        "attacks": [
+            {
+                "name": "Reflect",
+                "damage": null
+            },
+            {
+                "name": "Telekinesis",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2369",
+        "externalId": "bw2-40",
+        "localId": "040",
+        "setCode": "bw2",
+        "cardNumber": "40/98",
+        "cardName": "Scolipede",
+        "fullDisplayName": "Scolipede 40/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            545
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw2-040-low.png",
+        "imageHighSrc": "cards/bw2-040-high.png",
+        "attacks": [
+            {
+                "name": "Toxic Claws",
+                "damage": "30"
+            },
+            {
+                "name": "Wild Horn",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2368",
+        "externalId": "bw2-39",
+        "localId": "039",
+        "setCode": "bw2",
+        "cardNumber": "39/98",
+        "cardName": "Whirlipede",
+        "fullDisplayName": "Whirlipede 39/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            544
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-039-low.png",
+        "imageHighSrc": "cards/bw2-039-high.png",
+        "attacks": [
+            {
+                "name": "Venoshock",
+                "damage": "10+"
+            },
+            {
+                "name": "Steamroller",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2367",
+        "externalId": "bw2-38",
+        "localId": "038",
+        "setCode": "bw2",
+        "cardNumber": "38/98",
+        "cardName": "Venipede",
+        "fullDisplayName": "Venipede 38/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            543
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-038-low.png",
+        "imageHighSrc": "cards/bw2-038-high.png",
+        "attacks": [
+            {
+                "name": "Poison Sting",
+                "damage": null
+            },
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2366",
+        "externalId": "bw2-37",
+        "localId": "037",
+        "setCode": "bw2",
+        "cardNumber": "37/98",
+        "cardName": "Swoobat",
+        "fullDisplayName": "Swoobat 37/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            528
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw2-037-low.png",
+        "imageHighSrc": "cards/bw2-037-high.png",
+        "attacks": [
+            {
+                "name": "Psyshot",
+                "damage": "30"
+            },
+            {
+                "name": "Phat Sound",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2365",
+        "externalId": "bw2-36",
+        "localId": "036",
+        "setCode": "bw2",
+        "cardNumber": "36/98",
+        "cardName": "Woobat",
+        "fullDisplayName": "Woobat 36/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            527
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-036-low.png",
+        "imageHighSrc": "cards/bw2-036-high.png",
+        "attacks": [
+            {
+                "name": "Psy Bolt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2364",
+        "externalId": "bw2-35",
+        "localId": "035",
+        "setCode": "bw2",
+        "cardNumber": "35/98",
+        "cardName": "Thundurus",
+        "fullDisplayName": "Thundurus 35/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            642
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-035-low.png",
+        "imageHighSrc": "cards/bw2-035-high.png",
+        "attacks": [
+            {
+                "name": "Charge",
+                "damage": null
+            },
+            {
+                "name": "Disaster Volt",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2363",
+        "externalId": "bw2-34",
+        "localId": "034",
+        "setCode": "bw2",
+        "cardNumber": "34/98",
+        "cardName": "Galvantula",
+        "fullDisplayName": "Galvantula 34/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            596
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-034-low.png",
+        "imageHighSrc": "cards/bw2-034-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "20"
+            },
+            {
+                "name": "Stun Needle",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2362",
+        "externalId": "bw2-33",
+        "localId": "033",
+        "setCode": "bw2",
+        "cardNumber": "33/98",
+        "cardName": "Joltik",
+        "fullDisplayName": "Joltik 33/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            595
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-033-low.png",
+        "imageHighSrc": "cards/bw2-033-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2361",
+        "externalId": "bw2-32",
+        "localId": "032",
+        "setCode": "bw2",
+        "cardNumber": "32/98",
+        "cardName": "Emolga",
+        "fullDisplayName": "Emolga 32/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            587
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-032-low.png",
+        "imageHighSrc": "cards/bw2-032-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "10"
+            },
+            {
+                "name": "Acrobatics",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2360",
+        "externalId": "bw2-31",
+        "localId": "031",
+        "setCode": "bw2",
+        "cardNumber": "31/98",
+        "cardName": "Beartic",
+        "fullDisplayName": "Beartic 31/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            614
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-031-low.png",
+        "imageHighSrc": "cards/bw2-031-high.png",
+        "attacks": [
+            {
+                "name": "Icy Wind",
+                "damage": "30"
+            },
+            {
+                "name": "Superpower",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2359",
+        "externalId": "bw2-30",
+        "localId": "030",
+        "setCode": "bw2",
+        "cardNumber": "30/98",
+        "cardName": "Beartic",
+        "fullDisplayName": "Beartic 30/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            614
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-030-low.png",
+        "imageHighSrc": "cards/bw2-030-high.png",
+        "attacks": [
+            {
+                "name": "Sheer Cold",
+                "damage": "50"
+            },
+            {
+                "name": "Icicle Crash",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2358",
+        "externalId": "bw2-29",
+        "localId": "029",
+        "setCode": "bw2",
+        "cardNumber": "29/98",
+        "cardName": "Cubchoo",
+        "fullDisplayName": "Cubchoo 29/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            613
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/bw2-029-low.png",
+        "imageHighSrc": "cards/bw2-029-high.png",
+        "attacks": [
+            {
+                "name": "Icicle Punch",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2357",
+        "externalId": "bw2-28",
+        "localId": "028",
+        "setCode": "bw2",
+        "cardNumber": "28/98",
+        "cardName": "Cubchoo",
+        "fullDisplayName": "Cubchoo 28/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            613
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw2-028-low.png",
+        "imageHighSrc": "cards/bw2-028-high.png",
+        "attacks": [
+            {
+                "name": "Powder Snow",
+                "damage": "10"
+            },
+            {
+                "name": "Rest",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2356",
+        "externalId": "bw2-27",
+        "localId": "027",
+        "setCode": "bw2",
+        "cardNumber": "27/98",
+        "cardName": "Swanna",
+        "fullDisplayName": "Swanna 27/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            581
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw2-027-low.png",
+        "imageHighSrc": "cards/bw2-027-high.png",
+        "attacks": [
+            {
+                "name": "Wing Dance",
+                "damage": "30"
+            },
+            {
+                "name": "Air Slash",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2355",
+        "externalId": "bw2-26",
+        "localId": "026",
+        "setCode": "bw2",
+        "cardNumber": "26/98",
+        "cardName": "Ducklett",
+        "fullDisplayName": "Ducklett 26/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            580
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw2-026-low.png",
+        "imageHighSrc": "cards/bw2-026-high.png",
+        "attacks": [
+            {
+                "name": "Roost",
+                "damage": null
+            },
+            {
+                "name": "Rain Splash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2354",
+        "externalId": "bw2-25",
+        "localId": "025",
+        "setCode": "bw2",
+        "cardNumber": "25/98",
+        "cardName": "Basculin",
+        "fullDisplayName": "Basculin 25/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            550
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw2-025-low.png",
+        "imageHighSrc": "cards/bw2-025-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Splatter",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2353",
+        "externalId": "bw2-24",
+        "localId": "024",
+        "setCode": "bw2",
+        "cardNumber": "24/98",
+        "cardName": "Basculin",
+        "fullDisplayName": "Basculin 24/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            550
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw2-024-low.png",
+        "imageHighSrc": "cards/bw2-024-high.png",
+        "attacks": [
+            {
+                "name": "Flail",
+                "damage": "10×"
+            },
+            {
+                "name": "Final Gambit",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2352",
+        "externalId": "bw2-23",
+        "localId": "023",
+        "setCode": "bw2",
+        "cardNumber": "23/98",
+        "cardName": "Simipour",
+        "fullDisplayName": "Simipour 23/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            516
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw2-023-low.png",
+        "imageHighSrc": "cards/bw2-023-high.png",
+        "attacks": [
+            {
+                "name": "Grass' Power",
+                "damage": "30"
+            },
+            {
+                "name": "Rushing Water",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2351",
+        "externalId": "bw2-22",
+        "localId": "022",
+        "setCode": "bw2",
+        "cardNumber": "22/98",
+        "cardName": "Panpour",
+        "fullDisplayName": "Panpour 22/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            515
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-022-low.png",
+        "imageHighSrc": "cards/bw2-022-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Scratch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2350",
+        "externalId": "bw2-21",
+        "localId": "021",
+        "setCode": "bw2",
+        "cardNumber": "21/98",
+        "cardName": "Darmanitan",
+        "fullDisplayName": "Darmanitan 21/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            555
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw2-021-low.png",
+        "imageHighSrc": "cards/bw2-021-high.png",
+        "attacks": [
+            {
+                "name": "Rock Smash",
+                "damage": "20+"
+            },
+            {
+                "name": "Fire Punch",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2349",
+        "externalId": "bw2-20",
+        "localId": "020",
+        "setCode": "bw2",
+        "cardNumber": "20/98",
+        "cardName": "Darumaka",
+        "fullDisplayName": "Darumaka 20/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            554
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw2-020-low.png",
+        "imageHighSrc": "cards/bw2-020-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Combustion",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2348",
+        "externalId": "bw2-19",
+        "localId": "019",
+        "setCode": "bw2",
+        "cardNumber": "19/98",
+        "cardName": "Simisear",
+        "fullDisplayName": "Simisear 19/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            514
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw2-019-low.png",
+        "imageHighSrc": "cards/bw2-019-high.png",
+        "attacks": [
+            {
+                "name": "Water's Power",
+                "damage": "30"
+            },
+            {
+                "name": "Flamethrower",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2347",
+        "externalId": "bw2-18",
+        "localId": "018",
+        "setCode": "bw2",
+        "cardNumber": "18/98",
+        "cardName": "Pansear",
+        "fullDisplayName": "Pansear 18/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            513
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-018-low.png",
+        "imageHighSrc": "cards/bw2-018-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Scratch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2346",
+        "externalId": "bw2-17",
+        "localId": "017",
+        "setCode": "bw2",
+        "cardNumber": "17/98",
+        "cardName": "Virizion",
+        "fullDisplayName": "Virizion 17/98 Emerging Powers",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw2-017-low.png",
+        "imageHighSrc": "cards/bw2-017-high.png",
+        "attacks": [
+            {
+                "name": "Giga Drain",
+                "damage": "30"
+            },
+            {
+                "name": "Sacred Sword",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2345",
+        "externalId": "bw2-16",
+        "localId": "016",
+        "setCode": "bw2",
+        "cardNumber": "16/98",
+        "cardName": "Sawsbuck",
+        "fullDisplayName": "Sawsbuck 16/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            586
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-016-low.png",
+        "imageHighSrc": "cards/bw2-016-high.png",
+        "attacks": [
+            {
+                "name": "Push Down",
+                "damage": "30"
+            },
+            {
+                "name": "Take Down",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2344",
+        "externalId": "bw2-15",
+        "localId": "015",
+        "setCode": "bw2",
+        "cardNumber": "15/98",
+        "cardName": "Deerling",
+        "fullDisplayName": "Deerling 15/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            585
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw2-015-low.png",
+        "imageHighSrc": "cards/bw2-015-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Wild Kick",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2343",
+        "externalId": "bw2-14",
+        "localId": "014",
+        "setCode": "bw2",
+        "cardNumber": "14/98",
+        "cardName": "Lilligant",
+        "fullDisplayName": "Lilligant 14/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            549
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw2-014-low.png",
+        "imageHighSrc": "cards/bw2-014-high.png",
+        "attacks": [
+            {
+                "name": "Bemusing Aroma",
+                "damage": "20"
+            },
+            {
+                "name": "Cut",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2342",
+        "externalId": "bw2-13",
+        "localId": "013",
+        "setCode": "bw2",
+        "cardNumber": "13/98",
+        "cardName": "Petilil",
+        "fullDisplayName": "Petilil 13/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            548
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw2-013-low.png",
+        "imageHighSrc": "cards/bw2-013-high.png",
+        "attacks": [
+            {
+                "name": "Stun Spore",
+                "damage": null
+            },
+            {
+                "name": "Cut",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2341",
+        "externalId": "bw2-12",
+        "localId": "012",
+        "setCode": "bw2",
+        "cardNumber": "12/98",
+        "cardName": "Whimsicott",
+        "fullDisplayName": "Whimsicott 12/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            547
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw2-012-low.png",
+        "imageHighSrc": "cards/bw2-012-high.png",
+        "attacks": [
+            {
+                "name": "Encore",
+                "damage": "20"
+            },
+            {
+                "name": "U-turn",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2340",
+        "externalId": "bw2-11",
+        "localId": "011",
+        "setCode": "bw2",
+        "cardNumber": "11/98",
+        "cardName": "Whimsicott",
+        "fullDisplayName": "Whimsicott 11/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            547
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw2-011-low.png",
+        "imageHighSrc": "cards/bw2-011-high.png",
+        "attacks": [
+            {
+                "name": "Helping Hand",
+                "damage": null
+            },
+            {
+                "name": "Cotton Guard",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2339",
+        "externalId": "bw2-10",
+        "localId": "010",
+        "setCode": "bw2",
+        "cardNumber": "10/98",
+        "cardName": "Cottonee",
+        "fullDisplayName": "Cottonee 10/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            546
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-010-low.png",
+        "imageHighSrc": "cards/bw2-010-high.png",
+        "attacks": [
+            {
+                "name": "Cotton Guard",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2338",
+        "externalId": "bw2-9",
+        "localId": "009",
+        "setCode": "bw2",
+        "cardNumber": "9/98",
+        "cardName": "Cottonee",
+        "fullDisplayName": "Cottonee 9/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            546
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw2-009-low.png",
+        "imageHighSrc": "cards/bw2-009-high.png",
+        "attacks": [
+            {
+                "name": "Absorb",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2337",
+        "externalId": "bw2-8",
+        "localId": "008",
+        "setCode": "bw2",
+        "cardNumber": "8/98",
+        "cardName": "Leavanny",
+        "fullDisplayName": "Leavanny 8/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            542
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw2-008-low.png",
+        "imageHighSrc": "cards/bw2-008-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "30"
+            },
+            {
+                "name": "Triple Cutter",
+                "damage": "60×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2336",
+        "externalId": "bw2-7",
+        "localId": "007",
+        "setCode": "bw2",
+        "cardNumber": "7/98",
+        "cardName": "Leavanny",
+        "fullDisplayName": "Leavanny 7/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            542
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-007-low.png",
+        "imageHighSrc": "cards/bw2-007-high.png",
+        "attacks": [
+            {
+                "name": "Nurturing",
+                "damage": null
+            },
+            {
+                "name": "X-Scissor",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2335",
+        "externalId": "bw2-6",
+        "localId": "006",
+        "setCode": "bw2",
+        "cardNumber": "6/98",
+        "cardName": "Swadloon",
+        "fullDisplayName": "Swadloon 6/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            541
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw2-006-low.png",
+        "imageHighSrc": "cards/bw2-006-high.png",
+        "attacks": [
+            {
+                "name": "Grass Cocooning",
+                "damage": null
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2334",
+        "externalId": "bw2-5",
+        "localId": "005",
+        "setCode": "bw2",
+        "cardNumber": "5/98",
+        "cardName": "Swadloon",
+        "fullDisplayName": "Swadloon 5/98 Emerging Powers",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            541
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-005-low.png",
+        "imageHighSrc": "cards/bw2-005-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "20"
+            },
+            {
+                "name": "Double Razor Leaf",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2333",
+        "externalId": "bw2-4",
+        "localId": "004",
+        "setCode": "bw2",
+        "cardNumber": "4/98",
+        "cardName": "Sewaddle",
+        "fullDisplayName": "Sewaddle 4/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            540
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw2-004-low.png",
+        "imageHighSrc": "cards/bw2-004-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2332",
+        "externalId": "bw2-3",
+        "localId": "003",
+        "setCode": "bw2",
+        "cardNumber": "3/98",
+        "cardName": "Sewaddle",
+        "fullDisplayName": "Sewaddle 3/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            540
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw2-003-low.png",
+        "imageHighSrc": "cards/bw2-003-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "String Shot",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2331",
+        "externalId": "bw2-2",
+        "localId": "002",
+        "setCode": "bw2",
+        "cardNumber": "2/98",
+        "cardName": "Simisage",
+        "fullDisplayName": "Simisage 2/98 Emerging Powers",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            512
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw2-002-low.png",
+        "imageHighSrc": "cards/bw2-002-high.png",
+        "attacks": [
+            {
+                "name": "Fire's Power",
+                "damage": "30"
+            },
+            {
+                "name": "Seed Bomb",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2330",
+        "externalId": "bw2-1",
+        "localId": "001",
+        "setCode": "bw2",
+        "cardNumber": "1/98",
+        "cardName": "Pansage",
+        "fullDisplayName": "Pansage 1/98 Emerging Powers",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            511
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw2-001-low.png",
+        "imageHighSrc": "cards/bw2-001-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Scratch",
+                "damage": "20"
+            }
+        ]
+    }
 ]

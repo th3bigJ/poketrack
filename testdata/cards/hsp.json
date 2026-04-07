@@ -1,0 +1,788 @@
+[
+    {
+        "masterCardId": "6900",
+        "externalId": "hsp-HGSS25",
+        "localId": "HGSS25",
+        "setCode": "hsp",
+        "cardNumber": "HGSS25",
+        "cardName": "Hitmonlee",
+        "fullDisplayName": "Hitmonlee HGSS25 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            106
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/hsp-HGSS25-low.png",
+        "imageHighSrc": "cards/hsp-HGSS25-high.png",
+        "attacks": [
+            {
+                "name": "Kick",
+                "damage": "20"
+            },
+            {
+                "name": "High Jump Kick",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6895",
+        "externalId": "hsp-HGSS24",
+        "localId": "HGSS24",
+        "setCode": "hsp",
+        "cardNumber": "HGSS24",
+        "cardName": "Hitmonchan",
+        "fullDisplayName": "Hitmonchan HGSS24 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            107
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/hsp-HGSS24-low.png",
+        "imageHighSrc": "cards/hsp-HGSS24-high.png",
+        "attacks": [
+            {
+                "name": "Detect",
+                "damage": null
+            },
+            {
+                "name": "Sky Uppercut",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6890",
+        "externalId": "hsp-HGSS23",
+        "localId": "HGSS23",
+        "setCode": "hsp",
+        "cardNumber": "HGSS23",
+        "cardName": "Porygon2",
+        "fullDisplayName": "Porygon2 HGSS23 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            233
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "TOKIYA",
+        "imageLowSrc": "cards/hsp-HGSS23-low.png",
+        "imageHighSrc": "cards/hsp-HGSS23-high.png",
+        "attacks": [
+            {
+                "name": "Reckless Charge",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6885",
+        "externalId": "hsp-HGSS22",
+        "localId": "HGSS22",
+        "setCode": "hsp",
+        "cardNumber": "HGSS22",
+        "cardName": "Porygon",
+        "fullDisplayName": "Porygon HGSS22 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            137
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "TOKIYA",
+        "imageLowSrc": "cards/hsp-HGSS22-low.png",
+        "imageHighSrc": "cards/hsp-HGSS22-high.png",
+        "attacks": [
+            {
+                "name": "Stiffen",
+                "damage": null
+            },
+            {
+                "name": "Version Update",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6880",
+        "externalId": "hsp-HGSS21",
+        "localId": "HGSS21",
+        "setCode": "hsp",
+        "cardNumber": "HGSS21",
+        "cardName": "Suicune",
+        "fullDisplayName": "Suicune HGSS21 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            245
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hideaki Hakozaki",
+        "imageLowSrc": "cards/hsp-HGSS21-low.png",
+        "imageHighSrc": "cards/hsp-HGSS21-high.png",
+        "attacks": [
+            {
+                "name": "Sheer Cold",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6875",
+        "externalId": "hsp-HGSS20",
+        "localId": "HGSS20",
+        "setCode": "hsp",
+        "cardNumber": "HGSS20",
+        "cardName": "Entei",
+        "fullDisplayName": "Entei HGSS20 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            244
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuri Umemura",
+        "imageLowSrc": "cards/hsp-HGSS20-low.png",
+        "imageHighSrc": "cards/hsp-HGSS20-high.png",
+        "attacks": [
+            {
+                "name": "Flare Blitz",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6870",
+        "externalId": "hsp-HGSS19",
+        "localId": "HGSS19",
+        "setCode": "hsp",
+        "cardNumber": "HGSS19",
+        "cardName": "Raikou",
+        "fullDisplayName": "Raikou HGSS19 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            243
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Noriko Hotta",
+        "imageLowSrc": "cards/hsp-HGSS19-low.png",
+        "imageHighSrc": "cards/hsp-HGSS19-high.png",
+        "attacks": [
+            {
+                "name": "Zap Cannon",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22542",
+        "externalId": "hsp-HGSS18",
+        "localId": "HGSS18",
+        "setCode": "hsp",
+        "cardNumber": "HGSS18",
+        "cardName": "Tropical Tidal Wave",
+        "fullDisplayName": "Tropical Tidal Wave HGSS18 HGSS Black Star Promos",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": [
+            25,
+            183,
+            54,
+            187
+        ],
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/hgssp-HGSS18-low.jpg",
+        "imageHighSrc": "cards/hgssp-HGSS18-low.jpg",
+        "rules": "Flip a coin. If heads, discard all Trainer and Stadium cards your opponent has in play. If tails, discard all Trainer and Stadium cards you have in play."
+    },
+    {
+        "masterCardId": "6863",
+        "externalId": "hsp-HGSS17",
+        "localId": "HGSS17",
+        "setCode": "hsp",
+        "cardNumber": "HGSS17",
+        "cardName": "Minun",
+        "fullDisplayName": "Minun HGSS17 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            312
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/hsp-HGSS17-low.png",
+        "imageHighSrc": "cards/hsp-HGSS17-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Tag Team Boost",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6858",
+        "externalId": "hsp-HGSS16",
+        "localId": "HGSS16",
+        "setCode": "hsp",
+        "cardNumber": "HGSS16",
+        "cardName": "Plusle",
+        "fullDisplayName": "Plusle HGSS16 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            311
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/hsp-HGSS16-low.png",
+        "imageHighSrc": "cards/hsp-HGSS16-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Thunder Jolt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6853",
+        "externalId": "hsp-HGSS15",
+        "localId": "HGSS15",
+        "setCode": "hsp",
+        "cardNumber": "HGSS15",
+        "cardName": "Shuckle",
+        "fullDisplayName": "Shuckle HGSS15 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            213
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/hsp-HGSS15-low.png",
+        "imageHighSrc": "cards/hsp-HGSS15-high.png",
+        "attacks": [
+            {
+                "name": "Shell Stunner",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6849",
+        "externalId": "hsp-HGSS14",
+        "localId": "HGSS14",
+        "setCode": "hsp",
+        "cardNumber": "HGSS14",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras HGSS14 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/hsp-HGSS14-low.png",
+        "imageHighSrc": "cards/hsp-HGSS14-high.png",
+        "attacks": [
+            {
+                "name": "Ferry",
+                "damage": null
+            },
+            {
+                "name": "Surf",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6844",
+        "externalId": "hsp-HGSS13",
+        "localId": "HGSS13",
+        "setCode": "hsp",
+        "cardNumber": "HGSS13",
+        "cardName": "Smoochum",
+        "fullDisplayName": "Smoochum HGSS13 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            238
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/hsp-HGSS13-low.png",
+        "imageHighSrc": "cards/hsp-HGSS13-high.png",
+        "attacks": [
+            {
+                "name": "Energy Antics",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6837",
+        "externalId": "hsp-HGSS12",
+        "localId": "HGSS12",
+        "setCode": "hsp",
+        "cardNumber": "HGSS12",
+        "cardName": "Cleffa",
+        "fullDisplayName": "Cleffa HGSS12 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            173
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/hsp-HGSS12-low.png",
+        "imageHighSrc": "cards/hsp-HGSS12-high.png",
+        "attacks": [
+            {
+                "name": "Eeeeeeek",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6830",
+        "externalId": "hsp-HGSS11",
+        "localId": "HGSS11",
+        "setCode": "hsp",
+        "cardNumber": "HGSS11",
+        "cardName": "Latios",
+        "fullDisplayName": "Latios HGSS11 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            381
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Wataru Kawahara",
+        "imageLowSrc": "cards/hsp-HGSS11-low.png",
+        "imageHighSrc": "cards/hsp-HGSS11-high.png",
+        "attacks": [
+            {
+                "name": "Infinite Wing",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6823",
+        "externalId": "hsp-HGSS10",
+        "localId": "HGSS10",
+        "setCode": "hsp",
+        "cardNumber": "HGSS10",
+        "cardName": "Latias",
+        "fullDisplayName": "Latias HGSS10 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            380
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Wataru Kawahara",
+        "imageLowSrc": "cards/hsp-HGSS10-low.png",
+        "imageHighSrc": "cards/hsp-HGSS10-high.png",
+        "attacks": [
+            {
+                "name": "Energy Assist",
+                "damage": "10"
+            },
+            {
+                "name": "Infinite Wind",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6816",
+        "externalId": "hsp-HGSS09",
+        "localId": "HGSS09",
+        "setCode": "hsp",
+        "cardNumber": "HGSS09",
+        "cardName": "Typhlosion",
+        "fullDisplayName": "Typhlosion HGSS09 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            157
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Wataru Kawahara",
+        "imageLowSrc": "cards/hsp-HGSS09-low.png",
+        "imageHighSrc": "cards/hsp-HGSS09-high.png",
+        "attacks": [
+            {
+                "name": "Flare Destroy",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6809",
+        "externalId": "hsp-HGSS08",
+        "localId": "HGSS08",
+        "setCode": "hsp",
+        "cardNumber": "HGSS08",
+        "cardName": "Meganium",
+        "fullDisplayName": "Meganium HGSS08 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            154
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Noriko Hotta",
+        "imageLowSrc": "cards/hsp-HGSS08-low.png",
+        "imageHighSrc": "cards/hsp-HGSS08-high.png",
+        "attacks": [
+            {
+                "name": "Solarbeam",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6802",
+        "externalId": "hsp-HGSS07",
+        "localId": "HGSS07",
+        "setCode": "hsp",
+        "cardNumber": "HGSS07",
+        "cardName": "Feraligatr",
+        "fullDisplayName": "Feraligatr HGSS07 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            160
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kent Kanetsuna",
+        "imageLowSrc": "cards/hsp-HGSS07-low.png",
+        "imageHighSrc": "cards/hsp-HGSS07-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Crunch",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6796",
+        "externalId": "hsp-HGSS06",
+        "localId": "HGSS06",
+        "setCode": "hsp",
+        "cardNumber": "HGSS06",
+        "cardName": "Noctowl",
+        "fullDisplayName": "Noctowl HGSS06 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            164
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/hsp-HGSS06-low.png",
+        "imageHighSrc": "cards/hsp-HGSS06-high.png",
+        "attacks": [
+            {
+                "name": "Hypnoblast",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6790",
+        "externalId": "hsp-HGSS05",
+        "localId": "HGSS05",
+        "setCode": "hsp",
+        "cardNumber": "HGSS05",
+        "cardName": "Hoothoot",
+        "fullDisplayName": "Hoothoot HGSS05 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            163
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/hsp-HGSS05-low.png",
+        "imageHighSrc": "cards/hsp-HGSS05-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6784",
+        "externalId": "hsp-HGSS04",
+        "localId": "HGSS04",
+        "setCode": "hsp",
+        "cardNumber": "HGSS04",
+        "cardName": "Wobbuffet",
+        "fullDisplayName": "Wobbuffet HGSS04 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            202
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/hsp-HGSS04-low.png",
+        "imageHighSrc": "cards/hsp-HGSS04-high.png",
+        "attacks": [
+            {
+                "name": "Trip Over",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6771",
+        "externalId": "hsp-HGSS03",
+        "localId": "HGSS03",
+        "setCode": "hsp",
+        "cardNumber": "HGSS03",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu HGSS03 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/hsp-HGSS03-low.png",
+        "imageHighSrc": "cards/hsp-HGSS03-high.png",
+        "attacks": [
+            {
+                "name": "Recharge",
+                "damage": null
+            },
+            {
+                "name": "Thunderbolt",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6757",
+        "externalId": "hsp-HGSS02",
+        "localId": "HGSS02",
+        "setCode": "hsp",
+        "cardNumber": "HGSS02",
+        "cardName": "Lugia",
+        "fullDisplayName": "Lugia HGSS02 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            249
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takashi Yamaguchi",
+        "imageLowSrc": "cards/hsp-HGSS02-low.png",
+        "imageHighSrc": "cards/hsp-HGSS02-high.png",
+        "attacks": [
+            {
+                "name": "Wave Splash",
+                "damage": "20"
+            },
+            {
+                "name": "Aeroblast",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6742",
+        "externalId": "hsp-HGSS01",
+        "localId": "HGSS01",
+        "setCode": "hsp",
+        "cardNumber": "HGSS01",
+        "cardName": "Ho-Oh",
+        "fullDisplayName": "Ho-Oh HGSS01 HGSS Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            250
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takashi Yamaguchi",
+        "imageLowSrc": "cards/hsp-HGSS01-low.png",
+        "imageHighSrc": "cards/hsp-HGSS01-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "20"
+            },
+            {
+                "name": "Sacred Fire",
+                "damage": null
+            }
+        ]
+    }
+]

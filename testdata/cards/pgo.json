@@ -1,0 +1,2717 @@
+[
+    {
+        "masterCardId": "8893",
+        "externalId": "pgo-88",
+        "localId": "088",
+        "setCode": "pgo",
+        "cardNumber": "088/078",
+        "cardName": "Lure Module",
+        "fullDisplayName": "Lure Module 088/078 Pokémon GO",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "ORBITALLINK Inc.",
+        "imageLowSrc": "cards/pgo-088-low.png",
+        "imageHighSrc": "cards/pgo-088-high.png",
+        "rules": "Each player reveals the top 3 cards of their deck and puts all Pokémon they find there into their hand. Then, each player shuffles the other cards back into their deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "8887",
+        "externalId": "pgo-87",
+        "localId": "087",
+        "setCode": "pgo",
+        "cardNumber": "087/078",
+        "cardName": "Egg Incubator",
+        "fullDisplayName": "Egg Incubator 087/078 Pokémon GO",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sadaji",
+        "imageLowSrc": "cards/pgo-087-low.png",
+        "imageHighSrc": "cards/pgo-087-high.png",
+        "rules": "Flip a coin. If heads, search your deck for a Basic Pokémon, put it onto your Bench, and shuffle your deck. If tails, put this Egg Incubator on the bottom of your deck instead of in the discard pile.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "8881",
+        "externalId": "pgo-86",
+        "localId": "086",
+        "setCode": "pgo",
+        "cardNumber": "086/078",
+        "cardName": "Mewtwo VSTAR",
+        "fullDisplayName": "Mewtwo VSTAR 086/078 Pokémon GO",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Mochizuki",
+        "imageLowSrc": "cards/pgo-086-low.png",
+        "imageHighSrc": "cards/pgo-086-high.png",
+        "attacks": [
+            {
+                "name": "Psy Purge",
+                "damage": "90×"
+            },
+            {
+                "name": "Star Raid",
+                "damage": null
+            }
+        ],
+        "rules": "VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8875",
+        "externalId": "pgo-85",
+        "localId": "085",
+        "setCode": "pgo",
+        "cardNumber": "085/078",
+        "cardName": "Spark",
+        "fullDisplayName": "Spark 085/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/pgo-085-low.png",
+        "imageHighSrc": "cards/pgo-085-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Lightning Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8869",
+        "externalId": "pgo-84",
+        "localId": "084",
+        "setCode": "pgo",
+        "cardNumber": "084/078",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 084/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Kozaki",
+        "imageLowSrc": "cards/pgo-084-low.png",
+        "imageHighSrc": "cards/pgo-084-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8863",
+        "externalId": "pgo-83",
+        "localId": "083",
+        "setCode": "pgo",
+        "cardNumber": "083/078",
+        "cardName": "Candela",
+        "fullDisplayName": "Candela 083/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryuta Fuse",
+        "imageLowSrc": "cards/pgo-083-low.png",
+        "imageHighSrc": "cards/pgo-083-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Fire Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8857",
+        "externalId": "pgo-82",
+        "localId": "082",
+        "setCode": "pgo",
+        "cardNumber": "082/078",
+        "cardName": "Blanche",
+        "fullDisplayName": "Blanche 082/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/pgo-082-low.png",
+        "imageHighSrc": "cards/pgo-082-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Water Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8850",
+        "externalId": "pgo-81",
+        "localId": "081",
+        "setCode": "pgo",
+        "cardNumber": "081/078",
+        "cardName": "Dragonite VSTAR",
+        "fullDisplayName": "Dragonite VSTAR 081/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/pgo-081-low.png",
+        "imageHighSrc": "cards/pgo-081-high.png",
+        "attacks": [
+            {
+                "name": "Giga Impact",
+                "damage": "250"
+            },
+            {
+                "name": "Draconic Star",
+                "damage": null
+            }
+        ],
+        "rules": "VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8843",
+        "externalId": "pgo-80",
+        "localId": "080",
+        "setCode": "pgo",
+        "cardNumber": "080/078",
+        "cardName": "Melmetal VMAX",
+        "fullDisplayName": "Melmetal VMAX 080/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            809
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/pgo-080-low.png",
+        "imageHighSrc": "cards/pgo-080-high.png",
+        "attacks": [
+            {
+                "name": "G-Max Juggernaut",
+                "damage": "160+"
+            }
+        ],
+        "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
+    },
+    {
+        "masterCardId": "8838",
+        "externalId": "pgo-79",
+        "localId": "079",
+        "setCode": "pgo",
+        "cardNumber": "079/078",
+        "cardName": "Mewtwo VSTAR",
+        "fullDisplayName": "Mewtwo VSTAR 079/078 Pokémon GO",
+        "rarity": "Rare Rainbow",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Mochizuki",
+        "imageLowSrc": "cards/pgo-079-low.png",
+        "imageHighSrc": "cards/pgo-079-high.png",
+        "attacks": [
+            {
+                "name": "Psy Purge",
+                "damage": "90×"
+            },
+            {
+                "name": "Star Raid",
+                "damage": null
+            }
+        ],
+        "rules": "VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8832",
+        "externalId": "pgo-78",
+        "localId": "078",
+        "setCode": "pgo",
+        "cardNumber": "078/078",
+        "cardName": "Professor's Research",
+        "fullDisplayName": "Professor's Research 078/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Kozaki",
+        "imageLowSrc": "cards/pgo-078-low.png",
+        "imageHighSrc": "cards/pgo-078-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8827",
+        "externalId": "pgo-77",
+        "localId": "077",
+        "setCode": "pgo",
+        "cardNumber": "077/078",
+        "cardName": "Slaking V",
+        "fullDisplayName": "Slaking V 077/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            289
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saki Hayashiro",
+        "imageLowSrc": "cards/pgo-077-low.png",
+        "imageHighSrc": "cards/pgo-077-high.png",
+        "attacks": [
+            {
+                "name": "Heavy Impact",
+                "damage": "260"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8821",
+        "externalId": "pgo-76",
+        "localId": "076",
+        "setCode": "pgo",
+        "cardNumber": "076/078",
+        "cardName": "Dragonite V",
+        "fullDisplayName": "Dragonite V 076/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/pgo-076-low.png",
+        "imageHighSrc": "cards/pgo-076-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Beam",
+                "damage": "60"
+            },
+            {
+                "name": "Buster Tail",
+                "damage": "160"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8816",
+        "externalId": "pgo-75",
+        "localId": "075",
+        "setCode": "pgo",
+        "cardNumber": "075/078",
+        "cardName": "Melmetal V",
+        "fullDisplayName": "Melmetal V 075/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            809
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sadaji",
+        "imageLowSrc": "cards/pgo-075-low.png",
+        "imageHighSrc": "cards/pgo-075-high.png",
+        "attacks": [
+            {
+                "name": "Arm Charge",
+                "damage": "50"
+            },
+            {
+                "name": "Mega Punch",
+                "damage": "140"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8811",
+        "externalId": "pgo-74",
+        "localId": "074",
+        "setCode": "pgo",
+        "cardNumber": "074/078",
+        "cardName": "Conkeldurr V",
+        "fullDisplayName": "Conkeldurr V 074/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            534
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-074-low.png",
+        "imageHighSrc": "cards/pgo-074-high.png",
+        "attacks": [
+            {
+                "name": "Counter",
+                "damage": "20+"
+            },
+            {
+                "name": "Dynamic Punch",
+                "damage": "90+"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8805",
+        "externalId": "pgo-73",
+        "localId": "073",
+        "setCode": "pgo",
+        "cardNumber": "073/078",
+        "cardName": "Conkeldurr V",
+        "fullDisplayName": "Conkeldurr V 073/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            534
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/pgo-073-low.png",
+        "imageHighSrc": "cards/pgo-073-high.png",
+        "attacks": [
+            {
+                "name": "Counter",
+                "damage": "20+"
+            },
+            {
+                "name": "Dynamic Punch",
+                "damage": "90+"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8799",
+        "externalId": "pgo-72",
+        "localId": "072",
+        "setCode": "pgo",
+        "cardNumber": "072/078",
+        "cardName": "Mewtwo V",
+        "fullDisplayName": "Mewtwo V 072/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-072-low.png",
+        "imageHighSrc": "cards/pgo-072-high.png",
+        "attacks": [
+            {
+                "name": "Super Psy Bolt",
+                "damage": "50"
+            },
+            {
+                "name": "Transfer Break",
+                "damage": "160"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8794",
+        "externalId": "pgo-71",
+        "localId": "071",
+        "setCode": "pgo",
+        "cardNumber": "071/078",
+        "cardName": "Alolan Exeggutor V",
+        "fullDisplayName": "Alolan Exeggutor V 071/078 Pokémon GO",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 240,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            103
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MUGENUP",
+        "imageLowSrc": "cards/pgo-071-low.png",
+        "imageHighSrc": "cards/pgo-071-high.png",
+        "attacks": [
+            {
+                "name": "Growing Tall",
+                "damage": null
+            },
+            {
+                "name": "Head Swing",
+                "damage": null
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8788",
+        "externalId": "pgo-70",
+        "localId": "070",
+        "setCode": "pgo",
+        "cardNumber": "070/078",
+        "cardName": "Spark",
+        "fullDisplayName": "Spark 070/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/pgo-070-low.png",
+        "imageHighSrc": "cards/pgo-070-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Lightning Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8782",
+        "externalId": "pgo-69",
+        "localId": "069",
+        "setCode": "pgo",
+        "cardNumber": "069/078",
+        "cardName": "Rare Candy",
+        "fullDisplayName": "Rare Candy 069/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/pgo-069-low.png",
+        "imageHighSrc": "cards/pgo-069-high.png",
+        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "8776",
+        "externalId": "pgo-68",
+        "localId": "068",
+        "setCode": "pgo",
+        "cardNumber": "068/078",
+        "cardName": "PokéStop",
+        "fullDisplayName": "PokéStop 068/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Studio Bora Inc.",
+        "imageLowSrc": "cards/pgo-068-low.png",
+        "imageHighSrc": "cards/pgo-068-high.png",
+        "rules": "Once during each player's turn, that player may discard 3 cards from the top of their deck. If a player discarded any Item cards in this way, they put those Item cards into their hand."
+    },
+    {
+        "masterCardId": "8770",
+        "externalId": "pgo-67",
+        "localId": "067",
+        "setCode": "pgo",
+        "cardNumber": "067/078",
+        "cardName": "Lure Module",
+        "fullDisplayName": "Lure Module 067/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "ORBITALLINK Inc.",
+        "imageLowSrc": "cards/pgo-067-low.png",
+        "imageHighSrc": "cards/pgo-067-high.png",
+        "rules": "Each player reveals the top 3 cards of their deck and puts all Pokémon they find there into their hand. Then, each player shuffles the other cards back into their deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "8766",
+        "externalId": "pgo-66",
+        "localId": "066",
+        "setCode": "pgo",
+        "cardNumber": "066/078",
+        "cardName": "Egg Incubator",
+        "fullDisplayName": "Egg Incubator 066/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sadaji",
+        "imageLowSrc": "cards/pgo-066-low.png",
+        "imageHighSrc": "cards/pgo-066-high.png",
+        "rules": "Flip a coin. If heads, search your deck for a Basic Pokémon, put it onto your Bench, and shuffle your deck. If tails, put this Egg Incubator on the bottom of your deck instead of in the discard pile.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "8762",
+        "externalId": "pgo-65",
+        "localId": "065",
+        "setCode": "pgo",
+        "cardNumber": "065/078",
+        "cardName": "Candela",
+        "fullDisplayName": "Candela 065/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryuta Fuse",
+        "imageLowSrc": "cards/pgo-065-low.png",
+        "imageHighSrc": "cards/pgo-065-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Fire Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8755",
+        "externalId": "pgo-64",
+        "localId": "064",
+        "setCode": "pgo",
+        "cardNumber": "064/078",
+        "cardName": "Blanche",
+        "fullDisplayName": "Blanche 064/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/pgo-064-low.png",
+        "imageHighSrc": "cards/pgo-064-high.png",
+        "rules": "Draw 2 cards. If you drew any cards in this way, flip a coin. If heads, attach a Water Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "8750",
+        "externalId": "pgo-63",
+        "localId": "063",
+        "setCode": "pgo",
+        "cardNumber": "063/078",
+        "cardName": "Unfezant",
+        "fullDisplayName": "Unfezant 063/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            521
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GIDORA",
+        "imageLowSrc": "cards/pgo-063-low.png",
+        "imageHighSrc": "cards/pgo-063-high.png",
+        "attacks": [
+            {
+                "name": "Gust",
+                "damage": "30"
+            },
+            {
+                "name": "Hurricane Wing",
+                "damage": "70×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8745",
+        "externalId": "pgo-62",
+        "localId": "062",
+        "setCode": "pgo",
+        "cardNumber": "062/078",
+        "cardName": "Tranquill",
+        "fullDisplayName": "Tranquill 062/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            520
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "0313",
+        "imageLowSrc": "cards/pgo-062-low.png",
+        "imageHighSrc": "cards/pgo-062-high.png",
+        "attacks": [
+            {
+                "name": "Aerial Ace",
+                "damage": "20+"
+            },
+            {
+                "name": "Flap",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8739",
+        "externalId": "pgo-61",
+        "localId": "061",
+        "setCode": "pgo",
+        "cardNumber": "061/078",
+        "cardName": "Pidove",
+        "fullDisplayName": "Pidove 061/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            519
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-061-low.png",
+        "imageHighSrc": "cards/pgo-061-high.png",
+        "attacks": [
+            {
+                "name": "Growl",
+                "damage": null
+            },
+            {
+                "name": "Flap",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8733",
+        "externalId": "pgo-60",
+        "localId": "060",
+        "setCode": "pgo",
+        "cardNumber": "060/078",
+        "cardName": "Bibarel",
+        "fullDisplayName": "Bibarel 060/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            400
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KIYOTAKA OSHIYAMA",
+        "imageLowSrc": "cards/pgo-060-low.png",
+        "imageHighSrc": "cards/pgo-060-high.png",
+        "attacks": [
+            {
+                "name": "Hammer In",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8727",
+        "externalId": "pgo-59",
+        "localId": "059",
+        "setCode": "pgo",
+        "cardNumber": "059/078",
+        "cardName": "Bidoof",
+        "fullDisplayName": "Bidoof 059/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            399
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/pgo-059-low.png",
+        "imageHighSrc": "cards/pgo-059-high.png",
+        "attacks": [
+            {
+                "name": "Take Down",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8721",
+        "externalId": "pgo-58",
+        "localId": "058",
+        "setCode": "pgo",
+        "cardNumber": "058/078",
+        "cardName": "Slaking V",
+        "fullDisplayName": "Slaking V 058/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            289
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saki Hayashiro",
+        "imageLowSrc": "cards/pgo-058-low.png",
+        "imageHighSrc": "cards/pgo-058-high.png",
+        "attacks": [
+            {
+                "name": "Heavy Impact",
+                "damage": "260"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8714",
+        "externalId": "pgo-57",
+        "localId": "057",
+        "setCode": "pgo",
+        "cardNumber": "057/078",
+        "cardName": "Ambipom",
+        "fullDisplayName": "Ambipom 057/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            424
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Scav",
+        "imageLowSrc": "cards/pgo-057-low.png",
+        "imageHighSrc": "cards/pgo-057-high.png",
+        "attacks": [
+            {
+                "name": "Full Tilt Fling",
+                "damage": "60×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8709",
+        "externalId": "pgo-56",
+        "localId": "056",
+        "setCode": "pgo",
+        "cardNumber": "056/078",
+        "cardName": "Aipom",
+        "fullDisplayName": "Aipom 056/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            190
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sanosuke Sakuma",
+        "imageLowSrc": "cards/pgo-056-low.png",
+        "imageHighSrc": "cards/pgo-056-high.png",
+        "attacks": [
+            {
+                "name": "Bustle",
+                "damage": null
+            },
+            {
+                "name": "Slap",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8701",
+        "externalId": "pgo-55",
+        "localId": "055",
+        "setCode": "pgo",
+        "cardNumber": "055/078",
+        "cardName": "Snorlax",
+        "fullDisplayName": "Snorlax 055/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            143
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-055-low.png",
+        "imageHighSrc": "cards/pgo-055-high.png",
+        "attacks": [
+            {
+                "name": "Collapse",
+                "damage": "150"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8697",
+        "externalId": "pgo-54",
+        "localId": "054",
+        "setCode": "pgo",
+        "cardNumber": "054/078",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 054/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-054-low.png",
+        "imageHighSrc": "cards/pgo-054-high.png",
+        "attacks": [
+            {
+                "name": "Whiny Voice",
+                "damage": null
+            },
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8691",
+        "externalId": "pgo-53",
+        "localId": "053",
+        "setCode": "pgo",
+        "cardNumber": "053/078",
+        "cardName": "Ditto",
+        "fullDisplayName": "Ditto 053/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            132
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/pgo-053-low.png",
+        "imageHighSrc": "cards/pgo-053-high.png"
+    },
+    {
+        "masterCardId": "8686",
+        "externalId": "pgo-52",
+        "localId": "052",
+        "setCode": "pgo",
+        "cardNumber": "052/078",
+        "cardName": "Blissey",
+        "fullDisplayName": "Blissey 052/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            242
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Teeziro",
+        "imageLowSrc": "cards/pgo-052-low.png",
+        "imageHighSrc": "cards/pgo-052-high.png",
+        "attacks": [
+            {
+                "name": "Enriching Egg",
+                "damage": null
+            },
+            {
+                "name": "Zen Headbutt",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8681",
+        "externalId": "pgo-51",
+        "localId": "051",
+        "setCode": "pgo",
+        "cardNumber": "051/078",
+        "cardName": "Chansey",
+        "fullDisplayName": "Chansey 051/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            113
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "ryoma uratsuka",
+        "imageLowSrc": "cards/pgo-051-low.png",
+        "imageHighSrc": "cards/pgo-051-high.png",
+        "attacks": [
+            {
+                "name": "Delicious Egg",
+                "damage": null
+            },
+            {
+                "name": "Gentle Slap",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8675",
+        "externalId": "pgo-50",
+        "localId": "050",
+        "setCode": "pgo",
+        "cardNumber": "050/078",
+        "cardName": "Dragonite VSTAR",
+        "fullDisplayName": "Dragonite VSTAR 050/078 Pokémon GO",
+        "rarity": "Rare Holo VSTAR",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/pgo-050-low.png",
+        "imageHighSrc": "cards/pgo-050-high.png",
+        "attacks": [
+            {
+                "name": "Giga Impact",
+                "damage": "250"
+            },
+            {
+                "name": "Draconic Star",
+                "damage": null
+            }
+        ],
+        "rules": "VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8668",
+        "externalId": "pgo-49",
+        "localId": "049",
+        "setCode": "pgo",
+        "cardNumber": "049/078",
+        "cardName": "Dragonite V",
+        "fullDisplayName": "Dragonite V 049/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/pgo-049-low.png",
+        "imageHighSrc": "cards/pgo-049-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Beam",
+                "damage": "60"
+            },
+            {
+                "name": "Buster Tail",
+                "damage": "160"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8663",
+        "externalId": "pgo-48",
+        "localId": "048",
+        "setCode": "pgo",
+        "cardNumber": "048/078",
+        "cardName": "Melmetal VMAX",
+        "fullDisplayName": "Melmetal VMAX 048/078 Pokémon GO",
+        "rarity": "Rare Holo VMAX",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            809
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/pgo-048-low.png",
+        "imageHighSrc": "cards/pgo-048-high.png",
+        "attacks": [
+            {
+                "name": "G-Max Juggernaut",
+                "damage": "160+"
+            }
+        ],
+        "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
+    },
+    {
+        "masterCardId": "8658",
+        "externalId": "pgo-47",
+        "localId": "047",
+        "setCode": "pgo",
+        "cardNumber": "047/078",
+        "cardName": "Melmetal V",
+        "fullDisplayName": "Melmetal V 047/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            809
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sadaji",
+        "imageLowSrc": "cards/pgo-047-low.png",
+        "imageHighSrc": "cards/pgo-047-high.png",
+        "attacks": [
+            {
+                "name": "Arm Charge",
+                "damage": "50"
+            },
+            {
+                "name": "Mega Punch",
+                "damage": "140"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8653",
+        "externalId": "pgo-46",
+        "localId": "046",
+        "setCode": "pgo",
+        "cardNumber": "046/078",
+        "cardName": "Melmetal",
+        "fullDisplayName": "Melmetal 046/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            809
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/pgo-046-low.png",
+        "imageHighSrc": "cards/pgo-046-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "60"
+            },
+            {
+                "name": "Swinging Smash",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8648",
+        "externalId": "pgo-45",
+        "localId": "045",
+        "setCode": "pgo",
+        "cardNumber": "045/078",
+        "cardName": "Meltan",
+        "fullDisplayName": "Meltan 045/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            808
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/pgo-045-low.png",
+        "imageHighSrc": "cards/pgo-045-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Shock",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8644",
+        "externalId": "pgo-44",
+        "localId": "044",
+        "setCode": "pgo",
+        "cardNumber": "044/078",
+        "cardName": "Steelix",
+        "fullDisplayName": "Steelix 044/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            208
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GOSSAN",
+        "imageLowSrc": "cards/pgo-044-low.png",
+        "imageHighSrc": "cards/pgo-044-high.png",
+        "attacks": [
+            {
+                "name": "Body Slam",
+                "damage": "70"
+            },
+            {
+                "name": "Iron Buster",
+                "damage": "170"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8641",
+        "externalId": "pgo-43",
+        "localId": "043",
+        "setCode": "pgo",
+        "cardNumber": "043/078",
+        "cardName": "Tyranitar",
+        "fullDisplayName": "Tyranitar 043/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            248
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nisota Niso",
+        "imageLowSrc": "cards/pgo-043-low.png",
+        "imageHighSrc": "cards/pgo-043-high.png",
+        "attacks": [
+            {
+                "name": "Raging Crash",
+                "damage": "10×"
+            },
+            {
+                "name": "Earthquake",
+                "damage": "180"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8635",
+        "externalId": "pgo-42",
+        "localId": "042",
+        "setCode": "pgo",
+        "cardNumber": "042/078",
+        "cardName": "Alolan Raticate",
+        "fullDisplayName": "Alolan Raticate 042/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            20
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/pgo-042-low.png",
+        "imageHighSrc": "cards/pgo-042-high.png",
+        "attacks": [
+            {
+                "name": "Chase Up",
+                "damage": null
+            },
+            {
+                "name": "Super Fang",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "8627",
+        "externalId": "pgo-41",
+        "localId": "041",
+        "setCode": "pgo",
+        "cardNumber": "041/078",
+        "cardName": "Alolan Rattata",
+        "fullDisplayName": "Alolan Rattata 041/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            19
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KIYOTAKA OSHIYAMA",
+        "imageLowSrc": "cards/pgo-041-low.png",
+        "imageHighSrc": "cards/pgo-041-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Fang",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8609",
+        "externalId": "pgo-40",
+        "localId": "040",
+        "setCode": "pgo",
+        "cardNumber": "040/078",
+        "cardName": "Conkeldurr V",
+        "fullDisplayName": "Conkeldurr V 040/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            534
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/pgo-040-low.png",
+        "imageHighSrc": "cards/pgo-040-high.png",
+        "attacks": [
+            {
+                "name": "Counter",
+                "damage": "20+"
+            },
+            {
+                "name": "Dynamic Punch",
+                "damage": "90+"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8602",
+        "externalId": "pgo-39",
+        "localId": "039",
+        "setCode": "pgo",
+        "cardNumber": "039/078",
+        "cardName": "Solrock",
+        "fullDisplayName": "Solrock 039/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            338
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sekio",
+        "imageLowSrc": "cards/pgo-039-low.png",
+        "imageHighSrc": "cards/pgo-039-high.png",
+        "attacks": [
+            {
+                "name": "Spinning Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8594",
+        "externalId": "pgo-38",
+        "localId": "038",
+        "setCode": "pgo",
+        "cardNumber": "038/078",
+        "cardName": "Pupitar",
+        "fullDisplayName": "Pupitar 038/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            247
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/pgo-038-low.png",
+        "imageHighSrc": "cards/pgo-038-high.png",
+        "attacks": [
+            {
+                "name": "Crashing Bullet",
+                "damage": "20"
+            },
+            {
+                "name": "Tackle",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8587",
+        "externalId": "pgo-37",
+        "localId": "037",
+        "setCode": "pgo",
+        "cardNumber": "037/078",
+        "cardName": "Larvitar",
+        "fullDisplayName": "Larvitar 037/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            246
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/pgo-037-low.png",
+        "imageHighSrc": "cards/pgo-037-high.png",
+        "attacks": [
+            {
+                "name": "Rock Smash",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8582",
+        "externalId": "pgo-36",
+        "localId": "036",
+        "setCode": "pgo",
+        "cardNumber": "036/078",
+        "cardName": "Onix",
+        "fullDisplayName": "Onix 036/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            95
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/pgo-036-low.png",
+        "imageHighSrc": "cards/pgo-036-high.png",
+        "attacks": [
+            {
+                "name": "Rock Tomb",
+                "damage": "50"
+            },
+            {
+                "name": "Raging Swing",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8575",
+        "externalId": "pgo-35",
+        "localId": "035",
+        "setCode": "pgo",
+        "cardNumber": "035/078",
+        "cardName": "Sylveon",
+        "fullDisplayName": "Sylveon 035/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            700
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsushi Furusawa",
+        "imageLowSrc": "cards/pgo-035-low.png",
+        "imageHighSrc": "cards/pgo-035-high.png",
+        "attacks": [
+            {
+                "name": "Souvenir",
+                "damage": null
+            },
+            {
+                "name": "Wonder Flash",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8567",
+        "externalId": "pgo-34",
+        "localId": "034",
+        "setCode": "pgo",
+        "cardNumber": "034/078",
+        "cardName": "Lunatone",
+        "fullDisplayName": "Lunatone 034/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            337
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/pgo-034-low.png",
+        "imageHighSrc": "cards/pgo-034-high.png",
+        "attacks": [
+            {
+                "name": "Cycle Draw",
+                "damage": null
+            },
+            {
+                "name": "Moon Kinesis",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8561",
+        "externalId": "pgo-33",
+        "localId": "033",
+        "setCode": "pgo",
+        "cardNumber": "033/078",
+        "cardName": "Xatu",
+        "fullDisplayName": "Xatu 033/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            178
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hataya",
+        "imageLowSrc": "cards/pgo-033-low.png",
+        "imageHighSrc": "cards/pgo-033-high.png",
+        "attacks": [
+            {
+                "name": "Pinpoint Wave",
+                "damage": null
+            },
+            {
+                "name": "Mind Bend",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8554",
+        "externalId": "pgo-32",
+        "localId": "032",
+        "setCode": "pgo",
+        "cardNumber": "032/078",
+        "cardName": "Natu",
+        "fullDisplayName": "Natu 032/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            177
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "HYOGONOSUKE",
+        "imageLowSrc": "cards/pgo-032-low.png",
+        "imageHighSrc": "cards/pgo-032-high.png",
+        "attacks": [
+            {
+                "name": "Nap",
+                "damage": null
+            },
+            {
+                "name": "Peck",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8547",
+        "externalId": "pgo-31",
+        "localId": "031",
+        "setCode": "pgo",
+        "cardNumber": "031/078",
+        "cardName": "Mewtwo VSTAR",
+        "fullDisplayName": "Mewtwo VSTAR 031/078 Pokémon GO",
+        "rarity": "Rare Holo VSTAR",
+        "category": "Pokémon",
+        "hp": 280,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Mochizuki",
+        "imageLowSrc": "cards/pgo-031-low.png",
+        "imageHighSrc": "cards/pgo-031-high.png",
+        "attacks": [
+            {
+                "name": "Psy Purge",
+                "damage": "90×"
+            },
+            {
+                "name": "Star Raid",
+                "damage": null
+            }
+        ],
+        "rules": "VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8540",
+        "externalId": "pgo-30",
+        "localId": "030",
+        "setCode": "pgo",
+        "cardNumber": "030/078",
+        "cardName": "Mewtwo V",
+        "fullDisplayName": "Mewtwo V 030/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nurikabe",
+        "imageLowSrc": "cards/pgo-030-low.png",
+        "imageHighSrc": "cards/pgo-030-high.png",
+        "attacks": [
+            {
+                "name": "Super Psy Bolt",
+                "damage": "50"
+            },
+            {
+                "name": "Transfer Break",
+                "damage": "160"
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8534",
+        "externalId": "pgo-29",
+        "localId": "029",
+        "setCode": "pgo",
+        "cardNumber": "029/078",
+        "cardName": "Zapdos",
+        "fullDisplayName": "Zapdos 029/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuya Oka",
+        "imageLowSrc": "cards/pgo-029-low.png",
+        "imageHighSrc": "cards/pgo-029-high.png",
+        "attacks": [
+            {
+                "name": "Electric Ball",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8527",
+        "externalId": "pgo-28",
+        "localId": "028",
+        "setCode": "pgo",
+        "cardNumber": "028/078",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 028/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Narumi Sato",
+        "imageLowSrc": "cards/pgo-028-low.png",
+        "imageHighSrc": "cards/pgo-028-high.png",
+        "attacks": [
+            {
+                "name": "Wild Charge",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8520",
+        "externalId": "pgo-27",
+        "localId": "027",
+        "setCode": "pgo",
+        "cardNumber": "027/078",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 027/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-027-low.png",
+        "imageHighSrc": "cards/pgo-027-high.png",
+        "attacks": [
+            {
+                "name": "Buddy Bolt",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8514",
+        "externalId": "pgo-26",
+        "localId": "026",
+        "setCode": "pgo",
+        "cardNumber": "026/078",
+        "cardName": "Golisopod",
+        "fullDisplayName": "Golisopod 026/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            768
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "otumami",
+        "imageLowSrc": "cards/pgo-026-low.png",
+        "imageHighSrc": "cards/pgo-026-high.png",
+        "attacks": [
+            {
+                "name": "First Impression",
+                "damage": "20+"
+            },
+            {
+                "name": "Slash",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8508",
+        "externalId": "pgo-25",
+        "localId": "025",
+        "setCode": "pgo",
+        "cardNumber": "025/078",
+        "cardName": "Wimpod",
+        "fullDisplayName": "Wimpod 025/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            767
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/pgo-025-low.png",
+        "imageHighSrc": "cards/pgo-025-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8499",
+        "externalId": "pgo-24",
+        "localId": "024",
+        "setCode": "pgo",
+        "cardNumber": "024/078",
+        "cardName": "Articuno",
+        "fullDisplayName": "Articuno 024/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Jiro Sasumo",
+        "imageLowSrc": "cards/pgo-024-low.png",
+        "imageHighSrc": "cards/pgo-024-high.png",
+        "attacks": [
+            {
+                "name": "Freezing Wind",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8493",
+        "externalId": "pgo-23",
+        "localId": "023",
+        "setCode": "pgo",
+        "cardNumber": "023/078",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras 023/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-023-low.png",
+        "imageHighSrc": "cards/pgo-023-high.png",
+        "attacks": [
+            {
+                "name": "Ice Beam",
+                "damage": "20"
+            },
+            {
+                "name": "Surf",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8486",
+        "externalId": "pgo-22",
+        "localId": "022",
+        "setCode": "pgo",
+        "cardNumber": "022/078",
+        "cardName": "Gyarados",
+        "fullDisplayName": "Gyarados 022/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            130
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/pgo-022-low.png",
+        "imageHighSrc": "cards/pgo-022-high.png",
+        "attacks": [
+            {
+                "name": "Wreak Havoc",
+                "damage": null
+            },
+            {
+                "name": "Wild Splash",
+                "damage": "230"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8480",
+        "externalId": "pgo-21",
+        "localId": "021",
+        "setCode": "pgo",
+        "cardNumber": "021/078",
+        "cardName": "Magikarp",
+        "fullDisplayName": "Magikarp 021/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            129
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-021-low.png",
+        "imageHighSrc": "cards/pgo-021-high.png",
+        "attacks": [
+            {
+                "name": "Lively Grouping",
+                "damage": null
+            },
+            {
+                "name": "Raging Fin",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8473",
+        "externalId": "pgo-20",
+        "localId": "020",
+        "setCode": "pgo",
+        "cardNumber": "020/078",
+        "cardName": "Slowbro",
+        "fullDisplayName": "Slowbro 020/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            80
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mina Nakai",
+        "imageLowSrc": "cards/pgo-020-low.png",
+        "imageHighSrc": "cards/pgo-020-high.png",
+        "attacks": [
+            {
+                "name": "Tumbling Tackle",
+                "damage": "20"
+            },
+            {
+                "name": "Twilight Inspiration",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "8466",
+        "externalId": "pgo-19",
+        "localId": "019",
+        "setCode": "pgo",
+        "cardNumber": "019/078",
+        "cardName": "Slowpoke",
+        "fullDisplayName": "Slowpoke 019/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            79
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-019-low.png",
+        "imageHighSrc": "cards/pgo-019-high.png",
+        "attacks": [
+            {
+                "name": "Hold Still",
+                "damage": null
+            },
+            {
+                "name": "Ideal Fishing Day",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "8460",
+        "externalId": "pgo-18",
+        "localId": "018",
+        "setCode": "pgo",
+        "cardNumber": "018/078",
+        "cardName": "Radiant Blastoise",
+        "fullDisplayName": "Radiant Blastoise 018/078 Pokémon GO",
+        "rarity": "Radiant Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pgo-018-low.png",
+        "imageHighSrc": "cards/pgo-018-high.png",
+        "attacks": [
+            {
+                "name": "Torrential Cannon",
+                "damage": "170"
+            }
+        ],
+        "rules": "Radiant Pokémon Rule: You can't have more than 1 Radiant Pokémon in your deck."
+    },
+    {
+        "masterCardId": "8452",
+        "externalId": "pgo-17",
+        "localId": "017",
+        "setCode": "pgo",
+        "cardNumber": "017/078",
+        "cardName": "Blastoise",
+        "fullDisplayName": "Blastoise 017/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "NC Empire",
+        "imageLowSrc": "cards/pgo-017-low.png",
+        "imageHighSrc": "cards/pgo-017-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Pump",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8439",
+        "externalId": "pgo-16",
+        "localId": "016",
+        "setCode": "pgo",
+        "cardNumber": "016/078",
+        "cardName": "Wartortle",
+        "fullDisplayName": "Wartortle 016/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            8
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kurumitsu",
+        "imageLowSrc": "cards/pgo-016-low.png",
+        "imageHighSrc": "cards/pgo-016-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "30"
+            },
+            {
+                "name": "Hydro Pump",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8431",
+        "externalId": "pgo-15",
+        "localId": "015",
+        "setCode": "pgo",
+        "cardNumber": "015/078",
+        "cardName": "Squirtle",
+        "fullDisplayName": "Squirtle 015/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            7
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sowsow",
+        "imageLowSrc": "cards/pgo-015-low.png",
+        "imageHighSrc": "cards/pgo-015-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8425",
+        "externalId": "pgo-14",
+        "localId": "014",
+        "setCode": "pgo",
+        "cardNumber": "014/078",
+        "cardName": "Camerupt",
+        "fullDisplayName": "Camerupt 014/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            323
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "yuu",
+        "imageLowSrc": "cards/pgo-014-low.png",
+        "imageHighSrc": "cards/pgo-014-high.png",
+        "attacks": [
+            {
+                "name": "Split Bomb",
+                "damage": null
+            },
+            {
+                "name": "Heat Blast",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8417",
+        "externalId": "pgo-13",
+        "localId": "013",
+        "setCode": "pgo",
+        "cardNumber": "013/078",
+        "cardName": "Numel",
+        "fullDisplayName": "Numel 013/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            322
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shibuzoh.",
+        "imageLowSrc": "cards/pgo-013-low.png",
+        "imageHighSrc": "cards/pgo-013-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            },
+            {
+                "name": "Stomp",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8407",
+        "externalId": "pgo-12",
+        "localId": "012",
+        "setCode": "pgo",
+        "cardNumber": "012/078",
+        "cardName": "Moltres",
+        "fullDisplayName": "Moltres 012/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            146
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Pani Kobayashi",
+        "imageLowSrc": "cards/pgo-012-low.png",
+        "imageHighSrc": "cards/pgo-012-high.png",
+        "attacks": [
+            {
+                "name": "Fire Wing",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8399",
+        "externalId": "pgo-11",
+        "localId": "011",
+        "setCode": "pgo",
+        "cardNumber": "011/078",
+        "cardName": "Radiant Charizard",
+        "fullDisplayName": "Radiant Charizard 011/078 Pokémon GO",
+        "rarity": "Radiant Rare",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/pgo-011-low.png",
+        "imageHighSrc": "cards/pgo-011-high.png",
+        "attacks": [
+            {
+                "name": "Combustion Blast",
+                "damage": "250"
+            }
+        ],
+        "rules": "Radiant Pokémon Rule: You can't have more than 1 Radiant Pokémon in your deck."
+    },
+    {
+        "masterCardId": "8389",
+        "externalId": "pgo-10",
+        "localId": "010",
+        "setCode": "pgo",
+        "cardNumber": "010/078",
+        "cardName": "Charizard",
+        "fullDisplayName": "Charizard 010/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/pgo-010-low.png",
+        "imageHighSrc": "cards/pgo-010-high.png",
+        "attacks": [
+            {
+                "name": "Flare Blitz",
+                "damage": "170"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8375",
+        "externalId": "pgo-9",
+        "localId": "009",
+        "setCode": "pgo",
+        "cardNumber": "009/078",
+        "cardName": "Charmeleon",
+        "fullDisplayName": "Charmeleon 009/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            5
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shiburingaru",
+        "imageLowSrc": "cards/pgo-009-low.png",
+        "imageHighSrc": "cards/pgo-009-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "30"
+            },
+            {
+                "name": "Flamethrower",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8368",
+        "externalId": "pgo-8",
+        "localId": "008",
+        "setCode": "pgo",
+        "cardNumber": "008/078",
+        "cardName": "Charmander",
+        "fullDisplayName": "Charmander 008/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            4
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "saino misaki",
+        "imageLowSrc": "cards/pgo-008-low.png",
+        "imageHighSrc": "cards/pgo-008-high.png",
+        "attacks": [
+            {
+                "name": "Tail on Fire",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8357",
+        "externalId": "pgo-7",
+        "localId": "007",
+        "setCode": "pgo",
+        "cardNumber": "007/078",
+        "cardName": "Ariados",
+        "fullDisplayName": "Ariados 007/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            168
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/pgo-007-low.png",
+        "imageHighSrc": "cards/pgo-007-high.png",
+        "attacks": [
+            {
+                "name": "Poison String-Up",
+                "damage": "20"
+            },
+            {
+                "name": "Absorb",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8347",
+        "externalId": "pgo-6",
+        "localId": "006",
+        "setCode": "pgo",
+        "cardNumber": "006/078",
+        "cardName": "Spinarak",
+        "fullDisplayName": "Spinarak 006/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            167
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/pgo-006-low.png",
+        "imageHighSrc": "cards/pgo-006-high.png",
+        "attacks": [
+            {
+                "name": "Poison Sting",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8337",
+        "externalId": "pgo-5",
+        "localId": "005",
+        "setCode": "pgo",
+        "cardNumber": "005/078",
+        "cardName": "Alolan Exeggutor V",
+        "fullDisplayName": "Alolan Exeggutor V 005/078 Pokémon GO",
+        "rarity": "Rare Holo V",
+        "category": "Pokémon",
+        "hp": 240,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            103
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MUGENUP",
+        "imageLowSrc": "cards/pgo-005-low.png",
+        "imageHighSrc": "cards/pgo-005-high.png",
+        "attacks": [
+            {
+                "name": "Growing Tall",
+                "damage": null
+            },
+            {
+                "name": "Head Swing",
+                "damage": null
+            }
+        ],
+        "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8327",
+        "externalId": "pgo-4",
+        "localId": "004",
+        "setCode": "pgo",
+        "cardNumber": "004/078",
+        "cardName": "Radiant Venusaur",
+        "fullDisplayName": "Radiant Venusaur 004/078 Pokémon GO",
+        "rarity": "Radiant Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/pgo-004-low.png",
+        "imageHighSrc": "cards/pgo-004-high.png",
+        "attacks": [
+            {
+                "name": "Pollen Hazard",
+                "damage": "90"
+            }
+        ],
+        "rules": "Radiant Pokémon Rule: You can't have more than 1 Radiant Pokémon in your deck."
+    },
+    {
+        "masterCardId": "8320",
+        "externalId": "pgo-3",
+        "localId": "003",
+        "setCode": "pgo",
+        "cardNumber": "003/078",
+        "cardName": "Venusaur",
+        "fullDisplayName": "Venusaur 003/078 Pokémon GO",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KEIICHIRO ITO",
+        "imageLowSrc": "cards/pgo-003-low.png",
+        "imageHighSrc": "cards/pgo-003-high.png",
+        "attacks": [
+            {
+                "name": "Solar Beam",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8312",
+        "externalId": "pgo-2",
+        "localId": "002",
+        "setCode": "pgo",
+        "cardNumber": "002/078",
+        "cardName": "Ivysaur",
+        "fullDisplayName": "Ivysaur 002/078 Pokémon GO",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            2
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "zig",
+        "imageLowSrc": "cards/pgo-002-low.png",
+        "imageHighSrc": "cards/pgo-002-high.png",
+        "attacks": [
+            {
+                "name": "Summoning Aroma",
+                "damage": null
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8305",
+        "externalId": "pgo-1",
+        "localId": "001",
+        "setCode": "pgo",
+        "cardNumber": "001/078",
+        "cardName": "Bulbasaur",
+        "fullDisplayName": "Bulbasaur 001/078 Pokémon GO",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sowsow",
+        "imageLowSrc": "cards/pgo-001-low.png",
+        "imageHighSrc": "cards/pgo-001-high.png",
+        "attacks": [
+            {
+                "name": "Vine Whip",
+                "damage": "10"
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "20"
+            }
+        ]
+    }
+]

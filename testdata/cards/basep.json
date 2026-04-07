@@ -1,2135 +1,1660 @@
 [
-  {
-    "masterCardId": "1960",
-    "externalId": "basep-53",
-    "tcgdex_id": "basep-53",
-    "localId": "053",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "53",
-    "cardName": "Suicune",
-    "fullDisplayName": "Suicune 53 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      245
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-053-low.png",
-    "imageHighSrc": "cards/basep-053-high.png",
-    "attacks": [
-      {
-        "name": "Hypno Wave",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1959",
-    "externalId": "basep-52",
-    "tcgdex_id": "basep-52",
-    "localId": "052",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "52",
-    "cardName": "Ho-oh",
-    "fullDisplayName": "Ho-oh 52 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      250
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-052-low.png",
-    "imageHighSrc": "cards/basep-052-high.png",
-    "attacks": [
-      {
-        "name": "Sacred Wing",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1958",
-    "externalId": "basep-51",
-    "tcgdex_id": "basep-51",
-    "localId": "051",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "51",
-    "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 51 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      78
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ponyta",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-051-low.png",
-    "imageHighSrc": "cards/basep-051-high.png",
-    "attacks": [
-      {
-        "name": "Jump Over",
-        "damage": null
-      },
-      {
-        "name": "Super Singe",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1957",
-    "externalId": "basep-50",
-    "tcgdex_id": "basep-50",
-    "localId": "050",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "50",
-    "cardName": "Celebi",
-    "fullDisplayName": "Celebi 50 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      251
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-050-low.png",
-    "imageHighSrc": "cards/basep-050-high.png",
-    "attacks": [
-      {
-        "name": "Leaf Slice",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1956",
-    "externalId": "basep-49",
-    "tcgdex_id": "basep-49",
-    "localId": "049",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "49",
-    "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 49 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      143
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Craig Turvey",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-049-low.png",
-    "imageHighSrc": "cards/basep-049-high.png",
-    "attacks": [
-      {
-        "name": "Roll Over",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1955",
-    "externalId": "basep-48",
-    "tcgdex_id": "basep-48",
-    "localId": "048",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "48",
-    "cardName": "Articuno",
-    "fullDisplayName": "Articuno 48 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      144
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-048-low.png",
-    "imageHighSrc": "cards/basep-048-high.png",
-    "attacks": [
-      {
-        "name": "Ice Beam",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1954",
-    "externalId": "basep-47",
-    "tcgdex_id": "basep-47",
-    "localId": "047",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "47",
-    "cardName": "Mew",
-    "fullDisplayName": "Mew 47 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      151
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-047-low.png",
-    "imageHighSrc": "cards/basep-047-high.png",
-    "attacks": [
-      {
-        "name": "Psyshock",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1953",
-    "externalId": "basep-46",
-    "tcgdex_id": "basep-46",
-    "localId": "046",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "46",
-    "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 46 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      125
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Miki Tanaka",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-046-low.png",
-    "imageHighSrc": "cards/basep-046-high.png",
-    "attacks": [
-      {
-        "name": "Lightning Rod",
-        "damage": null
-      },
-      {
-        "name": "Lightning Bolt",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1952",
-    "externalId": "basep-45",
-    "tcgdex_id": "basep-45",
-    "localId": "045",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "45",
-    "cardName": "Scyther",
-    "fullDisplayName": "Scyther 45 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      123
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hironobu Yoshida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-045-low.png",
-    "imageHighSrc": "cards/basep-045-high.png",
-    "attacks": [
-      {
-        "name": "Slashing Strike",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1951",
-    "externalId": "basep-44",
-    "tcgdex_id": "basep-44",
-    "localId": "044",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "44",
-    "cardName": "Magmar",
-    "fullDisplayName": "Magmar 44 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      126
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-044-low.png",
-    "imageHighSrc": "cards/basep-044-high.png",
-    "attacks": [
-      {
-        "name": "Burning Fire",
-        "damage": "10+"
-      },
-      {
-        "name": "Magma Punch",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1950",
-    "externalId": "basep-43",
-    "tcgdex_id": "basep-43",
-    "localId": "043",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "43",
-    "cardName": "Machamp",
-    "fullDisplayName": "Machamp 43 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      68
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Machoke",
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-043-low.png",
-    "imageHighSrc": "cards/basep-043-high.png",
-    "attacks": [
-      {
-        "name": "Seething Anger",
-        "damage": "20+"
-      },
-      {
-        "name": "Fling",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1949",
-    "externalId": "basep-42",
-    "tcgdex_id": "basep-42",
-    "localId": "042",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "42",
-    "cardName": "Pokémon Tower",
-    "fullDisplayName": "Pokémon Tower 42 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-042-low.png",
-    "imageHighSrc": "cards/basep-042-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nIf the effect of a Pokémon Power, attack, Energy card, or Trainer card would put a card in a discard pile into its owner's hand, that card stays in that discard pile instead."
-  },
-  {
-    "masterCardId": "1948",
-    "externalId": "basep-41",
-    "tcgdex_id": "basep-41",
-    "localId": "041",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "41",
-    "cardName": "Lucky Stadium",
-    "fullDisplayName": "Lucky Stadium 41 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "\"Big Mama\" Tagawa",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-041-low.png",
-    "imageHighSrc": "cards/basep-041-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may flip a coin. If heads, that player draws a card."
-  },
-  {
-    "masterCardId": "1947",
-    "externalId": "basep-40",
-    "tcgdex_id": "basep-40",
-    "localId": "040",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "40",
-    "cardName": "Pokémon Center",
-    "fullDisplayName": "Pokémon Center 40 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "\"Big Mama\" Tagawa",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-040-low.png",
-    "imageHighSrc": "cards/basep-040-high.png",
-    "rules": "Remove all damage counters from all of your own Pokémon with damage counters on them, then discard all Energy cards attached to those Pokémon."
-  },
-  {
-    "masterCardId": "1946",
-    "externalId": "basep-39",
-    "tcgdex_id": "basep-39",
-    "localId": "039",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "39",
-    "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 39 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      200
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin-ichi Yoshida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-039-low.png",
-    "imageHighSrc": "cards/basep-039-high.png",
-    "attacks": [
-      {
-        "name": "Pain Split",
-        "damage": null
-      },
-      {
-        "name": "Confuse Ray",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1945",
-    "externalId": "basep-38",
-    "tcgdex_id": "basep-38",
-    "localId": "038",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "38",
-    "cardName": "Unown [J]",
-    "fullDisplayName": "Unown [J] 38 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      201
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hideki Kazama",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-038-low.png",
-    "imageHighSrc": "cards/basep-038-high.png",
-    "attacks": [
-      {
-        "name": "Hidden Power",
-        "damage": "10"
-      }
-    ],
-    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
-  },
-  {
-    "masterCardId": "1944",
-    "externalId": "basep-37",
-    "tcgdex_id": "basep-37",
-    "localId": "037",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "37",
-    "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 37 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      237
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-037-low.png",
-    "imageHighSrc": "cards/basep-037-high.png",
-    "attacks": [
-      {
-        "name": "Repeating Kick",
-        "damage": "20×"
-      },
-      {
-        "name": "Rapid Spin",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1943",
-    "externalId": "basep-36",
-    "tcgdex_id": "basep-36",
-    "localId": "036",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "36",
-    "cardName": "Igglybuff",
-    "fullDisplayName": "Igglybuff 36 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      174
-    ],
-    "subtypes": [
-      "Baby"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-036-low.png",
-    "imageHighSrc": "cards/basep-036-high.png",
-    "attacks": [
-      {
-        "name": "Good Night Song",
-        "damage": null
-      }
-    ],
-    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
-  },
-  {
-    "masterCardId": "1942",
-    "externalId": "basep-35",
-    "tcgdex_id": "basep-35",
-    "localId": "035",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "35",
-    "cardName": "Pichu",
-    "fullDisplayName": "Pichu 35 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      172
-    ],
-    "subtypes": [
-      "Baby"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-035-low.png",
-    "imageHighSrc": "cards/basep-035-high.png",
-    "attacks": [
-      {
-        "name": "Let's Play!",
-        "damage": null
-      }
-    ],
-    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
-  },
-  {
-    "masterCardId": "1941",
-    "externalId": "basep-34",
-    "tcgdex_id": "basep-34",
-    "localId": "034",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "34",
-    "cardName": "Entei",
-    "fullDisplayName": "Entei 34 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      244
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-034-low.png",
-    "imageHighSrc": "cards/basep-034-high.png",
-    "attacks": [
-      {
-        "name": "Protective Flame",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1940",
-    "externalId": "basep-33",
-    "tcgdex_id": "basep-33",
-    "localId": "033",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "33",
-    "cardName": "Scizor",
-    "fullDisplayName": "Scizor 33 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      212
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Scyther",
-    "artist": "Hironobu Yoshida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-033-low.png",
-    "imageHighSrc": "cards/basep-033-high.png",
-    "attacks": [
-      {
-        "name": "Leer",
-        "damage": null
-      },
-      {
-        "name": "Metal Pincer",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1939",
-    "externalId": "basep-32",
-    "tcgdex_id": "basep-32",
-    "localId": "032",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "32",
-    "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 32 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      235
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-032-low.png",
-    "imageHighSrc": "cards/basep-032-high.png",
-    "attacks": [
-      {
-        "name": "Paint",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1938",
-    "externalId": "basep-31",
-    "tcgdex_id": "basep-31",
-    "localId": "031",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "31",
-    "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 31 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      173
-    ],
-    "subtypes": [
-      "Baby"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-031-low.png",
-    "imageHighSrc": "cards/basep-031-high.png",
-    "attacks": [
-      {
-        "name": "Eek",
-        "damage": null
-      }
-    ],
-    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
-  },
-  {
-    "masterCardId": "1937",
-    "externalId": "basep-30",
-    "tcgdex_id": "basep-30",
-    "localId": "030",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "30",
-    "cardName": "Togepi",
-    "fullDisplayName": "Togepi 30 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      175
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-030-low.png",
-    "imageHighSrc": "cards/basep-030-high.png",
-    "attacks": [
-      {
-        "name": "Snivel",
-        "damage": null
-      },
-      {
-        "name": "Mini-Metronome",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1936",
-    "externalId": "basep-29",
-    "tcgdex_id": "basep-29",
-    "localId": "029",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "29",
-    "cardName": "Marill",
-    "fullDisplayName": "Marill 29 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      183
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-029-low.png",
-    "imageHighSrc": "cards/basep-029-high.png",
-    "attacks": [
-      {
-        "name": "Water Gun",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1935",
-    "externalId": "basep-28",
-    "tcgdex_id": "basep-28",
-    "localId": "028",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "28",
-    "cardName": "Surfing Pikachu",
-    "fullDisplayName": "Surfing Pikachu 28 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-028-low.png",
-    "imageHighSrc": "cards/basep-028-high.png",
-    "attacks": [
-      {
-        "name": "Surf",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1934",
-    "externalId": "basep-27",
-    "tcgdex_id": "basep-27",
-    "localId": "027",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "27",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 27 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-027-low.png",
-    "imageHighSrc": "cards/basep-027-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "10"
-      },
-      {
-        "name": "Agility",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1933",
-    "externalId": "basep-26",
-    "tcgdex_id": "basep-26",
-    "localId": "026",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "26",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 26 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Gakuji Nomoto",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-026-low.png",
-    "imageHighSrc": "cards/basep-026-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "10"
-      },
-      {
-        "name": "Thunderbolt",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1932",
-    "externalId": "basep-25",
-    "tcgdex_id": "basep-25",
-    "localId": "025",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "25",
-    "cardName": "Flying Pikachu",
-    "fullDisplayName": "Flying Pikachu 25 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-025-low.png",
-    "imageHighSrc": "cards/basep-025-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "10"
-      },
-      {
-        "name": "Fly",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1931",
-    "externalId": "basep-24",
-    "tcgdex_id": "basep-24",
-    "localId": "024",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "24",
-    "cardName": "_____'s Pikachu",
-    "fullDisplayName": "_____'s Pikachu 24 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-024-low.png",
-    "imageHighSrc": "cards/basep-024-high.png",
-    "attacks": [
-      {
-        "name": "Birthday Surprise",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1930",
-    "externalId": "basep-23",
-    "tcgdex_id": "basep-23",
-    "localId": "023",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "23",
-    "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 23 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      145
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-023-low.png",
-    "imageHighSrc": "cards/basep-023-high.png",
-    "attacks": [
-      {
-        "name": "Lightning Burn",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1929",
-    "externalId": "basep-22",
-    "tcgdex_id": "basep-22",
-    "localId": "022",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "22",
-    "cardName": "Articuno",
-    "fullDisplayName": "Articuno 22 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      144
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-022-low.png",
-    "imageHighSrc": "cards/basep-022-high.png",
-    "attacks": [
-      {
-        "name": "Diamond Dust",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1928",
-    "externalId": "basep-21",
-    "tcgdex_id": "basep-21",
-    "localId": "021",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "21",
-    "cardName": "Moltres",
-    "fullDisplayName": "Moltres 21 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      146
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-021-low.png",
-    "imageHighSrc": "cards/basep-021-high.png",
-    "attacks": [
-      {
-        "name": "Hyper Flame",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1927",
-    "externalId": "basep-20",
-    "tcgdex_id": "basep-20",
-    "localId": "020",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "20",
-    "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 20 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      54
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-020-low.png",
-    "imageHighSrc": "cards/basep-020-high.png",
-    "attacks": [
-      {
-        "name": "Headache",
-        "damage": null
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1926",
-    "externalId": "basep-19",
-    "tcgdex_id": "basep-19",
-    "localId": "019",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "19",
-    "cardName": "Sabrina's Abra",
-    "fullDisplayName": "Sabrina's Abra 19 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      63
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-019-low.png",
-    "imageHighSrc": "cards/basep-019-high.png",
-    "attacks": [
-      {
-        "name": "Pound",
-        "damage": "10"
-      },
-      {
-        "name": "Synchronize",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1925",
-    "externalId": "basep-18",
-    "tcgdex_id": "basep-18",
-    "localId": "018",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "18",
-    "cardName": "Team Rocket's Meowth",
-    "fullDisplayName": "Team Rocket's Meowth 18 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      52
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kunihiko Yuyama",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-018-low.png",
-    "imageHighSrc": "cards/basep-018-high.png",
-    "attacks": [
-      {
-        "name": "Miraculous Comeback",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1924",
-    "externalId": "basep-17",
-    "tcgdex_id": "basep-17",
-    "localId": "017",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "17",
-    "cardName": "Dark Persian",
-    "fullDisplayName": "Dark Persian 17 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      53
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Meowth",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-017-low.png",
-    "imageHighSrc": "cards/basep-017-high.png",
-    "attacks": [
-      {
-        "name": "Tempt",
-        "damage": null
-      },
-      {
-        "name": "Poison Claws",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1923",
-    "externalId": "basep-16",
-    "tcgdex_id": "basep-16",
-    "localId": "016",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "16",
-    "cardName": "Computer Error",
-    "fullDisplayName": "Computer Error 16 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Rocket's Secret Machine"
-    ],
-    "trainerType": "Rocket's Secret Machine",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-016-low.png",
-    "imageHighSrc": "cards/basep-016-high.png",
-    "rules": "You may draw up to 5 cards, then your opponent may draw up to 5 cards. Your turn is over now (you don't get to attack)."
-  },
-  {
-    "masterCardId": "1922",
-    "externalId": "basep-15",
-    "tcgdex_id": "basep-15",
-    "localId": "015",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "15",
-    "cardName": "Cool Porygon",
-    "fullDisplayName": "Cool Porygon 15 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      137
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hiromichi Sugiyama",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-015-low.png",
-    "imageHighSrc": "cards/basep-015-high.png",
-    "attacks": [
-      {
-        "name": "Texture Magic",
-        "damage": null
-      },
-      {
-        "name": "3-D Attack",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1921",
-    "externalId": "basep-14",
-    "tcgdex_id": "basep-14",
-    "localId": "014",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "14",
-    "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 14 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Benimaru Itoh",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-014-low.png",
-    "imageHighSrc": "cards/basep-014-high.png",
-    "attacks": [
-      {
-        "name": "Energy Absorption",
-        "damage": null
-      },
-      {
-        "name": "Psyburn",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1920",
-    "externalId": "basep-13",
-    "tcgdex_id": "basep-13",
-    "localId": "013",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "13",
-    "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 13 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      3
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ivysaur",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-013-low.png",
-    "imageHighSrc": "cards/basep-013-high.png",
-    "attacks": [
-      {
-        "name": "Mega Drain",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1919",
-    "externalId": "basep-12",
-    "tcgdex_id": "basep-12",
-    "localId": "012",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "12",
-    "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 12 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Christopher Rush",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-012-low.png",
-    "imageHighSrc": "cards/basep-012-high.png",
-    "attacks": [
-      {
-        "name": "Energy Control",
-        "damage": null
-      },
-      {
-        "name": "Telekinesis",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1918",
-    "externalId": "basep-11",
-    "tcgdex_id": "basep-11",
-    "localId": "011",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "11",
-    "cardName": "Eevee",
-    "fullDisplayName": "Eevee 11 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      133
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-011-low.png",
-    "imageHighSrc": "cards/basep-011-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1917",
-    "externalId": "basep-10",
-    "tcgdex_id": "basep-10",
-    "localId": "010",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "10",
-    "cardName": "Meowth",
-    "fullDisplayName": "Meowth 10 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      52
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-010-low.png",
-    "imageHighSrc": "cards/basep-010-high.png",
-    "attacks": [
-      {
-        "name": "Cat Punch",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1916",
-    "externalId": "basep-9",
-    "tcgdex_id": "basep-9",
-    "localId": "009",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "9",
-    "cardName": "Mew",
-    "fullDisplayName": "Mew 9 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      151
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-009-low.png",
-    "imageHighSrc": "cards/basep-009-high.png",
-    "attacks": [
-      {
-        "name": "Psywave",
-        "damage": "10×"
-      },
-      {
-        "name": "Devolution Beam",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1915",
-    "externalId": "basep-8",
-    "tcgdex_id": "basep-8",
-    "localId": "008",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "8",
-    "cardName": "Mew",
-    "fullDisplayName": "Mew 8 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      151
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-008-low.png",
-    "imageHighSrc": "cards/basep-008-high.png",
-    "attacks": [
-      {
-        "name": "Psywave",
-        "damage": "10×"
-      },
-      {
-        "name": "Devolution Beam",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "1914",
-    "externalId": "basep-7",
-    "tcgdex_id": "basep-7",
-    "localId": "007",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "7",
-    "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 7 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      39
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-007-low.png",
-    "imageHighSrc": "cards/basep-007-high.png",
-    "attacks": [
-      {
-        "name": "First Aid",
-        "damage": null
-      },
-      {
-        "name": "Double-edge",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1913",
-    "externalId": "basep-6",
-    "tcgdex_id": "basep-6",
-    "localId": "006",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "6",
-    "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 6 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      59
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Growlithe",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-006-low.png",
-    "imageHighSrc": "cards/basep-006-high.png",
-    "attacks": [
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      },
-      {
-        "name": "Flames of Rage",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1912",
-    "externalId": "basep-5",
-    "tcgdex_id": "basep-5",
-    "localId": "005",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "5",
-    "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 5 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      149
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Dragonair",
-    "artist": "Toshinao Aoki",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-005-low.png",
-    "imageHighSrc": "cards/basep-005-high.png",
-    "attacks": [
-      {
-        "name": "Supersonic Flight",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1911",
-    "externalId": "basep-4",
-    "tcgdex_id": "basep-4",
-    "localId": "004",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "4",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 4 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-004-low.png",
-    "imageHighSrc": "cards/basep-004-high.png",
-    "attacks": [
-      {
-        "name": "Recharge",
-        "damage": null
-      },
-      {
-        "name": "Thunderbolt",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1910",
-    "externalId": "basep-3",
-    "tcgdex_id": "basep-3",
-    "localId": "003",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "3",
-    "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 3 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-003-low.png",
-    "imageHighSrc": "cards/basep-003-high.png",
-    "attacks": [
-      {
-        "name": "Energy Absorption",
-        "damage": null
-      },
-      {
-        "name": "Psyburn",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1909",
-    "externalId": "basep-2",
-    "tcgdex_id": "basep-2",
-    "localId": "002",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "2",
-    "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 2 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      125
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-002-low.png",
-    "imageHighSrc": "cards/basep-002-high.png",
-    "attacks": [
-      {
-        "name": "Light Screen",
-        "damage": null
-      },
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "1908",
-    "externalId": "basep-1",
-    "tcgdex_id": "basep-1",
-    "localId": "001",
-    "setCode": "basep",
-    "setTcgdexId": "basep",
-    "cardNumber": "1",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 1 Wizards Black Star Promos",
-    "rarity": "Promo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/basep-001-low.png",
-    "imageHighSrc": "cards/basep-001-high.png",
-    "attacks": [
-      {
-        "name": "Growl",
-        "damage": null
-      },
-      {
-        "name": "Thundershock",
-        "damage": "20"
-      }
-    ]
-  }
+    {
+        "masterCardId": "1960",
+        "externalId": "basep-53",
+        "localId": "053",
+        "setCode": "basep",
+        "cardNumber": "53",
+        "cardName": "Suicune",
+        "fullDisplayName": "Suicune 53 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            245
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-053-low.png",
+        "imageHighSrc": "cards/basep-053-high.png",
+        "attacks": [
+            {
+                "name": "Hypno Wave",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1959",
+        "externalId": "basep-52",
+        "localId": "052",
+        "setCode": "basep",
+        "cardNumber": "52",
+        "cardName": "Ho-oh",
+        "fullDisplayName": "Ho-oh 52 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            250
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/basep-052-low.png",
+        "imageHighSrc": "cards/basep-052-high.png",
+        "attacks": [
+            {
+                "name": "Sacred Wing",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1958",
+        "externalId": "basep-51",
+        "localId": "051",
+        "setCode": "basep",
+        "cardNumber": "51",
+        "cardName": "Rapidash",
+        "fullDisplayName": "Rapidash 51 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            78
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/basep-051-low.png",
+        "imageHighSrc": "cards/basep-051-high.png",
+        "attacks": [
+            {
+                "name": "Jump Over",
+                "damage": null
+            },
+            {
+                "name": "Super Singe",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1957",
+        "externalId": "basep-50",
+        "localId": "050",
+        "setCode": "basep",
+        "cardNumber": "50",
+        "cardName": "Celebi",
+        "fullDisplayName": "Celebi 50 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            251
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/basep-050-low.png",
+        "imageHighSrc": "cards/basep-050-high.png",
+        "attacks": [
+            {
+                "name": "Leaf Slice",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1956",
+        "externalId": "basep-49",
+        "localId": "049",
+        "setCode": "basep",
+        "cardNumber": "49",
+        "cardName": "Snorlax",
+        "fullDisplayName": "Snorlax 49 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            143
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Craig Turvey",
+        "imageLowSrc": "cards/basep-049-low.png",
+        "imageHighSrc": "cards/basep-049-high.png",
+        "attacks": [
+            {
+                "name": "Roll Over",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1955",
+        "externalId": "basep-48",
+        "localId": "048",
+        "setCode": "basep",
+        "cardNumber": "48",
+        "cardName": "Articuno",
+        "fullDisplayName": "Articuno 48 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-048-low.png",
+        "imageHighSrc": "cards/basep-048-high.png",
+        "attacks": [
+            {
+                "name": "Ice Beam",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1954",
+        "externalId": "basep-47",
+        "localId": "047",
+        "setCode": "basep",
+        "cardNumber": "47",
+        "cardName": "Mew",
+        "fullDisplayName": "Mew 47 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-047-low.png",
+        "imageHighSrc": "cards/basep-047-high.png",
+        "attacks": [
+            {
+                "name": "Psyshock",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1953",
+        "externalId": "basep-46",
+        "localId": "046",
+        "setCode": "basep",
+        "cardNumber": "46",
+        "cardName": "Electabuzz",
+        "fullDisplayName": "Electabuzz 46 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            125
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/basep-046-low.png",
+        "imageHighSrc": "cards/basep-046-high.png",
+        "attacks": [
+            {
+                "name": "Lightning Rod",
+                "damage": null
+            },
+            {
+                "name": "Lightning Bolt",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1952",
+        "externalId": "basep-45",
+        "localId": "045",
+        "setCode": "basep",
+        "cardNumber": "45",
+        "cardName": "Scyther",
+        "fullDisplayName": "Scyther 45 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            123
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hironobu Yoshida",
+        "imageLowSrc": "cards/basep-045-low.png",
+        "imageHighSrc": "cards/basep-045-high.png",
+        "attacks": [
+            {
+                "name": "Slashing Strike",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1951",
+        "externalId": "basep-44",
+        "localId": "044",
+        "setCode": "basep",
+        "cardNumber": "44",
+        "cardName": "Magmar",
+        "fullDisplayName": "Magmar 44 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            126
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-044-low.png",
+        "imageHighSrc": "cards/basep-044-high.png",
+        "attacks": [
+            {
+                "name": "Burning Fire",
+                "damage": "10+"
+            },
+            {
+                "name": "Magma Punch",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1950",
+        "externalId": "basep-43",
+        "localId": "043",
+        "setCode": "basep",
+        "cardNumber": "43",
+        "cardName": "Machamp",
+        "fullDisplayName": "Machamp 43 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            68
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/basep-043-low.png",
+        "imageHighSrc": "cards/basep-043-high.png",
+        "attacks": [
+            {
+                "name": "Seething Anger",
+                "damage": "20+"
+            },
+            {
+                "name": "Fling",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1949",
+        "externalId": "basep-42",
+        "localId": "042",
+        "setCode": "basep",
+        "cardNumber": "42",
+        "cardName": "Pokémon Tower",
+        "fullDisplayName": "Pokémon Tower 42 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/basep-042-low.png",
+        "imageHighSrc": "cards/basep-042-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nIf the effect of a Pokémon Power, attack, Energy card, or Trainer card would put a card in a discard pile into its owner's hand, that card stays in that discard pile instead."
+    },
+    {
+        "masterCardId": "1948",
+        "externalId": "basep-41",
+        "localId": "041",
+        "setCode": "basep",
+        "cardNumber": "41",
+        "cardName": "Lucky Stadium",
+        "fullDisplayName": "Lucky Stadium 41 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "\"Big Mama\" Tagawa",
+        "imageLowSrc": "cards/basep-041-low.png",
+        "imageHighSrc": "cards/basep-041-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may flip a coin. If heads, that player draws a card."
+    },
+    {
+        "masterCardId": "1947",
+        "externalId": "basep-40",
+        "localId": "040",
+        "setCode": "basep",
+        "cardNumber": "40",
+        "cardName": "Pokémon Center",
+        "fullDisplayName": "Pokémon Center 40 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "\"Big Mama\" Tagawa",
+        "imageLowSrc": "cards/basep-040-low.png",
+        "imageHighSrc": "cards/basep-040-high.png",
+        "rules": "Remove all damage counters from all of your own Pokémon with damage counters on them, then discard all Energy cards attached to those Pokémon."
+    },
+    {
+        "masterCardId": "1946",
+        "externalId": "basep-39",
+        "localId": "039",
+        "setCode": "basep",
+        "cardNumber": "39",
+        "cardName": "Misdreavus",
+        "fullDisplayName": "Misdreavus 39 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            200
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin-ichi Yoshida",
+        "imageLowSrc": "cards/basep-039-low.png",
+        "imageHighSrc": "cards/basep-039-high.png",
+        "attacks": [
+            {
+                "name": "Pain Split",
+                "damage": null
+            },
+            {
+                "name": "Confuse Ray",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1945",
+        "externalId": "basep-38",
+        "localId": "038",
+        "setCode": "basep",
+        "cardNumber": "38",
+        "cardName": "Unown [J]",
+        "fullDisplayName": "Unown [J] 38 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            201
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hideki Kazama",
+        "imageLowSrc": "cards/basep-038-low.png",
+        "imageHighSrc": "cards/basep-038-high.png",
+        "attacks": [
+            {
+                "name": "Hidden Power",
+                "damage": "10"
+            }
+        ],
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+    },
+    {
+        "masterCardId": "1944",
+        "externalId": "basep-37",
+        "localId": "037",
+        "setCode": "basep",
+        "cardNumber": "37",
+        "cardName": "Hitmontop",
+        "fullDisplayName": "Hitmontop 37 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            237
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-037-low.png",
+        "imageHighSrc": "cards/basep-037-high.png",
+        "attacks": [
+            {
+                "name": "Repeating Kick",
+                "damage": "20×"
+            },
+            {
+                "name": "Rapid Spin",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1943",
+        "externalId": "basep-36",
+        "localId": "036",
+        "setCode": "basep",
+        "cardNumber": "36",
+        "cardName": "Igglybuff",
+        "fullDisplayName": "Igglybuff 36 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            174
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/basep-036-low.png",
+        "imageHighSrc": "cards/basep-036-high.png",
+        "attacks": [
+            {
+                "name": "Good Night Song",
+                "damage": null
+            }
+        ],
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
+    },
+    {
+        "masterCardId": "1942",
+        "externalId": "basep-35",
+        "localId": "035",
+        "setCode": "basep",
+        "cardNumber": "35",
+        "cardName": "Pichu",
+        "fullDisplayName": "Pichu 35 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            172
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-035-low.png",
+        "imageHighSrc": "cards/basep-035-high.png",
+        "attacks": [
+            {
+                "name": "Let's Play!",
+                "damage": null
+            }
+        ],
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
+    },
+    {
+        "masterCardId": "1941",
+        "externalId": "basep-34",
+        "localId": "034",
+        "setCode": "basep",
+        "cardNumber": "34",
+        "cardName": "Entei",
+        "fullDisplayName": "Entei 34 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            244
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-034-low.png",
+        "imageHighSrc": "cards/basep-034-high.png",
+        "attacks": [
+            {
+                "name": "Protective Flame",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1940",
+        "externalId": "basep-33",
+        "localId": "033",
+        "setCode": "basep",
+        "cardNumber": "33",
+        "cardName": "Scizor",
+        "fullDisplayName": "Scizor 33 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            212
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hironobu Yoshida",
+        "imageLowSrc": "cards/basep-033-low.png",
+        "imageHighSrc": "cards/basep-033-high.png",
+        "attacks": [
+            {
+                "name": "Leer",
+                "damage": null
+            },
+            {
+                "name": "Metal Pincer",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1939",
+        "externalId": "basep-32",
+        "localId": "032",
+        "setCode": "basep",
+        "cardNumber": "32",
+        "cardName": "Smeargle",
+        "fullDisplayName": "Smeargle 32 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            235
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/basep-032-low.png",
+        "imageHighSrc": "cards/basep-032-high.png",
+        "attacks": [
+            {
+                "name": "Paint",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1938",
+        "externalId": "basep-31",
+        "localId": "031",
+        "setCode": "basep",
+        "cardNumber": "31",
+        "cardName": "Cleffa",
+        "fullDisplayName": "Cleffa 31 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            173
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-031-low.png",
+        "imageHighSrc": "cards/basep-031-high.png",
+        "attacks": [
+            {
+                "name": "Eek",
+                "damage": null
+            }
+        ],
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
+    },
+    {
+        "masterCardId": "1937",
+        "externalId": "basep-30",
+        "localId": "030",
+        "setCode": "basep",
+        "cardNumber": "30",
+        "cardName": "Togepi",
+        "fullDisplayName": "Togepi 30 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            175
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-030-low.png",
+        "imageHighSrc": "cards/basep-030-high.png",
+        "attacks": [
+            {
+                "name": "Snivel",
+                "damage": null
+            },
+            {
+                "name": "Mini-Metronome",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1936",
+        "externalId": "basep-29",
+        "localId": "029",
+        "setCode": "basep",
+        "cardNumber": "29",
+        "cardName": "Marill",
+        "fullDisplayName": "Marill 29 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            183
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-029-low.png",
+        "imageHighSrc": "cards/basep-029-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1935",
+        "externalId": "basep-28",
+        "localId": "028",
+        "setCode": "basep",
+        "cardNumber": "28",
+        "cardName": "Surfing Pikachu",
+        "fullDisplayName": "Surfing Pikachu 28 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-028-low.png",
+        "imageHighSrc": "cards/basep-028-high.png",
+        "attacks": [
+            {
+                "name": "Surf",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1934",
+        "externalId": "basep-27",
+        "localId": "027",
+        "setCode": "basep",
+        "cardNumber": "27",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 27 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-027-low.png",
+        "imageHighSrc": "cards/basep-027-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "10"
+            },
+            {
+                "name": "Agility",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1933",
+        "externalId": "basep-26",
+        "localId": "026",
+        "setCode": "basep",
+        "cardNumber": "26",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 26 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Gakuji Nomoto",
+        "imageLowSrc": "cards/basep-026-low.png",
+        "imageHighSrc": "cards/basep-026-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Thunderbolt",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1932",
+        "externalId": "basep-25",
+        "localId": "025",
+        "setCode": "basep",
+        "cardNumber": "25",
+        "cardName": "Flying Pikachu",
+        "fullDisplayName": "Flying Pikachu 25 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-025-low.png",
+        "imageHighSrc": "cards/basep-025-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "10"
+            },
+            {
+                "name": "Fly",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1931",
+        "externalId": "basep-24",
+        "localId": "024",
+        "setCode": "basep",
+        "cardNumber": "24",
+        "cardName": "_____'s Pikachu",
+        "fullDisplayName": "_____'s Pikachu 24 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/basep-024-low.png",
+        "imageHighSrc": "cards/basep-024-high.png",
+        "attacks": [
+            {
+                "name": "Birthday Surprise",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1930",
+        "externalId": "basep-23",
+        "localId": "023",
+        "setCode": "basep",
+        "cardNumber": "23",
+        "cardName": "Zapdos",
+        "fullDisplayName": "Zapdos 23 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-023-low.png",
+        "imageHighSrc": "cards/basep-023-high.png",
+        "attacks": [
+            {
+                "name": "Lightning Burn",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1929",
+        "externalId": "basep-22",
+        "localId": "022",
+        "setCode": "basep",
+        "cardNumber": "22",
+        "cardName": "Articuno",
+        "fullDisplayName": "Articuno 22 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-022-low.png",
+        "imageHighSrc": "cards/basep-022-high.png",
+        "attacks": [
+            {
+                "name": "Diamond Dust",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1928",
+        "externalId": "basep-21",
+        "localId": "021",
+        "setCode": "basep",
+        "cardNumber": "21",
+        "cardName": "Moltres",
+        "fullDisplayName": "Moltres 21 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            146
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-021-low.png",
+        "imageHighSrc": "cards/basep-021-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Flame",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1927",
+        "externalId": "basep-20",
+        "localId": "020",
+        "setCode": "basep",
+        "cardNumber": "20",
+        "cardName": "Psyduck",
+        "fullDisplayName": "Psyduck 20 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            54
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/basep-020-low.png",
+        "imageHighSrc": "cards/basep-020-high.png",
+        "attacks": [
+            {
+                "name": "Headache",
+                "damage": null
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1926",
+        "externalId": "basep-19",
+        "localId": "019",
+        "setCode": "basep",
+        "cardNumber": "19",
+        "cardName": "Sabrina's Abra",
+        "fullDisplayName": "Sabrina's Abra 19 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            63
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/basep-019-low.png",
+        "imageHighSrc": "cards/basep-019-high.png",
+        "attacks": [
+            {
+                "name": "Pound",
+                "damage": "10"
+            },
+            {
+                "name": "Synchronize",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1925",
+        "externalId": "basep-18",
+        "localId": "018",
+        "setCode": "basep",
+        "cardNumber": "18",
+        "cardName": "Team Rocket's Meowth",
+        "fullDisplayName": "Team Rocket's Meowth 18 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            52
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kunihiko Yuyama",
+        "imageLowSrc": "cards/basep-018-low.png",
+        "imageHighSrc": "cards/basep-018-high.png",
+        "attacks": [
+            {
+                "name": "Miraculous Comeback",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1924",
+        "externalId": "basep-17",
+        "localId": "017",
+        "setCode": "basep",
+        "cardNumber": "17",
+        "cardName": "Dark Persian",
+        "fullDisplayName": "Dark Persian 17 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            53
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-017-low.png",
+        "imageHighSrc": "cards/basep-017-high.png",
+        "attacks": [
+            {
+                "name": "Tempt",
+                "damage": null
+            },
+            {
+                "name": "Poison Claws",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1923",
+        "externalId": "basep-16",
+        "localId": "016",
+        "setCode": "basep",
+        "cardNumber": "16",
+        "cardName": "Computer Error",
+        "fullDisplayName": "Computer Error 16 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Rocket's Secret Machine",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/basep-016-low.png",
+        "imageHighSrc": "cards/basep-016-high.png",
+        "rules": "You may draw up to 5 cards, then your opponent may draw up to 5 cards. Your turn is over now (you don't get to attack)."
+    },
+    {
+        "masterCardId": "1922",
+        "externalId": "basep-15",
+        "localId": "015",
+        "setCode": "basep",
+        "cardNumber": "15",
+        "cardName": "Cool Porygon",
+        "fullDisplayName": "Cool Porygon 15 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            137
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hiromichi Sugiyama",
+        "imageLowSrc": "cards/basep-015-low.png",
+        "imageHighSrc": "cards/basep-015-high.png",
+        "attacks": [
+            {
+                "name": "Texture Magic",
+                "damage": null
+            },
+            {
+                "name": "3-D Attack",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1921",
+        "externalId": "basep-14",
+        "localId": "014",
+        "setCode": "basep",
+        "cardNumber": "14",
+        "cardName": "Mewtwo",
+        "fullDisplayName": "Mewtwo 14 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Benimaru Itoh",
+        "imageLowSrc": "cards/basep-014-low.png",
+        "imageHighSrc": "cards/basep-014-high.png",
+        "attacks": [
+            {
+                "name": "Energy Absorption",
+                "damage": null
+            },
+            {
+                "name": "Psyburn",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1920",
+        "externalId": "basep-13",
+        "localId": "013",
+        "setCode": "basep",
+        "cardNumber": "13",
+        "cardName": "Venusaur",
+        "fullDisplayName": "Venusaur 13 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-013-low.png",
+        "imageHighSrc": "cards/basep-013-high.png",
+        "attacks": [
+            {
+                "name": "Mega Drain",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1919",
+        "externalId": "basep-12",
+        "localId": "012",
+        "setCode": "basep",
+        "cardNumber": "12",
+        "cardName": "Mewtwo",
+        "fullDisplayName": "Mewtwo 12 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Christopher Rush",
+        "imageLowSrc": "cards/basep-012-low.png",
+        "imageHighSrc": "cards/basep-012-high.png",
+        "attacks": [
+            {
+                "name": "Energy Control",
+                "damage": null
+            },
+            {
+                "name": "Telekinesis",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1918",
+        "externalId": "basep-11",
+        "localId": "011",
+        "setCode": "basep",
+        "cardNumber": "11",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 11 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/basep-011-low.png",
+        "imageHighSrc": "cards/basep-011-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1917",
+        "externalId": "basep-10",
+        "localId": "010",
+        "setCode": "basep",
+        "cardNumber": "10",
+        "cardName": "Meowth",
+        "fullDisplayName": "Meowth 10 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            52
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/basep-010-low.png",
+        "imageHighSrc": "cards/basep-010-high.png",
+        "attacks": [
+            {
+                "name": "Cat Punch",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1916",
+        "externalId": "basep-9",
+        "localId": "009",
+        "setCode": "basep",
+        "cardNumber": "9",
+        "cardName": "Mew",
+        "fullDisplayName": "Mew 9 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-009-low.png",
+        "imageHighSrc": "cards/basep-009-high.png",
+        "attacks": [
+            {
+                "name": "Psywave",
+                "damage": "10×"
+            },
+            {
+                "name": "Devolution Beam",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1915",
+        "externalId": "basep-8",
+        "localId": "008",
+        "setCode": "basep",
+        "cardNumber": "8",
+        "cardName": "Mew",
+        "fullDisplayName": "Mew 8 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-008-low.png",
+        "imageHighSrc": "cards/basep-008-high.png",
+        "attacks": [
+            {
+                "name": "Psywave",
+                "damage": "10×"
+            },
+            {
+                "name": "Devolution Beam",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "1914",
+        "externalId": "basep-7",
+        "localId": "007",
+        "setCode": "basep",
+        "cardNumber": "7",
+        "cardName": "Jigglypuff",
+        "fullDisplayName": "Jigglypuff 7 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            39
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/basep-007-low.png",
+        "imageHighSrc": "cards/basep-007-high.png",
+        "attacks": [
+            {
+                "name": "First Aid",
+                "damage": null
+            },
+            {
+                "name": "Double-edge",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1913",
+        "externalId": "basep-6",
+        "localId": "006",
+        "setCode": "basep",
+        "cardNumber": "6",
+        "cardName": "Arcanine",
+        "fullDisplayName": "Arcanine 6 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            59
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-006-low.png",
+        "imageHighSrc": "cards/basep-006-high.png",
+        "attacks": [
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            },
+            {
+                "name": "Flames of Rage",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1912",
+        "externalId": "basep-5",
+        "localId": "005",
+        "setCode": "basep",
+        "cardNumber": "5",
+        "cardName": "Dragonite",
+        "fullDisplayName": "Dragonite 5 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/basep-005-low.png",
+        "imageHighSrc": "cards/basep-005-high.png",
+        "attacks": [
+            {
+                "name": "Supersonic Flight",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1911",
+        "externalId": "basep-4",
+        "localId": "004",
+        "setCode": "basep",
+        "cardNumber": "4",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 4 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-004-low.png",
+        "imageHighSrc": "cards/basep-004-high.png",
+        "attacks": [
+            {
+                "name": "Recharge",
+                "damage": null
+            },
+            {
+                "name": "Thunderbolt",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1910",
+        "externalId": "basep-3",
+        "localId": "003",
+        "setCode": "basep",
+        "cardNumber": "3",
+        "cardName": "Mewtwo",
+        "fullDisplayName": "Mewtwo 3 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-003-low.png",
+        "imageHighSrc": "cards/basep-003-high.png",
+        "attacks": [
+            {
+                "name": "Energy Absorption",
+                "damage": null
+            },
+            {
+                "name": "Psyburn",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1909",
+        "externalId": "basep-2",
+        "localId": "002",
+        "setCode": "basep",
+        "cardNumber": "2",
+        "cardName": "Electabuzz",
+        "fullDisplayName": "Electabuzz 2 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            125
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/basep-002-low.png",
+        "imageHighSrc": "cards/basep-002-high.png",
+        "attacks": [
+            {
+                "name": "Light Screen",
+                "damage": null
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "1908",
+        "externalId": "basep-1",
+        "localId": "001",
+        "setCode": "basep",
+        "cardNumber": "1",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 1 Wizards Black Star Promos",
+        "rarity": "Promo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/basep-001-low.png",
+        "imageHighSrc": "cards/basep-001-high.png",
+        "attacks": [
+            {
+                "name": "Growl",
+                "damage": null
+            },
+            {
+                "name": "Thundershock",
+                "damage": "20"
+            }
+        ]
+    }
 ]

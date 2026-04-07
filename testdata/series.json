@@ -2,141 +2,101 @@
   {
     "id": "59",
     "name": "Miscellaneous",
-    "slug": "miscellaneous-misc",
-    "tcgdexSeriesId": "misc",
-    "isActive": true
+    "seriesId": "misc"
   },
   {
     "id": "58",
     "name": "Base",
-    "slug": "base-base",
-    "tcgdexSeriesId": "base",
-    "isActive": true
+    "seriesId": "base"
   },
   {
     "id": "57",
     "name": "Gym",
-    "slug": "gym-gym",
-    "tcgdexSeriesId": "gym",
-    "isActive": true
+    "seriesId": "gym"
   },
   {
     "id": "56",
     "name": "Neo",
-    "slug": "neo-neo",
-    "tcgdexSeriesId": "neo",
-    "isActive": true
+    "seriesId": "neo"
   },
   {
     "id": "55",
     "name": "Legendary Collection",
-    "slug": "legendary-collection-lc",
-    "tcgdexSeriesId": "lc",
-    "isActive": true
+    "seriesId": "lc"
   },
   {
     "id": "54",
     "name": "E-Card",
-    "slug": "e-card-ecard",
-    "tcgdexSeriesId": "ecard",
-    "isActive": true
+    "seriesId": "ecard"
   },
   {
     "id": "53",
     "name": "EX",
-    "slug": "ex-ex",
-    "tcgdexSeriesId": "ex",
-    "isActive": true
+    "seriesId": "ex"
   },
   {
     "id": "52",
     "name": "Diamond & Pearl",
-    "slug": "diamond-pearl-dp",
-    "tcgdexSeriesId": "dp",
-    "isActive": true
+    "seriesId": "dp"
   },
   {
     "id": "51",
     "name": "POP",
-    "slug": "pop-pop",
-    "tcgdexSeriesId": "pop",
-    "isActive": true
+    "seriesId": "pop"
   },
   {
     "id": "50",
     "name": "Platinum",
-    "slug": "platinum-pl",
-    "tcgdexSeriesId": "pl",
-    "isActive": true
+    "seriesId": "pl"
   },
   {
     "id": "49",
     "name": "HeartGold & SoulSilver",
-    "slug": "heartgold-soulsilver-hgss",
-    "tcgdexSeriesId": "hgss",
-    "isActive": true
+    "seriesId": "hgss"
   },
   {
     "id": "48",
     "name": "Call of Legends",
-    "slug": "call-of-legends-col",
-    "tcgdexSeriesId": "col",
-    "isActive": true
+    "seriesId": "col"
   },
   {
     "id": "47",
     "name": "Black & White",
-    "slug": "black-white-bw",
-    "tcgdexSeriesId": "bw",
-    "isActive": true
+    "seriesId": "bw"
   },
   {
     "id": "46",
     "name": "XY",
-    "slug": "xy-xy",
-    "tcgdexSeriesId": "xy",
-    "isActive": true
+    "seriesId": "xy"
   },
   {
     "id": "45",
     "name": "Trainer kits",
-    "slug": "trainer-kits-tk",
-    "tcgdexSeriesId": "tk",
-    "isActive": true
+    "seriesId": "tk"
   },
   {
     "id": "44",
     "name": "Sun & Moon",
-    "slug": "sun-moon-sm",
-    "tcgdexSeriesId": "sm",
-    "isActive": true
+    "seriesId": "sm"
   },
   {
     "id": "43",
     "name": "McDonald's Collection",
-    "slug": "mcdonald-s-collection-mc",
-    "tcgdexSeriesId": "mc",
-    "isActive": true
+    "seriesId": "mc"
   },
   {
     "id": "42",
     "name": "Sword & Shield",
-    "slug": "sword-shield-swsh",
-    "tcgdexSeriesId": "swsh",
-    "isActive": true
+    "seriesId": "swsh"
   },
   {
     "id": "41",
     "name": "Scarlet & Violet",
-    "slug": "scarlet-violet-sv",
-    "tcgdexSeriesId": "sv",
-    "isActive": true
+    "seriesId": "sv"
   },
   {
     "id": "39",
     "name": "Mega Evolution",
-    "slug": "mega-evolution-me",
-    "tcgdexSeriesId": "me",
-    "isActive": true
+    "seriesId": "me"
   }
 ]

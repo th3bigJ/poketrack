@@ -1,705 +1,551 @@
 [
-  {
-    "masterCardId": "8454",
-    "externalId": "pop3-17",
-    "tcgdex_id": "pop3-17",
-    "localId": "017",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "17/17",
-    "cardName": "Ho-Oh ex",
-    "fullDisplayName": "Ho-Oh ex 17/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      250
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-017-low.png",
-    "imageHighSrc": "cards/pop3-017-high.png",
-    "attacks": [
-      {
-        "name": "Rainbow Burn",
-        "damage": "10+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "8444",
-    "externalId": "pop3-16",
-    "tcgdex_id": "pop3-16",
-    "localId": "016",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "16/17",
-    "cardName": "Pichu Bros.",
-    "fullDisplayName": "Pichu Bros. 16/17 POP Series 3",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      172
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-016-low.png",
-    "imageHighSrc": "cards/pop3-016-high.png",
-    "attacks": [
-      {
-        "name": "Bustle",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8434",
-    "externalId": "pop3-15",
-    "tcgdex_id": "pop3-15",
-    "localId": "015",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "15/17",
-    "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 15/17 POP Series 3",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      259
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mudkip",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-015-low.png",
-    "imageHighSrc": "cards/pop3-015-high.png",
-    "attacks": [
-      {
-        "name": "Mud Slap",
-        "damage": "20"
-      },
-      {
-        "name": "Double-edge",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8418",
-    "externalId": "pop3-14",
-    "tcgdex_id": "pop3-14",
-    "localId": "014",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "14/17",
-    "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 14/17 POP Series 3",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      2
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Bulbasaur",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-014-low.png",
-    "imageHighSrc": "cards/pop3-014-high.png",
-    "attacks": [
-      {
-        "name": "Gouge",
-        "damage": "10+"
-      },
-      {
-        "name": "Poisonpowder",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8410",
-    "externalId": "pop3-13",
-    "tcgdex_id": "pop3-13",
-    "localId": "013",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "13/17",
-    "cardName": "Eevee",
-    "fullDisplayName": "Eevee 13/17 POP Series 3",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      133
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-013-low.png",
-    "imageHighSrc": "cards/pop3-013-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Take Down",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8400",
-    "externalId": "pop3-12",
-    "tcgdex_id": "pop3-12",
-    "localId": "012",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "12/17",
-    "cardName": "Ditto",
-    "fullDisplayName": "Ditto 12/17 POP Series 3",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      132
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yuka Morii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-012-low.png",
-    "imageHighSrc": "cards/pop3-012-high.png",
-    "attacks": [
-      {
-        "name": "Psybeam",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8392",
-    "externalId": "pop3-11",
-    "tcgdex_id": "pop3-11",
-    "localId": "011",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "11/17",
-    "cardName": "Low Pressure System",
-    "fullDisplayName": "Low Pressure System 11/17 POP Series 3",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin-ichi Yoshikawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-011-low.png",
-    "imageHighSrc": "cards/pop3-011-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach Grass and Lightning Pokémon in play (both yours and your opponent's) gets +10 HP."
-  },
-  {
-    "masterCardId": "8384",
-    "externalId": "pop3-10",
-    "tcgdex_id": "pop3-10",
-    "localId": "010",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "10/17",
-    "cardName": "High Pressure System",
-    "fullDisplayName": "High Pressure System 10/17 POP Series 3",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Ikuji",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-010-low.png",
-    "imageHighSrc": "cards/pop3-010-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player pays Colorless less to retreat his or her Fire and Water Pokémon."
-  },
-  {
-    "masterCardId": "8378",
-    "externalId": "pop3-9",
-    "tcgdex_id": "pop3-9",
-    "localId": "009",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "9/17",
-    "cardName": "Forretress",
-    "fullDisplayName": "Forretress 9/17 POP Series 3",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      205
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pineco",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-009-low.png",
-    "imageHighSrc": "cards/pop3-009-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "20"
-      },
-      {
-        "name": "Toxic",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8367",
-    "externalId": "pop3-8",
-    "tcgdex_id": "pop3-8",
-    "localId": "008",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "8/17",
-    "cardName": "Donphan",
-    "fullDisplayName": "Donphan 8/17 POP Series 3",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      232
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Phanpy",
-    "artist": "Tomoaki Imakuni",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-008-low.png",
-    "imageHighSrc": "cards/pop3-008-high.png",
-    "attacks": [
-      {
-        "name": "Sniff Out",
-        "damage": null
-      },
-      {
-        "name": "Fury Attack",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8358",
-    "externalId": "pop3-7",
-    "tcgdex_id": "pop3-7",
-    "localId": "007",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "7/17",
-    "cardName": "Combusken",
-    "fullDisplayName": "Combusken 7/17 POP Series 3",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      256
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Torchic",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-007-low.png",
-    "imageHighSrc": "cards/pop3-007-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "10"
-      },
-      {
-        "name": "Flamethrower",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8348",
-    "externalId": "pop3-6",
-    "tcgdex_id": "pop3-6",
-    "localId": "006",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "6/17",
-    "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 6/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      134
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-006-low.png",
-    "imageHighSrc": "cards/pop3-006-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "20"
-      },
-      {
-        "name": "Water Gun",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8339",
-    "externalId": "pop3-5",
-    "tcgdex_id": "pop3-5",
-    "localId": "005",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "5/17",
-    "cardName": "Plusle",
-    "fullDisplayName": "Plusle 5/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      311
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-005-low.png",
-    "imageHighSrc": "cards/pop3-005-high.png",
-    "attacks": [
-      {
-        "name": "Cheer Up",
-        "damage": null
-      },
-      {
-        "name": "Positive Ion",
-        "damage": "20+"
-      },
-      {
-        "name": "Body Bolt",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "8332",
-    "externalId": "pop3-4",
-    "tcgdex_id": "pop3-4",
-    "localId": "004",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "4/17",
-    "cardName": "Minun",
-    "fullDisplayName": "Minun 4/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      312
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-004-low.png",
-    "imageHighSrc": "cards/pop3-004-high.png",
-    "attacks": [
-      {
-        "name": "Cheer Up",
-        "damage": null
-      },
-      {
-        "name": "Negative Ion",
-        "damage": "20"
-      },
-      {
-        "name": "Power Bolt",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "8324",
-    "externalId": "pop3-3",
-    "tcgdex_id": "pop3-3",
-    "localId": "003",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "3/17",
-    "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 3/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      135
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-003-low.png",
-    "imageHighSrc": "cards/pop3-003-high.png",
-    "attacks": [
-      {
-        "name": "Thundershock",
-        "damage": "20"
-      },
-      {
-        "name": "Pin Missile",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8311",
-    "externalId": "pop3-2",
-    "tcgdex_id": "pop3-2",
-    "localId": "002",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "2/17",
-    "cardName": "Flareon",
-    "fullDisplayName": "Flareon 2/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      136
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-002-low.png",
-    "imageHighSrc": "cards/pop3-002-high.png",
-    "attacks": [
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      },
-      {
-        "name": "Fire Spin",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "8303",
-    "externalId": "pop3-1",
-    "tcgdex_id": "pop3-1",
-    "localId": "001",
-    "setCode": "pop3",
-    "setTcgdexId": "pop3",
-    "cardNumber": "1/17",
-    "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 1/17 POP Series 3",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      9
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wartortle",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/pop3-001-low.png",
-    "imageHighSrc": "cards/pop3-001-high.png",
-    "attacks": [
-      {
-        "name": "Smash Turn",
-        "damage": "30"
-      },
-      {
-        "name": "Rocket Tackle",
-        "damage": "60"
-      }
-    ]
-  }
+    {
+        "masterCardId": "8454",
+        "externalId": "pop3-17",
+        "localId": "017",
+        "setCode": "pop3",
+        "cardNumber": "17/17",
+        "cardName": "Ho-Oh ex",
+        "fullDisplayName": "Ho-Oh ex 17/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            250
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/pop3-017-low.png",
+        "imageHighSrc": "cards/pop3-017-high.png",
+        "attacks": [
+            {
+                "name": "Rainbow Burn",
+                "damage": "10+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "8444",
+        "externalId": "pop3-16",
+        "localId": "016",
+        "setCode": "pop3",
+        "cardNumber": "16/17",
+        "cardName": "Pichu Bros.",
+        "fullDisplayName": "Pichu Bros. 16/17 POP Series 3",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            172
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/pop3-016-low.png",
+        "imageHighSrc": "cards/pop3-016-high.png",
+        "attacks": [
+            {
+                "name": "Bustle",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8434",
+        "externalId": "pop3-15",
+        "localId": "015",
+        "setCode": "pop3",
+        "cardNumber": "15/17",
+        "cardName": "Marshtomp",
+        "fullDisplayName": "Marshtomp 15/17 POP Series 3",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            259
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop3-015-low.png",
+        "imageHighSrc": "cards/pop3-015-high.png",
+        "attacks": [
+            {
+                "name": "Mud Slap",
+                "damage": "20"
+            },
+            {
+                "name": "Double-edge",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8418",
+        "externalId": "pop3-14",
+        "localId": "014",
+        "setCode": "pop3",
+        "cardNumber": "14/17",
+        "cardName": "Ivysaur",
+        "fullDisplayName": "Ivysaur 14/17 POP Series 3",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            2
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop3-014-low.png",
+        "imageHighSrc": "cards/pop3-014-high.png",
+        "attacks": [
+            {
+                "name": "Gouge",
+                "damage": "10+"
+            },
+            {
+                "name": "Poisonpowder",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8410",
+        "externalId": "pop3-13",
+        "localId": "013",
+        "setCode": "pop3",
+        "cardNumber": "13/17",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 13/17 POP Series 3",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop3-013-low.png",
+        "imageHighSrc": "cards/pop3-013-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Take Down",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8400",
+        "externalId": "pop3-12",
+        "localId": "012",
+        "setCode": "pop3",
+        "cardNumber": "12/17",
+        "cardName": "Ditto",
+        "fullDisplayName": "Ditto 12/17 POP Series 3",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            132
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/pop3-012-low.png",
+        "imageHighSrc": "cards/pop3-012-high.png",
+        "attacks": [
+            {
+                "name": "Psybeam",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8392",
+        "externalId": "pop3-11",
+        "localId": "011",
+        "setCode": "pop3",
+        "cardNumber": "11/17",
+        "cardName": "Low Pressure System",
+        "fullDisplayName": "Low Pressure System 11/17 POP Series 3",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin-ichi Yoshikawa",
+        "imageLowSrc": "cards/pop3-011-low.png",
+        "imageHighSrc": "cards/pop3-011-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach Grass and Lightning Pokémon in play (both yours and your opponent's) gets +10 HP."
+    },
+    {
+        "masterCardId": "8384",
+        "externalId": "pop3-10",
+        "localId": "010",
+        "setCode": "pop3",
+        "cardNumber": "10/17",
+        "cardName": "High Pressure System",
+        "fullDisplayName": "High Pressure System 10/17 POP Series 3",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Ikuji",
+        "imageLowSrc": "cards/pop3-010-low.png",
+        "imageHighSrc": "cards/pop3-010-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player pays Colorless less to retreat his or her Fire and Water Pokémon."
+    },
+    {
+        "masterCardId": "8378",
+        "externalId": "pop3-9",
+        "localId": "009",
+        "setCode": "pop3",
+        "cardNumber": "9/17",
+        "cardName": "Forretress",
+        "fullDisplayName": "Forretress 9/17 POP Series 3",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            205
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/pop3-009-low.png",
+        "imageHighSrc": "cards/pop3-009-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            },
+            {
+                "name": "Toxic",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8367",
+        "externalId": "pop3-8",
+        "localId": "008",
+        "setCode": "pop3",
+        "cardNumber": "8/17",
+        "cardName": "Donphan",
+        "fullDisplayName": "Donphan 8/17 POP Series 3",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            232
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomoaki Imakuni",
+        "imageLowSrc": "cards/pop3-008-low.png",
+        "imageHighSrc": "cards/pop3-008-high.png",
+        "attacks": [
+            {
+                "name": "Sniff Out",
+                "damage": null
+            },
+            {
+                "name": "Fury Attack",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8358",
+        "externalId": "pop3-7",
+        "localId": "007",
+        "setCode": "pop3",
+        "cardNumber": "7/17",
+        "cardName": "Combusken",
+        "fullDisplayName": "Combusken 7/17 POP Series 3",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            256
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/pop3-007-low.png",
+        "imageHighSrc": "cards/pop3-007-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Flamethrower",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8348",
+        "externalId": "pop3-6",
+        "localId": "006",
+        "setCode": "pop3",
+        "cardNumber": "6/17",
+        "cardName": "Vaporeon",
+        "fullDisplayName": "Vaporeon 6/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop3-006-low.png",
+        "imageHighSrc": "cards/pop3-006-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "20"
+            },
+            {
+                "name": "Water Gun",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8339",
+        "externalId": "pop3-5",
+        "localId": "005",
+        "setCode": "pop3",
+        "cardNumber": "5/17",
+        "cardName": "Plusle",
+        "fullDisplayName": "Plusle 5/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            311
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/pop3-005-low.png",
+        "imageHighSrc": "cards/pop3-005-high.png",
+        "attacks": [
+            {
+                "name": "Cheer Up",
+                "damage": null
+            },
+            {
+                "name": "Positive Ion",
+                "damage": "20+"
+            },
+            {
+                "name": "Body Bolt",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "8332",
+        "externalId": "pop3-4",
+        "localId": "004",
+        "setCode": "pop3",
+        "cardNumber": "4/17",
+        "cardName": "Minun",
+        "fullDisplayName": "Minun 4/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            312
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/pop3-004-low.png",
+        "imageHighSrc": "cards/pop3-004-high.png",
+        "attacks": [
+            {
+                "name": "Cheer Up",
+                "damage": null
+            },
+            {
+                "name": "Negative Ion",
+                "damage": "20"
+            },
+            {
+                "name": "Power Bolt",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "8324",
+        "externalId": "pop3-3",
+        "localId": "003",
+        "setCode": "pop3",
+        "cardNumber": "3/17",
+        "cardName": "Jolteon",
+        "fullDisplayName": "Jolteon 3/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop3-003-low.png",
+        "imageHighSrc": "cards/pop3-003-high.png",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "20"
+            },
+            {
+                "name": "Pin Missile",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8311",
+        "externalId": "pop3-2",
+        "localId": "002",
+        "setCode": "pop3",
+        "cardNumber": "2/17",
+        "cardName": "Flareon",
+        "fullDisplayName": "Flareon 2/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/pop3-002-low.png",
+        "imageHighSrc": "cards/pop3-002-high.png",
+        "attacks": [
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            },
+            {
+                "name": "Fire Spin",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "8303",
+        "externalId": "pop3-1",
+        "localId": "001",
+        "setCode": "pop3",
+        "cardNumber": "1/17",
+        "cardName": "Blastoise",
+        "fullDisplayName": "Blastoise 1/17 POP Series 3",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/pop3-001-low.png",
+        "imageHighSrc": "cards/pop3-001-high.png",
+        "attacks": [
+            {
+                "name": "Smash Turn",
+                "damage": "30"
+            },
+            {
+                "name": "Rocket Tackle",
+                "damage": "60"
+            }
+        ]
+    }
 ]

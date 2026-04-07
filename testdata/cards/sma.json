@@ -1,3990 +1,3091 @@
 [
-  {
-    "masterCardId": "11644",
-    "externalId": "sma-SV94",
-    "tcgdex_id": "sma-SV94",
-    "localId": "SV94",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV94/SV94",
-    "cardName": "Tapu Lele-GX",
-    "fullDisplayName": "Tapu Lele-GX SV94/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      786
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV94-low.png",
-    "imageHighSrc": "cards/sma-SV94-high.png",
-    "attacks": [
-      {
-        "name": "Energy Drive",
-        "damage": "20×"
-      },
-      {
-        "name": "Tapu Cure-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11638",
-    "externalId": "sma-SV93",
-    "tcgdex_id": "sma-SV93",
-    "localId": "SV93",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV93/SV94",
-    "cardName": "Tapu Koko-GX",
-    "fullDisplayName": "Tapu Koko-GX SV93/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      785
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV93-low.png",
-    "imageHighSrc": "cards/sma-SV93-high.png",
-    "attacks": [
-      {
-        "name": "Sky-High Claws",
-        "damage": "130"
-      },
-      {
-        "name": "Tapu Thunder-GX",
-        "damage": "50×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11631",
-    "externalId": "sma-SV92",
-    "tcgdex_id": "sma-SV92",
-    "localId": "SV92",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV92/SV94",
-    "cardName": "Tapu Fini-GX",
-    "fullDisplayName": "Tapu Fini-GX SV92/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      788
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV92-low.png",
-    "imageHighSrc": "cards/sma-SV92-high.png",
-    "attacks": [
-      {
-        "name": "Aqua Ring",
-        "damage": "20"
-      },
-      {
-        "name": "Hydro Shot",
-        "damage": null
-      },
-      {
-        "name": "Tapu Storm-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11625",
-    "externalId": "sma-SV91",
-    "tcgdex_id": "sma-SV91",
-    "localId": "SV91",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV91/SV94",
-    "cardName": "Tapu Bulu-GX",
-    "fullDisplayName": "Tapu Bulu-GX SV91/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      787
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV91-low.png",
-    "imageHighSrc": "cards/sma-SV91-high.png",
-    "attacks": [
-      {
-        "name": "Horn Attack",
-        "damage": "30"
-      },
-      {
-        "name": "Nature's Judgment",
-        "damage": "120+"
-      },
-      {
-        "name": "Tapu Wilderness-GX",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11619",
-    "externalId": "sma-SV90",
-    "tcgdex_id": "sma-SV90",
-    "localId": "SV90",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV90/SV94",
-    "cardName": "Shrine of Punishment",
-    "fullDisplayName": "Shrine of Punishment SV90/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV90-low.png",
-    "imageHighSrc": "cards/sma-SV90-high.png",
-    "rules": "Between turns, put 1 damage counter on each Pokémon-GX and Pokémon-EX (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "11613",
-    "externalId": "sma-SV89",
-    "tcgdex_id": "sma-SV89",
-    "localId": "SV89",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV89/SV94",
-    "cardName": "Mt. Coronet",
-    "fullDisplayName": "Mt. Coronet SV89/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV89-low.png",
-    "imageHighSrc": "cards/sma-SV89-high.png",
-    "rules": "Once during each player's turn, that player may put 2 Metal Energy cards from their discard pile into their hand.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "11607",
-    "externalId": "sma-SV88",
-    "tcgdex_id": "sma-SV88",
-    "localId": "SV88",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV88/SV94",
-    "cardName": "Brooklet Hill",
-    "fullDisplayName": "Brooklet Hill SV88/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV88-low.png",
-    "imageHighSrc": "cards/sma-SV88-high.png",
-    "rules": "Once during each player's turn, that player may search their deck for a Basic Water Pokémon or Basic Fighting Pokémon and, put it onto their Bench, and shuffle their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "11602",
-    "externalId": "sma-SV87",
-    "tcgdex_id": "sma-SV87",
-    "localId": "SV87",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV87/SV94",
-    "cardName": "Aether Paradise Conservation Area",
-    "fullDisplayName": "Aether Paradise Conservation Area SV87/SV94 Yellow A Alternate",
-    "rarity": "Rare Secret",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV87-low.png",
-    "imageHighSrc": "cards/sma-SV87-high.png",
-    "rules": "Basic Grass and Basic Lightning Pokémon (both yours and your opponent's) take 30 less damage from the opponent's attacks (after applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
-  },
-  {
-    "masterCardId": "11593",
-    "externalId": "sma-SV86",
-    "tcgdex_id": "sma-SV86",
-    "localId": "SV86",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV86/SV94",
-    "cardName": "Lady",
-    "fullDisplayName": "Lady SV86/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV86-low.png",
-    "imageHighSrc": "cards/sma-SV86-high.png",
-    "rules": "Search your deck for up to 4 basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11587",
-    "externalId": "sma-SV85",
-    "tcgdex_id": "sma-SV85",
-    "localId": "SV85",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV85/SV94",
-    "cardName": "Hiker",
-    "fullDisplayName": "Hiker SV85/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV85-low.png",
-    "imageHighSrc": "cards/sma-SV85-high.png",
-    "rules": "Look at the top 5 cards of either player's deck and choose 1 of them. That player shuffles the other cards back into their deck. Then, put the card you chose on top of that deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11580",
-    "externalId": "sma-SV84",
-    "tcgdex_id": "sma-SV84",
-    "localId": "SV84",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV84/SV94",
-    "cardName": "Guzma",
-    "fullDisplayName": "Guzma SV84/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hitoshi Ariga",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV84-low.png",
-    "imageHighSrc": "cards/sma-SV84-high.png",
-    "rules": "Switch 1 of your opponent's Benched Pokémon with their Active Pokémon. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11575",
-    "externalId": "sma-SV83",
-    "tcgdex_id": "sma-SV83",
-    "localId": "SV83",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV83/SV94",
-    "cardName": "Fisherman",
-    "fullDisplayName": "Fisherman SV83/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV83-low.png",
-    "imageHighSrc": "cards/sma-SV83-high.png",
-    "rules": "Put 4 basic Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11569",
-    "externalId": "sma-SV82",
-    "tcgdex_id": "sma-SV82",
-    "localId": "SV82",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV82/SV94",
-    "cardName": "Cynthia",
-    "fullDisplayName": "Cynthia SV82/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV82-low.png",
-    "imageHighSrc": "cards/sma-SV82-high.png",
-    "rules": "Shuffle your hand into your deck. Then, draw 6 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11563",
-    "externalId": "sma-SV81",
-    "tcgdex_id": "sma-SV81",
-    "localId": "SV81",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV81/SV94",
-    "cardName": "Aether Foundation Employee",
-    "fullDisplayName": "Aether Foundation Employee SV81/SV94 Yellow A Alternate",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "take",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV81-low.png",
-    "imageHighSrc": "cards/sma-SV81-high.png",
-    "rules": "Put 3 Pokémon that have \"Alolan\" in their names from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "11557",
-    "externalId": "sma-SV80",
-    "tcgdex_id": "sma-SV80",
-    "localId": "SV80",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV80/SV94",
-    "cardName": "Drampa-GX",
-    "fullDisplayName": "Drampa-GX SV80/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      780
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV80-low.png",
-    "imageHighSrc": "cards/sma-SV80-high.png",
-    "attacks": [
-      {
-        "name": "Righteous Edge",
-        "damage": "20"
-      },
-      {
-        "name": "Berserk",
-        "damage": "80+"
-      },
-      {
-        "name": "Big Wheel-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11551",
-    "externalId": "sma-SV79",
-    "tcgdex_id": "sma-SV79",
-    "localId": "SV79",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV79/SV94",
-    "cardName": "Silvally-GX",
-    "fullDisplayName": "Silvally-GX SV79/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      773
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Type: Null",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV79-low.png",
-    "imageHighSrc": "cards/sma-SV79-high.png",
-    "attacks": [
-      {
-        "name": "Turbo Drive",
-        "damage": "120"
-      },
-      {
-        "name": "Rebel-GX",
-        "damage": "50×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11545",
-    "externalId": "sma-SV78",
-    "tcgdex_id": "sma-SV78",
-    "localId": "SV78",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV78/SV94",
-    "cardName": "Noivern-GX",
-    "fullDisplayName": "Noivern-GX SV78/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      715
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Noibat",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV78-low.png",
-    "imageHighSrc": "cards/sma-SV78-high.png",
-    "attacks": [
-      {
-        "name": "Distort",
-        "damage": "50"
-      },
-      {
-        "name": "Sonic Volume",
-        "damage": "120"
-      },
-      {
-        "name": "Boomburst-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11539",
-    "externalId": "sma-SV77",
-    "tcgdex_id": "sma-SV77",
-    "localId": "SV77",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV77/SV94",
-    "cardName": "Altaria-GX",
-    "fullDisplayName": "Altaria-GX SV77/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      334
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swablu",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV77-low.png",
-    "imageHighSrc": "cards/sma-SV77-high.png",
-    "attacks": [
-      {
-        "name": "Bright Tone",
-        "damage": "50"
-      },
-      {
-        "name": "Sonic Edge",
-        "damage": "110"
-      },
-      {
-        "name": "Euphoria-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11532",
-    "externalId": "sma-SV76",
-    "tcgdex_id": "sma-SV76",
-    "localId": "SV76",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV76/SV94",
-    "cardName": "Sylveon-GX",
-    "fullDisplayName": "Sylveon-GX SV76/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      700
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV76-low.png",
-    "imageHighSrc": "cards/sma-SV76-high.png",
-    "attacks": [
-      {
-        "name": "Magical Ribbon",
-        "damage": null
-      },
-      {
-        "name": "Fairy Wind",
-        "damage": "110"
-      },
-      {
-        "name": "Plea-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11525",
-    "externalId": "sma-SV75",
-    "tcgdex_id": "sma-SV75",
-    "localId": "SV75",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV75/SV94",
-    "cardName": "Gardevoir-GX",
-    "fullDisplayName": "Gardevoir-GX SV75/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 230,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      282
-    ],
-    "subtypes": [
-      "Stage 2",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Kirlia",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV75-low.png",
-    "imageHighSrc": "cards/sma-SV75-high.png",
-    "attacks": [
-      {
-        "name": "Infinite Force",
-        "damage": "30×"
-      },
-      {
-        "name": "Twilight-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11518",
-    "externalId": "sma-SV74",
-    "tcgdex_id": "sma-SV74",
-    "localId": "SV74",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV74/SV94",
-    "cardName": "Stakataka-GX",
-    "fullDisplayName": "Stakataka-GX SV74/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      805
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV74-low.png",
-    "imageHighSrc": "cards/sma-SV74-high.png",
-    "attacks": [
-      {
-        "name": "Gigaton Stomp",
-        "damage": "120"
-      },
-      {
-        "name": "Assembly-GX",
-        "damage": "50+"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11512",
-    "externalId": "sma-SV73",
-    "tcgdex_id": "sma-SV73",
-    "localId": "SV73",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV73/SV94",
-    "cardName": "Kartana-GX",
-    "fullDisplayName": "Kartana-GX SV73/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      798
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV73-low.png",
-    "imageHighSrc": "cards/sma-SV73-high.png",
-    "attacks": [
-      {
-        "name": "Gale Blade",
-        "damage": "70"
-      },
-      {
-        "name": "Blade-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11505",
-    "externalId": "sma-SV72",
-    "tcgdex_id": "sma-SV72",
-    "localId": "SV72",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV72/SV94",
-    "cardName": "Scizor-GX",
-    "fullDisplayName": "Scizor-GX SV72/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      212
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Scyther",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV72-low.png",
-    "imageHighSrc": "cards/sma-SV72-high.png",
-    "attacks": [
-      {
-        "name": "Steel Wing",
-        "damage": "80"
-      },
-      {
-        "name": "Cross-Cut-GX",
-        "damage": "100+"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11498",
-    "externalId": "sma-SV71",
-    "tcgdex_id": "sma-SV71",
-    "localId": "SV71",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV71/SV94",
-    "cardName": "Guzzlord-GX",
-    "fullDisplayName": "Guzzlord-GX SV71/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 210,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      799
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV71-low.png",
-    "imageHighSrc": "cards/sma-SV71-high.png",
-    "attacks": [
-      {
-        "name": "Eat Sloppily",
-        "damage": null
-      },
-      {
-        "name": "Tyrannical Hole",
-        "damage": "180"
-      },
-      {
-        "name": "Glutton-GX",
-        "damage": "100"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11491",
-    "externalId": "sma-SV70",
-    "tcgdex_id": "sma-SV70",
-    "localId": "SV70",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV70/SV94",
-    "cardName": "Darkrai-GX",
-    "fullDisplayName": "Darkrai-GX SV70/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      491
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV70-low.png",
-    "imageHighSrc": "cards/sma-SV70-high.png",
-    "attacks": [
-      {
-        "name": "Dark Cleave",
-        "damage": "130"
-      },
-      {
-        "name": "Dead End-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11484",
-    "externalId": "sma-SV69",
-    "tcgdex_id": "sma-SV69",
-    "localId": "SV69",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV69/SV94",
-    "cardName": "Umbreon-GX",
-    "fullDisplayName": "Umbreon-GX SV69/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      197
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV69-low.png",
-    "imageHighSrc": "cards/sma-SV69-high.png",
-    "attacks": [
-      {
-        "name": "Strafe",
-        "damage": "30"
-      },
-      {
-        "name": "Shadow Bullet",
-        "damage": "90"
-      },
-      {
-        "name": "Dark Call-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11477",
-    "externalId": "sma-SV68",
-    "tcgdex_id": "sma-SV68",
-    "localId": "SV68",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV68/SV94",
-    "cardName": "Buzzwole-GX",
-    "fullDisplayName": "Buzzwole-GX SV68/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 190,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      794
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV68-low.png",
-    "imageHighSrc": "cards/sma-SV68-high.png",
-    "attacks": [
-      {
-        "name": "Jet Punch",
-        "damage": "30"
-      },
-      {
-        "name": "Knuckle Impact",
-        "damage": "160"
-      },
-      {
-        "name": "Absorption-GX",
-        "damage": "40×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11470",
-    "externalId": "sma-SV67",
-    "tcgdex_id": "sma-SV67",
-    "localId": "SV67",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV67/SV94",
-    "cardName": "Lycanroc-GX",
-    "fullDisplayName": "Lycanroc-GX SV67/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      745
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Rockruff",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV67-low.png",
-    "imageHighSrc": "cards/sma-SV67-high.png",
-    "attacks": [
-      {
-        "name": "Accelerock",
-        "damage": "120"
-      },
-      {
-        "name": "Splintered Shards-GX",
-        "damage": "30×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11463",
-    "externalId": "sma-SV66",
-    "tcgdex_id": "sma-SV66",
-    "localId": "SV66",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV66/SV94",
-    "cardName": "Lycanroc-GX",
-    "fullDisplayName": "Lycanroc-GX SV66/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      745
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Rockruff",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV66-low.png",
-    "imageHighSrc": "cards/sma-SV66-high.png",
-    "attacks": [
-      {
-        "name": "Claw Slash",
-        "damage": "110"
-      },
-      {
-        "name": "Dangerous Rogue-GX",
-        "damage": "50×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11456",
-    "externalId": "sma-SV65",
-    "tcgdex_id": "sma-SV65",
-    "localId": "SV65",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV65/SV94",
-    "cardName": "Zygarde-GX",
-    "fullDisplayName": "Zygarde-GX SV65/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 200,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      718
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV65-low.png",
-    "imageHighSrc": "cards/sma-SV65-high.png",
-    "attacks": [
-      {
-        "name": "Cell Connector",
-        "damage": "50"
-      },
-      {
-        "name": "Land's Wrath",
-        "damage": "130"
-      },
-      {
-        "name": "Verdict-GX",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11449",
-    "externalId": "sma-SV64",
-    "tcgdex_id": "sma-SV64",
-    "localId": "SV64",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV64/SV94",
-    "cardName": "Lucario-GX",
-    "fullDisplayName": "Lucario-GX SV64/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      448
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Riolu",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV64-low.png",
-    "imageHighSrc": "cards/sma-SV64-high.png",
-    "attacks": [
-      {
-        "name": "Aura Strike",
-        "damage": "30+"
-      },
-      {
-        "name": "Cyclone Kick",
-        "damage": "130"
-      },
-      {
-        "name": "Cantankerous Beatdown-GX",
-        "damage": "30×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11442",
-    "externalId": "sma-SV63",
-    "tcgdex_id": "sma-SV63",
-    "localId": "SV63",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV63/SV94",
-    "cardName": "Naganadel-GX",
-    "fullDisplayName": "Naganadel-GX SV63/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      804
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Poipole",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV63-low.png",
-    "imageHighSrc": "cards/sma-SV63-high.png",
-    "attacks": [
-      {
-        "name": "Beast Raid",
-        "damage": "20×"
-      },
-      {
-        "name": "Jet Needle",
-        "damage": "110"
-      },
-      {
-        "name": "Stinger-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11436",
-    "externalId": "sma-SV62",
-    "tcgdex_id": "sma-SV62",
-    "localId": "SV62",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV62/SV94",
-    "cardName": "Nihilego-GX",
-    "fullDisplayName": "Nihilego-GX SV62/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      793
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV62-low.png",
-    "imageHighSrc": "cards/sma-SV62-high.png",
-    "attacks": [
-      {
-        "name": "Lock Up",
-        "damage": "120"
-      },
-      {
-        "name": "Symbiont-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11429",
-    "externalId": "sma-SV61",
-    "tcgdex_id": "sma-SV61",
-    "localId": "SV61",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV61/SV94",
-    "cardName": "Banette-GX",
-    "fullDisplayName": "Banette-GX SV61/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 190,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      354
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shuppet",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV61-low.png",
-    "imageHighSrc": "cards/sma-SV61-high.png",
-    "attacks": [
-      {
-        "name": "Shadow Chant",
-        "damage": "30+"
-      },
-      {
-        "name": "Tomb Hunt-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11423",
-    "externalId": "sma-SV60",
-    "tcgdex_id": "sma-SV60",
-    "localId": "SV60",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV60/SV94",
-    "cardName": "Espeon-GX",
-    "fullDisplayName": "Espeon-GX SV60/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      196
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV60-low.png",
-    "imageHighSrc": "cards/sma-SV60-high.png",
-    "attacks": [
-      {
-        "name": "Psybeam",
-        "damage": "30"
-      },
-      {
-        "name": "Psychic",
-        "damage": "60+"
-      },
-      {
-        "name": "Divide-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11417",
-    "externalId": "sma-SV59",
-    "tcgdex_id": "sma-SV59",
-    "localId": "SV59",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV59/SV94",
-    "cardName": "Mewtwo-GX",
-    "fullDisplayName": "Mewtwo-GX SV59/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 190,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      150
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV59-low.png",
-    "imageHighSrc": "cards/sma-SV59-high.png",
-    "attacks": [
-      {
-        "name": "Full Burst",
-        "damage": "30×"
-      },
-      {
-        "name": "Super Absorption",
-        "damage": "60"
-      },
-      {
-        "name": "Psystrike-GX",
-        "damage": "200"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11410",
-    "externalId": "sma-SV58",
-    "tcgdex_id": "sma-SV58",
-    "localId": "SV58",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV58/SV94",
-    "cardName": "Xurkitree-GX",
-    "fullDisplayName": "Xurkitree-GX SV58/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      796
-    ],
-    "subtypes": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV58-low.png",
-    "imageHighSrc": "cards/sma-SV58-high.png",
-    "attacks": [
-      {
-        "name": "Rumbling Wires",
-        "damage": "100"
-      },
-      {
-        "name": "Lighting-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11403",
-    "externalId": "sma-SV57",
-    "tcgdex_id": "sma-SV57",
-    "localId": "SV57",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV57/SV94",
-    "cardName": "Electrode-GX",
-    "fullDisplayName": "Electrode-GX SV57/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 190,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      101
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Voltorb",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV57-low.png",
-    "imageHighSrc": "cards/sma-SV57-high.png",
-    "attacks": [
-      {
-        "name": "Electro Ball",
-        "damage": "50"
-      },
-      {
-        "name": "Crush and Burn-GX",
-        "damage": "30+"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11396",
-    "externalId": "sma-SV56",
-    "tcgdex_id": "sma-SV56",
-    "localId": "SV56",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV56/SV94",
-    "cardName": "Greninja-GX",
-    "fullDisplayName": "Greninja-GX SV56/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 230,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      658
-    ],
-    "subtypes": [
-      "Stage 2",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Frogadier",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV56-low.png",
-    "imageHighSrc": "cards/sma-SV56-high.png",
-    "attacks": [
-      {
-        "name": "Haze Slash",
-        "damage": "110"
-      },
-      {
-        "name": "Shadowy Hunter-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11390",
-    "externalId": "sma-SV55",
-    "tcgdex_id": "sma-SV55",
-    "localId": "SV55",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV55/SV94",
-    "cardName": "Glaceon-GX",
-    "fullDisplayName": "Glaceon-GX SV55/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      471
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV55-low.png",
-    "imageHighSrc": "cards/sma-SV55-high.png",
-    "attacks": [
-      {
-        "name": "Frost Bullet",
-        "damage": "90"
-      },
-      {
-        "name": "Polar Spear-GX",
-        "damage": "50×"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11383",
-    "externalId": "sma-SV54",
-    "tcgdex_id": "sma-SV54",
-    "localId": "SV54",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV54/SV94",
-    "cardName": "Articuno-GX",
-    "fullDisplayName": "Articuno-GX SV54/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      144
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV54-low.png",
-    "imageHighSrc": "cards/sma-SV54-high.png",
-    "attacks": [
-      {
-        "name": "Ice Wing",
-        "damage": "130"
-      },
-      {
-        "name": "Cold Crush-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11375",
-    "externalId": "sma-SV53",
-    "tcgdex_id": "sma-SV53",
-    "localId": "SV53",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV53/SV94",
-    "cardName": "Alolan Ninetales-GX",
-    "fullDisplayName": "Alolan Ninetales-GX SV53/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      38
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Alolan Vulpix",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV53-low.png",
-    "imageHighSrc": "cards/sma-SV53-high.png",
-    "attacks": [
-      {
-        "name": "Ice Blade",
-        "damage": null
-      },
-      {
-        "name": "Blizzard Edge",
-        "damage": "160"
-      },
-      {
-        "name": "Ice Path-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11365",
-    "externalId": "sma-SV52",
-    "tcgdex_id": "sma-SV52",
-    "localId": "SV52",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV52/SV94",
-    "cardName": "Turtonator-GX",
-    "fullDisplayName": "Turtonator-GX SV52/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 190,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      776
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV52-low.png",
-    "imageHighSrc": "cards/sma-SV52-high.png",
-    "attacks": [
-      {
-        "name": "Shell Trap",
-        "damage": "20"
-      },
-      {
-        "name": "Bright Flame",
-        "damage": "160"
-      },
-      {
-        "name": "Nitro Tank-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11358",
-    "externalId": "sma-SV51",
-    "tcgdex_id": "sma-SV51",
-    "localId": "SV51",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV51/SV94",
-    "cardName": "Reshiram-GX",
-    "fullDisplayName": "Reshiram-GX SV51/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      643
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "PLANETA Igarashi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV51-low.png",
-    "imageHighSrc": "cards/sma-SV51-high.png",
-    "attacks": [
-      {
-        "name": "Flame Charge",
-        "damage": null
-      },
-      {
-        "name": "Scorching Column",
-        "damage": "110"
-      },
-      {
-        "name": "Vermilion-GX",
-        "damage": "180"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11347",
-    "externalId": "sma-SV50",
-    "tcgdex_id": "sma-SV50",
-    "localId": "SV50",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV50/SV94",
-    "cardName": "Ho-Oh-GX",
-    "fullDisplayName": "Ho-Oh-GX SV50/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 190,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      250
-    ],
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV50-low.png",
-    "imageHighSrc": "cards/sma-SV50-high.png",
-    "attacks": [
-      {
-        "name": "Sacred Fire",
-        "damage": null
-      },
-      {
-        "name": "Phoenix Burn",
-        "damage": "180"
-      },
-      {
-        "name": "Eternal Light-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11341",
-    "externalId": "sma-SV49",
-    "tcgdex_id": "sma-SV49",
-    "localId": "SV49",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV49/SV94",
-    "cardName": "Charizard-GX",
-    "fullDisplayName": "Charizard-GX SV49/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 250,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      6
-    ],
-    "subtypes": [
-      "Stage 2",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Charmeleon",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV49-low.png",
-    "imageHighSrc": "cards/sma-SV49-high.png",
-    "attacks": [
-      {
-        "name": "Wing Attack",
-        "damage": "70"
-      },
-      {
-        "name": "Crimson Storm",
-        "damage": "300"
-      },
-      {
-        "name": "Raging Out-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11334",
-    "externalId": "sma-SV48",
-    "tcgdex_id": "sma-SV48",
-    "localId": "SV48",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV48/SV94",
-    "cardName": "Golisopod-GX",
-    "fullDisplayName": "Golisopod-GX SV48/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 210,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      768
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wimpod",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV48-low.png",
-    "imageHighSrc": "cards/sma-SV48-high.png",
-    "attacks": [
-      {
-        "name": "First Impression",
-        "damage": "30+"
-      },
-      {
-        "name": "Armor Press",
-        "damage": "100"
-      },
-      {
-        "name": "Crossing Cut-GX",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11326",
-    "externalId": "sma-SV47",
-    "tcgdex_id": "sma-SV47",
-    "localId": "SV47",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV47/SV94",
-    "cardName": "Decidueye-GX",
-    "fullDisplayName": "Decidueye-GX SV47/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 240,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      724
-    ],
-    "subtypes": [
-      "Stage 2",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Dartrix",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV47-low.png",
-    "imageHighSrc": "cards/sma-SV47-high.png",
-    "attacks": [
-      {
-        "name": "Razor Leaf",
-        "damage": "90"
-      },
-      {
-        "name": "Hollow Hunt-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11320",
-    "externalId": "sma-SV46",
-    "tcgdex_id": "sma-SV46",
-    "localId": "SV46",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV46/SV94",
-    "cardName": "Leafeon-GX",
-    "fullDisplayName": "Leafeon-GX SV46/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny GX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      470
-    ],
-    "subtypes": [
-      "Stage 1",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV46-low.png",
-    "imageHighSrc": "cards/sma-SV46-high.png",
-    "attacks": [
-      {
-        "name": "Solar Beam",
-        "damage": "110"
-      },
-      {
-        "name": "Grand Bloom-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "11310",
-    "externalId": "sma-SV45",
-    "tcgdex_id": "sma-SV45",
-    "localId": "SV45",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV45/SV94",
-    "cardName": "Type: Null",
-    "fullDisplayName": "Type: Null SV45/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      772
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV45-low.png",
-    "imageHighSrc": "cards/sma-SV45-high.png",
-    "attacks": [
-      {
-        "name": "Armor Press",
-        "damage": "30"
-      },
-      {
-        "name": "Slashing Claw",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11304",
-    "externalId": "sma-SV44",
-    "tcgdex_id": "sma-SV44",
-    "localId": "SV44",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV44/SV94",
-    "cardName": "Oranguru",
-    "fullDisplayName": "Oranguru SV44/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      765
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV44-low.png",
-    "imageHighSrc": "cards/sma-SV44-high.png",
-    "attacks": [
-      {
-        "name": "Psychic",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11297",
-    "externalId": "sma-SV43",
-    "tcgdex_id": "sma-SV43",
-    "localId": "SV43",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV43/SV94",
-    "cardName": "Noibat",
-    "fullDisplayName": "Noibat SV43/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      714
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV43-low.png",
-    "imageHighSrc": "cards/sma-SV43-high.png",
-    "attacks": [
-      {
-        "name": "Agility",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11290",
-    "externalId": "sma-SV42",
-    "tcgdex_id": "sma-SV42",
-    "localId": "SV42",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV42/SV94",
-    "cardName": "Swablu",
-    "fullDisplayName": "Swablu SV42/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      333
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV42-low.png",
-    "imageHighSrc": "cards/sma-SV42-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Peck",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11283",
-    "externalId": "sma-SV41",
-    "tcgdex_id": "sma-SV41",
-    "localId": "SV41",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV41/SV94",
-    "cardName": "Eevee",
-    "fullDisplayName": "Eevee SV41/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      133
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "kirisAki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV41-low.png",
-    "imageHighSrc": "cards/sma-SV41-high.png",
-    "attacks": [
-      {
-        "name": "Quick Draw",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "11276",
-    "externalId": "sma-SV40",
-    "tcgdex_id": "sma-SV40",
-    "localId": "SV40",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV40/SV94",
-    "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp SV40/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      445
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gabite",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV40-low.png",
-    "imageHighSrc": "cards/sma-SV40-high.png",
-    "attacks": [
-      {
-        "name": "Quick Dive",
-        "damage": null
-      },
-      {
-        "name": "Royal Blades",
-        "damage": "100+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11269",
-    "externalId": "sma-SV39",
-    "tcgdex_id": "sma-SV39",
-    "localId": "SV39",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV39/SV94",
-    "cardName": "Gabite",
-    "fullDisplayName": "Gabite SV39/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      444
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gible",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV39-low.png",
-    "imageHighSrc": "cards/sma-SV39-high.png",
-    "attacks": [
-      {
-        "name": "Ascension",
-        "damage": null
-      },
-      {
-        "name": "Slash",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11262",
-    "externalId": "sma-SV38",
-    "tcgdex_id": "sma-SV38",
-    "localId": "SV38",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV38/SV94",
-    "cardName": "Gible",
-    "fullDisplayName": "Gible SV38/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      443
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Saya Tsuruta",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV38-low.png",
-    "imageHighSrc": "cards/sma-SV38-high.png",
-    "attacks": [
-      {
-        "name": "Ascension",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "11255",
-    "externalId": "sma-SV37",
-    "tcgdex_id": "sma-SV37",
-    "localId": "SV37",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV37/SV94",
-    "cardName": "Altaria",
-    "fullDisplayName": "Altaria SV37/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      334
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swablu",
-    "artist": "kirisAki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV37-low.png",
-    "imageHighSrc": "cards/sma-SV37-high.png",
-    "attacks": [
-      {
-        "name": "Pierce",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11248",
-    "externalId": "sma-SV36",
-    "tcgdex_id": "sma-SV36",
-    "localId": "SV36",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV36/SV94",
-    "cardName": "Diancie",
-    "fullDisplayName": "Diancie SV36/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      719
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV36-low.png",
-    "imageHighSrc": "cards/sma-SV36-high.png",
-    "attacks": [
-      {
-        "name": "Sparkling Wish",
-        "damage": null
-      },
-      {
-        "name": "Diamond Storm",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11241",
-    "externalId": "sma-SV35",
-    "tcgdex_id": "sma-SV35",
-    "localId": "SV35",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV35/SV94",
-    "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia SV35/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      281
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ralts",
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV35-low.png",
-    "imageHighSrc": "cards/sma-SV35-high.png",
-    "attacks": [
-      {
-        "name": "Smack",
-        "damage": "20"
-      },
-      {
-        "name": "Magical Shot",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11234",
-    "externalId": "sma-SV34",
-    "tcgdex_id": "sma-SV34",
-    "localId": "SV34",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV34/SV94",
-    "cardName": "Ralts",
-    "fullDisplayName": "Ralts SV34/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      280
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV34-low.png",
-    "imageHighSrc": "cards/sma-SV34-high.png",
-    "attacks": [
-      {
-        "name": "Draining Kiss",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11227",
-    "externalId": "sma-SV33",
-    "tcgdex_id": "sma-SV33",
-    "localId": "SV33",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV33/SV94",
-    "cardName": "Kartana",
-    "fullDisplayName": "Kartana SV33/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      798
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Anesaki Dynamic",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV33-low.png",
-    "imageHighSrc": "cards/sma-SV33-high.png",
-    "attacks": [
-      {
-        "name": "Divine Paper",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11220",
-    "externalId": "sma-SV32",
-    "tcgdex_id": "sma-SV32",
-    "localId": "SV32",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV32/SV94",
-    "cardName": "Celesteela",
-    "fullDisplayName": "Celesteela SV32/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 140,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      797
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV32-low.png",
-    "imageHighSrc": "cards/sma-SV32-high.png",
-    "attacks": [
-      {
-        "name": "Moon Raker",
-        "damage": "160"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11213",
-    "externalId": "sma-SV31",
-    "tcgdex_id": "sma-SV31",
-    "localId": "SV31",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV31/SV94",
-    "cardName": "Metang",
-    "fullDisplayName": "Metang SV31/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      375
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Beldum",
-    "artist": "Saya Tsuruta",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV31-low.png",
-    "imageHighSrc": "cards/sma-SV31-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "20"
-      },
-      {
-        "name": "Core Beam",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11206",
-    "externalId": "sma-SV30",
-    "tcgdex_id": "sma-SV30",
-    "localId": "SV30",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV30/SV94",
-    "cardName": "Beldum",
-    "fullDisplayName": "Beldum SV30/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      374
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV30-low.png",
-    "imageHighSrc": "cards/sma-SV30-high.png",
-    "attacks": [
-      {
-        "name": "Core Beam",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11199",
-    "externalId": "sma-SV29",
-    "tcgdex_id": "sma-SV29",
-    "localId": "SV29",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV29/SV94",
-    "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone SV29/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      462
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Magneton",
-    "artist": "Misa Tsutsui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV29-low.png",
-    "imageHighSrc": "cards/sma-SV29-high.png",
-    "attacks": [
-      {
-        "name": "Zap Cannon",
-        "damage": "130"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11192",
-    "externalId": "sma-SV28",
-    "tcgdex_id": "sma-SV28",
-    "localId": "SV28",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV28/SV94",
-    "cardName": "Magneton",
-    "fullDisplayName": "Magneton SV28/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      82
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Magnemite",
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV28-low.png",
-    "imageHighSrc": "cards/sma-SV28-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "20"
-      },
-      {
-        "name": "Zap Cannon",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11185",
-    "externalId": "sma-SV27",
-    "tcgdex_id": "sma-SV27",
-    "localId": "SV27",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV27/SV94",
-    "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite SV27/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      81
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "SATOSHI NAKAI",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV27-low.png",
-    "imageHighSrc": "cards/sma-SV27-high.png",
-    "attacks": [
-      {
-        "name": "Searching Magnet",
-        "damage": null
-      },
-      {
-        "name": "Tackle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11178",
-    "externalId": "sma-SV26",
-    "tcgdex_id": "sma-SV26",
-    "localId": "SV26",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV26/SV94",
-    "cardName": "Guzzlord",
-    "fullDisplayName": "Guzzlord SV26/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 160,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      799
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV26-low.png",
-    "imageHighSrc": "cards/sma-SV26-high.png",
-    "attacks": [
-      {
-        "name": "Lord's Valley",
-        "damage": "160"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11167",
-    "externalId": "sma-SV25",
-    "tcgdex_id": "sma-SV25",
-    "localId": "SV25",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV25/SV94",
-    "cardName": "Zorua",
-    "fullDisplayName": "Zorua SV25/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      570
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Saya Tsuruta",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV25-low.png",
-    "imageHighSrc": "cards/sma-SV25-high.png",
-    "attacks": [
-      {
-        "name": "Stampede",
-        "damage": "10"
-      },
-      {
-        "name": "Ram",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11159",
-    "externalId": "sma-SV24",
-    "tcgdex_id": "sma-SV24",
-    "localId": "SV24",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV24/SV94",
-    "cardName": "Buzzwole",
-    "fullDisplayName": "Buzzwole SV24/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      794
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV24-low.png",
-    "imageHighSrc": "cards/sma-SV24-high.png",
-    "attacks": [
-      {
-        "name": "Sledgehammer",
-        "damage": "30+"
-      },
-      {
-        "name": "Swing Around",
-        "damage": "80+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11152",
-    "externalId": "sma-SV23",
-    "tcgdex_id": "sma-SV23",
-    "localId": "SV23",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV23/SV94",
-    "cardName": "Rockruff",
-    "fullDisplayName": "Rockruff SV23/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      744
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV23-low.png",
-    "imageHighSrc": "cards/sma-SV23-high.png",
-    "attacks": [
-      {
-        "name": "Surprise Attack",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11145",
-    "externalId": "sma-SV22",
-    "tcgdex_id": "sma-SV22",
-    "localId": "SV22",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV22/SV94",
-    "cardName": "Lucario",
-    "fullDisplayName": "Lucario SV22/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      448
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Riolu",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV22-low.png",
-    "imageHighSrc": "cards/sma-SV22-high.png",
-    "attacks": [
-      {
-        "name": "Missile Jab",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11138",
-    "externalId": "sma-SV21",
-    "tcgdex_id": "sma-SV21",
-    "localId": "SV21",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV21/SV94",
-    "cardName": "Riolu",
-    "fullDisplayName": "Riolu SV21/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      447
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Misa Tsutsui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV21-low.png",
-    "imageHighSrc": "cards/sma-SV21-high.png",
-    "attacks": [
-      {
-        "name": "Detect",
-        "damage": null
-      },
-      {
-        "name": "Jab",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11131",
-    "externalId": "sma-SV20",
-    "tcgdex_id": "sma-SV20",
-    "localId": "SV20",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV20/SV94",
-    "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo SV20/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      185
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV20-low.png",
-    "imageHighSrc": "cards/sma-SV20-high.png",
-    "attacks": [
-      {
-        "name": "Rock Throw",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11124",
-    "externalId": "sma-SV19",
-    "tcgdex_id": "sma-SV19",
-    "localId": "SV19",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV19/SV94",
-    "cardName": "Poipole",
-    "fullDisplayName": "Poipole SV19/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      803
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV19-low.png",
-    "imageHighSrc": "cards/sma-SV19-high.png",
-    "attacks": [
-      {
-        "name": "Spit Poison",
-        "damage": null
-      },
-      {
-        "name": "Knockout Reviver",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "11117",
-    "externalId": "sma-SV18",
-    "tcgdex_id": "sma-SV18",
-    "localId": "SV18",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV18/SV94",
-    "cardName": "Malamar",
-    "fullDisplayName": "Malamar SV18/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      687
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Inkay",
-    "artist": "Hideki Ishikawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV18-low.png",
-    "imageHighSrc": "cards/sma-SV18-high.png",
-    "attacks": [
-      {
-        "name": "Psychic Sphere",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11110",
-    "externalId": "sma-SV17",
-    "tcgdex_id": "sma-SV17",
-    "localId": "SV17",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV17/SV94",
-    "cardName": "Inkay",
-    "fullDisplayName": "Inkay SV17/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      686
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV17-low.png",
-    "imageHighSrc": "cards/sma-SV17-high.png",
-    "attacks": [
-      {
-        "name": "Hypnosis",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "11103",
-    "externalId": "sma-SV16",
-    "tcgdex_id": "sma-SV16",
-    "localId": "SV16",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV16/SV94",
-    "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet SV16/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      353
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV16-low.png",
-    "imageHighSrc": "cards/sma-SV16-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "10"
-      },
-      {
-        "name": "Will-O-Wisp",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11096",
-    "externalId": "sma-SV15",
-    "tcgdex_id": "sma-SV15",
-    "localId": "SV15",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV15/SV94",
-    "cardName": "Seviper",
-    "fullDisplayName": "Seviper SV15/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      336
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "SATOSHI NAKAI",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV15-low.png",
-    "imageHighSrc": "cards/sma-SV15-high.png",
-    "attacks": [
-      {
-        "name": "Venomous Fang",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11090",
-    "externalId": "sma-SV14",
-    "tcgdex_id": "sma-SV14",
-    "localId": "SV14",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV14/SV94",
-    "cardName": "Xurkitree",
-    "fullDisplayName": "Xurkitree SV14/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      796
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV14-low.png",
-    "imageHighSrc": "cards/sma-SV14-high.png",
-    "attacks": [
-      {
-        "name": "Dazzle Blast",
-        "damage": "20"
-      },
-      {
-        "name": "Cablegram",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11083",
-    "externalId": "sma-SV13",
-    "tcgdex_id": "sma-SV13",
-    "localId": "SV13",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV13/SV94",
-    "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb SV13/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      100
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV13-low.png",
-    "imageHighSrc": "cards/sma-SV13-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Shock",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11076",
-    "externalId": "sma-SV12",
-    "tcgdex_id": "sma-SV12",
-    "localId": "SV12",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV12/SV94",
-    "cardName": "Frogadier",
-    "fullDisplayName": "Frogadier SV12/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      657
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Froakie",
-    "artist": "Anesaki Dynamic",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV12-low.png",
-    "imageHighSrc": "cards/sma-SV12-high.png",
-    "attacks": [
-      {
-        "name": "Water Drip",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11069",
-    "externalId": "sma-SV11",
-    "tcgdex_id": "sma-SV11",
-    "localId": "SV11",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV11/SV94",
-    "cardName": "Froakie",
-    "fullDisplayName": "Froakie SV11/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      656
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV11-low.png",
-    "imageHighSrc": "cards/sma-SV11-high.png",
-    "attacks": [
-      {
-        "name": "Flop",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11062",
-    "externalId": "sma-SV10",
-    "tcgdex_id": "sma-SV10",
-    "localId": "SV10",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV10/SV94",
-    "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire SV10/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      195
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wooper",
-    "artist": "Saya Tsuruta",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV10-low.png",
-    "imageHighSrc": "cards/sma-SV10-high.png",
-    "attacks": [
-      {
-        "name": "Hydro Pump",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11055",
-    "externalId": "sma-SV9",
-    "tcgdex_id": "sma-SV9",
-    "localId": "SV9",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV9/SV94",
-    "cardName": "Wooper",
-    "fullDisplayName": "Wooper SV9/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      194
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Misa Tsutsui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV9-low.png",
-    "imageHighSrc": "cards/sma-SV9-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      },
-      {
-        "name": "Rain Splash",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11048",
-    "externalId": "sma-SV8",
-    "tcgdex_id": "sma-SV8",
-    "localId": "SV8",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV8/SV94",
-    "cardName": "Alolan Vulpix",
-    "fullDisplayName": "Alolan Vulpix SV8/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      37
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV8-low.png",
-    "imageHighSrc": "cards/sma-SV8-high.png",
-    "attacks": [
-      {
-        "name": "Beacon",
-        "damage": null
-      },
-      {
-        "name": "Icy Snow",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11042",
-    "externalId": "sma-SV7",
-    "tcgdex_id": "sma-SV7",
-    "localId": "SV7",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV7/SV94",
-    "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon SV7/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      5
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Charmander",
-    "artist": "nagimiso",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV7-low.png",
-    "imageHighSrc": "cards/sma-SV7-high.png",
-    "attacks": [
-      {
-        "name": "Flamethrower",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11035",
-    "externalId": "sma-SV6",
-    "tcgdex_id": "sma-SV6",
-    "localId": "SV6",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV6/SV94",
-    "cardName": "Charmander",
-    "fullDisplayName": "Charmander SV6/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      4
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "kirisAki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV6-low.png",
-    "imageHighSrc": "cards/sma-SV6-high.png",
-    "attacks": [
-      {
-        "name": "Fire Fang",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11028",
-    "externalId": "sma-SV5",
-    "tcgdex_id": "sma-SV5",
-    "localId": "SV5",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV5/SV94",
-    "cardName": "Pheromosa",
-    "fullDisplayName": "Pheromosa SV5/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      795
-    ],
-    "subtypes": [
-      "Basic",
-      "Ultra Beast"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV5-low.png",
-    "imageHighSrc": "cards/sma-SV5-high.png",
-    "attacks": [
-      {
-        "name": "High Jump Kick",
-        "damage": "20"
-      },
-      {
-        "name": "White Ray",
-        "damage": "90+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11021",
-    "externalId": "sma-SV4",
-    "tcgdex_id": "sma-SV4",
-    "localId": "SV4",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV4/SV94",
-    "cardName": "Wimpod",
-    "fullDisplayName": "Wimpod SV4/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      767
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "SATOSHI NAKAI",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV4-low.png",
-    "imageHighSrc": "cards/sma-SV4-high.png",
-    "attacks": [
-      {
-        "name": "Gnaw",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11014",
-    "externalId": "sma-SV3",
-    "tcgdex_id": "sma-SV3",
-    "localId": "SV3",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV3/SV94",
-    "cardName": "Dartrix",
-    "fullDisplayName": "Dartrix SV3/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      723
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Rowlet",
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV3-low.png",
-    "imageHighSrc": "cards/sma-SV3-high.png",
-    "attacks": [
-      {
-        "name": "Sharp Blade Quill",
-        "damage": null
-      },
-      {
-        "name": "Leaf Blade",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "11003",
-    "externalId": "sma-SV2",
-    "tcgdex_id": "sma-SV2",
-    "localId": "SV2",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV2/SV94",
-    "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet SV2/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      722
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV2-low.png",
-    "imageHighSrc": "cards/sma-SV2-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Leafage",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "10999",
-    "externalId": "sma-SV1",
-    "tcgdex_id": "sma-SV1",
-    "localId": "SV1",
-    "setCode": "sma",
-    "setTcgdexId": "sma",
-    "cardNumber": "SV1/SV94",
-    "cardName": "Scyther",
-    "fullDisplayName": "Scyther SV1/SV94 Yellow A Alternate",
-    "rarity": "Rare Shiny",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      123
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/sma-SV1-low.png",
-    "imageHighSrc": "cards/sma-SV1-high.png",
-    "attacks": [
-      {
-        "name": "Twin Play",
-        "damage": null
-      },
-      {
-        "name": "Agility",
-        "damage": "20"
-      }
-    ]
-  }
+    {
+        "masterCardId": "11644",
+        "externalId": "sma-SV94",
+        "localId": "SV94",
+        "setCode": "sma",
+        "cardNumber": "SV94/SV94",
+        "cardName": "Tapu Lele-GX",
+        "fullDisplayName": "Tapu Lele-GX SV94/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            786
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV94-low.png",
+        "imageHighSrc": "cards/sma-SV94-high.png",
+        "attacks": [
+            {
+                "name": "Energy Drive",
+                "damage": "20×"
+            },
+            {
+                "name": "Tapu Cure-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11638",
+        "externalId": "sma-SV93",
+        "localId": "SV93",
+        "setCode": "sma",
+        "cardNumber": "SV93/SV94",
+        "cardName": "Tapu Koko-GX",
+        "fullDisplayName": "Tapu Koko-GX SV93/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            785
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV93-low.png",
+        "imageHighSrc": "cards/sma-SV93-high.png",
+        "attacks": [
+            {
+                "name": "Sky-High Claws",
+                "damage": "130"
+            },
+            {
+                "name": "Tapu Thunder-GX",
+                "damage": "50×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11631",
+        "externalId": "sma-SV92",
+        "localId": "SV92",
+        "setCode": "sma",
+        "cardNumber": "SV92/SV94",
+        "cardName": "Tapu Fini-GX",
+        "fullDisplayName": "Tapu Fini-GX SV92/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            788
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV92-low.png",
+        "imageHighSrc": "cards/sma-SV92-high.png",
+        "attacks": [
+            {
+                "name": "Aqua Ring",
+                "damage": "20"
+            },
+            {
+                "name": "Hydro Shot",
+                "damage": null
+            },
+            {
+                "name": "Tapu Storm-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11625",
+        "externalId": "sma-SV91",
+        "localId": "SV91",
+        "setCode": "sma",
+        "cardNumber": "SV91/SV94",
+        "cardName": "Tapu Bulu-GX",
+        "fullDisplayName": "Tapu Bulu-GX SV91/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            787
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV91-low.png",
+        "imageHighSrc": "cards/sma-SV91-high.png",
+        "attacks": [
+            {
+                "name": "Horn Attack",
+                "damage": "30"
+            },
+            {
+                "name": "Nature's Judgment",
+                "damage": "120+"
+            },
+            {
+                "name": "Tapu Wilderness-GX",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11619",
+        "externalId": "sma-SV90",
+        "localId": "SV90",
+        "setCode": "sma",
+        "cardNumber": "SV90/SV94",
+        "cardName": "Shrine of Punishment",
+        "fullDisplayName": "Shrine of Punishment SV90/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV90-low.png",
+        "imageHighSrc": "cards/sma-SV90-high.png",
+        "rules": "Between turns, put 1 damage counter on each Pokémon-GX and Pokémon-EX (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "11613",
+        "externalId": "sma-SV89",
+        "localId": "SV89",
+        "setCode": "sma",
+        "cardNumber": "SV89/SV94",
+        "cardName": "Mt. Coronet",
+        "fullDisplayName": "Mt. Coronet SV89/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV89-low.png",
+        "imageHighSrc": "cards/sma-SV89-high.png",
+        "rules": "Once during each player's turn, that player may put 2 Metal Energy cards from their discard pile into their hand.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "11607",
+        "externalId": "sma-SV88",
+        "localId": "SV88",
+        "setCode": "sma",
+        "cardNumber": "SV88/SV94",
+        "cardName": "Brooklet Hill",
+        "fullDisplayName": "Brooklet Hill SV88/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV88-low.png",
+        "imageHighSrc": "cards/sma-SV88-high.png",
+        "rules": "Once during each player's turn, that player may search their deck for a Basic Water Pokémon or Basic Fighting Pokémon and, put it onto their Bench, and shuffle their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "11602",
+        "externalId": "sma-SV87",
+        "localId": "SV87",
+        "setCode": "sma",
+        "cardNumber": "SV87/SV94",
+        "cardName": "Aether Paradise Conservation Area",
+        "fullDisplayName": "Aether Paradise Conservation Area SV87/SV94 Yellow A Alternate",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV87-low.png",
+        "imageHighSrc": "cards/sma-SV87-high.png",
+        "rules": "Basic Grass and Basic Lightning Pokémon (both yours and your opponent's) take 30 less damage from the opponent's attacks (after applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
+    },
+    {
+        "masterCardId": "11593",
+        "externalId": "sma-SV86",
+        "localId": "SV86",
+        "setCode": "sma",
+        "cardNumber": "SV86/SV94",
+        "cardName": "Lady",
+        "fullDisplayName": "Lady SV86/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/sma-SV86-low.png",
+        "imageHighSrc": "cards/sma-SV86-high.png",
+        "rules": "Search your deck for up to 4 basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11587",
+        "externalId": "sma-SV85",
+        "localId": "SV85",
+        "setCode": "sma",
+        "cardNumber": "SV85/SV94",
+        "cardName": "Hiker",
+        "fullDisplayName": "Hiker SV85/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/sma-SV85-low.png",
+        "imageHighSrc": "cards/sma-SV85-high.png",
+        "rules": "Look at the top 5 cards of either player's deck and choose 1 of them. That player shuffles the other cards back into their deck. Then, put the card you chose on top of that deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11580",
+        "externalId": "sma-SV84",
+        "localId": "SV84",
+        "setCode": "sma",
+        "cardNumber": "SV84/SV94",
+        "cardName": "Guzma",
+        "fullDisplayName": "Guzma SV84/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hitoshi Ariga",
+        "imageLowSrc": "cards/sma-SV84-low.png",
+        "imageHighSrc": "cards/sma-SV84-high.png",
+        "rules": "Switch 1 of your opponent's Benched Pokémon with their Active Pokémon. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11575",
+        "externalId": "sma-SV83",
+        "localId": "SV83",
+        "setCode": "sma",
+        "cardNumber": "SV83/SV94",
+        "cardName": "Fisherman",
+        "fullDisplayName": "Fisherman SV83/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/sma-SV83-low.png",
+        "imageHighSrc": "cards/sma-SV83-high.png",
+        "rules": "Put 4 basic Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11569",
+        "externalId": "sma-SV82",
+        "localId": "SV82",
+        "setCode": "sma",
+        "cardNumber": "SV82/SV94",
+        "cardName": "Cynthia",
+        "fullDisplayName": "Cynthia SV82/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/sma-SV82-low.png",
+        "imageHighSrc": "cards/sma-SV82-high.png",
+        "rules": "Shuffle your hand into your deck. Then, draw 6 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11563",
+        "externalId": "sma-SV81",
+        "localId": "SV81",
+        "setCode": "sma",
+        "cardNumber": "SV81/SV94",
+        "cardName": "Aether Foundation Employee",
+        "fullDisplayName": "Aether Foundation Employee SV81/SV94 Yellow A Alternate",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "take",
+        "imageLowSrc": "cards/sma-SV81-low.png",
+        "imageHighSrc": "cards/sma-SV81-high.png",
+        "rules": "Put 3 Pokémon that have \"Alolan\" in their names from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "11557",
+        "externalId": "sma-SV80",
+        "localId": "SV80",
+        "setCode": "sma",
+        "cardNumber": "SV80/SV94",
+        "cardName": "Drampa-GX",
+        "fullDisplayName": "Drampa-GX SV80/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            780
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV80-low.png",
+        "imageHighSrc": "cards/sma-SV80-high.png",
+        "attacks": [
+            {
+                "name": "Righteous Edge",
+                "damage": "20"
+            },
+            {
+                "name": "Berserk",
+                "damage": "80+"
+            },
+            {
+                "name": "Big Wheel-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11551",
+        "externalId": "sma-SV79",
+        "localId": "SV79",
+        "setCode": "sma",
+        "cardNumber": "SV79/SV94",
+        "cardName": "Silvally-GX",
+        "fullDisplayName": "Silvally-GX SV79/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            773
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV79-low.png",
+        "imageHighSrc": "cards/sma-SV79-high.png",
+        "attacks": [
+            {
+                "name": "Turbo Drive",
+                "damage": "120"
+            },
+            {
+                "name": "Rebel-GX",
+                "damage": "50×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11545",
+        "externalId": "sma-SV78",
+        "localId": "SV78",
+        "setCode": "sma",
+        "cardNumber": "SV78/SV94",
+        "cardName": "Noivern-GX",
+        "fullDisplayName": "Noivern-GX SV78/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            715
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV78-low.png",
+        "imageHighSrc": "cards/sma-SV78-high.png",
+        "attacks": [
+            {
+                "name": "Distort",
+                "damage": "50"
+            },
+            {
+                "name": "Sonic Volume",
+                "damage": "120"
+            },
+            {
+                "name": "Boomburst-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11539",
+        "externalId": "sma-SV77",
+        "localId": "SV77",
+        "setCode": "sma",
+        "cardNumber": "SV77/SV94",
+        "cardName": "Altaria-GX",
+        "fullDisplayName": "Altaria-GX SV77/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            334
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV77-low.png",
+        "imageHighSrc": "cards/sma-SV77-high.png",
+        "attacks": [
+            {
+                "name": "Bright Tone",
+                "damage": "50"
+            },
+            {
+                "name": "Sonic Edge",
+                "damage": "110"
+            },
+            {
+                "name": "Euphoria-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11532",
+        "externalId": "sma-SV76",
+        "localId": "SV76",
+        "setCode": "sma",
+        "cardNumber": "SV76/SV94",
+        "cardName": "Sylveon-GX",
+        "fullDisplayName": "Sylveon-GX SV76/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            700
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV76-low.png",
+        "imageHighSrc": "cards/sma-SV76-high.png",
+        "attacks": [
+            {
+                "name": "Magical Ribbon",
+                "damage": null
+            },
+            {
+                "name": "Fairy Wind",
+                "damage": "110"
+            },
+            {
+                "name": "Plea-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11525",
+        "externalId": "sma-SV75",
+        "localId": "SV75",
+        "setCode": "sma",
+        "cardNumber": "SV75/SV94",
+        "cardName": "Gardevoir-GX",
+        "fullDisplayName": "Gardevoir-GX SV75/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            282
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV75-low.png",
+        "imageHighSrc": "cards/sma-SV75-high.png",
+        "attacks": [
+            {
+                "name": "Infinite Force",
+                "damage": "30×"
+            },
+            {
+                "name": "Twilight-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11518",
+        "externalId": "sma-SV74",
+        "localId": "SV74",
+        "setCode": "sma",
+        "cardNumber": "SV74/SV94",
+        "cardName": "Stakataka-GX",
+        "fullDisplayName": "Stakataka-GX SV74/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            805
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV74-low.png",
+        "imageHighSrc": "cards/sma-SV74-high.png",
+        "attacks": [
+            {
+                "name": "Gigaton Stomp",
+                "damage": "120"
+            },
+            {
+                "name": "Assembly-GX",
+                "damage": "50+"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11512",
+        "externalId": "sma-SV73",
+        "localId": "SV73",
+        "setCode": "sma",
+        "cardNumber": "SV73/SV94",
+        "cardName": "Kartana-GX",
+        "fullDisplayName": "Kartana-GX SV73/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            798
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV73-low.png",
+        "imageHighSrc": "cards/sma-SV73-high.png",
+        "attacks": [
+            {
+                "name": "Gale Blade",
+                "damage": "70"
+            },
+            {
+                "name": "Blade-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11505",
+        "externalId": "sma-SV72",
+        "localId": "SV72",
+        "setCode": "sma",
+        "cardNumber": "SV72/SV94",
+        "cardName": "Scizor-GX",
+        "fullDisplayName": "Scizor-GX SV72/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            212
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV72-low.png",
+        "imageHighSrc": "cards/sma-SV72-high.png",
+        "attacks": [
+            {
+                "name": "Steel Wing",
+                "damage": "80"
+            },
+            {
+                "name": "Cross-Cut-GX",
+                "damage": "100+"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11498",
+        "externalId": "sma-SV71",
+        "localId": "SV71",
+        "setCode": "sma",
+        "cardNumber": "SV71/SV94",
+        "cardName": "Guzzlord-GX",
+        "fullDisplayName": "Guzzlord-GX SV71/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            799
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV71-low.png",
+        "imageHighSrc": "cards/sma-SV71-high.png",
+        "attacks": [
+            {
+                "name": "Eat Sloppily",
+                "damage": null
+            },
+            {
+                "name": "Tyrannical Hole",
+                "damage": "180"
+            },
+            {
+                "name": "Glutton-GX",
+                "damage": "100"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11491",
+        "externalId": "sma-SV70",
+        "localId": "SV70",
+        "setCode": "sma",
+        "cardNumber": "SV70/SV94",
+        "cardName": "Darkrai-GX",
+        "fullDisplayName": "Darkrai-GX SV70/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            491
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV70-low.png",
+        "imageHighSrc": "cards/sma-SV70-high.png",
+        "attacks": [
+            {
+                "name": "Dark Cleave",
+                "damage": "130"
+            },
+            {
+                "name": "Dead End-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11484",
+        "externalId": "sma-SV69",
+        "localId": "SV69",
+        "setCode": "sma",
+        "cardNumber": "SV69/SV94",
+        "cardName": "Umbreon-GX",
+        "fullDisplayName": "Umbreon-GX SV69/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            197
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV69-low.png",
+        "imageHighSrc": "cards/sma-SV69-high.png",
+        "attacks": [
+            {
+                "name": "Strafe",
+                "damage": "30"
+            },
+            {
+                "name": "Shadow Bullet",
+                "damage": "90"
+            },
+            {
+                "name": "Dark Call-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11477",
+        "externalId": "sma-SV68",
+        "localId": "SV68",
+        "setCode": "sma",
+        "cardNumber": "SV68/SV94",
+        "cardName": "Buzzwole-GX",
+        "fullDisplayName": "Buzzwole-GX SV68/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            794
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV68-low.png",
+        "imageHighSrc": "cards/sma-SV68-high.png",
+        "attacks": [
+            {
+                "name": "Jet Punch",
+                "damage": "30"
+            },
+            {
+                "name": "Knuckle Impact",
+                "damage": "160"
+            },
+            {
+                "name": "Absorption-GX",
+                "damage": "40×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11470",
+        "externalId": "sma-SV67",
+        "localId": "SV67",
+        "setCode": "sma",
+        "cardNumber": "SV67/SV94",
+        "cardName": "Lycanroc-GX",
+        "fullDisplayName": "Lycanroc-GX SV67/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            745
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV67-low.png",
+        "imageHighSrc": "cards/sma-SV67-high.png",
+        "attacks": [
+            {
+                "name": "Accelerock",
+                "damage": "120"
+            },
+            {
+                "name": "Splintered Shards-GX",
+                "damage": "30×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11463",
+        "externalId": "sma-SV66",
+        "localId": "SV66",
+        "setCode": "sma",
+        "cardNumber": "SV66/SV94",
+        "cardName": "Lycanroc-GX",
+        "fullDisplayName": "Lycanroc-GX SV66/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            745
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV66-low.png",
+        "imageHighSrc": "cards/sma-SV66-high.png",
+        "attacks": [
+            {
+                "name": "Claw Slash",
+                "damage": "110"
+            },
+            {
+                "name": "Dangerous Rogue-GX",
+                "damage": "50×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11456",
+        "externalId": "sma-SV65",
+        "localId": "SV65",
+        "setCode": "sma",
+        "cardNumber": "SV65/SV94",
+        "cardName": "Zygarde-GX",
+        "fullDisplayName": "Zygarde-GX SV65/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            718
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV65-low.png",
+        "imageHighSrc": "cards/sma-SV65-high.png",
+        "attacks": [
+            {
+                "name": "Cell Connector",
+                "damage": "50"
+            },
+            {
+                "name": "Land's Wrath",
+                "damage": "130"
+            },
+            {
+                "name": "Verdict-GX",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11449",
+        "externalId": "sma-SV64",
+        "localId": "SV64",
+        "setCode": "sma",
+        "cardNumber": "SV64/SV94",
+        "cardName": "Lucario-GX",
+        "fullDisplayName": "Lucario-GX SV64/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            448
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV64-low.png",
+        "imageHighSrc": "cards/sma-SV64-high.png",
+        "attacks": [
+            {
+                "name": "Aura Strike",
+                "damage": "30+"
+            },
+            {
+                "name": "Cyclone Kick",
+                "damage": "130"
+            },
+            {
+                "name": "Cantankerous Beatdown-GX",
+                "damage": "30×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11442",
+        "externalId": "sma-SV63",
+        "localId": "SV63",
+        "setCode": "sma",
+        "cardNumber": "SV63/SV94",
+        "cardName": "Naganadel-GX",
+        "fullDisplayName": "Naganadel-GX SV63/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            804
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV63-low.png",
+        "imageHighSrc": "cards/sma-SV63-high.png",
+        "attacks": [
+            {
+                "name": "Beast Raid",
+                "damage": "20×"
+            },
+            {
+                "name": "Jet Needle",
+                "damage": "110"
+            },
+            {
+                "name": "Stinger-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11436",
+        "externalId": "sma-SV62",
+        "localId": "SV62",
+        "setCode": "sma",
+        "cardNumber": "SV62/SV94",
+        "cardName": "Nihilego-GX",
+        "fullDisplayName": "Nihilego-GX SV62/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            793
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV62-low.png",
+        "imageHighSrc": "cards/sma-SV62-high.png",
+        "attacks": [
+            {
+                "name": "Lock Up",
+                "damage": "120"
+            },
+            {
+                "name": "Symbiont-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11429",
+        "externalId": "sma-SV61",
+        "localId": "SV61",
+        "setCode": "sma",
+        "cardNumber": "SV61/SV94",
+        "cardName": "Banette-GX",
+        "fullDisplayName": "Banette-GX SV61/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            354
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV61-low.png",
+        "imageHighSrc": "cards/sma-SV61-high.png",
+        "attacks": [
+            {
+                "name": "Shadow Chant",
+                "damage": "30+"
+            },
+            {
+                "name": "Tomb Hunt-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11423",
+        "externalId": "sma-SV60",
+        "localId": "SV60",
+        "setCode": "sma",
+        "cardNumber": "SV60/SV94",
+        "cardName": "Espeon-GX",
+        "fullDisplayName": "Espeon-GX SV60/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            196
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV60-low.png",
+        "imageHighSrc": "cards/sma-SV60-high.png",
+        "attacks": [
+            {
+                "name": "Psybeam",
+                "damage": "30"
+            },
+            {
+                "name": "Psychic",
+                "damage": "60+"
+            },
+            {
+                "name": "Divide-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11417",
+        "externalId": "sma-SV59",
+        "localId": "SV59",
+        "setCode": "sma",
+        "cardNumber": "SV59/SV94",
+        "cardName": "Mewtwo-GX",
+        "fullDisplayName": "Mewtwo-GX SV59/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV59-low.png",
+        "imageHighSrc": "cards/sma-SV59-high.png",
+        "attacks": [
+            {
+                "name": "Full Burst",
+                "damage": "30×"
+            },
+            {
+                "name": "Super Absorption",
+                "damage": "60"
+            },
+            {
+                "name": "Psystrike-GX",
+                "damage": "200"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11410",
+        "externalId": "sma-SV58",
+        "localId": "SV58",
+        "setCode": "sma",
+        "cardNumber": "SV58/SV94",
+        "cardName": "Xurkitree-GX",
+        "fullDisplayName": "Xurkitree-GX SV58/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            796
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV58-low.png",
+        "imageHighSrc": "cards/sma-SV58-high.png",
+        "attacks": [
+            {
+                "name": "Rumbling Wires",
+                "damage": "100"
+            },
+            {
+                "name": "Lighting-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11403",
+        "externalId": "sma-SV57",
+        "localId": "SV57",
+        "setCode": "sma",
+        "cardNumber": "SV57/SV94",
+        "cardName": "Electrode-GX",
+        "fullDisplayName": "Electrode-GX SV57/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            101
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV57-low.png",
+        "imageHighSrc": "cards/sma-SV57-high.png",
+        "attacks": [
+            {
+                "name": "Electro Ball",
+                "damage": "50"
+            },
+            {
+                "name": "Crush and Burn-GX",
+                "damage": "30+"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11396",
+        "externalId": "sma-SV56",
+        "localId": "SV56",
+        "setCode": "sma",
+        "cardNumber": "SV56/SV94",
+        "cardName": "Greninja-GX",
+        "fullDisplayName": "Greninja-GX SV56/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            658
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV56-low.png",
+        "imageHighSrc": "cards/sma-SV56-high.png",
+        "attacks": [
+            {
+                "name": "Haze Slash",
+                "damage": "110"
+            },
+            {
+                "name": "Shadowy Hunter-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11390",
+        "externalId": "sma-SV55",
+        "localId": "SV55",
+        "setCode": "sma",
+        "cardNumber": "SV55/SV94",
+        "cardName": "Glaceon-GX",
+        "fullDisplayName": "Glaceon-GX SV55/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            471
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV55-low.png",
+        "imageHighSrc": "cards/sma-SV55-high.png",
+        "attacks": [
+            {
+                "name": "Frost Bullet",
+                "damage": "90"
+            },
+            {
+                "name": "Polar Spear-GX",
+                "damage": "50×"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11383",
+        "externalId": "sma-SV54",
+        "localId": "SV54",
+        "setCode": "sma",
+        "cardNumber": "SV54/SV94",
+        "cardName": "Articuno-GX",
+        "fullDisplayName": "Articuno-GX SV54/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV54-low.png",
+        "imageHighSrc": "cards/sma-SV54-high.png",
+        "attacks": [
+            {
+                "name": "Ice Wing",
+                "damage": "130"
+            },
+            {
+                "name": "Cold Crush-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11375",
+        "externalId": "sma-SV53",
+        "localId": "SV53",
+        "setCode": "sma",
+        "cardNumber": "SV53/SV94",
+        "cardName": "Alolan Ninetales-GX",
+        "fullDisplayName": "Alolan Ninetales-GX SV53/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            38
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV53-low.png",
+        "imageHighSrc": "cards/sma-SV53-high.png",
+        "attacks": [
+            {
+                "name": "Ice Blade",
+                "damage": null
+            },
+            {
+                "name": "Blizzard Edge",
+                "damage": "160"
+            },
+            {
+                "name": "Ice Path-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11365",
+        "externalId": "sma-SV52",
+        "localId": "SV52",
+        "setCode": "sma",
+        "cardNumber": "SV52/SV94",
+        "cardName": "Turtonator-GX",
+        "fullDisplayName": "Turtonator-GX SV52/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            776
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV52-low.png",
+        "imageHighSrc": "cards/sma-SV52-high.png",
+        "attacks": [
+            {
+                "name": "Shell Trap",
+                "damage": "20"
+            },
+            {
+                "name": "Bright Flame",
+                "damage": "160"
+            },
+            {
+                "name": "Nitro Tank-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11358",
+        "externalId": "sma-SV51",
+        "localId": "SV51",
+        "setCode": "sma",
+        "cardNumber": "SV51/SV94",
+        "cardName": "Reshiram-GX",
+        "fullDisplayName": "Reshiram-GX SV51/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            643
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Igarashi",
+        "imageLowSrc": "cards/sma-SV51-low.png",
+        "imageHighSrc": "cards/sma-SV51-high.png",
+        "attacks": [
+            {
+                "name": "Flame Charge",
+                "damage": null
+            },
+            {
+                "name": "Scorching Column",
+                "damage": "110"
+            },
+            {
+                "name": "Vermilion-GX",
+                "damage": "180"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11347",
+        "externalId": "sma-SV50",
+        "localId": "SV50",
+        "setCode": "sma",
+        "cardNumber": "SV50/SV94",
+        "cardName": "Ho-Oh-GX",
+        "fullDisplayName": "Ho-Oh-GX SV50/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            250
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV50-low.png",
+        "imageHighSrc": "cards/sma-SV50-high.png",
+        "attacks": [
+            {
+                "name": "Sacred Fire",
+                "damage": null
+            },
+            {
+                "name": "Phoenix Burn",
+                "damage": "180"
+            },
+            {
+                "name": "Eternal Light-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11341",
+        "externalId": "sma-SV49",
+        "localId": "SV49",
+        "setCode": "sma",
+        "cardNumber": "SV49/SV94",
+        "cardName": "Charizard-GX",
+        "fullDisplayName": "Charizard-GX SV49/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 250,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV49-low.png",
+        "imageHighSrc": "cards/sma-SV49-high.png",
+        "attacks": [
+            {
+                "name": "Wing Attack",
+                "damage": "70"
+            },
+            {
+                "name": "Crimson Storm",
+                "damage": "300"
+            },
+            {
+                "name": "Raging Out-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11334",
+        "externalId": "sma-SV48",
+        "localId": "SV48",
+        "setCode": "sma",
+        "cardNumber": "SV48/SV94",
+        "cardName": "Golisopod-GX",
+        "fullDisplayName": "Golisopod-GX SV48/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 210,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            768
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV48-low.png",
+        "imageHighSrc": "cards/sma-SV48-high.png",
+        "attacks": [
+            {
+                "name": "First Impression",
+                "damage": "30+"
+            },
+            {
+                "name": "Armor Press",
+                "damage": "100"
+            },
+            {
+                "name": "Crossing Cut-GX",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11326",
+        "externalId": "sma-SV47",
+        "localId": "SV47",
+        "setCode": "sma",
+        "cardNumber": "SV47/SV94",
+        "cardName": "Decidueye-GX",
+        "fullDisplayName": "Decidueye-GX SV47/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 240,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            724
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV47-low.png",
+        "imageHighSrc": "cards/sma-SV47-high.png",
+        "attacks": [
+            {
+                "name": "Razor Leaf",
+                "damage": "90"
+            },
+            {
+                "name": "Hollow Hunt-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11320",
+        "externalId": "sma-SV46",
+        "localId": "SV46",
+        "setCode": "sma",
+        "cardNumber": "SV46/SV94",
+        "cardName": "Leafeon-GX",
+        "fullDisplayName": "Leafeon-GX SV46/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny GX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            470
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sma-SV46-low.png",
+        "imageHighSrc": "cards/sma-SV46-high.png",
+        "attacks": [
+            {
+                "name": "Solar Beam",
+                "damage": "110"
+            },
+            {
+                "name": "Grand Bloom-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "11310",
+        "externalId": "sma-SV45",
+        "localId": "SV45",
+        "setCode": "sma",
+        "cardNumber": "SV45/SV94",
+        "cardName": "Type: Null",
+        "fullDisplayName": "Type: Null SV45/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            772
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/sma-SV45-low.png",
+        "imageHighSrc": "cards/sma-SV45-high.png",
+        "attacks": [
+            {
+                "name": "Armor Press",
+                "damage": "30"
+            },
+            {
+                "name": "Slashing Claw",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11304",
+        "externalId": "sma-SV44",
+        "localId": "SV44",
+        "setCode": "sma",
+        "cardNumber": "SV44/SV94",
+        "cardName": "Oranguru",
+        "fullDisplayName": "Oranguru SV44/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            765
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/sma-SV44-low.png",
+        "imageHighSrc": "cards/sma-SV44-high.png",
+        "attacks": [
+            {
+                "name": "Psychic",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11297",
+        "externalId": "sma-SV43",
+        "localId": "SV43",
+        "setCode": "sma",
+        "cardNumber": "SV43/SV94",
+        "cardName": "Noibat",
+        "fullDisplayName": "Noibat SV43/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            714
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/sma-SV43-low.png",
+        "imageHighSrc": "cards/sma-SV43-high.png",
+        "attacks": [
+            {
+                "name": "Agility",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11290",
+        "externalId": "sma-SV42",
+        "localId": "SV42",
+        "setCode": "sma",
+        "cardNumber": "SV42/SV94",
+        "cardName": "Swablu",
+        "fullDisplayName": "Swablu SV42/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            333
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sma-SV42-low.png",
+        "imageHighSrc": "cards/sma-SV42-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Peck",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11283",
+        "externalId": "sma-SV41",
+        "localId": "SV41",
+        "setCode": "sma",
+        "cardNumber": "SV41/SV94",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee SV41/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kirisAki",
+        "imageLowSrc": "cards/sma-SV41-low.png",
+        "imageHighSrc": "cards/sma-SV41-high.png",
+        "attacks": [
+            {
+                "name": "Quick Draw",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "11276",
+        "externalId": "sma-SV40",
+        "localId": "SV40",
+        "setCode": "sma",
+        "cardNumber": "SV40/SV94",
+        "cardName": "Garchomp",
+        "fullDisplayName": "Garchomp SV40/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            445
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/sma-SV40-low.png",
+        "imageHighSrc": "cards/sma-SV40-high.png",
+        "attacks": [
+            {
+                "name": "Quick Dive",
+                "damage": null
+            },
+            {
+                "name": "Royal Blades",
+                "damage": "100+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11269",
+        "externalId": "sma-SV39",
+        "localId": "SV39",
+        "setCode": "sma",
+        "cardNumber": "SV39/SV94",
+        "cardName": "Gabite",
+        "fullDisplayName": "Gabite SV39/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            444
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/sma-SV39-low.png",
+        "imageHighSrc": "cards/sma-SV39-high.png",
+        "attacks": [
+            {
+                "name": "Ascension",
+                "damage": null
+            },
+            {
+                "name": "Slash",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11262",
+        "externalId": "sma-SV38",
+        "localId": "SV38",
+        "setCode": "sma",
+        "cardNumber": "SV38/SV94",
+        "cardName": "Gible",
+        "fullDisplayName": "Gible SV38/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            443
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/sma-SV38-low.png",
+        "imageHighSrc": "cards/sma-SV38-high.png",
+        "attacks": [
+            {
+                "name": "Ascension",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "11255",
+        "externalId": "sma-SV37",
+        "localId": "SV37",
+        "setCode": "sma",
+        "cardNumber": "SV37/SV94",
+        "cardName": "Altaria",
+        "fullDisplayName": "Altaria SV37/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            334
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kirisAki",
+        "imageLowSrc": "cards/sma-SV37-low.png",
+        "imageHighSrc": "cards/sma-SV37-high.png",
+        "attacks": [
+            {
+                "name": "Pierce",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11248",
+        "externalId": "sma-SV36",
+        "localId": "SV36",
+        "setCode": "sma",
+        "cardNumber": "SV36/SV94",
+        "cardName": "Diancie",
+        "fullDisplayName": "Diancie SV36/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            719
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/sma-SV36-low.png",
+        "imageHighSrc": "cards/sma-SV36-high.png",
+        "attacks": [
+            {
+                "name": "Sparkling Wish",
+                "damage": null
+            },
+            {
+                "name": "Diamond Storm",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11241",
+        "externalId": "sma-SV35",
+        "localId": "SV35",
+        "setCode": "sma",
+        "cardNumber": "SV35/SV94",
+        "cardName": "Kirlia",
+        "fullDisplayName": "Kirlia SV35/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            281
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/sma-SV35-low.png",
+        "imageHighSrc": "cards/sma-SV35-high.png",
+        "attacks": [
+            {
+                "name": "Smack",
+                "damage": "20"
+            },
+            {
+                "name": "Magical Shot",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11234",
+        "externalId": "sma-SV34",
+        "localId": "SV34",
+        "setCode": "sma",
+        "cardNumber": "SV34/SV94",
+        "cardName": "Ralts",
+        "fullDisplayName": "Ralts SV34/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            280
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/sma-SV34-low.png",
+        "imageHighSrc": "cards/sma-SV34-high.png",
+        "attacks": [
+            {
+                "name": "Draining Kiss",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11227",
+        "externalId": "sma-SV33",
+        "localId": "SV33",
+        "setCode": "sma",
+        "cardNumber": "SV33/SV94",
+        "cardName": "Kartana",
+        "fullDisplayName": "Kartana SV33/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            798
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/sma-SV33-low.png",
+        "imageHighSrc": "cards/sma-SV33-high.png",
+        "attacks": [
+            {
+                "name": "Divine Paper",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11220",
+        "externalId": "sma-SV32",
+        "localId": "SV32",
+        "setCode": "sma",
+        "cardNumber": "SV32/SV94",
+        "cardName": "Celesteela",
+        "fullDisplayName": "Celesteela SV32/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            797
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/sma-SV32-low.png",
+        "imageHighSrc": "cards/sma-SV32-high.png",
+        "attacks": [
+            {
+                "name": "Moon Raker",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11213",
+        "externalId": "sma-SV31",
+        "localId": "SV31",
+        "setCode": "sma",
+        "cardNumber": "SV31/SV94",
+        "cardName": "Metang",
+        "fullDisplayName": "Metang SV31/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            375
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/sma-SV31-low.png",
+        "imageHighSrc": "cards/sma-SV31-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "20"
+            },
+            {
+                "name": "Core Beam",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11206",
+        "externalId": "sma-SV30",
+        "localId": "SV30",
+        "setCode": "sma",
+        "cardNumber": "SV30/SV94",
+        "cardName": "Beldum",
+        "fullDisplayName": "Beldum SV30/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            374
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/sma-SV30-low.png",
+        "imageHighSrc": "cards/sma-SV30-high.png",
+        "attacks": [
+            {
+                "name": "Core Beam",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11199",
+        "externalId": "sma-SV29",
+        "localId": "SV29",
+        "setCode": "sma",
+        "cardNumber": "SV29/SV94",
+        "cardName": "Magnezone",
+        "fullDisplayName": "Magnezone SV29/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            462
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/sma-SV29-low.png",
+        "imageHighSrc": "cards/sma-SV29-high.png",
+        "attacks": [
+            {
+                "name": "Zap Cannon",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11192",
+        "externalId": "sma-SV28",
+        "localId": "SV28",
+        "setCode": "sma",
+        "cardNumber": "SV28/SV94",
+        "cardName": "Magneton",
+        "fullDisplayName": "Magneton SV28/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            82
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/sma-SV28-low.png",
+        "imageHighSrc": "cards/sma-SV28-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "20"
+            },
+            {
+                "name": "Zap Cannon",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11185",
+        "externalId": "sma-SV27",
+        "localId": "SV27",
+        "setCode": "sma",
+        "cardNumber": "SV27/SV94",
+        "cardName": "Magnemite",
+        "fullDisplayName": "Magnemite SV27/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            81
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "SATOSHI NAKAI",
+        "imageLowSrc": "cards/sma-SV27-low.png",
+        "imageHighSrc": "cards/sma-SV27-high.png",
+        "attacks": [
+            {
+                "name": "Searching Magnet",
+                "damage": null
+            },
+            {
+                "name": "Tackle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11178",
+        "externalId": "sma-SV26",
+        "localId": "SV26",
+        "setCode": "sma",
+        "cardNumber": "SV26/SV94",
+        "cardName": "Guzzlord",
+        "fullDisplayName": "Guzzlord SV26/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            799
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/sma-SV26-low.png",
+        "imageHighSrc": "cards/sma-SV26-high.png",
+        "attacks": [
+            {
+                "name": "Lord's Valley",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11167",
+        "externalId": "sma-SV25",
+        "localId": "SV25",
+        "setCode": "sma",
+        "cardNumber": "SV25/SV94",
+        "cardName": "Zorua",
+        "fullDisplayName": "Zorua SV25/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            570
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/sma-SV25-low.png",
+        "imageHighSrc": "cards/sma-SV25-high.png",
+        "attacks": [
+            {
+                "name": "Stampede",
+                "damage": "10"
+            },
+            {
+                "name": "Ram",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11159",
+        "externalId": "sma-SV24",
+        "localId": "SV24",
+        "setCode": "sma",
+        "cardNumber": "SV24/SV94",
+        "cardName": "Buzzwole",
+        "fullDisplayName": "Buzzwole SV24/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            794
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/sma-SV24-low.png",
+        "imageHighSrc": "cards/sma-SV24-high.png",
+        "attacks": [
+            {
+                "name": "Sledgehammer",
+                "damage": "30+"
+            },
+            {
+                "name": "Swing Around",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11152",
+        "externalId": "sma-SV23",
+        "localId": "SV23",
+        "setCode": "sma",
+        "cardNumber": "SV23/SV94",
+        "cardName": "Rockruff",
+        "fullDisplayName": "Rockruff SV23/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            744
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/sma-SV23-low.png",
+        "imageHighSrc": "cards/sma-SV23-high.png",
+        "attacks": [
+            {
+                "name": "Surprise Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11145",
+        "externalId": "sma-SV22",
+        "localId": "SV22",
+        "setCode": "sma",
+        "cardNumber": "SV22/SV94",
+        "cardName": "Lucario",
+        "fullDisplayName": "Lucario SV22/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            448
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/sma-SV22-low.png",
+        "imageHighSrc": "cards/sma-SV22-high.png",
+        "attacks": [
+            {
+                "name": "Missile Jab",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11138",
+        "externalId": "sma-SV21",
+        "localId": "SV21",
+        "setCode": "sma",
+        "cardNumber": "SV21/SV94",
+        "cardName": "Riolu",
+        "fullDisplayName": "Riolu SV21/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            447
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/sma-SV21-low.png",
+        "imageHighSrc": "cards/sma-SV21-high.png",
+        "attacks": [
+            {
+                "name": "Detect",
+                "damage": null
+            },
+            {
+                "name": "Jab",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11131",
+        "externalId": "sma-SV20",
+        "localId": "SV20",
+        "setCode": "sma",
+        "cardNumber": "SV20/SV94",
+        "cardName": "Sudowoodo",
+        "fullDisplayName": "Sudowoodo SV20/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            185
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/sma-SV20-low.png",
+        "imageHighSrc": "cards/sma-SV20-high.png",
+        "attacks": [
+            {
+                "name": "Rock Throw",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11124",
+        "externalId": "sma-SV19",
+        "localId": "SV19",
+        "setCode": "sma",
+        "cardNumber": "SV19/SV94",
+        "cardName": "Poipole",
+        "fullDisplayName": "Poipole SV19/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            803
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/sma-SV19-low.png",
+        "imageHighSrc": "cards/sma-SV19-high.png",
+        "attacks": [
+            {
+                "name": "Spit Poison",
+                "damage": null
+            },
+            {
+                "name": "Knockout Reviver",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "11117",
+        "externalId": "sma-SV18",
+        "localId": "SV18",
+        "setCode": "sma",
+        "cardNumber": "SV18/SV94",
+        "cardName": "Malamar",
+        "fullDisplayName": "Malamar SV18/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            687
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hideki Ishikawa",
+        "imageLowSrc": "cards/sma-SV18-low.png",
+        "imageHighSrc": "cards/sma-SV18-high.png",
+        "attacks": [
+            {
+                "name": "Psychic Sphere",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11110",
+        "externalId": "sma-SV17",
+        "localId": "SV17",
+        "setCode": "sma",
+        "cardNumber": "SV17/SV94",
+        "cardName": "Inkay",
+        "fullDisplayName": "Inkay SV17/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            686
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sma-SV17-low.png",
+        "imageHighSrc": "cards/sma-SV17-high.png",
+        "attacks": [
+            {
+                "name": "Hypnosis",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "11103",
+        "externalId": "sma-SV16",
+        "localId": "SV16",
+        "setCode": "sma",
+        "cardNumber": "SV16/SV94",
+        "cardName": "Shuppet",
+        "fullDisplayName": "Shuppet SV16/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            353
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/sma-SV16-low.png",
+        "imageHighSrc": "cards/sma-SV16-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            },
+            {
+                "name": "Will-O-Wisp",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11096",
+        "externalId": "sma-SV15",
+        "localId": "SV15",
+        "setCode": "sma",
+        "cardNumber": "SV15/SV94",
+        "cardName": "Seviper",
+        "fullDisplayName": "Seviper SV15/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            336
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "SATOSHI NAKAI",
+        "imageLowSrc": "cards/sma-SV15-low.png",
+        "imageHighSrc": "cards/sma-SV15-high.png",
+        "attacks": [
+            {
+                "name": "Venomous Fang",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11090",
+        "externalId": "sma-SV14",
+        "localId": "SV14",
+        "setCode": "sma",
+        "cardNumber": "SV14/SV94",
+        "cardName": "Xurkitree",
+        "fullDisplayName": "Xurkitree SV14/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            796
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/sma-SV14-low.png",
+        "imageHighSrc": "cards/sma-SV14-high.png",
+        "attacks": [
+            {
+                "name": "Dazzle Blast",
+                "damage": "20"
+            },
+            {
+                "name": "Cablegram",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11083",
+        "externalId": "sma-SV13",
+        "localId": "SV13",
+        "setCode": "sma",
+        "cardNumber": "SV13/SV94",
+        "cardName": "Voltorb",
+        "fullDisplayName": "Voltorb SV13/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            100
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/sma-SV13-low.png",
+        "imageHighSrc": "cards/sma-SV13-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Shock",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11076",
+        "externalId": "sma-SV12",
+        "localId": "SV12",
+        "setCode": "sma",
+        "cardNumber": "SV12/SV94",
+        "cardName": "Frogadier",
+        "fullDisplayName": "Frogadier SV12/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            657
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/sma-SV12-low.png",
+        "imageHighSrc": "cards/sma-SV12-high.png",
+        "attacks": [
+            {
+                "name": "Water Drip",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11069",
+        "externalId": "sma-SV11",
+        "localId": "SV11",
+        "setCode": "sma",
+        "cardNumber": "SV11/SV94",
+        "cardName": "Froakie",
+        "fullDisplayName": "Froakie SV11/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            656
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/sma-SV11-low.png",
+        "imageHighSrc": "cards/sma-SV11-high.png",
+        "attacks": [
+            {
+                "name": "Flop",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11062",
+        "externalId": "sma-SV10",
+        "localId": "SV10",
+        "setCode": "sma",
+        "cardNumber": "SV10/SV94",
+        "cardName": "Quagsire",
+        "fullDisplayName": "Quagsire SV10/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            195
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/sma-SV10-low.png",
+        "imageHighSrc": "cards/sma-SV10-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Pump",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11055",
+        "externalId": "sma-SV9",
+        "localId": "SV9",
+        "setCode": "sma",
+        "cardNumber": "SV9/SV94",
+        "cardName": "Wooper",
+        "fullDisplayName": "Wooper SV9/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            194
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misa Tsutsui",
+        "imageLowSrc": "cards/sma-SV9-low.png",
+        "imageHighSrc": "cards/sma-SV9-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            },
+            {
+                "name": "Rain Splash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11048",
+        "externalId": "sma-SV8",
+        "localId": "SV8",
+        "setCode": "sma",
+        "cardNumber": "SV8/SV94",
+        "cardName": "Alolan Vulpix",
+        "fullDisplayName": "Alolan Vulpix SV8/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            37
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/sma-SV8-low.png",
+        "imageHighSrc": "cards/sma-SV8-high.png",
+        "attacks": [
+            {
+                "name": "Beacon",
+                "damage": null
+            },
+            {
+                "name": "Icy Snow",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11042",
+        "externalId": "sma-SV7",
+        "localId": "SV7",
+        "setCode": "sma",
+        "cardNumber": "SV7/SV94",
+        "cardName": "Charmeleon",
+        "fullDisplayName": "Charmeleon SV7/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            5
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nagimiso",
+        "imageLowSrc": "cards/sma-SV7-low.png",
+        "imageHighSrc": "cards/sma-SV7-high.png",
+        "attacks": [
+            {
+                "name": "Flamethrower",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11035",
+        "externalId": "sma-SV6",
+        "localId": "SV6",
+        "setCode": "sma",
+        "cardNumber": "SV6/SV94",
+        "cardName": "Charmander",
+        "fullDisplayName": "Charmander SV6/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            4
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kirisAki",
+        "imageLowSrc": "cards/sma-SV6-low.png",
+        "imageHighSrc": "cards/sma-SV6-high.png",
+        "attacks": [
+            {
+                "name": "Fire Fang",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11028",
+        "externalId": "sma-SV5",
+        "localId": "SV5",
+        "setCode": "sma",
+        "cardNumber": "SV5/SV94",
+        "cardName": "Pheromosa",
+        "fullDisplayName": "Pheromosa SV5/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            795
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/sma-SV5-low.png",
+        "imageHighSrc": "cards/sma-SV5-high.png",
+        "attacks": [
+            {
+                "name": "High Jump Kick",
+                "damage": "20"
+            },
+            {
+                "name": "White Ray",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11021",
+        "externalId": "sma-SV4",
+        "localId": "SV4",
+        "setCode": "sma",
+        "cardNumber": "SV4/SV94",
+        "cardName": "Wimpod",
+        "fullDisplayName": "Wimpod SV4/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            767
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "SATOSHI NAKAI",
+        "imageLowSrc": "cards/sma-SV4-low.png",
+        "imageHighSrc": "cards/sma-SV4-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11014",
+        "externalId": "sma-SV3",
+        "localId": "SV3",
+        "setCode": "sma",
+        "cardNumber": "SV3/SV94",
+        "cardName": "Dartrix",
+        "fullDisplayName": "Dartrix SV3/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            723
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sma-SV3-low.png",
+        "imageHighSrc": "cards/sma-SV3-high.png",
+        "attacks": [
+            {
+                "name": "Sharp Blade Quill",
+                "damage": null
+            },
+            {
+                "name": "Leaf Blade",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "11003",
+        "externalId": "sma-SV2",
+        "localId": "SV2",
+        "setCode": "sma",
+        "cardNumber": "SV2/SV94",
+        "cardName": "Rowlet",
+        "fullDisplayName": "Rowlet SV2/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            722
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/sma-SV2-low.png",
+        "imageHighSrc": "cards/sma-SV2-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Leafage",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "10999",
+        "externalId": "sma-SV1",
+        "localId": "SV1",
+        "setCode": "sma",
+        "cardNumber": "SV1/SV94",
+        "cardName": "Scyther",
+        "fullDisplayName": "Scyther SV1/SV94 Yellow A Alternate",
+        "rarity": "Rare Shiny",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            123
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sma-SV1-low.png",
+        "imageHighSrc": "cards/sma-SV1-high.png",
+        "attacks": [
+            {
+                "name": "Twin Play",
+                "damage": null
+            },
+            {
+                "name": "Agility",
+                "damage": "20"
+            }
+        ]
+    }
 ]

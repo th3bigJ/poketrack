@@ -1,0 +1,382 @@
+[
+    {
+        "masterCardId": "22024",
+        "externalId": "mcd14-12",
+        "localId": "012",
+        "setCode": "mcd14",
+        "cardNumber": "12/12",
+        "cardName": "Furfrou",
+        "fullDisplayName": "Furfrou 12/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            676
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-012-low.jpg",
+        "imageHighSrc": "cards/2014xy-012-low.jpg",
+        "attacks": [
+            {
+                "name": "Tight Jaw",
+                "damage": "20"
+            },
+            {
+                "name": "Sharp Fang",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22023",
+        "externalId": "mcd14-11",
+        "localId": "011",
+        "setCode": "mcd14",
+        "cardNumber": "11/12",
+        "cardName": "Fletchling",
+        "fullDisplayName": "Fletchling 11/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            661
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-011-low.jpg",
+        "imageHighSrc": "cards/2014xy-011-low.jpg",
+        "attacks": [
+            {
+                "name": "Razor Wind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22022",
+        "externalId": "mcd14-10",
+        "localId": "010",
+        "setCode": "mcd14",
+        "cardNumber": "10/12",
+        "cardName": "Bunnelby",
+        "fullDisplayName": "Bunnelby 10/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            659
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-010-low.jpg",
+        "imageHighSrc": "cards/2014xy-010-low.jpg",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22021",
+        "externalId": "mcd14-9",
+        "localId": "009",
+        "setCode": "mcd14",
+        "cardNumber": "9/12",
+        "cardName": "Swirlix",
+        "fullDisplayName": "Swirlix 9/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            684
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-009-low.jpg",
+        "imageHighSrc": "cards/2014xy-009-low.jpg",
+        "attacks": [
+            {
+                "name": "Draining Kiss",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22020",
+        "externalId": "mcd14-8",
+        "localId": "008",
+        "setCode": "mcd14",
+        "cardNumber": "8/12",
+        "cardName": "Snubbull",
+        "fullDisplayName": "Snubbull 8/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            209
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/2014xy-008-low.jpg",
+        "imageHighSrc": "cards/2014xy-008-low.jpg",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22019",
+        "externalId": "mcd14-7",
+        "localId": "007",
+        "setCode": "mcd14",
+        "cardNumber": "7/12",
+        "cardName": "Honedge",
+        "fullDisplayName": "Honedge 7/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            679
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-007-low.jpg",
+        "imageHighSrc": "cards/2014xy-007-low.jpg",
+        "attacks": [
+            {
+                "name": "Continuous Slash",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22018",
+        "externalId": "mcd14-6",
+        "localId": "006",
+        "setCode": "mcd14",
+        "cardNumber": "6/12",
+        "cardName": "Inkay",
+        "fullDisplayName": "Inkay 6/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            686
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-006-low.jpg",
+        "imageHighSrc": "cards/2014xy-006-low.jpg",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22017",
+        "externalId": "mcd14-5",
+        "localId": "005",
+        "setCode": "mcd14",
+        "cardNumber": "5/12",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 5/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/2014xy-005-low.jpg",
+        "imageHighSrc": "cards/2014xy-005-low.jpg",
+        "attacks": [
+            {
+                "name": "Nuzzle",
+                "damage": null
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22016",
+        "externalId": "mcd14-4",
+        "localId": "004",
+        "setCode": "mcd14",
+        "cardNumber": "4/12",
+        "cardName": "Froakie",
+        "fullDisplayName": "Froakie 4/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            656
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-004-low.jpg",
+        "imageHighSrc": "cards/2014xy-004-low.jpg",
+        "attacks": [
+            {
+                "name": "Pound",
+                "damage": "10"
+            },
+            {
+                "name": "Water Drip",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22015",
+        "externalId": "mcd14-3",
+        "localId": "003",
+        "setCode": "mcd14",
+        "cardNumber": "3/12",
+        "cardName": "Fennekin",
+        "fullDisplayName": "Fennekin 3/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            653
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-003-low.jpg",
+        "imageHighSrc": "cards/2014xy-003-low.jpg",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Live Coal",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22014",
+        "externalId": "mcd14-2",
+        "localId": "002",
+        "setCode": "mcd14",
+        "cardNumber": "2/12",
+        "cardName": "Chespin",
+        "fullDisplayName": "Chespin 2/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            650
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/2014xy-002-low.jpg",
+        "imageHighSrc": "cards/2014xy-002-low.jpg",
+        "attacks": [
+            {
+                "name": "Vine Whip",
+                "damage": "10"
+            },
+            {
+                "name": "Seed Bomb",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22013",
+        "externalId": "mcd14-1",
+        "localId": "001",
+        "setCode": "mcd14",
+        "cardNumber": "1/12",
+        "cardName": "Weedle",
+        "fullDisplayName": "Weedle 1/12 Macdonald's Collection 2014",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            13
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/2014xy-001-low.jpg",
+        "imageHighSrc": "cards/2014xy-001-low.jpg",
+        "attacks": [
+            {
+                "name": "String Shot",
+                "damage": "10"
+            }
+        ]
+    }
+]

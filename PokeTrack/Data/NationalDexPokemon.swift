@@ -9,7 +9,7 @@ struct NationalDexPokemon: Codable, Identifiable, Hashable, Sendable {
 
     var id: Int { nationalDexNumber }
 
-    /// Human-readable title from slug-style `name` (e.g. `mr-mime` → `Mr Mime`).
+    /// Human-readable title from kebab-case `name` (e.g. `mr-mime` → `Mr Mime`).
     var displayName: String {
         name
             .replacingOccurrences(of: "-", with: " ")

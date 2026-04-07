@@ -1,4384 +1,3399 @@
 [
-  {
-    "masterCardId": "6710",
-    "externalId": "ex8-108",
-    "tcgdex_id": "ex8-108",
-    "localId": "108",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "108/107",
-    "cardName": "Rocket's Raikou ex",
-    "fullDisplayName": "Rocket's Raikou ex 108/107 Deoxys",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      243
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-108-low.png",
-    "imageHighSrc": "cards/ex8-108-high.png",
-    "attacks": [
-      {
-        "name": "Thunderous Blow",
-        "damage": "40+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6704",
-    "externalId": "ex8-107",
-    "tcgdex_id": "ex8-107",
-    "localId": "107",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "107/107",
-    "cardName": "Rayquaza ★",
-    "fullDisplayName": "Rayquaza ★ 107/107 Deoxys",
-    "rarity": "Rare Holo Star",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      384
-    ],
-    "subtypes": [
-      "Basic",
-      "Star"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-107-low.png",
-    "imageHighSrc": "cards/ex8-107-high.png",
-    "attacks": [
-      {
-        "name": "Spiral Rush",
-        "damage": "30×"
-      },
-      {
-        "name": "Holy Star",
-        "damage": null
-      }
-    ],
-    "rules": "You can't have more than 1 Pokémon Star in your deck."
-  },
-  {
-    "masterCardId": "6700",
-    "externalId": "ex8-106",
-    "tcgdex_id": "ex8-106",
-    "localId": "106",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "106/107",
-    "cardName": "Latios ★",
-    "fullDisplayName": "Latios ★ 106/107 Deoxys",
-    "rarity": "Rare Holo Star",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      381
-    ],
-    "subtypes": [
-      "Basic",
-      "Star"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-106-low.png",
-    "imageHighSrc": "cards/ex8-106-high.png",
-    "attacks": [
-      {
-        "name": "Miraculous Light",
-        "damage": "10"
-      },
-      {
-        "name": "Shining Star",
-        "damage": "50+"
-      }
-    ],
-    "rules": "You can't have more than 1 Pokémon Star in your deck."
-  },
-  {
-    "masterCardId": "6695",
-    "externalId": "ex8-105",
-    "tcgdex_id": "ex8-105",
-    "localId": "105",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "105/107",
-    "cardName": "Latias ★",
-    "fullDisplayName": "Latias ★ 105/107 Deoxys",
-    "rarity": "Rare Holo Star",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      380
-    ],
-    "subtypes": [
-      "Basic",
-      "Star"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-105-low.png",
-    "imageHighSrc": "cards/ex8-105-high.png",
-    "attacks": [
-      {
-        "name": "Healing Light",
-        "damage": "10"
-      },
-      {
-        "name": "Shooting Star",
-        "damage": "50+"
-      }
-    ],
-    "rules": "You can't have more than 1 Pokémon Star in your deck."
-  },
-  {
-    "masterCardId": "6690",
-    "externalId": "ex8-104",
-    "tcgdex_id": "ex8-104",
-    "localId": "104",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "104/107",
-    "cardName": "Sharpedo ex",
-    "fullDisplayName": "Sharpedo ex 104/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      319
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Carvanha",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-104-low.png",
-    "imageHighSrc": "cards/ex8-104-high.png",
-    "attacks": [
-      {
-        "name": "Drag Off",
-        "damage": "20"
-      },
-      {
-        "name": "Darkness Blast",
-        "damage": "60+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6684",
-    "externalId": "ex8-103",
-    "tcgdex_id": "ex8-103",
-    "localId": "103",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "103/107",
-    "cardName": "Salamence ex",
-    "fullDisplayName": "Salamence ex 103/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 160,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      373
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shelgon",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-103-low.png",
-    "imageHighSrc": "cards/ex8-103-high.png",
-    "attacks": [
-      {
-        "name": "Flame Jet",
-        "damage": null
-      },
-      {
-        "name": "Bright Flame",
-        "damage": "120"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6679",
-    "externalId": "ex8-102",
-    "tcgdex_id": "ex8-102",
-    "localId": "102",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "102/107",
-    "cardName": "Rayquaza ex",
-    "fullDisplayName": "Rayquaza ex 102/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      384
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin-ichi Yoshikawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-102-low.png",
-    "imageHighSrc": "cards/ex8-102-high.png",
-    "attacks": [
-      {
-        "name": "Spiral Blast",
-        "damage": "20×"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6674",
-    "externalId": "ex8-101",
-    "tcgdex_id": "ex8-101",
-    "localId": "101",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "101/107",
-    "cardName": "Manectric ex",
-    "fullDisplayName": "Manectric ex 101/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      310
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Electrike",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-101-low.png",
-    "imageHighSrc": "cards/ex8-101-high.png",
-    "attacks": [
-      {
-        "name": "Disconnect",
-        "damage": "40"
-      },
-      {
-        "name": "Mega Shot",
-        "damage": null
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6669",
-    "externalId": "ex8-100",
-    "tcgdex_id": "ex8-100",
-    "localId": "100",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "100/107",
-    "cardName": "Hariyama ex",
-    "fullDisplayName": "Hariyama ex 100/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      297
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Makuhita",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-100-low.png",
-    "imageHighSrc": "cards/ex8-100-high.png",
-    "attacks": [
-      {
-        "name": "Knock Off",
-        "damage": "40"
-      },
-      {
-        "name": "Pivot Throw",
-        "damage": "80"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6664",
-    "externalId": "ex8-99",
-    "tcgdex_id": "ex8-99",
-    "localId": "099",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "99/107",
-    "cardName": "Deoxys ex",
-    "fullDisplayName": "Deoxys ex 99/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-099-low.png",
-    "imageHighSrc": "cards/ex8-099-high.png",
-    "attacks": [
-      {
-        "name": "Psychic Shield",
-        "damage": "50"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6658",
-    "externalId": "ex8-98",
-    "tcgdex_id": "ex8-98",
-    "localId": "098",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "98/107",
-    "cardName": "Deoxys ex",
-    "fullDisplayName": "Deoxys ex 98/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-098-low.png",
-    "imageHighSrc": "cards/ex8-098-high.png",
-    "attacks": [
-      {
-        "name": "Psyburst",
-        "damage": "50+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6654",
-    "externalId": "ex8-97",
-    "tcgdex_id": "ex8-97",
-    "localId": "097",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "97/107",
-    "cardName": "Deoxys ex",
-    "fullDisplayName": "Deoxys ex 97/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-097-low.png",
-    "imageHighSrc": "cards/ex8-097-high.png",
-    "attacks": [
-      {
-        "name": "Energy Burst",
-        "damage": "10+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6649",
-    "externalId": "ex8-96",
-    "tcgdex_id": "ex8-96",
-    "localId": "096",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "96/107",
-    "cardName": "Crobat ex",
-    "fullDisplayName": "Crobat ex 96/107 Deoxys",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      169
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Golbat",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-096-low.png",
-    "imageHighSrc": "cards/ex8-096-high.png",
-    "attacks": [
-      {
-        "name": "Cross Attack",
-        "damage": "20×"
-      },
-      {
-        "name": "Pester",
-        "damage": "60+"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6644",
-    "externalId": "ex8-95",
-    "tcgdex_id": "ex8-95",
-    "localId": "095",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "95/107",
-    "cardName": "Scramble Energy",
-    "fullDisplayName": "Scramble Energy 95/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takumi Akabane",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-095-low.png",
-    "imageHighSrc": "cards/ex8-095-high.png",
-    "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
-  },
-  {
-    "masterCardId": "6639",
-    "externalId": "ex8-94",
-    "tcgdex_id": "ex8-94",
-    "localId": "094",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "94/107",
-    "cardName": "Heal Energy",
-    "fullDisplayName": "Heal Energy 94/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takumi Akabane",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-094-low.png",
-    "imageHighSrc": "cards/ex8-094-high.png",
-    "rules": "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
-  },
-  {
-    "masterCardId": "6636",
-    "externalId": "ex8-93",
-    "tcgdex_id": "ex8-93",
-    "localId": "093",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "93/107",
-    "cardName": "Boost Energy",
-    "fullDisplayName": "Boost Energy 93/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin-ichi Yoshikawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-093-low.png",
-    "imageHighSrc": "cards/ex8-093-high.png",
-    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
-  },
-  {
-    "masterCardId": "6630",
-    "externalId": "ex8-92",
-    "tcgdex_id": "ex8-92",
-    "localId": "092",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "92/107",
-    "cardName": "Strength Charm",
-    "fullDisplayName": "Strength Charm 92/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-092-low.png",
-    "imageHighSrc": "cards/ex8-092-high.png",
-    "rules": "Attach Strength Charm to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nWhenever an attack from the Pokémon that Strength Charm is attached to does damage to the Active Pokémon, the attack does 10 more damage (before applying Weakness and Resistance). Discard Strength Charm at the end of the turn in which this Pokémon attacks."
-  },
-  {
-    "masterCardId": "6627",
-    "externalId": "ex8-91",
-    "tcgdex_id": "ex8-91",
-    "localId": "091",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "91/107",
-    "cardName": "Space Center",
-    "fullDisplayName": "Space Center 91/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-091-low.png",
-    "imageHighSrc": "cards/ex8-091-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nIgnore Poké-Bodies for all Basic Pokémon in play (both yours and your opponent's) (excluding Pokémon-ex and Pokémon that has an owner in its name)."
-  },
-  {
-    "masterCardId": "6622",
-    "externalId": "ex8-90",
-    "tcgdex_id": "ex8-90",
-    "localId": "090",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "90/107",
-    "cardName": "Professor Cozmo's Discovery",
-    "fullDisplayName": "Professor Cozmo's Discovery 90/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-090-low.png",
-    "imageHighSrc": "cards/ex8-090-high.png",
-    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin. If heads, draw the bottom 3 cards of your deck. If tails, draw the top 2 cards of your deck."
-  },
-  {
-    "masterCardId": "6617",
-    "externalId": "ex8-89",
-    "tcgdex_id": "ex8-89",
-    "localId": "089",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "89/107",
-    "cardName": "Meteor Falls",
-    "fullDisplayName": "Meteor Falls 89/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Stadium"
-    ],
-    "trainerType": "Stadium",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-089-low.png",
-    "imageHighSrc": "cards/ex8-089-high.png",
-    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player's Active Evolved Pokémon (excluding Pokémon-ex) can use any attack from its Basic Pokémon or its Stage 1 Evolution card. (You still have to pay for that attack's Energy cost.)"
-  },
-  {
-    "masterCardId": "6613",
-    "externalId": "ex8-88",
-    "tcgdex_id": "ex8-88",
-    "localId": "088",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "88/107",
-    "cardName": "Master Ball",
-    "fullDisplayName": "Master Ball 88/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-088-low.png",
-    "imageHighSrc": "cards/ex8-088-high.png",
-    "rules": "Look at the top 7 cards from your deck. Choose a Basic Pokémon or Evolution card from those cards, show it to your opponent, and put it into your hand. Put the other 6 cards back on top of your deck. Shuffle your deck afterward."
-  },
-  {
-    "masterCardId": "6607",
-    "externalId": "ex8-87",
-    "tcgdex_id": "ex8-87",
-    "localId": "087",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "87/107",
-    "cardName": "Lady Outing",
-    "fullDisplayName": "Lady Outing 87/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-087-low.png",
-    "imageHighSrc": "cards/ex8-087-high.png",
-    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
-  },
-  {
-    "masterCardId": "6602",
-    "externalId": "ex8-86",
-    "tcgdex_id": "ex8-86",
-    "localId": "086",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "86/107",
-    "cardName": "Energy Charge",
-    "fullDisplayName": "Energy Charge 86/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-086-low.png",
-    "imageHighSrc": "cards/ex8-086-high.png",
-    "rules": "Flip a coin. If heads, search your discard pile for 2 Energy cards (1 if there is only 1), show them to your opponent, and shuffle them into your deck."
-  },
-  {
-    "masterCardId": "6598",
-    "externalId": "ex8-85",
-    "tcgdex_id": "ex8-85",
-    "localId": "085",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "85/107",
-    "cardName": "Crystal Shard",
-    "fullDisplayName": "Crystal Shard 85/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Jungo Suzuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-085-low.png",
-    "imageHighSrc": "cards/ex8-085-high.png",
-    "rules": "Attach Crystal Shard to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as this card is attached to a Pokémon, that Pokémon's type is Colorless. If that Pokémon attacks, discard this card at the end of the turn."
-  },
-  {
-    "masterCardId": "6593",
-    "externalId": "ex8-84",
-    "tcgdex_id": "ex8-84",
-    "localId": "084",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "84/107",
-    "cardName": "Balloon Berry",
-    "fullDisplayName": "Balloon Berry 84/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-084-low.png",
-    "imageHighSrc": "cards/ex8-084-high.png",
-    "rules": "Attach Balloon Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as Balloon Berry is attached to a Pokémon, that Pokémon's Retreat Cost is 0. When this Pokémon retreats, discard Balloon Berry."
-  },
-  {
-    "masterCardId": "6588",
-    "externalId": "ex8-83",
-    "tcgdex_id": "ex8-83",
-    "localId": "083",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "83/107",
-    "cardName": "Zubat",
-    "fullDisplayName": "Zubat 83/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      41
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sachiko Adachi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-083-low.png",
-    "imageHighSrc": "cards/ex8-083-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6583",
-    "externalId": "ex8-82",
-    "tcgdex_id": "ex8-82",
-    "localId": "082",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "82/107",
-    "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 82/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      265
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-082-low.png",
-    "imageHighSrc": "cards/ex8-082-high.png",
-    "attacks": [
-      {
-        "name": "Ascension",
-        "damage": null
-      },
-      {
-        "name": "Miracle Essence",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6576",
-    "externalId": "ex8-81",
-    "tcgdex_id": "ex8-81",
-    "localId": "081",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "81/107",
-    "cardName": "Wingull",
-    "fullDisplayName": "Wingull 81/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      278
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-081-low.png",
-    "imageHighSrc": "cards/ex8-081-high.png",
-    "attacks": [
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6571",
-    "externalId": "ex8-80",
-    "tcgdex_id": "ex8-80",
-    "localId": "080",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "80/107",
-    "cardName": "Taillow",
-    "fullDisplayName": "Taillow 80/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      276
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-080-low.png",
-    "imageHighSrc": "cards/ex8-080-high.png",
-    "attacks": [
-      {
-        "name": "Fly",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6566",
-    "externalId": "ex8-79",
-    "tcgdex_id": "ex8-79",
-    "localId": "079",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "79/107",
-    "cardName": "Swablu",
-    "fullDisplayName": "Swablu 79/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      333
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-079-low.png",
-    "imageHighSrc": "cards/ex8-079-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6561",
-    "externalId": "ex8-78",
-    "tcgdex_id": "ex8-78",
-    "localId": "078",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "78/107",
-    "cardName": "Surskit",
-    "fullDisplayName": "Surskit 78/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      283
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-078-low.png",
-    "imageHighSrc": "cards/ex8-078-high.png",
-    "attacks": [
-      {
-        "name": "Agility",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6556",
-    "externalId": "ex8-77",
-    "tcgdex_id": "ex8-77",
-    "localId": "077",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "77/107",
-    "cardName": "Staryu",
-    "fullDisplayName": "Staryu 77/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      120
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yukiko Baba",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-077-low.png",
-    "imageHighSrc": "cards/ex8-077-high.png",
-    "attacks": [
-      {
-        "name": "Rapid Spin",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6551",
-    "externalId": "ex8-76",
-    "tcgdex_id": "ex8-76",
-    "localId": "076",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "76/107",
-    "cardName": "Spoink",
-    "fullDisplayName": "Spoink 76/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      325
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-076-low.png",
-    "imageHighSrc": "cards/ex8-076-high.png",
-    "attacks": [
-      {
-        "name": "Hypnotic Gaze",
-        "damage": null
-      },
-      {
-        "name": "Flop",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6544",
-    "externalId": "ex8-75",
-    "tcgdex_id": "ex8-75",
-    "localId": "075",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "75/107",
-    "cardName": "Slugma",
-    "fullDisplayName": "Slugma 75/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      218
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-075-low.png",
-    "imageHighSrc": "cards/ex8-075-high.png",
-    "attacks": [
-      {
-        "name": "Magma Ring",
-        "damage": "10"
-      },
-      {
-        "name": "Flare",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6538",
-    "externalId": "ex8-74",
-    "tcgdex_id": "ex8-74",
-    "localId": "074",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "74/107",
-    "cardName": "Slugma",
-    "fullDisplayName": "Slugma 74/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      218
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-074-low.png",
-    "imageHighSrc": "cards/ex8-074-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Combustion",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6533",
-    "externalId": "ex8-73",
-    "tcgdex_id": "ex8-73",
-    "localId": "073",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "73/107",
-    "cardName": "Slakoth",
-    "fullDisplayName": "Slakoth 73/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      287
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takao Unno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-073-low.png",
-    "imageHighSrc": "cards/ex8-073-high.png",
-    "attacks": [
-      {
-        "name": "Yawn",
-        "damage": null
-      },
-      {
-        "name": "Flail",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6528",
-    "externalId": "ex8-72",
-    "tcgdex_id": "ex8-72",
-    "localId": "072",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "72/107",
-    "cardName": "Shroomish",
-    "fullDisplayName": "Shroomish 72/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      285
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kanako Eo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-072-low.png",
-    "imageHighSrc": "cards/ex8-072-high.png",
-    "attacks": [
-      {
-        "name": "Stun Spore",
-        "damage": null
-      },
-      {
-        "name": "Trip Over",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6523",
-    "externalId": "ex8-71",
-    "tcgdex_id": "ex8-71",
-    "localId": "071",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "71/107",
-    "cardName": "Seedot",
-    "fullDisplayName": "Seedot 71/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      273
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-071-low.png",
-    "imageHighSrc": "cards/ex8-071-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6518",
-    "externalId": "ex8-70",
-    "tcgdex_id": "ex8-70",
-    "localId": "070",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "70/107",
-    "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 70/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      261
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Aimi Tomita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-070-low.png",
-    "imageHighSrc": "cards/ex8-070-high.png",
-    "attacks": [
-      {
-        "name": "Surprise",
-        "damage": null
-      },
-      {
-        "name": "Sharp Fang",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6513",
-    "externalId": "ex8-69",
-    "tcgdex_id": "ex8-69",
-    "localId": "069",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "69/107",
-    "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 69/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      231
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yuka Morii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-069-low.png",
-    "imageHighSrc": "cards/ex8-069-high.png",
-    "attacks": [
-      {
-        "name": "Corkscrew Punch",
-        "damage": "10"
-      },
-      {
-        "name": "Double Spin",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6508",
-    "externalId": "ex8-68",
-    "tcgdex_id": "ex8-68",
-    "localId": "068",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "68/107",
-    "cardName": "Numel",
-    "fullDisplayName": "Numel 68/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      322
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-068-low.png",
-    "imageHighSrc": "cards/ex8-068-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6505",
-    "externalId": "ex8-67",
-    "tcgdex_id": "ex8-67",
-    "localId": "067",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "67/107",
-    "cardName": "Nincada",
-    "fullDisplayName": "Nincada 67/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      290
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yukiko Baba",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-067-low.png",
-    "imageHighSrc": "cards/ex8-067-high.png",
-    "attacks": [
-      {
-        "name": "Dig Under",
-        "damage": null
-      },
-      {
-        "name": "Scratch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6500",
-    "externalId": "ex8-66",
-    "tcgdex_id": "ex8-66",
-    "localId": "066",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "66/107",
-    "cardName": "Natu",
-    "fullDisplayName": "Natu 66/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      177
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yuka Morii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-066-low.png",
-    "imageHighSrc": "cards/ex8-066-high.png",
-    "attacks": [
-      {
-        "name": "Razor Wind",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6493",
-    "externalId": "ex8-65",
-    "tcgdex_id": "ex8-65",
-    "localId": "065",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "65/107",
-    "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 65/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      296
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Asuka Iwashita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-065-low.png",
-    "imageHighSrc": "cards/ex8-065-high.png",
-    "attacks": [
-      {
-        "name": "Thrust",
-        "damage": "10"
-      },
-      {
-        "name": "Rising Lunge",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6488",
-    "externalId": "ex8-64",
-    "tcgdex_id": "ex8-64",
-    "localId": "064",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "64/107",
-    "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 64/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      129
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-064-low.png",
-    "imageHighSrc": "cards/ex8-064-high.png",
-    "attacks": [
-      {
-        "name": "Leap Out",
-        "damage": null
-      },
-      {
-        "name": "Rage",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6483",
-    "externalId": "ex8-63",
-    "tcgdex_id": "ex8-63",
-    "localId": "063",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "63/107",
-    "cardName": "Lotad",
-    "fullDisplayName": "Lotad 63/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      270
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-063-low.png",
-    "imageHighSrc": "cards/ex8-063-high.png",
-    "attacks": [
-      {
-        "name": "Rain Splash",
-        "damage": "10"
-      },
-      {
-        "name": "Aqua Wave",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6478",
-    "externalId": "ex8-62",
-    "tcgdex_id": "ex8-62",
-    "localId": "062",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "62/107",
-    "cardName": "Koffing",
-    "fullDisplayName": "Koffing 62/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      109
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-062-low.png",
-    "imageHighSrc": "cards/ex8-062-high.png",
-    "attacks": [
-      {
-        "name": "Smog",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6473",
-    "externalId": "ex8-61",
-    "tcgdex_id": "ex8-61",
-    "localId": "061",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "61/107",
-    "cardName": "Goldeen",
-    "fullDisplayName": "Goldeen 61/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      118
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-061-low.png",
-    "imageHighSrc": "cards/ex8-061-high.png",
-    "attacks": [
-      {
-        "name": "Supersonic",
-        "damage": null
-      },
-      {
-        "name": "Waterfall",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6469",
-    "externalId": "ex8-60",
-    "tcgdex_id": "ex8-60",
-    "localId": "060",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "60/107",
-    "cardName": "Electrike",
-    "fullDisplayName": "Electrike 60/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      309
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hiroki Fuchino",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-060-low.png",
-    "imageHighSrc": "cards/ex8-060-high.png",
-    "attacks": [
-      {
-        "name": "Recharge",
-        "damage": null
-      },
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6463",
-    "externalId": "ex8-59",
-    "tcgdex_id": "ex8-59",
-    "localId": "059",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "59/107",
-    "cardName": "Electrike",
-    "fullDisplayName": "Electrike 59/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      309
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-059-low.png",
-    "imageHighSrc": "cards/ex8-059-high.png",
-    "attacks": [
-      {
-        "name": "High Voltage",
-        "damage": null
-      },
-      {
-        "name": "Gnaw",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6458",
-    "externalId": "ex8-58",
-    "tcgdex_id": "ex8-58",
-    "localId": "058",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "58/107",
-    "cardName": "Duskull",
-    "fullDisplayName": "Duskull 58/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      355
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomoko Wakai",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-058-low.png",
-    "imageHighSrc": "cards/ex8-058-high.png",
-    "attacks": [
-      {
-        "name": "Paralyzing Gaze",
-        "damage": null
-      },
-      {
-        "name": "Will-o'-the-wisp",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6453",
-    "externalId": "ex8-57",
-    "tcgdex_id": "ex8-57",
-    "localId": "057",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "57/107",
-    "cardName": "Corphish",
-    "fullDisplayName": "Corphish 57/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      341
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takao Unno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-057-low.png",
-    "imageHighSrc": "cards/ex8-057-high.png",
-    "attacks": [
-      {
-        "name": "Double Chop",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6448",
-    "externalId": "ex8-56",
-    "tcgdex_id": "ex8-56",
-    "localId": "056",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "56/107",
-    "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 56/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      318
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-056-low.png",
-    "imageHighSrc": "cards/ex8-056-high.png",
-    "attacks": [
-      {
-        "name": "Sharp Fin",
-        "damage": "10"
-      },
-      {
-        "name": "Rage",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6443",
-    "externalId": "ex8-55",
-    "tcgdex_id": "ex8-55",
-    "localId": "055",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "55/107",
-    "cardName": "Beldum",
-    "fullDisplayName": "Beldum 55/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      374
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-055-low.png",
-    "imageHighSrc": "cards/ex8-055-high.png",
-    "attacks": [
-      {
-        "name": "Flip Over",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6438",
-    "externalId": "ex8-54",
-    "tcgdex_id": "ex8-54",
-    "localId": "054",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "54/107",
-    "cardName": "Barboach",
-    "fullDisplayName": "Barboach 54/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      339
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Miki Tanaka",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-054-low.png",
-    "imageHighSrc": "cards/ex8-054-high.png",
-    "attacks": [
-      {
-        "name": "Amnesia",
-        "damage": null
-      },
-      {
-        "name": "Tackle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6434",
-    "externalId": "ex8-53",
-    "tcgdex_id": "ex8-53",
-    "localId": "053",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "53/107",
-    "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 53/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      343
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kenkichi Toyama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-053-low.png",
-    "imageHighSrc": "cards/ex8-053-high.png",
-    "attacks": [
-      {
-        "name": "Spinning Attack",
-        "damage": "10"
-      },
-      {
-        "name": "Selfdestruct",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6430",
-    "externalId": "ex8-52",
-    "tcgdex_id": "ex8-52",
-    "localId": "052",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "52/107",
-    "cardName": "Bagon",
-    "fullDisplayName": "Bagon 52/107 Deoxys",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      371
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takao Unno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-052-low.png",
-    "imageHighSrc": "cards/ex8-052-high.png",
-    "attacks": [
-      {
-        "name": "Singe",
-        "damage": null
-      },
-      {
-        "name": "Doubleslap",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6424",
-    "externalId": "ex8-51",
-    "tcgdex_id": "ex8-51",
-    "localId": "051",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "51/107",
-    "cardName": "Weezing",
-    "fullDisplayName": "Weezing 51/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      110
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Koffing",
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-051-low.png",
-    "imageHighSrc": "cards/ex8-051-high.png",
-    "attacks": [
-      {
-        "name": "Liability",
-        "damage": null
-      },
-      {
-        "name": "Smogscreen",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6419",
-    "externalId": "ex8-50",
-    "tcgdex_id": "ex8-50",
-    "localId": "050",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "50/107",
-    "cardName": "Vigoroth",
-    "fullDisplayName": "Vigoroth 50/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      288
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Slakoth",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-050-low.png",
-    "imageHighSrc": "cards/ex8-050-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6414",
-    "externalId": "ex8-49",
-    "tcgdex_id": "ex8-49",
-    "localId": "049",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "49/107",
-    "cardName": "Swellow",
-    "fullDisplayName": "Swellow 49/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      277
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Taillow",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-049-low.png",
-    "imageHighSrc": "cards/ex8-049-high.png",
-    "attacks": [
-      {
-        "name": "Mid-air Crush",
-        "damage": null
-      },
-      {
-        "name": "Nosedive",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6409",
-    "externalId": "ex8-48",
-    "tcgdex_id": "ex8-48",
-    "localId": "048",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "48/107",
-    "cardName": "Starmie",
-    "fullDisplayName": "Starmie 48/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      121
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Staryu",
-    "artist": "Yukiko Baba",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-048-low.png",
-    "imageHighSrc": "cards/ex8-048-high.png",
-    "attacks": [
-      {
-        "name": "Energy Flip",
-        "damage": null
-      },
-      {
-        "name": "Psychic Boom",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6404",
-    "externalId": "ex8-47",
-    "tcgdex_id": "ex8-47",
-    "localId": "047",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "47/107",
-    "cardName": "Solrock",
-    "fullDisplayName": "Solrock 47/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      338
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-047-low.png",
-    "imageHighSrc": "cards/ex8-047-high.png",
-    "attacks": [
-      {
-        "name": "Scorching Light",
-        "damage": null
-      },
-      {
-        "name": "Reflected Beam",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6399",
-    "externalId": "ex8-46",
-    "tcgdex_id": "ex8-46",
-    "localId": "046",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "46/107",
-    "cardName": "Silcoon",
-    "fullDisplayName": "Silcoon 46/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      266
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wurmple",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-046-low.png",
-    "imageHighSrc": "cards/ex8-046-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      },
-      {
-        "name": "Advanced Armor",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6394",
-    "externalId": "ex8-45",
-    "tcgdex_id": "ex8-45",
-    "localId": "045",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "45/107",
-    "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 45/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      372
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Bagon",
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-045-low.png",
-    "imageHighSrc": "cards/ex8-045-high.png",
-    "attacks": [
-      {
-        "name": "Rock Smash",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6390",
-    "externalId": "ex8-44",
-    "tcgdex_id": "ex8-44",
-    "localId": "044",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "44/107",
-    "cardName": "Plusle",
-    "fullDisplayName": "Plusle 44/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      311
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-044-low.png",
-    "imageHighSrc": "cards/ex8-044-high.png",
-    "attacks": [
-      {
-        "name": "Call for Family",
-        "damage": null
-      },
-      {
-        "name": "Positive Spark",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6385",
-    "externalId": "ex8-43",
-    "tcgdex_id": "ex8-43",
-    "localId": "043",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "43/107",
-    "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 43/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      274
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Seedot",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-043-low.png",
-    "imageHighSrc": "cards/ex8-043-high.png",
-    "attacks": [
-      {
-        "name": "Eerie Light",
-        "damage": null
-      },
-      {
-        "name": "One-Two Strike",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6380",
-    "externalId": "ex8-42",
-    "tcgdex_id": "ex8-42",
-    "localId": "042",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "42/107",
-    "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 42/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      299
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-042-low.png",
-    "imageHighSrc": "cards/ex8-042-high.png",
-    "attacks": [
-      {
-        "name": "Sharpen",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6376",
-    "externalId": "ex8-41",
-    "tcgdex_id": "ex8-41",
-    "localId": "041",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "41/107",
-    "cardName": "Minun",
-    "fullDisplayName": "Minun 41/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      312
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-041-low.png",
-    "imageHighSrc": "cards/ex8-041-high.png",
-    "attacks": [
-      {
-        "name": "Sniff Out",
-        "damage": null
-      },
-      {
-        "name": "Negative Spark",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6371",
-    "externalId": "ex8-40",
-    "tcgdex_id": "ex8-40",
-    "localId": "040",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "40/107",
-    "cardName": "Metang",
-    "fullDisplayName": "Metang 40/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      375
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Beldum",
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-040-low.png",
-    "imageHighSrc": "cards/ex8-040-high.png",
-    "attacks": [
-      {
-        "name": "Psychic Boom",
-        "damage": "10+"
-      },
-      {
-        "name": "Quick Blow",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6366",
-    "externalId": "ex8-39",
-    "tcgdex_id": "ex8-39",
-    "localId": "039",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "39/107",
-    "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 39/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      284
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Surskit",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-039-low.png",
-    "imageHighSrc": "cards/ex8-039-high.png",
-    "attacks": [
-      {
-        "name": "Stun Spore",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6361",
-    "externalId": "ex8-38",
-    "tcgdex_id": "ex8-38",
-    "localId": "038",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "38/107",
-    "cardName": "Manectric",
-    "fullDisplayName": "Manectric 38/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      310
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Electrike",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-038-low.png",
-    "imageHighSrc": "cards/ex8-038-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Spear",
-        "damage": null
-      },
-      {
-        "name": "Magnetic Tackle",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6357",
-    "externalId": "ex8-37",
-    "tcgdex_id": "ex8-37",
-    "localId": "037",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "37/107",
-    "cardName": "Magcargo",
-    "fullDisplayName": "Magcargo 37/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      219
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Slugma",
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-037-low.png",
-    "imageHighSrc": "cards/ex8-037-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "20"
-      },
-      {
-        "name": "Burning Ball",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6352",
-    "externalId": "ex8-36",
-    "tcgdex_id": "ex8-36",
-    "localId": "036",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "36/107",
-    "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 36/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      337
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-036-low.png",
-    "imageHighSrc": "cards/ex8-036-high.png",
-    "attacks": [
-      {
-        "name": "Foresight",
-        "damage": null
-      },
-      {
-        "name": "Target Beam",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6347",
-    "externalId": "ex8-35",
-    "tcgdex_id": "ex8-35",
-    "localId": "035",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "35/107",
-    "cardName": "Lotad",
-    "fullDisplayName": "Lotad 35/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      270
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-035-low.png",
-    "imageHighSrc": "cards/ex8-035-high.png",
-    "attacks": [
-      {
-        "name": "Surprise",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6342",
-    "externalId": "ex8-34",
-    "tcgdex_id": "ex8-34",
-    "localId": "034",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "34/107",
-    "cardName": "Lombre",
-    "fullDisplayName": "Lombre 34/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      271
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lotad",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-034-low.png",
-    "imageHighSrc": "cards/ex8-034-high.png",
-    "attacks": [
-      {
-        "name": "Blot",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6337",
-    "externalId": "ex8-33",
-    "tcgdex_id": "ex8-33",
-    "localId": "033",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "33/107",
-    "cardName": "Lombre",
-    "fullDisplayName": "Lombre 33/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      271
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lotad",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-033-low.png",
-    "imageHighSrc": "cards/ex8-033-high.png",
-    "attacks": [
-      {
-        "name": "Ambush",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6333",
-    "externalId": "ex8-32",
-    "tcgdex_id": "ex8-32",
-    "localId": "032",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "32/107",
-    "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 32/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      326
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Spoink",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-032-low.png",
-    "imageHighSrc": "cards/ex8-032-high.png",
-    "attacks": [
-      {
-        "name": "Hypnoblast",
-        "damage": "20"
-      },
-      {
-        "name": "Extra Ball",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6328",
-    "externalId": "ex8-31",
-    "tcgdex_id": "ex8-31",
-    "localId": "031",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "31/107",
-    "cardName": "Golbat",
-    "fullDisplayName": "Golbat 31/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      42
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zubat",
-    "artist": "Sachiko Adachi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-031-low.png",
-    "imageHighSrc": "cards/ex8-031-high.png",
-    "attacks": [
-      {
-        "name": "Spiral Drain",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6323",
-    "externalId": "ex8-30",
-    "tcgdex_id": "ex8-30",
-    "localId": "030",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "30/107",
-    "cardName": "Donphan",
-    "fullDisplayName": "Donphan 30/107 Deoxys",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      232
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Phanpy",
-    "artist": "Yuka Morii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-030-low.png",
-    "imageHighSrc": "cards/ex8-030-high.png",
-    "attacks": [
-      {
-        "name": "Spinning Horn",
-        "damage": null
-      },
-      {
-        "name": "Rock Hurl",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6318",
-    "externalId": "ex8-29",
-    "tcgdex_id": "ex8-29",
-    "localId": "029",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "29/107",
-    "cardName": "Xatu",
-    "fullDisplayName": "Xatu 29/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      178
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Natu",
-    "artist": "Yuka Morii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-029-low.png",
-    "imageHighSrc": "cards/ex8-029-high.png",
-    "attacks": [
-      {
-        "name": "Dazzle Dance",
-        "damage": null
-      },
-      {
-        "name": "Psyloop",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6313",
-    "externalId": "ex8-28",
-    "tcgdex_id": "ex8-28",
-    "localId": "028",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "28/107",
-    "cardName": "Whiscash",
-    "fullDisplayName": "Whiscash 28/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      340
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Barboach",
-    "artist": "Miki Tanaka",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-028-low.png",
-    "imageHighSrc": "cards/ex8-028-high.png",
-    "attacks": [
-      {
-        "name": "Raging Tremble",
-        "damage": null
-      },
-      {
-        "name": "Dwindling Wave",
-        "damage": "70-"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6308",
-    "externalId": "ex8-27",
-    "tcgdex_id": "ex8-27",
-    "localId": "027",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "27/107",
-    "cardName": "Tropius",
-    "fullDisplayName": "Tropius 27/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      357
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Miki Tanaka",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-027-low.png",
-    "imageHighSrc": "cards/ex8-027-high.png",
-    "attacks": [
-      {
-        "name": "Miracle Blow",
-        "damage": null
-      },
-      {
-        "name": "Stomp",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6303",
-    "externalId": "ex8-26",
-    "tcgdex_id": "ex8-26",
-    "localId": "026",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "26/107",
-    "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 26/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      227
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-026-low.png",
-    "imageHighSrc": "cards/ex8-026-high.png",
-    "attacks": [
-      {
-        "name": "Spearhead",
-        "damage": null
-      },
-      {
-        "name": "Heavy Metal",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6297",
-    "externalId": "ex8-25",
-    "tcgdex_id": "ex8-25",
-    "localId": "025",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "25/107",
-    "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 25/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      275
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nuzleaf",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-025-low.png",
-    "imageHighSrc": "cards/ex8-025-high.png",
-    "attacks": [
-      {
-        "name": "Stadium Power",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6292",
-    "externalId": "ex8-24",
-    "tcgdex_id": "ex8-24",
-    "localId": "024",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "24/107",
-    "cardName": "Seaking",
-    "fullDisplayName": "Seaking 24/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      119
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Goldeen",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-024-low.png",
-    "imageHighSrc": "cards/ex8-024-high.png",
-    "attacks": [
-      {
-        "name": "Triple Breach",
-        "damage": null
-      },
-      {
-        "name": "Rend",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6287",
-    "externalId": "ex8-23",
-    "tcgdex_id": "ex8-23",
-    "localId": "023",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "23/107",
-    "cardName": "Sableye",
-    "fullDisplayName": "Sableye 23/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      302
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-023-low.png",
-    "imageHighSrc": "cards/ex8-023-high.png",
-    "attacks": [
-      {
-        "name": "Slash",
-        "damage": "10"
-      },
-      {
-        "name": "Limitation",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6281",
-    "externalId": "ex8-22",
-    "tcgdex_id": "ex8-22",
-    "localId": "022",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "22/107",
-    "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 22/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      384
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hiromichi Sugiyama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-022-low.png",
-    "imageHighSrc": "cards/ex8-022-high.png",
-    "attacks": [
-      {
-        "name": "Tumbling Attack",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6276",
-    "externalId": "ex8-21",
-    "tcgdex_id": "ex8-21",
-    "localId": "021",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "21/107",
-    "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 21/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      279
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wingull",
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-021-low.png",
-    "imageHighSrc": "cards/ex8-021-high.png",
-    "attacks": [
-      {
-        "name": "Bay Dance",
-        "damage": "10"
-      },
-      {
-        "name": "Aqua Sonic",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6272",
-    "externalId": "ex8-20",
-    "tcgdex_id": "ex8-20",
-    "localId": "020",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "20/107",
-    "cardName": "Magcargo",
-    "fullDisplayName": "Magcargo 20/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      219
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Slugma",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-020-low.png",
-    "imageHighSrc": "cards/ex8-020-high.png",
-    "attacks": [
-      {
-        "name": "Knock Over",
-        "damage": "10"
-      },
-      {
-        "name": "Combustion",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6267",
-    "externalId": "ex8-19",
-    "tcgdex_id": "ex8-19",
-    "localId": "019",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "19/107",
-    "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 19/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      272
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lombre",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-019-low.png",
-    "imageHighSrc": "cards/ex8-019-high.png",
-    "attacks": [
-      {
-        "name": "Water Punch",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6262",
-    "externalId": "ex8-18",
-    "tcgdex_id": "ex8-18",
-    "localId": "018",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "18/107",
-    "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 18/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hironobu Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-018-low.png",
-    "imageHighSrc": "cards/ex8-018-high.png",
-    "attacks": [
-      {
-        "name": "Barrier Attack",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6257",
-    "externalId": "ex8-17",
-    "tcgdex_id": "ex8-17",
-    "localId": "017",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "17/107",
-    "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 17/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hironobu Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-017-low.png",
-    "imageHighSrc": "cards/ex8-017-high.png",
-    "attacks": [
-      {
-        "name": "Energy Crush",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6252",
-    "externalId": "ex8-16",
-    "tcgdex_id": "ex8-16",
-    "localId": "016",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "16/107",
-    "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 16/107 Deoxys",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      386
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hironobu Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-016-low.png",
-    "imageHighSrc": "cards/ex8-016-high.png",
-    "attacks": [
-      {
-        "name": "Link Blast",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6247",
-    "externalId": "ex8-15",
-    "tcgdex_id": "ex8-15",
-    "localId": "015",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "15/107",
-    "cardName": "Slaking",
-    "fullDisplayName": "Slaking 15/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      289
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vigoroth",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-015-low.png",
-    "imageHighSrc": "cards/ex8-015-high.png",
-    "attacks": [
-      {
-        "name": "Amnesia",
-        "damage": "20"
-      },
-      {
-        "name": "Lazy Headbutt",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6242",
-    "externalId": "ex8-14",
-    "tcgdex_id": "ex8-14",
-    "localId": "014",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "14/107",
-    "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 14/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      292
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nincada",
-    "artist": "Yukiko Baba",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-014-low.png",
-    "imageHighSrc": "cards/ex8-014-high.png",
-    "attacks": [
-      {
-        "name": "Extra Curse",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6237",
-    "externalId": "ex8-13",
-    "tcgdex_id": "ex8-13",
-    "localId": "013",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "13/107",
-    "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 13/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      291
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nincada",
-    "artist": "Katsura Tabata",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-013-low.png",
-    "imageHighSrc": "cards/ex8-013-high.png",
-    "attacks": [
-      {
-        "name": "Swords Dance",
-        "damage": null
-      },
-      {
-        "name": "Slash",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6233",
-    "externalId": "ex8-12",
-    "tcgdex_id": "ex8-12",
-    "localId": "012",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "12/107",
-    "cardName": "Mightyena",
-    "fullDisplayName": "Mightyena 12/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      262
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Poochyena",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-012-low.png",
-    "imageHighSrc": "cards/ex8-012-high.png",
-    "attacks": [
-      {
-        "name": "Seek Out",
-        "damage": null
-      },
-      {
-        "name": "Pull Away",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6228",
-    "externalId": "ex8-11",
-    "tcgdex_id": "ex8-11",
-    "localId": "011",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "11/107",
-    "cardName": "Metagross",
-    "fullDisplayName": "Metagross 11/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      376
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Metang",
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-011-low.png",
-    "imageHighSrc": "cards/ex8-011-high.png",
-    "attacks": [
-      {
-        "name": "Link Blast",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6224",
-    "externalId": "ex8-10",
-    "tcgdex_id": "ex8-10",
-    "localId": "010",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "10/107",
-    "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 10/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      272
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lombre",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-010-low.png",
-    "imageHighSrc": "cards/ex8-010-high.png",
-    "attacks": [
-      {
-        "name": "Healing Steps",
-        "damage": "30"
-      },
-      {
-        "name": "Circular Steps",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6219",
-    "externalId": "ex8-9",
-    "tcgdex_id": "ex8-9",
-    "localId": "009",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "9/107",
-    "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 9/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      385
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-009-low.png",
-    "imageHighSrc": "cards/ex8-009-high.png",
-    "attacks": [
-      {
-        "name": "Metallic Blow",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6214",
-    "externalId": "ex8-8",
-    "tcgdex_id": "ex8-8",
-    "localId": "008",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "8/107",
-    "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 8/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      130
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Magikarp",
-    "artist": "Hisao Nakamura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-008-low.png",
-    "imageHighSrc": "cards/ex8-008-high.png",
-    "attacks": [
-      {
-        "name": "Dragon Spark",
-        "damage": null
-      },
-      {
-        "name": "Full Retaliation",
-        "damage": "20×"
-      },
-      {
-        "name": "Pulverize",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6209",
-    "externalId": "ex8-7",
-    "tcgdex_id": "ex8-7",
-    "localId": "007",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "7/107",
-    "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 7/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      356
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Duskull",
-    "artist": "Tomoko Wakai",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-007-low.png",
-    "imageHighSrc": "cards/ex8-007-high.png",
-    "attacks": [
-      {
-        "name": "Psychic Removal",
-        "damage": "20"
-      },
-      {
-        "name": "Powerful Hand",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6205",
-    "externalId": "ex8-6",
-    "tcgdex_id": "ex8-6",
-    "localId": "006",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "6/107",
-    "cardName": "Crawdaunt",
-    "fullDisplayName": "Crawdaunt 6/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      342
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Corphish",
-    "artist": "Tomoko Wakai",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-006-low.png",
-    "imageHighSrc": "cards/ex8-006-high.png",
-    "attacks": [
-      {
-        "name": "Bubblebeam",
-        "damage": "20"
-      },
-      {
-        "name": "Cross-Cut",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6199",
-    "externalId": "ex8-5",
-    "tcgdex_id": "ex8-5",
-    "localId": "005",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "5/107",
-    "cardName": "Claydol",
-    "fullDisplayName": "Claydol 5/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      344
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Baltoy",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-005-low.png",
-    "imageHighSrc": "cards/ex8-005-high.png",
-    "attacks": [
-      {
-        "name": "Ancient Mantra",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6194",
-    "externalId": "ex8-4",
-    "tcgdex_id": "ex8-4",
-    "localId": "004",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "4/107",
-    "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 4/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      323
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Numel",
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-004-low.png",
-    "imageHighSrc": "cards/ex8-004-high.png",
-    "attacks": [
-      {
-        "name": "Back Burner",
-        "damage": null
-      },
-      {
-        "name": "Split Bomb",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6188",
-    "externalId": "ex8-3",
-    "tcgdex_id": "ex8-3",
-    "localId": "003",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "3/107",
-    "cardName": "Breloom",
-    "fullDisplayName": "Breloom 3/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      286
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shroomish",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-003-low.png",
-    "imageHighSrc": "cards/ex8-003-high.png",
-    "attacks": [
-      {
-        "name": "Leaf Poison",
-        "damage": "20"
-      },
-      {
-        "name": "Hustle Punch",
-        "damage": "70-"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6184",
-    "externalId": "ex8-2",
-    "tcgdex_id": "ex8-2",
-    "localId": "002",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "2/107",
-    "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 2/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      267
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Silcoon",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-002-low.png",
-    "imageHighSrc": "cards/ex8-002-high.png",
-    "attacks": [
-      {
-        "name": "Luring Antenna",
-        "damage": "20"
-      },
-      {
-        "name": "Cutting Wind",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6181",
-    "externalId": "ex8-1",
-    "tcgdex_id": "ex8-1",
-    "localId": "001",
-    "setCode": "ex8",
-    "setTcgdexId": "ex8",
-    "cardNumber": "1/107",
-    "cardName": "Altaria",
-    "fullDisplayName": "Altaria 1/107 Deoxys",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      334
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swablu",
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex8-001-low.png",
-    "imageHighSrc": "cards/ex8-001-high.png",
-    "attacks": [
-      {
-        "name": "Double Wing Attack",
-        "damage": null
-      },
-      {
-        "name": "Dive",
-        "damage": "50"
-      }
-    ]
-  }
+    {
+        "masterCardId": "6710",
+        "externalId": "ex8-108",
+        "localId": "108",
+        "setCode": "ex8",
+        "cardNumber": "108/107",
+        "cardName": "Rocket's Raikou ex",
+        "fullDisplayName": "Rocket's Raikou ex 108/107 Deoxys",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            243
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex8-108-low.png",
+        "imageHighSrc": "cards/ex8-108-high.png",
+        "attacks": [
+            {
+                "name": "Thunderous Blow",
+                "damage": "40+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6704",
+        "externalId": "ex8-107",
+        "localId": "107",
+        "setCode": "ex8",
+        "cardNumber": "107/107",
+        "cardName": "Rayquaza ★",
+        "fullDisplayName": "Rayquaza ★ 107/107 Deoxys",
+        "rarity": "Rare Holo Star",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            384
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/ex8-107-low.png",
+        "imageHighSrc": "cards/ex8-107-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Rush",
+                "damage": "30×"
+            },
+            {
+                "name": "Holy Star",
+                "damage": null
+            }
+        ],
+        "rules": "You can't have more than 1 Pokémon Star in your deck."
+    },
+    {
+        "masterCardId": "6700",
+        "externalId": "ex8-106",
+        "localId": "106",
+        "setCode": "ex8",
+        "cardNumber": "106/107",
+        "cardName": "Latios ★",
+        "fullDisplayName": "Latios ★ 106/107 Deoxys",
+        "rarity": "Rare Holo Star",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            381
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/ex8-106-low.png",
+        "imageHighSrc": "cards/ex8-106-high.png",
+        "attacks": [
+            {
+                "name": "Miraculous Light",
+                "damage": "10"
+            },
+            {
+                "name": "Shining Star",
+                "damage": "50+"
+            }
+        ],
+        "rules": "You can't have more than 1 Pokémon Star in your deck."
+    },
+    {
+        "masterCardId": "6695",
+        "externalId": "ex8-105",
+        "localId": "105",
+        "setCode": "ex8",
+        "cardNumber": "105/107",
+        "cardName": "Latias ★",
+        "fullDisplayName": "Latias ★ 105/107 Deoxys",
+        "rarity": "Rare Holo Star",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            380
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/ex8-105-low.png",
+        "imageHighSrc": "cards/ex8-105-high.png",
+        "attacks": [
+            {
+                "name": "Healing Light",
+                "damage": "10"
+            },
+            {
+                "name": "Shooting Star",
+                "damage": "50+"
+            }
+        ],
+        "rules": "You can't have more than 1 Pokémon Star in your deck."
+    },
+    {
+        "masterCardId": "6690",
+        "externalId": "ex8-104",
+        "localId": "104",
+        "setCode": "ex8",
+        "cardNumber": "104/107",
+        "cardName": "Sharpedo ex",
+        "fullDisplayName": "Sharpedo ex 104/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            319
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex8-104-low.png",
+        "imageHighSrc": "cards/ex8-104-high.png",
+        "attacks": [
+            {
+                "name": "Drag Off",
+                "damage": "20"
+            },
+            {
+                "name": "Darkness Blast",
+                "damage": "60+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6684",
+        "externalId": "ex8-103",
+        "localId": "103",
+        "setCode": "ex8",
+        "cardNumber": "103/107",
+        "cardName": "Salamence ex",
+        "fullDisplayName": "Salamence ex 103/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            373
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex8-103-low.png",
+        "imageHighSrc": "cards/ex8-103-high.png",
+        "attacks": [
+            {
+                "name": "Flame Jet",
+                "damage": null
+            },
+            {
+                "name": "Bright Flame",
+                "damage": "120"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6679",
+        "externalId": "ex8-102",
+        "localId": "102",
+        "setCode": "ex8",
+        "cardNumber": "102/107",
+        "cardName": "Rayquaza ex",
+        "fullDisplayName": "Rayquaza ex 102/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            384
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin-ichi Yoshikawa",
+        "imageLowSrc": "cards/ex8-102-low.png",
+        "imageHighSrc": "cards/ex8-102-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Blast",
+                "damage": "20×"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6674",
+        "externalId": "ex8-101",
+        "localId": "101",
+        "setCode": "ex8",
+        "cardNumber": "101/107",
+        "cardName": "Manectric ex",
+        "fullDisplayName": "Manectric ex 101/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            310
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex8-101-low.png",
+        "imageHighSrc": "cards/ex8-101-high.png",
+        "attacks": [
+            {
+                "name": "Disconnect",
+                "damage": "40"
+            },
+            {
+                "name": "Mega Shot",
+                "damage": null
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6669",
+        "externalId": "ex8-100",
+        "localId": "100",
+        "setCode": "ex8",
+        "cardNumber": "100/107",
+        "cardName": "Hariyama ex",
+        "fullDisplayName": "Hariyama ex 100/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            297
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex8-100-low.png",
+        "imageHighSrc": "cards/ex8-100-high.png",
+        "attacks": [
+            {
+                "name": "Knock Off",
+                "damage": "40"
+            },
+            {
+                "name": "Pivot Throw",
+                "damage": "80"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6664",
+        "externalId": "ex8-99",
+        "localId": "099",
+        "setCode": "ex8",
+        "cardNumber": "99/107",
+        "cardName": "Deoxys ex",
+        "fullDisplayName": "Deoxys ex 99/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-099-low.png",
+        "imageHighSrc": "cards/ex8-099-high.png",
+        "attacks": [
+            {
+                "name": "Psychic Shield",
+                "damage": "50"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6658",
+        "externalId": "ex8-98",
+        "localId": "098",
+        "setCode": "ex8",
+        "cardNumber": "98/107",
+        "cardName": "Deoxys ex",
+        "fullDisplayName": "Deoxys ex 98/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-098-low.png",
+        "imageHighSrc": "cards/ex8-098-high.png",
+        "attacks": [
+            {
+                "name": "Psyburst",
+                "damage": "50+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6654",
+        "externalId": "ex8-97",
+        "localId": "097",
+        "setCode": "ex8",
+        "cardNumber": "97/107",
+        "cardName": "Deoxys ex",
+        "fullDisplayName": "Deoxys ex 97/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-097-low.png",
+        "imageHighSrc": "cards/ex8-097-high.png",
+        "attacks": [
+            {
+                "name": "Energy Burst",
+                "damage": "10+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6649",
+        "externalId": "ex8-96",
+        "localId": "096",
+        "setCode": "ex8",
+        "cardNumber": "96/107",
+        "cardName": "Crobat ex",
+        "fullDisplayName": "Crobat ex 96/107 Deoxys",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            169
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex8-096-low.png",
+        "imageHighSrc": "cards/ex8-096-high.png",
+        "attacks": [
+            {
+                "name": "Cross Attack",
+                "damage": "20×"
+            },
+            {
+                "name": "Pester",
+                "damage": "60+"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6644",
+        "externalId": "ex8-95",
+        "localId": "095",
+        "setCode": "ex8",
+        "cardNumber": "95/107",
+        "cardName": "Scramble Energy",
+        "fullDisplayName": "Scramble Energy 95/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "Takumi Akabane",
+        "imageLowSrc": "cards/ex8-095-low.png",
+        "imageHighSrc": "cards/ex8-095-high.png",
+        "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
+    },
+    {
+        "masterCardId": "6639",
+        "externalId": "ex8-94",
+        "localId": "094",
+        "setCode": "ex8",
+        "cardNumber": "94/107",
+        "cardName": "Heal Energy",
+        "fullDisplayName": "Heal Energy 94/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "Takumi Akabane",
+        "imageLowSrc": "cards/ex8-094-low.png",
+        "imageHighSrc": "cards/ex8-094-high.png",
+        "rules": "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
+    },
+    {
+        "masterCardId": "6636",
+        "externalId": "ex8-93",
+        "localId": "093",
+        "setCode": "ex8",
+        "cardNumber": "93/107",
+        "cardName": "Boost Energy",
+        "fullDisplayName": "Boost Energy 93/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "Shin-ichi Yoshikawa",
+        "imageLowSrc": "cards/ex8-093-low.png",
+        "imageHighSrc": "cards/ex8-093-high.png",
+        "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
+    },
+    {
+        "masterCardId": "6630",
+        "externalId": "ex8-92",
+        "localId": "092",
+        "setCode": "ex8",
+        "cardNumber": "92/107",
+        "cardName": "Strength Charm",
+        "fullDisplayName": "Strength Charm 92/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/ex8-092-low.png",
+        "imageHighSrc": "cards/ex8-092-high.png",
+        "rules": "Attach Strength Charm to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nWhenever an attack from the Pokémon that Strength Charm is attached to does damage to the Active Pokémon, the attack does 10 more damage (before applying Weakness and Resistance). Discard Strength Charm at the end of the turn in which this Pokémon attacks."
+    },
+    {
+        "masterCardId": "6627",
+        "externalId": "ex8-91",
+        "localId": "091",
+        "setCode": "ex8",
+        "cardNumber": "91/107",
+        "cardName": "Space Center",
+        "fullDisplayName": "Space Center 91/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex8-091-low.png",
+        "imageHighSrc": "cards/ex8-091-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nIgnore Poké-Bodies for all Basic Pokémon in play (both yours and your opponent's) (excluding Pokémon-ex and Pokémon that has an owner in its name)."
+    },
+    {
+        "masterCardId": "6622",
+        "externalId": "ex8-90",
+        "localId": "090",
+        "setCode": "ex8",
+        "cardNumber": "90/107",
+        "cardName": "Professor Cozmo's Discovery",
+        "fullDisplayName": "Professor Cozmo's Discovery 90/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-090-low.png",
+        "imageHighSrc": "cards/ex8-090-high.png",
+        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin. If heads, draw the bottom 3 cards of your deck. If tails, draw the top 2 cards of your deck."
+    },
+    {
+        "masterCardId": "6617",
+        "externalId": "ex8-89",
+        "localId": "089",
+        "setCode": "ex8",
+        "cardNumber": "89/107",
+        "cardName": "Meteor Falls",
+        "fullDisplayName": "Meteor Falls 89/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex8-089-low.png",
+        "imageHighSrc": "cards/ex8-089-high.png",
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player's Active Evolved Pokémon (excluding Pokémon-ex) can use any attack from its Basic Pokémon or its Stage 1 Evolution card. (You still have to pay for that attack's Energy cost.)"
+    },
+    {
+        "masterCardId": "6613",
+        "externalId": "ex8-88",
+        "localId": "088",
+        "setCode": "ex8",
+        "cardNumber": "88/107",
+        "cardName": "Master Ball",
+        "fullDisplayName": "Master Ball 88/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/ex8-088-low.png",
+        "imageHighSrc": "cards/ex8-088-high.png",
+        "rules": "Look at the top 7 cards from your deck. Choose a Basic Pokémon or Evolution card from those cards, show it to your opponent, and put it into your hand. Put the other 6 cards back on top of your deck. Shuffle your deck afterward."
+    },
+    {
+        "masterCardId": "6607",
+        "externalId": "ex8-87",
+        "localId": "087",
+        "setCode": "ex8",
+        "cardNumber": "87/107",
+        "cardName": "Lady Outing",
+        "fullDisplayName": "Lady Outing 87/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-087-low.png",
+        "imageHighSrc": "cards/ex8-087-high.png",
+        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+    },
+    {
+        "masterCardId": "6602",
+        "externalId": "ex8-86",
+        "localId": "086",
+        "setCode": "ex8",
+        "cardNumber": "86/107",
+        "cardName": "Energy Charge",
+        "fullDisplayName": "Energy Charge 86/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/ex8-086-low.png",
+        "imageHighSrc": "cards/ex8-086-high.png",
+        "rules": "Flip a coin. If heads, search your discard pile for 2 Energy cards (1 if there is only 1), show them to your opponent, and shuffle them into your deck."
+    },
+    {
+        "masterCardId": "6598",
+        "externalId": "ex8-85",
+        "localId": "085",
+        "setCode": "ex8",
+        "cardNumber": "85/107",
+        "cardName": "Crystal Shard",
+        "fullDisplayName": "Crystal Shard 85/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Jungo Suzuki",
+        "imageLowSrc": "cards/ex8-085-low.png",
+        "imageHighSrc": "cards/ex8-085-high.png",
+        "rules": "Attach Crystal Shard to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as this card is attached to a Pokémon, that Pokémon's type is Colorless. If that Pokémon attacks, discard this card at the end of the turn."
+    },
+    {
+        "masterCardId": "6593",
+        "externalId": "ex8-84",
+        "localId": "084",
+        "setCode": "ex8",
+        "cardNumber": "84/107",
+        "cardName": "Balloon Berry",
+        "fullDisplayName": "Balloon Berry 84/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/ex8-084-low.png",
+        "imageHighSrc": "cards/ex8-084-high.png",
+        "rules": "Attach Balloon Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as Balloon Berry is attached to a Pokémon, that Pokémon's Retreat Cost is 0. When this Pokémon retreats, discard Balloon Berry."
+    },
+    {
+        "masterCardId": "6588",
+        "externalId": "ex8-83",
+        "localId": "083",
+        "setCode": "ex8",
+        "cardNumber": "83/107",
+        "cardName": "Zubat",
+        "fullDisplayName": "Zubat 83/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            41
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sachiko Adachi",
+        "imageLowSrc": "cards/ex8-083-low.png",
+        "imageHighSrc": "cards/ex8-083-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6583",
+        "externalId": "ex8-82",
+        "localId": "082",
+        "setCode": "ex8",
+        "cardNumber": "82/107",
+        "cardName": "Wurmple",
+        "fullDisplayName": "Wurmple 82/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            265
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex8-082-low.png",
+        "imageHighSrc": "cards/ex8-082-high.png",
+        "attacks": [
+            {
+                "name": "Ascension",
+                "damage": null
+            },
+            {
+                "name": "Miracle Essence",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6576",
+        "externalId": "ex8-81",
+        "localId": "081",
+        "setCode": "ex8",
+        "cardNumber": "81/107",
+        "cardName": "Wingull",
+        "fullDisplayName": "Wingull 81/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            278
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex8-081-low.png",
+        "imageHighSrc": "cards/ex8-081-high.png",
+        "attacks": [
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6571",
+        "externalId": "ex8-80",
+        "localId": "080",
+        "setCode": "ex8",
+        "cardNumber": "80/107",
+        "cardName": "Taillow",
+        "fullDisplayName": "Taillow 80/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            276
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex8-080-low.png",
+        "imageHighSrc": "cards/ex8-080-high.png",
+        "attacks": [
+            {
+                "name": "Fly",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6566",
+        "externalId": "ex8-79",
+        "localId": "079",
+        "setCode": "ex8",
+        "cardNumber": "79/107",
+        "cardName": "Swablu",
+        "fullDisplayName": "Swablu 79/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            333
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex8-079-low.png",
+        "imageHighSrc": "cards/ex8-079-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6561",
+        "externalId": "ex8-78",
+        "localId": "078",
+        "setCode": "ex8",
+        "cardNumber": "78/107",
+        "cardName": "Surskit",
+        "fullDisplayName": "Surskit 78/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            283
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-078-low.png",
+        "imageHighSrc": "cards/ex8-078-high.png",
+        "attacks": [
+            {
+                "name": "Agility",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6556",
+        "externalId": "ex8-77",
+        "localId": "077",
+        "setCode": "ex8",
+        "cardNumber": "77/107",
+        "cardName": "Staryu",
+        "fullDisplayName": "Staryu 77/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            120
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/ex8-077-low.png",
+        "imageHighSrc": "cards/ex8-077-high.png",
+        "attacks": [
+            {
+                "name": "Rapid Spin",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6551",
+        "externalId": "ex8-76",
+        "localId": "076",
+        "setCode": "ex8",
+        "cardNumber": "76/107",
+        "cardName": "Spoink",
+        "fullDisplayName": "Spoink 76/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            325
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-076-low.png",
+        "imageHighSrc": "cards/ex8-076-high.png",
+        "attacks": [
+            {
+                "name": "Hypnotic Gaze",
+                "damage": null
+            },
+            {
+                "name": "Flop",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6544",
+        "externalId": "ex8-75",
+        "localId": "075",
+        "setCode": "ex8",
+        "cardNumber": "75/107",
+        "cardName": "Slugma",
+        "fullDisplayName": "Slugma 75/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            218
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex8-075-low.png",
+        "imageHighSrc": "cards/ex8-075-high.png",
+        "attacks": [
+            {
+                "name": "Magma Ring",
+                "damage": "10"
+            },
+            {
+                "name": "Flare",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6538",
+        "externalId": "ex8-74",
+        "localId": "074",
+        "setCode": "ex8",
+        "cardNumber": "74/107",
+        "cardName": "Slugma",
+        "fullDisplayName": "Slugma 74/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            218
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex8-074-low.png",
+        "imageHighSrc": "cards/ex8-074-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Combustion",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6533",
+        "externalId": "ex8-73",
+        "localId": "073",
+        "setCode": "ex8",
+        "cardNumber": "73/107",
+        "cardName": "Slakoth",
+        "fullDisplayName": "Slakoth 73/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            287
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takao Unno",
+        "imageLowSrc": "cards/ex8-073-low.png",
+        "imageHighSrc": "cards/ex8-073-high.png",
+        "attacks": [
+            {
+                "name": "Yawn",
+                "damage": null
+            },
+            {
+                "name": "Flail",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6528",
+        "externalId": "ex8-72",
+        "localId": "072",
+        "setCode": "ex8",
+        "cardNumber": "72/107",
+        "cardName": "Shroomish",
+        "fullDisplayName": "Shroomish 72/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            285
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kanako Eo",
+        "imageLowSrc": "cards/ex8-072-low.png",
+        "imageHighSrc": "cards/ex8-072-high.png",
+        "attacks": [
+            {
+                "name": "Stun Spore",
+                "damage": null
+            },
+            {
+                "name": "Trip Over",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6523",
+        "externalId": "ex8-71",
+        "localId": "071",
+        "setCode": "ex8",
+        "cardNumber": "71/107",
+        "cardName": "Seedot",
+        "fullDisplayName": "Seedot 71/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            273
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex8-071-low.png",
+        "imageHighSrc": "cards/ex8-071-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6518",
+        "externalId": "ex8-70",
+        "localId": "070",
+        "setCode": "ex8",
+        "cardNumber": "70/107",
+        "cardName": "Poochyena",
+        "fullDisplayName": "Poochyena 70/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            261
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aimi Tomita",
+        "imageLowSrc": "cards/ex8-070-low.png",
+        "imageHighSrc": "cards/ex8-070-high.png",
+        "attacks": [
+            {
+                "name": "Surprise",
+                "damage": null
+            },
+            {
+                "name": "Sharp Fang",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6513",
+        "externalId": "ex8-69",
+        "localId": "069",
+        "setCode": "ex8",
+        "cardNumber": "69/107",
+        "cardName": "Phanpy",
+        "fullDisplayName": "Phanpy 69/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            231
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/ex8-069-low.png",
+        "imageHighSrc": "cards/ex8-069-high.png",
+        "attacks": [
+            {
+                "name": "Corkscrew Punch",
+                "damage": "10"
+            },
+            {
+                "name": "Double Spin",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6508",
+        "externalId": "ex8-68",
+        "localId": "068",
+        "setCode": "ex8",
+        "cardNumber": "68/107",
+        "cardName": "Numel",
+        "fullDisplayName": "Numel 68/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            322
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex8-068-low.png",
+        "imageHighSrc": "cards/ex8-068-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6505",
+        "externalId": "ex8-67",
+        "localId": "067",
+        "setCode": "ex8",
+        "cardNumber": "67/107",
+        "cardName": "Nincada",
+        "fullDisplayName": "Nincada 67/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            290
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/ex8-067-low.png",
+        "imageHighSrc": "cards/ex8-067-high.png",
+        "attacks": [
+            {
+                "name": "Dig Under",
+                "damage": null
+            },
+            {
+                "name": "Scratch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6500",
+        "externalId": "ex8-66",
+        "localId": "066",
+        "setCode": "ex8",
+        "cardNumber": "66/107",
+        "cardName": "Natu",
+        "fullDisplayName": "Natu 66/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            177
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/ex8-066-low.png",
+        "imageHighSrc": "cards/ex8-066-high.png",
+        "attacks": [
+            {
+                "name": "Razor Wind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6493",
+        "externalId": "ex8-65",
+        "localId": "065",
+        "setCode": "ex8",
+        "cardNumber": "65/107",
+        "cardName": "Makuhita",
+        "fullDisplayName": "Makuhita 65/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            296
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Asuka Iwashita",
+        "imageLowSrc": "cards/ex8-065-low.png",
+        "imageHighSrc": "cards/ex8-065-high.png",
+        "attacks": [
+            {
+                "name": "Thrust",
+                "damage": "10"
+            },
+            {
+                "name": "Rising Lunge",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6488",
+        "externalId": "ex8-64",
+        "localId": "064",
+        "setCode": "ex8",
+        "cardNumber": "64/107",
+        "cardName": "Magikarp",
+        "fullDisplayName": "Magikarp 64/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            129
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-064-low.png",
+        "imageHighSrc": "cards/ex8-064-high.png",
+        "attacks": [
+            {
+                "name": "Leap Out",
+                "damage": null
+            },
+            {
+                "name": "Rage",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6483",
+        "externalId": "ex8-63",
+        "localId": "063",
+        "setCode": "ex8",
+        "cardNumber": "63/107",
+        "cardName": "Lotad",
+        "fullDisplayName": "Lotad 63/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            270
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-063-low.png",
+        "imageHighSrc": "cards/ex8-063-high.png",
+        "attacks": [
+            {
+                "name": "Rain Splash",
+                "damage": "10"
+            },
+            {
+                "name": "Aqua Wave",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6478",
+        "externalId": "ex8-62",
+        "localId": "062",
+        "setCode": "ex8",
+        "cardNumber": "62/107",
+        "cardName": "Koffing",
+        "fullDisplayName": "Koffing 62/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            109
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-062-low.png",
+        "imageHighSrc": "cards/ex8-062-high.png",
+        "attacks": [
+            {
+                "name": "Smog",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6473",
+        "externalId": "ex8-61",
+        "localId": "061",
+        "setCode": "ex8",
+        "cardNumber": "61/107",
+        "cardName": "Goldeen",
+        "fullDisplayName": "Goldeen 61/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            118
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex8-061-low.png",
+        "imageHighSrc": "cards/ex8-061-high.png",
+        "attacks": [
+            {
+                "name": "Supersonic",
+                "damage": null
+            },
+            {
+                "name": "Waterfall",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6469",
+        "externalId": "ex8-60",
+        "localId": "060",
+        "setCode": "ex8",
+        "cardNumber": "60/107",
+        "cardName": "Electrike",
+        "fullDisplayName": "Electrike 60/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            309
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hiroki Fuchino",
+        "imageLowSrc": "cards/ex8-060-low.png",
+        "imageHighSrc": "cards/ex8-060-high.png",
+        "attacks": [
+            {
+                "name": "Recharge",
+                "damage": null
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6463",
+        "externalId": "ex8-59",
+        "localId": "059",
+        "setCode": "ex8",
+        "cardNumber": "59/107",
+        "cardName": "Electrike",
+        "fullDisplayName": "Electrike 59/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            309
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/ex8-059-low.png",
+        "imageHighSrc": "cards/ex8-059-high.png",
+        "attacks": [
+            {
+                "name": "High Voltage",
+                "damage": null
+            },
+            {
+                "name": "Gnaw",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6458",
+        "externalId": "ex8-58",
+        "localId": "058",
+        "setCode": "ex8",
+        "cardNumber": "58/107",
+        "cardName": "Duskull",
+        "fullDisplayName": "Duskull 58/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            355
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomoko Wakai",
+        "imageLowSrc": "cards/ex8-058-low.png",
+        "imageHighSrc": "cards/ex8-058-high.png",
+        "attacks": [
+            {
+                "name": "Paralyzing Gaze",
+                "damage": null
+            },
+            {
+                "name": "Will-o'-the-wisp",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6453",
+        "externalId": "ex8-57",
+        "localId": "057",
+        "setCode": "ex8",
+        "cardNumber": "57/107",
+        "cardName": "Corphish",
+        "fullDisplayName": "Corphish 57/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            341
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takao Unno",
+        "imageLowSrc": "cards/ex8-057-low.png",
+        "imageHighSrc": "cards/ex8-057-high.png",
+        "attacks": [
+            {
+                "name": "Double Chop",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6448",
+        "externalId": "ex8-56",
+        "localId": "056",
+        "setCode": "ex8",
+        "cardNumber": "56/107",
+        "cardName": "Carvanha",
+        "fullDisplayName": "Carvanha 56/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            318
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex8-056-low.png",
+        "imageHighSrc": "cards/ex8-056-high.png",
+        "attacks": [
+            {
+                "name": "Sharp Fin",
+                "damage": "10"
+            },
+            {
+                "name": "Rage",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6443",
+        "externalId": "ex8-55",
+        "localId": "055",
+        "setCode": "ex8",
+        "cardNumber": "55/107",
+        "cardName": "Beldum",
+        "fullDisplayName": "Beldum 55/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            374
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-055-low.png",
+        "imageHighSrc": "cards/ex8-055-high.png",
+        "attacks": [
+            {
+                "name": "Flip Over",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6438",
+        "externalId": "ex8-54",
+        "localId": "054",
+        "setCode": "ex8",
+        "cardNumber": "54/107",
+        "cardName": "Barboach",
+        "fullDisplayName": "Barboach 54/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            339
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/ex8-054-low.png",
+        "imageHighSrc": "cards/ex8-054-high.png",
+        "attacks": [
+            {
+                "name": "Amnesia",
+                "damage": null
+            },
+            {
+                "name": "Tackle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6434",
+        "externalId": "ex8-53",
+        "localId": "053",
+        "setCode": "ex8",
+        "cardNumber": "53/107",
+        "cardName": "Baltoy",
+        "fullDisplayName": "Baltoy 53/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            343
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kenkichi Toyama",
+        "imageLowSrc": "cards/ex8-053-low.png",
+        "imageHighSrc": "cards/ex8-053-high.png",
+        "attacks": [
+            {
+                "name": "Spinning Attack",
+                "damage": "10"
+            },
+            {
+                "name": "Selfdestruct",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6430",
+        "externalId": "ex8-52",
+        "localId": "052",
+        "setCode": "ex8",
+        "cardNumber": "52/107",
+        "cardName": "Bagon",
+        "fullDisplayName": "Bagon 52/107 Deoxys",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            371
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takao Unno",
+        "imageLowSrc": "cards/ex8-052-low.png",
+        "imageHighSrc": "cards/ex8-052-high.png",
+        "attacks": [
+            {
+                "name": "Singe",
+                "damage": null
+            },
+            {
+                "name": "Doubleslap",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6424",
+        "externalId": "ex8-51",
+        "localId": "051",
+        "setCode": "ex8",
+        "cardNumber": "51/107",
+        "cardName": "Weezing",
+        "fullDisplayName": "Weezing 51/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            110
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-051-low.png",
+        "imageHighSrc": "cards/ex8-051-high.png",
+        "attacks": [
+            {
+                "name": "Liability",
+                "damage": null
+            },
+            {
+                "name": "Smogscreen",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6419",
+        "externalId": "ex8-50",
+        "localId": "050",
+        "setCode": "ex8",
+        "cardNumber": "50/107",
+        "cardName": "Vigoroth",
+        "fullDisplayName": "Vigoroth 50/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            288
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-050-low.png",
+        "imageHighSrc": "cards/ex8-050-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6414",
+        "externalId": "ex8-49",
+        "localId": "049",
+        "setCode": "ex8",
+        "cardNumber": "49/107",
+        "cardName": "Swellow",
+        "fullDisplayName": "Swellow 49/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            277
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex8-049-low.png",
+        "imageHighSrc": "cards/ex8-049-high.png",
+        "attacks": [
+            {
+                "name": "Mid-air Crush",
+                "damage": null
+            },
+            {
+                "name": "Nosedive",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6409",
+        "externalId": "ex8-48",
+        "localId": "048",
+        "setCode": "ex8",
+        "cardNumber": "48/107",
+        "cardName": "Starmie",
+        "fullDisplayName": "Starmie 48/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            121
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/ex8-048-low.png",
+        "imageHighSrc": "cards/ex8-048-high.png",
+        "attacks": [
+            {
+                "name": "Energy Flip",
+                "damage": null
+            },
+            {
+                "name": "Psychic Boom",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6404",
+        "externalId": "ex8-47",
+        "localId": "047",
+        "setCode": "ex8",
+        "cardNumber": "47/107",
+        "cardName": "Solrock",
+        "fullDisplayName": "Solrock 47/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            338
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex8-047-low.png",
+        "imageHighSrc": "cards/ex8-047-high.png",
+        "attacks": [
+            {
+                "name": "Scorching Light",
+                "damage": null
+            },
+            {
+                "name": "Reflected Beam",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6399",
+        "externalId": "ex8-46",
+        "localId": "046",
+        "setCode": "ex8",
+        "cardNumber": "46/107",
+        "cardName": "Silcoon",
+        "fullDisplayName": "Silcoon 46/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            266
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex8-046-low.png",
+        "imageHighSrc": "cards/ex8-046-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            },
+            {
+                "name": "Advanced Armor",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6394",
+        "externalId": "ex8-45",
+        "localId": "045",
+        "setCode": "ex8",
+        "cardNumber": "45/107",
+        "cardName": "Shelgon",
+        "fullDisplayName": "Shelgon 45/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            372
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex8-045-low.png",
+        "imageHighSrc": "cards/ex8-045-high.png",
+        "attacks": [
+            {
+                "name": "Rock Smash",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6390",
+        "externalId": "ex8-44",
+        "localId": "044",
+        "setCode": "ex8",
+        "cardNumber": "44/107",
+        "cardName": "Plusle",
+        "fullDisplayName": "Plusle 44/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            311
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex8-044-low.png",
+        "imageHighSrc": "cards/ex8-044-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Positive Spark",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6385",
+        "externalId": "ex8-43",
+        "localId": "043",
+        "setCode": "ex8",
+        "cardNumber": "43/107",
+        "cardName": "Nuzleaf",
+        "fullDisplayName": "Nuzleaf 43/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            274
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex8-043-low.png",
+        "imageHighSrc": "cards/ex8-043-high.png",
+        "attacks": [
+            {
+                "name": "Eerie Light",
+                "damage": null
+            },
+            {
+                "name": "One-Two Strike",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6380",
+        "externalId": "ex8-42",
+        "localId": "042",
+        "setCode": "ex8",
+        "cardNumber": "42/107",
+        "cardName": "Nosepass",
+        "fullDisplayName": "Nosepass 42/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            299
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/ex8-042-low.png",
+        "imageHighSrc": "cards/ex8-042-high.png",
+        "attacks": [
+            {
+                "name": "Sharpen",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6376",
+        "externalId": "ex8-41",
+        "localId": "041",
+        "setCode": "ex8",
+        "cardNumber": "41/107",
+        "cardName": "Minun",
+        "fullDisplayName": "Minun 41/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            312
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex8-041-low.png",
+        "imageHighSrc": "cards/ex8-041-high.png",
+        "attacks": [
+            {
+                "name": "Sniff Out",
+                "damage": null
+            },
+            {
+                "name": "Negative Spark",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6371",
+        "externalId": "ex8-40",
+        "localId": "040",
+        "setCode": "ex8",
+        "cardNumber": "40/107",
+        "cardName": "Metang",
+        "fullDisplayName": "Metang 40/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            375
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-040-low.png",
+        "imageHighSrc": "cards/ex8-040-high.png",
+        "attacks": [
+            {
+                "name": "Psychic Boom",
+                "damage": "10+"
+            },
+            {
+                "name": "Quick Blow",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6366",
+        "externalId": "ex8-39",
+        "localId": "039",
+        "setCode": "ex8",
+        "cardNumber": "39/107",
+        "cardName": "Masquerain",
+        "fullDisplayName": "Masquerain 39/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            284
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-039-low.png",
+        "imageHighSrc": "cards/ex8-039-high.png",
+        "attacks": [
+            {
+                "name": "Stun Spore",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6361",
+        "externalId": "ex8-38",
+        "localId": "038",
+        "setCode": "ex8",
+        "cardNumber": "38/107",
+        "cardName": "Manectric",
+        "fullDisplayName": "Manectric 38/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            310
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex8-038-low.png",
+        "imageHighSrc": "cards/ex8-038-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Spear",
+                "damage": null
+            },
+            {
+                "name": "Magnetic Tackle",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6357",
+        "externalId": "ex8-37",
+        "localId": "037",
+        "setCode": "ex8",
+        "cardNumber": "37/107",
+        "cardName": "Magcargo",
+        "fullDisplayName": "Magcargo 37/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            219
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex8-037-low.png",
+        "imageHighSrc": "cards/ex8-037-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            },
+            {
+                "name": "Burning Ball",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6352",
+        "externalId": "ex8-36",
+        "localId": "036",
+        "setCode": "ex8",
+        "cardNumber": "36/107",
+        "cardName": "Lunatone",
+        "fullDisplayName": "Lunatone 36/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            337
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex8-036-low.png",
+        "imageHighSrc": "cards/ex8-036-high.png",
+        "attacks": [
+            {
+                "name": "Foresight",
+                "damage": null
+            },
+            {
+                "name": "Target Beam",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6347",
+        "externalId": "ex8-35",
+        "localId": "035",
+        "setCode": "ex8",
+        "cardNumber": "35/107",
+        "cardName": "Lotad",
+        "fullDisplayName": "Lotad 35/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            270
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex8-035-low.png",
+        "imageHighSrc": "cards/ex8-035-high.png",
+        "attacks": [
+            {
+                "name": "Surprise",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6342",
+        "externalId": "ex8-34",
+        "localId": "034",
+        "setCode": "ex8",
+        "cardNumber": "34/107",
+        "cardName": "Lombre",
+        "fullDisplayName": "Lombre 34/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            271
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-034-low.png",
+        "imageHighSrc": "cards/ex8-034-high.png",
+        "attacks": [
+            {
+                "name": "Blot",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6337",
+        "externalId": "ex8-33",
+        "localId": "033",
+        "setCode": "ex8",
+        "cardNumber": "33/107",
+        "cardName": "Lombre",
+        "fullDisplayName": "Lombre 33/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            271
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex8-033-low.png",
+        "imageHighSrc": "cards/ex8-033-high.png",
+        "attacks": [
+            {
+                "name": "Ambush",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6333",
+        "externalId": "ex8-32",
+        "localId": "032",
+        "setCode": "ex8",
+        "cardNumber": "32/107",
+        "cardName": "Grumpig",
+        "fullDisplayName": "Grumpig 32/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            326
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-032-low.png",
+        "imageHighSrc": "cards/ex8-032-high.png",
+        "attacks": [
+            {
+                "name": "Hypnoblast",
+                "damage": "20"
+            },
+            {
+                "name": "Extra Ball",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6328",
+        "externalId": "ex8-31",
+        "localId": "031",
+        "setCode": "ex8",
+        "cardNumber": "31/107",
+        "cardName": "Golbat",
+        "fullDisplayName": "Golbat 31/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            42
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sachiko Adachi",
+        "imageLowSrc": "cards/ex8-031-low.png",
+        "imageHighSrc": "cards/ex8-031-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Drain",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6323",
+        "externalId": "ex8-30",
+        "localId": "030",
+        "setCode": "ex8",
+        "cardNumber": "30/107",
+        "cardName": "Donphan",
+        "fullDisplayName": "Donphan 30/107 Deoxys",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            232
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/ex8-030-low.png",
+        "imageHighSrc": "cards/ex8-030-high.png",
+        "attacks": [
+            {
+                "name": "Spinning Horn",
+                "damage": null
+            },
+            {
+                "name": "Rock Hurl",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6318",
+        "externalId": "ex8-29",
+        "localId": "029",
+        "setCode": "ex8",
+        "cardNumber": "29/107",
+        "cardName": "Xatu",
+        "fullDisplayName": "Xatu 29/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            178
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/ex8-029-low.png",
+        "imageHighSrc": "cards/ex8-029-high.png",
+        "attacks": [
+            {
+                "name": "Dazzle Dance",
+                "damage": null
+            },
+            {
+                "name": "Psyloop",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6313",
+        "externalId": "ex8-28",
+        "localId": "028",
+        "setCode": "ex8",
+        "cardNumber": "28/107",
+        "cardName": "Whiscash",
+        "fullDisplayName": "Whiscash 28/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            340
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/ex8-028-low.png",
+        "imageHighSrc": "cards/ex8-028-high.png",
+        "attacks": [
+            {
+                "name": "Raging Tremble",
+                "damage": null
+            },
+            {
+                "name": "Dwindling Wave",
+                "damage": "70-"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6308",
+        "externalId": "ex8-27",
+        "localId": "027",
+        "setCode": "ex8",
+        "cardNumber": "27/107",
+        "cardName": "Tropius",
+        "fullDisplayName": "Tropius 27/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            357
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/ex8-027-low.png",
+        "imageHighSrc": "cards/ex8-027-high.png",
+        "attacks": [
+            {
+                "name": "Miracle Blow",
+                "damage": null
+            },
+            {
+                "name": "Stomp",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6303",
+        "externalId": "ex8-26",
+        "localId": "026",
+        "setCode": "ex8",
+        "cardNumber": "26/107",
+        "cardName": "Skarmory",
+        "fullDisplayName": "Skarmory 26/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            227
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex8-026-low.png",
+        "imageHighSrc": "cards/ex8-026-high.png",
+        "attacks": [
+            {
+                "name": "Spearhead",
+                "damage": null
+            },
+            {
+                "name": "Heavy Metal",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6297",
+        "externalId": "ex8-25",
+        "localId": "025",
+        "setCode": "ex8",
+        "cardNumber": "25/107",
+        "cardName": "Shiftry",
+        "fullDisplayName": "Shiftry 25/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            275
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex8-025-low.png",
+        "imageHighSrc": "cards/ex8-025-high.png",
+        "attacks": [
+            {
+                "name": "Stadium Power",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6292",
+        "externalId": "ex8-24",
+        "localId": "024",
+        "setCode": "ex8",
+        "cardNumber": "24/107",
+        "cardName": "Seaking",
+        "fullDisplayName": "Seaking 24/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            119
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex8-024-low.png",
+        "imageHighSrc": "cards/ex8-024-high.png",
+        "attacks": [
+            {
+                "name": "Triple Breach",
+                "damage": null
+            },
+            {
+                "name": "Rend",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6287",
+        "externalId": "ex8-23",
+        "localId": "023",
+        "setCode": "ex8",
+        "cardNumber": "23/107",
+        "cardName": "Sableye",
+        "fullDisplayName": "Sableye 23/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            302
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex8-023-low.png",
+        "imageHighSrc": "cards/ex8-023-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "10"
+            },
+            {
+                "name": "Limitation",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6281",
+        "externalId": "ex8-22",
+        "localId": "022",
+        "setCode": "ex8",
+        "cardNumber": "22/107",
+        "cardName": "Rayquaza",
+        "fullDisplayName": "Rayquaza 22/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            384
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hiromichi Sugiyama",
+        "imageLowSrc": "cards/ex8-022-low.png",
+        "imageHighSrc": "cards/ex8-022-high.png",
+        "attacks": [
+            {
+                "name": "Tumbling Attack",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6276",
+        "externalId": "ex8-21",
+        "localId": "021",
+        "setCode": "ex8",
+        "cardNumber": "21/107",
+        "cardName": "Pelipper",
+        "fullDisplayName": "Pelipper 21/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            279
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex8-021-low.png",
+        "imageHighSrc": "cards/ex8-021-high.png",
+        "attacks": [
+            {
+                "name": "Bay Dance",
+                "damage": "10"
+            },
+            {
+                "name": "Aqua Sonic",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6272",
+        "externalId": "ex8-20",
+        "localId": "020",
+        "setCode": "ex8",
+        "cardNumber": "20/107",
+        "cardName": "Magcargo",
+        "fullDisplayName": "Magcargo 20/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            219
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex8-020-low.png",
+        "imageHighSrc": "cards/ex8-020-high.png",
+        "attacks": [
+            {
+                "name": "Knock Over",
+                "damage": "10"
+            },
+            {
+                "name": "Combustion",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6267",
+        "externalId": "ex8-19",
+        "localId": "019",
+        "setCode": "ex8",
+        "cardNumber": "19/107",
+        "cardName": "Ludicolo",
+        "fullDisplayName": "Ludicolo 19/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            272
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex8-019-low.png",
+        "imageHighSrc": "cards/ex8-019-high.png",
+        "attacks": [
+            {
+                "name": "Water Punch",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6262",
+        "externalId": "ex8-18",
+        "localId": "018",
+        "setCode": "ex8",
+        "cardNumber": "18/107",
+        "cardName": "Deoxys",
+        "fullDisplayName": "Deoxys 18/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hironobu Yoshida",
+        "imageLowSrc": "cards/ex8-018-low.png",
+        "imageHighSrc": "cards/ex8-018-high.png",
+        "attacks": [
+            {
+                "name": "Barrier Attack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6257",
+        "externalId": "ex8-17",
+        "localId": "017",
+        "setCode": "ex8",
+        "cardNumber": "17/107",
+        "cardName": "Deoxys",
+        "fullDisplayName": "Deoxys 17/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hironobu Yoshida",
+        "imageLowSrc": "cards/ex8-017-low.png",
+        "imageHighSrc": "cards/ex8-017-high.png",
+        "attacks": [
+            {
+                "name": "Energy Crush",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6252",
+        "externalId": "ex8-16",
+        "localId": "016",
+        "setCode": "ex8",
+        "cardNumber": "16/107",
+        "cardName": "Deoxys",
+        "fullDisplayName": "Deoxys 16/107 Deoxys",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            386
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hironobu Yoshida",
+        "imageLowSrc": "cards/ex8-016-low.png",
+        "imageHighSrc": "cards/ex8-016-high.png",
+        "attacks": [
+            {
+                "name": "Link Blast",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6247",
+        "externalId": "ex8-15",
+        "localId": "015",
+        "setCode": "ex8",
+        "cardNumber": "15/107",
+        "cardName": "Slaking",
+        "fullDisplayName": "Slaking 15/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            289
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex8-015-low.png",
+        "imageHighSrc": "cards/ex8-015-high.png",
+        "attacks": [
+            {
+                "name": "Amnesia",
+                "damage": "20"
+            },
+            {
+                "name": "Lazy Headbutt",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6242",
+        "externalId": "ex8-14",
+        "localId": "014",
+        "setCode": "ex8",
+        "cardNumber": "14/107",
+        "cardName": "Shedinja",
+        "fullDisplayName": "Shedinja 14/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            292
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/ex8-014-low.png",
+        "imageHighSrc": "cards/ex8-014-high.png",
+        "attacks": [
+            {
+                "name": "Extra Curse",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6237",
+        "externalId": "ex8-13",
+        "localId": "013",
+        "setCode": "ex8",
+        "cardNumber": "13/107",
+        "cardName": "Ninjask",
+        "fullDisplayName": "Ninjask 13/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            291
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Katsura Tabata",
+        "imageLowSrc": "cards/ex8-013-low.png",
+        "imageHighSrc": "cards/ex8-013-high.png",
+        "attacks": [
+            {
+                "name": "Swords Dance",
+                "damage": null
+            },
+            {
+                "name": "Slash",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6233",
+        "externalId": "ex8-12",
+        "localId": "012",
+        "setCode": "ex8",
+        "cardNumber": "12/107",
+        "cardName": "Mightyena",
+        "fullDisplayName": "Mightyena 12/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            262
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/ex8-012-low.png",
+        "imageHighSrc": "cards/ex8-012-high.png",
+        "attacks": [
+            {
+                "name": "Seek Out",
+                "damage": null
+            },
+            {
+                "name": "Pull Away",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6228",
+        "externalId": "ex8-11",
+        "localId": "011",
+        "setCode": "ex8",
+        "cardNumber": "11/107",
+        "cardName": "Metagross",
+        "fullDisplayName": "Metagross 11/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            376
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-011-low.png",
+        "imageHighSrc": "cards/ex8-011-high.png",
+        "attacks": [
+            {
+                "name": "Link Blast",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6224",
+        "externalId": "ex8-10",
+        "localId": "010",
+        "setCode": "ex8",
+        "cardNumber": "10/107",
+        "cardName": "Ludicolo",
+        "fullDisplayName": "Ludicolo 10/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            272
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex8-010-low.png",
+        "imageHighSrc": "cards/ex8-010-high.png",
+        "attacks": [
+            {
+                "name": "Healing Steps",
+                "damage": "30"
+            },
+            {
+                "name": "Circular Steps",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6219",
+        "externalId": "ex8-9",
+        "localId": "009",
+        "setCode": "ex8",
+        "cardNumber": "9/107",
+        "cardName": "Jirachi",
+        "fullDisplayName": "Jirachi 9/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            385
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/ex8-009-low.png",
+        "imageHighSrc": "cards/ex8-009-high.png",
+        "attacks": [
+            {
+                "name": "Metallic Blow",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6214",
+        "externalId": "ex8-8",
+        "localId": "008",
+        "setCode": "ex8",
+        "cardNumber": "8/107",
+        "cardName": "Gyarados",
+        "fullDisplayName": "Gyarados 8/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            130
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hisao Nakamura",
+        "imageLowSrc": "cards/ex8-008-low.png",
+        "imageHighSrc": "cards/ex8-008-high.png",
+        "attacks": [
+            {
+                "name": "Dragon Spark",
+                "damage": null
+            },
+            {
+                "name": "Full Retaliation",
+                "damage": "20×"
+            },
+            {
+                "name": "Pulverize",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6209",
+        "externalId": "ex8-7",
+        "localId": "007",
+        "setCode": "ex8",
+        "cardNumber": "7/107",
+        "cardName": "Dusclops",
+        "fullDisplayName": "Dusclops 7/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            356
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomoko Wakai",
+        "imageLowSrc": "cards/ex8-007-low.png",
+        "imageHighSrc": "cards/ex8-007-high.png",
+        "attacks": [
+            {
+                "name": "Psychic Removal",
+                "damage": "20"
+            },
+            {
+                "name": "Powerful Hand",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6205",
+        "externalId": "ex8-6",
+        "localId": "006",
+        "setCode": "ex8",
+        "cardNumber": "6/107",
+        "cardName": "Crawdaunt",
+        "fullDisplayName": "Crawdaunt 6/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            342
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomoko Wakai",
+        "imageLowSrc": "cards/ex8-006-low.png",
+        "imageHighSrc": "cards/ex8-006-high.png",
+        "attacks": [
+            {
+                "name": "Bubblebeam",
+                "damage": "20"
+            },
+            {
+                "name": "Cross-Cut",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6199",
+        "externalId": "ex8-5",
+        "localId": "005",
+        "setCode": "ex8",
+        "cardNumber": "5/107",
+        "cardName": "Claydol",
+        "fullDisplayName": "Claydol 5/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            344
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex8-005-low.png",
+        "imageHighSrc": "cards/ex8-005-high.png",
+        "attacks": [
+            {
+                "name": "Ancient Mantra",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6194",
+        "externalId": "ex8-4",
+        "localId": "004",
+        "setCode": "ex8",
+        "cardNumber": "4/107",
+        "cardName": "Camerupt",
+        "fullDisplayName": "Camerupt 4/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            323
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex8-004-low.png",
+        "imageHighSrc": "cards/ex8-004-high.png",
+        "attacks": [
+            {
+                "name": "Back Burner",
+                "damage": null
+            },
+            {
+                "name": "Split Bomb",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6188",
+        "externalId": "ex8-3",
+        "localId": "003",
+        "setCode": "ex8",
+        "cardNumber": "3/107",
+        "cardName": "Breloom",
+        "fullDisplayName": "Breloom 3/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            286
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex8-003-low.png",
+        "imageHighSrc": "cards/ex8-003-high.png",
+        "attacks": [
+            {
+                "name": "Leaf Poison",
+                "damage": "20"
+            },
+            {
+                "name": "Hustle Punch",
+                "damage": "70-"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6184",
+        "externalId": "ex8-2",
+        "localId": "002",
+        "setCode": "ex8",
+        "cardNumber": "2/107",
+        "cardName": "Beautifly",
+        "fullDisplayName": "Beautifly 2/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            267
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex8-002-low.png",
+        "imageHighSrc": "cards/ex8-002-high.png",
+        "attacks": [
+            {
+                "name": "Luring Antenna",
+                "damage": "20"
+            },
+            {
+                "name": "Cutting Wind",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6181",
+        "externalId": "ex8-1",
+        "localId": "001",
+        "setCode": "ex8",
+        "cardNumber": "1/107",
+        "cardName": "Altaria",
+        "fullDisplayName": "Altaria 1/107 Deoxys",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            334
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex8-001-low.png",
+        "imageHighSrc": "cards/ex8-001-high.png",
+        "attacks": [
+            {
+                "name": "Double Wing Attack",
+                "damage": null
+            },
+            {
+                "name": "Dive",
+                "damage": "50"
+            }
+        ]
+    }
 ]

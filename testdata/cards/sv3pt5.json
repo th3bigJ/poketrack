@@ -1,0 +1,6453 @@
+[
+    {
+        "masterCardId": "14099",
+        "externalId": "sv3pt5-207",
+        "localId": "207",
+        "setCode": "sv3pt5",
+        "cardNumber": "207/165",
+        "cardName": "Basic Psychic Energy",
+        "fullDisplayName": "Basic Psychic Energy 207/165 151",
+        "rarity": "Hyper Rare",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Basic",
+        "regulationMark": null,
+        "artist": null,
+        "imageLowSrc": "cards/sv3pt5-207-low.png",
+        "imageHighSrc": "cards/sv3pt5-207-high.png"
+    },
+    {
+        "masterCardId": "14089",
+        "externalId": "sv3pt5-206",
+        "localId": "206",
+        "setCode": "sv3pt5",
+        "cardNumber": "206/165",
+        "cardName": "Switch",
+        "fullDisplayName": "Switch 206/165 151",
+        "rarity": "Hyper Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Studio Bora Inc.",
+        "imageLowSrc": "cards/sv3pt5-206-low.png",
+        "imageHighSrc": "cards/sv3pt5-206-high.png",
+        "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "14081",
+        "externalId": "sv3pt5-205",
+        "localId": "205",
+        "setCode": "sv3pt5",
+        "cardNumber": "205/165",
+        "cardName": "Mew ex",
+        "fullDisplayName": "Mew ex 205/165 151",
+        "rarity": "Hyper Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aky CG Works",
+        "imageLowSrc": "cards/sv3pt5-205-low.png",
+        "imageHighSrc": "cards/sv3pt5-205-high.png",
+        "attacks": [
+            {
+                "name": "Genome Hacking",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14074",
+        "externalId": "sv3pt5-204",
+        "localId": "204",
+        "setCode": "sv3pt5",
+        "cardNumber": "204/165",
+        "cardName": "Giovanni's Charisma",
+        "fullDisplayName": "Giovanni's Charisma 204/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hideki Ishikawa",
+        "imageLowSrc": "cards/sv3pt5-204-low.png",
+        "imageHighSrc": "cards/sv3pt5-204-high.png",
+        "rules": "Put an Energy attached to your opponent's Active Pokémon into their hand. If you do, attach an Energy card from your hand to your Active Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "14066",
+        "externalId": "sv3pt5-203",
+        "localId": "203",
+        "setCode": "sv3pt5",
+        "cardNumber": "203/165",
+        "cardName": "Erika's Invitation",
+        "fullDisplayName": "Erika's Invitation 203/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Cona Nitanda",
+        "imageLowSrc": "cards/sv3pt5-203-low.png",
+        "imageHighSrc": "cards/sv3pt5-203-high.png",
+        "rules": "Your opponent reveals their hand, and you put a Basic Pokémon you find there onto your opponent's Bench. If you put a Pokémon onto their Bench in this way, switch in that Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "14057",
+        "externalId": "sv3pt5-202",
+        "localId": "202",
+        "setCode": "sv3pt5",
+        "cardNumber": "202/165",
+        "cardName": "Zapdos ex",
+        "fullDisplayName": "Zapdos ex 202/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shiburingaru",
+        "imageLowSrc": "cards/sv3pt5-202-low.png",
+        "imageHighSrc": "cards/sv3pt5-202-high.png",
+        "attacks": [
+            {
+                "name": "Multishot Lightning",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14048",
+        "externalId": "sv3pt5-201",
+        "localId": "201",
+        "setCode": "sv3pt5",
+        "cardNumber": "201/165",
+        "cardName": "Alakazam ex",
+        "fullDisplayName": "Alakazam ex 201/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 310,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            65
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shinya Komatsu",
+        "imageLowSrc": "cards/sv3pt5-201-low.png",
+        "imageHighSrc": "cards/sv3pt5-201-high.png",
+        "attacks": [
+            {
+                "name": "Mind Jack",
+                "damage": "90+"
+            },
+            {
+                "name": "Dimensional Hand",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14040",
+        "externalId": "sv3pt5-200",
+        "localId": "200",
+        "setCode": "sv3pt5",
+        "cardNumber": "200/165",
+        "cardName": "Blastoise ex",
+        "fullDisplayName": "Blastoise ex 200/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-200-low.png",
+        "imageHighSrc": "cards/sv3pt5-200-high.png",
+        "attacks": [
+            {
+                "name": "Twin Cannons",
+                "damage": "140×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14032",
+        "externalId": "sv3pt5-199",
+        "localId": "199",
+        "setCode": "sv3pt5",
+        "cardNumber": "199/165",
+        "cardName": "Charizard ex",
+        "fullDisplayName": "Charizard ex 199/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/sv3pt5-199-low.png",
+        "imageHighSrc": "cards/sv3pt5-199-high.png",
+        "attacks": [
+            {
+                "name": "Brave Wing",
+                "damage": "60+"
+            },
+            {
+                "name": "Explosive Vortex",
+                "damage": "330"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14022",
+        "externalId": "sv3pt5-198",
+        "localId": "198",
+        "setCode": "sv3pt5",
+        "cardNumber": "198/165",
+        "cardName": "Venusaur ex",
+        "fullDisplayName": "Venusaur ex 198/165 151",
+        "rarity": "Special Illustration Rare",
+        "category": "Pokémon",
+        "hp": 340,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yoriyuki Ikegami",
+        "imageLowSrc": "cards/sv3pt5-198-low.png",
+        "imageHighSrc": "cards/sv3pt5-198-high.png",
+        "attacks": [
+            {
+                "name": "Dangerous Toxwhip",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "14010",
+        "externalId": "sv3pt5-197",
+        "localId": "197",
+        "setCode": "sv3pt5",
+        "cardNumber": "197/165",
+        "cardName": "Giovanni's Charisma",
+        "fullDisplayName": "Giovanni's Charisma 197/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "hncl",
+        "imageLowSrc": "cards/sv3pt5-197-low.png",
+        "imageHighSrc": "cards/sv3pt5-197-high.png",
+        "rules": "Put an Energy attached to your opponent's Active Pokémon into their hand. If you do, attach an Energy card from your hand to your Active Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13999",
+        "externalId": "sv3pt5-196",
+        "localId": "196",
+        "setCode": "sv3pt5",
+        "cardNumber": "196/165",
+        "cardName": "Erika's Invitation",
+        "fullDisplayName": "Erika's Invitation 196/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "saino misaki",
+        "imageLowSrc": "cards/sv3pt5-196-low.png",
+        "imageHighSrc": "cards/sv3pt5-196-high.png",
+        "rules": "Your opponent reveals their hand, and you put a Basic Pokémon you find there onto your opponent's Bench. If you put a Pokémon onto their Bench in this way, switch in that Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13990",
+        "externalId": "sv3pt5-195",
+        "localId": "195",
+        "setCode": "sv3pt5",
+        "cardNumber": "195/165",
+        "cardName": "Daisy's Help",
+        "fullDisplayName": "Daisy's Help 195/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Fumie Kittaka",
+        "imageLowSrc": "cards/sv3pt5-195-low.png",
+        "imageHighSrc": "cards/sv3pt5-195-high.png",
+        "rules": "Draw 2 cards. Look at your face-down Prize cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13982",
+        "externalId": "sv3pt5-194",
+        "localId": "194",
+        "setCode": "sv3pt5",
+        "cardNumber": "194/165",
+        "cardName": "Bill's Transfer",
+        "fullDisplayName": "Bill's Transfer 194/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GIDORA",
+        "imageLowSrc": "cards/sv3pt5-194-low.png",
+        "imageHighSrc": "cards/sv3pt5-194-high.png",
+        "rules": "Look at the top 8 cards of your deck. You may reveal any number of Pokémon you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13970",
+        "externalId": "sv3pt5-193",
+        "localId": "193",
+        "setCode": "sv3pt5",
+        "cardNumber": "193/165",
+        "cardName": "Mew ex",
+        "fullDisplayName": "Mew ex 193/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aky CG Works",
+        "imageLowSrc": "cards/sv3pt5-193-low.png",
+        "imageHighSrc": "cards/sv3pt5-193-high.png",
+        "attacks": [
+            {
+                "name": "Genome Hacking",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13962",
+        "externalId": "sv3pt5-192",
+        "localId": "192",
+        "setCode": "sv3pt5",
+        "cardNumber": "192/165",
+        "cardName": "Zapdos ex",
+        "fullDisplayName": "Zapdos ex 192/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "takuyoa",
+        "imageLowSrc": "cards/sv3pt5-192-low.png",
+        "imageHighSrc": "cards/sv3pt5-192-high.png",
+        "attacks": [
+            {
+                "name": "Multishot Lightning",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13953",
+        "externalId": "sv3pt5-191",
+        "localId": "191",
+        "setCode": "sv3pt5",
+        "cardNumber": "191/165",
+        "cardName": "Jynx ex",
+        "fullDisplayName": "Jynx ex 191/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            124
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/sv3pt5-191-low.png",
+        "imageHighSrc": "cards/sv3pt5-191-high.png",
+        "attacks": [
+            {
+                "name": "Heart-Stopping Kiss",
+                "damage": null
+            },
+            {
+                "name": "Icy Wind",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13944",
+        "externalId": "sv3pt5-190",
+        "localId": "190",
+        "setCode": "sv3pt5",
+        "cardNumber": "190/165",
+        "cardName": "Kangaskhan ex",
+        "fullDisplayName": "Kangaskhan ex 190/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            115
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/sv3pt5-190-low.png",
+        "imageHighSrc": "cards/sv3pt5-190-high.png",
+        "attacks": [
+            {
+                "name": "Triple Draw",
+                "damage": null
+            },
+            {
+                "name": "Incessant Punching",
+                "damage": "100×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13935",
+        "externalId": "sv3pt5-189",
+        "localId": "189",
+        "setCode": "sv3pt5",
+        "cardNumber": "189/165",
+        "cardName": "Golem ex",
+        "fullDisplayName": "Golem ex 189/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            76
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Igarashi",
+        "imageLowSrc": "cards/sv3pt5-189-low.png",
+        "imageHighSrc": "cards/sv3pt5-189-high.png",
+        "attacks": [
+            {
+                "name": "Dynamic Roll",
+                "damage": "50"
+            },
+            {
+                "name": "Rock Blaster",
+                "damage": "180"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13926",
+        "externalId": "sv3pt5-188",
+        "localId": "188",
+        "setCode": "sv3pt5",
+        "cardNumber": "188/165",
+        "cardName": "Alakazam ex",
+        "fullDisplayName": "Alakazam ex 188/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 310,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            65
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/sv3pt5-188-low.png",
+        "imageHighSrc": "cards/sv3pt5-188-high.png",
+        "attacks": [
+            {
+                "name": "Mind Jack",
+                "damage": "90+"
+            },
+            {
+                "name": "Dimensional Hand",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13918",
+        "externalId": "sv3pt5-187",
+        "localId": "187",
+        "setCode": "sv3pt5",
+        "cardNumber": "187/165",
+        "cardName": "Wigglytuff ex",
+        "fullDisplayName": "Wigglytuff ex 187/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 250,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            40
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saki Hayashiro",
+        "imageLowSrc": "cards/sv3pt5-187-low.png",
+        "imageHighSrc": "cards/sv3pt5-187-high.png",
+        "attacks": [
+            {
+                "name": "Friend Tackle",
+                "damage": "90+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13912",
+        "externalId": "sv3pt5-186",
+        "localId": "186",
+        "setCode": "sv3pt5",
+        "cardNumber": "186/165",
+        "cardName": "Ninetales ex",
+        "fullDisplayName": "Ninetales ex 186/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            38
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Tsuji",
+        "imageLowSrc": "cards/sv3pt5-186-low.png",
+        "imageHighSrc": "cards/sv3pt5-186-high.png",
+        "attacks": [
+            {
+                "name": "Heat Wave",
+                "damage": "30"
+            },
+            {
+                "name": "Mirrored Flames",
+                "damage": "80+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13903",
+        "externalId": "sv3pt5-185",
+        "localId": "185",
+        "setCode": "sv3pt5",
+        "cardNumber": "185/165",
+        "cardName": "Arbok ex",
+        "fullDisplayName": "Arbok ex 185/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            24
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/sv3pt5-185-low.png",
+        "imageHighSrc": "cards/sv3pt5-185-high.png",
+        "attacks": [
+            {
+                "name": "Bind Down",
+                "damage": "70"
+            },
+            {
+                "name": "Menacing Fangs",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13894",
+        "externalId": "sv3pt5-184",
+        "localId": "184",
+        "setCode": "sv3pt5",
+        "cardNumber": "184/165",
+        "cardName": "Blastoise ex",
+        "fullDisplayName": "Blastoise ex 184/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Yamashita",
+        "imageLowSrc": "cards/sv3pt5-184-low.png",
+        "imageHighSrc": "cards/sv3pt5-184-high.png",
+        "attacks": [
+            {
+                "name": "Twin Cannons",
+                "damage": "140×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13885",
+        "externalId": "sv3pt5-183",
+        "localId": "183",
+        "setCode": "sv3pt5",
+        "cardNumber": "183/165",
+        "cardName": "Charizard ex",
+        "fullDisplayName": "Charizard ex 183/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Mochizuki",
+        "imageLowSrc": "cards/sv3pt5-183-low.png",
+        "imageHighSrc": "cards/sv3pt5-183-high.png",
+        "attacks": [
+            {
+                "name": "Brave Wing",
+                "damage": "60+"
+            },
+            {
+                "name": "Explosive Vortex",
+                "damage": "330"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13875",
+        "externalId": "sv3pt5-182",
+        "localId": "182",
+        "setCode": "sv3pt5",
+        "cardNumber": "182/165",
+        "cardName": "Venusaur ex",
+        "fullDisplayName": "Venusaur ex 182/165 151",
+        "rarity": "Ultra Rare",
+        "category": "Pokémon",
+        "hp": 340,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Yamashita",
+        "imageLowSrc": "cards/sv3pt5-182-low.png",
+        "imageHighSrc": "cards/sv3pt5-182-high.png",
+        "attacks": [
+            {
+                "name": "Dangerous Toxwhip",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13866",
+        "externalId": "sv3pt5-181",
+        "localId": "181",
+        "setCode": "sv3pt5",
+        "cardNumber": "181/165",
+        "cardName": "Dragonair",
+        "fullDisplayName": "Dragonair 181/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            148
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "rika",
+        "imageLowSrc": "cards/sv3pt5-181-low.png",
+        "imageHighSrc": "cards/sv3pt5-181-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "20"
+            },
+            {
+                "name": "Aqua Slash",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13857",
+        "externalId": "sv3pt5-180",
+        "localId": "180",
+        "setCode": "sv3pt5",
+        "cardNumber": "180/165",
+        "cardName": "Omanyte",
+        "fullDisplayName": "Omanyte 180/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            138
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yano Keiji",
+        "imageLowSrc": "cards/sv3pt5-180-low.png",
+        "imageHighSrc": "cards/sv3pt5-180-high.png",
+        "attacks": [
+            {
+                "name": "Tentacular Return",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13844",
+        "externalId": "sv3pt5-179",
+        "localId": "179",
+        "setCode": "sv3pt5",
+        "cardNumber": "179/165",
+        "cardName": "Mr. Mime",
+        "fullDisplayName": "Mr. Mime 179/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            122
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "OKACHEKE",
+        "imageLowSrc": "cards/sv3pt5-179-low.png",
+        "imageHighSrc": "cards/sv3pt5-179-high.png",
+        "attacks": [
+            {
+                "name": "Psypower",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "13835",
+        "externalId": "sv3pt5-178",
+        "localId": "178",
+        "setCode": "sv3pt5",
+        "cardNumber": "178/165",
+        "cardName": "Tangela",
+        "fullDisplayName": "Tangela 178/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            114
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Oswaldo KATO",
+        "imageLowSrc": "cards/sv3pt5-178-low.png",
+        "imageHighSrc": "cards/sv3pt5-178-high.png",
+        "attacks": [
+            {
+                "name": "Tactful Tangling",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13827",
+        "externalId": "sv3pt5-177",
+        "localId": "177",
+        "setCode": "sv3pt5",
+        "cardNumber": "177/165",
+        "cardName": "Machoke",
+        "fullDisplayName": "Machoke 177/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            67
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tetsu Kayama",
+        "imageLowSrc": "cards/sv3pt5-177-low.png",
+        "imageHighSrc": "cards/sv3pt5-177-high.png",
+        "attacks": [
+            {
+                "name": "Mountain Ramming",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13818",
+        "externalId": "sv3pt5-176",
+        "localId": "176",
+        "setCode": "sv3pt5",
+        "cardNumber": "176/165",
+        "cardName": "Poliwhirl",
+        "fullDisplayName": "Poliwhirl 176/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            61
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Gemi",
+        "imageLowSrc": "cards/sv3pt5-176-low.png",
+        "imageHighSrc": "cards/sv3pt5-176-high.png",
+        "attacks": [
+            {
+                "name": "Wave Splash",
+                "damage": "20"
+            },
+            {
+                "name": "Frog Hop",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13809",
+        "externalId": "sv3pt5-175",
+        "localId": "175",
+        "setCode": "sv3pt5",
+        "cardNumber": "175/165",
+        "cardName": "Psyduck",
+        "fullDisplayName": "Psyduck 175/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            54
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Whisker",
+        "imageLowSrc": "cards/sv3pt5-175-low.png",
+        "imageHighSrc": "cards/sv3pt5-175-high.png",
+        "attacks": [
+            {
+                "name": "Overthink",
+                "damage": null
+            },
+            {
+                "name": "Water Gun",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13803",
+        "externalId": "sv3pt5-174",
+        "localId": "174",
+        "setCode": "sv3pt5",
+        "cardNumber": "174/165",
+        "cardName": "Nidoking",
+        "fullDisplayName": "Nidoking 174/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            34
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Misaki Hashimoto",
+        "imageLowSrc": "cards/sv3pt5-174-low.png",
+        "imageHighSrc": "cards/sv3pt5-174-high.png",
+        "attacks": [
+            {
+                "name": "Venomous Impact",
+                "damage": "190"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13793",
+        "externalId": "sv3pt5-173",
+        "localId": "173",
+        "setCode": "sv3pt5",
+        "cardNumber": "173/165",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 173/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hiroyuki Yamamoto",
+        "imageLowSrc": "cards/sv3pt5-173-low.png",
+        "imageHighSrc": "cards/sv3pt5-173-high.png",
+        "attacks": [
+            {
+                "name": "Charge",
+                "damage": null
+            },
+            {
+                "name": "Pika Punch",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13785",
+        "externalId": "sv3pt5-172",
+        "localId": "172",
+        "setCode": "sv3pt5",
+        "cardNumber": "172/165",
+        "cardName": "Caterpie",
+        "fullDisplayName": "Caterpie 172/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            10
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Teeziro",
+        "imageLowSrc": "cards/sv3pt5-172-low.png",
+        "imageHighSrc": "cards/sv3pt5-172-high.png",
+        "attacks": [
+            {
+                "name": "Leaf Munch",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13776",
+        "externalId": "sv3pt5-171",
+        "localId": "171",
+        "setCode": "sv3pt5",
+        "cardNumber": "171/165",
+        "cardName": "Wartortle",
+        "fullDisplayName": "Wartortle 171/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            8
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-171-low.png",
+        "imageHighSrc": "cards/sv3pt5-171-high.png",
+        "attacks": [
+            {
+                "name": "Free Diving",
+                "damage": null
+            },
+            {
+                "name": "Spinning Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13767",
+        "externalId": "sv3pt5-170",
+        "localId": "170",
+        "setCode": "sv3pt5",
+        "cardNumber": "170/165",
+        "cardName": "Squirtle",
+        "fullDisplayName": "Squirtle 170/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            7
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-170-low.png",
+        "imageHighSrc": "cards/sv3pt5-170-high.png",
+        "attacks": [
+            {
+                "name": "Withdraw",
+                "damage": null
+            },
+            {
+                "name": "Skull Bash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13759",
+        "externalId": "sv3pt5-169",
+        "localId": "169",
+        "setCode": "sv3pt5",
+        "cardNumber": "169/165",
+        "cardName": "Charmeleon",
+        "fullDisplayName": "Charmeleon 169/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            5
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/sv3pt5-169-low.png",
+        "imageHighSrc": "cards/sv3pt5-169-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "20"
+            },
+            {
+                "name": "Fire Blast",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13747",
+        "externalId": "sv3pt5-168",
+        "localId": "168",
+        "setCode": "sv3pt5",
+        "cardNumber": "168/165",
+        "cardName": "Charmander",
+        "fullDisplayName": "Charmander 168/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            4
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/sv3pt5-168-low.png",
+        "imageHighSrc": "cards/sv3pt5-168-high.png",
+        "attacks": [
+            {
+                "name": "Blazing Destruction",
+                "damage": null
+            },
+            {
+                "name": "Steady Firebreathing",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13738",
+        "externalId": "sv3pt5-167",
+        "localId": "167",
+        "setCode": "sv3pt5",
+        "cardNumber": "167/165",
+        "cardName": "Ivysaur",
+        "fullDisplayName": "Ivysaur 167/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            2
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yoriyuki Ikegami",
+        "imageLowSrc": "cards/sv3pt5-167-low.png",
+        "imageHighSrc": "cards/sv3pt5-167-high.png",
+        "attacks": [
+            {
+                "name": "Leech Seed",
+                "damage": "30"
+            },
+            {
+                "name": "Vine Whip",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13729",
+        "externalId": "sv3pt5-166",
+        "localId": "166",
+        "setCode": "sv3pt5",
+        "cardNumber": "166/165",
+        "cardName": "Bulbasaur",
+        "fullDisplayName": "Bulbasaur 166/165 151",
+        "rarity": "Illustration Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yoriyuki Ikegami",
+        "imageLowSrc": "cards/sv3pt5-166-low.png",
+        "imageHighSrc": "cards/sv3pt5-166-high.png",
+        "attacks": [
+            {
+                "name": "Leech Seed",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13721",
+        "externalId": "sv3pt5-165",
+        "localId": "165",
+        "setCode": "sv3pt5",
+        "cardNumber": "165/165",
+        "cardName": "Rigid Band",
+        "fullDisplayName": "Rigid Band 165/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toyste Beach",
+        "imageLowSrc": "cards/sv3pt5-165-low.png",
+        "imageHighSrc": "cards/sv3pt5-165-high.png",
+        "rules": "The Stage 1 Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "13712",
+        "externalId": "sv3pt5-164",
+        "localId": "164",
+        "setCode": "sv3pt5",
+        "cardNumber": "164/165",
+        "cardName": "Protective Goggles",
+        "fullDisplayName": "Protective Goggles 164/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toyste Beach",
+        "imageLowSrc": "cards/sv3pt5-164-low.png",
+        "imageHighSrc": "cards/sv3pt5-164-high.png",
+        "rules": "The Basic Pokémon this card is attached to has no Weakness.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "13703",
+        "externalId": "sv3pt5-163",
+        "localId": "163",
+        "setCode": "sv3pt5",
+        "cardNumber": "163/165",
+        "cardName": "Leftovers",
+        "fullDisplayName": "Leftovers 163/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Studio Bora Inc.",
+        "imageLowSrc": "cards/sv3pt5-163-low.png",
+        "imageHighSrc": "cards/sv3pt5-163-high.png",
+        "rules": "At the end of your turn, if the Pokémon this card is attached to is in the Active Spot, heal 20 damage from it.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "13693",
+        "externalId": "sv3pt5-162",
+        "localId": "162",
+        "setCode": "sv3pt5",
+        "cardNumber": "162/165",
+        "cardName": "Grabber",
+        "fullDisplayName": "Grabber 162/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "inose yukie",
+        "imageLowSrc": "cards/sv3pt5-162-low.png",
+        "imageHighSrc": "cards/sv3pt5-162-high.png",
+        "rules": "Your opponent reveals their hand, and you put a Pokémon you find there on the bottom of their deck.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "13685",
+        "externalId": "sv3pt5-161",
+        "localId": "161",
+        "setCode": "sv3pt5",
+        "cardNumber": "161/165",
+        "cardName": "Giovanni's Charisma",
+        "fullDisplayName": "Giovanni's Charisma 161/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "hncl",
+        "imageLowSrc": "cards/sv3pt5-161-low.png",
+        "imageHighSrc": "cards/sv3pt5-161-high.png",
+        "rules": "Put an Energy attached to your opponent's Active Pokémon into their hand. If you do, attach an Energy card from your hand to your Active Pokémon.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13676",
+        "externalId": "sv3pt5-160",
+        "localId": "160",
+        "setCode": "sv3pt5",
+        "cardNumber": "160/165",
+        "cardName": "Erika's Invitation",
+        "fullDisplayName": "Erika's Invitation 160/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "saino misaki",
+        "imageLowSrc": "cards/sv3pt5-160-low.png",
+        "imageHighSrc": "cards/sv3pt5-160-high.png",
+        "rules": "Your opponent reveals their hand, and you put a Basic Pokémon you find there onto your opponent's Bench. If you put a Pokémon onto their Bench in this way, switch in that Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13667",
+        "externalId": "sv3pt5-159",
+        "localId": "159",
+        "setCode": "sv3pt5",
+        "cardNumber": "159/165",
+        "cardName": "Energy Sticker",
+        "fullDisplayName": "Energy Sticker 159/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/sv3pt5-159-low.png",
+        "imageHighSrc": "cards/sv3pt5-159-high.png",
+        "rules": "Flip a coin. If heads, attach a Basic Energy card from your discard pile to 1 of your Benched Pokémon.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "13662",
+        "externalId": "sv3pt5-158",
+        "localId": "158",
+        "setCode": "sv3pt5",
+        "cardNumber": "158/165",
+        "cardName": "Daisy's Help",
+        "fullDisplayName": "Daisy's Help 158/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomomi Kaneko",
+        "imageLowSrc": "cards/sv3pt5-158-low.png",
+        "imageHighSrc": "cards/sv3pt5-158-high.png",
+        "rules": "Draw 2 cards. Look at your face-down Prize cards.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13653",
+        "externalId": "sv3pt5-157",
+        "localId": "157",
+        "setCode": "sv3pt5",
+        "cardNumber": "157/165",
+        "cardName": "Cycling Road",
+        "fullDisplayName": "Cycling Road 157/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Stadium",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Oswaldo KATO",
+        "imageLowSrc": "cards/sv3pt5-157-low.png",
+        "imageHighSrc": "cards/sv3pt5-157-high.png",
+        "rules": "Once during each player's turn, that player may discard a Basic Energy card from their hand in order to draw a card.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+    },
+    {
+        "masterCardId": "13644",
+        "externalId": "sv3pt5-156",
+        "localId": "156",
+        "setCode": "sv3pt5",
+        "cardNumber": "156/165",
+        "cardName": "Bill's Transfer",
+        "fullDisplayName": "Bill's Transfer 156/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GIDORA",
+        "imageLowSrc": "cards/sv3pt5-156-low.png",
+        "imageHighSrc": "cards/sv3pt5-156-high.png",
+        "rules": "Look at the top 8 cards of your deck. You may reveal any number of Pokémon you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn."
+    },
+    {
+        "masterCardId": "13635",
+        "externalId": "sv3pt5-155",
+        "localId": "155",
+        "setCode": "sv3pt5",
+        "cardNumber": "155/165",
+        "cardName": "Big Air Balloon",
+        "fullDisplayName": "Big Air Balloon 155/165 151",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toyste Beach",
+        "imageLowSrc": "cards/sv3pt5-155-low.png",
+        "imageHighSrc": "cards/sv3pt5-155-high.png",
+        "rules": "The Stage 2 Pokémon this card is attached to has no Retreat Cost.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+    },
+    {
+        "masterCardId": "13625",
+        "externalId": "sv3pt5-154",
+        "localId": "154",
+        "setCode": "sv3pt5",
+        "cardNumber": "154/165",
+        "cardName": "Antique Old Amber",
+        "fullDisplayName": "Antique Old Amber 154/165 151",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 60,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "AYUMI ODASHIMA",
+        "imageLowSrc": "cards/sv3pt5-154-low.png",
+        "imageHighSrc": "cards/sv3pt5-154-high.png",
+        "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "13616",
+        "externalId": "sv3pt5-153",
+        "localId": "153",
+        "setCode": "sv3pt5",
+        "cardNumber": "153/165",
+        "cardName": "Antique Helix Fossil",
+        "fullDisplayName": "Antique Helix Fossil 153/165 151",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 60,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "AYUMI ODASHIMA",
+        "imageLowSrc": "cards/sv3pt5-153-low.png",
+        "imageHighSrc": "cards/sv3pt5-153-high.png",
+        "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "13608",
+        "externalId": "sv3pt5-152",
+        "localId": "152",
+        "setCode": "sv3pt5",
+        "cardNumber": "152/165",
+        "cardName": "Antique Dome Fossil",
+        "fullDisplayName": "Antique Dome Fossil 152/165 151",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 60,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "AYUMI ODASHIMA",
+        "imageLowSrc": "cards/sv3pt5-152-low.png",
+        "imageHighSrc": "cards/sv3pt5-152-high.png",
+        "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
+    },
+    {
+        "masterCardId": "13599",
+        "externalId": "sv3pt5-151",
+        "localId": "151",
+        "setCode": "sv3pt5",
+        "cardNumber": "151/165",
+        "cardName": "Mew ex",
+        "fullDisplayName": "Mew ex 151/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            151
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aky CG Works",
+        "imageLowSrc": "cards/sv3pt5-151-low.png",
+        "imageHighSrc": "cards/sv3pt5-151-high.png",
+        "attacks": [
+            {
+                "name": "Genome Hacking",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13590",
+        "externalId": "sv3pt5-150",
+        "localId": "150",
+        "setCode": "sv3pt5",
+        "cardNumber": "150/165",
+        "cardName": "Mewtwo",
+        "fullDisplayName": "Mewtwo 150/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            150
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "AKIRA EGAWA",
+        "imageLowSrc": "cards/sv3pt5-150-low.png",
+        "imageHighSrc": "cards/sv3pt5-150-high.png",
+        "attacks": [
+            {
+                "name": "Reflective Barrier",
+                "damage": "20"
+            },
+            {
+                "name": "Psyslash",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13582",
+        "externalId": "sv3pt5-149",
+        "localId": "149",
+        "setCode": "sv3pt5",
+        "cardNumber": "149/165",
+        "cardName": "Dragonite",
+        "fullDisplayName": "Dragonite 149/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            149
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sanosuke Sakuma",
+        "imageLowSrc": "cards/sv3pt5-149-low.png",
+        "imageHighSrc": "cards/sv3pt5-149-high.png",
+        "attacks": [
+            {
+                "name": "Dragon Pulse",
+                "damage": "180"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13573",
+        "externalId": "sv3pt5-148",
+        "localId": "148",
+        "setCode": "sv3pt5",
+        "cardNumber": "148/165",
+        "cardName": "Dragonair",
+        "fullDisplayName": "Dragonair 148/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            148
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sanosuke Sakuma",
+        "imageLowSrc": "cards/sv3pt5-148-low.png",
+        "imageHighSrc": "cards/sv3pt5-148-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "20"
+            },
+            {
+                "name": "Aqua Slash",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13564",
+        "externalId": "sv3pt5-147",
+        "localId": "147",
+        "setCode": "sv3pt5",
+        "cardNumber": "147/165",
+        "cardName": "Dratini",
+        "fullDisplayName": "Dratini 147/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            147
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sanosuke Sakuma",
+        "imageLowSrc": "cards/sv3pt5-147-low.png",
+        "imageHighSrc": "cards/sv3pt5-147-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "10"
+            },
+            {
+                "name": "Draconic Whip",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13556",
+        "externalId": "sv3pt5-146",
+        "localId": "146",
+        "setCode": "sv3pt5",
+        "cardNumber": "146/165",
+        "cardName": "Moltres",
+        "fullDisplayName": "Moltres 146/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            146
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KEIICHIRO ITO",
+        "imageLowSrc": "cards/sv3pt5-146-low.png",
+        "imageHighSrc": "cards/sv3pt5-146-high.png",
+        "attacks": [
+            {
+                "name": "Blazing Flight",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "13547",
+        "externalId": "sv3pt5-145",
+        "localId": "145",
+        "setCode": "sv3pt5",
+        "cardNumber": "145/165",
+        "cardName": "Zapdos ex",
+        "fullDisplayName": "Zapdos ex 145/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            145
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "takuyoa",
+        "imageLowSrc": "cards/sv3pt5-145-low.png",
+        "imageHighSrc": "cards/sv3pt5-145-high.png",
+        "attacks": [
+            {
+                "name": "Multishot Lightning",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13540",
+        "externalId": "sv3pt5-144",
+        "localId": "144",
+        "setCode": "sv3pt5",
+        "cardNumber": "144/165",
+        "cardName": "Articuno",
+        "fullDisplayName": "Articuno 144/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            144
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "chibi",
+        "imageLowSrc": "cards/sv3pt5-144-low.png",
+        "imageHighSrc": "cards/sv3pt5-144-high.png",
+        "attacks": [
+            {
+                "name": "Blizzard",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13531",
+        "externalId": "sv3pt5-143",
+        "localId": "143",
+        "setCode": "sv3pt5",
+        "cardNumber": "143/165",
+        "cardName": "Snorlax",
+        "fullDisplayName": "Snorlax 143/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            143
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "HYOGONOSUKE",
+        "imageLowSrc": "cards/sv3pt5-143-low.png",
+        "imageHighSrc": "cards/sv3pt5-143-high.png",
+        "attacks": [
+            {
+                "name": "Thudding Press",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13523",
+        "externalId": "sv3pt5-142",
+        "localId": "142",
+        "setCode": "sv3pt5",
+        "cardNumber": "142/165",
+        "cardName": "Aerodactyl",
+        "fullDisplayName": "Aerodactyl 142/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            142
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shinji Kanda",
+        "imageLowSrc": "cards/sv3pt5-142-low.png",
+        "imageHighSrc": "cards/sv3pt5-142-high.png",
+        "attacks": [
+            {
+                "name": "Glide",
+                "damage": "30"
+            },
+            {
+                "name": "Devolution Ray",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13514",
+        "externalId": "sv3pt5-141",
+        "localId": "141",
+        "setCode": "sv3pt5",
+        "cardNumber": "141/165",
+        "cardName": "Kabutops",
+        "fullDisplayName": "Kabutops 141/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            141
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Souichirou Gunjima",
+        "imageLowSrc": "cards/sv3pt5-141-low.png",
+        "imageHighSrc": "cards/sv3pt5-141-high.png",
+        "attacks": [
+            {
+                "name": "Draining Blade",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13506",
+        "externalId": "sv3pt5-140",
+        "localId": "140",
+        "setCode": "sv3pt5",
+        "cardNumber": "140/165",
+        "cardName": "Kabuto",
+        "fullDisplayName": "Kabuto 140/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            140
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Souichirou Gunjima",
+        "imageLowSrc": "cards/sv3pt5-140-low.png",
+        "imageHighSrc": "cards/sv3pt5-140-high.png",
+        "attacks": [
+            {
+                "name": "Double Scratch",
+                "damage": "70×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13498",
+        "externalId": "sv3pt5-139",
+        "localId": "139",
+        "setCode": "sv3pt5",
+        "cardNumber": "139/165",
+        "cardName": "Omastar",
+        "fullDisplayName": "Omastar 139/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            139
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/sv3pt5-139-low.png",
+        "imageHighSrc": "cards/sv3pt5-139-high.png",
+        "attacks": [
+            {
+                "name": "Aqua Split",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13489",
+        "externalId": "sv3pt5-138",
+        "localId": "138",
+        "setCode": "sv3pt5",
+        "cardNumber": "138/165",
+        "cardName": "Omanyte",
+        "fullDisplayName": "Omanyte 138/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            138
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/sv3pt5-138-low.png",
+        "imageHighSrc": "cards/sv3pt5-138-high.png",
+        "attacks": [
+            {
+                "name": "Tentacular Return",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13480",
+        "externalId": "sv3pt5-137",
+        "localId": "137",
+        "setCode": "sv3pt5",
+        "cardNumber": "137/165",
+        "cardName": "Porygon",
+        "fullDisplayName": "Porygon 137/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            137
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sv3pt5-137-low.png",
+        "imageHighSrc": "cards/sv3pt5-137-high.png",
+        "attacks": [
+            {
+                "name": "Conversion 4",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "13470",
+        "externalId": "sv3pt5-136",
+        "localId": "136",
+        "setCode": "sv3pt5",
+        "cardNumber": "136/165",
+        "cardName": "Flareon",
+        "fullDisplayName": "Flareon 136/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryota Murayama",
+        "imageLowSrc": "cards/sv3pt5-136-low.png",
+        "imageHighSrc": "cards/sv3pt5-136-high.png",
+        "attacks": [
+            {
+                "name": "Destructive Flame",
+                "damage": "30"
+            },
+            {
+                "name": "Fighting Blaze",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13461",
+        "externalId": "sv3pt5-135",
+        "localId": "135",
+        "setCode": "sv3pt5",
+        "cardNumber": "135/165",
+        "cardName": "Jolteon",
+        "fullDisplayName": "Jolteon 135/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/sv3pt5-135-low.png",
+        "imageHighSrc": "cards/sv3pt5-135-high.png",
+        "attacks": [
+            {
+                "name": "Linear Attack",
+                "damage": null
+            },
+            {
+                "name": "Fighting Lightning",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13452",
+        "externalId": "sv3pt5-134",
+        "localId": "134",
+        "setCode": "sv3pt5",
+        "cardNumber": "134/165",
+        "cardName": "Vaporeon",
+        "fullDisplayName": "Vaporeon 134/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kirisAki",
+        "imageLowSrc": "cards/sv3pt5-134-low.png",
+        "imageHighSrc": "cards/sv3pt5-134-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Drain",
+                "damage": "30"
+            },
+            {
+                "name": "Fighting Whirlpool",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13443",
+        "externalId": "sv3pt5-133",
+        "localId": "133",
+        "setCode": "sv3pt5",
+        "cardNumber": "133/165",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 133/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Narumi Sato",
+        "imageLowSrc": "cards/sv3pt5-133-low.png",
+        "imageHighSrc": "cards/sv3pt5-133-high.png",
+        "attacks": [
+            {
+                "name": "Colorful Friends",
+                "damage": null
+            },
+            {
+                "name": "Skip",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13434",
+        "externalId": "sv3pt5-132",
+        "localId": "132",
+        "setCode": "sv3pt5",
+        "cardNumber": "132/165",
+        "cardName": "Ditto",
+        "fullDisplayName": "Ditto 132/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            132
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KIYOTAKA OSHIYAMA",
+        "imageLowSrc": "cards/sv3pt5-132-low.png",
+        "imageHighSrc": "cards/sv3pt5-132-high.png",
+        "attacks": [
+            {
+                "name": "Splup",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13426",
+        "externalId": "sv3pt5-131",
+        "localId": "131",
+        "setCode": "sv3pt5",
+        "cardNumber": "131/165",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras 131/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "LINNE",
+        "imageLowSrc": "cards/sv3pt5-131-low.png",
+        "imageHighSrc": "cards/sv3pt5-131-high.png",
+        "attacks": [
+            {
+                "name": "Hop on My Back",
+                "damage": null
+            },
+            {
+                "name": "Aqua Edge",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13418",
+        "externalId": "sv3pt5-130",
+        "localId": "130",
+        "setCode": "sv3pt5",
+        "cardNumber": "130/165",
+        "cardName": "Gyarados",
+        "fullDisplayName": "Gyarados 130/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 190,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            130
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/sv3pt5-130-low.png",
+        "imageHighSrc": "cards/sv3pt5-130-high.png",
+        "attacks": [
+            {
+                "name": "Hyper Beam",
+                "damage": "200"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13409",
+        "externalId": "sv3pt5-129",
+        "localId": "129",
+        "setCode": "sv3pt5",
+        "cardNumber": "129/165",
+        "cardName": "Magikarp",
+        "fullDisplayName": "Magikarp 129/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            129
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/sv3pt5-129-low.png",
+        "imageHighSrc": "cards/sv3pt5-129-high.png",
+        "attacks": [
+            {
+                "name": "Splashy Splash",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "13400",
+        "externalId": "sv3pt5-128",
+        "localId": "128",
+        "setCode": "sv3pt5",
+        "cardNumber": "128/165",
+        "cardName": "Tauros",
+        "fullDisplayName": "Tauros 128/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            128
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Takeshi Nakamura",
+        "imageLowSrc": "cards/sv3pt5-128-low.png",
+        "imageHighSrc": "cards/sv3pt5-128-high.png",
+        "attacks": [
+            {
+                "name": "Gather the Crew",
+                "damage": null
+            },
+            {
+                "name": "Rage",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13391",
+        "externalId": "sv3pt5-127",
+        "localId": "127",
+        "setCode": "sv3pt5",
+        "cardNumber": "127/165",
+        "cardName": "Pinsir",
+        "fullDisplayName": "Pinsir 127/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            127
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuya Oka",
+        "imageLowSrc": "cards/sv3pt5-127-low.png",
+        "imageHighSrc": "cards/sv3pt5-127-high.png",
+        "attacks": [
+            {
+                "name": "Vise Grip",
+                "damage": "30"
+            },
+            {
+                "name": "Reckless Throw",
+                "damage": "90+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13382",
+        "externalId": "sv3pt5-126",
+        "localId": "126",
+        "setCode": "sv3pt5",
+        "cardNumber": "126/165",
+        "cardName": "Magmar",
+        "fullDisplayName": "Magmar 126/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            126
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Toshinao Aoki",
+        "imageLowSrc": "cards/sv3pt5-126-low.png",
+        "imageHighSrc": "cards/sv3pt5-126-high.png",
+        "attacks": [
+            {
+                "name": "Live Coal",
+                "damage": "10"
+            },
+            {
+                "name": "Flare Combo",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13373",
+        "externalId": "sv3pt5-125",
+        "localId": "125",
+        "setCode": "sv3pt5",
+        "cardNumber": "125/165",
+        "cardName": "Electabuzz",
+        "fullDisplayName": "Electabuzz 125/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            125
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "NC Empire",
+        "imageLowSrc": "cards/sv3pt5-125-low.png",
+        "imageHighSrc": "cards/sv3pt5-125-high.png",
+        "attacks": [
+            {
+                "name": "Electro Combo",
+                "damage": "10+"
+            },
+            {
+                "name": "Light Punch",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13364",
+        "externalId": "sv3pt5-124",
+        "localId": "124",
+        "setCode": "sv3pt5",
+        "cardNumber": "124/165",
+        "cardName": "Jynx ex",
+        "fullDisplayName": "Jynx ex 124/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            124
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/sv3pt5-124-low.png",
+        "imageHighSrc": "cards/sv3pt5-124-high.png",
+        "attacks": [
+            {
+                "name": "Heart-Stopping Kiss",
+                "damage": null
+            },
+            {
+                "name": "Icy Wind",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13355",
+        "externalId": "sv3pt5-123",
+        "localId": "123",
+        "setCode": "sv3pt5",
+        "cardNumber": "123/165",
+        "cardName": "Scyther",
+        "fullDisplayName": "Scyther 123/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            123
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hideki Ishikawa",
+        "imageLowSrc": "cards/sv3pt5-123-low.png",
+        "imageHighSrc": "cards/sv3pt5-123-high.png",
+        "attacks": [
+            {
+                "name": "Helpful Slash",
+                "damage": "20"
+            },
+            {
+                "name": "Slicing Blade",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13346",
+        "externalId": "sv3pt5-122",
+        "localId": "122",
+        "setCode": "sv3pt5",
+        "cardNumber": "122/165",
+        "cardName": "Mr. Mime",
+        "fullDisplayName": "Mr. Mime 122/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            122
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "OOYAMA",
+        "imageLowSrc": "cards/sv3pt5-122-low.png",
+        "imageHighSrc": "cards/sv3pt5-122-high.png",
+        "attacks": [
+            {
+                "name": "Psypower",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "13338",
+        "externalId": "sv3pt5-121",
+        "localId": "121",
+        "setCode": "sv3pt5",
+        "cardNumber": "121/165",
+        "cardName": "Starmie",
+        "fullDisplayName": "Starmie 121/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            121
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Arai Kiriko",
+        "imageLowSrc": "cards/sv3pt5-121-low.png",
+        "imageHighSrc": "cards/sv3pt5-121-high.png",
+        "attacks": [
+            {
+                "name": "Speed Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13331",
+        "externalId": "sv3pt5-120",
+        "localId": "120",
+        "setCode": "sv3pt5",
+        "cardNumber": "120/165",
+        "cardName": "Staryu",
+        "fullDisplayName": "Staryu 120/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            120
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Arai Kiriko",
+        "imageLowSrc": "cards/sv3pt5-120-low.png",
+        "imageHighSrc": "cards/sv3pt5-120-high.png",
+        "attacks": [
+            {
+                "name": "Swift",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13322",
+        "externalId": "sv3pt5-119",
+        "localId": "119",
+        "setCode": "sv3pt5",
+        "cardNumber": "119/165",
+        "cardName": "Seaking",
+        "fullDisplayName": "Seaking 119/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            119
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "SIE NANAHARA",
+        "imageLowSrc": "cards/sv3pt5-119-low.png",
+        "imageHighSrc": "cards/sv3pt5-119-high.png",
+        "attacks": [
+            {
+                "name": "Swim Freely",
+                "damage": "10"
+            },
+            {
+                "name": "Aqua Horn",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13313",
+        "externalId": "sv3pt5-118",
+        "localId": "118",
+        "setCode": "sv3pt5",
+        "cardNumber": "118/165",
+        "cardName": "Goldeen",
+        "fullDisplayName": "Goldeen 118/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            118
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "SIE NANAHARA",
+        "imageLowSrc": "cards/sv3pt5-118-low.png",
+        "imageHighSrc": "cards/sv3pt5-118-high.png",
+        "attacks": [
+            {
+                "name": "Triple Strike",
+                "damage": "10×"
+            },
+            {
+                "name": "Sprinkle Water",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13305",
+        "externalId": "sv3pt5-117",
+        "localId": "117",
+        "setCode": "sv3pt5",
+        "cardNumber": "117/165",
+        "cardName": "Seadra",
+        "fullDisplayName": "Seadra 117/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            117
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aspara",
+        "imageLowSrc": "cards/sv3pt5-117-low.png",
+        "imageHighSrc": "cards/sv3pt5-117-high.png",
+        "attacks": [
+            {
+                "name": "Blinding Ink",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13296",
+        "externalId": "sv3pt5-116",
+        "localId": "116",
+        "setCode": "sv3pt5",
+        "cardNumber": "116/165",
+        "cardName": "Horsea",
+        "fullDisplayName": "Horsea 116/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            116
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aspara",
+        "imageLowSrc": "cards/sv3pt5-116-low.png",
+        "imageHighSrc": "cards/sv3pt5-116-high.png",
+        "attacks": [
+            {
+                "name": "Rain Splash",
+                "damage": "10"
+            },
+            {
+                "name": "Sharp Fin",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13287",
+        "externalId": "sv3pt5-115",
+        "localId": "115",
+        "setCode": "sv3pt5",
+        "cardNumber": "115/165",
+        "cardName": "Kangaskhan ex",
+        "fullDisplayName": "Kangaskhan ex 115/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 230,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            115
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "N-DESIGN Inc.",
+        "imageLowSrc": "cards/sv3pt5-115-low.png",
+        "imageHighSrc": "cards/sv3pt5-115-high.png",
+        "attacks": [
+            {
+                "name": "Triple Draw",
+                "damage": null
+            },
+            {
+                "name": "Incessant Punching",
+                "damage": "100×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "13280",
+        "externalId": "sv3pt5-114",
+        "localId": "114",
+        "setCode": "sv3pt5",
+        "cardNumber": "114/165",
+        "cardName": "Tangela",
+        "fullDisplayName": "Tangela 114/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            114
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/sv3pt5-114-low.png",
+        "imageHighSrc": "cards/sv3pt5-114-high.png",
+        "attacks": [
+            {
+                "name": "Tactful Tangling",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13271",
+        "externalId": "sv3pt5-113",
+        "localId": "113",
+        "setCode": "sv3pt5",
+        "cardNumber": "113/165",
+        "cardName": "Chansey",
+        "fullDisplayName": "Chansey 113/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            113
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Taiga Kayama",
+        "imageLowSrc": "cards/sv3pt5-113-low.png",
+        "imageHighSrc": "cards/sv3pt5-113-high.png",
+        "attacks": [
+            {
+                "name": "Gentle Slap",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13262",
+        "externalId": "sv3pt5-112",
+        "localId": "112",
+        "setCode": "sv3pt5",
+        "cardNumber": "112/165",
+        "cardName": "Rhydon",
+        "fullDisplayName": "Rhydon 112/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            112
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GOSSAN",
+        "imageLowSrc": "cards/sv3pt5-112-low.png",
+        "imageHighSrc": "cards/sv3pt5-112-high.png",
+        "attacks": [
+            {
+                "name": "Wrack Down",
+                "damage": "30"
+            },
+            {
+                "name": "Charismatic Drill",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13251",
+        "externalId": "sv3pt5-111",
+        "localId": "111",
+        "setCode": "sv3pt5",
+        "cardNumber": "111/165",
+        "cardName": "Rhyhorn",
+        "fullDisplayName": "Rhyhorn 111/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            111
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GOSSAN",
+        "imageLowSrc": "cards/sv3pt5-111-low.png",
+        "imageHighSrc": "cards/sv3pt5-111-high.png",
+        "attacks": [
+            {
+                "name": "Push Down",
+                "damage": "20"
+            },
+            {
+                "name": "Boulder Crush",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13243",
+        "externalId": "sv3pt5-110",
+        "localId": "110",
+        "setCode": "sv3pt5",
+        "cardNumber": "110/165",
+        "cardName": "Weezing",
+        "fullDisplayName": "Weezing 110/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            110
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shibuzoh.",
+        "imageLowSrc": "cards/sv3pt5-110-low.png",
+        "imageHighSrc": "cards/sv3pt5-110-high.png",
+        "attacks": [
+            {
+                "name": "Spinning Fumes",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13235",
+        "externalId": "sv3pt5-109",
+        "localId": "109",
+        "setCode": "sv3pt5",
+        "cardNumber": "109/165",
+        "cardName": "Koffing",
+        "fullDisplayName": "Koffing 109/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            109
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shibuzoh.",
+        "imageLowSrc": "cards/sv3pt5-109-low.png",
+        "imageHighSrc": "cards/sv3pt5-109-high.png",
+        "attacks": [
+            {
+                "name": "Suspicious Gas",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13226",
+        "externalId": "sv3pt5-108",
+        "localId": "108",
+        "setCode": "sv3pt5",
+        "cardNumber": "108/165",
+        "cardName": "Lickitung",
+        "fullDisplayName": "Lickitung 108/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            108
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/sv3pt5-108-low.png",
+        "imageHighSrc": "cards/sv3pt5-108-high.png",
+        "attacks": [
+            {
+                "name": "Tongue-Tied",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13217",
+        "externalId": "sv3pt5-107",
+        "localId": "107",
+        "setCode": "sv3pt5",
+        "cardNumber": "107/165",
+        "cardName": "Hitmonchan",
+        "fullDisplayName": "Hitmonchan 107/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            107
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "DOM",
+        "imageLowSrc": "cards/sv3pt5-107-low.png",
+        "imageHighSrc": "cards/sv3pt5-107-high.png",
+        "attacks": [
+            {
+                "name": "Excited Punch",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13209",
+        "externalId": "sv3pt5-106",
+        "localId": "106",
+        "setCode": "sv3pt5",
+        "cardNumber": "106/165",
+        "cardName": "Hitmonlee",
+        "fullDisplayName": "Hitmonlee 106/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            106
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hitoshi Ariga",
+        "imageLowSrc": "cards/sv3pt5-106-low.png",
+        "imageHighSrc": "cards/sv3pt5-106-high.png",
+        "attacks": [
+            {
+                "name": "Twister Kick",
+                "damage": null
+            },
+            {
+                "name": "Low Kick",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13201",
+        "externalId": "sv3pt5-105",
+        "localId": "105",
+        "setCode": "sv3pt5",
+        "cardNumber": "105/165",
+        "cardName": "Marowak",
+        "fullDisplayName": "Marowak 105/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            105
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shinya Komatsu",
+        "imageLowSrc": "cards/sv3pt5-105-low.png",
+        "imageHighSrc": "cards/sv3pt5-105-high.png",
+        "attacks": [
+            {
+                "name": "Bone Throw",
+                "damage": "30"
+            },
+            {
+                "name": "Boundless Power",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13193",
+        "externalId": "sv3pt5-104",
+        "localId": "104",
+        "setCode": "sv3pt5",
+        "cardNumber": "104/165",
+        "cardName": "Cubone",
+        "fullDisplayName": "Cubone 104/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            104
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shinya Komatsu",
+        "imageLowSrc": "cards/sv3pt5-104-low.png",
+        "imageHighSrc": "cards/sv3pt5-104-high.png",
+        "attacks": [
+            {
+                "name": "Hit Twice",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13184",
+        "externalId": "sv3pt5-103",
+        "localId": "103",
+        "setCode": "sv3pt5",
+        "cardNumber": "103/165",
+        "cardName": "Exeggutor",
+        "fullDisplayName": "Exeggutor 103/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            103
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sv3pt5-103-low.png",
+        "imageHighSrc": "cards/sv3pt5-103-high.png",
+        "attacks": [
+            {
+                "name": "Psychic",
+                "damage": "30+"
+            },
+            {
+                "name": "Hammer In",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13175",
+        "externalId": "sv3pt5-102",
+        "localId": "102",
+        "setCode": "sv3pt5",
+        "cardNumber": "102/165",
+        "cardName": "Exeggcute",
+        "fullDisplayName": "Exeggcute 102/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            102
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/sv3pt5-102-low.png",
+        "imageHighSrc": "cards/sv3pt5-102-high.png",
+        "attacks": [
+            {
+                "name": "Ball Roll",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13167",
+        "externalId": "sv3pt5-101",
+        "localId": "101",
+        "setCode": "sv3pt5",
+        "cardNumber": "101/165",
+        "cardName": "Electrode",
+        "fullDisplayName": "Electrode 101/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            101
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nagimiso",
+        "imageLowSrc": "cards/sv3pt5-101-low.png",
+        "imageHighSrc": "cards/sv3pt5-101-high.png",
+        "attacks": [
+            {
+                "name": "Bang Boom Chain",
+                "damage": "20+"
+            },
+            {
+                "name": "Electro Ball",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13159",
+        "externalId": "sv3pt5-100",
+        "localId": "100",
+        "setCode": "sv3pt5",
+        "cardNumber": "100/165",
+        "cardName": "Voltorb",
+        "fullDisplayName": "Voltorb 100/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            100
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nagimiso",
+        "imageLowSrc": "cards/sv3pt5-100-low.png",
+        "imageHighSrc": "cards/sv3pt5-100-high.png",
+        "attacks": [
+            {
+                "name": "Tumbling Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13149",
+        "externalId": "sv3pt5-99",
+        "localId": "099",
+        "setCode": "sv3pt5",
+        "cardNumber": "099/165",
+        "cardName": "Kingler",
+        "fullDisplayName": "Kingler 099/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            99
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/sv3pt5-099-low.png",
+        "imageHighSrc": "cards/sv3pt5-099-high.png",
+        "attacks": [
+            {
+                "name": "Hammer Arm",
+                "damage": "90"
+            },
+            {
+                "name": "Guillotine",
+                "damage": "220"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13140",
+        "externalId": "sv3pt5-98",
+        "localId": "098",
+        "setCode": "sv3pt5",
+        "cardNumber": "098/165",
+        "cardName": "Krabby",
+        "fullDisplayName": "Krabby 098/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            98
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yukiko Baba",
+        "imageLowSrc": "cards/sv3pt5-098-low.png",
+        "imageHighSrc": "cards/sv3pt5-098-high.png",
+        "attacks": [
+            {
+                "name": "Salt Water",
+                "damage": null
+            },
+            {
+                "name": "Crabhammer",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13131",
+        "externalId": "sv3pt5-97",
+        "localId": "097",
+        "setCode": "sv3pt5",
+        "cardNumber": "097/165",
+        "cardName": "Hypno",
+        "fullDisplayName": "Hypno 097/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            97
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mousho",
+        "imageLowSrc": "cards/sv3pt5-097-low.png",
+        "imageHighSrc": "cards/sv3pt5-097-high.png",
+        "attacks": [
+            {
+                "name": "Super Psy Bolt",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13119",
+        "externalId": "sv3pt5-96",
+        "localId": "096",
+        "setCode": "sv3pt5",
+        "cardNumber": "096/165",
+        "cardName": "Drowzee",
+        "fullDisplayName": "Drowzee 096/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            96
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mousho",
+        "imageLowSrc": "cards/sv3pt5-096-low.png",
+        "imageHighSrc": "cards/sv3pt5-096-high.png",
+        "attacks": [
+            {
+                "name": "Zen Headbutt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13111",
+        "externalId": "sv3pt5-95",
+        "localId": "095",
+        "setCode": "sv3pt5",
+        "cardNumber": "095/165",
+        "cardName": "Onix",
+        "fullDisplayName": "Onix 095/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            95
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/sv3pt5-095-low.png",
+        "imageHighSrc": "cards/sv3pt5-095-high.png",
+        "attacks": [
+            {
+                "name": "Thumpalanche",
+                "damage": "80×"
+            },
+            {
+                "name": "Heavy Impact",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13101",
+        "externalId": "sv3pt5-94",
+        "localId": "094",
+        "setCode": "sv3pt5",
+        "cardNumber": "094/165",
+        "cardName": "Gengar",
+        "fullDisplayName": "Gengar 094/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            94
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/sv3pt5-094-low.png",
+        "imageHighSrc": "cards/sv3pt5-094-high.png",
+        "attacks": [
+            {
+                "name": "Poltergeist",
+                "damage": "50×"
+            },
+            {
+                "name": "Hollow Dive",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13092",
+        "externalId": "sv3pt5-93",
+        "localId": "093",
+        "setCode": "sv3pt5",
+        "cardNumber": "093/165",
+        "cardName": "Haunter",
+        "fullDisplayName": "Haunter 093/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            93
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/sv3pt5-093-low.png",
+        "imageHighSrc": "cards/sv3pt5-093-high.png",
+        "attacks": [
+            {
+                "name": "Mumble",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13083",
+        "externalId": "sv3pt5-92",
+        "localId": "092",
+        "setCode": "sv3pt5",
+        "cardNumber": "092/165",
+        "cardName": "Gastly",
+        "fullDisplayName": "Gastly 092/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            92
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/sv3pt5-092-low.png",
+        "imageHighSrc": "cards/sv3pt5-092-high.png",
+        "attacks": [
+            {
+                "name": "Suffocating Gas",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13073",
+        "externalId": "sv3pt5-91",
+        "localId": "091",
+        "setCode": "sv3pt5",
+        "cardNumber": "091/165",
+        "cardName": "Cloyster",
+        "fullDisplayName": "Cloyster 091/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            91
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nelnal",
+        "imageLowSrc": "cards/sv3pt5-091-low.png",
+        "imageHighSrc": "cards/sv3pt5-091-high.png",
+        "attacks": [
+            {
+                "name": "Protect Charge",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13063",
+        "externalId": "sv3pt5-90",
+        "localId": "090",
+        "setCode": "sv3pt5",
+        "cardNumber": "090/165",
+        "cardName": "Shellder",
+        "fullDisplayName": "Shellder 090/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            90
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nelnal",
+        "imageLowSrc": "cards/sv3pt5-090-low.png",
+        "imageHighSrc": "cards/sv3pt5-090-high.png",
+        "attacks": [
+            {
+                "name": "Shell Press",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13051",
+        "externalId": "sv3pt5-89",
+        "localId": "089",
+        "setCode": "sv3pt5",
+        "cardNumber": "089/165",
+        "cardName": "Muk",
+        "fullDisplayName": "Muk 089/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            89
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nisota Niso",
+        "imageLowSrc": "cards/sv3pt5-089-low.png",
+        "imageHighSrc": "cards/sv3pt5-089-high.png",
+        "attacks": [
+            {
+                "name": "Sticky Jail",
+                "damage": "30"
+            },
+            {
+                "name": "Sludge Bomb",
+                "damage": "180"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13040",
+        "externalId": "sv3pt5-88",
+        "localId": "088",
+        "setCode": "sv3pt5",
+        "cardNumber": "088/165",
+        "cardName": "Grimer",
+        "fullDisplayName": "Grimer 088/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            88
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nisota Niso",
+        "imageLowSrc": "cards/sv3pt5-088-low.png",
+        "imageHighSrc": "cards/sv3pt5-088-high.png",
+        "attacks": [
+            {
+                "name": "Gummy Press",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13029",
+        "externalId": "sv3pt5-87",
+        "localId": "087",
+        "setCode": "sv3pt5",
+        "cardNumber": "087/165",
+        "cardName": "Dewgong",
+        "fullDisplayName": "Dewgong 087/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            87
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aoki",
+        "imageLowSrc": "cards/sv3pt5-087-low.png",
+        "imageHighSrc": "cards/sv3pt5-087-high.png",
+        "attacks": [
+            {
+                "name": "Dual Splash",
+                "damage": null
+            },
+            {
+                "name": "Aurora Beam",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13017",
+        "externalId": "sv3pt5-86",
+        "localId": "086",
+        "setCode": "sv3pt5",
+        "cardNumber": "086/165",
+        "cardName": "Seel",
+        "fullDisplayName": "Seel 086/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            86
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "aoki",
+        "imageLowSrc": "cards/sv3pt5-086-low.png",
+        "imageHighSrc": "cards/sv3pt5-086-high.png",
+        "attacks": [
+            {
+                "name": "Chilly",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "13007",
+        "externalId": "sv3pt5-85",
+        "localId": "085",
+        "setCode": "sv3pt5",
+        "cardNumber": "085/165",
+        "cardName": "Dodrio",
+        "fullDisplayName": "Dodrio 085/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            85
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/sv3pt5-085-low.png",
+        "imageHighSrc": "cards/sv3pt5-085-high.png",
+        "attacks": [
+            {
+                "name": "Ballistic Beak",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12998",
+        "externalId": "sv3pt5-84",
+        "localId": "084",
+        "setCode": "sv3pt5",
+        "cardNumber": "084/165",
+        "cardName": "Doduo",
+        "fullDisplayName": "Doduo 084/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            84
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/sv3pt5-084-low.png",
+        "imageHighSrc": "cards/sv3pt5-084-high.png",
+        "attacks": [
+            {
+                "name": "Reckless Charge",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12989",
+        "externalId": "sv3pt5-83",
+        "localId": "083",
+        "setCode": "sv3pt5",
+        "cardNumber": "083/165",
+        "cardName": "Farfetch'd",
+        "fullDisplayName": "Farfetch'd 083/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            83
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "KG-2000",
+        "imageLowSrc": "cards/sv3pt5-083-low.png",
+        "imageHighSrc": "cards/sv3pt5-083-high.png",
+        "attacks": [
+            {
+                "name": "Package Deal",
+                "damage": null
+            },
+            {
+                "name": "Leek Clobber",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12980",
+        "externalId": "sv3pt5-82",
+        "localId": "082",
+        "setCode": "sv3pt5",
+        "cardNumber": "082/165",
+        "cardName": "Magneton",
+        "fullDisplayName": "Magneton 082/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            82
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/sv3pt5-082-low.png",
+        "imageHighSrc": "cards/sv3pt5-082-high.png",
+        "attacks": [
+            {
+                "name": "Junk Magnet",
+                "damage": null
+            },
+            {
+                "name": "Head Bolt",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12968",
+        "externalId": "sv3pt5-81",
+        "localId": "081",
+        "setCode": "sv3pt5",
+        "cardNumber": "081/165",
+        "cardName": "Magnemite",
+        "fullDisplayName": "Magnemite 081/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            81
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuka Morii",
+        "imageLowSrc": "cards/sv3pt5-081-low.png",
+        "imageHighSrc": "cards/sv3pt5-081-high.png",
+        "attacks": [
+            {
+                "name": "Tiny Charge",
+                "damage": "10"
+            },
+            {
+                "name": "Big Explosion",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12959",
+        "externalId": "sv3pt5-80",
+        "localId": "080",
+        "setCode": "sv3pt5",
+        "cardNumber": "080/165",
+        "cardName": "Slowbro",
+        "fullDisplayName": "Slowbro 080/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            80
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "OKACHEKE",
+        "imageLowSrc": "cards/sv3pt5-080-low.png",
+        "imageHighSrc": "cards/sv3pt5-080-high.png",
+        "attacks": [
+            {
+                "name": "Big Yawn",
+                "damage": null
+            },
+            {
+                "name": "Laid-Back Tackle",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12949",
+        "externalId": "sv3pt5-79",
+        "localId": "079",
+        "setCode": "sv3pt5",
+        "cardNumber": "079/165",
+        "cardName": "Slowpoke",
+        "fullDisplayName": "Slowpoke 079/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            79
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "OKACHEKE",
+        "imageLowSrc": "cards/sv3pt5-079-low.png",
+        "imageHighSrc": "cards/sv3pt5-079-high.png",
+        "attacks": [
+            {
+                "name": "Sea Bathing",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12938",
+        "externalId": "sv3pt5-78",
+        "localId": "078",
+        "setCode": "sv3pt5",
+        "cardNumber": "078/165",
+        "cardName": "Rapidash",
+        "fullDisplayName": "Rapidash 078/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            78
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nurikabe",
+        "imageLowSrc": "cards/sv3pt5-078-low.png",
+        "imageHighSrc": "cards/sv3pt5-078-high.png",
+        "attacks": [
+            {
+                "name": "Singe",
+                "damage": null
+            },
+            {
+                "name": "Mach Turn",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12927",
+        "externalId": "sv3pt5-77",
+        "localId": "077",
+        "setCode": "sv3pt5",
+        "cardNumber": "077/165",
+        "cardName": "Ponyta",
+        "fullDisplayName": "Ponyta 077/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            77
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Nurikabe",
+        "imageLowSrc": "cards/sv3pt5-077-low.png",
+        "imageHighSrc": "cards/sv3pt5-077-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Flop",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12917",
+        "externalId": "sv3pt5-76",
+        "localId": "076",
+        "setCode": "sv3pt5",
+        "cardNumber": "076/165",
+        "cardName": "Golem ex",
+        "fullDisplayName": "Golem ex 076/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            76
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Uta",
+        "imageLowSrc": "cards/sv3pt5-076-low.png",
+        "imageHighSrc": "cards/sv3pt5-076-high.png",
+        "attacks": [
+            {
+                "name": "Dynamic Roll",
+                "damage": "50"
+            },
+            {
+                "name": "Rock Blaster",
+                "damage": "180"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12907",
+        "externalId": "sv3pt5-75",
+        "localId": "075",
+        "setCode": "sv3pt5",
+        "cardNumber": "075/165",
+        "cardName": "Graveler",
+        "fullDisplayName": "Graveler 075/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            75
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Uta",
+        "imageLowSrc": "cards/sv3pt5-075-low.png",
+        "imageHighSrc": "cards/sv3pt5-075-high.png",
+        "attacks": [
+            {
+                "name": "Rock Cannon",
+                "damage": "40×"
+            },
+            {
+                "name": "Heavy Impact",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12898",
+        "externalId": "sv3pt5-74",
+        "localId": "074",
+        "setCode": "sv3pt5",
+        "cardNumber": "074/165",
+        "cardName": "Geodude",
+        "fullDisplayName": "Geodude 074/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            74
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Uta",
+        "imageLowSrc": "cards/sv3pt5-074-low.png",
+        "imageHighSrc": "cards/sv3pt5-074-high.png",
+        "attacks": [
+            {
+                "name": "Stiffen",
+                "damage": null
+            },
+            {
+                "name": "Knuckle Punch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12888",
+        "externalId": "sv3pt5-73",
+        "localId": "073",
+        "setCode": "sv3pt5",
+        "cardNumber": "073/165",
+        "cardName": "Tentacruel",
+        "fullDisplayName": "Tentacruel 073/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            73
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/sv3pt5-073-low.png",
+        "imageHighSrc": "cards/sv3pt5-073-high.png",
+        "attacks": [
+            {
+                "name": "Poisonous Whip",
+                "damage": "30"
+            },
+            {
+                "name": "Tentacular Panic",
+                "damage": "90×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12879",
+        "externalId": "sv3pt5-72",
+        "localId": "072",
+        "setCode": "sv3pt5",
+        "cardNumber": "072/165",
+        "cardName": "Tentacool",
+        "fullDisplayName": "Tentacool 072/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            72
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "miki kudo",
+        "imageLowSrc": "cards/sv3pt5-072-low.png",
+        "imageHighSrc": "cards/sv3pt5-072-high.png",
+        "attacks": [
+            {
+                "name": "Tingle",
+                "damage": "10"
+            },
+            {
+                "name": "Watering",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12869",
+        "externalId": "sv3pt5-71",
+        "localId": "071",
+        "setCode": "sv3pt5",
+        "cardNumber": "071/165",
+        "cardName": "Victreebel",
+        "fullDisplayName": "Victreebel 071/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            71
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Jerky",
+        "imageLowSrc": "cards/sv3pt5-071-low.png",
+        "imageHighSrc": "cards/sv3pt5-071-high.png",
+        "attacks": [
+            {
+                "name": "Spit Up",
+                "damage": "50"
+            },
+            {
+                "name": "Slow-Acting Acid",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12860",
+        "externalId": "sv3pt5-70",
+        "localId": "070",
+        "setCode": "sv3pt5",
+        "cardNumber": "070/165",
+        "cardName": "Weepinbell",
+        "fullDisplayName": "Weepinbell 070/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            70
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Jerky",
+        "imageLowSrc": "cards/sv3pt5-070-low.png",
+        "imageHighSrc": "cards/sv3pt5-070-high.png",
+        "attacks": [
+            {
+                "name": "Cut",
+                "damage": "30"
+            },
+            {
+                "name": "Spray Fluid",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12850",
+        "externalId": "sv3pt5-69",
+        "localId": "069",
+        "setCode": "sv3pt5",
+        "cardNumber": "069/165",
+        "cardName": "Bellsprout",
+        "fullDisplayName": "Bellsprout 069/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            69
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Jerky",
+        "imageLowSrc": "cards/sv3pt5-069-low.png",
+        "imageHighSrc": "cards/sv3pt5-069-high.png",
+        "attacks": [
+            {
+                "name": "Cut",
+                "damage": "10"
+            },
+            {
+                "name": "Bind Down",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12842",
+        "externalId": "sv3pt5-68",
+        "localId": "068",
+        "setCode": "sv3pt5",
+        "cardNumber": "068/165",
+        "cardName": "Machamp",
+        "fullDisplayName": "Machamp 068/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            68
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryuta Fuse",
+        "imageLowSrc": "cards/sv3pt5-068-low.png",
+        "imageHighSrc": "cards/sv3pt5-068-high.png",
+        "attacks": [
+            {
+                "name": "Mountain Chopping",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12831",
+        "externalId": "sv3pt5-67",
+        "localId": "067",
+        "setCode": "sv3pt5",
+        "cardNumber": "067/165",
+        "cardName": "Machoke",
+        "fullDisplayName": "Machoke 067/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            67
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryuta Fuse",
+        "imageLowSrc": "cards/sv3pt5-067-low.png",
+        "imageHighSrc": "cards/sv3pt5-067-high.png",
+        "attacks": [
+            {
+                "name": "Mountain Ramming",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12822",
+        "externalId": "sv3pt5-66",
+        "localId": "066",
+        "setCode": "sv3pt5",
+        "cardNumber": "066/165",
+        "cardName": "Machop",
+        "fullDisplayName": "Machop 066/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            66
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryuta Fuse",
+        "imageLowSrc": "cards/sv3pt5-066-low.png",
+        "imageHighSrc": "cards/sv3pt5-066-high.png",
+        "attacks": [
+            {
+                "name": "Mountain Mashing",
+                "damage": null
+            },
+            {
+                "name": "Punch",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12812",
+        "externalId": "sv3pt5-65",
+        "localId": "065",
+        "setCode": "sv3pt5",
+        "cardNumber": "065/165",
+        "cardName": "Alakazam ex",
+        "fullDisplayName": "Alakazam ex 065/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 310,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            65
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-065-low.png",
+        "imageHighSrc": "cards/sv3pt5-065-high.png",
+        "attacks": [
+            {
+                "name": "Mind Jack",
+                "damage": "90+"
+            },
+            {
+                "name": "Dimensional Hand",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12801",
+        "externalId": "sv3pt5-64",
+        "localId": "064",
+        "setCode": "sv3pt5",
+        "cardNumber": "064/165",
+        "cardName": "Kadabra",
+        "fullDisplayName": "Kadabra 064/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            64
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-064-low.png",
+        "imageHighSrc": "cards/sv3pt5-064-high.png",
+        "attacks": [
+            {
+                "name": "Teleportation Attack",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12790",
+        "externalId": "sv3pt5-63",
+        "localId": "063",
+        "setCode": "sv3pt5",
+        "cardNumber": "063/165",
+        "cardName": "Abra",
+        "fullDisplayName": "Abra 063/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            63
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/sv3pt5-063-low.png",
+        "imageHighSrc": "cards/sv3pt5-063-high.png",
+        "attacks": [
+            {
+                "name": "Psyshot",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12780",
+        "externalId": "sv3pt5-62",
+        "localId": "062",
+        "setCode": "sv3pt5",
+        "cardNumber": "062/165",
+        "cardName": "Poliwrath",
+        "fullDisplayName": "Poliwrath 062/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            62
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kurata So",
+        "imageLowSrc": "cards/sv3pt5-062-low.png",
+        "imageHighSrc": "cards/sv3pt5-062-high.png",
+        "attacks": [
+            {
+                "name": "Bubble Beam",
+                "damage": "50"
+            },
+            {
+                "name": "Heroic Punch",
+                "damage": "100+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12770",
+        "externalId": "sv3pt5-61",
+        "localId": "061",
+        "setCode": "sv3pt5",
+        "cardNumber": "061/165",
+        "cardName": "Poliwhirl",
+        "fullDisplayName": "Poliwhirl 061/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            61
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kurata So",
+        "imageLowSrc": "cards/sv3pt5-061-low.png",
+        "imageHighSrc": "cards/sv3pt5-061-high.png",
+        "attacks": [
+            {
+                "name": "Wave Splash",
+                "damage": "20"
+            },
+            {
+                "name": "Frog Hop",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12762",
+        "externalId": "sv3pt5-60",
+        "localId": "060",
+        "setCode": "sv3pt5",
+        "cardNumber": "060/165",
+        "cardName": "Poliwag",
+        "fullDisplayName": "Poliwag 060/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            60
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kurata So",
+        "imageLowSrc": "cards/sv3pt5-060-low.png",
+        "imageHighSrc": "cards/sv3pt5-060-high.png",
+        "attacks": [
+            {
+                "name": "Bubble",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12752",
+        "externalId": "sv3pt5-59",
+        "localId": "059",
+        "setCode": "sv3pt5",
+        "cardNumber": "059/165",
+        "cardName": "Arcanine",
+        "fullDisplayName": "Arcanine 059/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            59
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsushi Furusawa",
+        "imageLowSrc": "cards/sv3pt5-059-low.png",
+        "imageHighSrc": "cards/sv3pt5-059-high.png",
+        "attacks": [
+            {
+                "name": "Torrid Torrent",
+                "damage": "30"
+            },
+            {
+                "name": "Dynamite Fang",
+                "damage": "240"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12742",
+        "externalId": "sv3pt5-58",
+        "localId": "058",
+        "setCode": "sv3pt5",
+        "cardNumber": "058/165",
+        "cardName": "Growlithe",
+        "fullDisplayName": "Growlithe 058/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            58
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsushi Furusawa",
+        "imageLowSrc": "cards/sv3pt5-058-low.png",
+        "imageHighSrc": "cards/sv3pt5-058-high.png",
+        "attacks": [
+            {
+                "name": "Vaporize",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12734",
+        "externalId": "sv3pt5-57",
+        "localId": "057",
+        "setCode": "sv3pt5",
+        "cardNumber": "057/165",
+        "cardName": "Primeape",
+        "fullDisplayName": "Primeape 057/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            57
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mina Nakai",
+        "imageLowSrc": "cards/sv3pt5-057-low.png",
+        "imageHighSrc": "cards/sv3pt5-057-high.png",
+        "attacks": [
+            {
+                "name": "Rant and Rave",
+                "damage": "40"
+            },
+            {
+                "name": "Raging Smash",
+                "damage": "150"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12725",
+        "externalId": "sv3pt5-56",
+        "localId": "056",
+        "setCode": "sv3pt5",
+        "cardNumber": "056/165",
+        "cardName": "Mankey",
+        "fullDisplayName": "Mankey 056/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            56
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mina Nakai",
+        "imageLowSrc": "cards/sv3pt5-056-low.png",
+        "imageHighSrc": "cards/sv3pt5-056-high.png",
+        "attacks": [
+            {
+                "name": "Thrash",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12716",
+        "externalId": "sv3pt5-55",
+        "localId": "055",
+        "setCode": "sv3pt5",
+        "cardNumber": "055/165",
+        "cardName": "Golduck",
+        "fullDisplayName": "Golduck 055/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            55
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Taira Akitsu",
+        "imageLowSrc": "cards/sv3pt5-055-low.png",
+        "imageHighSrc": "cards/sv3pt5-055-high.png",
+        "attacks": [
+            {
+                "name": "Aquatic Rescue",
+                "damage": null
+            },
+            {
+                "name": "Super Splash",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12707",
+        "externalId": "sv3pt5-54",
+        "localId": "054",
+        "setCode": "sv3pt5",
+        "cardNumber": "054/165",
+        "cardName": "Psyduck",
+        "fullDisplayName": "Psyduck 054/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            54
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Taira Akitsu",
+        "imageLowSrc": "cards/sv3pt5-054-low.png",
+        "imageHighSrc": "cards/sv3pt5-054-high.png",
+        "attacks": [
+            {
+                "name": "Overthink",
+                "damage": null
+            },
+            {
+                "name": "Water Gun",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12697",
+        "externalId": "sv3pt5-53",
+        "localId": "053",
+        "setCode": "sv3pt5",
+        "cardNumber": "053/165",
+        "cardName": "Persian",
+        "fullDisplayName": "Persian 053/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            53
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/sv3pt5-053-low.png",
+        "imageHighSrc": "cards/sv3pt5-053-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12687",
+        "externalId": "sv3pt5-52",
+        "localId": "052",
+        "setCode": "sv3pt5",
+        "cardNumber": "052/165",
+        "cardName": "Meowth",
+        "fullDisplayName": "Meowth 052/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            52
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/sv3pt5-052-low.png",
+        "imageHighSrc": "cards/sv3pt5-052-high.png",
+        "attacks": [
+            {
+                "name": "Come Here Right Meow",
+                "damage": null
+            },
+            {
+                "name": "Dig Claws",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12677",
+        "externalId": "sv3pt5-51",
+        "localId": "051",
+        "setCode": "sv3pt5",
+        "cardNumber": "051/165",
+        "cardName": "Dugtrio",
+        "fullDisplayName": "Dugtrio 051/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            51
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/sv3pt5-051-low.png",
+        "imageHighSrc": "cards/sv3pt5-051-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt Bounce",
+                "damage": "40"
+            },
+            {
+                "name": "Mud Bomb",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12667",
+        "externalId": "sv3pt5-50",
+        "localId": "050",
+        "setCode": "sv3pt5",
+        "cardNumber": "050/165",
+        "cardName": "Diglett",
+        "fullDisplayName": "Diglett 050/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            50
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Miki Tanaka",
+        "imageLowSrc": "cards/sv3pt5-050-low.png",
+        "imageHighSrc": "cards/sv3pt5-050-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt Bounce",
+                "damage": "10"
+            },
+            {
+                "name": "Mud-Slap",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12658",
+        "externalId": "sv3pt5-49",
+        "localId": "049",
+        "setCode": "sv3pt5",
+        "cardNumber": "049/165",
+        "cardName": "Venomoth",
+        "fullDisplayName": "Venomoth 049/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            49
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/sv3pt5-049-low.png",
+        "imageHighSrc": "cards/sv3pt5-049-high.png",
+        "attacks": [
+            {
+                "name": "Perplexing Powder",
+                "damage": "30"
+            },
+            {
+                "name": "Speed Wing",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12649",
+        "externalId": "sv3pt5-48",
+        "localId": "048",
+        "setCode": "sv3pt5",
+        "cardNumber": "048/165",
+        "cardName": "Venonat",
+        "fullDisplayName": "Venonat 048/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            48
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/sv3pt5-048-low.png",
+        "imageHighSrc": "cards/sv3pt5-048-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            },
+            {
+                "name": "Beam",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12638",
+        "externalId": "sv3pt5-47",
+        "localId": "047",
+        "setCode": "sv3pt5",
+        "cardNumber": "047/165",
+        "cardName": "Parasect",
+        "fullDisplayName": "Parasect 047/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            47
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yoriyuki Ikegami",
+        "imageLowSrc": "cards/sv3pt5-047-low.png",
+        "imageHighSrc": "cards/sv3pt5-047-high.png",
+        "attacks": [
+            {
+                "name": "Spread Filaments",
+                "damage": null
+            },
+            {
+                "name": "Claw Slash",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12630",
+        "externalId": "sv3pt5-46",
+        "localId": "046",
+        "setCode": "sv3pt5",
+        "cardNumber": "046/165",
+        "cardName": "Paras",
+        "fullDisplayName": "Paras 046/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            46
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yoriyuki Ikegami",
+        "imageLowSrc": "cards/sv3pt5-046-low.png",
+        "imageHighSrc": "cards/sv3pt5-046-high.png",
+        "attacks": [
+            {
+                "name": "Stampede",
+                "damage": "10"
+            },
+            {
+                "name": "Spore Ball",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12620",
+        "externalId": "sv3pt5-45",
+        "localId": "045",
+        "setCode": "sv3pt5",
+        "cardNumber": "045/165",
+        "cardName": "Vileplume",
+        "fullDisplayName": "Vileplume 045/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            45
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sekio",
+        "imageLowSrc": "cards/sv3pt5-045-low.png",
+        "imageHighSrc": "cards/sv3pt5-045-high.png",
+        "attacks": [
+            {
+                "name": "Solar Beam",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12611",
+        "externalId": "sv3pt5-44",
+        "localId": "044",
+        "setCode": "sv3pt5",
+        "cardNumber": "044/165",
+        "cardName": "Gloom",
+        "fullDisplayName": "Gloom 044/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            44
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sekio",
+        "imageLowSrc": "cards/sv3pt5-044-low.png",
+        "imageHighSrc": "cards/sv3pt5-044-high.png",
+        "attacks": [
+            {
+                "name": "Drool",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12601",
+        "externalId": "sv3pt5-43",
+        "localId": "043",
+        "setCode": "sv3pt5",
+        "cardNumber": "043/165",
+        "cardName": "Oddish",
+        "fullDisplayName": "Oddish 043/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            43
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sekio",
+        "imageLowSrc": "cards/sv3pt5-043-low.png",
+        "imageHighSrc": "cards/sv3pt5-043-high.png",
+        "attacks": [
+            {
+                "name": "Razor Leaf",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12592",
+        "externalId": "sv3pt5-42",
+        "localId": "042",
+        "setCode": "sv3pt5",
+        "cardNumber": "042/165",
+        "cardName": "Golbat",
+        "fullDisplayName": "Golbat 042/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            42
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Scav",
+        "imageLowSrc": "cards/sv3pt5-042-low.png",
+        "imageHighSrc": "cards/sv3pt5-042-high.png",
+        "attacks": [
+            {
+                "name": "Skill Dive",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "12584",
+        "externalId": "sv3pt5-41",
+        "localId": "041",
+        "setCode": "sv3pt5",
+        "cardNumber": "041/165",
+        "cardName": "Zubat",
+        "fullDisplayName": "Zubat 041/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            41
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Scav",
+        "imageLowSrc": "cards/sv3pt5-041-low.png",
+        "imageHighSrc": "cards/sv3pt5-041-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12575",
+        "externalId": "sv3pt5-40",
+        "localId": "040",
+        "setCode": "sv3pt5",
+        "cardNumber": "040/165",
+        "cardName": "Wigglytuff ex",
+        "fullDisplayName": "Wigglytuff ex 040/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 250,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            40
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saki Hayashiro",
+        "imageLowSrc": "cards/sv3pt5-040-low.png",
+        "imageHighSrc": "cards/sv3pt5-040-high.png",
+        "attacks": [
+            {
+                "name": "Friend Tackle",
+                "damage": "90+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12566",
+        "externalId": "sv3pt5-39",
+        "localId": "039",
+        "setCode": "sv3pt5",
+        "cardNumber": "039/165",
+        "cardName": "Jigglypuff",
+        "fullDisplayName": "Jigglypuff 039/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            39
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "saino misaki",
+        "imageLowSrc": "cards/sv3pt5-039-low.png",
+        "imageHighSrc": "cards/sv3pt5-039-high.png",
+        "attacks": [
+            {
+                "name": "Lead",
+                "damage": null
+            },
+            {
+                "name": "Stompy Stomp",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12555",
+        "externalId": "sv3pt5-38",
+        "localId": "038",
+        "setCode": "sv3pt5",
+        "cardNumber": "038/165",
+        "cardName": "Ninetales ex",
+        "fullDisplayName": "Ninetales ex 038/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 260,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            38
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/sv3pt5-038-low.png",
+        "imageHighSrc": "cards/sv3pt5-038-high.png",
+        "attacks": [
+            {
+                "name": "Heat Wave",
+                "damage": "30"
+            },
+            {
+                "name": "Mirrored Flames",
+                "damage": "80+"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12547",
+        "externalId": "sv3pt5-37",
+        "localId": "037",
+        "setCode": "sv3pt5",
+        "cardNumber": "037/165",
+        "cardName": "Vulpix",
+        "fullDisplayName": "Vulpix 037/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            37
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/sv3pt5-037-low.png",
+        "imageHighSrc": "cards/sv3pt5-037-high.png",
+        "attacks": [
+            {
+                "name": "Super Singe",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12532",
+        "externalId": "sv3pt5-36",
+        "localId": "036",
+        "setCode": "sv3pt5",
+        "cardNumber": "036/165",
+        "cardName": "Clefable",
+        "fullDisplayName": "Clefable 036/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            36
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "ryoma uratsuka",
+        "imageLowSrc": "cards/sv3pt5-036-low.png",
+        "imageHighSrc": "cards/sv3pt5-036-high.png",
+        "attacks": [
+            {
+                "name": "Follow Me",
+                "damage": null
+            },
+            {
+                "name": "More Moon",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12522",
+        "externalId": "sv3pt5-35",
+        "localId": "035",
+        "setCode": "sv3pt5",
+        "cardNumber": "035/165",
+        "cardName": "Clefairy",
+        "fullDisplayName": "Clefairy 035/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            35
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "ryoma uratsuka",
+        "imageLowSrc": "cards/sv3pt5-035-low.png",
+        "imageHighSrc": "cards/sv3pt5-035-high.png",
+        "attacks": [
+            {
+                "name": "Moon-Viewing Invitation",
+                "damage": null
+            },
+            {
+                "name": "Smack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12512",
+        "externalId": "sv3pt5-34",
+        "localId": "034",
+        "setCode": "sv3pt5",
+        "cardNumber": "034/165",
+        "cardName": "Nidoking",
+        "fullDisplayName": "Nidoking 034/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            34
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shiburingaru",
+        "imageLowSrc": "cards/sv3pt5-034-low.png",
+        "imageHighSrc": "cards/sv3pt5-034-high.png",
+        "attacks": [
+            {
+                "name": "Venomous Impact",
+                "damage": "190"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12504",
+        "externalId": "sv3pt5-33",
+        "localId": "033",
+        "setCode": "sv3pt5",
+        "cardNumber": "033/165",
+        "cardName": "Nidorino",
+        "fullDisplayName": "Nidorino 033/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            33
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shiburingaru",
+        "imageLowSrc": "cards/sv3pt5-033-low.png",
+        "imageHighSrc": "cards/sv3pt5-033-high.png",
+        "attacks": [
+            {
+                "name": "Sharp Fang",
+                "damage": "30"
+            },
+            {
+                "name": "Superpowered Horns",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12494",
+        "externalId": "sv3pt5-32",
+        "localId": "032",
+        "setCode": "sv3pt5",
+        "cardNumber": "032/165",
+        "cardName": "Nidoran ♂",
+        "fullDisplayName": "Nidoran ♂ 032/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            32
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shiburingaru",
+        "imageLowSrc": "cards/sv3pt5-032-low.png",
+        "imageHighSrc": "cards/sv3pt5-032-high.png",
+        "attacks": [
+            {
+                "name": "Horn Attack",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12487",
+        "externalId": "sv3pt5-31",
+        "localId": "031",
+        "setCode": "sv3pt5",
+        "cardNumber": "031/165",
+        "cardName": "Nidoqueen",
+        "fullDisplayName": "Nidoqueen 031/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            31
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Teeziro",
+        "imageLowSrc": "cards/sv3pt5-031-low.png",
+        "imageHighSrc": "cards/sv3pt5-031-high.png",
+        "attacks": [
+            {
+                "name": "Queen Press",
+                "damage": "90"
+            },
+            {
+                "name": "Lunge Out",
+                "damage": "160"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12477",
+        "externalId": "sv3pt5-30",
+        "localId": "030",
+        "setCode": "sv3pt5",
+        "cardNumber": "030/165",
+        "cardName": "Nidorina",
+        "fullDisplayName": "Nidorina 030/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            30
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Teeziro",
+        "imageLowSrc": "cards/sv3pt5-030-low.png",
+        "imageHighSrc": "cards/sv3pt5-030-high.png",
+        "attacks": [
+            {
+                "name": "Fetch Family",
+                "damage": null
+            },
+            {
+                "name": "Sharp Fang",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12468",
+        "externalId": "sv3pt5-29",
+        "localId": "029",
+        "setCode": "sv3pt5",
+        "cardNumber": "029/165",
+        "cardName": "Nidoran ♀",
+        "fullDisplayName": "Nidoran ♀ 029/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            29
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Teeziro",
+        "imageLowSrc": "cards/sv3pt5-029-low.png",
+        "imageHighSrc": "cards/sv3pt5-029-high.png",
+        "attacks": [
+            {
+                "name": "Poison Horn",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12455",
+        "externalId": "sv3pt5-28",
+        "localId": "028",
+        "setCode": "sv3pt5",
+        "cardNumber": "028/165",
+        "cardName": "Sandslash",
+        "fullDisplayName": "Sandslash 028/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            28
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kodama",
+        "imageLowSrc": "cards/sv3pt5-028-low.png",
+        "imageHighSrc": "cards/sv3pt5-028-high.png",
+        "attacks": [
+            {
+                "name": "Rumble",
+                "damage": "30"
+            },
+            {
+                "name": "Spike Rend",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12446",
+        "externalId": "sv3pt5-27",
+        "localId": "027",
+        "setCode": "sv3pt5",
+        "cardNumber": "027/165",
+        "cardName": "Sandshrew",
+        "fullDisplayName": "Sandshrew 027/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            27
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kodama",
+        "imageLowSrc": "cards/sv3pt5-027-low.png",
+        "imageHighSrc": "cards/sv3pt5-027-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12436",
+        "externalId": "sv3pt5-26",
+        "localId": "026",
+        "setCode": "sv3pt5",
+        "cardNumber": "026/165",
+        "cardName": "Raichu",
+        "fullDisplayName": "Raichu 026/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            26
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/sv3pt5-026-low.png",
+        "imageHighSrc": "cards/sv3pt5-026-high.png",
+        "attacks": [
+            {
+                "name": "Thunder",
+                "damage": "180"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12426",
+        "externalId": "sv3pt5-25",
+        "localId": "025",
+        "setCode": "sv3pt5",
+        "cardNumber": "025/165",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 025/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/sv3pt5-025-low.png",
+        "imageHighSrc": "cards/sv3pt5-025-high.png",
+        "attacks": [
+            {
+                "name": "Charge",
+                "damage": null
+            },
+            {
+                "name": "Pika Punch",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12418",
+        "externalId": "sv3pt5-24",
+        "localId": "024",
+        "setCode": "sv3pt5",
+        "cardNumber": "024/165",
+        "cardName": "Arbok ex",
+        "fullDisplayName": "Arbok ex 024/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 270,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            24
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/sv3pt5-024-low.png",
+        "imageHighSrc": "cards/sv3pt5-024-high.png",
+        "attacks": [
+            {
+                "name": "Bind Down",
+                "damage": "70"
+            },
+            {
+                "name": "Menacing Fangs",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12408",
+        "externalId": "sv3pt5-23",
+        "localId": "023",
+        "setCode": "sv3pt5",
+        "cardNumber": "023/165",
+        "cardName": "Ekans",
+        "fullDisplayName": "Ekans 023/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            23
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kedamahadaitai Yawarakai",
+        "imageLowSrc": "cards/sv3pt5-023-low.png",
+        "imageHighSrc": "cards/sv3pt5-023-high.png",
+        "attacks": [
+            {
+                "name": "Acid Spray",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12399",
+        "externalId": "sv3pt5-22",
+        "localId": "022",
+        "setCode": "sv3pt5",
+        "cardNumber": "022/165",
+        "cardName": "Fearow",
+        "fullDisplayName": "Fearow 022/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            22
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Gemi",
+        "imageLowSrc": "cards/sv3pt5-022-low.png",
+        "imageHighSrc": "cards/sv3pt5-022-high.png",
+        "attacks": [
+            {
+                "name": "Beak Catch",
+                "damage": null
+            },
+            {
+                "name": "Speed Dive",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12391",
+        "externalId": "sv3pt5-21",
+        "localId": "021",
+        "setCode": "sv3pt5",
+        "cardNumber": "021/165",
+        "cardName": "Spearow",
+        "fullDisplayName": "Spearow 021/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            21
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Gemi",
+        "imageLowSrc": "cards/sv3pt5-021-low.png",
+        "imageHighSrc": "cards/sv3pt5-021-high.png",
+        "attacks": [
+            {
+                "name": "Speed Dive",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12380",
+        "externalId": "sv3pt5-20",
+        "localId": "020",
+        "setCode": "sv3pt5",
+        "cardNumber": "020/165",
+        "cardName": "Raticate",
+        "fullDisplayName": "Raticate 020/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            20
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sowsow",
+        "imageLowSrc": "cards/sv3pt5-020-low.png",
+        "imageHighSrc": "cards/sv3pt5-020-high.png",
+        "attacks": [
+            {
+                "name": "Second Bite",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12372",
+        "externalId": "sv3pt5-19",
+        "localId": "019",
+        "setCode": "sv3pt5",
+        "cardNumber": "019/165",
+        "cardName": "Rattata",
+        "fullDisplayName": "Rattata 019/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            19
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sowsow",
+        "imageLowSrc": "cards/sv3pt5-019-low.png",
+        "imageHighSrc": "cards/sv3pt5-019-high.png",
+        "attacks": [
+            {
+                "name": "Gnaw the Wound",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12363",
+        "externalId": "sv3pt5-18",
+        "localId": "018",
+        "setCode": "sv3pt5",
+        "cardNumber": "018/165",
+        "cardName": "Pidgeot",
+        "fullDisplayName": "Pidgeot 018/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            18
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Oswaldo KATO",
+        "imageLowSrc": "cards/sv3pt5-018-low.png",
+        "imageHighSrc": "cards/sv3pt5-018-high.png",
+        "attacks": [
+            {
+                "name": "Flap",
+                "damage": "40"
+            },
+            {
+                "name": "Fly",
+                "damage": "150"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12353",
+        "externalId": "sv3pt5-17",
+        "localId": "017",
+        "setCode": "sv3pt5",
+        "cardNumber": "017/165",
+        "cardName": "Pidgeotto",
+        "fullDisplayName": "Pidgeotto 017/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            17
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Oswaldo KATO",
+        "imageLowSrc": "cards/sv3pt5-017-low.png",
+        "imageHighSrc": "cards/sv3pt5-017-high.png",
+        "attacks": [
+            {
+                "name": "Flap",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12345",
+        "externalId": "sv3pt5-16",
+        "localId": "016",
+        "setCode": "sv3pt5",
+        "cardNumber": "016/165",
+        "cardName": "Pidgey",
+        "fullDisplayName": "Pidgey 016/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            16
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Oswaldo KATO",
+        "imageLowSrc": "cards/sv3pt5-016-low.png",
+        "imageHighSrc": "cards/sv3pt5-016-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12335",
+        "externalId": "sv3pt5-15",
+        "localId": "015",
+        "setCode": "sv3pt5",
+        "cardNumber": "015/165",
+        "cardName": "Beedrill",
+        "fullDisplayName": "Beedrill 015/165 151",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            15
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nisimono",
+        "imageLowSrc": "cards/sv3pt5-015-low.png",
+        "imageHighSrc": "cards/sv3pt5-015-high.png",
+        "attacks": [
+            {
+                "name": "Nadir Needle",
+                "damage": "30+"
+            },
+            {
+                "name": "Pierce",
+                "damage": "110"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12325",
+        "externalId": "sv3pt5-14",
+        "localId": "014",
+        "setCode": "sv3pt5",
+        "cardNumber": "014/165",
+        "cardName": "Kakuna",
+        "fullDisplayName": "Kakuna 014/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            14
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nisimono",
+        "imageLowSrc": "cards/sv3pt5-014-low.png",
+        "imageHighSrc": "cards/sv3pt5-014-high.png",
+        "attacks": [
+            {
+                "name": "Zzzt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12315",
+        "externalId": "sv3pt5-13",
+        "localId": "013",
+        "setCode": "sv3pt5",
+        "cardNumber": "013/165",
+        "cardName": "Weedle",
+        "fullDisplayName": "Weedle 013/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            13
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nisimono",
+        "imageLowSrc": "cards/sv3pt5-013-low.png",
+        "imageHighSrc": "cards/sv3pt5-013-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            },
+            {
+                "name": "Bug Bite",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12305",
+        "externalId": "sv3pt5-12",
+        "localId": "012",
+        "setCode": "sv3pt5",
+        "cardNumber": "012/165",
+        "cardName": "Butterfree",
+        "fullDisplayName": "Butterfree 012/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            12
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tika Matsuno",
+        "imageLowSrc": "cards/sv3pt5-012-low.png",
+        "imageHighSrc": "cards/sv3pt5-012-high.png",
+        "attacks": [
+            {
+                "name": "Whirlwind",
+                "damage": "60"
+            },
+            {
+                "name": "Bye-Bye Flight",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "12293",
+        "externalId": "sv3pt5-11",
+        "localId": "011",
+        "setCode": "sv3pt5",
+        "cardNumber": "011/165",
+        "cardName": "Metapod",
+        "fullDisplayName": "Metapod 011/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            11
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tika Matsuno",
+        "imageLowSrc": "cards/sv3pt5-011-low.png",
+        "imageHighSrc": "cards/sv3pt5-011-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            },
+            {
+                "name": "Defensive Posture",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "12284",
+        "externalId": "sv3pt5-10",
+        "localId": "010",
+        "setCode": "sv3pt5",
+        "cardNumber": "010/165",
+        "cardName": "Caterpie",
+        "fullDisplayName": "Caterpie 010/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            10
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tika Matsuno",
+        "imageLowSrc": "cards/sv3pt5-010-low.png",
+        "imageHighSrc": "cards/sv3pt5-010-high.png",
+        "attacks": [
+            {
+                "name": "Leaf Munch",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12274",
+        "externalId": "sv3pt5-9",
+        "localId": "009",
+        "setCode": "sv3pt5",
+        "cardNumber": "009/165",
+        "cardName": "Blastoise ex",
+        "fullDisplayName": "Blastoise ex 009/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Yamashita",
+        "imageLowSrc": "cards/sv3pt5-009-low.png",
+        "imageHighSrc": "cards/sv3pt5-009-high.png",
+        "attacks": [
+            {
+                "name": "Twin Cannons",
+                "damage": "140×"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12264",
+        "externalId": "sv3pt5-8",
+        "localId": "008",
+        "setCode": "sv3pt5",
+        "cardNumber": "008/165",
+        "cardName": "Wartortle",
+        "fullDisplayName": "Wartortle 008/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            8
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kantaro",
+        "imageLowSrc": "cards/sv3pt5-008-low.png",
+        "imageHighSrc": "cards/sv3pt5-008-high.png",
+        "attacks": [
+            {
+                "name": "Free Diving",
+                "damage": null
+            },
+            {
+                "name": "Spinning Attack",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12254",
+        "externalId": "sv3pt5-7",
+        "localId": "007",
+        "setCode": "sv3pt5",
+        "cardNumber": "007/165",
+        "cardName": "Squirtle",
+        "fullDisplayName": "Squirtle 007/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            7
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kantaro",
+        "imageLowSrc": "cards/sv3pt5-007-low.png",
+        "imageHighSrc": "cards/sv3pt5-007-high.png",
+        "attacks": [
+            {
+                "name": "Withdraw",
+                "damage": null
+            },
+            {
+                "name": "Skull Bash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12246",
+        "externalId": "sv3pt5-6",
+        "localId": "006",
+        "setCode": "sv3pt5",
+        "cardNumber": "006/165",
+        "cardName": "Charizard ex",
+        "fullDisplayName": "Charizard ex 006/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 330,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            6
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "PLANETA Mochizuki",
+        "imageLowSrc": "cards/sv3pt5-006-low.png",
+        "imageHighSrc": "cards/sv3pt5-006-high.png",
+        "attacks": [
+            {
+                "name": "Brave Wing",
+                "damage": "60+"
+            },
+            {
+                "name": "Explosive Vortex",
+                "damage": "330"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12236",
+        "externalId": "sv3pt5-5",
+        "localId": "005",
+        "setCode": "sv3pt5",
+        "cardNumber": "005/165",
+        "cardName": "Charmeleon",
+        "fullDisplayName": "Charmeleon 005/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            5
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GIDORA",
+        "imageLowSrc": "cards/sv3pt5-005-low.png",
+        "imageHighSrc": "cards/sv3pt5-005-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "20"
+            },
+            {
+                "name": "Fire Blast",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12226",
+        "externalId": "sv3pt5-4",
+        "localId": "004",
+        "setCode": "sv3pt5",
+        "cardNumber": "004/165",
+        "cardName": "Charmander",
+        "fullDisplayName": "Charmander 004/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            4
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "GIDORA",
+        "imageLowSrc": "cards/sv3pt5-004-low.png",
+        "imageHighSrc": "cards/sv3pt5-004-high.png",
+        "attacks": [
+            {
+                "name": "Blazing Destruction",
+                "damage": null
+            },
+            {
+                "name": "Steady Firebreathing",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12215",
+        "externalId": "sv3pt5-3",
+        "localId": "003",
+        "setCode": "sv3pt5",
+        "cardNumber": "003/165",
+        "cardName": "Venusaur ex",
+        "fullDisplayName": "Venusaur ex 003/165 151",
+        "rarity": "Double Rare",
+        "category": "Pokémon",
+        "hp": 340,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            3
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/sv3pt5-003-low.png",
+        "imageHighSrc": "cards/sv3pt5-003-high.png",
+        "attacks": [
+            {
+                "name": "Dangerous Toxwhip",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "12205",
+        "externalId": "sv3pt5-2",
+        "localId": "002",
+        "setCode": "sv3pt5",
+        "cardNumber": "002/165",
+        "cardName": "Ivysaur",
+        "fullDisplayName": "Ivysaur 002/165 151",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            2
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuu Nishida",
+        "imageLowSrc": "cards/sv3pt5-002-low.png",
+        "imageHighSrc": "cards/sv3pt5-002-high.png",
+        "attacks": [
+            {
+                "name": "Leech Seed",
+                "damage": "30"
+            },
+            {
+                "name": "Vine Whip",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "12197",
+        "externalId": "sv3pt5-1",
+        "localId": "001",
+        "setCode": "sv3pt5",
+        "cardNumber": "001/165",
+        "cardName": "Bulbasaur",
+        "fullDisplayName": "Bulbasaur 001/165 151",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            1
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuu Nishida",
+        "imageLowSrc": "cards/sv3pt5-001-low.png",
+        "imageHighSrc": "cards/sv3pt5-001-high.png",
+        "attacks": [
+            {
+                "name": "Leech Seed",
+                "damage": "20"
+            }
+        ]
+    }
+]

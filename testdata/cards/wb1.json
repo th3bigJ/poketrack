@@ -1,0 +1,172 @@
+[
+    {
+        "masterCardId": "22380",
+        "externalId": "wb1-5",
+        "localId": "005",
+        "setCode": "wb1",
+        "cardNumber": "005/5",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 005/5 Poké Card Creator Pack",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sylvia Forrest",
+        "imageLowSrc": "cards/ex5.5-005-low.jpg",
+        "imageHighSrc": "cards/ex5.5-005-low.jpg",
+        "attacks": [
+            {
+                "name": "Thundershock",
+                "damage": "10"
+            },
+            {
+                "name": "Shock Bolt",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22379",
+        "externalId": "wb1-4",
+        "localId": "004",
+        "setCode": "wb1",
+        "cardNumber": "004/5",
+        "cardName": "Mudkip",
+        "fullDisplayName": "Mudkip 004/5 Poké Card Creator Pack",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            258
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Rowan Laidlaw",
+        "imageLowSrc": "cards/ex5.5-004-low.jpg",
+        "imageHighSrc": "cards/ex5.5-004-low.jpg",
+        "attacks": [
+            {
+                "name": "Tail Rap",
+                "damage": "10x"
+            },
+            {
+                "name": "Hypno Splash",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22378",
+        "externalId": "wb1-3",
+        "localId": "003",
+        "setCode": "wb1",
+        "cardNumber": "003/5",
+        "cardName": "Torchic",
+        "fullDisplayName": "Torchic 003/5 Poké Card Creator Pack",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            255
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "May Do",
+        "imageLowSrc": "cards/ex5.5-003-low.jpg",
+        "imageHighSrc": "cards/ex5.5-003-low.jpg",
+        "attacks": [
+            {
+                "name": "Super Singe",
+                "damage": "10"
+            },
+            {
+                "name": "Flamethrower",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22377",
+        "externalId": "wb1-2",
+        "localId": "002",
+        "setCode": "wb1",
+        "cardNumber": "002/5",
+        "cardName": "Wurmple",
+        "fullDisplayName": "Wurmple 002/5 Poké Card Creator Pack",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            265
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Katie Gross",
+        "imageLowSrc": "cards/ex5.5-002-low.jpg",
+        "imageHighSrc": "cards/ex5.5-002-low.jpg",
+        "attacks": [
+            {
+                "name": "Gooey Thread",
+                "damage": "10"
+            },
+            {
+                "name": "Lunge",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22376",
+        "externalId": "wb1-1",
+        "localId": "001",
+        "setCode": "wb1",
+        "cardNumber": "001/5",
+        "cardName": "Treecko",
+        "fullDisplayName": "Treecko 001/5 Poké Card Creator Pack",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            252
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mark Kraus",
+        "imageLowSrc": "cards/ex5.5-001-low.jpg",
+        "imageHighSrc": "cards/ex5.5-001-low.jpg",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Poison Claws",
+                "damage": "30"
+            }
+        ]
+    }
+]

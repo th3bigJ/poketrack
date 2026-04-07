@@ -1,980 +1,749 @@
 [
-  {
-    "masterCardId": "22405",
-    "externalId": "cel25c-145_A",
-    "tcgdex_id": null,
-    "localId": "145",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "145/25",
-    "cardName": "Garchomp C LV.X",
-    "fullDisplayName": "Garchomp C LV.X 145/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": null,
-    "hp": 110,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Level-Up",
-      "SP"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-145-low.jpg",
-    "imageHighSrc": "cards/cel25c-145-low.jpg",
-    "attacks": [
-      {
-        "name": "Dragon Rush",
-        "damage": null
-      }
-    ],
-    "rules": "Put this card onto your Active Garchomp C. Garchomp C LV.X can use any attack, Poké-Power, or Poké-Body from its previous Level."
-  },
-  {
-    "masterCardId": "22404",
-    "externalId": "cel25c-114_A",
-    "tcgdex_id": null,
-    "localId": "114",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "114/25",
-    "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 114/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Lightning",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-114-low.jpg",
-    "imageHighSrc": "cards/cel25c-114-low.jpg",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "20+"
-      },
-      {
-        "name": "Bolt Strike",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22403",
-    "externalId": "cel25c-113_A",
-    "tcgdex_id": null,
-    "localId": "113",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "113/25",
-    "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 113/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Fire",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-113-low.jpg",
-    "imageHighSrc": "cards/cel25c-113-low.jpg",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "20+"
-      },
-      {
-        "name": "Blue Flare",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22402",
-    "externalId": "cel25c-109_A",
-    "tcgdex_id": null,
-    "localId": "109",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "109/25",
-    "cardName": "Luxray GL LV.X",
-    "fullDisplayName": "Luxray GL LV.X 109/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": null,
-    "hp": 110,
-    "elementTypes": [
-      "Lightning",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Level-Up",
-      "SP"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-109-low.jpg",
-    "imageHighSrc": "cards/cel25c-109-low.jpg",
-    "attacks": [
-      {
-        "name": "Flash Impact",
-        "damage": "60"
-      }
-    ],
-    "rules": "Put this card onto your Active Luxray GL. Luxray GL LV. X can use any attack, Poké-Power, or Poké-Body from its previous Level."
-  },
-  {
-    "masterCardId": "22401",
-    "externalId": "cel25c-107_A",
-    "tcgdex_id": null,
-    "localId": "107",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "107/25",
-    "cardName": "Donphan",
-    "fullDisplayName": "Donphan 107/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Fighting",
-      "Water"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 1",
-      "Prime"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kent Kanetsuna",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-107-low.jpg",
-    "imageHighSrc": "cards/cel25c-107-low.jpg",
-    "attacks": [
-      {
-        "name": "Earthquake",
-        "damage": "60"
-      },
-      {
-        "name": "Heavy Impact",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22400",
-    "externalId": "cel25c-97_A",
-    "tcgdex_id": null,
-    "localId": "097",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "097/25",
-    "cardName": "Xerneas-EX",
-    "fullDisplayName": "Xerneas-EX 097/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Fairy",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-097-low.jpg",
-    "imageHighSrc": "cards/cel25c-097-low.jpg",
-    "attacks": [
-      {
-        "name": "Break Through",
-        "damage": "60"
-      },
-      {
-        "name": "X Blast",
-        "damage": "140"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "22399",
-    "externalId": "cel25c-93_A",
-    "tcgdex_id": null,
-    "localId": "093",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "093/25",
-    "cardName": "Gardevoir ex δ",
-    "fullDisplayName": "Gardevoir ex δ 093/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Fire",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masahiko Ishii",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-093-low.jpg",
-    "imageHighSrc": "cards/cel25c-093-low.jpg",
-    "attacks": [
-      {
-        "name": "Flame Ball",
-        "damage": "80"
-      }
-    ],
-    "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "22398",
-    "externalId": "cel25c-88_A",
-    "tcgdex_id": null,
-    "localId": "088",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "088/25",
-    "cardName": "Mew ex",
-    "fullDisplayName": "Mew ex 088/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-088-low.jpg",
-    "imageHighSrc": "cards/cel25c-088-low.jpg",
-    "attacks": [
-      {
-        "name": "Power Move",
-        "damage": null
-      }
-    ],
-    "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "22397",
-    "externalId": "cel25c-86_A",
-    "tcgdex_id": null,
-    "localId": "086",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "086/25",
-    "cardName": "Rocket's Admin.",
-    "fullDisplayName": "Rocket's Admin. 086/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-086-low.jpg",
-    "imageHighSrc": "cards/cel25c-086-low.jpg",
-    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player shuffles his or her hand into his or her deck. Then, each player counts his or her Prize cards left and draws up to that many cards. (You draw your cards first.)"
-  },
-  {
-    "masterCardId": "22396",
-    "externalId": "cel25c-76_A",
-    "tcgdex_id": null,
-    "localId": "076",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "076/25",
-    "cardName": "M Rayquaza-EX",
-    "fullDisplayName": "M Rayquaza-EX 076/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": null,
-    "hp": 220,
-    "elementTypes": [
-      "Colorless",
-      "Lightning"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "MEGA",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-076-low.jpg",
-    "imageHighSrc": "cards/cel25c-076-low.jpg",
-    "attacks": [
-      {
-        "name": "Emerald Break",
-        "damage": "30×"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends."
-  },
-  {
-    "masterCardId": "22395",
-    "externalId": "cel25c-73_A",
-    "tcgdex_id": null,
-    "localId": "073",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "073/25",
-    "cardName": "Imposter Professor Oak",
-    "fullDisplayName": "Imposter Professor Oak 073/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": null,
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-073-low.jpg",
-    "imageHighSrc": "cards/cel25c-073-low.jpg",
-    "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards."
-  },
-  {
-    "masterCardId": "22394",
-    "externalId": "cel25c-66_A",
-    "tcgdex_id": null,
-    "localId": "066",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "066/25",
-    "cardName": "Shining Magikarp",
-    "fullDisplayName": "Shining Magikarp 066/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Water",
-      "Psychic"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-066-low.jpg",
-    "imageHighSrc": "cards/cel25c-066-low.jpg",
-    "attacks": [
-      {
-        "name": "Gold Scale",
-        "damage": null
-      },
-      {
-        "name": "Dragon Bond",
-        "damage": null
-      }
-    ],
-    "rules": "You can't have more than 1 Shining Magikarp in your deck."
-  },
-  {
-    "masterCardId": "22393",
-    "externalId": "cel25c-60_A",
-    "tcgdex_id": null,
-    "localId": "060",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "060/25",
-    "cardName": "Tapu Lele-GX",
-    "fullDisplayName": "Tapu Lele-GX 060/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Psychic",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic",
-      "GX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-060-low.jpg",
-    "imageHighSrc": "cards/cel25c-060-low.jpg",
-    "attacks": [
-      {
-        "name": "Energy Drive",
-        "damage": "20×"
-      },
-      {
-        "name": "Tapu Cure-GX",
-        "damage": null
-      }
-    ],
-    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "22392",
-    "externalId": "cel25c-54_A",
-    "tcgdex_id": null,
-    "localId": "054",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "054/25",
-    "cardName": "Mewtwo-EX",
-    "fullDisplayName": "Mewtwo-EX 054/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Psychic",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shizurow",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-054-low.jpg",
-    "imageHighSrc": "cards/cel25c-054-low.jpg",
-    "attacks": [
-      {
-        "name": "X Ball",
-        "damage": "20×"
-      },
-      {
-        "name": "Psydrive",
-        "damage": "120"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "22391",
-    "externalId": "cel25c-24_A",
-    "tcgdex_id": null,
-    "localId": "024",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "024/25",
-    "cardName": "_____'s Pikachu",
-    "fullDisplayName": "_____'s Pikachu 024/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning",
-      "Fighting"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-024-low.jpg",
-    "imageHighSrc": "cards/cel25c-024-low.jpg",
-    "attacks": [
-      {
-        "name": "Birthday Surprise",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22390",
-    "externalId": "cel25c-20_A",
-    "tcgdex_id": null,
-    "localId": "020",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "020/25",
-    "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 020/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": null,
-    "hp": 30,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Baby"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-020-low.jpg",
-    "imageHighSrc": "cards/cel25c-020-low.jpg",
-    "attacks": [
-      {
-        "name": "Eeeeeeek",
-        "damage": null
-      }
-    ],
-    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
-  },
-  {
-    "masterCardId": "22389",
-    "externalId": "cel25c-17_A",
-    "tcgdex_id": null,
-    "localId": "017",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "017/25",
-    "cardName": "Umbreon ☆",
-    "fullDisplayName": "Umbreon ☆ 017/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Darkness",
-      "Fighting"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic",
-      "Star"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-017-low.jpg",
-    "imageHighSrc": "cards/cel25c-017-low.jpg",
-    "attacks": [
-      {
-        "name": "Feint Attack",
-        "damage": null
-      }
-    ],
-    "rules": "You can't have more than 1 Pokémon Star in your deck."
-  },
-  {
-    "masterCardId": "22385",
-    "externalId": "cel25c-15_A1",
-    "tcgdex_id": null,
-    "localId": "015d",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "015/25",
-    "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 015/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Grass",
-      "Fire"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-015d-low.jpg",
-    "imageHighSrc": "cards/cel25c-015d-low.jpg",
-    "attacks": [
-      {
-        "name": "Solarbeam",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22387",
-    "externalId": "cel25c-15_A3",
-    "tcgdex_id": null,
-    "localId": "015c",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "015/25",
-    "cardName": "Rocket's Zapdos",
-    "fullDisplayName": "Rocket's Zapdos 015/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin-ichi Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-015c-low.jpg",
-    "imageHighSrc": "cards/cel25c-015c-low.jpg",
-    "attacks": [
-      {
-        "name": "Plasma",
-        "damage": "20"
-      },
-      {
-        "name": "Electroburn",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22386",
-    "externalId": "cel25c-15_A2",
-    "tcgdex_id": null,
-    "localId": "015b",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "015/25",
-    "cardName": "Here Comes Team Rocket!",
-    "fullDisplayName": "Here Comes Team Rocket! 015/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": null,
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-015b-low.jpg",
-    "imageHighSrc": "cards/cel25c-015b-low.jpg",
-    "rules": "Each player plays with his or her Prize cards face up for the rest of the game."
-  },
-  {
-    "masterCardId": "22388",
-    "externalId": "cel25c-15_A4",
-    "tcgdex_id": null,
-    "localId": "015a",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "015/25",
-    "cardName": "Claydol",
-    "fullDisplayName": "Claydol 015/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting",
-      "Colorless"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-015a-low.jpg",
-    "imageHighSrc": "cards/cel25c-015a-low.jpg",
-    "attacks": [
-      {
-        "name": "Spinning Attack",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22384",
-    "externalId": "cel25c-9_A",
-    "tcgdex_id": null,
-    "localId": "009",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "009/25",
-    "cardName": "Team Magma's Groudon",
-    "fullDisplayName": "Team Magma's Groudon 009/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Fighting",
-      "Darkness"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kazuo Yazawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-009-low.jpg",
-    "imageHighSrc": "cards/cel25c-009-low.jpg",
-    "attacks": [
-      {
-        "name": "Linear Attack",
-        "damage": null
-      },
-      {
-        "name": "Pulverize",
-        "damage": "50+"
-      }
-    ],
-    "rules": "This Pokémon is both Fighting Darkness type."
-  },
-  {
-    "masterCardId": "22383",
-    "externalId": "cel25c-8_A",
-    "tcgdex_id": null,
-    "localId": "008",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "008/25",
-    "cardName": "Dark Gyarados",
-    "fullDisplayName": "Dark Gyarados 008/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water",
-      "Grass"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-008-low.jpg",
-    "imageHighSrc": "cards/cel25c-008-low.jpg",
-    "attacks": [
-      {
-        "name": "Ice Beam",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22382",
-    "externalId": "cel25c-4_A",
-    "tcgdex_id": null,
-    "localId": "004",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "004/25",
-    "cardName": "Charizard",
-    "fullDisplayName": "Charizard 004/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Fire",
-      "Water"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-004-low.jpg",
-    "imageHighSrc": "cards/cel25c-004-low.jpg",
-    "attacks": [
-      {
-        "name": "Fire Spin",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "22381",
-    "externalId": "cel25c-2_A",
-    "tcgdex_id": null,
-    "localId": "002",
-    "setCode": "cel25c",
-    "setTcgdexId": "cel25c",
-    "cardNumber": "002/25",
-    "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 002/25 Celebrations: Classic Collection",
-    "rarity": "Classic Collection",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Water",
-      "Lightning"
-    ],
-    "dexIds": null,
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/cel25c-002-low.jpg",
-    "imageHighSrc": "cards/cel25c-002-low.jpg",
-    "attacks": [
-      {
-        "name": "Hydro Pump",
-        "damage": "40+"
-      }
-    ]
-  }
+    {
+        "masterCardId": "22405",
+        "externalId": "cel25c-145_A",
+        "localId": "145",
+        "setCode": "cel25c",
+        "cardNumber": "145/25",
+        "cardName": "Garchomp C LV.X",
+        "fullDisplayName": "Garchomp C LV.X 145/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/cel25c-145-low.jpg",
+        "imageHighSrc": "cards/cel25c-145-low.jpg",
+        "attacks": [
+            {
+                "name": "Dragon Rush",
+                "damage": null
+            }
+        ],
+        "rules": "Put this card onto your Active Garchomp C. Garchomp C LV.X can use any attack, Poké-Power, or Poké-Body from its previous Level."
+    },
+    {
+        "masterCardId": "22404",
+        "externalId": "cel25c-114_A",
+        "localId": "114",
+        "setCode": "cel25c",
+        "cardNumber": "114/25",
+        "cardName": "Zekrom",
+        "fullDisplayName": "Zekrom 114/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Lightning",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/cel25c-114-low.jpg",
+        "imageHighSrc": "cards/cel25c-114-low.jpg",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "20+"
+            },
+            {
+                "name": "Bolt Strike",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22403",
+        "externalId": "cel25c-113_A",
+        "localId": "113",
+        "setCode": "cel25c",
+        "cardNumber": "113/25",
+        "cardName": "Reshiram",
+        "fullDisplayName": "Reshiram 113/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fire",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/cel25c-113-low.jpg",
+        "imageHighSrc": "cards/cel25c-113-low.jpg",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "20+"
+            },
+            {
+                "name": "Blue Flare",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22402",
+        "externalId": "cel25c-109_A",
+        "localId": "109",
+        "setCode": "cel25c",
+        "cardNumber": "109/25",
+        "cardName": "Luxray GL LV.X",
+        "fullDisplayName": "Luxray GL LV.X 109/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Lightning",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/cel25c-109-low.jpg",
+        "imageHighSrc": "cards/cel25c-109-low.jpg",
+        "attacks": [
+            {
+                "name": "Flash Impact",
+                "damage": "60"
+            }
+        ],
+        "rules": "Put this card onto your Active Luxray GL. Luxray GL LV. X can use any attack, Poké-Power, or Poké-Body from its previous Level."
+    },
+    {
+        "masterCardId": "22401",
+        "externalId": "cel25c-107_A",
+        "localId": "107",
+        "setCode": "cel25c",
+        "cardNumber": "107/25",
+        "cardName": "Donphan",
+        "fullDisplayName": "Donphan 107/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting",
+            "Water"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kent Kanetsuna",
+        "imageLowSrc": "cards/cel25c-107-low.jpg",
+        "imageHighSrc": "cards/cel25c-107-low.jpg",
+        "attacks": [
+            {
+                "name": "Earthquake",
+                "damage": "60"
+            },
+            {
+                "name": "Heavy Impact",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22400",
+        "externalId": "cel25c-97_A",
+        "localId": "097",
+        "setCode": "cel25c",
+        "cardNumber": "097/25",
+        "cardName": "Xerneas-EX",
+        "fullDisplayName": "Xerneas-EX 097/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Fairy",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/cel25c-097-low.jpg",
+        "imageHighSrc": "cards/cel25c-097-low.jpg",
+        "attacks": [
+            {
+                "name": "Break Through",
+                "damage": "60"
+            },
+            {
+                "name": "X Blast",
+                "damage": "140"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "22399",
+        "externalId": "cel25c-93_A",
+        "localId": "093",
+        "setCode": "cel25c",
+        "cardNumber": "093/25",
+        "cardName": "Gardevoir ex δ",
+        "fullDisplayName": "Gardevoir ex δ 093/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fire",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masahiko Ishii",
+        "imageLowSrc": "cards/cel25c-093-low.jpg",
+        "imageHighSrc": "cards/cel25c-093-low.jpg",
+        "attacks": [
+            {
+                "name": "Flame Ball",
+                "damage": "80"
+            }
+        ],
+        "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "22398",
+        "externalId": "cel25c-88_A",
+        "localId": "088",
+        "setCode": "cel25c",
+        "cardNumber": "088/25",
+        "cardName": "Mew ex",
+        "fullDisplayName": "Mew ex 088/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/cel25c-088-low.jpg",
+        "imageHighSrc": "cards/cel25c-088-low.jpg",
+        "attacks": [
+            {
+                "name": "Power Move",
+                "damage": null
+            }
+        ],
+        "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "22397",
+        "externalId": "cel25c-86_A",
+        "localId": "086",
+        "setCode": "cel25c",
+        "cardNumber": "086/25",
+        "cardName": "Rocket's Admin.",
+        "fullDisplayName": "Rocket's Admin. 086/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/cel25c-086-low.jpg",
+        "imageHighSrc": "cards/cel25c-086-low.jpg",
+        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player shuffles his or her hand into his or her deck. Then, each player counts his or her Prize cards left and draws up to that many cards. (You draw your cards first.)"
+    },
+    {
+        "masterCardId": "22396",
+        "externalId": "cel25c-76_A",
+        "localId": "076",
+        "setCode": "cel25c",
+        "cardNumber": "076/25",
+        "cardName": "M Rayquaza-EX",
+        "fullDisplayName": "M Rayquaza-EX 076/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 220,
+        "elementTypes": [
+            "Colorless",
+            "Lightning"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/cel25c-076-low.jpg",
+        "imageHighSrc": "cards/cel25c-076-low.jpg",
+        "attacks": [
+            {
+                "name": "Emerald Break",
+                "damage": "30×"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends."
+    },
+    {
+        "masterCardId": "22395",
+        "externalId": "cel25c-73_A",
+        "localId": "073",
+        "setCode": "cel25c",
+        "cardNumber": "073/25",
+        "cardName": "Imposter Professor Oak",
+        "fullDisplayName": "Imposter Professor Oak 073/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/cel25c-073-low.jpg",
+        "imageHighSrc": "cards/cel25c-073-low.jpg",
+        "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards."
+    },
+    {
+        "masterCardId": "22394",
+        "externalId": "cel25c-66_A",
+        "localId": "066",
+        "setCode": "cel25c",
+        "cardNumber": "066/25",
+        "cardName": "Shining Magikarp",
+        "fullDisplayName": "Shining Magikarp 066/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Water",
+            "Psychic"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/cel25c-066-low.jpg",
+        "imageHighSrc": "cards/cel25c-066-low.jpg",
+        "attacks": [
+            {
+                "name": "Gold Scale",
+                "damage": null
+            },
+            {
+                "name": "Dragon Bond",
+                "damage": null
+            }
+        ],
+        "rules": "You can't have more than 1 Shining Magikarp in your deck."
+    },
+    {
+        "masterCardId": "22393",
+        "externalId": "cel25c-60_A",
+        "localId": "060",
+        "setCode": "cel25c",
+        "cardNumber": "060/25",
+        "cardName": "Tapu Lele-GX",
+        "fullDisplayName": "Tapu Lele-GX 060/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Psychic",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/cel25c-060-low.jpg",
+        "imageHighSrc": "cards/cel25c-060-low.jpg",
+        "attacks": [
+            {
+                "name": "Energy Drive",
+                "damage": "20×"
+            },
+            {
+                "name": "Tapu Cure-GX",
+                "damage": null
+            }
+        ],
+        "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "22392",
+        "externalId": "cel25c-54_A",
+        "localId": "054",
+        "setCode": "cel25c",
+        "cardNumber": "054/25",
+        "cardName": "Mewtwo-EX",
+        "fullDisplayName": "Mewtwo-EX 054/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Psychic",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shizurow",
+        "imageLowSrc": "cards/cel25c-054-low.jpg",
+        "imageHighSrc": "cards/cel25c-054-low.jpg",
+        "attacks": [
+            {
+                "name": "X Ball",
+                "damage": "20×"
+            },
+            {
+                "name": "Psydrive",
+                "damage": "120"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "22391",
+        "externalId": "cel25c-24_A",
+        "localId": "024",
+        "setCode": "cel25c",
+        "cardNumber": "024/25",
+        "cardName": "_____'s Pikachu",
+        "fullDisplayName": "_____'s Pikachu 024/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning",
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/cel25c-024-low.jpg",
+        "imageHighSrc": "cards/cel25c-024-low.jpg",
+        "attacks": [
+            {
+                "name": "Birthday Surprise",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22390",
+        "externalId": "cel25c-20_A",
+        "localId": "020",
+        "setCode": "cel25c",
+        "cardNumber": "020/25",
+        "cardName": "Cleffa",
+        "fullDisplayName": "Cleffa 020/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/cel25c-020-low.jpg",
+        "imageHighSrc": "cards/cel25c-020-low.jpg",
+        "attacks": [
+            {
+                "name": "Eeeeeeek",
+                "damage": null
+            }
+        ],
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
+    },
+    {
+        "masterCardId": "22389",
+        "externalId": "cel25c-17_A",
+        "localId": "017",
+        "setCode": "cel25c",
+        "cardNumber": "017/25",
+        "cardName": "Umbreon ☆",
+        "fullDisplayName": "Umbreon ☆ 017/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Darkness",
+            "Fighting"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/cel25c-017-low.jpg",
+        "imageHighSrc": "cards/cel25c-017-low.jpg",
+        "attacks": [
+            {
+                "name": "Feint Attack",
+                "damage": null
+            }
+        ],
+        "rules": "You can't have more than 1 Pokémon Star in your deck."
+    },
+    {
+        "masterCardId": "22385",
+        "externalId": "cel25c-15_A1",
+        "localId": "015d",
+        "setCode": "cel25c",
+        "cardNumber": "015/25",
+        "cardName": "Venusaur",
+        "fullDisplayName": "Venusaur 015/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass",
+            "Fire"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/cel25c-015d-low.jpg",
+        "imageHighSrc": "cards/cel25c-015d-low.jpg",
+        "attacks": [
+            {
+                "name": "Solarbeam",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22387",
+        "externalId": "cel25c-15_A3",
+        "localId": "015c",
+        "setCode": "cel25c",
+        "cardNumber": "015/25",
+        "cardName": "Rocket's Zapdos",
+        "fullDisplayName": "Rocket's Zapdos 015/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin-ichi Yoshida",
+        "imageLowSrc": "cards/cel25c-015c-low.jpg",
+        "imageHighSrc": "cards/cel25c-015c-low.jpg",
+        "attacks": [
+            {
+                "name": "Plasma",
+                "damage": "20"
+            },
+            {
+                "name": "Electroburn",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22386",
+        "externalId": "cel25c-15_A2",
+        "localId": "015b",
+        "setCode": "cel25c",
+        "cardNumber": "015/25",
+        "cardName": "Here Comes Team Rocket!",
+        "fullDisplayName": "Here Comes Team Rocket! 015/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/cel25c-015b-low.jpg",
+        "imageHighSrc": "cards/cel25c-015b-low.jpg",
+        "rules": "Each player plays with his or her Prize cards face up for the rest of the game."
+    },
+    {
+        "masterCardId": "22388",
+        "externalId": "cel25c-15_A4",
+        "localId": "015a",
+        "setCode": "cel25c",
+        "cardNumber": "015/25",
+        "cardName": "Claydol",
+        "fullDisplayName": "Claydol 015/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting",
+            "Colorless"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/cel25c-015a-low.jpg",
+        "imageHighSrc": "cards/cel25c-015a-low.jpg",
+        "attacks": [
+            {
+                "name": "Spinning Attack",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22384",
+        "externalId": "cel25c-9_A",
+        "localId": "009",
+        "setCode": "cel25c",
+        "cardNumber": "009/25",
+        "cardName": "Team Magma's Groudon",
+        "fullDisplayName": "Team Magma's Groudon 009/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting",
+            "Darkness"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kazuo Yazawa",
+        "imageLowSrc": "cards/cel25c-009-low.jpg",
+        "imageHighSrc": "cards/cel25c-009-low.jpg",
+        "attacks": [
+            {
+                "name": "Linear Attack",
+                "damage": null
+            },
+            {
+                "name": "Pulverize",
+                "damage": "50+"
+            }
+        ],
+        "rules": "This Pokémon is both Fighting Darkness type."
+    },
+    {
+        "masterCardId": "22383",
+        "externalId": "cel25c-8_A",
+        "localId": "008",
+        "setCode": "cel25c",
+        "cardNumber": "008/25",
+        "cardName": "Dark Gyarados",
+        "fullDisplayName": "Dark Gyarados 008/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water",
+            "Grass"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/cel25c-008-low.jpg",
+        "imageHighSrc": "cards/cel25c-008-low.jpg",
+        "attacks": [
+            {
+                "name": "Ice Beam",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22382",
+        "externalId": "cel25c-4_A",
+        "localId": "004",
+        "setCode": "cel25c",
+        "cardNumber": "004/25",
+        "cardName": "Charizard",
+        "fullDisplayName": "Charizard 004/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fire",
+            "Water"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/cel25c-004-low.jpg",
+        "imageHighSrc": "cards/cel25c-004-low.jpg",
+        "attacks": [
+            {
+                "name": "Fire Spin",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22381",
+        "externalId": "cel25c-2_A",
+        "localId": "002",
+        "setCode": "cel25c",
+        "cardNumber": "002/25",
+        "cardName": "Blastoise",
+        "fullDisplayName": "Blastoise 002/25 Celebrations: Classic Collection",
+        "rarity": "Classic Collection",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water",
+            "Lightning"
+        ],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/cel25c-002-low.jpg",
+        "imageHighSrc": "cards/cel25c-002-low.jpg",
+        "attacks": [
+            {
+                "name": "Hydro Pump",
+                "damage": "40+"
+            }
+        ]
+    }
 ]

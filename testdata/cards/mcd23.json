@@ -1,0 +1,500 @@
+[
+    {
+        "masterCardId": "22360",
+        "externalId": "mcd23-15",
+        "localId": "015",
+        "setCode": "mcd23",
+        "cardNumber": "015/015",
+        "cardName": "Kirlia",
+        "fullDisplayName": "Kirlia 015/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            281
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/2023sv-015-low.jpg",
+        "imageHighSrc": "cards/2023sv-015-low.jpg",
+        "attacks": [
+            {
+                "name": "Magical Shot",
+                "damage": "30"
+            },
+            {
+                "name": "Psychic",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22359",
+        "externalId": "mcd23-14",
+        "localId": "014",
+        "setCode": "mcd23",
+        "cardNumber": "014/015",
+        "cardName": "Cyclizar",
+        "fullDisplayName": "Cyclizar 014/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            967
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryota Murayama",
+        "imageLowSrc": "cards/2023sv-014-low.jpg",
+        "imageHighSrc": "cards/2023sv-014-low.jpg",
+        "attacks": [
+            {
+                "name": "Touring",
+                "damage": null
+            },
+            {
+                "name": "Speed Attack",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22358",
+        "externalId": "mcd23-13",
+        "localId": "013",
+        "setCode": "mcd23",
+        "cardNumber": "013/015",
+        "cardName": "Tandemaus",
+        "fullDisplayName": "Tandemaus 013/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            924
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "yuu",
+        "imageLowSrc": "cards/2023sv-013-low.jpg",
+        "imageHighSrc": "cards/2023sv-013-low.jpg",
+        "attacks": [
+            {
+                "name": "Double Hit",
+                "damage": "30x"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22357",
+        "externalId": "mcd23-12",
+        "localId": "012",
+        "setCode": "mcd23",
+        "cardNumber": "012/015",
+        "cardName": "Blissey",
+        "fullDisplayName": "Blissey 012/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            242
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "chibi",
+        "imageLowSrc": "cards/2023sv-012-low.jpg",
+        "imageHighSrc": "cards/2023sv-012-low.jpg",
+        "attacks": [
+            {
+                "name": "Happy Cyclone",
+                "damage": "150"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22356",
+        "externalId": "mcd23-11",
+        "localId": "011",
+        "setCode": "mcd23",
+        "cardNumber": "011/015",
+        "cardName": "Klawf",
+        "fullDisplayName": "Klawf 011/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            950
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "nagimiso",
+        "imageLowSrc": "cards/2023sv-011-low.jpg",
+        "imageHighSrc": "cards/2023sv-011-low.jpg",
+        "attacks": [
+            {
+                "name": "Vise Grip",
+                "damage": "50"
+            },
+            {
+                "name": "Adrenaline Hammer",
+                "damage": "130"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22355",
+        "externalId": "mcd23-10",
+        "localId": "010",
+        "setCode": "mcd23",
+        "cardNumber": "010/015",
+        "cardName": "Sandaconda",
+        "fullDisplayName": "Sandaconda 010/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            844
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yuya Oka",
+        "imageLowSrc": "cards/2023sv-010-low.jpg",
+        "imageHighSrc": "cards/2023sv-010-low.jpg",
+        "attacks": [
+            {
+                "name": "Skull Bash",
+                "damage": "120"
+            },
+            {
+                "name": "Sandstorm Spray",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "22354",
+        "externalId": "mcd23-9",
+        "localId": "009",
+        "setCode": "mcd23",
+        "cardNumber": "009/015",
+        "cardName": "Flittle",
+        "fullDisplayName": "Flittle 009/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            955
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hitoshi Ariga",
+        "imageLowSrc": "cards/2023sv-009-low.jpg",
+        "imageHighSrc": "cards/2023sv-009-low.jpg",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22353",
+        "externalId": "mcd23-8",
+        "localId": "008",
+        "setCode": "mcd23",
+        "cardNumber": "008/015",
+        "cardName": "Kilowattrel",
+        "fullDisplayName": "Kilowattrel 008/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            941
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/2023sv-008-low.jpg",
+        "imageHighSrc": "cards/2023sv-008-low.jpg",
+        "attacks": [
+            {
+                "name": "Skill Dive",
+                "damage": null
+            },
+            {
+                "name": "Thunder Blast",
+                "damage": "140"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22352",
+        "externalId": "mcd23-7",
+        "localId": "007",
+        "setCode": "mcd23",
+        "cardNumber": "007/015",
+        "cardName": "Pawmi",
+        "fullDisplayName": "Pawmi 007/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            921
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kantaro",
+        "imageLowSrc": "cards/2023sv-007-low.jpg",
+        "imageHighSrc": "cards/2023sv-007-low.jpg",
+        "attacks": [
+            {
+                "name": "Light Punch",
+                "damage": "10"
+            },
+            {
+                "name": "Zap Kick",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22351",
+        "externalId": "mcd23-6",
+        "localId": "006",
+        "setCode": "mcd23",
+        "cardNumber": "006/015",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 006/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "OKACHEKE",
+        "imageLowSrc": "cards/2023sv-006-low.jpg",
+        "imageHighSrc": "cards/2023sv-006-low.jpg",
+        "attacks": [
+            {
+                "name": "Growl",
+                "damage": null
+            },
+            {
+                "name": "Pika Bolt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22350",
+        "externalId": "mcd23-5",
+        "localId": "005",
+        "setCode": "mcd23",
+        "cardNumber": "005/015",
+        "cardName": "Cetitan",
+        "fullDisplayName": "Cetitan 005/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            975
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Anesaki Dynamic",
+        "imageLowSrc": "cards/2023sv-005-low.jpg",
+        "imageHighSrc": "cards/2023sv-005-low.jpg",
+        "attacks": [
+            {
+                "name": "Hammer In",
+                "damage": "50"
+            },
+            {
+                "name": "Sweeping Tackle",
+                "damage": "200-"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22349",
+        "externalId": "mcd23-4",
+        "localId": "004",
+        "setCode": "mcd23",
+        "cardNumber": "004/015",
+        "cardName": "Cetoddle",
+        "fullDisplayName": "Cetoddle 004/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            974
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/2023sv-004-low.jpg",
+        "imageHighSrc": "cards/2023sv-004-low.jpg",
+        "attacks": [
+            {
+                "name": "Icicle",
+                "damage": "10"
+            },
+            {
+                "name": "Sharp Fin",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22348",
+        "externalId": "mcd23-3",
+        "localId": "003",
+        "setCode": "mcd23",
+        "cardNumber": "003/015",
+        "cardName": "Quaxly",
+        "fullDisplayName": "Quaxly 003/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            912
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/2023sv-003-low.jpg",
+        "imageHighSrc": "cards/2023sv-003-low.jpg",
+        "attacks": [
+            {
+                "name": "Pound",
+                "damage": "10"
+            },
+            {
+                "name": "Kick",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22347",
+        "externalId": "mcd23-2",
+        "localId": "002",
+        "setCode": "mcd23",
+        "cardNumber": "002/015",
+        "cardName": "Fuecoco",
+        "fullDisplayName": "Fuecoco 002/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            909
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/2023sv-002-low.jpg",
+        "imageHighSrc": "cards/2023sv-002-low.jpg",
+        "attacks": [
+            {
+                "name": "Gnaw",
+                "damage": "10"
+            },
+            {
+                "name": "Combustion",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "22346",
+        "externalId": "mcd23-1",
+        "localId": "001",
+        "setCode": "mcd23",
+        "cardNumber": "001/015",
+        "cardName": "Sprigatito",
+        "fullDisplayName": "Sprigatito 001/015 McDonald's Collection 2023",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            906
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Saya Tsuruta",
+        "imageLowSrc": "cards/2023sv-001-low.jpg",
+        "imageHighSrc": "cards/2023sv-001-low.jpg",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Leafage",
+                "damage": "20"
+            }
+        ]
+    }
+]

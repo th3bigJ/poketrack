@@ -1,4092 +1,3185 @@
 [
-  {
-    "masterCardId": "6137",
-    "externalId": "ex2-100",
-    "tcgdex_id": "ex2-100",
-    "localId": "100",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "100/100",
-    "cardName": "Wailord ex",
-    "fullDisplayName": "Wailord ex 100/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 200,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      321
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wailmer",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-100-low.png",
-    "imageHighSrc": "cards/ex2-100-high.png",
-    "attacks": [
-      {
-        "name": "Super Deep Dive",
-        "damage": null
-      },
-      {
-        "name": "Dwindling Wave",
-        "damage": "100-"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6131",
-    "externalId": "ex2-99",
-    "tcgdex_id": "ex2-99",
-    "localId": "099",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "99/100",
-    "cardName": "Typhlosion ex",
-    "fullDisplayName": "Typhlosion ex 99/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 160,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      157
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Quilava",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-099-low.png",
-    "imageHighSrc": "cards/ex2-099-high.png",
-    "attacks": [
-      {
-        "name": "Ring of Fire",
-        "damage": "40"
-      },
-      {
-        "name": "Split Blast",
-        "damage": "100"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6123",
-    "externalId": "ex2-98",
-    "tcgdex_id": "ex2-98",
-    "localId": "098",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "98/100",
-    "cardName": "Raichu ex",
-    "fullDisplayName": "Raichu ex 98/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      26
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pikachu",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-098-low.png",
-    "imageHighSrc": "cards/ex2-098-high.png",
-    "attacks": [
-      {
-        "name": "Dazzle Blast",
-        "damage": "20"
-      },
-      {
-        "name": "Mega Thunderbolt",
-        "damage": "120"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6118",
-    "externalId": "ex2-97",
-    "tcgdex_id": "ex2-97",
-    "localId": "097",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "97/100",
-    "cardName": "Kabutops ex",
-    "fullDisplayName": "Kabutops ex 97/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      141
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Kabuto",
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-097-low.png",
-    "imageHighSrc": "cards/ex2-097-high.png",
-    "attacks": [
-      {
-        "name": "Hydrocutter",
-        "damage": "40×"
-      },
-      {
-        "name": "Spiral Drain",
-        "damage": "70"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6111",
-    "externalId": "ex2-96",
-    "tcgdex_id": "ex2-96",
-    "localId": "096",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "96/100",
-    "cardName": "Gardevoir ex",
-    "fullDisplayName": "Gardevoir ex 96/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      282
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Kirlia",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-096-low.png",
-    "imageHighSrc": "cards/ex2-096-high.png",
-    "attacks": [
-      {
-        "name": "Feedback",
-        "damage": null
-      },
-      {
-        "name": "Psystorm",
-        "damage": "10×"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6104",
-    "externalId": "ex2-95",
-    "tcgdex_id": "ex2-95",
-    "localId": "095",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "95/100",
-    "cardName": "Aggron ex",
-    "fullDisplayName": "Aggron ex 95/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      306
-    ],
-    "subtypes": [
-      "Stage 2",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lairon",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-095-low.png",
-    "imageHighSrc": "cards/ex2-095-high.png",
-    "attacks": [
-      {
-        "name": "Rend",
-        "damage": "30+"
-      },
-      {
-        "name": "Metal Surge",
-        "damage": "50"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6096",
-    "externalId": "ex2-94",
-    "tcgdex_id": "ex2-94",
-    "localId": "094",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "94/100",
-    "cardName": "Aerodactyl ex",
-    "fullDisplayName": "Aerodactyl ex 94/100 Sandstorm",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      142
-    ],
-    "subtypes": [
-      "Stage 1",
-      "ex"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mysterious Fossil",
-    "artist": "Hikaru Koike",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-094-low.png",
-    "imageHighSrc": "cards/ex2-094-high.png",
-    "attacks": [
-      {
-        "name": "Supersonic",
-        "damage": "10"
-      },
-      {
-        "name": "Wing Attack",
-        "damage": "60"
-      }
-    ],
-    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "6088",
-    "externalId": "ex2-93",
-    "tcgdex_id": "ex2-93",
-    "localId": "093",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "93/100",
-    "cardName": "Multi Energy",
-    "fullDisplayName": "Multi Energy 93/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Takumi Akabane",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-093-low.png",
-    "imageHighSrc": "cards/ex2-093-high.png",
-    "rules": "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) Multi energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
-  },
-  {
-    "masterCardId": "6081",
-    "externalId": "ex2-92",
-    "tcgdex_id": "ex2-92",
-    "localId": "092",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "92/100",
-    "cardName": "Root Fossil",
-    "fullDisplayName": "Root Fossil 92/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Trainer",
-    "stage": null,
-    "hp": 40,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-092-low.png",
-    "imageHighSrc": "cards/ex2-092-high.png",
-    "rules": "Play Root Fossil as if it were a Basic Pokémon. While in play, Root Fossil counts as a Colorless Pokémon (instead of a Trainer card). Root Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Root Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Root Fossil from play."
-  },
-  {
-    "masterCardId": "6072",
-    "externalId": "ex2-91",
-    "tcgdex_id": "ex2-91",
-    "localId": "091",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "91/100",
-    "cardName": "Mysterious Fossil",
-    "fullDisplayName": "Mysterious Fossil 91/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Trainer",
-    "stage": null,
-    "hp": 10,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Keiji Kinebuchi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-091-low.png",
-    "imageHighSrc": "cards/ex2-091-high.png",
-    "rules": "Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious Fossil counts as a Colorless Pokémon (instead of a Trainer card). Mysterious Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Mysterious is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Mysterious Fossil from play."
-  },
-  {
-    "masterCardId": "6063",
-    "externalId": "ex2-90",
-    "tcgdex_id": "ex2-90",
-    "localId": "090",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "90/100",
-    "cardName": "Claw Fossil",
-    "fullDisplayName": "Claw Fossil 90/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Trainer",
-    "stage": null,
-    "hp": 40,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-090-low.png",
-    "imageHighSrc": "cards/ex2-090-high.png",
-    "rules": "Play Claw Fossil as if it were a Basic Pokémon. While in play, Claw Fossil counts as a Colorless Pokémon (instead of a Trainer card). Claw Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Claw Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Claw Fossil from play."
-  },
-  {
-    "masterCardId": "6055",
-    "externalId": "ex2-89",
-    "tcgdex_id": "ex2-89",
-    "localId": "089",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "89/100",
-    "cardName": "Wally's Training",
-    "fullDisplayName": "Wally's Training 89/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-089-low.png",
-    "imageHighSrc": "cards/ex2-089-high.png",
-    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for a card that evolves from your Active Pokémon (choose 1 if there are 2) and put it on your Active Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward."
-  },
-  {
-    "masterCardId": "6046",
-    "externalId": "ex2-88",
-    "tcgdex_id": "ex2-88",
-    "localId": "088",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "88/100",
-    "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 88/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-088-low.png",
-    "imageHighSrc": "cards/ex2-088-high.png",
-    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
-  },
-  {
-    "masterCardId": "6036",
-    "externalId": "ex2-87",
-    "tcgdex_id": "ex2-87",
-    "localId": "087",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "87/100",
-    "cardName": "Lanette's Net Search",
-    "fullDisplayName": "Lanette's Net Search 87/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-087-low.png",
-    "imageHighSrc": "cards/ex2-087-high.png",
-    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 different types of Basic Pokémon cards (excluding Baby Pokémon), show them to your opponent, and put them into your hand. Shuffle your deck afterward."
-  },
-  {
-    "masterCardId": "6026",
-    "externalId": "ex2-86",
-    "tcgdex_id": "ex2-86",
-    "localId": "086",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "86/100",
-    "cardName": "Double Full Heal",
-    "fullDisplayName": "Double Full Heal 86/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-086-low.png",
-    "imageHighSrc": "cards/ex2-086-high.png",
-    "rules": "Remove all Special Conditions from each of your Active Pokémon."
-  },
-  {
-    "masterCardId": "6017",
-    "externalId": "ex2-85",
-    "tcgdex_id": "ex2-85",
-    "localId": "085",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "85/100",
-    "cardName": "Zigzagoon",
-    "fullDisplayName": "Zigzagoon 85/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      263
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-085-low.png",
-    "imageHighSrc": "cards/ex2-085-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "6008",
-    "externalId": "ex2-84",
-    "tcgdex_id": "ex2-84",
-    "localId": "084",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "84/100",
-    "cardName": "Wingull",
-    "fullDisplayName": "Wingull 84/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      278
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-084-low.png",
-    "imageHighSrc": "cards/ex2-084-high.png",
-    "attacks": [
-      {
-        "name": "Supersonic",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "6000",
-    "externalId": "ex2-83",
-    "tcgdex_id": "ex2-83",
-    "localId": "083",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "83/100",
-    "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 83/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      320
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-083-low.png",
-    "imageHighSrc": "cards/ex2-083-high.png",
-    "attacks": [
-      {
-        "name": "Rollout",
-        "damage": "20"
-      },
-      {
-        "name": "Super Hypno Wave",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5991",
-    "externalId": "ex2-82",
-    "tcgdex_id": "ex2-82",
-    "localId": "082",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "82/100",
-    "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 82/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      328
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-082-low.png",
-    "imageHighSrc": "cards/ex2-082-high.png",
-    "attacks": [
-      {
-        "name": "Sand Pit",
-        "damage": "10"
-      },
-      {
-        "name": "Irongrip",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5982",
-    "externalId": "ex2-81",
-    "tcgdex_id": "ex2-81",
-    "localId": "081",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "81/100",
-    "cardName": "Spearow",
-    "fullDisplayName": "Spearow 81/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      21
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-081-low.png",
-    "imageHighSrc": "cards/ex2-081-high.png",
-    "attacks": [
-      {
-        "name": "Super Speed",
-        "damage": null
-      },
-      {
-        "name": "Peck",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5973",
-    "externalId": "ex2-80",
-    "tcgdex_id": "ex2-80",
-    "localId": "080",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "80/100",
-    "cardName": "Slakoth",
-    "fullDisplayName": "Slakoth 80/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      287
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-080-low.png",
-    "imageHighSrc": "cards/ex2-080-high.png",
-    "attacks": [
-      {
-        "name": "Lazy Punch",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5963",
-    "externalId": "ex2-79",
-    "tcgdex_id": "ex2-79",
-    "localId": "079",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "79/100",
-    "cardName": "Skitty",
-    "fullDisplayName": "Skitty 79/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      300
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-079-low.png",
-    "imageHighSrc": "cards/ex2-079-high.png",
-    "attacks": [
-      {
-        "name": "Energy Catch",
-        "damage": null
-      },
-      {
-        "name": "Double-edge",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5953",
-    "externalId": "ex2-78",
-    "tcgdex_id": "ex2-78",
-    "localId": "078",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "78/100",
-    "cardName": "Shroomish",
-    "fullDisplayName": "Shroomish 78/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      285
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-078-low.png",
-    "imageHighSrc": "cards/ex2-078-high.png",
-    "attacks": [
-      {
-        "name": "Growth Spurt",
-        "damage": null
-      },
-      {
-        "name": "Poisonpowder",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5945",
-    "externalId": "ex2-77",
-    "tcgdex_id": "ex2-77",
-    "localId": "077",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "77/100",
-    "cardName": "Seedot",
-    "fullDisplayName": "Seedot 77/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      273
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-077-low.png",
-    "imageHighSrc": "cards/ex2-077-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5936",
-    "externalId": "ex2-76",
-    "tcgdex_id": "ex2-76",
-    "localId": "076",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "76/100",
-    "cardName": "Seedot",
-    "fullDisplayName": "Seedot 76/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      273
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-076-low.png",
-    "imageHighSrc": "cards/ex2-076-high.png",
-    "attacks": [
-      {
-        "name": "Surprise Attack",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5927",
-    "externalId": "ex2-75",
-    "tcgdex_id": "ex2-75",
-    "localId": "075",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "75/100",
-    "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 75/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      27
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-075-low.png",
-    "imageHighSrc": "cards/ex2-075-high.png",
-    "attacks": [
-      {
-        "name": "Poison Needle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5918",
-    "externalId": "ex2-74",
-    "tcgdex_id": "ex2-74",
-    "localId": "074",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "74/100",
-    "cardName": "Ralts",
-    "fullDisplayName": "Ralts 74/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      280
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-074-low.png",
-    "imageHighSrc": "cards/ex2-074-high.png",
-    "attacks": [
-      {
-        "name": "Hypnosis",
-        "damage": null
-      },
-      {
-        "name": "Psychic Boom",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5909",
-    "externalId": "ex2-73",
-    "tcgdex_id": "ex2-73",
-    "localId": "073",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "73/100",
-    "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 73/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      54
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-073-low.png",
-    "imageHighSrc": "cards/ex2-073-high.png",
-    "attacks": [
-      {
-        "name": "Confusion Wave",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5900",
-    "externalId": "ex2-72",
-    "tcgdex_id": "ex2-72",
-    "localId": "072",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "72/100",
-    "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 72/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      25
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-072-low.png",
-    "imageHighSrc": "cards/ex2-072-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "10"
-      },
-      {
-        "name": "Pika Bolt",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5892",
-    "externalId": "ex2-71",
-    "tcgdex_id": "ex2-71",
-    "localId": "071",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "71/100",
-    "cardName": "Onix",
-    "fullDisplayName": "Onix 71/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      95
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-071-low.png",
-    "imageHighSrc": "cards/ex2-071-high.png",
-    "attacks": [
-      {
-        "name": "Bind",
-        "damage": "10"
-      },
-      {
-        "name": "Rage",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5883",
-    "externalId": "ex2-70",
-    "tcgdex_id": "ex2-70",
-    "localId": "070",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "70/100",
-    "cardName": "Omanyte",
-    "fullDisplayName": "Omanyte 70/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      138
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mysterious Fossil",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-070-low.png",
-    "imageHighSrc": "cards/ex2-070-high.png",
-    "attacks": [
-      {
-        "name": "Team Assembly",
-        "damage": null
-      },
-      {
-        "name": "Bind",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5874",
-    "externalId": "ex2-69",
-    "tcgdex_id": "ex2-69",
-    "localId": "069",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "69/100",
-    "cardName": "Natu",
-    "fullDisplayName": "Natu 69/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      177
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-069-low.png",
-    "imageHighSrc": "cards/ex2-069-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "10"
-      },
-      {
-        "name": "Soothing Wave",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5865",
-    "externalId": "ex2-68",
-    "tcgdex_id": "ex2-68",
-    "localId": "068",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "68/100",
-    "cardName": "Marill",
-    "fullDisplayName": "Marill 68/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      183
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-068-low.png",
-    "imageHighSrc": "cards/ex2-068-high.png",
-    "attacks": [
-      {
-        "name": "Double Bubble",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5856",
-    "externalId": "ex2-67",
-    "tcgdex_id": "ex2-67",
-    "localId": "067",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "67/100",
-    "cardName": "Lotad",
-    "fullDisplayName": "Lotad 67/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      270
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-067-low.png",
-    "imageHighSrc": "cards/ex2-067-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Blot",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5847",
-    "externalId": "ex2-66",
-    "tcgdex_id": "ex2-66",
-    "localId": "066",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "66/100",
-    "cardName": "Lotad",
-    "fullDisplayName": "Lotad 66/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      270
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-066-low.png",
-    "imageHighSrc": "cards/ex2-066-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5838",
-    "externalId": "ex2-65",
-    "tcgdex_id": "ex2-65",
-    "localId": "065",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "65/100",
-    "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 65/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      58
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-065-low.png",
-    "imageHighSrc": "cards/ex2-065-high.png",
-    "attacks": [
-      {
-        "name": "Flare",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5829",
-    "externalId": "ex2-64",
-    "tcgdex_id": "ex2-64",
-    "localId": "064",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "64/100",
-    "cardName": "Ekans",
-    "fullDisplayName": "Ekans 64/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      23
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-064-low.png",
-    "imageHighSrc": "cards/ex2-064-high.png",
-    "attacks": [
-      {
-        "name": "Bind",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5820",
-    "externalId": "ex2-63",
-    "tcgdex_id": "ex2-63",
-    "localId": "063",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "63/100",
-    "cardName": "Eevee",
-    "fullDisplayName": "Eevee 63/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      133
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-063-low.png",
-    "imageHighSrc": "cards/ex2-063-high.png",
-    "attacks": [
-      {
-        "name": "Signs of Evolution",
-        "damage": null
-      },
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5811",
-    "externalId": "ex2-62",
-    "tcgdex_id": "ex2-62",
-    "localId": "062",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "62/100",
-    "cardName": "Duskull",
-    "fullDisplayName": "Duskull 62/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      355
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-062-low.png",
-    "imageHighSrc": "cards/ex2-062-high.png",
-    "attacks": [
-      {
-        "name": "Haunt",
-        "damage": null
-      },
-      {
-        "name": "Dark Mind",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5800",
-    "externalId": "ex2-61",
-    "tcgdex_id": "ex2-61",
-    "localId": "061",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "61/100",
-    "cardName": "Duskull",
-    "fullDisplayName": "Duskull 61/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      355
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-061-low.png",
-    "imageHighSrc": "cards/ex2-061-high.png",
-    "attacks": [
-      {
-        "name": "Surprise",
-        "damage": null
-      },
-      {
-        "name": "Confuse Ray",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5790",
-    "externalId": "ex2-60",
-    "tcgdex_id": "ex2-60",
-    "localId": "060",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "60/100",
-    "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 60/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      206
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-060-low.png",
-    "imageHighSrc": "cards/ex2-060-high.png",
-    "attacks": [
-      {
-        "name": "Strike and Run",
-        "damage": null
-      },
-      {
-        "name": "Sudden Flash",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5782",
-    "externalId": "ex2-59",
-    "tcgdex_id": "ex2-59",
-    "localId": "059",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "59/100",
-    "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 59/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      155
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-059-low.png",
-    "imageHighSrc": "cards/ex2-059-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      },
-      {
-        "name": "Singe",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5772",
-    "externalId": "ex2-58",
-    "tcgdex_id": "ex2-58",
-    "localId": "058",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "58/100",
-    "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 58/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      331
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-058-low.png",
-    "imageHighSrc": "cards/ex2-058-high.png",
-    "attacks": [
-      {
-        "name": "Poison Sting",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5763",
-    "externalId": "ex2-57",
-    "tcgdex_id": "ex2-57",
-    "localId": "057",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "57/100",
-    "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 57/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      331
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-057-low.png",
-    "imageHighSrc": "cards/ex2-057-high.png",
-    "attacks": [
-      {
-        "name": "Light Punch",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5754",
-    "externalId": "ex2-56",
-    "tcgdex_id": "ex2-56",
-    "localId": "056",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "56/100",
-    "cardName": "Aron",
-    "fullDisplayName": "Aron 56/100 Sandstorm",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      304
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-056-low.png",
-    "imageHighSrc": "cards/ex2-056-high.png",
-    "attacks": [
-      {
-        "name": "Steel Headbutt",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5745",
-    "externalId": "ex2-55",
-    "tcgdex_id": "ex2-55",
-    "localId": "055",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "55/100",
-    "cardName": "Xatu",
-    "fullDisplayName": "Xatu 55/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      178
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Natu",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-055-low.png",
-    "imageHighSrc": "cards/ex2-055-high.png",
-    "attacks": [
-      {
-        "name": "Psyimpact",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5736",
-    "externalId": "ex2-54",
-    "tcgdex_id": "ex2-54",
-    "localId": "054",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "54/100",
-    "cardName": "Wynaut",
-    "fullDisplayName": "Wynaut 54/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      360
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-054-low.png",
-    "imageHighSrc": "cards/ex2-054-high.png",
-    "attacks": [
-      {
-        "name": "Alluring Smile",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5727",
-    "externalId": "ex2-53",
-    "tcgdex_id": "ex2-53",
-    "localId": "053",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "53/100",
-    "cardName": "Volbeat",
-    "fullDisplayName": "Volbeat 53/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      313
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-053-low.png",
-    "imageHighSrc": "cards/ex2-053-high.png",
-    "attacks": [
-      {
-        "name": "Toxic Vibration",
-        "damage": null
-      },
-      {
-        "name": "Pester",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5718",
-    "externalId": "ex2-52",
-    "tcgdex_id": "ex2-52",
-    "localId": "052",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "52/100",
-    "cardName": "Vigoroth",
-    "fullDisplayName": "Vigoroth 52/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      288
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Slakoth",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-052-low.png",
-    "imageHighSrc": "cards/ex2-052-high.png",
-    "attacks": [
-      {
-        "name": "Focus Energy",
-        "damage": null
-      },
-      {
-        "name": "Slash",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5708",
-    "externalId": "ex2-51",
-    "tcgdex_id": "ex2-51",
-    "localId": "051",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "51/100",
-    "cardName": "Quilava",
-    "fullDisplayName": "Quilava 51/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      156
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cyndaquil",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-051-low.png",
-    "imageHighSrc": "cards/ex2-051-high.png",
-    "attacks": [
-      {
-        "name": "Slash",
-        "damage": "20"
-      },
-      {
-        "name": "Burning Claw",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5700",
-    "externalId": "ex2-50",
-    "tcgdex_id": "ex2-50",
-    "localId": "050",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "50/100",
-    "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 50/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      279
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wingull",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-050-low.png",
-    "imageHighSrc": "cards/ex2-050-high.png",
-    "attacks": [
-      {
-        "name": "Water Gun",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5691",
-    "externalId": "ex2-49",
-    "tcgdex_id": "ex2-49",
-    "localId": "049",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "49/100",
-    "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 49/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      274
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Seedot",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-049-low.png",
-    "imageHighSrc": "cards/ex2-049-high.png",
-    "attacks": [
-      {
-        "name": "Stun Spore",
-        "damage": "20"
-      },
-      {
-        "name": "Razor Wind",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5682",
-    "externalId": "ex2-48",
-    "tcgdex_id": "ex2-48",
-    "localId": "048",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "48/100",
-    "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 48/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      274
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Seedot",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-048-low.png",
-    "imageHighSrc": "cards/ex2-048-high.png",
-    "attacks": [
-      {
-        "name": "Steady Punch",
-        "damage": "20+"
-      },
-      {
-        "name": "Razor Leaf",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5673",
-    "externalId": "ex2-47",
-    "tcgdex_id": "ex2-47",
-    "localId": "047",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "47/100",
-    "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 47/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      198
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-047-low.png",
-    "imageHighSrc": "cards/ex2-047-high.png",
-    "attacks": [
-      {
-        "name": "Surprise",
-        "damage": null
-      },
-      {
-        "name": "Dark Mind",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5662",
-    "externalId": "ex2-46",
-    "tcgdex_id": "ex2-46",
-    "localId": "046",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "46/100",
-    "cardName": "Lombre",
-    "fullDisplayName": "Lombre 46/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      271
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lotad",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-046-low.png",
-    "imageHighSrc": "cards/ex2-046-high.png",
-    "attacks": [
-      {
-        "name": "Surprise",
-        "damage": "10"
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5652",
-    "externalId": "ex2-45",
-    "tcgdex_id": "ex2-45",
-    "localId": "045",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "45/100",
-    "cardName": "Lombre",
-    "fullDisplayName": "Lombre 45/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      271
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lotad",
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-045-low.png",
-    "imageHighSrc": "cards/ex2-045-high.png",
-    "attacks": [
-      {
-        "name": "Double Scratch",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5644",
-    "externalId": "ex2-44",
-    "tcgdex_id": "ex2-44",
-    "localId": "044",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "44/100",
-    "cardName": "Linoone",
-    "fullDisplayName": "Linoone 44/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      264
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zigzagoon",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-044-low.png",
-    "imageHighSrc": "cards/ex2-044-high.png",
-    "attacks": [
-      {
-        "name": "Sniff Out",
-        "damage": null
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5634",
-    "externalId": "ex2-43",
-    "tcgdex_id": "ex2-43",
-    "localId": "043",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "43/100",
-    "cardName": "Lileep",
-    "fullDisplayName": "Lileep 43/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      345
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Root Fossil",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-043-low.png",
-    "imageHighSrc": "cards/ex2-043-high.png",
-    "attacks": [
-      {
-        "name": "Amnesia",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5625",
-    "externalId": "ex2-42",
-    "tcgdex_id": "ex2-42",
-    "localId": "042",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "42/100",
-    "cardName": "Lileep",
-    "fullDisplayName": "Lileep 42/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      345
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Root Fossil",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-042-low.png",
-    "imageHighSrc": "cards/ex2-042-high.png",
-    "attacks": [
-      {
-        "name": "Influence",
-        "damage": null
-      },
-      {
-        "name": "Time Spiral",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5615",
-    "externalId": "ex2-41",
-    "tcgdex_id": "ex2-41",
-    "localId": "041",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "41/100",
-    "cardName": "Lairon",
-    "fullDisplayName": "Lairon 41/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      305
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Aron",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-041-low.png",
-    "imageHighSrc": "cards/ex2-041-high.png",
-    "attacks": [
-      {
-        "name": "Iron Defense",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5606",
-    "externalId": "ex2-40",
-    "tcgdex_id": "ex2-40",
-    "localId": "040",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "40/100",
-    "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 40/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      281
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ralts",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-040-low.png",
-    "imageHighSrc": "cards/ex2-040-high.png",
-    "attacks": [
-      {
-        "name": "Psyshock",
-        "damage": "20"
-      },
-      {
-        "name": "Link Blast",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5598",
-    "externalId": "ex2-39",
-    "tcgdex_id": "ex2-39",
-    "localId": "039",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "39/100",
-    "cardName": "Kabuto",
-    "fullDisplayName": "Kabuto 39/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      140
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mysterious Fossil",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-039-low.png",
-    "imageHighSrc": "cards/ex2-039-high.png",
-    "attacks": [
-      {
-        "name": "Team Assembly",
-        "damage": null
-      },
-      {
-        "name": "Pierce",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5589",
-    "externalId": "ex2-38",
-    "tcgdex_id": "ex2-38",
-    "localId": "038",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "38/100",
-    "cardName": "Illumise",
-    "fullDisplayName": "Illumise 38/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      314
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-038-low.png",
-    "imageHighSrc": "cards/ex2-038-high.png",
-    "attacks": [
-      {
-        "name": "Chaotic Noise",
-        "damage": null
-      },
-      {
-        "name": "Pester",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5579",
-    "externalId": "ex2-37",
-    "tcgdex_id": "ex2-37",
-    "localId": "037",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "37/100",
-    "cardName": "Fearow",
-    "fullDisplayName": "Fearow 37/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      22
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Spearow",
-    "artist": "Aya Kusube",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-037-low.png",
-    "imageHighSrc": "cards/ex2-037-high.png",
-    "attacks": [
-      {
-        "name": "Double Wing Attack",
-        "damage": null
-      },
-      {
-        "name": "Rend",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5570",
-    "externalId": "ex2-36",
-    "tcgdex_id": "ex2-36",
-    "localId": "036",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "36/100",
-    "cardName": "Elekid",
-    "fullDisplayName": "Elekid 36/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      239
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-036-low.png",
-    "imageHighSrc": "cards/ex2-036-high.png",
-    "attacks": [
-      {
-        "name": "Gather Energy",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5561",
-    "externalId": "ex2-35",
-    "tcgdex_id": "ex2-35",
-    "localId": "035",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "35/100",
-    "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 35/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      125
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-035-low.png",
-    "imageHighSrc": "cards/ex2-035-high.png",
-    "attacks": [
-      {
-        "name": "Plasma",
-        "damage": "10"
-      },
-      {
-        "name": "Thunder Spear",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5552",
-    "externalId": "ex2-34",
-    "tcgdex_id": "ex2-34",
-    "localId": "034",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "34/100",
-    "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 34/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      301
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Skitty",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-034-low.png",
-    "imageHighSrc": "cards/ex2-034-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "30"
-      },
-      {
-        "name": "Ultra Energy Source",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5543",
-    "externalId": "ex2-33",
-    "tcgdex_id": "ex2-33",
-    "localId": "033",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "33/100",
-    "cardName": "Breloom",
-    "fullDisplayName": "Breloom 33/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      286
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shroomish",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-033-low.png",
-    "imageHighSrc": "cards/ex2-033-high.png",
-    "attacks": [
-      {
-        "name": "Super Poison Breath",
-        "damage": null
-      },
-      {
-        "name": "Sky Uppercut",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5535",
-    "externalId": "ex2-32",
-    "tcgdex_id": "ex2-32",
-    "localId": "032",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "32/100",
-    "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 32/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      343
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-032-low.png",
-    "imageHighSrc": "cards/ex2-032-high.png",
-    "attacks": [
-      {
-        "name": "Rapid Spin",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5526",
-    "externalId": "ex2-31",
-    "tcgdex_id": "ex2-31",
-    "localId": "031",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "31/100",
-    "cardName": "Azurill",
-    "fullDisplayName": "Azurill 31/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      298
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-031-low.png",
-    "imageHighSrc": "cards/ex2-031-high.png",
-    "attacks": [
-      {
-        "name": "Jump Catch",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5518",
-    "externalId": "ex2-30",
-    "tcgdex_id": "ex2-30",
-    "localId": "030",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "30/100",
-    "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 30/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      184
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Marill",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-030-low.png",
-    "imageHighSrc": "cards/ex2-030-high.png",
-    "attacks": [
-      {
-        "name": "Drizzle",
-        "damage": null
-      },
-      {
-        "name": "Max Bubbles",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5509",
-    "externalId": "ex2-29",
-    "tcgdex_id": "ex2-29",
-    "localId": "029",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "29/100",
-    "cardName": "Arbok",
-    "fullDisplayName": "Arbok 29/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      24
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Ekans",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-029-low.png",
-    "imageHighSrc": "cards/ex2-029-high.png",
-    "attacks": [
-      {
-        "name": "Toxic",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5499",
-    "externalId": "ex2-28",
-    "tcgdex_id": "ex2-28",
-    "localId": "028",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "28/100",
-    "cardName": "Anorith",
-    "fullDisplayName": "Anorith 28/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      347
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Claw Fossil",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-028-low.png",
-    "imageHighSrc": "cards/ex2-028-high.png",
-    "attacks": [
-      {
-        "name": "Slash",
-        "damage": "20"
-      },
-      {
-        "name": "Double Scratch",
-        "damage": "40×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5489",
-    "externalId": "ex2-27",
-    "tcgdex_id": "ex2-27",
-    "localId": "027",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "27/100",
-    "cardName": "Anorith",
-    "fullDisplayName": "Anorith 27/100 Sandstorm",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      347
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Claw Fossil",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-027-low.png",
-    "imageHighSrc": "cards/ex2-027-high.png",
-    "attacks": [
-      {
-        "name": "Fast Evolution",
-        "damage": null
-      },
-      {
-        "name": "Pierce",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5480",
-    "externalId": "ex2-26",
-    "tcgdex_id": "ex2-26",
-    "localId": "026",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "26/100",
-    "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 26/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      202
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-026-low.png",
-    "imageHighSrc": "cards/ex2-026-high.png",
-    "attacks": [
-      {
-        "name": "Flip Over",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5471",
-    "externalId": "ex2-25",
-    "tcgdex_id": "ex2-25",
-    "localId": "025",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "25/100",
-    "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 25/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      134
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-025-low.png",
-    "imageHighSrc": "cards/ex2-025-high.png",
-    "attacks": [
-      {
-        "name": "Aurora Beam",
-        "damage": "30"
-      },
-      {
-        "name": "Aqua Sonic",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5461",
-    "externalId": "ex2-24",
-    "tcgdex_id": "ex2-24",
-    "localId": "024",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "24/100",
-    "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 24/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      197
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-024-low.png",
-    "imageHighSrc": "cards/ex2-024-high.png",
-    "attacks": [
-      {
-        "name": "Confuse Ray",
-        "damage": "10"
-      },
-      {
-        "name": "Moon Impact",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5450",
-    "externalId": "ex2-23",
-    "tcgdex_id": "ex2-23",
-    "localId": "023",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "23/100",
-    "cardName": "Steelix",
-    "fullDisplayName": "Steelix 23/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      208
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Onix",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-023-low.png",
-    "imageHighSrc": "cards/ex2-023-high.png",
-    "attacks": [
-      {
-        "name": "Rage",
-        "damage": "10+"
-      },
-      {
-        "name": "Spinning Tail",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5440",
-    "externalId": "ex2-22",
-    "tcgdex_id": "ex2-22",
-    "localId": "022",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "22/100",
-    "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 22/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      275
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nuzleaf",
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-022-low.png",
-    "imageHighSrc": "cards/ex2-022-high.png",
-    "attacks": [
-      {
-        "name": "Feint Attack",
-        "damage": null
-      },
-      {
-        "name": "Slash",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5432",
-    "externalId": "ex2-21",
-    "tcgdex_id": "ex2-21",
-    "localId": "021",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "21/100",
-    "cardName": "Sandslash",
-    "fullDisplayName": "Sandslash 21/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      28
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sandshrew",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-021-low.png",
-    "imageHighSrc": "cards/ex2-021-high.png",
-    "attacks": [
-      {
-        "name": "Sand Swirl",
-        "damage": null
-      },
-      {
-        "name": "Earthquake",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5423",
-    "externalId": "ex2-20",
-    "tcgdex_id": "ex2-20",
-    "localId": "020",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "20/100",
-    "cardName": "Pichu",
-    "fullDisplayName": "Pichu 20/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      172
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-020-low.png",
-    "imageHighSrc": "cards/ex2-020-high.png",
-    "attacks": [
-      {
-        "name": "Energy Retrieval",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5416",
-    "externalId": "ex2-19",
-    "tcgdex_id": "ex2-19",
-    "localId": "019",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "19/100",
-    "cardName": "Omastar",
-    "fullDisplayName": "Omastar 19/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 110,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      139
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Omanyte",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-019-low.png",
-    "imageHighSrc": "cards/ex2-019-high.png",
-    "attacks": [
-      {
-        "name": "Pull Down",
-        "damage": null
-      },
-      {
-        "name": "Hydrocannon",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5408",
-    "externalId": "ex2-18",
-    "tcgdex_id": "ex2-18",
-    "localId": "018",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "18/100",
-    "cardName": "Kecleon",
-    "fullDisplayName": "Kecleon 18/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      352
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-018-low.png",
-    "imageHighSrc": "cards/ex2-018-high.png",
-    "attacks": [
-      {
-        "name": "Double Scratch",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5398",
-    "externalId": "ex2-17",
-    "tcgdex_id": "ex2-17",
-    "localId": "017",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "17/100",
-    "cardName": "Golduck",
-    "fullDisplayName": "Golduck 17/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      55
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Psyduck",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-017-low.png",
-    "imageHighSrc": "cards/ex2-017-high.png",
-    "attacks": [
-      {
-        "name": "Special Blow",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5390",
-    "externalId": "ex2-16",
-    "tcgdex_id": "ex2-16",
-    "localId": "016",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "16/100",
-    "cardName": "Espeon",
-    "fullDisplayName": "Espeon 16/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      196
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-016-low.png",
-    "imageHighSrc": "cards/ex2-016-high.png",
-    "attacks": [
-      {
-        "name": "Confuse Ray",
-        "damage": "20"
-      },
-      {
-        "name": "Energy Crush",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5380",
-    "externalId": "ex2-15",
-    "tcgdex_id": "ex2-15",
-    "localId": "015",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "15/100",
-    "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 15/100 Sandstorm",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      59
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Growlithe",
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-015-low.png",
-    "imageHighSrc": "cards/ex2-015-high.png",
-    "attacks": [
-      {
-        "name": "Burn Up",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5371",
-    "externalId": "ex2-14",
-    "tcgdex_id": "ex2-14",
-    "localId": "014",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "14/100",
-    "cardName": "Zangoose",
-    "fullDisplayName": "Zangoose 14/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      335
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-014-low.png",
-    "imageHighSrc": "cards/ex2-014-high.png",
-    "attacks": [
-      {
-        "name": "Target Slash",
-        "damage": "10+"
-      },
-      {
-        "name": "Super Slash",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5362",
-    "externalId": "ex2-13",
-    "tcgdex_id": "ex2-13",
-    "localId": "013",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "13/100",
-    "cardName": "Solrock",
-    "fullDisplayName": "Solrock 13/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      338
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-013-low.png",
-    "imageHighSrc": "cards/ex2-013-high.png",
-    "attacks": [
-      {
-        "name": "Cosmic Draw",
-        "damage": null
-      },
-      {
-        "name": "Solar Blast",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5353",
-    "externalId": "ex2-12",
-    "tcgdex_id": "ex2-12",
-    "localId": "012",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "12/100",
-    "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 12/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      275
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Nuzleaf",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-012-low.png",
-    "imageHighSrc": "cards/ex2-012-high.png",
-    "attacks": [
-      {
-        "name": "Light Touch Throw",
-        "damage": "80-"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5342",
-    "externalId": "ex2-11",
-    "tcgdex_id": "ex2-11",
-    "localId": "011",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "11/100",
-    "cardName": "Seviper",
-    "fullDisplayName": "Seviper 11/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      336
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-011-low.png",
-    "imageHighSrc": "cards/ex2-011-high.png",
-    "attacks": [
-      {
-        "name": "Deadly Poison",
-        "damage": "10"
-      },
-      {
-        "name": "Extra Poison",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5333",
-    "externalId": "ex2-10",
-    "tcgdex_id": "ex2-10",
-    "localId": "010",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "10/100",
-    "cardName": "Sableye",
-    "fullDisplayName": "Sableye 10/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      302
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-010-low.png",
-    "imageHighSrc": "cards/ex2-010-high.png",
-    "attacks": [
-      {
-        "name": "Supernatural",
-        "damage": null
-      },
-      {
-        "name": "Dark Bind",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5326",
-    "externalId": "ex2-9",
-    "tcgdex_id": "ex2-9",
-    "localId": "009",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "9/100",
-    "cardName": "Mawile",
-    "fullDisplayName": "Mawile 9/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      303
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-009-low.png",
-    "imageHighSrc": "cards/ex2-009-high.png",
-    "attacks": [
-      {
-        "name": "Scam",
-        "damage": null
-      },
-      {
-        "name": "Metal Hook",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5318",
-    "externalId": "ex2-8",
-    "tcgdex_id": "ex2-8",
-    "localId": "008",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "8/100",
-    "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 8/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      337
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Hajime Kusajima",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-008-low.png",
-    "imageHighSrc": "cards/ex2-008-high.png",
-    "attacks": [
-      {
-        "name": "Cosmic Draw",
-        "damage": null
-      },
-      {
-        "name": "Lunar Blast",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5309",
-    "externalId": "ex2-7",
-    "tcgdex_id": "ex2-7",
-    "localId": "007",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "7/100",
-    "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 7/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      272
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lombre",
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-007-low.png",
-    "imageHighSrc": "cards/ex2-007-high.png",
-    "attacks": [
-      {
-        "name": "Hydro Punch",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5301",
-    "externalId": "ex2-6",
-    "tcgdex_id": "ex2-6",
-    "localId": "006",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "6/100",
-    "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 6/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      135
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-006-low.png",
-    "imageHighSrc": "cards/ex2-006-high.png",
-    "attacks": [
-      {
-        "name": "Double Kick",
-        "damage": "20×"
-      },
-      {
-        "name": "Lightning Strike",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5292",
-    "externalId": "ex2-5",
-    "tcgdex_id": "ex2-5",
-    "localId": "005",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "5/100",
-    "cardName": "Flareon",
-    "fullDisplayName": "Flareon 5/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      136
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eevee",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-005-low.png",
-    "imageHighSrc": "cards/ex2-005-high.png",
-    "attacks": [
-      {
-        "name": "Super Singe",
-        "damage": "20"
-      },
-      {
-        "name": "Flamethrower",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5284",
-    "externalId": "ex2-4",
-    "tcgdex_id": "ex2-4",
-    "localId": "004",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "4/100",
-    "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 4/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      356
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Duskull",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-004-low.png",
-    "imageHighSrc": "cards/ex2-004-high.png",
-    "attacks": [
-      {
-        "name": "Judgement",
-        "damage": null
-      },
-      {
-        "name": "Random Curse",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5276",
-    "externalId": "ex2-3",
-    "tcgdex_id": "ex2-3",
-    "localId": "003",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "3/100",
-    "cardName": "Cradily",
-    "fullDisplayName": "Cradily 3/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      346
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lileep",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-003-low.png",
-    "imageHighSrc": "cards/ex2-003-high.png",
-    "attacks": [
-      {
-        "name": "Lure Poison",
-        "damage": null
-      },
-      {
-        "name": "Spiral Drain",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "5264",
-    "externalId": "ex2-2",
-    "tcgdex_id": "ex2-2",
-    "localId": "002",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "2/100",
-    "cardName": "Cacturne",
-    "fullDisplayName": "Cacturne 2/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      332
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cacnea",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-002-low.png",
-    "imageHighSrc": "cards/ex2-002-high.png",
-    "attacks": [
-      {
-        "name": "Feint Attack",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "5256",
-    "externalId": "ex2-1",
-    "tcgdex_id": "ex2-1",
-    "localId": "001",
-    "setCode": "ex2",
-    "setTcgdexId": "ex2",
-    "cardNumber": "1/100",
-    "cardName": "Armaldo",
-    "fullDisplayName": "Armaldo 1/100 Sandstorm",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 120,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      348
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Anorith",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/ex2-001-low.png",
-    "imageHighSrc": "cards/ex2-001-high.png",
-    "attacks": [
-      {
-        "name": "Blade Arms",
-        "damage": "60"
-      }
-    ]
-  }
+    {
+        "masterCardId": "6137",
+        "externalId": "ex2-100",
+        "localId": "100",
+        "setCode": "ex2",
+        "cardNumber": "100/100",
+        "cardName": "Wailord ex",
+        "fullDisplayName": "Wailord ex 100/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 200,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            321
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-100-low.png",
+        "imageHighSrc": "cards/ex2-100-high.png",
+        "attacks": [
+            {
+                "name": "Super Deep Dive",
+                "damage": null
+            },
+            {
+                "name": "Dwindling Wave",
+                "damage": "100-"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6131",
+        "externalId": "ex2-99",
+        "localId": "099",
+        "setCode": "ex2",
+        "cardNumber": "99/100",
+        "cardName": "Typhlosion ex",
+        "fullDisplayName": "Typhlosion ex 99/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 160,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            157
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex2-099-low.png",
+        "imageHighSrc": "cards/ex2-099-high.png",
+        "attacks": [
+            {
+                "name": "Ring of Fire",
+                "damage": "40"
+            },
+            {
+                "name": "Split Blast",
+                "damage": "100"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6123",
+        "externalId": "ex2-98",
+        "localId": "098",
+        "setCode": "ex2",
+        "cardNumber": "98/100",
+        "cardName": "Raichu ex",
+        "fullDisplayName": "Raichu ex 98/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            26
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-098-low.png",
+        "imageHighSrc": "cards/ex2-098-high.png",
+        "attacks": [
+            {
+                "name": "Dazzle Blast",
+                "damage": "20"
+            },
+            {
+                "name": "Mega Thunderbolt",
+                "damage": "120"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6118",
+        "externalId": "ex2-97",
+        "localId": "097",
+        "setCode": "ex2",
+        "cardNumber": "97/100",
+        "cardName": "Kabutops ex",
+        "fullDisplayName": "Kabutops ex 97/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            141
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-097-low.png",
+        "imageHighSrc": "cards/ex2-097-high.png",
+        "attacks": [
+            {
+                "name": "Hydrocutter",
+                "damage": "40×"
+            },
+            {
+                "name": "Spiral Drain",
+                "damage": "70"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6111",
+        "externalId": "ex2-96",
+        "localId": "096",
+        "setCode": "ex2",
+        "cardNumber": "96/100",
+        "cardName": "Gardevoir ex",
+        "fullDisplayName": "Gardevoir ex 96/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            282
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex2-096-low.png",
+        "imageHighSrc": "cards/ex2-096-high.png",
+        "attacks": [
+            {
+                "name": "Feedback",
+                "damage": null
+            },
+            {
+                "name": "Psystorm",
+                "damage": "10×"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6104",
+        "externalId": "ex2-95",
+        "localId": "095",
+        "setCode": "ex2",
+        "cardNumber": "95/100",
+        "cardName": "Aggron ex",
+        "fullDisplayName": "Aggron ex 95/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            306
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex2-095-low.png",
+        "imageHighSrc": "cards/ex2-095-high.png",
+        "attacks": [
+            {
+                "name": "Rend",
+                "damage": "30+"
+            },
+            {
+                "name": "Metal Surge",
+                "damage": "50"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6096",
+        "externalId": "ex2-94",
+        "localId": "094",
+        "setCode": "ex2",
+        "cardNumber": "94/100",
+        "cardName": "Aerodactyl ex",
+        "fullDisplayName": "Aerodactyl ex 94/100 Sandstorm",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            142
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hikaru Koike",
+        "imageLowSrc": "cards/ex2-094-low.png",
+        "imageHighSrc": "cards/ex2-094-high.png",
+        "attacks": [
+            {
+                "name": "Supersonic",
+                "damage": "10"
+            },
+            {
+                "name": "Wing Attack",
+                "damage": "60"
+            }
+        ],
+        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "6088",
+        "externalId": "ex2-93",
+        "localId": "093",
+        "setCode": "ex2",
+        "cardNumber": "93/100",
+        "cardName": "Multi Energy",
+        "fullDisplayName": "Multi Energy 93/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "Takumi Akabane",
+        "imageLowSrc": "cards/ex2-093-low.png",
+        "imageHighSrc": "cards/ex2-093-high.png",
+        "rules": "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) Multi energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
+    },
+    {
+        "masterCardId": "6081",
+        "externalId": "ex2-92",
+        "localId": "092",
+        "setCode": "ex2",
+        "cardNumber": "92/100",
+        "cardName": "Root Fossil",
+        "fullDisplayName": "Root Fossil 92/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 40,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-092-low.png",
+        "imageHighSrc": "cards/ex2-092-high.png",
+        "rules": "Play Root Fossil as if it were a Basic Pokémon. While in play, Root Fossil counts as a Colorless Pokémon (instead of a Trainer card). Root Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Root Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Root Fossil from play."
+    },
+    {
+        "masterCardId": "6072",
+        "externalId": "ex2-91",
+        "localId": "091",
+        "setCode": "ex2",
+        "cardNumber": "91/100",
+        "cardName": "Mysterious Fossil",
+        "fullDisplayName": "Mysterious Fossil 91/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 10,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Keiji Kinebuchi",
+        "imageLowSrc": "cards/ex2-091-low.png",
+        "imageHighSrc": "cards/ex2-091-high.png",
+        "rules": "Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious Fossil counts as a Colorless Pokémon (instead of a Trainer card). Mysterious Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Mysterious is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Mysterious Fossil from play."
+    },
+    {
+        "masterCardId": "6063",
+        "externalId": "ex2-90",
+        "localId": "090",
+        "setCode": "ex2",
+        "cardNumber": "90/100",
+        "cardName": "Claw Fossil",
+        "fullDisplayName": "Claw Fossil 90/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Trainer",
+        "hp": 40,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-090-low.png",
+        "imageHighSrc": "cards/ex2-090-high.png",
+        "rules": "Play Claw Fossil as if it were a Basic Pokémon. While in play, Claw Fossil counts as a Colorless Pokémon (instead of a Trainer card). Claw Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Claw Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Claw Fossil from play."
+    },
+    {
+        "masterCardId": "6055",
+        "externalId": "ex2-89",
+        "localId": "089",
+        "setCode": "ex2",
+        "cardNumber": "89/100",
+        "cardName": "Wally's Training",
+        "fullDisplayName": "Wally's Training 89/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-089-low.png",
+        "imageHighSrc": "cards/ex2-089-high.png",
+        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for a card that evolves from your Active Pokémon (choose 1 if there are 2) and put it on your Active Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward."
+    },
+    {
+        "masterCardId": "6046",
+        "externalId": "ex2-88",
+        "localId": "088",
+        "setCode": "ex2",
+        "cardNumber": "88/100",
+        "cardName": "Rare Candy",
+        "fullDisplayName": "Rare Candy 88/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-088-low.png",
+        "imageHighSrc": "cards/ex2-088-high.png",
+        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
+    },
+    {
+        "masterCardId": "6036",
+        "externalId": "ex2-87",
+        "localId": "087",
+        "setCode": "ex2",
+        "cardNumber": "87/100",
+        "cardName": "Lanette's Net Search",
+        "fullDisplayName": "Lanette's Net Search 87/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-087-low.png",
+        "imageHighSrc": "cards/ex2-087-high.png",
+        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 different types of Basic Pokémon cards (excluding Baby Pokémon), show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+    },
+    {
+        "masterCardId": "6026",
+        "externalId": "ex2-86",
+        "localId": "086",
+        "setCode": "ex2",
+        "cardNumber": "86/100",
+        "cardName": "Double Full Heal",
+        "fullDisplayName": "Double Full Heal 86/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/ex2-086-low.png",
+        "imageHighSrc": "cards/ex2-086-high.png",
+        "rules": "Remove all Special Conditions from each of your Active Pokémon."
+    },
+    {
+        "masterCardId": "6017",
+        "externalId": "ex2-85",
+        "localId": "085",
+        "setCode": "ex2",
+        "cardNumber": "85/100",
+        "cardName": "Zigzagoon",
+        "fullDisplayName": "Zigzagoon 85/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            263
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-085-low.png",
+        "imageHighSrc": "cards/ex2-085-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "6008",
+        "externalId": "ex2-84",
+        "localId": "084",
+        "setCode": "ex2",
+        "cardNumber": "84/100",
+        "cardName": "Wingull",
+        "fullDisplayName": "Wingull 84/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            278
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-084-low.png",
+        "imageHighSrc": "cards/ex2-084-high.png",
+        "attacks": [
+            {
+                "name": "Supersonic",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "6000",
+        "externalId": "ex2-83",
+        "localId": "083",
+        "setCode": "ex2",
+        "cardNumber": "83/100",
+        "cardName": "Wailmer",
+        "fullDisplayName": "Wailmer 83/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            320
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-083-low.png",
+        "imageHighSrc": "cards/ex2-083-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "20"
+            },
+            {
+                "name": "Super Hypno Wave",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5991",
+        "externalId": "ex2-82",
+        "localId": "082",
+        "setCode": "ex2",
+        "cardNumber": "82/100",
+        "cardName": "Trapinch",
+        "fullDisplayName": "Trapinch 82/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            328
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-082-low.png",
+        "imageHighSrc": "cards/ex2-082-high.png",
+        "attacks": [
+            {
+                "name": "Sand Pit",
+                "damage": "10"
+            },
+            {
+                "name": "Irongrip",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5982",
+        "externalId": "ex2-81",
+        "localId": "081",
+        "setCode": "ex2",
+        "cardNumber": "81/100",
+        "cardName": "Spearow",
+        "fullDisplayName": "Spearow 81/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            21
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex2-081-low.png",
+        "imageHighSrc": "cards/ex2-081-high.png",
+        "attacks": [
+            {
+                "name": "Super Speed",
+                "damage": null
+            },
+            {
+                "name": "Peck",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5973",
+        "externalId": "ex2-80",
+        "localId": "080",
+        "setCode": "ex2",
+        "cardNumber": "80/100",
+        "cardName": "Slakoth",
+        "fullDisplayName": "Slakoth 80/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            287
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-080-low.png",
+        "imageHighSrc": "cards/ex2-080-high.png",
+        "attacks": [
+            {
+                "name": "Lazy Punch",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5963",
+        "externalId": "ex2-79",
+        "localId": "079",
+        "setCode": "ex2",
+        "cardNumber": "79/100",
+        "cardName": "Skitty",
+        "fullDisplayName": "Skitty 79/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            300
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-079-low.png",
+        "imageHighSrc": "cards/ex2-079-high.png",
+        "attacks": [
+            {
+                "name": "Energy Catch",
+                "damage": null
+            },
+            {
+                "name": "Double-edge",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5953",
+        "externalId": "ex2-78",
+        "localId": "078",
+        "setCode": "ex2",
+        "cardNumber": "78/100",
+        "cardName": "Shroomish",
+        "fullDisplayName": "Shroomish 78/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            285
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-078-low.png",
+        "imageHighSrc": "cards/ex2-078-high.png",
+        "attacks": [
+            {
+                "name": "Growth Spurt",
+                "damage": null
+            },
+            {
+                "name": "Poisonpowder",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5945",
+        "externalId": "ex2-77",
+        "localId": "077",
+        "setCode": "ex2",
+        "cardNumber": "77/100",
+        "cardName": "Seedot",
+        "fullDisplayName": "Seedot 77/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            273
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-077-low.png",
+        "imageHighSrc": "cards/ex2-077-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5936",
+        "externalId": "ex2-76",
+        "localId": "076",
+        "setCode": "ex2",
+        "cardNumber": "76/100",
+        "cardName": "Seedot",
+        "fullDisplayName": "Seedot 76/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            273
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-076-low.png",
+        "imageHighSrc": "cards/ex2-076-high.png",
+        "attacks": [
+            {
+                "name": "Surprise Attack",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5927",
+        "externalId": "ex2-75",
+        "localId": "075",
+        "setCode": "ex2",
+        "cardNumber": "75/100",
+        "cardName": "Sandshrew",
+        "fullDisplayName": "Sandshrew 75/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            27
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-075-low.png",
+        "imageHighSrc": "cards/ex2-075-high.png",
+        "attacks": [
+            {
+                "name": "Poison Needle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5918",
+        "externalId": "ex2-74",
+        "localId": "074",
+        "setCode": "ex2",
+        "cardNumber": "74/100",
+        "cardName": "Ralts",
+        "fullDisplayName": "Ralts 74/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            280
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-074-low.png",
+        "imageHighSrc": "cards/ex2-074-high.png",
+        "attacks": [
+            {
+                "name": "Hypnosis",
+                "damage": null
+            },
+            {
+                "name": "Psychic Boom",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5909",
+        "externalId": "ex2-73",
+        "localId": "073",
+        "setCode": "ex2",
+        "cardNumber": "73/100",
+        "cardName": "Psyduck",
+        "fullDisplayName": "Psyduck 73/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            54
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-073-low.png",
+        "imageHighSrc": "cards/ex2-073-high.png",
+        "attacks": [
+            {
+                "name": "Confusion Wave",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5900",
+        "externalId": "ex2-72",
+        "localId": "072",
+        "setCode": "ex2",
+        "cardNumber": "72/100",
+        "cardName": "Pikachu",
+        "fullDisplayName": "Pikachu 72/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            25
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-072-low.png",
+        "imageHighSrc": "cards/ex2-072-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Pika Bolt",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5892",
+        "externalId": "ex2-71",
+        "localId": "071",
+        "setCode": "ex2",
+        "cardNumber": "71/100",
+        "cardName": "Onix",
+        "fullDisplayName": "Onix 71/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            95
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-071-low.png",
+        "imageHighSrc": "cards/ex2-071-high.png",
+        "attacks": [
+            {
+                "name": "Bind",
+                "damage": "10"
+            },
+            {
+                "name": "Rage",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5883",
+        "externalId": "ex2-70",
+        "localId": "070",
+        "setCode": "ex2",
+        "cardNumber": "70/100",
+        "cardName": "Omanyte",
+        "fullDisplayName": "Omanyte 70/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            138
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-070-low.png",
+        "imageHighSrc": "cards/ex2-070-high.png",
+        "attacks": [
+            {
+                "name": "Team Assembly",
+                "damage": null
+            },
+            {
+                "name": "Bind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5874",
+        "externalId": "ex2-69",
+        "localId": "069",
+        "setCode": "ex2",
+        "cardNumber": "69/100",
+        "cardName": "Natu",
+        "fullDisplayName": "Natu 69/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            177
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-069-low.png",
+        "imageHighSrc": "cards/ex2-069-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            },
+            {
+                "name": "Soothing Wave",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5865",
+        "externalId": "ex2-68",
+        "localId": "068",
+        "setCode": "ex2",
+        "cardNumber": "68/100",
+        "cardName": "Marill",
+        "fullDisplayName": "Marill 68/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            183
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-068-low.png",
+        "imageHighSrc": "cards/ex2-068-high.png",
+        "attacks": [
+            {
+                "name": "Double Bubble",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5856",
+        "externalId": "ex2-67",
+        "localId": "067",
+        "setCode": "ex2",
+        "cardNumber": "67/100",
+        "cardName": "Lotad",
+        "fullDisplayName": "Lotad 67/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            270
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-067-low.png",
+        "imageHighSrc": "cards/ex2-067-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Blot",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5847",
+        "externalId": "ex2-66",
+        "localId": "066",
+        "setCode": "ex2",
+        "cardNumber": "66/100",
+        "cardName": "Lotad",
+        "fullDisplayName": "Lotad 66/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            270
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex2-066-low.png",
+        "imageHighSrc": "cards/ex2-066-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5838",
+        "externalId": "ex2-65",
+        "localId": "065",
+        "setCode": "ex2",
+        "cardNumber": "65/100",
+        "cardName": "Growlithe",
+        "fullDisplayName": "Growlithe 65/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            58
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-065-low.png",
+        "imageHighSrc": "cards/ex2-065-high.png",
+        "attacks": [
+            {
+                "name": "Flare",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5829",
+        "externalId": "ex2-64",
+        "localId": "064",
+        "setCode": "ex2",
+        "cardNumber": "64/100",
+        "cardName": "Ekans",
+        "fullDisplayName": "Ekans 64/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            23
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-064-low.png",
+        "imageHighSrc": "cards/ex2-064-high.png",
+        "attacks": [
+            {
+                "name": "Bind",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5820",
+        "externalId": "ex2-63",
+        "localId": "063",
+        "setCode": "ex2",
+        "cardNumber": "63/100",
+        "cardName": "Eevee",
+        "fullDisplayName": "Eevee 63/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            133
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-063-low.png",
+        "imageHighSrc": "cards/ex2-063-high.png",
+        "attacks": [
+            {
+                "name": "Signs of Evolution",
+                "damage": null
+            },
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5811",
+        "externalId": "ex2-62",
+        "localId": "062",
+        "setCode": "ex2",
+        "cardNumber": "62/100",
+        "cardName": "Duskull",
+        "fullDisplayName": "Duskull 62/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            355
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex2-062-low.png",
+        "imageHighSrc": "cards/ex2-062-high.png",
+        "attacks": [
+            {
+                "name": "Haunt",
+                "damage": null
+            },
+            {
+                "name": "Dark Mind",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5800",
+        "externalId": "ex2-61",
+        "localId": "061",
+        "setCode": "ex2",
+        "cardNumber": "61/100",
+        "cardName": "Duskull",
+        "fullDisplayName": "Duskull 61/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            355
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-061-low.png",
+        "imageHighSrc": "cards/ex2-061-high.png",
+        "attacks": [
+            {
+                "name": "Surprise",
+                "damage": null
+            },
+            {
+                "name": "Confuse Ray",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5790",
+        "externalId": "ex2-60",
+        "localId": "060",
+        "setCode": "ex2",
+        "cardNumber": "60/100",
+        "cardName": "Dunsparce",
+        "fullDisplayName": "Dunsparce 60/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            206
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-060-low.png",
+        "imageHighSrc": "cards/ex2-060-high.png",
+        "attacks": [
+            {
+                "name": "Strike and Run",
+                "damage": null
+            },
+            {
+                "name": "Sudden Flash",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5782",
+        "externalId": "ex2-59",
+        "localId": "059",
+        "setCode": "ex2",
+        "cardNumber": "59/100",
+        "cardName": "Cyndaquil",
+        "fullDisplayName": "Cyndaquil 59/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            155
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/ex2-059-low.png",
+        "imageHighSrc": "cards/ex2-059-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            },
+            {
+                "name": "Singe",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5772",
+        "externalId": "ex2-58",
+        "localId": "058",
+        "setCode": "ex2",
+        "cardNumber": "58/100",
+        "cardName": "Cacnea",
+        "fullDisplayName": "Cacnea 58/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            331
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-058-low.png",
+        "imageHighSrc": "cards/ex2-058-high.png",
+        "attacks": [
+            {
+                "name": "Poison Sting",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5763",
+        "externalId": "ex2-57",
+        "localId": "057",
+        "setCode": "ex2",
+        "cardNumber": "57/100",
+        "cardName": "Cacnea",
+        "fullDisplayName": "Cacnea 57/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            331
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-057-low.png",
+        "imageHighSrc": "cards/ex2-057-high.png",
+        "attacks": [
+            {
+                "name": "Light Punch",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5754",
+        "externalId": "ex2-56",
+        "localId": "056",
+        "setCode": "ex2",
+        "cardNumber": "56/100",
+        "cardName": "Aron",
+        "fullDisplayName": "Aron 56/100 Sandstorm",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            304
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-056-low.png",
+        "imageHighSrc": "cards/ex2-056-high.png",
+        "attacks": [
+            {
+                "name": "Steel Headbutt",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5745",
+        "externalId": "ex2-55",
+        "localId": "055",
+        "setCode": "ex2",
+        "cardNumber": "55/100",
+        "cardName": "Xatu",
+        "fullDisplayName": "Xatu 55/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            178
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-055-low.png",
+        "imageHighSrc": "cards/ex2-055-high.png",
+        "attacks": [
+            {
+                "name": "Psyimpact",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5736",
+        "externalId": "ex2-54",
+        "localId": "054",
+        "setCode": "ex2",
+        "cardNumber": "54/100",
+        "cardName": "Wynaut",
+        "fullDisplayName": "Wynaut 54/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            360
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-054-low.png",
+        "imageHighSrc": "cards/ex2-054-high.png",
+        "attacks": [
+            {
+                "name": "Alluring Smile",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5727",
+        "externalId": "ex2-53",
+        "localId": "053",
+        "setCode": "ex2",
+        "cardNumber": "53/100",
+        "cardName": "Volbeat",
+        "fullDisplayName": "Volbeat 53/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            313
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex2-053-low.png",
+        "imageHighSrc": "cards/ex2-053-high.png",
+        "attacks": [
+            {
+                "name": "Toxic Vibration",
+                "damage": null
+            },
+            {
+                "name": "Pester",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5718",
+        "externalId": "ex2-52",
+        "localId": "052",
+        "setCode": "ex2",
+        "cardNumber": "52/100",
+        "cardName": "Vigoroth",
+        "fullDisplayName": "Vigoroth 52/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            288
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-052-low.png",
+        "imageHighSrc": "cards/ex2-052-high.png",
+        "attacks": [
+            {
+                "name": "Focus Energy",
+                "damage": null
+            },
+            {
+                "name": "Slash",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5708",
+        "externalId": "ex2-51",
+        "localId": "051",
+        "setCode": "ex2",
+        "cardNumber": "51/100",
+        "cardName": "Quilava",
+        "fullDisplayName": "Quilava 51/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            156
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/ex2-051-low.png",
+        "imageHighSrc": "cards/ex2-051-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "20"
+            },
+            {
+                "name": "Burning Claw",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5700",
+        "externalId": "ex2-50",
+        "localId": "050",
+        "setCode": "ex2",
+        "cardNumber": "50/100",
+        "cardName": "Pelipper",
+        "fullDisplayName": "Pelipper 50/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            279
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-050-low.png",
+        "imageHighSrc": "cards/ex2-050-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5691",
+        "externalId": "ex2-49",
+        "localId": "049",
+        "setCode": "ex2",
+        "cardNumber": "49/100",
+        "cardName": "Nuzleaf",
+        "fullDisplayName": "Nuzleaf 49/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            274
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-049-low.png",
+        "imageHighSrc": "cards/ex2-049-high.png",
+        "attacks": [
+            {
+                "name": "Stun Spore",
+                "damage": "20"
+            },
+            {
+                "name": "Razor Wind",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5682",
+        "externalId": "ex2-48",
+        "localId": "048",
+        "setCode": "ex2",
+        "cardNumber": "48/100",
+        "cardName": "Nuzleaf",
+        "fullDisplayName": "Nuzleaf 48/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            274
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-048-low.png",
+        "imageHighSrc": "cards/ex2-048-high.png",
+        "attacks": [
+            {
+                "name": "Steady Punch",
+                "damage": "20+"
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5673",
+        "externalId": "ex2-47",
+        "localId": "047",
+        "setCode": "ex2",
+        "cardNumber": "47/100",
+        "cardName": "Murkrow",
+        "fullDisplayName": "Murkrow 47/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            198
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-047-low.png",
+        "imageHighSrc": "cards/ex2-047-high.png",
+        "attacks": [
+            {
+                "name": "Surprise",
+                "damage": null
+            },
+            {
+                "name": "Dark Mind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5662",
+        "externalId": "ex2-46",
+        "localId": "046",
+        "setCode": "ex2",
+        "cardNumber": "46/100",
+        "cardName": "Lombre",
+        "fullDisplayName": "Lombre 46/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            271
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-046-low.png",
+        "imageHighSrc": "cards/ex2-046-high.png",
+        "attacks": [
+            {
+                "name": "Surprise",
+                "damage": "10"
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5652",
+        "externalId": "ex2-45",
+        "localId": "045",
+        "setCode": "ex2",
+        "cardNumber": "45/100",
+        "cardName": "Lombre",
+        "fullDisplayName": "Lombre 45/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            271
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex2-045-low.png",
+        "imageHighSrc": "cards/ex2-045-high.png",
+        "attacks": [
+            {
+                "name": "Double Scratch",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5644",
+        "externalId": "ex2-44",
+        "localId": "044",
+        "setCode": "ex2",
+        "cardNumber": "44/100",
+        "cardName": "Linoone",
+        "fullDisplayName": "Linoone 44/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            264
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-044-low.png",
+        "imageHighSrc": "cards/ex2-044-high.png",
+        "attacks": [
+            {
+                "name": "Sniff Out",
+                "damage": null
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5634",
+        "externalId": "ex2-43",
+        "localId": "043",
+        "setCode": "ex2",
+        "cardNumber": "43/100",
+        "cardName": "Lileep",
+        "fullDisplayName": "Lileep 43/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            345
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-043-low.png",
+        "imageHighSrc": "cards/ex2-043-high.png",
+        "attacks": [
+            {
+                "name": "Amnesia",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5625",
+        "externalId": "ex2-42",
+        "localId": "042",
+        "setCode": "ex2",
+        "cardNumber": "42/100",
+        "cardName": "Lileep",
+        "fullDisplayName": "Lileep 42/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            345
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-042-low.png",
+        "imageHighSrc": "cards/ex2-042-high.png",
+        "attacks": [
+            {
+                "name": "Influence",
+                "damage": null
+            },
+            {
+                "name": "Time Spiral",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5615",
+        "externalId": "ex2-41",
+        "localId": "041",
+        "setCode": "ex2",
+        "cardNumber": "41/100",
+        "cardName": "Lairon",
+        "fullDisplayName": "Lairon 41/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            305
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-041-low.png",
+        "imageHighSrc": "cards/ex2-041-high.png",
+        "attacks": [
+            {
+                "name": "Iron Defense",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5606",
+        "externalId": "ex2-40",
+        "localId": "040",
+        "setCode": "ex2",
+        "cardNumber": "40/100",
+        "cardName": "Kirlia",
+        "fullDisplayName": "Kirlia 40/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            281
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-040-low.png",
+        "imageHighSrc": "cards/ex2-040-high.png",
+        "attacks": [
+            {
+                "name": "Psyshock",
+                "damage": "20"
+            },
+            {
+                "name": "Link Blast",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5598",
+        "externalId": "ex2-39",
+        "localId": "039",
+        "setCode": "ex2",
+        "cardNumber": "39/100",
+        "cardName": "Kabuto",
+        "fullDisplayName": "Kabuto 39/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            140
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-039-low.png",
+        "imageHighSrc": "cards/ex2-039-high.png",
+        "attacks": [
+            {
+                "name": "Team Assembly",
+                "damage": null
+            },
+            {
+                "name": "Pierce",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5589",
+        "externalId": "ex2-38",
+        "localId": "038",
+        "setCode": "ex2",
+        "cardNumber": "38/100",
+        "cardName": "Illumise",
+        "fullDisplayName": "Illumise 38/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            314
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/ex2-038-low.png",
+        "imageHighSrc": "cards/ex2-038-high.png",
+        "attacks": [
+            {
+                "name": "Chaotic Noise",
+                "damage": null
+            },
+            {
+                "name": "Pester",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5579",
+        "externalId": "ex2-37",
+        "localId": "037",
+        "setCode": "ex2",
+        "cardNumber": "37/100",
+        "cardName": "Fearow",
+        "fullDisplayName": "Fearow 37/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            22
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Aya Kusube",
+        "imageLowSrc": "cards/ex2-037-low.png",
+        "imageHighSrc": "cards/ex2-037-high.png",
+        "attacks": [
+            {
+                "name": "Double Wing Attack",
+                "damage": null
+            },
+            {
+                "name": "Rend",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5570",
+        "externalId": "ex2-36",
+        "localId": "036",
+        "setCode": "ex2",
+        "cardNumber": "36/100",
+        "cardName": "Elekid",
+        "fullDisplayName": "Elekid 36/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            239
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-036-low.png",
+        "imageHighSrc": "cards/ex2-036-high.png",
+        "attacks": [
+            {
+                "name": "Gather Energy",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5561",
+        "externalId": "ex2-35",
+        "localId": "035",
+        "setCode": "ex2",
+        "cardNumber": "35/100",
+        "cardName": "Electabuzz",
+        "fullDisplayName": "Electabuzz 35/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            125
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-035-low.png",
+        "imageHighSrc": "cards/ex2-035-high.png",
+        "attacks": [
+            {
+                "name": "Plasma",
+                "damage": "10"
+            },
+            {
+                "name": "Thunder Spear",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5552",
+        "externalId": "ex2-34",
+        "localId": "034",
+        "setCode": "ex2",
+        "cardNumber": "34/100",
+        "cardName": "Delcatty",
+        "fullDisplayName": "Delcatty 34/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            301
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-034-low.png",
+        "imageHighSrc": "cards/ex2-034-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "30"
+            },
+            {
+                "name": "Ultra Energy Source",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5543",
+        "externalId": "ex2-33",
+        "localId": "033",
+        "setCode": "ex2",
+        "cardNumber": "33/100",
+        "cardName": "Breloom",
+        "fullDisplayName": "Breloom 33/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            286
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-033-low.png",
+        "imageHighSrc": "cards/ex2-033-high.png",
+        "attacks": [
+            {
+                "name": "Super Poison Breath",
+                "damage": null
+            },
+            {
+                "name": "Sky Uppercut",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5535",
+        "externalId": "ex2-32",
+        "localId": "032",
+        "setCode": "ex2",
+        "cardNumber": "32/100",
+        "cardName": "Baltoy",
+        "fullDisplayName": "Baltoy 32/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            343
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-032-low.png",
+        "imageHighSrc": "cards/ex2-032-high.png",
+        "attacks": [
+            {
+                "name": "Rapid Spin",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5526",
+        "externalId": "ex2-31",
+        "localId": "031",
+        "setCode": "ex2",
+        "cardNumber": "31/100",
+        "cardName": "Azurill",
+        "fullDisplayName": "Azurill 31/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            298
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-031-low.png",
+        "imageHighSrc": "cards/ex2-031-high.png",
+        "attacks": [
+            {
+                "name": "Jump Catch",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5518",
+        "externalId": "ex2-30",
+        "localId": "030",
+        "setCode": "ex2",
+        "cardNumber": "30/100",
+        "cardName": "Azumarill",
+        "fullDisplayName": "Azumarill 30/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            184
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-030-low.png",
+        "imageHighSrc": "cards/ex2-030-high.png",
+        "attacks": [
+            {
+                "name": "Drizzle",
+                "damage": null
+            },
+            {
+                "name": "Max Bubbles",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5509",
+        "externalId": "ex2-29",
+        "localId": "029",
+        "setCode": "ex2",
+        "cardNumber": "29/100",
+        "cardName": "Arbok",
+        "fullDisplayName": "Arbok 29/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            24
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-029-low.png",
+        "imageHighSrc": "cards/ex2-029-high.png",
+        "attacks": [
+            {
+                "name": "Toxic",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5499",
+        "externalId": "ex2-28",
+        "localId": "028",
+        "setCode": "ex2",
+        "cardNumber": "28/100",
+        "cardName": "Anorith",
+        "fullDisplayName": "Anorith 28/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            347
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-028-low.png",
+        "imageHighSrc": "cards/ex2-028-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "20"
+            },
+            {
+                "name": "Double Scratch",
+                "damage": "40×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5489",
+        "externalId": "ex2-27",
+        "localId": "027",
+        "setCode": "ex2",
+        "cardNumber": "27/100",
+        "cardName": "Anorith",
+        "fullDisplayName": "Anorith 27/100 Sandstorm",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            347
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-027-low.png",
+        "imageHighSrc": "cards/ex2-027-high.png",
+        "attacks": [
+            {
+                "name": "Fast Evolution",
+                "damage": null
+            },
+            {
+                "name": "Pierce",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5480",
+        "externalId": "ex2-26",
+        "localId": "026",
+        "setCode": "ex2",
+        "cardNumber": "26/100",
+        "cardName": "Wobbuffet",
+        "fullDisplayName": "Wobbuffet 26/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            202
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-026-low.png",
+        "imageHighSrc": "cards/ex2-026-high.png",
+        "attacks": [
+            {
+                "name": "Flip Over",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5471",
+        "externalId": "ex2-25",
+        "localId": "025",
+        "setCode": "ex2",
+        "cardNumber": "25/100",
+        "cardName": "Vaporeon",
+        "fullDisplayName": "Vaporeon 25/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            134
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-025-low.png",
+        "imageHighSrc": "cards/ex2-025-high.png",
+        "attacks": [
+            {
+                "name": "Aurora Beam",
+                "damage": "30"
+            },
+            {
+                "name": "Aqua Sonic",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5461",
+        "externalId": "ex2-24",
+        "localId": "024",
+        "setCode": "ex2",
+        "cardNumber": "24/100",
+        "cardName": "Umbreon",
+        "fullDisplayName": "Umbreon 24/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            197
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-024-low.png",
+        "imageHighSrc": "cards/ex2-024-high.png",
+        "attacks": [
+            {
+                "name": "Confuse Ray",
+                "damage": "10"
+            },
+            {
+                "name": "Moon Impact",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5450",
+        "externalId": "ex2-23",
+        "localId": "023",
+        "setCode": "ex2",
+        "cardNumber": "23/100",
+        "cardName": "Steelix",
+        "fullDisplayName": "Steelix 23/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            208
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-023-low.png",
+        "imageHighSrc": "cards/ex2-023-high.png",
+        "attacks": [
+            {
+                "name": "Rage",
+                "damage": "10+"
+            },
+            {
+                "name": "Spinning Tail",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5440",
+        "externalId": "ex2-22",
+        "localId": "022",
+        "setCode": "ex2",
+        "cardNumber": "22/100",
+        "cardName": "Shiftry",
+        "fullDisplayName": "Shiftry 22/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            275
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/ex2-022-low.png",
+        "imageHighSrc": "cards/ex2-022-high.png",
+        "attacks": [
+            {
+                "name": "Feint Attack",
+                "damage": null
+            },
+            {
+                "name": "Slash",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5432",
+        "externalId": "ex2-21",
+        "localId": "021",
+        "setCode": "ex2",
+        "cardNumber": "21/100",
+        "cardName": "Sandslash",
+        "fullDisplayName": "Sandslash 21/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            28
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-021-low.png",
+        "imageHighSrc": "cards/ex2-021-high.png",
+        "attacks": [
+            {
+                "name": "Sand Swirl",
+                "damage": null
+            },
+            {
+                "name": "Earthquake",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5423",
+        "externalId": "ex2-20",
+        "localId": "020",
+        "setCode": "ex2",
+        "cardNumber": "20/100",
+        "cardName": "Pichu",
+        "fullDisplayName": "Pichu 20/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            172
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/ex2-020-low.png",
+        "imageHighSrc": "cards/ex2-020-high.png",
+        "attacks": [
+            {
+                "name": "Energy Retrieval",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5416",
+        "externalId": "ex2-19",
+        "localId": "019",
+        "setCode": "ex2",
+        "cardNumber": "19/100",
+        "cardName": "Omastar",
+        "fullDisplayName": "Omastar 19/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            139
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/ex2-019-low.png",
+        "imageHighSrc": "cards/ex2-019-high.png",
+        "attacks": [
+            {
+                "name": "Pull Down",
+                "damage": null
+            },
+            {
+                "name": "Hydrocannon",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5408",
+        "externalId": "ex2-18",
+        "localId": "018",
+        "setCode": "ex2",
+        "cardNumber": "18/100",
+        "cardName": "Kecleon",
+        "fullDisplayName": "Kecleon 18/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            352
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-018-low.png",
+        "imageHighSrc": "cards/ex2-018-high.png",
+        "attacks": [
+            {
+                "name": "Double Scratch",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5398",
+        "externalId": "ex2-17",
+        "localId": "017",
+        "setCode": "ex2",
+        "cardNumber": "17/100",
+        "cardName": "Golduck",
+        "fullDisplayName": "Golduck 17/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            55
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-017-low.png",
+        "imageHighSrc": "cards/ex2-017-high.png",
+        "attacks": [
+            {
+                "name": "Special Blow",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5390",
+        "externalId": "ex2-16",
+        "localId": "016",
+        "setCode": "ex2",
+        "cardNumber": "16/100",
+        "cardName": "Espeon",
+        "fullDisplayName": "Espeon 16/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            196
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-016-low.png",
+        "imageHighSrc": "cards/ex2-016-high.png",
+        "attacks": [
+            {
+                "name": "Confuse Ray",
+                "damage": "20"
+            },
+            {
+                "name": "Energy Crush",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5380",
+        "externalId": "ex2-15",
+        "localId": "015",
+        "setCode": "ex2",
+        "cardNumber": "15/100",
+        "cardName": "Arcanine",
+        "fullDisplayName": "Arcanine 15/100 Sandstorm",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            59
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-015-low.png",
+        "imageHighSrc": "cards/ex2-015-high.png",
+        "attacks": [
+            {
+                "name": "Burn Up",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5371",
+        "externalId": "ex2-14",
+        "localId": "014",
+        "setCode": "ex2",
+        "cardNumber": "14/100",
+        "cardName": "Zangoose",
+        "fullDisplayName": "Zangoose 14/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            335
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/ex2-014-low.png",
+        "imageHighSrc": "cards/ex2-014-high.png",
+        "attacks": [
+            {
+                "name": "Target Slash",
+                "damage": "10+"
+            },
+            {
+                "name": "Super Slash",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5362",
+        "externalId": "ex2-13",
+        "localId": "013",
+        "setCode": "ex2",
+        "cardNumber": "13/100",
+        "cardName": "Solrock",
+        "fullDisplayName": "Solrock 13/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            338
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-013-low.png",
+        "imageHighSrc": "cards/ex2-013-high.png",
+        "attacks": [
+            {
+                "name": "Cosmic Draw",
+                "damage": null
+            },
+            {
+                "name": "Solar Blast",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5353",
+        "externalId": "ex2-12",
+        "localId": "012",
+        "setCode": "ex2",
+        "cardNumber": "12/100",
+        "cardName": "Shiftry",
+        "fullDisplayName": "Shiftry 12/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            275
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-012-low.png",
+        "imageHighSrc": "cards/ex2-012-high.png",
+        "attacks": [
+            {
+                "name": "Light Touch Throw",
+                "damage": "80-"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5342",
+        "externalId": "ex2-11",
+        "localId": "011",
+        "setCode": "ex2",
+        "cardNumber": "11/100",
+        "cardName": "Seviper",
+        "fullDisplayName": "Seviper 11/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            336
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-011-low.png",
+        "imageHighSrc": "cards/ex2-011-high.png",
+        "attacks": [
+            {
+                "name": "Deadly Poison",
+                "damage": "10"
+            },
+            {
+                "name": "Extra Poison",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5333",
+        "externalId": "ex2-10",
+        "localId": "010",
+        "setCode": "ex2",
+        "cardNumber": "10/100",
+        "cardName": "Sableye",
+        "fullDisplayName": "Sableye 10/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            302
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-010-low.png",
+        "imageHighSrc": "cards/ex2-010-high.png",
+        "attacks": [
+            {
+                "name": "Supernatural",
+                "damage": null
+            },
+            {
+                "name": "Dark Bind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5326",
+        "externalId": "ex2-9",
+        "localId": "009",
+        "setCode": "ex2",
+        "cardNumber": "9/100",
+        "cardName": "Mawile",
+        "fullDisplayName": "Mawile 9/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            303
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-009-low.png",
+        "imageHighSrc": "cards/ex2-009-high.png",
+        "attacks": [
+            {
+                "name": "Scam",
+                "damage": null
+            },
+            {
+                "name": "Metal Hook",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5318",
+        "externalId": "ex2-8",
+        "localId": "008",
+        "setCode": "ex2",
+        "cardNumber": "8/100",
+        "cardName": "Lunatone",
+        "fullDisplayName": "Lunatone 8/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            337
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Hajime Kusajima",
+        "imageLowSrc": "cards/ex2-008-low.png",
+        "imageHighSrc": "cards/ex2-008-high.png",
+        "attacks": [
+            {
+                "name": "Cosmic Draw",
+                "damage": null
+            },
+            {
+                "name": "Lunar Blast",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5309",
+        "externalId": "ex2-7",
+        "localId": "007",
+        "setCode": "ex2",
+        "cardNumber": "7/100",
+        "cardName": "Ludicolo",
+        "fullDisplayName": "Ludicolo 7/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            272
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/ex2-007-low.png",
+        "imageHighSrc": "cards/ex2-007-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Punch",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5301",
+        "externalId": "ex2-6",
+        "localId": "006",
+        "setCode": "ex2",
+        "cardNumber": "6/100",
+        "cardName": "Jolteon",
+        "fullDisplayName": "Jolteon 6/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            135
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-006-low.png",
+        "imageHighSrc": "cards/ex2-006-high.png",
+        "attacks": [
+            {
+                "name": "Double Kick",
+                "damage": "20×"
+            },
+            {
+                "name": "Lightning Strike",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5292",
+        "externalId": "ex2-5",
+        "localId": "005",
+        "setCode": "ex2",
+        "cardNumber": "5/100",
+        "cardName": "Flareon",
+        "fullDisplayName": "Flareon 5/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            136
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-005-low.png",
+        "imageHighSrc": "cards/ex2-005-high.png",
+        "attacks": [
+            {
+                "name": "Super Singe",
+                "damage": "20"
+            },
+            {
+                "name": "Flamethrower",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5284",
+        "externalId": "ex2-4",
+        "localId": "004",
+        "setCode": "ex2",
+        "cardNumber": "4/100",
+        "cardName": "Dusclops",
+        "fullDisplayName": "Dusclops 4/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            356
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-004-low.png",
+        "imageHighSrc": "cards/ex2-004-high.png",
+        "attacks": [
+            {
+                "name": "Judgement",
+                "damage": null
+            },
+            {
+                "name": "Random Curse",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5276",
+        "externalId": "ex2-3",
+        "localId": "003",
+        "setCode": "ex2",
+        "cardNumber": "3/100",
+        "cardName": "Cradily",
+        "fullDisplayName": "Cradily 3/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            346
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/ex2-003-low.png",
+        "imageHighSrc": "cards/ex2-003-high.png",
+        "attacks": [
+            {
+                "name": "Lure Poison",
+                "damage": null
+            },
+            {
+                "name": "Spiral Drain",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "5264",
+        "externalId": "ex2-2",
+        "localId": "002",
+        "setCode": "ex2",
+        "cardNumber": "2/100",
+        "cardName": "Cacturne",
+        "fullDisplayName": "Cacturne 2/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            332
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/ex2-002-low.png",
+        "imageHighSrc": "cards/ex2-002-high.png",
+        "attacks": [
+            {
+                "name": "Feint Attack",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "5256",
+        "externalId": "ex2-1",
+        "localId": "001",
+        "setCode": "ex2",
+        "cardNumber": "1/100",
+        "cardName": "Armaldo",
+        "fullDisplayName": "Armaldo 1/100 Sandstorm",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            348
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/ex2-001-low.png",
+        "imageHighSrc": "cards/ex2-001-high.png",
+        "attacks": [
+            {
+                "name": "Blade Arms",
+                "damage": "60"
+            }
+        ]
+    }
 ]

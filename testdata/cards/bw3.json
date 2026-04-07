@@ -1,4146 +1,3228 @@
 [
-  {
-    "masterCardId": "2529",
-    "externalId": "bw3-102",
-    "tcgdex_id": "bw3-102",
-    "localId": "102",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "102/101",
-    "cardName": "Meowth",
-    "fullDisplayName": "Meowth 102/101 Noble Victories",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      52
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-102-low.png",
-    "imageHighSrc": "cards/bw3-102-high.png",
-    "attacks": [
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      },
-      {
-        "name": "Pay Day",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2528",
-    "externalId": "bw3-101",
-    "tcgdex_id": "bw3-101",
-    "localId": "101",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "101/101",
-    "cardName": "N",
-    "fullDisplayName": "N 101/101 Noble Victories",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-101-low.png",
-    "imageHighSrc": "cards/bw3-101-high.png",
-    "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or his remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2527",
-    "externalId": "bw3-100",
-    "tcgdex_id": "bw3-100",
-    "localId": "100",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "100/101",
-    "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 100/101 Noble Victories",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      638
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-100-low.png",
-    "imageHighSrc": "cards/bw3-100-high.png",
-    "attacks": [
-      {
-        "name": "Energy Press",
-        "damage": "20+"
-      },
-      {
-        "name": "Iron Breaker",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2526",
-    "externalId": "bw3-99",
-    "tcgdex_id": "bw3-99",
-    "localId": "099",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "99/101",
-    "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 99/101 Noble Victories",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      639
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-099-low.png",
-    "imageHighSrc": "cards/bw3-099-high.png",
-    "attacks": [
-      {
-        "name": "Retaliate",
-        "damage": "30+"
-      },
-      {
-        "name": "Land Crush",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2525",
-    "externalId": "bw3-98",
-    "tcgdex_id": "bw3-98",
-    "localId": "098",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "98/101",
-    "cardName": "Victini",
-    "fullDisplayName": "Victini 98/101 Noble Victories",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      494
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-098-low.png",
-    "imageHighSrc": "cards/bw3-098-high.png",
-    "attacks": [
-      {
-        "name": "Stored Power",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2524",
-    "externalId": "bw3-97",
-    "tcgdex_id": "bw3-97",
-    "localId": "097",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "97/101",
-    "cardName": "Virizion",
-    "fullDisplayName": "Virizion 97/101 Noble Victories",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-097-low.png",
-    "imageHighSrc": "cards/bw3-097-high.png",
-    "attacks": [
-      {
-        "name": "Double Draw",
-        "damage": null
-      },
-      {
-        "name": "Leaf Wallop",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2523",
-    "externalId": "bw3-96",
-    "tcgdex_id": "bw3-96",
-    "localId": "096",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "96/101",
-    "cardName": "Xtransceiver",
-    "fullDisplayName": "Xtransceiver 96/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-096-low.png",
-    "imageHighSrc": "cards/bw3-096-high.png",
-    "rules": "Flip a coin. If heads, search your deck for a Supporter card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2522",
-    "externalId": "bw3-95",
-    "tcgdex_id": "bw3-95",
-    "localId": "095",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "95/101",
-    "cardName": "Super Rod",
-    "fullDisplayName": "Super Rod 95/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-095-low.png",
-    "imageHighSrc": "cards/bw3-095-high.png",
-    "rules": "Shuffle 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2521",
-    "externalId": "bw3-94",
-    "tcgdex_id": "bw3-94",
-    "localId": "094",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "94/101",
-    "cardName": "Rocky Helmet",
-    "fullDisplayName": "Rocky Helmet 94/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-094-low.png",
-    "imageHighSrc": "cards/bw3-094-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2520",
-    "externalId": "bw3-93",
-    "tcgdex_id": "bw3-93",
-    "localId": "093",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "93/101",
-    "cardName": "Plume Fossil",
-    "fullDisplayName": "Plume Fossil 93/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-093-low.png",
-    "imageHighSrc": "cards/bw3-093-high.png",
-    "rules": "Look at the bottom 7 cards of your deck. You may reveal an Archen you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2519",
-    "externalId": "bw3-92",
-    "tcgdex_id": "bw3-92",
-    "localId": "092",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "92/101",
-    "cardName": "N",
-    "fullDisplayName": "N 92/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-092-low.png",
-    "imageHighSrc": "cards/bw3-092-high.png",
-    "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or her remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2518",
-    "externalId": "bw3-91",
-    "tcgdex_id": "bw3-91",
-    "localId": "091",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "91/101",
-    "cardName": "Eviolite",
-    "fullDisplayName": "Eviolite 91/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-091-low.png",
-    "imageHighSrc": "cards/bw3-091-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is a Basic Pokémon, any damage done to this Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2517",
-    "externalId": "bw3-90",
-    "tcgdex_id": "bw3-90",
-    "localId": "090",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "90/101",
-    "cardName": "Cover Fossil",
-    "fullDisplayName": "Cover Fossil 90/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-090-low.png",
-    "imageHighSrc": "cards/bw3-090-high.png",
-    "rules": "Look at the bottom 7 cards of your deck. You may reveal a Tirtouga you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2516",
-    "externalId": "bw3-89",
-    "tcgdex_id": "bw3-89",
-    "localId": "089",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "89/101",
-    "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 89/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      621
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-089-low.png",
-    "imageHighSrc": "cards/bw3-089-high.png",
-    "attacks": [
-      {
-        "name": "Clutch",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2515",
-    "externalId": "bw3-88",
-    "tcgdex_id": "bw3-88",
-    "localId": "088",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "88/101",
-    "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus 88/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      612
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Fraxure",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-088-low.png",
-    "imageHighSrc": "cards/bw3-088-high.png",
-    "attacks": [
-      {
-        "name": "Dual Chop",
-        "damage": "50×"
-      },
-      {
-        "name": "Giga Impact",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2514",
-    "externalId": "bw3-87",
-    "tcgdex_id": "bw3-87",
-    "localId": "087",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "87/101",
-    "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 87/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      611
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Axew",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-087-low.png",
-    "imageHighSrc": "cards/bw3-087-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "20"
-      },
-      {
-        "name": "Dual Chop",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2513",
-    "externalId": "bw3-86",
-    "tcgdex_id": "bw3-86",
-    "localId": "086",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "86/101",
-    "cardName": "Axew",
-    "fullDisplayName": "Axew 86/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      610
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-086-low.png",
-    "imageHighSrc": "cards/bw3-086-high.png",
-    "attacks": [
-      {
-        "name": "Dual Chop",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2512",
-    "externalId": "bw3-85",
-    "tcgdex_id": "bw3-85",
-    "localId": "085",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "85/101",
-    "cardName": "Audino",
-    "fullDisplayName": "Audino 85/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      531
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-085-low.png",
-    "imageHighSrc": "cards/bw3-085-high.png",
-    "attacks": [
-      {
-        "name": "Do the Wave",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2511",
-    "externalId": "bw3-84",
-    "tcgdex_id": "bw3-84",
-    "localId": "084",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "84/101",
-    "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 84/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      638
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-084-low.png",
-    "imageHighSrc": "cards/bw3-084-high.png",
-    "attacks": [
-      {
-        "name": "Energy Press",
-        "damage": "20+"
-      },
-      {
-        "name": "Iron Breaker",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2510",
-    "externalId": "bw3-83",
-    "tcgdex_id": "bw3-83",
-    "localId": "083",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "83/101",
-    "cardName": "Durant",
-    "fullDisplayName": "Durant 83/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      632
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-083-low.png",
-    "imageHighSrc": "cards/bw3-083-high.png",
-    "attacks": [
-      {
-        "name": "Devour",
-        "damage": null
-      },
-      {
-        "name": "Vice Grip",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2509",
-    "externalId": "bw3-82",
-    "tcgdex_id": "bw3-82",
-    "localId": "082",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "82/101",
-    "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 82/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      625
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pawniard",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-082-low.png",
-    "imageHighSrc": "cards/bw3-082-high.png",
-    "attacks": [
-      {
-        "name": "Energy Stream",
-        "damage": "20"
-      },
-      {
-        "name": "Metal Scissors",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2508",
-    "externalId": "bw3-81",
-    "tcgdex_id": "bw3-81",
-    "localId": "081",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "81/101",
-    "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 81/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      624
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-081-low.png",
-    "imageHighSrc": "cards/bw3-081-high.png",
-    "attacks": [
-      {
-        "name": "Pierce",
-        "damage": "10"
-      },
-      {
-        "name": "Cut",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2507",
-    "externalId": "bw3-80",
-    "tcgdex_id": "bw3-80",
-    "localId": "080",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "80/101",
-    "cardName": "Escavalier",
-    "fullDisplayName": "Escavalier 80/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      589
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Karrablast",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-080-low.png",
-    "imageHighSrc": "cards/bw3-080-high.png",
-    "attacks": [
-      {
-        "name": "Guard Press",
-        "damage": "40"
-      },
-      {
-        "name": "Twineedle",
-        "damage": "70×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2506",
-    "externalId": "bw3-79",
-    "tcgdex_id": "bw3-79",
-    "localId": "079",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "79/101",
-    "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 79/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      635
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Zweilous",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-079-low.png",
-    "imageHighSrc": "cards/bw3-079-high.png",
-    "attacks": [
-      {
-        "name": "Berserker Blade",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2505",
-    "externalId": "bw3-78",
-    "tcgdex_id": "bw3-78",
-    "localId": "078",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "78/101",
-    "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 78/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      634
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Deino",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-078-low.png",
-    "imageHighSrc": "cards/bw3-078-high.png",
-    "attacks": [
-      {
-        "name": "Double Hit",
-        "damage": "20×"
-      },
-      {
-        "name": "Strength",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2504",
-    "externalId": "bw3-77",
-    "tcgdex_id": "bw3-77",
-    "localId": "077",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "77/101",
-    "cardName": "Deino",
-    "fullDisplayName": "Deino 77/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      633
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-077-low.png",
-    "imageHighSrc": "cards/bw3-077-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "10"
-      },
-      {
-        "name": "Bite",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2503",
-    "externalId": "bw3-76",
-    "tcgdex_id": "bw3-76",
-    "localId": "076",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "76/101",
-    "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 76/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      625
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pawniard",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-076-low.png",
-    "imageHighSrc": "cards/bw3-076-high.png",
-    "attacks": [
-      {
-        "name": "Finishing Blow",
-        "damage": "20+"
-      },
-      {
-        "name": "Night Slash",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2502",
-    "externalId": "bw3-75",
-    "tcgdex_id": "bw3-75",
-    "localId": "075",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "75/101",
-    "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 75/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      624
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-075-low.png",
-    "imageHighSrc": "cards/bw3-075-high.png",
-    "attacks": [
-      {
-        "name": "Iron Head",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2501",
-    "externalId": "bw3-74",
-    "tcgdex_id": "bw3-74",
-    "localId": "074",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "74/101",
-    "cardName": "Landorus",
-    "fullDisplayName": "Landorus 74/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      645
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-074-low.png",
-    "imageHighSrc": "cards/bw3-074-high.png",
-    "attacks": [
-      {
-        "name": "Abundant Harvest",
-        "damage": null
-      },
-      {
-        "name": "Gaia Hammer",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2500",
-    "externalId": "bw3-73",
-    "tcgdex_id": "bw3-73",
-    "localId": "073",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "73/101",
-    "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 73/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      639
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-073-low.png",
-    "imageHighSrc": "cards/bw3-073-high.png",
-    "attacks": [
-      {
-        "name": "Retaliate",
-        "damage": "30+"
-      },
-      {
-        "name": "Land Crush",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2499",
-    "externalId": "bw3-72",
-    "tcgdex_id": "bw3-72",
-    "localId": "072",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "72/101",
-    "cardName": "Golurk",
-    "fullDisplayName": "Golurk 72/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      623
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Golett",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-072-low.png",
-    "imageHighSrc": "cards/bw3-072-high.png",
-    "attacks": [
-      {
-        "name": "Hammer Arm",
-        "damage": "60"
-      },
-      {
-        "name": "Hurricane Punch",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2498",
-    "externalId": "bw3-71",
-    "tcgdex_id": "bw3-71",
-    "localId": "071",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "71/101",
-    "cardName": "Golett",
-    "fullDisplayName": "Golett 71/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      622
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-071-low.png",
-    "imageHighSrc": "cards/bw3-071-high.png",
-    "attacks": [
-      {
-        "name": "Dynamic Punch",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2497",
-    "externalId": "bw3-70",
-    "tcgdex_id": "bw3-70",
-    "localId": "070",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "70/101",
-    "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 70/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      620
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Mienfoo",
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-070-low.png",
-    "imageHighSrc": "cards/bw3-070-high.png",
-    "attacks": [
-      {
-        "name": "Feint",
-        "damage": "30"
-      },
-      {
-        "name": "High Jump Kick",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2496",
-    "externalId": "bw3-69",
-    "tcgdex_id": "bw3-69",
-    "localId": "069",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "69/101",
-    "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 69/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      619
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-069-low.png",
-    "imageHighSrc": "cards/bw3-069-high.png",
-    "attacks": [
-      {
-        "name": "Pound",
-        "damage": "10"
-      },
-      {
-        "name": "High Jump Kick",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2495",
-    "externalId": "bw3-68",
-    "tcgdex_id": "bw3-68",
-    "localId": "068",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "68/101",
-    "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 68/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      618
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-068-low.png",
-    "imageHighSrc": "cards/bw3-068-high.png",
-    "attacks": [
-      {
-        "name": "Trickle",
-        "damage": "30×"
-      },
-      {
-        "name": "Thundershock",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2494",
-    "externalId": "bw3-67",
-    "tcgdex_id": "bw3-67",
-    "localId": "067",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "67/101",
-    "cardName": "Archeops",
-    "fullDisplayName": "Archeops 67/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      567
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Archen",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-067-low.png",
-    "imageHighSrc": "cards/bw3-067-high.png",
-    "attacks": [
-      {
-        "name": "Rock Slide",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2493",
-    "externalId": "bw3-66",
-    "tcgdex_id": "bw3-66",
-    "localId": "066",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "66/101",
-    "cardName": "Archen",
-    "fullDisplayName": "Archen 66/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "RESTORED",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      566
-    ],
-    "subtypes": [
-      "Restored"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Plume Fossil",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-066-low.png",
-    "imageHighSrc": "cards/bw3-066-high.png",
-    "attacks": [
-      {
-        "name": "Rock Throw",
-        "damage": "20"
-      },
-      {
-        "name": "Acrobatics",
-        "damage": "20+"
-      }
-    ],
-    "rules": "Put this card onto your Bench only with the effect of Plume Fossil"
-  },
-  {
-    "masterCardId": "2492",
-    "externalId": "bw3-65",
-    "tcgdex_id": "bw3-65",
-    "localId": "065",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "65/101",
-    "cardName": "Conkeldurr",
-    "fullDisplayName": "Conkeldurr 65/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      534
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gurdurr",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-065-low.png",
-    "imageHighSrc": "cards/bw3-065-high.png",
-    "attacks": [
-      {
-        "name": "Chip Away",
-        "damage": "40"
-      },
-      {
-        "name": "Swing Around",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2491",
-    "externalId": "bw3-64",
-    "tcgdex_id": "bw3-64",
-    "localId": "064",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "64/101",
-    "cardName": "Conkeldurr",
-    "fullDisplayName": "Conkeldurr 64/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      534
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Gurdurr",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-064-low.png",
-    "imageHighSrc": "cards/bw3-064-high.png",
-    "attacks": [
-      {
-        "name": "Top Down",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2490",
-    "externalId": "bw3-63",
-    "tcgdex_id": "bw3-63",
-    "localId": "063",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "63/101",
-    "cardName": "Gurdurr",
-    "fullDisplayName": "Gurdurr 63/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      533
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Timburr",
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-063-low.png",
-    "imageHighSrc": "cards/bw3-063-high.png",
-    "attacks": [
-      {
-        "name": "Strength",
-        "damage": "30"
-      },
-      {
-        "name": "Pummel",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2489",
-    "externalId": "bw3-62",
-    "tcgdex_id": "bw3-62",
-    "localId": "062",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "62/101",
-    "cardName": "Timburr",
-    "fullDisplayName": "Timburr 62/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      532
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Tomokazu Komiya",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-062-low.png",
-    "imageHighSrc": "cards/bw3-062-high.png",
-    "attacks": [
-      {
-        "name": "Pummel",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2488",
-    "externalId": "bw3-61",
-    "tcgdex_id": "bw3-61",
-    "localId": "061",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "61/101",
-    "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 61/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      526
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Boldore",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-061-low.png",
-    "imageHighSrc": "cards/bw3-061-high.png",
-    "attacks": [
-      {
-        "name": "Core Cannon",
-        "damage": null
-      },
-      {
-        "name": "Power Gem",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2487",
-    "externalId": "bw3-60",
-    "tcgdex_id": "bw3-60",
-    "localId": "060",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "60/101",
-    "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 60/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      609
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lampent",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-060-low.png",
-    "imageHighSrc": "cards/bw3-060-high.png",
-    "attacks": [
-      {
-        "name": "Eerie Glow",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2486",
-    "externalId": "bw3-59",
-    "tcgdex_id": "bw3-59",
-    "localId": "059",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "59/101",
-    "cardName": "Lampent",
-    "fullDisplayName": "Lampent 59/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      608
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Litwick",
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-059-low.png",
-    "imageHighSrc": "cards/bw3-059-high.png",
-    "attacks": [
-      {
-        "name": "Luring Light",
-        "damage": null
-      },
-      {
-        "name": "Will-O-Wisp",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2485",
-    "externalId": "bw3-58",
-    "tcgdex_id": "bw3-58",
-    "localId": "058",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "58/101",
-    "cardName": "Litwick",
-    "fullDisplayName": "Litwick 58/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      607
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-058-low.png",
-    "imageHighSrc": "cards/bw3-058-high.png",
-    "attacks": [
-      {
-        "name": "Teleportation Burst",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2484",
-    "externalId": "bw3-57",
-    "tcgdex_id": "bw3-57",
-    "localId": "057",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "57/101",
-    "cardName": "Litwick",
-    "fullDisplayName": "Litwick 57/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      607
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-057-low.png",
-    "imageHighSrc": "cards/bw3-057-high.png",
-    "attacks": [
-      {
-        "name": "Searing Flame",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2483",
-    "externalId": "bw3-56",
-    "tcgdex_id": "bw3-56",
-    "localId": "056",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "56/101",
-    "cardName": "Beheeyem",
-    "fullDisplayName": "Beheeyem 56/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      606
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Elgyem",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-056-low.png",
-    "imageHighSrc": "cards/bw3-056-high.png",
-    "attacks": [
-      {
-        "name": "Synchronoise",
-        "damage": "20"
-      },
-      {
-        "name": "Psyshot",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2482",
-    "externalId": "bw3-55",
-    "tcgdex_id": "bw3-55",
-    "localId": "055",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "55/101",
-    "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 55/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      605
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-055-low.png",
-    "imageHighSrc": "cards/bw3-055-high.png",
-    "attacks": [
-      {
-        "name": "First Contact",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2481",
-    "externalId": "bw3-54",
-    "tcgdex_id": "bw3-54",
-    "localId": "054",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "54/101",
-    "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 54/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      605
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-054-low.png",
-    "imageHighSrc": "cards/bw3-054-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "10"
-      },
-      {
-        "name": "Calm Mind",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2480",
-    "externalId": "bw3-53",
-    "tcgdex_id": "bw3-53",
-    "localId": "053",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "53/101",
-    "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 53/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      579
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Duosion",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-053-low.png",
-    "imageHighSrc": "cards/bw3-053-high.png",
-    "attacks": [
-      {
-        "name": "Dizzy Punch",
-        "damage": "30×"
-      },
-      {
-        "name": "Mind Bend",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2479",
-    "externalId": "bw3-52",
-    "tcgdex_id": "bw3-52",
-    "localId": "052",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "52/101",
-    "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 52/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      579
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Duosion",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-052-low.png",
-    "imageHighSrc": "cards/bw3-052-high.png",
-    "attacks": [
-      {
-        "name": "Future Sight",
-        "damage": null
-      },
-      {
-        "name": "Net Force",
-        "damage": "40×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2478",
-    "externalId": "bw3-51",
-    "tcgdex_id": "bw3-51",
-    "localId": "051",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "51/101",
-    "cardName": "Duosion",
-    "fullDisplayName": "Duosion 51/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      578
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Solosis",
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-051-low.png",
-    "imageHighSrc": "cards/bw3-051-high.png",
-    "attacks": [
-      {
-        "name": "Rollout",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2477",
-    "externalId": "bw3-50",
-    "tcgdex_id": "bw3-50",
-    "localId": "050",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "50/101",
-    "cardName": "Solosis",
-    "fullDisplayName": "Solosis 50/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      577
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-050-low.png",
-    "imageHighSrc": "cards/bw3-050-high.png",
-    "attacks": [
-      {
-        "name": "Rollout",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2476",
-    "externalId": "bw3-49",
-    "tcgdex_id": "bw3-49",
-    "localId": "049",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "49/101",
-    "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 49/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      569
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Trubbish",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-049-low.png",
-    "imageHighSrc": "cards/bw3-049-high.png",
-    "attacks": [
-      {
-        "name": "Gentle Wrap",
-        "damage": "30"
-      },
-      {
-        "name": "Gunk Shot",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2475",
-    "externalId": "bw3-48",
-    "tcgdex_id": "bw3-48",
-    "localId": "048",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "48/101",
-    "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 48/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      568
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-048-low.png",
-    "imageHighSrc": "cards/bw3-048-high.png",
-    "attacks": [
-      {
-        "name": "Garbage Collection",
-        "damage": null
-      },
-      {
-        "name": "Sludge Bomb",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2474",
-    "externalId": "bw3-47",
-    "tcgdex_id": "bw3-47",
-    "localId": "047",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "47/101",
-    "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 47/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      563
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Yamask",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-047-low.png",
-    "imageHighSrc": "cards/bw3-047-high.png",
-    "attacks": [
-      {
-        "name": "Ambush",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2473",
-    "externalId": "bw3-46",
-    "tcgdex_id": "bw3-46",
-    "localId": "046",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "46/101",
-    "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 46/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      563
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Yamask",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-046-low.png",
-    "imageHighSrc": "cards/bw3-046-high.png",
-    "attacks": [
-      {
-        "name": "Damagriiigus",
-        "damage": null
-      },
-      {
-        "name": "Perplex",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2472",
-    "externalId": "bw3-45",
-    "tcgdex_id": "bw3-45",
-    "localId": "045",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "45/101",
-    "cardName": "Yamask",
-    "fullDisplayName": "Yamask 45/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      562
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-045-low.png",
-    "imageHighSrc": "cards/bw3-045-high.png",
-    "attacks": [
-      {
-        "name": "Ambush",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2471",
-    "externalId": "bw3-44",
-    "tcgdex_id": "bw3-44",
-    "localId": "044",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "44/101",
-    "cardName": "Yamask",
-    "fullDisplayName": "Yamask 44/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      562
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-044-low.png",
-    "imageHighSrc": "cards/bw3-044-high.png",
-    "attacks": [
-      {
-        "name": "Perplex",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2470",
-    "externalId": "bw3-43",
-    "tcgdex_id": "bw3-43",
-    "localId": "043",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "43/101",
-    "cardName": "Victini",
-    "fullDisplayName": "Victini 43/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      494
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-043-low.png",
-    "imageHighSrc": "cards/bw3-043-high.png",
-    "attacks": [
-      {
-        "name": "V-blast",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2469",
-    "externalId": "bw3-42",
-    "tcgdex_id": "bw3-42",
-    "localId": "042",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "42/101",
-    "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 42/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      618
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-042-low.png",
-    "imageHighSrc": "cards/bw3-042-high.png",
-    "attacks": [
-      {
-        "name": "Mud Shot",
-        "damage": "20"
-      },
-      {
-        "name": "Thunder",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2468",
-    "externalId": "bw3-41",
-    "tcgdex_id": "bw3-41",
-    "localId": "041",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "41/101",
-    "cardName": "Eelektross",
-    "fullDisplayName": "Eelektross 41/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      604
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eelektrik",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-041-low.png",
-    "imageHighSrc": "cards/bw3-041-high.png",
-    "attacks": [
-      {
-        "name": "Acid",
-        "damage": "30"
-      },
-      {
-        "name": "Wild Charge",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2467",
-    "externalId": "bw3-40",
-    "tcgdex_id": "bw3-40",
-    "localId": "040",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "40/101",
-    "cardName": "Eelektrik",
-    "fullDisplayName": "Eelektrik 40/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      603
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tynamo",
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-040-low.png",
-    "imageHighSrc": "cards/bw3-040-high.png",
-    "attacks": [
-      {
-        "name": "Electric Ball",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2466",
-    "externalId": "bw3-39",
-    "tcgdex_id": "bw3-39",
-    "localId": "039",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "39/101",
-    "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 39/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      602
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-039-low.png",
-    "imageHighSrc": "cards/bw3-039-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2465",
-    "externalId": "bw3-38",
-    "tcgdex_id": "bw3-38",
-    "localId": "038",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "38/101",
-    "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 38/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      602
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-038-low.png",
-    "imageHighSrc": "cards/bw3-038-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Wave",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2464",
-    "externalId": "bw3-37",
-    "tcgdex_id": "bw3-37",
-    "localId": "037",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "37/101",
-    "cardName": "Emolga",
-    "fullDisplayName": "Emolga 37/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      587
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-037-low.png",
-    "imageHighSrc": "cards/bw3-037-high.png",
-    "attacks": [
-      {
-        "name": "Electrichain",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2463",
-    "externalId": "bw3-36",
-    "tcgdex_id": "bw3-36",
-    "localId": "036",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "36/101",
-    "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 36/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      523
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Blitzle",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-036-low.png",
-    "imageHighSrc": "cards/bw3-036-high.png",
-    "attacks": [
-      {
-        "name": "Quick Attack",
-        "damage": "10+"
-      },
-      {
-        "name": "Shock Bolt",
-        "damage": "90"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2462",
-    "externalId": "bw3-35",
-    "tcgdex_id": "bw3-35",
-    "localId": "035",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "35/101",
-    "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 35/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      522
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-035-low.png",
-    "imageHighSrc": "cards/bw3-035-high.png",
-    "attacks": [
-      {
-        "name": "Agility",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2461",
-    "externalId": "bw3-34",
-    "tcgdex_id": "bw3-34",
-    "localId": "034",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "34/101",
-    "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 34/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 130,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      646
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-034-low.png",
-    "imageHighSrc": "cards/bw3-034-high.png",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "20+"
-      },
-      {
-        "name": "Glaciate",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2460",
-    "externalId": "bw3-33",
-    "tcgdex_id": "bw3-33",
-    "localId": "033",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "33/101",
-    "cardName": "Cryogonal",
-    "fullDisplayName": "Cryogonal 33/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      615
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-033-low.png",
-    "imageHighSrc": "cards/bw3-033-high.png",
-    "attacks": [
-      {
-        "name": "Ice Chain",
-        "damage": null
-      },
-      {
-        "name": "Frost Vanish",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2459",
-    "externalId": "bw3-32",
-    "tcgdex_id": "bw3-32",
-    "localId": "032",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "32/101",
-    "cardName": "Cryogonal",
-    "fullDisplayName": "Cryogonal 32/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      615
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-032-low.png",
-    "imageHighSrc": "cards/bw3-032-high.png",
-    "attacks": [
-      {
-        "name": "Icy Wind",
-        "damage": null
-      },
-      {
-        "name": "Ice Shard",
-        "damage": "30+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2458",
-    "externalId": "bw3-31",
-    "tcgdex_id": "bw3-31",
-    "localId": "031",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "31/101",
-    "cardName": "Jellicent",
-    "fullDisplayName": "Jellicent 31/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      593
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Frillish",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-031-low.png",
-    "imageHighSrc": "cards/bw3-031-high.png",
-    "attacks": [
-      {
-        "name": "Hydro Pump",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2457",
-    "externalId": "bw3-30",
-    "tcgdex_id": "bw3-30",
-    "localId": "030",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "30/101",
-    "cardName": "Frillish",
-    "fullDisplayName": "Frillish 30/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      592
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-030-low.png",
-    "imageHighSrc": "cards/bw3-030-high.png",
-    "attacks": [
-      {
-        "name": "Rain Splash",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2456",
-    "externalId": "bw3-29",
-    "tcgdex_id": "bw3-29",
-    "localId": "029",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "29/101",
-    "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 29/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      584
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vanillish",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-029-low.png",
-    "imageHighSrc": "cards/bw3-029-high.png",
-    "attacks": [
-      {
-        "name": "Double Freeze",
-        "damage": "40×"
-      },
-      {
-        "name": "Frost Breath",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2455",
-    "externalId": "bw3-28",
-    "tcgdex_id": "bw3-28",
-    "localId": "028",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "28/101",
-    "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 28/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      583
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Vanillite",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-028-low.png",
-    "imageHighSrc": "cards/bw3-028-high.png",
-    "attacks": [
-      {
-        "name": "Ice Beam",
-        "damage": "20"
-      },
-      {
-        "name": "Frost Breath",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2454",
-    "externalId": "bw3-27",
-    "tcgdex_id": "bw3-27",
-    "localId": "027",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "27/101",
-    "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 27/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      582
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-027-low.png",
-    "imageHighSrc": "cards/bw3-027-high.png",
-    "attacks": [
-      {
-        "name": "Icicle Barb",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2453",
-    "externalId": "bw3-26",
-    "tcgdex_id": "bw3-26",
-    "localId": "026",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "26/101",
-    "cardName": "Carracosta",
-    "fullDisplayName": "Carracosta 26/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 140,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      565
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tirtouga",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-026-low.png",
-    "imageHighSrc": "cards/bw3-026-high.png",
-    "attacks": [
-      {
-        "name": "Crunch",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2452",
-    "externalId": "bw3-25",
-    "tcgdex_id": "bw3-25",
-    "localId": "025",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "25/101",
-    "cardName": "Tirtouga",
-    "fullDisplayName": "Tirtouga 25/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "RESTORED",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      564
-    ],
-    "subtypes": [
-      "Restored"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cover Fossil",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-025-low.png",
-    "imageHighSrc": "cards/bw3-025-high.png",
-    "attacks": [
-      {
-        "name": "Water Gun",
-        "damage": "30"
-      },
-      {
-        "name": "Surf",
-        "damage": "60"
-      }
-    ],
-    "rules": "Put this card onto your Bench only with the effect of Cover Fossil"
-  },
-  {
-    "masterCardId": "2451",
-    "externalId": "bw3-24",
-    "tcgdex_id": "bw3-24",
-    "localId": "024",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "24/101",
-    "cardName": "Seismitoad",
-    "fullDisplayName": "Seismitoad 24/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      537
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Palpitoad",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-024-low.png",
-    "imageHighSrc": "cards/bw3-024-high.png",
-    "attacks": [
-      {
-        "name": "Round",
-        "damage": "30×"
-      },
-      {
-        "name": "Hyper Voice",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2450",
-    "externalId": "bw3-23",
-    "tcgdex_id": "bw3-23",
-    "localId": "023",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "23/101",
-    "cardName": "Palpitoad",
-    "fullDisplayName": "Palpitoad 23/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      536
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tympole",
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-023-low.png",
-    "imageHighSrc": "cards/bw3-023-high.png",
-    "attacks": [
-      {
-        "name": "Mud Shot",
-        "damage": "20"
-      },
-      {
-        "name": "Round",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2449",
-    "externalId": "bw3-22",
-    "tcgdex_id": "bw3-22",
-    "localId": "022",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "22/101",
-    "cardName": "Tympole",
-    "fullDisplayName": "Tympole 22/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      535
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Atsuko Nishida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-022-low.png",
-    "imageHighSrc": "cards/bw3-022-high.png",
-    "attacks": [
-      {
-        "name": "Vibration",
-        "damage": "10"
-      },
-      {
-        "name": "Mud Shot",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2448",
-    "externalId": "bw3-21",
-    "tcgdex_id": "bw3-21",
-    "localId": "021",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "21/101",
-    "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 21/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 110,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      637
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Larvesta",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-021-low.png",
-    "imageHighSrc": "cards/bw3-021-high.png",
-    "attacks": [
-      {
-        "name": "Fiery Dance",
-        "damage": "30"
-      },
-      {
-        "name": "Heat Wave",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2447",
-    "externalId": "bw3-20",
-    "tcgdex_id": "bw3-20",
-    "localId": "020",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "20/101",
-    "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 20/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      636
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-020-low.png",
-    "imageHighSrc": "cards/bw3-020-high.png",
-    "attacks": [
-      {
-        "name": "Take Down",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2446",
-    "externalId": "bw3-19",
-    "tcgdex_id": "bw3-19",
-    "localId": "019",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "19/101",
-    "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 19/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      636
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-019-low.png",
-    "imageHighSrc": "cards/bw3-019-high.png",
-    "attacks": [
-      {
-        "name": "Ember",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2445",
-    "externalId": "bw3-18",
-    "tcgdex_id": "bw3-18",
-    "localId": "018",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "18/101",
-    "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 18/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      631
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-018-low.png",
-    "imageHighSrc": "cards/bw3-018-high.png",
-    "attacks": [
-      {
-        "name": "Singe",
-        "damage": null
-      },
-      {
-        "name": "Incinerate",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2444",
-    "externalId": "bw3-17",
-    "tcgdex_id": "bw3-17",
-    "localId": "017",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "17/101",
-    "cardName": "Simisear",
-    "fullDisplayName": "Simisear 17/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      514
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pansear",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-017-low.png",
-    "imageHighSrc": "cards/bw3-017-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "20"
-      },
-      {
-        "name": "Double Fire",
-        "damage": "80×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2443",
-    "externalId": "bw3-16",
-    "tcgdex_id": "bw3-16",
-    "localId": "016",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "16/101",
-    "cardName": "Pansear",
-    "fullDisplayName": "Pansear 16/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      513
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-016-low.png",
-    "imageHighSrc": "cards/bw3-016-high.png",
-    "attacks": [
-      {
-        "name": "Beat",
-        "damage": "10"
-      },
-      {
-        "name": "Lunge",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2442",
-    "externalId": "bw3-15",
-    "tcgdex_id": "bw3-15",
-    "localId": "015",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "15/101",
-    "cardName": "Victini",
-    "fullDisplayName": "Victini 15/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      494
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-015-low.png",
-    "imageHighSrc": "cards/bw3-015-high.png",
-    "attacks": [
-      {
-        "name": "V-create",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2441",
-    "externalId": "bw3-14",
-    "tcgdex_id": "bw3-14",
-    "localId": "014",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "14/101",
-    "cardName": "Victini",
-    "fullDisplayName": "Victini 14/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      494
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-014-low.png",
-    "imageHighSrc": "cards/bw3-014-high.png",
-    "attacks": [
-      {
-        "name": "Stored Power",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2440",
-    "externalId": "bw3-13",
-    "tcgdex_id": "bw3-13",
-    "localId": "013",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "13/101",
-    "cardName": "Virizion",
-    "fullDisplayName": "Virizion 13/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-013-low.png",
-    "imageHighSrc": "cards/bw3-013-high.png",
-    "attacks": [
-      {
-        "name": "Double Draw",
-        "damage": null
-      },
-      {
-        "name": "Leaf Wallop",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2439",
-    "externalId": "bw3-12",
-    "tcgdex_id": "bw3-12",
-    "localId": "012",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "12/101",
-    "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 12/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      617
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shelmet",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-012-low.png",
-    "imageHighSrc": "cards/bw3-012-high.png",
-    "attacks": [
-      {
-        "name": "Acid Spray",
-        "damage": "20"
-      },
-      {
-        "name": "Slashing Strike",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2438",
-    "externalId": "bw3-11",
-    "tcgdex_id": "bw3-11",
-    "localId": "011",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "11/101",
-    "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 11/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      616
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-011-low.png",
-    "imageHighSrc": "cards/bw3-011-high.png",
-    "attacks": [
-      {
-        "name": "Mysterious Evolution",
-        "damage": null
-      },
-      {
-        "name": "Ram",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2437",
-    "externalId": "bw3-10",
-    "tcgdex_id": "bw3-10",
-    "localId": "010",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "10/101",
-    "cardName": "Amoonguss",
-    "fullDisplayName": "Amoonguss 10/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      591
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Foongus",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-010-low.png",
-    "imageHighSrc": "cards/bw3-010-high.png",
-    "attacks": [
-      {
-        "name": "Toxic",
-        "damage": null
-      },
-      {
-        "name": "Body Slam",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2436",
-    "externalId": "bw3-9",
-    "tcgdex_id": "bw3-9",
-    "localId": "009",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "9/101",
-    "cardName": "Foongus",
-    "fullDisplayName": "Foongus 9/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      590
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-009-low.png",
-    "imageHighSrc": "cards/bw3-009-high.png",
-    "attacks": [
-      {
-        "name": "Rollout",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2435",
-    "externalId": "bw3-8",
-    "tcgdex_id": "bw3-8",
-    "localId": "008",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "8/101",
-    "cardName": "Karrablast",
-    "fullDisplayName": "Karrablast 8/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      588
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-008-low.png",
-    "imageHighSrc": "cards/bw3-008-high.png",
-    "attacks": [
-      {
-        "name": "Mysterious Evolution",
-        "damage": null
-      },
-      {
-        "name": "Fury Attack",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2434",
-    "externalId": "bw3-7",
-    "tcgdex_id": "bw3-7",
-    "localId": "007",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "7/101",
-    "cardName": "Crustle",
-    "fullDisplayName": "Crustle 7/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      558
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Dwebble",
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-007-low.png",
-    "imageHighSrc": "cards/bw3-007-high.png",
-    "attacks": [
-      {
-        "name": "X-Scissor",
-        "damage": "20+"
-      },
-      {
-        "name": "Reckless Charge",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2433",
-    "externalId": "bw3-6",
-    "tcgdex_id": "bw3-6",
-    "localId": "006",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "6/101",
-    "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 6/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      557
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "MAHOU",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-006-low.png",
-    "imageHighSrc": "cards/bw3-006-high.png",
-    "attacks": [
-      {
-        "name": "Withdraw",
-        "damage": null
-      },
-      {
-        "name": "Slash",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2432",
-    "externalId": "bw3-5",
-    "tcgdex_id": "bw3-5",
-    "localId": "005",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "5/101",
-    "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 5/101 Noble Victories",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      549
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Petilil",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-005-low.png",
-    "imageHighSrc": "cards/bw3-005-high.png",
-    "attacks": [
-      {
-        "name": "Aromax",
-        "damage": null
-      },
-      {
-        "name": "Windmill",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2431",
-    "externalId": "bw3-4",
-    "tcgdex_id": "bw3-4",
-    "localId": "004",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "4/101",
-    "cardName": "Petilil",
-    "fullDisplayName": "Petilil 4/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      548
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-004-low.png",
-    "imageHighSrc": "cards/bw3-004-high.png",
-    "attacks": [
-      {
-        "name": "Ram",
-        "damage": "10"
-      },
-      {
-        "name": "Absorb",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2430",
-    "externalId": "bw3-3",
-    "tcgdex_id": "bw3-3",
-    "localId": "003",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "3/101",
-    "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 3/101 Noble Victories",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      542
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Swadloon",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-003-low.png",
-    "imageHighSrc": "cards/bw3-003-high.png",
-    "attacks": [
-      {
-        "name": "Cutting Arm",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2429",
-    "externalId": "bw3-2",
-    "tcgdex_id": "bw3-2",
-    "localId": "002",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "2/101",
-    "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 2/101 Noble Victories",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      541
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Sewaddle",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-002-low.png",
-    "imageHighSrc": "cards/bw3-002-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "20"
-      },
-      {
-        "name": "String Shot",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2428",
-    "externalId": "bw3-1",
-    "tcgdex_id": "bw3-1",
-    "localId": "001",
-    "setCode": "bw3",
-    "setTcgdexId": "bw3",
-    "cardNumber": "1/101",
-    "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 1/101 Noble Victories",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      540
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw3-001-low.png",
-    "imageHighSrc": "cards/bw3-001-high.png",
-    "attacks": [
-      {
-        "name": "Leaf Boomerang",
-        "damage": "20×"
-      }
-    ]
-  }
+    {
+        "masterCardId": "2529",
+        "externalId": "bw3-102",
+        "localId": "102",
+        "setCode": "bw3",
+        "cardNumber": "102/101",
+        "cardName": "Meowth",
+        "fullDisplayName": "Meowth 102/101 Noble Victories",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            52
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-102-low.png",
+        "imageHighSrc": "cards/bw3-102-high.png",
+        "attacks": [
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            },
+            {
+                "name": "Pay Day",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2528",
+        "externalId": "bw3-101",
+        "localId": "101",
+        "setCode": "bw3",
+        "cardNumber": "101/101",
+        "cardName": "N",
+        "fullDisplayName": "N 101/101 Noble Victories",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/bw3-101-low.png",
+        "imageHighSrc": "cards/bw3-101-high.png",
+        "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or his remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2527",
+        "externalId": "bw3-100",
+        "localId": "100",
+        "setCode": "bw3",
+        "cardNumber": "100/101",
+        "cardName": "Cobalion",
+        "fullDisplayName": "Cobalion 100/101 Noble Victories",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            638
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-100-low.png",
+        "imageHighSrc": "cards/bw3-100-high.png",
+        "attacks": [
+            {
+                "name": "Energy Press",
+                "damage": "20+"
+            },
+            {
+                "name": "Iron Breaker",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2526",
+        "externalId": "bw3-99",
+        "localId": "099",
+        "setCode": "bw3",
+        "cardNumber": "99/101",
+        "cardName": "Terrakion",
+        "fullDisplayName": "Terrakion 99/101 Noble Victories",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            639
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-099-low.png",
+        "imageHighSrc": "cards/bw3-099-high.png",
+        "attacks": [
+            {
+                "name": "Retaliate",
+                "damage": "30+"
+            },
+            {
+                "name": "Land Crush",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2525",
+        "externalId": "bw3-98",
+        "localId": "098",
+        "setCode": "bw3",
+        "cardNumber": "98/101",
+        "cardName": "Victini",
+        "fullDisplayName": "Victini 98/101 Noble Victories",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            494
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-098-low.png",
+        "imageHighSrc": "cards/bw3-098-high.png",
+        "attacks": [
+            {
+                "name": "Stored Power",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2524",
+        "externalId": "bw3-97",
+        "localId": "097",
+        "setCode": "bw3",
+        "cardNumber": "97/101",
+        "cardName": "Virizion",
+        "fullDisplayName": "Virizion 97/101 Noble Victories",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-097-low.png",
+        "imageHighSrc": "cards/bw3-097-high.png",
+        "attacks": [
+            {
+                "name": "Double Draw",
+                "damage": null
+            },
+            {
+                "name": "Leaf Wallop",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2523",
+        "externalId": "bw3-96",
+        "localId": "096",
+        "setCode": "bw3",
+        "cardNumber": "96/101",
+        "cardName": "Xtransceiver",
+        "fullDisplayName": "Xtransceiver 96/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw3-096-low.png",
+        "imageHighSrc": "cards/bw3-096-high.png",
+        "rules": "Flip a coin. If heads, search your deck for a Supporter card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2522",
+        "externalId": "bw3-95",
+        "localId": "095",
+        "setCode": "bw3",
+        "cardNumber": "95/101",
+        "cardName": "Super Rod",
+        "fullDisplayName": "Super Rod 95/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-095-low.png",
+        "imageHighSrc": "cards/bw3-095-high.png",
+        "rules": "Shuffle 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2521",
+        "externalId": "bw3-94",
+        "localId": "094",
+        "setCode": "bw3",
+        "cardNumber": "94/101",
+        "cardName": "Rocky Helmet",
+        "fullDisplayName": "Rocky Helmet 94/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw3-094-low.png",
+        "imageHighSrc": "cards/bw3-094-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2520",
+        "externalId": "bw3-93",
+        "localId": "093",
+        "setCode": "bw3",
+        "cardNumber": "93/101",
+        "cardName": "Plume Fossil",
+        "fullDisplayName": "Plume Fossil 93/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw3-093-low.png",
+        "imageHighSrc": "cards/bw3-093-high.png",
+        "rules": "Look at the bottom 7 cards of your deck. You may reveal an Archen you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2519",
+        "externalId": "bw3-92",
+        "localId": "092",
+        "setCode": "bw3",
+        "cardNumber": "92/101",
+        "cardName": "N",
+        "fullDisplayName": "N 92/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/bw3-092-low.png",
+        "imageHighSrc": "cards/bw3-092-high.png",
+        "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or her remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2518",
+        "externalId": "bw3-91",
+        "localId": "091",
+        "setCode": "bw3",
+        "cardNumber": "91/101",
+        "cardName": "Eviolite",
+        "fullDisplayName": "Eviolite 91/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-091-low.png",
+        "imageHighSrc": "cards/bw3-091-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is a Basic Pokémon, any damage done to this Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2517",
+        "externalId": "bw3-90",
+        "localId": "090",
+        "setCode": "bw3",
+        "cardNumber": "90/101",
+        "cardName": "Cover Fossil",
+        "fullDisplayName": "Cover Fossil 90/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw3-090-low.png",
+        "imageHighSrc": "cards/bw3-090-high.png",
+        "rules": "Look at the bottom 7 cards of your deck. You may reveal a Tirtouga you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2516",
+        "externalId": "bw3-89",
+        "localId": "089",
+        "setCode": "bw3",
+        "cardNumber": "89/101",
+        "cardName": "Druddigon",
+        "fullDisplayName": "Druddigon 89/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            621
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-089-low.png",
+        "imageHighSrc": "cards/bw3-089-high.png",
+        "attacks": [
+            {
+                "name": "Clutch",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2515",
+        "externalId": "bw3-88",
+        "localId": "088",
+        "setCode": "bw3",
+        "cardNumber": "88/101",
+        "cardName": "Haxorus",
+        "fullDisplayName": "Haxorus 88/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            612
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-088-low.png",
+        "imageHighSrc": "cards/bw3-088-high.png",
+        "attacks": [
+            {
+                "name": "Dual Chop",
+                "damage": "50×"
+            },
+            {
+                "name": "Giga Impact",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2514",
+        "externalId": "bw3-87",
+        "localId": "087",
+        "setCode": "bw3",
+        "cardNumber": "87/101",
+        "cardName": "Fraxure",
+        "fullDisplayName": "Fraxure 87/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            611
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-087-low.png",
+        "imageHighSrc": "cards/bw3-087-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "20"
+            },
+            {
+                "name": "Dual Chop",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2513",
+        "externalId": "bw3-86",
+        "localId": "086",
+        "setCode": "bw3",
+        "cardNumber": "86/101",
+        "cardName": "Axew",
+        "fullDisplayName": "Axew 86/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            610
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw3-086-low.png",
+        "imageHighSrc": "cards/bw3-086-high.png",
+        "attacks": [
+            {
+                "name": "Dual Chop",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2512",
+        "externalId": "bw3-85",
+        "localId": "085",
+        "setCode": "bw3",
+        "cardNumber": "85/101",
+        "cardName": "Audino",
+        "fullDisplayName": "Audino 85/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            531
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-085-low.png",
+        "imageHighSrc": "cards/bw3-085-high.png",
+        "attacks": [
+            {
+                "name": "Do the Wave",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2511",
+        "externalId": "bw3-84",
+        "localId": "084",
+        "setCode": "bw3",
+        "cardNumber": "84/101",
+        "cardName": "Cobalion",
+        "fullDisplayName": "Cobalion 84/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            638
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-084-low.png",
+        "imageHighSrc": "cards/bw3-084-high.png",
+        "attacks": [
+            {
+                "name": "Energy Press",
+                "damage": "20+"
+            },
+            {
+                "name": "Iron Breaker",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2510",
+        "externalId": "bw3-83",
+        "localId": "083",
+        "setCode": "bw3",
+        "cardNumber": "83/101",
+        "cardName": "Durant",
+        "fullDisplayName": "Durant 83/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            632
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-083-low.png",
+        "imageHighSrc": "cards/bw3-083-high.png",
+        "attacks": [
+            {
+                "name": "Devour",
+                "damage": null
+            },
+            {
+                "name": "Vice Grip",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2509",
+        "externalId": "bw3-82",
+        "localId": "082",
+        "setCode": "bw3",
+        "cardNumber": "82/101",
+        "cardName": "Bisharp",
+        "fullDisplayName": "Bisharp 82/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            625
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-082-low.png",
+        "imageHighSrc": "cards/bw3-082-high.png",
+        "attacks": [
+            {
+                "name": "Energy Stream",
+                "damage": "20"
+            },
+            {
+                "name": "Metal Scissors",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2508",
+        "externalId": "bw3-81",
+        "localId": "081",
+        "setCode": "bw3",
+        "cardNumber": "81/101",
+        "cardName": "Pawniard",
+        "fullDisplayName": "Pawniard 81/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            624
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/bw3-081-low.png",
+        "imageHighSrc": "cards/bw3-081-high.png",
+        "attacks": [
+            {
+                "name": "Pierce",
+                "damage": "10"
+            },
+            {
+                "name": "Cut",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2507",
+        "externalId": "bw3-80",
+        "localId": "080",
+        "setCode": "bw3",
+        "cardNumber": "80/101",
+        "cardName": "Escavalier",
+        "fullDisplayName": "Escavalier 80/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            589
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-080-low.png",
+        "imageHighSrc": "cards/bw3-080-high.png",
+        "attacks": [
+            {
+                "name": "Guard Press",
+                "damage": "40"
+            },
+            {
+                "name": "Twineedle",
+                "damage": "70×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2506",
+        "externalId": "bw3-79",
+        "localId": "079",
+        "setCode": "bw3",
+        "cardNumber": "79/101",
+        "cardName": "Hydreigon",
+        "fullDisplayName": "Hydreigon 79/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            635
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-079-low.png",
+        "imageHighSrc": "cards/bw3-079-high.png",
+        "attacks": [
+            {
+                "name": "Berserker Blade",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2505",
+        "externalId": "bw3-78",
+        "localId": "078",
+        "setCode": "bw3",
+        "cardNumber": "78/101",
+        "cardName": "Zweilous",
+        "fullDisplayName": "Zweilous 78/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            634
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-078-low.png",
+        "imageHighSrc": "cards/bw3-078-high.png",
+        "attacks": [
+            {
+                "name": "Double Hit",
+                "damage": "20×"
+            },
+            {
+                "name": "Strength",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2504",
+        "externalId": "bw3-77",
+        "localId": "077",
+        "setCode": "bw3",
+        "cardNumber": "77/101",
+        "cardName": "Deino",
+        "fullDisplayName": "Deino 77/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            633
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw3-077-low.png",
+        "imageHighSrc": "cards/bw3-077-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            },
+            {
+                "name": "Bite",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2503",
+        "externalId": "bw3-76",
+        "localId": "076",
+        "setCode": "bw3",
+        "cardNumber": "76/101",
+        "cardName": "Bisharp",
+        "fullDisplayName": "Bisharp 76/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            625
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-076-low.png",
+        "imageHighSrc": "cards/bw3-076-high.png",
+        "attacks": [
+            {
+                "name": "Finishing Blow",
+                "damage": "20+"
+            },
+            {
+                "name": "Night Slash",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2502",
+        "externalId": "bw3-75",
+        "localId": "075",
+        "setCode": "bw3",
+        "cardNumber": "75/101",
+        "cardName": "Pawniard",
+        "fullDisplayName": "Pawniard 75/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            624
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw3-075-low.png",
+        "imageHighSrc": "cards/bw3-075-high.png",
+        "attacks": [
+            {
+                "name": "Iron Head",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2501",
+        "externalId": "bw3-74",
+        "localId": "074",
+        "setCode": "bw3",
+        "cardNumber": "74/101",
+        "cardName": "Landorus",
+        "fullDisplayName": "Landorus 74/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            645
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-074-low.png",
+        "imageHighSrc": "cards/bw3-074-high.png",
+        "attacks": [
+            {
+                "name": "Abundant Harvest",
+                "damage": null
+            },
+            {
+                "name": "Gaia Hammer",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2500",
+        "externalId": "bw3-73",
+        "localId": "073",
+        "setCode": "bw3",
+        "cardNumber": "73/101",
+        "cardName": "Terrakion",
+        "fullDisplayName": "Terrakion 73/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            639
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-073-low.png",
+        "imageHighSrc": "cards/bw3-073-high.png",
+        "attacks": [
+            {
+                "name": "Retaliate",
+                "damage": "30+"
+            },
+            {
+                "name": "Land Crush",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2499",
+        "externalId": "bw3-72",
+        "localId": "072",
+        "setCode": "bw3",
+        "cardNumber": "72/101",
+        "cardName": "Golurk",
+        "fullDisplayName": "Golurk 72/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            623
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-072-low.png",
+        "imageHighSrc": "cards/bw3-072-high.png",
+        "attacks": [
+            {
+                "name": "Hammer Arm",
+                "damage": "60"
+            },
+            {
+                "name": "Hurricane Punch",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2498",
+        "externalId": "bw3-71",
+        "localId": "071",
+        "setCode": "bw3",
+        "cardNumber": "71/101",
+        "cardName": "Golett",
+        "fullDisplayName": "Golett 71/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            622
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-071-low.png",
+        "imageHighSrc": "cards/bw3-071-high.png",
+        "attacks": [
+            {
+                "name": "Dynamic Punch",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2497",
+        "externalId": "bw3-70",
+        "localId": "070",
+        "setCode": "bw3",
+        "cardNumber": "70/101",
+        "cardName": "Mienshao",
+        "fullDisplayName": "Mienshao 70/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            620
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw3-070-low.png",
+        "imageHighSrc": "cards/bw3-070-high.png",
+        "attacks": [
+            {
+                "name": "Feint",
+                "damage": "30"
+            },
+            {
+                "name": "High Jump Kick",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2496",
+        "externalId": "bw3-69",
+        "localId": "069",
+        "setCode": "bw3",
+        "cardNumber": "69/101",
+        "cardName": "Mienfoo",
+        "fullDisplayName": "Mienfoo 69/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            619
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-069-low.png",
+        "imageHighSrc": "cards/bw3-069-high.png",
+        "attacks": [
+            {
+                "name": "Pound",
+                "damage": "10"
+            },
+            {
+                "name": "High Jump Kick",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2495",
+        "externalId": "bw3-68",
+        "localId": "068",
+        "setCode": "bw3",
+        "cardNumber": "68/101",
+        "cardName": "Stunfisk",
+        "fullDisplayName": "Stunfisk 68/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            618
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw3-068-low.png",
+        "imageHighSrc": "cards/bw3-068-high.png",
+        "attacks": [
+            {
+                "name": "Trickle",
+                "damage": "30×"
+            },
+            {
+                "name": "Thundershock",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2494",
+        "externalId": "bw3-67",
+        "localId": "067",
+        "setCode": "bw3",
+        "cardNumber": "67/101",
+        "cardName": "Archeops",
+        "fullDisplayName": "Archeops 67/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            567
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-067-low.png",
+        "imageHighSrc": "cards/bw3-067-high.png",
+        "attacks": [
+            {
+                "name": "Rock Slide",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2493",
+        "externalId": "bw3-66",
+        "localId": "066",
+        "setCode": "bw3",
+        "cardNumber": "66/101",
+        "cardName": "Archen",
+        "fullDisplayName": "Archen 66/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            566
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-066-low.png",
+        "imageHighSrc": "cards/bw3-066-high.png",
+        "attacks": [
+            {
+                "name": "Rock Throw",
+                "damage": "20"
+            },
+            {
+                "name": "Acrobatics",
+                "damage": "20+"
+            }
+        ],
+        "rules": "Put this card onto your Bench only with the effect of Plume Fossil"
+    },
+    {
+        "masterCardId": "2492",
+        "externalId": "bw3-65",
+        "localId": "065",
+        "setCode": "bw3",
+        "cardNumber": "65/101",
+        "cardName": "Conkeldurr",
+        "fullDisplayName": "Conkeldurr 65/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            534
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-065-low.png",
+        "imageHighSrc": "cards/bw3-065-high.png",
+        "attacks": [
+            {
+                "name": "Chip Away",
+                "damage": "40"
+            },
+            {
+                "name": "Swing Around",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2491",
+        "externalId": "bw3-64",
+        "localId": "064",
+        "setCode": "bw3",
+        "cardNumber": "64/101",
+        "cardName": "Conkeldurr",
+        "fullDisplayName": "Conkeldurr 64/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            534
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw3-064-low.png",
+        "imageHighSrc": "cards/bw3-064-high.png",
+        "attacks": [
+            {
+                "name": "Top Down",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2490",
+        "externalId": "bw3-63",
+        "localId": "063",
+        "setCode": "bw3",
+        "cardNumber": "63/101",
+        "cardName": "Gurdurr",
+        "fullDisplayName": "Gurdurr 63/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            533
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw3-063-low.png",
+        "imageHighSrc": "cards/bw3-063-high.png",
+        "attacks": [
+            {
+                "name": "Strength",
+                "damage": "30"
+            },
+            {
+                "name": "Pummel",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2489",
+        "externalId": "bw3-62",
+        "localId": "062",
+        "setCode": "bw3",
+        "cardNumber": "62/101",
+        "cardName": "Timburr",
+        "fullDisplayName": "Timburr 62/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            532
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Tomokazu Komiya",
+        "imageLowSrc": "cards/bw3-062-low.png",
+        "imageHighSrc": "cards/bw3-062-high.png",
+        "attacks": [
+            {
+                "name": "Pummel",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2488",
+        "externalId": "bw3-61",
+        "localId": "061",
+        "setCode": "bw3",
+        "cardNumber": "61/101",
+        "cardName": "Gigalith",
+        "fullDisplayName": "Gigalith 61/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            526
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw3-061-low.png",
+        "imageHighSrc": "cards/bw3-061-high.png",
+        "attacks": [
+            {
+                "name": "Core Cannon",
+                "damage": null
+            },
+            {
+                "name": "Power Gem",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2487",
+        "externalId": "bw3-60",
+        "localId": "060",
+        "setCode": "bw3",
+        "cardNumber": "60/101",
+        "cardName": "Chandelure",
+        "fullDisplayName": "Chandelure 60/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            609
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw3-060-low.png",
+        "imageHighSrc": "cards/bw3-060-high.png",
+        "attacks": [
+            {
+                "name": "Eerie Glow",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2486",
+        "externalId": "bw3-59",
+        "localId": "059",
+        "setCode": "bw3",
+        "cardNumber": "59/101",
+        "cardName": "Lampent",
+        "fullDisplayName": "Lampent 59/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            608
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw3-059-low.png",
+        "imageHighSrc": "cards/bw3-059-high.png",
+        "attacks": [
+            {
+                "name": "Luring Light",
+                "damage": null
+            },
+            {
+                "name": "Will-O-Wisp",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2485",
+        "externalId": "bw3-58",
+        "localId": "058",
+        "setCode": "bw3",
+        "cardNumber": "58/101",
+        "cardName": "Litwick",
+        "fullDisplayName": "Litwick 58/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            607
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-058-low.png",
+        "imageHighSrc": "cards/bw3-058-high.png",
+        "attacks": [
+            {
+                "name": "Teleportation Burst",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2484",
+        "externalId": "bw3-57",
+        "localId": "057",
+        "setCode": "bw3",
+        "cardNumber": "57/101",
+        "cardName": "Litwick",
+        "fullDisplayName": "Litwick 57/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            607
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-057-low.png",
+        "imageHighSrc": "cards/bw3-057-high.png",
+        "attacks": [
+            {
+                "name": "Searing Flame",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2483",
+        "externalId": "bw3-56",
+        "localId": "056",
+        "setCode": "bw3",
+        "cardNumber": "56/101",
+        "cardName": "Beheeyem",
+        "fullDisplayName": "Beheeyem 56/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            606
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-056-low.png",
+        "imageHighSrc": "cards/bw3-056-high.png",
+        "attacks": [
+            {
+                "name": "Synchronoise",
+                "damage": "20"
+            },
+            {
+                "name": "Psyshot",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2482",
+        "externalId": "bw3-55",
+        "localId": "055",
+        "setCode": "bw3",
+        "cardNumber": "55/101",
+        "cardName": "Elgyem",
+        "fullDisplayName": "Elgyem 55/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            605
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-055-low.png",
+        "imageHighSrc": "cards/bw3-055-high.png",
+        "attacks": [
+            {
+                "name": "First Contact",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2481",
+        "externalId": "bw3-54",
+        "localId": "054",
+        "setCode": "bw3",
+        "cardNumber": "54/101",
+        "cardName": "Elgyem",
+        "fullDisplayName": "Elgyem 54/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            605
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw3-054-low.png",
+        "imageHighSrc": "cards/bw3-054-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            },
+            {
+                "name": "Calm Mind",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2480",
+        "externalId": "bw3-53",
+        "localId": "053",
+        "setCode": "bw3",
+        "cardNumber": "53/101",
+        "cardName": "Reuniclus",
+        "fullDisplayName": "Reuniclus 53/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            579
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw3-053-low.png",
+        "imageHighSrc": "cards/bw3-053-high.png",
+        "attacks": [
+            {
+                "name": "Dizzy Punch",
+                "damage": "30×"
+            },
+            {
+                "name": "Mind Bend",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2479",
+        "externalId": "bw3-52",
+        "localId": "052",
+        "setCode": "bw3",
+        "cardNumber": "52/101",
+        "cardName": "Reuniclus",
+        "fullDisplayName": "Reuniclus 52/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            579
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-052-low.png",
+        "imageHighSrc": "cards/bw3-052-high.png",
+        "attacks": [
+            {
+                "name": "Future Sight",
+                "damage": null
+            },
+            {
+                "name": "Net Force",
+                "damage": "40×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2478",
+        "externalId": "bw3-51",
+        "localId": "051",
+        "setCode": "bw3",
+        "cardNumber": "51/101",
+        "cardName": "Duosion",
+        "fullDisplayName": "Duosion 51/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            578
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw3-051-low.png",
+        "imageHighSrc": "cards/bw3-051-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2477",
+        "externalId": "bw3-50",
+        "localId": "050",
+        "setCode": "bw3",
+        "cardNumber": "50/101",
+        "cardName": "Solosis",
+        "fullDisplayName": "Solosis 50/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            577
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw3-050-low.png",
+        "imageHighSrc": "cards/bw3-050-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2476",
+        "externalId": "bw3-49",
+        "localId": "049",
+        "setCode": "bw3",
+        "cardNumber": "49/101",
+        "cardName": "Garbodor",
+        "fullDisplayName": "Garbodor 49/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            569
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-049-low.png",
+        "imageHighSrc": "cards/bw3-049-high.png",
+        "attacks": [
+            {
+                "name": "Gentle Wrap",
+                "damage": "30"
+            },
+            {
+                "name": "Gunk Shot",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2475",
+        "externalId": "bw3-48",
+        "localId": "048",
+        "setCode": "bw3",
+        "cardNumber": "48/101",
+        "cardName": "Trubbish",
+        "fullDisplayName": "Trubbish 48/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            568
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw3-048-low.png",
+        "imageHighSrc": "cards/bw3-048-high.png",
+        "attacks": [
+            {
+                "name": "Garbage Collection",
+                "damage": null
+            },
+            {
+                "name": "Sludge Bomb",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2474",
+        "externalId": "bw3-47",
+        "localId": "047",
+        "setCode": "bw3",
+        "cardNumber": "47/101",
+        "cardName": "Cofagrigus",
+        "fullDisplayName": "Cofagrigus 47/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            563
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-047-low.png",
+        "imageHighSrc": "cards/bw3-047-high.png",
+        "attacks": [
+            {
+                "name": "Ambush",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2473",
+        "externalId": "bw3-46",
+        "localId": "046",
+        "setCode": "bw3",
+        "cardNumber": "46/101",
+        "cardName": "Cofagrigus",
+        "fullDisplayName": "Cofagrigus 46/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            563
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw3-046-low.png",
+        "imageHighSrc": "cards/bw3-046-high.png",
+        "attacks": [
+            {
+                "name": "Damagriiigus",
+                "damage": null
+            },
+            {
+                "name": "Perplex",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2472",
+        "externalId": "bw3-45",
+        "localId": "045",
+        "setCode": "bw3",
+        "cardNumber": "45/101",
+        "cardName": "Yamask",
+        "fullDisplayName": "Yamask 45/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            562
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-045-low.png",
+        "imageHighSrc": "cards/bw3-045-high.png",
+        "attacks": [
+            {
+                "name": "Ambush",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2471",
+        "externalId": "bw3-44",
+        "localId": "044",
+        "setCode": "bw3",
+        "cardNumber": "44/101",
+        "cardName": "Yamask",
+        "fullDisplayName": "Yamask 44/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            562
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw3-044-low.png",
+        "imageHighSrc": "cards/bw3-044-high.png",
+        "attacks": [
+            {
+                "name": "Perplex",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2470",
+        "externalId": "bw3-43",
+        "localId": "043",
+        "setCode": "bw3",
+        "cardNumber": "43/101",
+        "cardName": "Victini",
+        "fullDisplayName": "Victini 43/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            494
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-043-low.png",
+        "imageHighSrc": "cards/bw3-043-high.png",
+        "attacks": [
+            {
+                "name": "V-blast",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2469",
+        "externalId": "bw3-42",
+        "localId": "042",
+        "setCode": "bw3",
+        "cardNumber": "42/101",
+        "cardName": "Stunfisk",
+        "fullDisplayName": "Stunfisk 42/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            618
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-042-low.png",
+        "imageHighSrc": "cards/bw3-042-high.png",
+        "attacks": [
+            {
+                "name": "Mud Shot",
+                "damage": "20"
+            },
+            {
+                "name": "Thunder",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2468",
+        "externalId": "bw3-41",
+        "localId": "041",
+        "setCode": "bw3",
+        "cardNumber": "41/101",
+        "cardName": "Eelektross",
+        "fullDisplayName": "Eelektross 41/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            604
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-041-low.png",
+        "imageHighSrc": "cards/bw3-041-high.png",
+        "attacks": [
+            {
+                "name": "Acid",
+                "damage": "30"
+            },
+            {
+                "name": "Wild Charge",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2467",
+        "externalId": "bw3-40",
+        "localId": "040",
+        "setCode": "bw3",
+        "cardNumber": "40/101",
+        "cardName": "Eelektrik",
+        "fullDisplayName": "Eelektrik 40/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            603
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw3-040-low.png",
+        "imageHighSrc": "cards/bw3-040-high.png",
+        "attacks": [
+            {
+                "name": "Electric Ball",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2466",
+        "externalId": "bw3-39",
+        "localId": "039",
+        "setCode": "bw3",
+        "cardNumber": "39/101",
+        "cardName": "Tynamo",
+        "fullDisplayName": "Tynamo 39/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            602
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-039-low.png",
+        "imageHighSrc": "cards/bw3-039-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2465",
+        "externalId": "bw3-38",
+        "localId": "038",
+        "setCode": "bw3",
+        "cardNumber": "38/101",
+        "cardName": "Tynamo",
+        "fullDisplayName": "Tynamo 38/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            602
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw3-038-low.png",
+        "imageHighSrc": "cards/bw3-038-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Wave",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2464",
+        "externalId": "bw3-37",
+        "localId": "037",
+        "setCode": "bw3",
+        "cardNumber": "37/101",
+        "cardName": "Emolga",
+        "fullDisplayName": "Emolga 37/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            587
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-037-low.png",
+        "imageHighSrc": "cards/bw3-037-high.png",
+        "attacks": [
+            {
+                "name": "Electrichain",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2463",
+        "externalId": "bw3-36",
+        "localId": "036",
+        "setCode": "bw3",
+        "cardNumber": "36/101",
+        "cardName": "Zebstrika",
+        "fullDisplayName": "Zebstrika 36/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            523
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-036-low.png",
+        "imageHighSrc": "cards/bw3-036-high.png",
+        "attacks": [
+            {
+                "name": "Quick Attack",
+                "damage": "10+"
+            },
+            {
+                "name": "Shock Bolt",
+                "damage": "90"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2462",
+        "externalId": "bw3-35",
+        "localId": "035",
+        "setCode": "bw3",
+        "cardNumber": "35/101",
+        "cardName": "Blitzle",
+        "fullDisplayName": "Blitzle 35/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            522
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-035-low.png",
+        "imageHighSrc": "cards/bw3-035-high.png",
+        "attacks": [
+            {
+                "name": "Agility",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2461",
+        "externalId": "bw3-34",
+        "localId": "034",
+        "setCode": "bw3",
+        "cardNumber": "34/101",
+        "cardName": "Kyurem",
+        "fullDisplayName": "Kyurem 34/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            646
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-034-low.png",
+        "imageHighSrc": "cards/bw3-034-high.png",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "20+"
+            },
+            {
+                "name": "Glaciate",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2460",
+        "externalId": "bw3-33",
+        "localId": "033",
+        "setCode": "bw3",
+        "cardNumber": "33/101",
+        "cardName": "Cryogonal",
+        "fullDisplayName": "Cryogonal 33/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            615
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-033-low.png",
+        "imageHighSrc": "cards/bw3-033-high.png",
+        "attacks": [
+            {
+                "name": "Ice Chain",
+                "damage": null
+            },
+            {
+                "name": "Frost Vanish",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2459",
+        "externalId": "bw3-32",
+        "localId": "032",
+        "setCode": "bw3",
+        "cardNumber": "32/101",
+        "cardName": "Cryogonal",
+        "fullDisplayName": "Cryogonal 32/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            615
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-032-low.png",
+        "imageHighSrc": "cards/bw3-032-high.png",
+        "attacks": [
+            {
+                "name": "Icy Wind",
+                "damage": null
+            },
+            {
+                "name": "Ice Shard",
+                "damage": "30+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2458",
+        "externalId": "bw3-31",
+        "localId": "031",
+        "setCode": "bw3",
+        "cardNumber": "31/101",
+        "cardName": "Jellicent",
+        "fullDisplayName": "Jellicent 31/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            593
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-031-low.png",
+        "imageHighSrc": "cards/bw3-031-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Pump",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2457",
+        "externalId": "bw3-30",
+        "localId": "030",
+        "setCode": "bw3",
+        "cardNumber": "30/101",
+        "cardName": "Frillish",
+        "fullDisplayName": "Frillish 30/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            592
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw3-030-low.png",
+        "imageHighSrc": "cards/bw3-030-high.png",
+        "attacks": [
+            {
+                "name": "Rain Splash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2456",
+        "externalId": "bw3-29",
+        "localId": "029",
+        "setCode": "bw3",
+        "cardNumber": "29/101",
+        "cardName": "Vanilluxe",
+        "fullDisplayName": "Vanilluxe 29/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            584
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-029-low.png",
+        "imageHighSrc": "cards/bw3-029-high.png",
+        "attacks": [
+            {
+                "name": "Double Freeze",
+                "damage": "40×"
+            },
+            {
+                "name": "Frost Breath",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2455",
+        "externalId": "bw3-28",
+        "localId": "028",
+        "setCode": "bw3",
+        "cardNumber": "28/101",
+        "cardName": "Vanillish",
+        "fullDisplayName": "Vanillish 28/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            583
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-028-low.png",
+        "imageHighSrc": "cards/bw3-028-high.png",
+        "attacks": [
+            {
+                "name": "Ice Beam",
+                "damage": "20"
+            },
+            {
+                "name": "Frost Breath",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2454",
+        "externalId": "bw3-27",
+        "localId": "027",
+        "setCode": "bw3",
+        "cardNumber": "27/101",
+        "cardName": "Vanillite",
+        "fullDisplayName": "Vanillite 27/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            582
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw3-027-low.png",
+        "imageHighSrc": "cards/bw3-027-high.png",
+        "attacks": [
+            {
+                "name": "Icicle Barb",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2453",
+        "externalId": "bw3-26",
+        "localId": "026",
+        "setCode": "bw3",
+        "cardNumber": "26/101",
+        "cardName": "Carracosta",
+        "fullDisplayName": "Carracosta 26/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            565
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-026-low.png",
+        "imageHighSrc": "cards/bw3-026-high.png",
+        "attacks": [
+            {
+                "name": "Crunch",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2452",
+        "externalId": "bw3-25",
+        "localId": "025",
+        "setCode": "bw3",
+        "cardNumber": "25/101",
+        "cardName": "Tirtouga",
+        "fullDisplayName": "Tirtouga 25/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            564
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw3-025-low.png",
+        "imageHighSrc": "cards/bw3-025-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "30"
+            },
+            {
+                "name": "Surf",
+                "damage": "60"
+            }
+        ],
+        "rules": "Put this card onto your Bench only with the effect of Cover Fossil"
+    },
+    {
+        "masterCardId": "2451",
+        "externalId": "bw3-24",
+        "localId": "024",
+        "setCode": "bw3",
+        "cardNumber": "24/101",
+        "cardName": "Seismitoad",
+        "fullDisplayName": "Seismitoad 24/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            537
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw3-024-low.png",
+        "imageHighSrc": "cards/bw3-024-high.png",
+        "attacks": [
+            {
+                "name": "Round",
+                "damage": "30×"
+            },
+            {
+                "name": "Hyper Voice",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2450",
+        "externalId": "bw3-23",
+        "localId": "023",
+        "setCode": "bw3",
+        "cardNumber": "23/101",
+        "cardName": "Palpitoad",
+        "fullDisplayName": "Palpitoad 23/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            536
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw3-023-low.png",
+        "imageHighSrc": "cards/bw3-023-high.png",
+        "attacks": [
+            {
+                "name": "Mud Shot",
+                "damage": "20"
+            },
+            {
+                "name": "Round",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2449",
+        "externalId": "bw3-22",
+        "localId": "022",
+        "setCode": "bw3",
+        "cardNumber": "22/101",
+        "cardName": "Tympole",
+        "fullDisplayName": "Tympole 22/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            535
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Atsuko Nishida",
+        "imageLowSrc": "cards/bw3-022-low.png",
+        "imageHighSrc": "cards/bw3-022-high.png",
+        "attacks": [
+            {
+                "name": "Vibration",
+                "damage": "10"
+            },
+            {
+                "name": "Mud Shot",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2448",
+        "externalId": "bw3-21",
+        "localId": "021",
+        "setCode": "bw3",
+        "cardNumber": "21/101",
+        "cardName": "Volcarona",
+        "fullDisplayName": "Volcarona 21/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            637
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw3-021-low.png",
+        "imageHighSrc": "cards/bw3-021-high.png",
+        "attacks": [
+            {
+                "name": "Fiery Dance",
+                "damage": "30"
+            },
+            {
+                "name": "Heat Wave",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2447",
+        "externalId": "bw3-20",
+        "localId": "020",
+        "setCode": "bw3",
+        "cardNumber": "20/101",
+        "cardName": "Larvesta",
+        "fullDisplayName": "Larvesta 20/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            636
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-020-low.png",
+        "imageHighSrc": "cards/bw3-020-high.png",
+        "attacks": [
+            {
+                "name": "Take Down",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2446",
+        "externalId": "bw3-19",
+        "localId": "019",
+        "setCode": "bw3",
+        "cardNumber": "19/101",
+        "cardName": "Larvesta",
+        "fullDisplayName": "Larvesta 19/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            636
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-019-low.png",
+        "imageHighSrc": "cards/bw3-019-high.png",
+        "attacks": [
+            {
+                "name": "Ember",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2445",
+        "externalId": "bw3-18",
+        "localId": "018",
+        "setCode": "bw3",
+        "cardNumber": "18/101",
+        "cardName": "Heatmor",
+        "fullDisplayName": "Heatmor 18/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            631
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw3-018-low.png",
+        "imageHighSrc": "cards/bw3-018-high.png",
+        "attacks": [
+            {
+                "name": "Singe",
+                "damage": null
+            },
+            {
+                "name": "Incinerate",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2444",
+        "externalId": "bw3-17",
+        "localId": "017",
+        "setCode": "bw3",
+        "cardNumber": "17/101",
+        "cardName": "Simisear",
+        "fullDisplayName": "Simisear 17/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            514
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-017-low.png",
+        "imageHighSrc": "cards/bw3-017-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "20"
+            },
+            {
+                "name": "Double Fire",
+                "damage": "80×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2443",
+        "externalId": "bw3-16",
+        "localId": "016",
+        "setCode": "bw3",
+        "cardNumber": "16/101",
+        "cardName": "Pansear",
+        "fullDisplayName": "Pansear 16/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            513
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw3-016-low.png",
+        "imageHighSrc": "cards/bw3-016-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "10"
+            },
+            {
+                "name": "Lunge",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2442",
+        "externalId": "bw3-15",
+        "localId": "015",
+        "setCode": "bw3",
+        "cardNumber": "15/101",
+        "cardName": "Victini",
+        "fullDisplayName": "Victini 15/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            494
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw3-015-low.png",
+        "imageHighSrc": "cards/bw3-015-high.png",
+        "attacks": [
+            {
+                "name": "V-create",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2441",
+        "externalId": "bw3-14",
+        "localId": "014",
+        "setCode": "bw3",
+        "cardNumber": "14/101",
+        "cardName": "Victini",
+        "fullDisplayName": "Victini 14/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            494
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-014-low.png",
+        "imageHighSrc": "cards/bw3-014-high.png",
+        "attacks": [
+            {
+                "name": "Stored Power",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2440",
+        "externalId": "bw3-13",
+        "localId": "013",
+        "setCode": "bw3",
+        "cardNumber": "13/101",
+        "cardName": "Virizion",
+        "fullDisplayName": "Virizion 13/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-013-low.png",
+        "imageHighSrc": "cards/bw3-013-high.png",
+        "attacks": [
+            {
+                "name": "Double Draw",
+                "damage": null
+            },
+            {
+                "name": "Leaf Wallop",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2439",
+        "externalId": "bw3-12",
+        "localId": "012",
+        "setCode": "bw3",
+        "cardNumber": "12/101",
+        "cardName": "Accelgor",
+        "fullDisplayName": "Accelgor 12/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            617
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-012-low.png",
+        "imageHighSrc": "cards/bw3-012-high.png",
+        "attacks": [
+            {
+                "name": "Acid Spray",
+                "damage": "20"
+            },
+            {
+                "name": "Slashing Strike",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2438",
+        "externalId": "bw3-11",
+        "localId": "011",
+        "setCode": "bw3",
+        "cardNumber": "11/101",
+        "cardName": "Shelmet",
+        "fullDisplayName": "Shelmet 11/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            616
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw3-011-low.png",
+        "imageHighSrc": "cards/bw3-011-high.png",
+        "attacks": [
+            {
+                "name": "Mysterious Evolution",
+                "damage": null
+            },
+            {
+                "name": "Ram",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2437",
+        "externalId": "bw3-10",
+        "localId": "010",
+        "setCode": "bw3",
+        "cardNumber": "10/101",
+        "cardName": "Amoonguss",
+        "fullDisplayName": "Amoonguss 10/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            591
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw3-010-low.png",
+        "imageHighSrc": "cards/bw3-010-high.png",
+        "attacks": [
+            {
+                "name": "Toxic",
+                "damage": null
+            },
+            {
+                "name": "Body Slam",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2436",
+        "externalId": "bw3-9",
+        "localId": "009",
+        "setCode": "bw3",
+        "cardNumber": "9/101",
+        "cardName": "Foongus",
+        "fullDisplayName": "Foongus 9/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            590
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw3-009-low.png",
+        "imageHighSrc": "cards/bw3-009-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2435",
+        "externalId": "bw3-8",
+        "localId": "008",
+        "setCode": "bw3",
+        "cardNumber": "8/101",
+        "cardName": "Karrablast",
+        "fullDisplayName": "Karrablast 8/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            588
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw3-008-low.png",
+        "imageHighSrc": "cards/bw3-008-high.png",
+        "attacks": [
+            {
+                "name": "Mysterious Evolution",
+                "damage": null
+            },
+            {
+                "name": "Fury Attack",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2434",
+        "externalId": "bw3-7",
+        "localId": "007",
+        "setCode": "bw3",
+        "cardNumber": "7/101",
+        "cardName": "Crustle",
+        "fullDisplayName": "Crustle 7/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            558
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw3-007-low.png",
+        "imageHighSrc": "cards/bw3-007-high.png",
+        "attacks": [
+            {
+                "name": "X-Scissor",
+                "damage": "20+"
+            },
+            {
+                "name": "Reckless Charge",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2433",
+        "externalId": "bw3-6",
+        "localId": "006",
+        "setCode": "bw3",
+        "cardNumber": "6/101",
+        "cardName": "Dwebble",
+        "fullDisplayName": "Dwebble 6/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            557
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "MAHOU",
+        "imageLowSrc": "cards/bw3-006-low.png",
+        "imageHighSrc": "cards/bw3-006-high.png",
+        "attacks": [
+            {
+                "name": "Withdraw",
+                "damage": null
+            },
+            {
+                "name": "Slash",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2432",
+        "externalId": "bw3-5",
+        "localId": "005",
+        "setCode": "bw3",
+        "cardNumber": "5/101",
+        "cardName": "Lilligant",
+        "fullDisplayName": "Lilligant 5/101 Noble Victories",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            549
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw3-005-low.png",
+        "imageHighSrc": "cards/bw3-005-high.png",
+        "attacks": [
+            {
+                "name": "Aromax",
+                "damage": null
+            },
+            {
+                "name": "Windmill",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2431",
+        "externalId": "bw3-4",
+        "localId": "004",
+        "setCode": "bw3",
+        "cardNumber": "4/101",
+        "cardName": "Petilil",
+        "fullDisplayName": "Petilil 4/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            548
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw3-004-low.png",
+        "imageHighSrc": "cards/bw3-004-high.png",
+        "attacks": [
+            {
+                "name": "Ram",
+                "damage": "10"
+            },
+            {
+                "name": "Absorb",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2430",
+        "externalId": "bw3-3",
+        "localId": "003",
+        "setCode": "bw3",
+        "cardNumber": "3/101",
+        "cardName": "Leavanny",
+        "fullDisplayName": "Leavanny 3/101 Noble Victories",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            542
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw3-003-low.png",
+        "imageHighSrc": "cards/bw3-003-high.png",
+        "attacks": [
+            {
+                "name": "Cutting Arm",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2429",
+        "externalId": "bw3-2",
+        "localId": "002",
+        "setCode": "bw3",
+        "cardNumber": "2/101",
+        "cardName": "Swadloon",
+        "fullDisplayName": "Swadloon 2/101 Noble Victories",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            541
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw3-002-low.png",
+        "imageHighSrc": "cards/bw3-002-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            },
+            {
+                "name": "String Shot",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2428",
+        "externalId": "bw3-1",
+        "localId": "001",
+        "setCode": "bw3",
+        "cardNumber": "1/101",
+        "cardName": "Sewaddle",
+        "fullDisplayName": "Sewaddle 1/101 Noble Victories",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            540
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw3-001-low.png",
+        "imageHighSrc": "cards/bw3-001-high.png",
+        "attacks": [
+            {
+                "name": "Leaf Boomerang",
+                "damage": "20×"
+            }
+        ]
+    }
 ]

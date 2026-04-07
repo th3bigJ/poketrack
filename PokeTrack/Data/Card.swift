@@ -31,8 +31,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let regulationMark: String?
     let evolveFrom: String?
     let artist: String?
-    let isActive: Bool
-    let noPricing: Bool
     let imageLowSrc: String
     let imageHighSrc: String?
     /// Pokémon attacks in visual order; OCR from the center of the card can match these.
@@ -43,7 +41,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     enum CodingKeys: String, CodingKey {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
         case fullDisplayName, rarity, category, stage, hp, elementTypes, dexIds, subtypes
-        case trainerType, energyType, regulationMark, evolveFrom, artist, isActive, noPricing, imageLowSrc, imageHighSrc
+        case trainerType, energyType, regulationMark, evolveFrom, artist, imageLowSrc, imageHighSrc
         case attacks, rules
     }
 
@@ -71,8 +69,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         regulationMark = try c.decodeIfPresent(String.self, forKey: .regulationMark)
         evolveFrom = try c.decodeIfPresent(String.self, forKey: .evolveFrom)
         artist = try c.decodeIfPresent(String.self, forKey: .artist)
-        isActive = try c.decode(Bool.self, forKey: .isActive)
-        noPricing = try c.decode(Bool.self, forKey: .noPricing)
         imageLowSrc = try c.decode(String.self, forKey: .imageLowSrc)
         imageHighSrc = try c.decodeIfPresent(String.self, forKey: .imageHighSrc)
         attacks = try c.decodeIfPresent([CardAttack].self, forKey: .attacks)
@@ -102,8 +98,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encodeIfPresent(regulationMark, forKey: .regulationMark)
         try c.encodeIfPresent(evolveFrom, forKey: .evolveFrom)
         try c.encodeIfPresent(artist, forKey: .artist)
-        try c.encode(isActive, forKey: .isActive)
-        try c.encode(noPricing, forKey: .noPricing)
         try c.encode(imageLowSrc, forKey: .imageLowSrc)
         try c.encodeIfPresent(imageHighSrc, forKey: .imageHighSrc)
         try c.encodeIfPresent(attacks, forKey: .attacks)

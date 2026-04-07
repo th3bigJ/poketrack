@@ -1,4188 +1,3206 @@
 [
-  {
-    "masterCardId": "2189",
-    "externalId": "bw10-105",
-    "tcgdex_id": "bw10-105",
-    "localId": "105",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "105/101",
-    "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 105/101 Plasma Blast",
-    "rarity": "Rare Secret",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-105-low.png",
-    "imageHighSrc": "cards/bw10-105-high.png",
-    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2188",
-    "externalId": "bw10-104",
-    "tcgdex_id": "bw10-104",
-    "localId": "104",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "104/101",
-    "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 104/101 Plasma Blast",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      477
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Dusclops",
-    "artist": "Ayaka Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-104-low.png",
-    "imageHighSrc": "cards/bw10-104-high.png",
-    "attacks": [
-      {
-        "name": "Shadow Punch",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2187",
-    "externalId": "bw10-103",
-    "tcgdex_id": "bw10-103",
-    "localId": "103",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "103/101",
-    "cardName": "Virizion",
-    "fullDisplayName": "Virizion 103/101 Plasma Blast",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 110,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ayaka Yoshida",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-103-low.png",
-    "imageHighSrc": "cards/bw10-103-high.png",
-    "attacks": [
-      {
-        "name": "Double Draw",
-        "damage": null
-      },
-      {
-        "name": "Leaf Wallop",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2186",
-    "externalId": "bw10-102",
-    "tcgdex_id": "bw10-102",
-    "localId": "102",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "102/101",
-    "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 102/101 Plasma Blast",
-    "rarity": "Rare Secret",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      102
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-102-low.png",
-    "imageHighSrc": "cards/bw10-102-high.png",
-    "attacks": [
-      {
-        "name": "Seed Bomb",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2185",
-    "externalId": "bw10-101",
-    "tcgdex_id": "bw10-101",
-    "localId": "101",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "101/101",
-    "cardName": "Iris",
-    "fullDisplayName": "Iris 101/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-101-low.png",
-    "imageHighSrc": "cards/bw10-101-high.png",
-    "rules": "During this turn, your Pokémon's attacks do 10 more damage to the Active Pokémon for each Prize card your opponent has taken (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2184",
-    "externalId": "bw10-100",
-    "tcgdex_id": "bw10-100",
-    "localId": "100",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "100/101",
-    "cardName": "Palkia-EX",
-    "fullDisplayName": "Palkia-EX 100/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      484
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-100-low.png",
-    "imageHighSrc": "cards/bw10-100-high.png",
-    "attacks": [
-      {
-        "name": "Strafe",
-        "damage": "50"
-      },
-      {
-        "name": "Dimension Heal",
-        "damage": "80"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2183",
-    "externalId": "bw10-99",
-    "tcgdex_id": "bw10-99",
-    "localId": "099",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "99/101",
-    "cardName": "Dialga-EX",
-    "fullDisplayName": "Dialga-EX 99/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      483
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-099-low.png",
-    "imageHighSrc": "cards/bw10-099-high.png",
-    "attacks": [
-      {
-        "name": "Reverse Edge",
-        "damage": "50"
-      },
-      {
-        "name": "Fast Forward",
-        "damage": "90"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2182",
-    "externalId": "bw10-98",
-    "tcgdex_id": "bw10-98",
-    "localId": "098",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "98/101",
-    "cardName": "Jirachi-EX",
-    "fullDisplayName": "Jirachi-EX 98/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      385
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-098-low.png",
-    "imageHighSrc": "cards/bw10-098-high.png",
-    "attacks": [
-      {
-        "name": "Hypnostrike",
-        "damage": "60"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2181",
-    "externalId": "bw10-97",
-    "tcgdex_id": "bw10-97",
-    "localId": "097",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "97/101",
-    "cardName": "Genesect-EX",
-    "fullDisplayName": "Genesect-EX 97/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      649
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-097-low.png",
-    "imageHighSrc": "cards/bw10-097-high.png",
-    "attacks": [
-      {
-        "name": "Megalo Cannon",
-        "damage": "100"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2180",
-    "externalId": "bw10-96",
-    "tcgdex_id": "bw10-96",
-    "localId": "096",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "96/101",
-    "cardName": "Virizion-EX",
-    "fullDisplayName": "Virizion-EX 96/101 Plasma Blast",
-    "rarity": "Rare Ultra",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-096-low.png",
-    "imageHighSrc": "cards/bw10-096-high.png",
-    "attacks": [
-      {
-        "name": "Emerald Slash",
-        "damage": "50"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2179",
-    "externalId": "bw10-95",
-    "tcgdex_id": "bw10-95",
-    "localId": "095",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "95/101",
-    "cardName": "Scoop Up Cyclone",
-    "fullDisplayName": "Scoop Up Cyclone 95/101 Plasma Blast",
-    "rarity": "Rare ACE",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item",
-      "ACE SPEC"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-095-low.png",
-    "imageHighSrc": "cards/bw10-095-high.png",
-    "rules": "Put 1 of your Pokémon and all cards attached to it into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
-  },
-  {
-    "masterCardId": "2178",
-    "externalId": "bw10-94",
-    "tcgdex_id": "bw10-94",
-    "localId": "094",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "94/101",
-    "cardName": "Master Ball",
-    "fullDisplayName": "Master Ball 94/101 Plasma Blast",
-    "rarity": "Rare ACE",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item",
-      "ACE SPEC"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-094-low.png",
-    "imageHighSrc": "cards/bw10-094-high.png",
-    "rules": "Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
-  },
-  {
-    "masterCardId": "2177",
-    "externalId": "bw10-93",
-    "tcgdex_id": "bw10-93",
-    "localId": "093",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "93/101",
-    "cardName": "G Scope",
-    "fullDisplayName": "G Scope 93/101 Plasma Blast",
-    "rarity": "Rare ACE",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool",
-      "ACE SPEC",
-      "Team Plasma"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-093-low.png",
-    "imageHighSrc": "cards/bw10-093-high.png",
-    "attacks": [
-      {
-        "name": "G Scope",
-        "damage": null
-      }
-    ],
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Genesect-EX this card is attached to can also use the attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
-  },
-  {
-    "masterCardId": "2176",
-    "externalId": "bw10-92",
-    "tcgdex_id": "bw10-92",
-    "localId": "092",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "92/101",
-    "cardName": "G Booster",
-    "fullDisplayName": "G Booster 92/101 Plasma Blast",
-    "rarity": "Rare ACE",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool",
-      "ACE SPEC",
-      "Team Plasma"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-092-low.png",
-    "imageHighSrc": "cards/bw10-092-high.png",
-    "attacks": [
-      {
-        "name": "G Booster",
-        "damage": "200"
-      }
-    ],
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Genesect-EX this card is attached to can also use the attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
-  },
-  {
-    "masterCardId": "2175",
-    "externalId": "bw10-91",
-    "tcgdex_id": "bw10-91",
-    "localId": "091",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "91/101",
-    "cardName": "Plasma Energy",
-    "fullDisplayName": "Plasma Energy 91/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Energy",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Special",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": "Special",
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-091-low.png",
-    "imageHighSrc": "cards/bw10-091-high.png",
-    "rules": "This card provides Colorless Energy."
-  },
-  {
-    "masterCardId": "2174",
-    "externalId": "bw10-90",
-    "tcgdex_id": "bw10-90",
-    "localId": "090",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "90/101",
-    "cardName": "Ultra Ball",
-    "fullDisplayName": "Ultra Ball 90/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-090-low.png",
-    "imageHighSrc": "cards/bw10-090-high.png",
-    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2173",
-    "externalId": "bw10-89",
-    "tcgdex_id": "bw10-89",
-    "localId": "089",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "89/101",
-    "cardName": "Silver Mirror",
-    "fullDisplayName": "Silver Mirror 89/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-089-low.png",
-    "imageHighSrc": "cards/bw10-089-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nPrevent all effects of attacks, including damage, done to the Pokémon this card is attached to (excluding Pokémon-EX) by your opponent's Team Plasma Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2172",
-    "externalId": "bw10-88",
-    "tcgdex_id": "bw10-88",
-    "localId": "088",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "88/101",
-    "cardName": "Silver Bangle",
-    "fullDisplayName": "Silver Bangle 88/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-088-low.png",
-    "imageHighSrc": "cards/bw10-088-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe attacks of the Pokémon this card is attached to (excluding Pokémon-EX) do 30 more damage to Active Pokémon-EX (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2171",
-    "externalId": "bw10-87",
-    "tcgdex_id": "bw10-87",
-    "localId": "087",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "87/101",
-    "cardName": "Root Fossil Lileep",
-    "fullDisplayName": "Root Fossil Lileep 87/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-087-low.png",
-    "imageHighSrc": "cards/bw10-087-high.png",
-    "rules": "Look at the bottom 7 cards of your deck. You may reveal a Lileep you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2170",
-    "externalId": "bw10-86",
-    "tcgdex_id": "bw10-86",
-    "localId": "086",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "86/101",
-    "cardName": "Reversal Trigger",
-    "fullDisplayName": "Reversal Trigger 86/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Pokémon Tool",
-      "Team Plasma"
-    ],
-    "trainerType": "Pokémon Tool",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-086-low.png",
-    "imageHighSrc": "cards/bw10-086-high.png",
-    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen the Team Plasma Pokémon this card is attached to is Knocked Out by damage from an opponent's attack, search your deck for a card and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2169",
-    "externalId": "bw10-85",
-    "tcgdex_id": "bw10-85",
-    "localId": "085",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "85/101",
-    "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 85/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-085-low.png",
-    "imageHighSrc": "cards/bw10-085-high.png",
-    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2168",
-    "externalId": "bw10-84",
-    "tcgdex_id": "bw10-84",
-    "localId": "084",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "84/101",
-    "cardName": "Professor Juniper",
-    "fullDisplayName": "Professor Juniper 84/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-084-low.png",
-    "imageHighSrc": "cards/bw10-084-high.png",
-    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2167",
-    "externalId": "bw10-83",
-    "tcgdex_id": "bw10-83",
-    "localId": "083",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "83/101",
-    "cardName": "Pokémon Catcher",
-    "fullDisplayName": "Pokémon Catcher 83/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-083-low.png",
-    "imageHighSrc": "cards/bw10-083-high.png",
-    "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2166",
-    "externalId": "bw10-82",
-    "tcgdex_id": "bw10-82",
-    "localId": "082",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "82/101",
-    "cardName": "Plume Fossil",
-    "fullDisplayName": "Plume Fossil 82/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-082-low.png",
-    "imageHighSrc": "cards/bw10-082-high.png",
-    "rules": "Look at the bottom 7 cards of your deck. You may reveal an Archen you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2165",
-    "externalId": "bw10-81",
-    "tcgdex_id": "bw10-81",
-    "localId": "081",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "81/101",
-    "cardName": "Iris",
-    "fullDisplayName": "Iris 81/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-081-low.png",
-    "imageHighSrc": "cards/bw10-081-high.png",
-    "rules": "During this turn, your Pokémon's attacks do 10 more damage to the Active Pokémon for each Prize card your opponent has taken (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2164",
-    "externalId": "bw10-80",
-    "tcgdex_id": "bw10-80",
-    "localId": "080",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "80/101",
-    "cardName": "Energy Retrieval",
-    "fullDisplayName": "Energy Retrieval 80/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kent Kanetsuna",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-080-low.png",
-    "imageHighSrc": "cards/bw10-080-high.png",
-    "rules": "Put 2 basic Energy cards from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2163",
-    "externalId": "bw10-79",
-    "tcgdex_id": "bw10-79",
-    "localId": "079",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "79/101",
-    "cardName": "Cover Fossil",
-    "fullDisplayName": "Cover Fossil 79/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-079-low.png",
-    "imageHighSrc": "cards/bw10-079-high.png",
-    "rules": "Look at the bottom 7 cards of your deck. You may reveal a Tirtouga you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2162",
-    "externalId": "bw10-78",
-    "tcgdex_id": "bw10-78",
-    "localId": "078",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "78/101",
-    "cardName": "Caitlin",
-    "fullDisplayName": "Caitlin 78/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Yusuke Ohmura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-078-low.png",
-    "imageHighSrc": "cards/bw10-078-high.png",
-    "rules": "Put as many cards from your hand as you like on the bottom of your deck in any order. Then, draw a card for each card you put on the bottom of your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "2161",
-    "externalId": "bw10-77",
-    "tcgdex_id": "bw10-77",
-    "localId": "077",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "77/101",
-    "cardName": "Chatot",
-    "fullDisplayName": "Chatot 77/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      441
-    ],
-    "subtypes": [
-      "Basic",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-077-low.png",
-    "imageHighSrc": "cards/bw10-077-high.png",
-    "attacks": [
-      {
-        "name": "Misinformation",
-        "damage": null
-      },
-      {
-        "name": "Tone-Deaf",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2160",
-    "externalId": "bw10-76",
-    "tcgdex_id": "bw10-76",
-    "localId": "076",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "76/101",
-    "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 76/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      217
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Teddiursa",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-076-low.png",
-    "imageHighSrc": "cards/bw10-076-high.png",
-    "attacks": [
-      {
-        "name": "Adrenalash",
-        "damage": "50"
-      },
-      {
-        "name": "Strength",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2159",
-    "externalId": "bw10-75",
-    "tcgdex_id": "bw10-75",
-    "localId": "075",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "75/101",
-    "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa 75/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      216
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-075-low.png",
-    "imageHighSrc": "cards/bw10-075-high.png",
-    "attacks": [
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2158",
-    "externalId": "bw10-74",
-    "tcgdex_id": "bw10-74",
-    "localId": "074",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "74/101",
-    "cardName": "Porygon-Z",
-    "fullDisplayName": "Porygon-Z 74/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 130,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      474
-    ],
-    "subtypes": [
-      "Stage 2",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Porygon2",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-074-low.png",
-    "imageHighSrc": "cards/bw10-074-high.png",
-    "attacks": [
-      {
-        "name": "Tri Attack",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2157",
-    "externalId": "bw10-73",
-    "tcgdex_id": "bw10-73",
-    "localId": "073",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "73/101",
-    "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 73/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      233
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Porygon",
-    "artist": "HiRON",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-073-low.png",
-    "imageHighSrc": "cards/bw10-073-high.png",
-    "attacks": [
-      {
-        "name": "Destructive Beam",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2156",
-    "externalId": "bw10-72",
-    "tcgdex_id": "bw10-72",
-    "localId": "072",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "72/101",
-    "cardName": "Porygon",
-    "fullDisplayName": "Porygon 72/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      137
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-072-low.png",
-    "imageHighSrc": "cards/bw10-072-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2155",
-    "externalId": "bw10-71",
-    "tcgdex_id": "bw10-71",
-    "localId": "071",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "71/101",
-    "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 71/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      115
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-071-low.png",
-    "imageHighSrc": "cards/bw10-071-high.png",
-    "attacks": [
-      {
-        "name": "Call for Family",
-        "damage": null
-      },
-      {
-        "name": "Comet Punch",
-        "damage": "20×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2154",
-    "externalId": "bw10-70",
-    "tcgdex_id": "bw10-70",
-    "localId": "070",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "70/101",
-    "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 70/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      621
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-070-low.png",
-    "imageHighSrc": "cards/bw10-070-high.png",
-    "attacks": [
-      {
-        "name": "Big Swing",
-        "damage": "40"
-      },
-      {
-        "name": "Shred",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2153",
-    "externalId": "bw10-69",
-    "tcgdex_id": "bw10-69",
-    "localId": "069",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "69/101",
-    "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus 69/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      612
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Fraxure",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-069-low.png",
-    "imageHighSrc": "cards/bw10-069-high.png",
-    "attacks": [
-      {
-        "name": "Dragonaxe",
-        "damage": "40×"
-      },
-      {
-        "name": "Strike of the Champion",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2152",
-    "externalId": "bw10-68",
-    "tcgdex_id": "bw10-68",
-    "localId": "068",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "68/101",
-    "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 68/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      611
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Axew",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-068-low.png",
-    "imageHighSrc": "cards/bw10-068-high.png",
-    "attacks": [
-      {
-        "name": "Paralyzing Gaze",
-        "damage": null
-      },
-      {
-        "name": "Dragon Claw",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2151",
-    "externalId": "bw10-67",
-    "tcgdex_id": "bw10-67",
-    "localId": "067",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "67/101",
-    "cardName": "Axew",
-    "fullDisplayName": "Axew 67/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      610
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-067-low.png",
-    "imageHighSrc": "cards/bw10-067-high.png",
-    "attacks": [
-      {
-        "name": "Strong Bond",
-        "damage": null
-      },
-      {
-        "name": "Dragon Claw",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2150",
-    "externalId": "bw10-66",
-    "tcgdex_id": "bw10-66",
-    "localId": "066",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "66/101",
-    "cardName": "Palkia-EX",
-    "fullDisplayName": "Palkia-EX 66/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      484
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Eske Yoshinob",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-066-low.png",
-    "imageHighSrc": "cards/bw10-066-high.png",
-    "attacks": [
-      {
-        "name": "Strafe",
-        "damage": "50"
-      },
-      {
-        "name": "Dimension Heal",
-        "damage": "80"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2149",
-    "externalId": "bw10-65",
-    "tcgdex_id": "bw10-65",
-    "localId": "065",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "65/101",
-    "cardName": "Dialga-EX",
-    "fullDisplayName": "Dialga-EX 65/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      483
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Eske Yoshinob",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-065-low.png",
-    "imageHighSrc": "cards/bw10-065-high.png",
-    "attacks": [
-      {
-        "name": "Reverse Edge",
-        "damage": "50"
-      },
-      {
-        "name": "Fast Forward",
-        "damage": "90"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2148",
-    "externalId": "bw10-64",
-    "tcgdex_id": "bw10-64",
-    "localId": "064",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "64/101",
-    "cardName": "Salamence",
-    "fullDisplayName": "Salamence 64/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      373
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shelgon",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-064-low.png",
-    "imageHighSrc": "cards/bw10-064-high.png",
-    "attacks": [
-      {
-        "name": "Gaia Crush",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2147",
-    "externalId": "bw10-63",
-    "tcgdex_id": "bw10-63",
-    "localId": "063",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "63/101",
-    "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 63/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      372
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Bagon",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-063-low.png",
-    "imageHighSrc": "cards/bw10-063-high.png",
-    "attacks": [
-      {
-        "name": "Knock Away",
-        "damage": "10+"
-      },
-      {
-        "name": "Rollout",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2146",
-    "externalId": "bw10-62",
-    "tcgdex_id": "bw10-62",
-    "localId": "062",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "62/101",
-    "cardName": "Bagon",
-    "fullDisplayName": "Bagon 62/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Dragon"
-    ],
-    "dexIds": [
-      371
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-062-low.png",
-    "imageHighSrc": "cards/bw10-062-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "10"
-      },
-      {
-        "name": "Dragon Claw",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2145",
-    "externalId": "bw10-61",
-    "tcgdex_id": "bw10-61",
-    "localId": "061",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "61/101",
-    "cardName": "Escavalier",
-    "fullDisplayName": "Escavalier 61/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      589
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Karrablast",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-061-low.png",
-    "imageHighSrc": "cards/bw10-061-high.png",
-    "attacks": [
-      {
-        "name": "Steamroll",
-        "damage": "40"
-      },
-      {
-        "name": "Slashing Strike",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2144",
-    "externalId": "bw10-60",
-    "tcgdex_id": "bw10-60",
-    "localId": "060",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "60/101",
-    "cardName": "Jirachi-EX",
-    "fullDisplayName": "Jirachi-EX 60/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      385
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-060-low.png",
-    "imageHighSrc": "cards/bw10-060-high.png",
-    "attacks": [
-      {
-        "name": "Hypnostrike",
-        "damage": "60"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2143",
-    "externalId": "bw10-59",
-    "tcgdex_id": "bw10-59",
-    "localId": "059",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "59/101",
-    "cardName": "Aggron",
-    "fullDisplayName": "Aggron 59/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      306
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lairon",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-059-low.png",
-    "imageHighSrc": "cards/bw10-059-high.png",
-    "attacks": [
-      {
-        "name": "Knock Back",
-        "damage": "50"
-      },
-      {
-        "name": "Aura of the Land",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2142",
-    "externalId": "bw10-58",
-    "tcgdex_id": "bw10-58",
-    "localId": "058",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "58/101",
-    "cardName": "Lairon",
-    "fullDisplayName": "Lairon 58/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      305
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Aron",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-058-low.png",
-    "imageHighSrc": "cards/bw10-058-high.png",
-    "attacks": [
-      {
-        "name": "Metal Claw",
-        "damage": "20"
-      },
-      {
-        "name": "Iron Head",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2141",
-    "externalId": "bw10-57",
-    "tcgdex_id": "bw10-57",
-    "localId": "057",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "57/101",
-    "cardName": "Aron",
-    "fullDisplayName": "Aron 57/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      304
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-057-low.png",
-    "imageHighSrc": "cards/bw10-057-high.png",
-    "attacks": [
-      {
-        "name": "Iron Head",
-        "damage": "10×"
-      },
-      {
-        "name": "Headbutt",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2140",
-    "externalId": "bw10-56",
-    "tcgdex_id": "bw10-56",
-    "localId": "056",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "56/101",
-    "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 56/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      229
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Houndour",
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-056-low.png",
-    "imageHighSrc": "cards/bw10-056-high.png",
-    "attacks": [
-      {
-        "name": "Dark Clamp",
-        "damage": "30"
-      },
-      {
-        "name": "Blazing Claws",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2139",
-    "externalId": "bw10-55",
-    "tcgdex_id": "bw10-55",
-    "localId": "055",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "55/101",
-    "cardName": "Houndour",
-    "fullDisplayName": "Houndour 55/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      228
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-055-low.png",
-    "imageHighSrc": "cards/bw10-055-high.png",
-    "attacks": [
-      {
-        "name": "Roar",
-        "damage": null
-      },
-      {
-        "name": "Ambush",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2138",
-    "externalId": "bw10-54",
-    "tcgdex_id": "bw10-54",
-    "localId": "054",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "54/101",
-    "cardName": "Archeops",
-    "fullDisplayName": "Archeops 54/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      567
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Archen",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-054-low.png",
-    "imageHighSrc": "cards/bw10-054-high.png",
-    "attacks": [
-      {
-        "name": "Acrobatics",
-        "damage": "20+"
-      },
-      {
-        "name": "Swift Dive",
-        "damage": "100"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2137",
-    "externalId": "bw10-53",
-    "tcgdex_id": "bw10-53",
-    "localId": "053",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "53/101",
-    "cardName": "Archen",
-    "fullDisplayName": "Archen 53/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "RESTORED",
-    "hp": 70,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      566
-    ],
-    "subtypes": [
-      "Restored"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Plume Fossil",
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-053-low.png",
-    "imageHighSrc": "cards/bw10-053-high.png",
-    "attacks": [
-      {
-        "name": "Wing Attack",
-        "damage": "20"
-      }
-    ],
-    "rules": "Put this card onto your Bench only with the effect of Plume Fossil"
-  },
-  {
-    "masterCardId": "2136",
-    "externalId": "bw10-52",
-    "tcgdex_id": "bw10-52",
-    "localId": "052",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "52/101",
-    "cardName": "Sawk",
-    "fullDisplayName": "Sawk 52/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      539
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-052-low.png",
-    "imageHighSrc": "cards/bw10-052-high.png",
-    "attacks": [
-      {
-        "name": "Kick of Righteousness",
-        "damage": "10+"
-      },
-      {
-        "name": "Low Sweep",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2135",
-    "externalId": "bw10-51",
-    "tcgdex_id": "bw10-51",
-    "localId": "051",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "51/101",
-    "cardName": "Throh",
-    "fullDisplayName": "Throh 51/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      538
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-051-low.png",
-    "imageHighSrc": "cards/bw10-051-high.png",
-    "attacks": [
-      {
-        "name": "Freestyle Strike",
-        "damage": "30×"
-      },
-      {
-        "name": "Shoulder Throw",
-        "damage": "80-"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2134",
-    "externalId": "bw10-50",
-    "tcgdex_id": "bw10-50",
-    "localId": "050",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "50/101",
-    "cardName": "Machamp",
-    "fullDisplayName": "Machamp 50/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      68
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Machoke",
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-050-low.png",
-    "imageHighSrc": "cards/bw10-050-high.png",
-    "attacks": [
-      {
-        "name": "Knock Off",
-        "damage": "60"
-      },
-      {
-        "name": "Reinforced Lariat",
-        "damage": "80+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2133",
-    "externalId": "bw10-49",
-    "tcgdex_id": "bw10-49",
-    "localId": "049",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "49/101",
-    "cardName": "Machamp",
-    "fullDisplayName": "Machamp 49/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      68
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Machoke",
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-049-low.png",
-    "imageHighSrc": "cards/bw10-049-high.png",
-    "attacks": [
-      {
-        "name": "Close Combat",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2132",
-    "externalId": "bw10-48",
-    "tcgdex_id": "bw10-48",
-    "localId": "048",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "48/101",
-    "cardName": "Machoke",
-    "fullDisplayName": "Machoke 48/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      67
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Machop",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-048-low.png",
-    "imageHighSrc": "cards/bw10-048-high.png",
-    "attacks": [
-      {
-        "name": "Last-Chance Chop",
-        "damage": "20+"
-      },
-      {
-        "name": "Seismic Toss",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2131",
-    "externalId": "bw10-47",
-    "tcgdex_id": "bw10-47",
-    "localId": "047",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "47/101",
-    "cardName": "Machop",
-    "fullDisplayName": "Machop 47/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fighting"
-    ],
-    "dexIds": [
-      66
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "sui",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-047-low.png",
-    "imageHighSrc": "cards/bw10-047-high.png",
-    "attacks": [
-      {
-        "name": "Low Kick",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2130",
-    "externalId": "bw10-46",
-    "tcgdex_id": "bw10-46",
-    "localId": "046",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "46/101",
-    "cardName": "Golurk",
-    "fullDisplayName": "Golurk 46/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 130,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      623
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Golett",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-046-low.png",
-    "imageHighSrc": "cards/bw10-046-high.png",
-    "attacks": [
-      {
-        "name": "Iron Fist of Justice",
-        "damage": "60"
-      },
-      {
-        "name": "Shadow Punch",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2129",
-    "externalId": "bw10-45",
-    "tcgdex_id": "bw10-45",
-    "localId": "045",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "45/101",
-    "cardName": "Golett",
-    "fullDisplayName": "Golett 45/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      622
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-045-low.png",
-    "imageHighSrc": "cards/bw10-045-high.png",
-    "attacks": [
-      {
-        "name": "Beat",
-        "damage": "10"
-      },
-      {
-        "name": "Mega Punch",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2128",
-    "externalId": "bw10-44",
-    "tcgdex_id": "bw10-44",
-    "localId": "044",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "44/101",
-    "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 44/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      579
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Duosion",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-044-low.png",
-    "imageHighSrc": "cards/bw10-044-high.png",
-    "attacks": [
-      {
-        "name": "Barrier Attack",
-        "damage": "30"
-      },
-      {
-        "name": "Telekinesis of Nobility",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2127",
-    "externalId": "bw10-43",
-    "tcgdex_id": "bw10-43",
-    "localId": "043",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "43/101",
-    "cardName": "Duosion",
-    "fullDisplayName": "Duosion 43/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      578
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Solosis",
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-043-low.png",
-    "imageHighSrc": "cards/bw10-043-high.png",
-    "attacks": [
-      {
-        "name": "Focused Wish",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2126",
-    "externalId": "bw10-42",
-    "tcgdex_id": "bw10-42",
-    "localId": "042",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "42/101",
-    "cardName": "Solosis",
-    "fullDisplayName": "Solosis 42/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      577
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-042-low.png",
-    "imageHighSrc": "cards/bw10-042-high.png",
-    "attacks": [
-      {
-        "name": "Hide",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2125",
-    "externalId": "bw10-41",
-    "tcgdex_id": "bw10-41",
-    "localId": "041",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "41/101",
-    "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 41/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      561
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-041-low.png",
-    "imageHighSrc": "cards/bw10-041-high.png",
-    "attacks": [
-      {
-        "name": "Cutting Wind",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2124",
-    "externalId": "bw10-40",
-    "tcgdex_id": "bw10-40",
-    "localId": "040",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "40/101",
-    "cardName": "Musharna",
-    "fullDisplayName": "Musharna 40/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      518
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Munna",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-040-low.png",
-    "imageHighSrc": "cards/bw10-040-high.png",
-    "attacks": [
-      {
-        "name": "Precognitive Dream",
-        "damage": null
-      },
-      {
-        "name": "Psybeam",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2123",
-    "externalId": "bw10-39",
-    "tcgdex_id": "bw10-39",
-    "localId": "039",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "39/101",
-    "cardName": "Munna",
-    "fullDisplayName": "Munna 39/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      517
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-039-low.png",
-    "imageHighSrc": "cards/bw10-039-high.png",
-    "attacks": [
-      {
-        "name": "Mumble",
-        "damage": "10"
-      },
-      {
-        "name": "Focused Wish",
-        "damage": "10+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2122",
-    "externalId": "bw10-38",
-    "tcgdex_id": "bw10-38",
-    "localId": "038",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "38/101",
-    "cardName": "Azelf",
-    "fullDisplayName": "Azelf 38/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      482
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-038-low.png",
-    "imageHighSrc": "cards/bw10-038-high.png",
-    "attacks": [
-      {
-        "name": "Trading Places",
-        "damage": null
-      },
-      {
-        "name": "Psyjamming",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2121",
-    "externalId": "bw10-37",
-    "tcgdex_id": "bw10-37",
-    "localId": "037",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "37/101",
-    "cardName": "Mesprit",
-    "fullDisplayName": "Mesprit 37/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      481
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-037-low.png",
-    "imageHighSrc": "cards/bw10-037-high.png",
-    "attacks": [
-      {
-        "name": "Psyshot",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2120",
-    "externalId": "bw10-36",
-    "tcgdex_id": "bw10-36",
-    "localId": "036",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "36/101",
-    "cardName": "Uxie",
-    "fullDisplayName": "Uxie 36/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      480
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-036-low.png",
-    "imageHighSrc": "cards/bw10-036-high.png",
-    "attacks": [
-      {
-        "name": "Psypower",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2119",
-    "externalId": "bw10-35",
-    "tcgdex_id": "bw10-35",
-    "localId": "035",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "35/101",
-    "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 35/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      426
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Drifloon",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-035-low.png",
-    "imageHighSrc": "cards/bw10-035-high.png",
-    "attacks": [
-      {
-        "name": "Derail",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2118",
-    "externalId": "bw10-34",
-    "tcgdex_id": "bw10-34",
-    "localId": "034",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "34/101",
-    "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 34/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Psychic"
-    ],
-    "dexIds": [
-      425
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-034-low.png",
-    "imageHighSrc": "cards/bw10-034-high.png",
-    "attacks": [
-      {
-        "name": "Creepy Wind",
-        "damage": null
-      },
-      {
-        "name": "Wind Blast",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2117",
-    "externalId": "bw10-33",
-    "tcgdex_id": "bw10-33",
-    "localId": "033",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "33/101",
-    "cardName": "Eelektross",
-    "fullDisplayName": "Eelektross 33/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      604
-    ],
-    "subtypes": [
-      "Stage 2",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Eelektrik",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-033-low.png",
-    "imageHighSrc": "cards/bw10-033-high.png",
-    "attacks": [
-      {
-        "name": "Crush and Burn",
-        "damage": "30×"
-      },
-      {
-        "name": "Thunder Tempest",
-        "damage": "50×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2116",
-    "externalId": "bw10-32",
-    "tcgdex_id": "bw10-32",
-    "localId": "032",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "32/101",
-    "cardName": "Eelektrik",
-    "fullDisplayName": "Eelektrik 32/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      603
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tynamo",
-    "artist": "Suwama Chiaki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-032-low.png",
-    "imageHighSrc": "cards/bw10-032-high.png",
-    "attacks": [
-      {
-        "name": "Thunder Wave",
-        "damage": "20"
-      },
-      {
-        "name": "Headbutt",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2115",
-    "externalId": "bw10-31",
-    "tcgdex_id": "bw10-31",
-    "localId": "031",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "31/101",
-    "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 31/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 30,
-    "elementTypes": [
-      "Lightning"
-    ],
-    "dexIds": [
-      602
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-031-low.png",
-    "imageHighSrc": "cards/bw10-031-high.png",
-    "attacks": [
-      {
-        "name": "Razor Fin",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2114",
-    "externalId": "bw10-30",
-    "tcgdex_id": "bw10-30",
-    "localId": "030",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "30/101",
-    "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 30/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 180,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      646
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Eske Yoshinob",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-030-low.png",
-    "imageHighSrc": "cards/bw10-030-high.png",
-    "attacks": [
-      {
-        "name": "Outrage",
-        "damage": "30+"
-      },
-      {
-        "name": "Giga Frost",
-        "damage": "150"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2113",
-    "externalId": "bw10-29",
-    "tcgdex_id": "bw10-29",
-    "localId": "029",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "29/101",
-    "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 29/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      580
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-029-low.png",
-    "imageHighSrc": "cards/bw10-029-high.png",
-    "attacks": [
-      {
-        "name": "Splatter",
-        "damage": null
-      }
-    ]
-  },
-  {
-    "masterCardId": "2112",
-    "externalId": "bw10-28",
-    "tcgdex_id": "bw10-28",
-    "localId": "028",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "28/101",
-    "cardName": "Carracosta",
-    "fullDisplayName": "Carracosta 28/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 140,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      565
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Tirtouga",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-028-low.png",
-    "imageHighSrc": "cards/bw10-028-high.png",
-    "attacks": [
-      {
-        "name": "Fossil Clutch",
-        "damage": "50+"
-      },
-      {
-        "name": "Waterfall",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2111",
-    "externalId": "bw10-27",
-    "tcgdex_id": "bw10-27",
-    "localId": "027",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "27/101",
-    "cardName": "Tirtouga",
-    "fullDisplayName": "Tirtouga 27/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "RESTORED",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      564
-    ],
-    "subtypes": [
-      "Restored"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Cover Fossil",
-    "artist": "Midori Harada",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-027-low.png",
-    "imageHighSrc": "cards/bw10-027-high.png",
-    "attacks": [
-      {
-        "name": "Slam",
-        "damage": "30×"
-      }
-    ],
-    "rules": "Put this card onto your Bench only with the effect of Cover Fossil"
-  },
-  {
-    "masterCardId": "2110",
-    "externalId": "bw10-26",
-    "tcgdex_id": "bw10-26",
-    "localId": "026",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "26/101",
-    "cardName": "Abomasnow",
-    "fullDisplayName": "Abomasnow 26/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      460
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Snover",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-026-low.png",
-    "imageHighSrc": "cards/bw10-026-high.png",
-    "attacks": [
-      {
-        "name": "Razor Leaf",
-        "damage": "40"
-      },
-      {
-        "name": "Bang Heads",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2109",
-    "externalId": "bw10-25",
-    "tcgdex_id": "bw10-25",
-    "localId": "025",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "25/101",
-    "cardName": "Snover",
-    "fullDisplayName": "Snover 25/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      459
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-025-low.png",
-    "imageHighSrc": "cards/bw10-025-high.png",
-    "attacks": [
-      {
-        "name": "Beat",
-        "damage": "20"
-      },
-      {
-        "name": "Razor Leaf",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2108",
-    "externalId": "bw10-24",
-    "tcgdex_id": "bw10-24",
-    "localId": "024",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "24/101",
-    "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth 24/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      369
-    ],
-    "subtypes": [
-      "Basic",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-024-low.png",
-    "imageHighSrc": "cards/bw10-024-high.png",
-    "attacks": [
-      {
-        "name": "Fossil Hunt",
-        "damage": null
-      },
-      {
-        "name": "Water Gun",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2107",
-    "externalId": "bw10-23",
-    "tcgdex_id": "bw10-23",
-    "localId": "023",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "23/101",
-    "cardName": "Froslass",
-    "fullDisplayName": "Froslass 23/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      478
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Snorunt",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-023-low.png",
-    "imageHighSrc": "cards/bw10-023-high.png",
-    "attacks": [
-      {
-        "name": "Blizzard",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2106",
-    "externalId": "bw10-22",
-    "tcgdex_id": "bw10-22",
-    "localId": "022",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "22/101",
-    "cardName": "Glalie",
-    "fullDisplayName": "Glalie 22/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      362
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Snorunt",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-022-low.png",
-    "imageHighSrc": "cards/bw10-022-high.png",
-    "attacks": [
-      {
-        "name": "Powder Snow",
-        "damage": "30"
-      },
-      {
-        "name": "Reflect Energy",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2105",
-    "externalId": "bw10-21",
-    "tcgdex_id": "bw10-21",
-    "localId": "021",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "21/101",
-    "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 21/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      361
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kyoko Umemoto",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-021-low.png",
-    "imageHighSrc": "cards/bw10-021-high.png",
-    "attacks": [
-      {
-        "name": "Powder Snow",
-        "damage": null
-      },
-      {
-        "name": "Headbutt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2104",
-    "externalId": "bw10-20",
-    "tcgdex_id": "bw10-20",
-    "localId": "020",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "20/101",
-    "cardName": "Suicune",
-    "fullDisplayName": "Suicune 20/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      245
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-020-low.png",
-    "imageHighSrc": "cards/bw10-020-high.png",
-    "attacks": [
-      {
-        "name": "Aurora Beam",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2103",
-    "externalId": "bw10-19",
-    "tcgdex_id": "bw10-19",
-    "localId": "019",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "19/101",
-    "cardName": "Octillery",
-    "fullDisplayName": "Octillery 19/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      224
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Remoraid",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-019-low.png",
-    "imageHighSrc": "cards/bw10-019-high.png",
-    "attacks": [
-      {
-        "name": "Sharpshooting",
-        "damage": null
-      },
-      {
-        "name": "Bubble Beam",
-        "damage": "40"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2102",
-    "externalId": "bw10-18",
-    "tcgdex_id": "bw10-18",
-    "localId": "018",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "18/101",
-    "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 18/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      223
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-018-low.png",
-    "imageHighSrc": "cards/bw10-018-high.png",
-    "attacks": [
-      {
-        "name": "Bubble Beam",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2101",
-    "externalId": "bw10-17",
-    "tcgdex_id": "bw10-17",
-    "localId": "017",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "17/101",
-    "cardName": "Lapras",
-    "fullDisplayName": "Lapras 17/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      131
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-017-low.png",
-    "imageHighSrc": "cards/bw10-017-high.png",
-    "attacks": [
-      {
-        "name": "Cleanse Away",
-        "damage": null
-      },
-      {
-        "name": "Surf",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2100",
-    "externalId": "bw10-16",
-    "tcgdex_id": "bw10-16",
-    "localId": "016",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "16/101",
-    "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 16/101 Plasma Blast",
-    "rarity": "Rare Holo",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      9
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Wartortle",
-    "artist": "Satoshi Shirai",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-016-low.png",
-    "imageHighSrc": "cards/bw10-016-high.png",
-    "attacks": [
-      {
-        "name": "Hydro Pump",
-        "damage": "60+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2099",
-    "externalId": "bw10-15",
-    "tcgdex_id": "bw10-15",
-    "localId": "015",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "15/101",
-    "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 15/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      8
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Squirtle",
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-015-low.png",
-    "imageHighSrc": "cards/bw10-015-high.png",
-    "attacks": [
-      {
-        "name": "Bubble",
-        "damage": null
-      },
-      {
-        "name": "Double Spin",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2098",
-    "externalId": "bw10-14",
-    "tcgdex_id": "bw10-14",
-    "localId": "014",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "14/101",
-    "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 14/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      7
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-014-low.png",
-    "imageHighSrc": "cards/bw10-014-high.png",
-    "attacks": [
-      {
-        "name": "Bubble",
-        "damage": null
-      },
-      {
-        "name": "Water Gun",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2097",
-    "externalId": "bw10-13",
-    "tcgdex_id": "bw10-13",
-    "localId": "013",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "13/101",
-    "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 13/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      637
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Larvesta",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-013-low.png",
-    "imageHighSrc": "cards/bw10-013-high.png",
-    "attacks": [
-      {
-        "name": "Solar Transporter",
-        "damage": null
-      },
-      {
-        "name": "Leech Life",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2096",
-    "externalId": "bw10-12",
-    "tcgdex_id": "bw10-12",
-    "localId": "012",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "12/101",
-    "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 12/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      636
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-012-low.png",
-    "imageHighSrc": "cards/bw10-012-high.png",
-    "attacks": [
-      {
-        "name": "Flare",
-        "damage": "10"
-      },
-      {
-        "name": "Ember",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2095",
-    "externalId": "bw10-11",
-    "tcgdex_id": "bw10-11",
-    "localId": "011",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "11/101",
-    "cardName": "Genesect-EX",
-    "fullDisplayName": "Genesect-EX 11/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      649
-    ],
-    "subtypes": [
-      "Basic",
-      "EX",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Eske Yoshinob",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-011-low.png",
-    "imageHighSrc": "cards/bw10-011-high.png",
-    "attacks": [
-      {
-        "name": "Megalo Cannon",
-        "damage": "100"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2094",
-    "externalId": "bw10-10",
-    "tcgdex_id": "bw10-10",
-    "localId": "010",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "10/101",
-    "cardName": "Genesect",
-    "fullDisplayName": "Genesect 10/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      649
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-010-low.png",
-    "imageHighSrc": "cards/bw10-010-high.png",
-    "attacks": [
-      {
-        "name": "Call for Family",
-        "damage": null
-      },
-      {
-        "name": "Jet Impact",
-        "damage": "80+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2093",
-    "externalId": "bw10-9",
-    "tcgdex_id": "bw10-9",
-    "localId": "009",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "9/101",
-    "cardName": "Virizion-EX",
-    "fullDisplayName": "Virizion-EX 9/101 Plasma Blast",
-    "rarity": "Rare Holo EX",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 170,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      640
-    ],
-    "subtypes": [
-      "Basic",
-      "EX"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ryo Ueda",
-    "isActive": true,
-    "noPricing": true,
-    "imageLowSrc": "cards/bw10-009-low.png",
-    "imageHighSrc": "cards/bw10-009-high.png",
-    "attacks": [
-      {
-        "name": "Emerald Slash",
-        "damage": "50"
-      }
-    ],
-    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
-  },
-  {
-    "masterCardId": "2092",
-    "externalId": "bw10-8",
-    "tcgdex_id": "bw10-8",
-    "localId": "008",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "8/101",
-    "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 8/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      617
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Shelmet",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-008-low.png",
-    "imageHighSrc": "cards/bw10-008-high.png",
-    "attacks": [
-      {
-        "name": "Retribution",
-        "damage": "20"
-      },
-      {
-        "name": "Signal Beam",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2091",
-    "externalId": "bw10-7",
-    "tcgdex_id": "bw10-7",
-    "localId": "007",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "7/101",
-    "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 7/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      616
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Sumiyoshi Kizuki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-007-low.png",
-    "imageHighSrc": "cards/bw10-007-high.png",
-    "attacks": [
-      {
-        "name": "Yawn",
-        "damage": null
-      },
-      {
-        "name": "Ram",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2090",
-    "externalId": "bw10-6",
-    "tcgdex_id": "bw10-6",
-    "localId": "006",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "6/101",
-    "cardName": "Karrablast",
-    "fullDisplayName": "Karrablast 6/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      588
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "match",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-006-low.png",
-    "imageHighSrc": "cards/bw10-006-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2089",
-    "externalId": "bw10-5",
-    "tcgdex_id": "bw10-5",
-    "localId": "005",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "5/101",
-    "cardName": "Tropius",
-    "fullDisplayName": "Tropius 5/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      357
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shigenori Negishi",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-005-low.png",
-    "imageHighSrc": "cards/bw10-005-high.png",
-    "attacks": [
-      {
-        "name": "Return",
-        "damage": "10"
-      },
-      {
-        "name": "Energy Press",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2088",
-    "externalId": "bw10-4",
-    "tcgdex_id": "bw10-4",
-    "localId": "004",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "4/101",
-    "cardName": "Cradily",
-    "fullDisplayName": "Cradily 4/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 120,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      346
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Lileep",
-    "artist": "kawayoo",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-004-low.png",
-    "imageHighSrc": "cards/bw10-004-high.png",
-    "attacks": [
-      {
-        "name": "Lifesplosion",
-        "damage": null
-      },
-      {
-        "name": "Spiral Drain",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2087",
-    "externalId": "bw10-3",
-    "tcgdex_id": "bw10-3",
-    "localId": "003",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "3/101",
-    "cardName": "Lileep",
-    "fullDisplayName": "Lileep 3/101 Plasma Blast",
-    "rarity": "Uncommon",
-    "category": "Pokémon",
-    "stage": "RESTORED",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      345
-    ],
-    "subtypes": [
-      "Restored"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Root Fossil Lileep",
-    "artist": "Suwama Chiaki",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-003-low.png",
-    "imageHighSrc": "cards/bw10-003-high.png",
-    "attacks": [
-      {
-        "name": "Spiral Drain",
-        "damage": "20"
-      }
-    ],
-    "rules": "Put this card onto your Bench only with the effect of Root Fossil Lileep"
-  },
-  {
-    "masterCardId": "2086",
-    "externalId": "bw10-2",
-    "tcgdex_id": "bw10-2",
-    "localId": "002",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "2/101",
-    "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 2/101 Plasma Blast",
-    "rarity": "Rare",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      284
-    ],
-    "subtypes": [
-      "Stage 1",
-      "Team Plasma"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Surskit",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-002-low.png",
-    "imageHighSrc": "cards/bw10-002-high.png",
-    "attacks": [
-      {
-        "name": "Bug Bite",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "2085",
-    "externalId": "bw10-1",
-    "tcgdex_id": "bw10-1",
-    "localId": "001",
-    "setCode": "bw10",
-    "setTcgdexId": "bw10",
-    "cardNumber": "1/101",
-    "cardName": "Surskit",
-    "fullDisplayName": "Surskit 1/101 Plasma Blast",
-    "rarity": "Common",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      283
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/bw10-001-low.png",
-    "imageHighSrc": "cards/bw10-001-high.png",
-    "attacks": [
-      {
-        "name": "Sweet Scent",
-        "damage": null
-      }
-    ]
-  }
+    {
+        "masterCardId": "2189",
+        "externalId": "bw10-105",
+        "localId": "105",
+        "setCode": "bw10",
+        "cardNumber": "105/101",
+        "cardName": "Rare Candy",
+        "fullDisplayName": "Rare Candy 105/101 Plasma Blast",
+        "rarity": "Rare Secret",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-105-low.png",
+        "imageHighSrc": "cards/bw10-105-high.png",
+        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2188",
+        "externalId": "bw10-104",
+        "localId": "104",
+        "setCode": "bw10",
+        "cardNumber": "104/101",
+        "cardName": "Dusknoir",
+        "fullDisplayName": "Dusknoir 104/101 Plasma Blast",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            477
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/bw10-104-low.png",
+        "imageHighSrc": "cards/bw10-104-high.png",
+        "attacks": [
+            {
+                "name": "Shadow Punch",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2187",
+        "externalId": "bw10-103",
+        "localId": "103",
+        "setCode": "bw10",
+        "cardNumber": "103/101",
+        "cardName": "Virizion",
+        "fullDisplayName": "Virizion 103/101 Plasma Blast",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 110,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ayaka Yoshida",
+        "imageLowSrc": "cards/bw10-103-low.png",
+        "imageHighSrc": "cards/bw10-103-high.png",
+        "attacks": [
+            {
+                "name": "Double Draw",
+                "damage": null
+            },
+            {
+                "name": "Leaf Wallop",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2186",
+        "externalId": "bw10-102",
+        "localId": "102",
+        "setCode": "bw10",
+        "cardNumber": "102/101",
+        "cardName": "Exeggcute",
+        "fullDisplayName": "Exeggcute 102/101 Plasma Blast",
+        "rarity": "Rare Secret",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            102
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-102-low.png",
+        "imageHighSrc": "cards/bw10-102-high.png",
+        "attacks": [
+            {
+                "name": "Seed Bomb",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2185",
+        "externalId": "bw10-101",
+        "localId": "101",
+        "setCode": "bw10",
+        "cardNumber": "101/101",
+        "cardName": "Iris",
+        "fullDisplayName": "Iris 101/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw10-101-low.png",
+        "imageHighSrc": "cards/bw10-101-high.png",
+        "rules": "During this turn, your Pokémon's attacks do 10 more damage to the Active Pokémon for each Prize card your opponent has taken (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2184",
+        "externalId": "bw10-100",
+        "localId": "100",
+        "setCode": "bw10",
+        "cardNumber": "100/101",
+        "cardName": "Palkia-EX",
+        "fullDisplayName": "Palkia-EX 100/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            484
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-100-low.png",
+        "imageHighSrc": "cards/bw10-100-high.png",
+        "attacks": [
+            {
+                "name": "Strafe",
+                "damage": "50"
+            },
+            {
+                "name": "Dimension Heal",
+                "damage": "80"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2183",
+        "externalId": "bw10-99",
+        "localId": "099",
+        "setCode": "bw10",
+        "cardNumber": "99/101",
+        "cardName": "Dialga-EX",
+        "fullDisplayName": "Dialga-EX 99/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            483
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-099-low.png",
+        "imageHighSrc": "cards/bw10-099-high.png",
+        "attacks": [
+            {
+                "name": "Reverse Edge",
+                "damage": "50"
+            },
+            {
+                "name": "Fast Forward",
+                "damage": "90"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2182",
+        "externalId": "bw10-98",
+        "localId": "098",
+        "setCode": "bw10",
+        "cardNumber": "98/101",
+        "cardName": "Jirachi-EX",
+        "fullDisplayName": "Jirachi-EX 98/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            385
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-098-low.png",
+        "imageHighSrc": "cards/bw10-098-high.png",
+        "attacks": [
+            {
+                "name": "Hypnostrike",
+                "damage": "60"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2181",
+        "externalId": "bw10-97",
+        "localId": "097",
+        "setCode": "bw10",
+        "cardNumber": "97/101",
+        "cardName": "Genesect-EX",
+        "fullDisplayName": "Genesect-EX 97/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            649
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-097-low.png",
+        "imageHighSrc": "cards/bw10-097-high.png",
+        "attacks": [
+            {
+                "name": "Megalo Cannon",
+                "damage": "100"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2180",
+        "externalId": "bw10-96",
+        "localId": "096",
+        "setCode": "bw10",
+        "cardNumber": "96/101",
+        "cardName": "Virizion-EX",
+        "fullDisplayName": "Virizion-EX 96/101 Plasma Blast",
+        "rarity": "Rare Ultra",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-096-low.png",
+        "imageHighSrc": "cards/bw10-096-high.png",
+        "attacks": [
+            {
+                "name": "Emerald Slash",
+                "damage": "50"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2179",
+        "externalId": "bw10-95",
+        "localId": "095",
+        "setCode": "bw10",
+        "cardNumber": "95/101",
+        "cardName": "Scoop Up Cyclone",
+        "fullDisplayName": "Scoop Up Cyclone 95/101 Plasma Blast",
+        "rarity": "Rare ACE",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-095-low.png",
+        "imageHighSrc": "cards/bw10-095-high.png",
+        "rules": "Put 1 of your Pokémon and all cards attached to it into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
+    },
+    {
+        "masterCardId": "2178",
+        "externalId": "bw10-94",
+        "localId": "094",
+        "setCode": "bw10",
+        "cardNumber": "94/101",
+        "cardName": "Master Ball",
+        "fullDisplayName": "Master Ball 94/101 Plasma Blast",
+        "rarity": "Rare ACE",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-094-low.png",
+        "imageHighSrc": "cards/bw10-094-high.png",
+        "rules": "Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
+    },
+    {
+        "masterCardId": "2177",
+        "externalId": "bw10-93",
+        "localId": "093",
+        "setCode": "bw10",
+        "cardNumber": "93/101",
+        "cardName": "G Scope",
+        "fullDisplayName": "G Scope 93/101 Plasma Blast",
+        "rarity": "Rare ACE",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-093-low.png",
+        "imageHighSrc": "cards/bw10-093-high.png",
+        "attacks": [
+            {
+                "name": "G Scope",
+                "damage": null
+            }
+        ],
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Genesect-EX this card is attached to can also use the attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
+    },
+    {
+        "masterCardId": "2176",
+        "externalId": "bw10-92",
+        "localId": "092",
+        "setCode": "bw10",
+        "cardNumber": "92/101",
+        "cardName": "G Booster",
+        "fullDisplayName": "G Booster 92/101 Plasma Blast",
+        "rarity": "Rare ACE",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-092-low.png",
+        "imageHighSrc": "cards/bw10-092-high.png",
+        "attacks": [
+            {
+                "name": "G Booster",
+                "damage": "200"
+            }
+        ],
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Genesect-EX this card is attached to can also use the attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
+    },
+    {
+        "masterCardId": "2175",
+        "externalId": "bw10-91",
+        "localId": "091",
+        "setCode": "bw10",
+        "cardNumber": "91/101",
+        "cardName": "Plasma Energy",
+        "fullDisplayName": "Plasma Energy 91/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Energy",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": null,
+        "energyType": "Special",
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-091-low.png",
+        "imageHighSrc": "cards/bw10-091-high.png",
+        "rules": "This card provides Colorless Energy."
+    },
+    {
+        "masterCardId": "2174",
+        "externalId": "bw10-90",
+        "localId": "090",
+        "setCode": "bw10",
+        "cardNumber": "90/101",
+        "cardName": "Ultra Ball",
+        "fullDisplayName": "Ultra Ball 90/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-090-low.png",
+        "imageHighSrc": "cards/bw10-090-high.png",
+        "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2173",
+        "externalId": "bw10-89",
+        "localId": "089",
+        "setCode": "bw10",
+        "cardNumber": "89/101",
+        "cardName": "Silver Mirror",
+        "fullDisplayName": "Silver Mirror 89/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-089-low.png",
+        "imageHighSrc": "cards/bw10-089-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nPrevent all effects of attacks, including damage, done to the Pokémon this card is attached to (excluding Pokémon-EX) by your opponent's Team Plasma Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2172",
+        "externalId": "bw10-88",
+        "localId": "088",
+        "setCode": "bw10",
+        "cardNumber": "88/101",
+        "cardName": "Silver Bangle",
+        "fullDisplayName": "Silver Bangle 88/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-088-low.png",
+        "imageHighSrc": "cards/bw10-088-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe attacks of the Pokémon this card is attached to (excluding Pokémon-EX) do 30 more damage to Active Pokémon-EX (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2171",
+        "externalId": "bw10-87",
+        "localId": "087",
+        "setCode": "bw10",
+        "cardNumber": "87/101",
+        "cardName": "Root Fossil Lileep",
+        "fullDisplayName": "Root Fossil Lileep 87/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-087-low.png",
+        "imageHighSrc": "cards/bw10-087-high.png",
+        "rules": "Look at the bottom 7 cards of your deck. You may reveal a Lileep you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2170",
+        "externalId": "bw10-86",
+        "localId": "086",
+        "setCode": "bw10",
+        "cardNumber": "86/101",
+        "cardName": "Reversal Trigger",
+        "fullDisplayName": "Reversal Trigger 86/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Pokémon Tool",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-086-low.png",
+        "imageHighSrc": "cards/bw10-086-high.png",
+        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen the Team Plasma Pokémon this card is attached to is Knocked Out by damage from an opponent's attack, search your deck for a card and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2169",
+        "externalId": "bw10-85",
+        "localId": "085",
+        "setCode": "bw10",
+        "cardNumber": "85/101",
+        "cardName": "Rare Candy",
+        "fullDisplayName": "Rare Candy 85/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-085-low.png",
+        "imageHighSrc": "cards/bw10-085-high.png",
+        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2168",
+        "externalId": "bw10-84",
+        "localId": "084",
+        "setCode": "bw10",
+        "cardNumber": "84/101",
+        "cardName": "Professor Juniper",
+        "fullDisplayName": "Professor Juniper 84/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/bw10-084-low.png",
+        "imageHighSrc": "cards/bw10-084-high.png",
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2167",
+        "externalId": "bw10-83",
+        "localId": "083",
+        "setCode": "bw10",
+        "cardNumber": "83/101",
+        "cardName": "Pokémon Catcher",
+        "fullDisplayName": "Pokémon Catcher 83/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-083-low.png",
+        "imageHighSrc": "cards/bw10-083-high.png",
+        "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2166",
+        "externalId": "bw10-82",
+        "localId": "082",
+        "setCode": "bw10",
+        "cardNumber": "82/101",
+        "cardName": "Plume Fossil",
+        "fullDisplayName": "Plume Fossil 82/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-082-low.png",
+        "imageHighSrc": "cards/bw10-082-high.png",
+        "rules": "Look at the bottom 7 cards of your deck. You may reveal an Archen you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2165",
+        "externalId": "bw10-81",
+        "localId": "081",
+        "setCode": "bw10",
+        "cardNumber": "81/101",
+        "cardName": "Iris",
+        "fullDisplayName": "Iris 81/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/bw10-081-low.png",
+        "imageHighSrc": "cards/bw10-081-high.png",
+        "rules": "During this turn, your Pokémon's attacks do 10 more damage to the Active Pokémon for each Prize card your opponent has taken (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2164",
+        "externalId": "bw10-80",
+        "localId": "080",
+        "setCode": "bw10",
+        "cardNumber": "80/101",
+        "cardName": "Energy Retrieval",
+        "fullDisplayName": "Energy Retrieval 80/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kent Kanetsuna",
+        "imageLowSrc": "cards/bw10-080-low.png",
+        "imageHighSrc": "cards/bw10-080-high.png",
+        "rules": "Put 2 basic Energy cards from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2163",
+        "externalId": "bw10-79",
+        "localId": "079",
+        "setCode": "bw10",
+        "cardNumber": "79/101",
+        "cardName": "Cover Fossil",
+        "fullDisplayName": "Cover Fossil 79/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-079-low.png",
+        "imageHighSrc": "cards/bw10-079-high.png",
+        "rules": "Look at the bottom 7 cards of your deck. You may reveal a Tirtouga you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2162",
+        "externalId": "bw10-78",
+        "localId": "078",
+        "setCode": "bw10",
+        "cardNumber": "78/101",
+        "cardName": "Caitlin",
+        "fullDisplayName": "Caitlin 78/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Yusuke Ohmura",
+        "imageLowSrc": "cards/bw10-078-low.png",
+        "imageHighSrc": "cards/bw10-078-high.png",
+        "rules": "Put as many cards from your hand as you like on the bottom of your deck in any order. Then, draw a card for each card you put on the bottom of your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "2161",
+        "externalId": "bw10-77",
+        "localId": "077",
+        "setCode": "bw10",
+        "cardNumber": "77/101",
+        "cardName": "Chatot",
+        "fullDisplayName": "Chatot 77/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            441
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-077-low.png",
+        "imageHighSrc": "cards/bw10-077-high.png",
+        "attacks": [
+            {
+                "name": "Misinformation",
+                "damage": null
+            },
+            {
+                "name": "Tone-Deaf",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2160",
+        "externalId": "bw10-76",
+        "localId": "076",
+        "setCode": "bw10",
+        "cardNumber": "76/101",
+        "cardName": "Ursaring",
+        "fullDisplayName": "Ursaring 76/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            217
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-076-low.png",
+        "imageHighSrc": "cards/bw10-076-high.png",
+        "attacks": [
+            {
+                "name": "Adrenalash",
+                "damage": "50"
+            },
+            {
+                "name": "Strength",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2159",
+        "externalId": "bw10-75",
+        "localId": "075",
+        "setCode": "bw10",
+        "cardNumber": "75/101",
+        "cardName": "Teddiursa",
+        "fullDisplayName": "Teddiursa 75/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            216
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw10-075-low.png",
+        "imageHighSrc": "cards/bw10-075-high.png",
+        "attacks": [
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2158",
+        "externalId": "bw10-74",
+        "localId": "074",
+        "setCode": "bw10",
+        "cardNumber": "74/101",
+        "cardName": "Porygon-Z",
+        "fullDisplayName": "Porygon-Z 74/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            474
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-074-low.png",
+        "imageHighSrc": "cards/bw10-074-high.png",
+        "attacks": [
+            {
+                "name": "Tri Attack",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2157",
+        "externalId": "bw10-73",
+        "localId": "073",
+        "setCode": "bw10",
+        "cardNumber": "73/101",
+        "cardName": "Porygon2",
+        "fullDisplayName": "Porygon2 73/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            233
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "HiRON",
+        "imageLowSrc": "cards/bw10-073-low.png",
+        "imageHighSrc": "cards/bw10-073-high.png",
+        "attacks": [
+            {
+                "name": "Destructive Beam",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2156",
+        "externalId": "bw10-72",
+        "localId": "072",
+        "setCode": "bw10",
+        "cardNumber": "72/101",
+        "cardName": "Porygon",
+        "fullDisplayName": "Porygon 72/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            137
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw10-072-low.png",
+        "imageHighSrc": "cards/bw10-072-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2155",
+        "externalId": "bw10-71",
+        "localId": "071",
+        "setCode": "bw10",
+        "cardNumber": "71/101",
+        "cardName": "Kangaskhan",
+        "fullDisplayName": "Kangaskhan 71/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            115
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-071-low.png",
+        "imageHighSrc": "cards/bw10-071-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Comet Punch",
+                "damage": "20×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2154",
+        "externalId": "bw10-70",
+        "localId": "070",
+        "setCode": "bw10",
+        "cardNumber": "70/101",
+        "cardName": "Druddigon",
+        "fullDisplayName": "Druddigon 70/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            621
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-070-low.png",
+        "imageHighSrc": "cards/bw10-070-high.png",
+        "attacks": [
+            {
+                "name": "Big Swing",
+                "damage": "40"
+            },
+            {
+                "name": "Shred",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2153",
+        "externalId": "bw10-69",
+        "localId": "069",
+        "setCode": "bw10",
+        "cardNumber": "69/101",
+        "cardName": "Haxorus",
+        "fullDisplayName": "Haxorus 69/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            612
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-069-low.png",
+        "imageHighSrc": "cards/bw10-069-high.png",
+        "attacks": [
+            {
+                "name": "Dragonaxe",
+                "damage": "40×"
+            },
+            {
+                "name": "Strike of the Champion",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2152",
+        "externalId": "bw10-68",
+        "localId": "068",
+        "setCode": "bw10",
+        "cardNumber": "68/101",
+        "cardName": "Fraxure",
+        "fullDisplayName": "Fraxure 68/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            611
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw10-068-low.png",
+        "imageHighSrc": "cards/bw10-068-high.png",
+        "attacks": [
+            {
+                "name": "Paralyzing Gaze",
+                "damage": null
+            },
+            {
+                "name": "Dragon Claw",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2151",
+        "externalId": "bw10-67",
+        "localId": "067",
+        "setCode": "bw10",
+        "cardNumber": "67/101",
+        "cardName": "Axew",
+        "fullDisplayName": "Axew 67/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            610
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw10-067-low.png",
+        "imageHighSrc": "cards/bw10-067-high.png",
+        "attacks": [
+            {
+                "name": "Strong Bond",
+                "damage": null
+            },
+            {
+                "name": "Dragon Claw",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2150",
+        "externalId": "bw10-66",
+        "localId": "066",
+        "setCode": "bw10",
+        "cardNumber": "66/101",
+        "cardName": "Palkia-EX",
+        "fullDisplayName": "Palkia-EX 66/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            484
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/bw10-066-low.png",
+        "imageHighSrc": "cards/bw10-066-high.png",
+        "attacks": [
+            {
+                "name": "Strafe",
+                "damage": "50"
+            },
+            {
+                "name": "Dimension Heal",
+                "damage": "80"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2149",
+        "externalId": "bw10-65",
+        "localId": "065",
+        "setCode": "bw10",
+        "cardNumber": "65/101",
+        "cardName": "Dialga-EX",
+        "fullDisplayName": "Dialga-EX 65/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            483
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/bw10-065-low.png",
+        "imageHighSrc": "cards/bw10-065-high.png",
+        "attacks": [
+            {
+                "name": "Reverse Edge",
+                "damage": "50"
+            },
+            {
+                "name": "Fast Forward",
+                "damage": "90"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2148",
+        "externalId": "bw10-64",
+        "localId": "064",
+        "setCode": "bw10",
+        "cardNumber": "64/101",
+        "cardName": "Salamence",
+        "fullDisplayName": "Salamence 64/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            373
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw10-064-low.png",
+        "imageHighSrc": "cards/bw10-064-high.png",
+        "attacks": [
+            {
+                "name": "Gaia Crush",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2147",
+        "externalId": "bw10-63",
+        "localId": "063",
+        "setCode": "bw10",
+        "cardNumber": "63/101",
+        "cardName": "Shelgon",
+        "fullDisplayName": "Shelgon 63/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            372
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw10-063-low.png",
+        "imageHighSrc": "cards/bw10-063-high.png",
+        "attacks": [
+            {
+                "name": "Knock Away",
+                "damage": "10+"
+            },
+            {
+                "name": "Rollout",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2146",
+        "externalId": "bw10-62",
+        "localId": "062",
+        "setCode": "bw10",
+        "cardNumber": "62/101",
+        "cardName": "Bagon",
+        "fullDisplayName": "Bagon 62/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Dragon"
+        ],
+        "dexIds": [
+            371
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-062-low.png",
+        "imageHighSrc": "cards/bw10-062-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "10"
+            },
+            {
+                "name": "Dragon Claw",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2145",
+        "externalId": "bw10-61",
+        "localId": "061",
+        "setCode": "bw10",
+        "cardNumber": "61/101",
+        "cardName": "Escavalier",
+        "fullDisplayName": "Escavalier 61/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            589
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-061-low.png",
+        "imageHighSrc": "cards/bw10-061-high.png",
+        "attacks": [
+            {
+                "name": "Steamroll",
+                "damage": "40"
+            },
+            {
+                "name": "Slashing Strike",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2144",
+        "externalId": "bw10-60",
+        "localId": "060",
+        "setCode": "bw10",
+        "cardNumber": "60/101",
+        "cardName": "Jirachi-EX",
+        "fullDisplayName": "Jirachi-EX 60/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            385
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-060-low.png",
+        "imageHighSrc": "cards/bw10-060-high.png",
+        "attacks": [
+            {
+                "name": "Hypnostrike",
+                "damage": "60"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2143",
+        "externalId": "bw10-59",
+        "localId": "059",
+        "setCode": "bw10",
+        "cardNumber": "59/101",
+        "cardName": "Aggron",
+        "fullDisplayName": "Aggron 59/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            306
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-059-low.png",
+        "imageHighSrc": "cards/bw10-059-high.png",
+        "attacks": [
+            {
+                "name": "Knock Back",
+                "damage": "50"
+            },
+            {
+                "name": "Aura of the Land",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2142",
+        "externalId": "bw10-58",
+        "localId": "058",
+        "setCode": "bw10",
+        "cardNumber": "58/101",
+        "cardName": "Lairon",
+        "fullDisplayName": "Lairon 58/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            305
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw10-058-low.png",
+        "imageHighSrc": "cards/bw10-058-high.png",
+        "attacks": [
+            {
+                "name": "Metal Claw",
+                "damage": "20"
+            },
+            {
+                "name": "Iron Head",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2141",
+        "externalId": "bw10-57",
+        "localId": "057",
+        "setCode": "bw10",
+        "cardNumber": "57/101",
+        "cardName": "Aron",
+        "fullDisplayName": "Aron 57/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            304
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw10-057-low.png",
+        "imageHighSrc": "cards/bw10-057-high.png",
+        "attacks": [
+            {
+                "name": "Iron Head",
+                "damage": "10×"
+            },
+            {
+                "name": "Headbutt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2140",
+        "externalId": "bw10-56",
+        "localId": "056",
+        "setCode": "bw10",
+        "cardNumber": "56/101",
+        "cardName": "Houndoom",
+        "fullDisplayName": "Houndoom 56/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            229
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/bw10-056-low.png",
+        "imageHighSrc": "cards/bw10-056-high.png",
+        "attacks": [
+            {
+                "name": "Dark Clamp",
+                "damage": "30"
+            },
+            {
+                "name": "Blazing Claws",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2139",
+        "externalId": "bw10-55",
+        "localId": "055",
+        "setCode": "bw10",
+        "cardNumber": "55/101",
+        "cardName": "Houndour",
+        "fullDisplayName": "Houndour 55/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            228
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw10-055-low.png",
+        "imageHighSrc": "cards/bw10-055-high.png",
+        "attacks": [
+            {
+                "name": "Roar",
+                "damage": null
+            },
+            {
+                "name": "Ambush",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2138",
+        "externalId": "bw10-54",
+        "localId": "054",
+        "setCode": "bw10",
+        "cardNumber": "54/101",
+        "cardName": "Archeops",
+        "fullDisplayName": "Archeops 54/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            567
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-054-low.png",
+        "imageHighSrc": "cards/bw10-054-high.png",
+        "attacks": [
+            {
+                "name": "Acrobatics",
+                "damage": "20+"
+            },
+            {
+                "name": "Swift Dive",
+                "damage": "100"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2137",
+        "externalId": "bw10-53",
+        "localId": "053",
+        "setCode": "bw10",
+        "cardNumber": "53/101",
+        "cardName": "Archen",
+        "fullDisplayName": "Archen 53/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            566
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw10-053-low.png",
+        "imageHighSrc": "cards/bw10-053-high.png",
+        "attacks": [
+            {
+                "name": "Wing Attack",
+                "damage": "20"
+            }
+        ],
+        "rules": "Put this card onto your Bench only with the effect of Plume Fossil"
+    },
+    {
+        "masterCardId": "2136",
+        "externalId": "bw10-52",
+        "localId": "052",
+        "setCode": "bw10",
+        "cardNumber": "52/101",
+        "cardName": "Sawk",
+        "fullDisplayName": "Sawk 52/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            539
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw10-052-low.png",
+        "imageHighSrc": "cards/bw10-052-high.png",
+        "attacks": [
+            {
+                "name": "Kick of Righteousness",
+                "damage": "10+"
+            },
+            {
+                "name": "Low Sweep",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2135",
+        "externalId": "bw10-51",
+        "localId": "051",
+        "setCode": "bw10",
+        "cardNumber": "51/101",
+        "cardName": "Throh",
+        "fullDisplayName": "Throh 51/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            538
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw10-051-low.png",
+        "imageHighSrc": "cards/bw10-051-high.png",
+        "attacks": [
+            {
+                "name": "Freestyle Strike",
+                "damage": "30×"
+            },
+            {
+                "name": "Shoulder Throw",
+                "damage": "80-"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2134",
+        "externalId": "bw10-50",
+        "localId": "050",
+        "setCode": "bw10",
+        "cardNumber": "50/101",
+        "cardName": "Machamp",
+        "fullDisplayName": "Machamp 50/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            68
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-050-low.png",
+        "imageHighSrc": "cards/bw10-050-high.png",
+        "attacks": [
+            {
+                "name": "Knock Off",
+                "damage": "60"
+            },
+            {
+                "name": "Reinforced Lariat",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2133",
+        "externalId": "bw10-49",
+        "localId": "049",
+        "setCode": "bw10",
+        "cardNumber": "49/101",
+        "cardName": "Machamp",
+        "fullDisplayName": "Machamp 49/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            68
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw10-049-low.png",
+        "imageHighSrc": "cards/bw10-049-high.png",
+        "attacks": [
+            {
+                "name": "Close Combat",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2132",
+        "externalId": "bw10-48",
+        "localId": "048",
+        "setCode": "bw10",
+        "cardNumber": "48/101",
+        "cardName": "Machoke",
+        "fullDisplayName": "Machoke 48/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            67
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw10-048-low.png",
+        "imageHighSrc": "cards/bw10-048-high.png",
+        "attacks": [
+            {
+                "name": "Last-Chance Chop",
+                "damage": "20+"
+            },
+            {
+                "name": "Seismic Toss",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2131",
+        "externalId": "bw10-47",
+        "localId": "047",
+        "setCode": "bw10",
+        "cardNumber": "47/101",
+        "cardName": "Machop",
+        "fullDisplayName": "Machop 47/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fighting"
+        ],
+        "dexIds": [
+            66
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "sui",
+        "imageLowSrc": "cards/bw10-047-low.png",
+        "imageHighSrc": "cards/bw10-047-high.png",
+        "attacks": [
+            {
+                "name": "Low Kick",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2130",
+        "externalId": "bw10-46",
+        "localId": "046",
+        "setCode": "bw10",
+        "cardNumber": "46/101",
+        "cardName": "Golurk",
+        "fullDisplayName": "Golurk 46/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 130,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            623
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw10-046-low.png",
+        "imageHighSrc": "cards/bw10-046-high.png",
+        "attacks": [
+            {
+                "name": "Iron Fist of Justice",
+                "damage": "60"
+            },
+            {
+                "name": "Shadow Punch",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2129",
+        "externalId": "bw10-45",
+        "localId": "045",
+        "setCode": "bw10",
+        "cardNumber": "45/101",
+        "cardName": "Golett",
+        "fullDisplayName": "Golett 45/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            622
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw10-045-low.png",
+        "imageHighSrc": "cards/bw10-045-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "10"
+            },
+            {
+                "name": "Mega Punch",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2128",
+        "externalId": "bw10-44",
+        "localId": "044",
+        "setCode": "bw10",
+        "cardNumber": "44/101",
+        "cardName": "Reuniclus",
+        "fullDisplayName": "Reuniclus 44/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            579
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw10-044-low.png",
+        "imageHighSrc": "cards/bw10-044-high.png",
+        "attacks": [
+            {
+                "name": "Barrier Attack",
+                "damage": "30"
+            },
+            {
+                "name": "Telekinesis of Nobility",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2127",
+        "externalId": "bw10-43",
+        "localId": "043",
+        "setCode": "bw10",
+        "cardNumber": "43/101",
+        "cardName": "Duosion",
+        "fullDisplayName": "Duosion 43/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            578
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw10-043-low.png",
+        "imageHighSrc": "cards/bw10-043-high.png",
+        "attacks": [
+            {
+                "name": "Focused Wish",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2126",
+        "externalId": "bw10-42",
+        "localId": "042",
+        "setCode": "bw10",
+        "cardNumber": "42/101",
+        "cardName": "Solosis",
+        "fullDisplayName": "Solosis 42/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            577
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw10-042-low.png",
+        "imageHighSrc": "cards/bw10-042-high.png",
+        "attacks": [
+            {
+                "name": "Hide",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2125",
+        "externalId": "bw10-41",
+        "localId": "041",
+        "setCode": "bw10",
+        "cardNumber": "41/101",
+        "cardName": "Sigilyph",
+        "fullDisplayName": "Sigilyph 41/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            561
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw10-041-low.png",
+        "imageHighSrc": "cards/bw10-041-high.png",
+        "attacks": [
+            {
+                "name": "Cutting Wind",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2124",
+        "externalId": "bw10-40",
+        "localId": "040",
+        "setCode": "bw10",
+        "cardNumber": "40/101",
+        "cardName": "Musharna",
+        "fullDisplayName": "Musharna 40/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            518
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/bw10-040-low.png",
+        "imageHighSrc": "cards/bw10-040-high.png",
+        "attacks": [
+            {
+                "name": "Precognitive Dream",
+                "damage": null
+            },
+            {
+                "name": "Psybeam",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2123",
+        "externalId": "bw10-39",
+        "localId": "039",
+        "setCode": "bw10",
+        "cardNumber": "39/101",
+        "cardName": "Munna",
+        "fullDisplayName": "Munna 39/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            517
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/bw10-039-low.png",
+        "imageHighSrc": "cards/bw10-039-high.png",
+        "attacks": [
+            {
+                "name": "Mumble",
+                "damage": "10"
+            },
+            {
+                "name": "Focused Wish",
+                "damage": "10+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2122",
+        "externalId": "bw10-38",
+        "localId": "038",
+        "setCode": "bw10",
+        "cardNumber": "38/101",
+        "cardName": "Azelf",
+        "fullDisplayName": "Azelf 38/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            482
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw10-038-low.png",
+        "imageHighSrc": "cards/bw10-038-high.png",
+        "attacks": [
+            {
+                "name": "Trading Places",
+                "damage": null
+            },
+            {
+                "name": "Psyjamming",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2121",
+        "externalId": "bw10-37",
+        "localId": "037",
+        "setCode": "bw10",
+        "cardNumber": "37/101",
+        "cardName": "Mesprit",
+        "fullDisplayName": "Mesprit 37/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            481
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-037-low.png",
+        "imageHighSrc": "cards/bw10-037-high.png",
+        "attacks": [
+            {
+                "name": "Psyshot",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2120",
+        "externalId": "bw10-36",
+        "localId": "036",
+        "setCode": "bw10",
+        "cardNumber": "36/101",
+        "cardName": "Uxie",
+        "fullDisplayName": "Uxie 36/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            480
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw10-036-low.png",
+        "imageHighSrc": "cards/bw10-036-high.png",
+        "attacks": [
+            {
+                "name": "Psypower",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2119",
+        "externalId": "bw10-35",
+        "localId": "035",
+        "setCode": "bw10",
+        "cardNumber": "35/101",
+        "cardName": "Drifblim",
+        "fullDisplayName": "Drifblim 35/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            426
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw10-035-low.png",
+        "imageHighSrc": "cards/bw10-035-high.png",
+        "attacks": [
+            {
+                "name": "Derail",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2118",
+        "externalId": "bw10-34",
+        "localId": "034",
+        "setCode": "bw10",
+        "cardNumber": "34/101",
+        "cardName": "Drifloon",
+        "fullDisplayName": "Drifloon 34/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Psychic"
+        ],
+        "dexIds": [
+            425
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/bw10-034-low.png",
+        "imageHighSrc": "cards/bw10-034-high.png",
+        "attacks": [
+            {
+                "name": "Creepy Wind",
+                "damage": null
+            },
+            {
+                "name": "Wind Blast",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2117",
+        "externalId": "bw10-33",
+        "localId": "033",
+        "setCode": "bw10",
+        "cardNumber": "33/101",
+        "cardName": "Eelektross",
+        "fullDisplayName": "Eelektross 33/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            604
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-033-low.png",
+        "imageHighSrc": "cards/bw10-033-high.png",
+        "attacks": [
+            {
+                "name": "Crush and Burn",
+                "damage": "30×"
+            },
+            {
+                "name": "Thunder Tempest",
+                "damage": "50×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2116",
+        "externalId": "bw10-32",
+        "localId": "032",
+        "setCode": "bw10",
+        "cardNumber": "32/101",
+        "cardName": "Eelektrik",
+        "fullDisplayName": "Eelektrik 32/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            603
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Suwama Chiaki",
+        "imageLowSrc": "cards/bw10-032-low.png",
+        "imageHighSrc": "cards/bw10-032-high.png",
+        "attacks": [
+            {
+                "name": "Thunder Wave",
+                "damage": "20"
+            },
+            {
+                "name": "Headbutt",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2115",
+        "externalId": "bw10-31",
+        "localId": "031",
+        "setCode": "bw10",
+        "cardNumber": "31/101",
+        "cardName": "Tynamo",
+        "fullDisplayName": "Tynamo 31/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 30,
+        "elementTypes": [
+            "Lightning"
+        ],
+        "dexIds": [
+            602
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw10-031-low.png",
+        "imageHighSrc": "cards/bw10-031-high.png",
+        "attacks": [
+            {
+                "name": "Razor Fin",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2114",
+        "externalId": "bw10-30",
+        "localId": "030",
+        "setCode": "bw10",
+        "cardNumber": "30/101",
+        "cardName": "Kyurem-EX",
+        "fullDisplayName": "Kyurem-EX 30/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 180,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            646
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/bw10-030-low.png",
+        "imageHighSrc": "cards/bw10-030-high.png",
+        "attacks": [
+            {
+                "name": "Outrage",
+                "damage": "30+"
+            },
+            {
+                "name": "Giga Frost",
+                "damage": "150"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2113",
+        "externalId": "bw10-29",
+        "localId": "029",
+        "setCode": "bw10",
+        "cardNumber": "29/101",
+        "cardName": "Ducklett",
+        "fullDisplayName": "Ducklett 29/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            580
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/bw10-029-low.png",
+        "imageHighSrc": "cards/bw10-029-high.png",
+        "attacks": [
+            {
+                "name": "Splatter",
+                "damage": null
+            }
+        ]
+    },
+    {
+        "masterCardId": "2112",
+        "externalId": "bw10-28",
+        "localId": "028",
+        "setCode": "bw10",
+        "cardNumber": "28/101",
+        "cardName": "Carracosta",
+        "fullDisplayName": "Carracosta 28/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            565
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/bw10-028-low.png",
+        "imageHighSrc": "cards/bw10-028-high.png",
+        "attacks": [
+            {
+                "name": "Fossil Clutch",
+                "damage": "50+"
+            },
+            {
+                "name": "Waterfall",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2111",
+        "externalId": "bw10-27",
+        "localId": "027",
+        "setCode": "bw10",
+        "cardNumber": "27/101",
+        "cardName": "Tirtouga",
+        "fullDisplayName": "Tirtouga 27/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            564
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Midori Harada",
+        "imageLowSrc": "cards/bw10-027-low.png",
+        "imageHighSrc": "cards/bw10-027-high.png",
+        "attacks": [
+            {
+                "name": "Slam",
+                "damage": "30×"
+            }
+        ],
+        "rules": "Put this card onto your Bench only with the effect of Cover Fossil"
+    },
+    {
+        "masterCardId": "2110",
+        "externalId": "bw10-26",
+        "localId": "026",
+        "setCode": "bw10",
+        "cardNumber": "26/101",
+        "cardName": "Abomasnow",
+        "fullDisplayName": "Abomasnow 26/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            460
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw10-026-low.png",
+        "imageHighSrc": "cards/bw10-026-high.png",
+        "attacks": [
+            {
+                "name": "Razor Leaf",
+                "damage": "40"
+            },
+            {
+                "name": "Bang Heads",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2109",
+        "externalId": "bw10-25",
+        "localId": "025",
+        "setCode": "bw10",
+        "cardNumber": "25/101",
+        "cardName": "Snover",
+        "fullDisplayName": "Snover 25/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            459
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw10-025-low.png",
+        "imageHighSrc": "cards/bw10-025-high.png",
+        "attacks": [
+            {
+                "name": "Beat",
+                "damage": "20"
+            },
+            {
+                "name": "Razor Leaf",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2108",
+        "externalId": "bw10-24",
+        "localId": "024",
+        "setCode": "bw10",
+        "cardNumber": "24/101",
+        "cardName": "Relicanth",
+        "fullDisplayName": "Relicanth 24/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            369
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-024-low.png",
+        "imageHighSrc": "cards/bw10-024-high.png",
+        "attacks": [
+            {
+                "name": "Fossil Hunt",
+                "damage": null
+            },
+            {
+                "name": "Water Gun",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2107",
+        "externalId": "bw10-23",
+        "localId": "023",
+        "setCode": "bw10",
+        "cardNumber": "23/101",
+        "cardName": "Froslass",
+        "fullDisplayName": "Froslass 23/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            478
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-023-low.png",
+        "imageHighSrc": "cards/bw10-023-high.png",
+        "attacks": [
+            {
+                "name": "Blizzard",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2106",
+        "externalId": "bw10-22",
+        "localId": "022",
+        "setCode": "bw10",
+        "cardNumber": "22/101",
+        "cardName": "Glalie",
+        "fullDisplayName": "Glalie 22/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            362
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-022-low.png",
+        "imageHighSrc": "cards/bw10-022-high.png",
+        "attacks": [
+            {
+                "name": "Powder Snow",
+                "damage": "30"
+            },
+            {
+                "name": "Reflect Energy",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2105",
+        "externalId": "bw10-21",
+        "localId": "021",
+        "setCode": "bw10",
+        "cardNumber": "21/101",
+        "cardName": "Snorunt",
+        "fullDisplayName": "Snorunt 21/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            361
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kyoko Umemoto",
+        "imageLowSrc": "cards/bw10-021-low.png",
+        "imageHighSrc": "cards/bw10-021-high.png",
+        "attacks": [
+            {
+                "name": "Powder Snow",
+                "damage": null
+            },
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2104",
+        "externalId": "bw10-20",
+        "localId": "020",
+        "setCode": "bw10",
+        "cardNumber": "20/101",
+        "cardName": "Suicune",
+        "fullDisplayName": "Suicune 20/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            245
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw10-020-low.png",
+        "imageHighSrc": "cards/bw10-020-high.png",
+        "attacks": [
+            {
+                "name": "Aurora Beam",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2103",
+        "externalId": "bw10-19",
+        "localId": "019",
+        "setCode": "bw10",
+        "cardNumber": "19/101",
+        "cardName": "Octillery",
+        "fullDisplayName": "Octillery 19/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            224
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-019-low.png",
+        "imageHighSrc": "cards/bw10-019-high.png",
+        "attacks": [
+            {
+                "name": "Sharpshooting",
+                "damage": null
+            },
+            {
+                "name": "Bubble Beam",
+                "damage": "40"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2102",
+        "externalId": "bw10-18",
+        "localId": "018",
+        "setCode": "bw10",
+        "cardNumber": "18/101",
+        "cardName": "Remoraid",
+        "fullDisplayName": "Remoraid 18/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            223
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw10-018-low.png",
+        "imageHighSrc": "cards/bw10-018-high.png",
+        "attacks": [
+            {
+                "name": "Bubble Beam",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2101",
+        "externalId": "bw10-17",
+        "localId": "017",
+        "setCode": "bw10",
+        "cardNumber": "17/101",
+        "cardName": "Lapras",
+        "fullDisplayName": "Lapras 17/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            131
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/bw10-017-low.png",
+        "imageHighSrc": "cards/bw10-017-high.png",
+        "attacks": [
+            {
+                "name": "Cleanse Away",
+                "damage": null
+            },
+            {
+                "name": "Surf",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2100",
+        "externalId": "bw10-16",
+        "localId": "016",
+        "setCode": "bw10",
+        "cardNumber": "16/101",
+        "cardName": "Blastoise",
+        "fullDisplayName": "Blastoise 16/101 Plasma Blast",
+        "rarity": "Rare Holo",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            9
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Satoshi Shirai",
+        "imageLowSrc": "cards/bw10-016-low.png",
+        "imageHighSrc": "cards/bw10-016-high.png",
+        "attacks": [
+            {
+                "name": "Hydro Pump",
+                "damage": "60+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2099",
+        "externalId": "bw10-15",
+        "localId": "015",
+        "setCode": "bw10",
+        "cardNumber": "15/101",
+        "cardName": "Wartortle",
+        "fullDisplayName": "Wartortle 15/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            8
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw10-015-low.png",
+        "imageHighSrc": "cards/bw10-015-high.png",
+        "attacks": [
+            {
+                "name": "Bubble",
+                "damage": null
+            },
+            {
+                "name": "Double Spin",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2098",
+        "externalId": "bw10-14",
+        "localId": "014",
+        "setCode": "bw10",
+        "cardNumber": "14/101",
+        "cardName": "Squirtle",
+        "fullDisplayName": "Squirtle 14/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            7
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/bw10-014-low.png",
+        "imageHighSrc": "cards/bw10-014-high.png",
+        "attacks": [
+            {
+                "name": "Bubble",
+                "damage": null
+            },
+            {
+                "name": "Water Gun",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2097",
+        "externalId": "bw10-13",
+        "localId": "013",
+        "setCode": "bw10",
+        "cardNumber": "13/101",
+        "cardName": "Volcarona",
+        "fullDisplayName": "Volcarona 13/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            637
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-013-low.png",
+        "imageHighSrc": "cards/bw10-013-high.png",
+        "attacks": [
+            {
+                "name": "Solar Transporter",
+                "damage": null
+            },
+            {
+                "name": "Leech Life",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2096",
+        "externalId": "bw10-12",
+        "localId": "012",
+        "setCode": "bw10",
+        "cardNumber": "12/101",
+        "cardName": "Larvesta",
+        "fullDisplayName": "Larvesta 12/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            636
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw10-012-low.png",
+        "imageHighSrc": "cards/bw10-012-high.png",
+        "attacks": [
+            {
+                "name": "Flare",
+                "damage": "10"
+            },
+            {
+                "name": "Ember",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2095",
+        "externalId": "bw10-11",
+        "localId": "011",
+        "setCode": "bw10",
+        "cardNumber": "11/101",
+        "cardName": "Genesect-EX",
+        "fullDisplayName": "Genesect-EX 11/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            649
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Eske Yoshinob",
+        "imageLowSrc": "cards/bw10-011-low.png",
+        "imageHighSrc": "cards/bw10-011-high.png",
+        "attacks": [
+            {
+                "name": "Megalo Cannon",
+                "damage": "100"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2094",
+        "externalId": "bw10-10",
+        "localId": "010",
+        "setCode": "bw10",
+        "cardNumber": "10/101",
+        "cardName": "Genesect",
+        "fullDisplayName": "Genesect 10/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            649
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/bw10-010-low.png",
+        "imageHighSrc": "cards/bw10-010-high.png",
+        "attacks": [
+            {
+                "name": "Call for Family",
+                "damage": null
+            },
+            {
+                "name": "Jet Impact",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2093",
+        "externalId": "bw10-9",
+        "localId": "009",
+        "setCode": "bw10",
+        "cardNumber": "9/101",
+        "cardName": "Virizion-EX",
+        "fullDisplayName": "Virizion-EX 9/101 Plasma Blast",
+        "rarity": "Rare Holo EX",
+        "category": "Pokémon",
+        "hp": 170,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            640
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ryo Ueda",
+        "imageLowSrc": "cards/bw10-009-low.png",
+        "imageHighSrc": "cards/bw10-009-high.png",
+        "attacks": [
+            {
+                "name": "Emerald Slash",
+                "damage": "50"
+            }
+        ],
+        "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+    },
+    {
+        "masterCardId": "2092",
+        "externalId": "bw10-8",
+        "localId": "008",
+        "setCode": "bw10",
+        "cardNumber": "8/101",
+        "cardName": "Accelgor",
+        "fullDisplayName": "Accelgor 8/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            617
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-008-low.png",
+        "imageHighSrc": "cards/bw10-008-high.png",
+        "attacks": [
+            {
+                "name": "Retribution",
+                "damage": "20"
+            },
+            {
+                "name": "Signal Beam",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2091",
+        "externalId": "bw10-7",
+        "localId": "007",
+        "setCode": "bw10",
+        "cardNumber": "7/101",
+        "cardName": "Shelmet",
+        "fullDisplayName": "Shelmet 7/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            616
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Sumiyoshi Kizuki",
+        "imageLowSrc": "cards/bw10-007-low.png",
+        "imageHighSrc": "cards/bw10-007-high.png",
+        "attacks": [
+            {
+                "name": "Yawn",
+                "damage": null
+            },
+            {
+                "name": "Ram",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2090",
+        "externalId": "bw10-6",
+        "localId": "006",
+        "setCode": "bw10",
+        "cardNumber": "6/101",
+        "cardName": "Karrablast",
+        "fullDisplayName": "Karrablast 6/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            588
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "match",
+        "imageLowSrc": "cards/bw10-006-low.png",
+        "imageHighSrc": "cards/bw10-006-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2089",
+        "externalId": "bw10-5",
+        "localId": "005",
+        "setCode": "bw10",
+        "cardNumber": "5/101",
+        "cardName": "Tropius",
+        "fullDisplayName": "Tropius 5/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            357
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shigenori Negishi",
+        "imageLowSrc": "cards/bw10-005-low.png",
+        "imageHighSrc": "cards/bw10-005-high.png",
+        "attacks": [
+            {
+                "name": "Return",
+                "damage": "10"
+            },
+            {
+                "name": "Energy Press",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2088",
+        "externalId": "bw10-4",
+        "localId": "004",
+        "setCode": "bw10",
+        "cardNumber": "4/101",
+        "cardName": "Cradily",
+        "fullDisplayName": "Cradily 4/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            346
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "kawayoo",
+        "imageLowSrc": "cards/bw10-004-low.png",
+        "imageHighSrc": "cards/bw10-004-high.png",
+        "attacks": [
+            {
+                "name": "Lifesplosion",
+                "damage": null
+            },
+            {
+                "name": "Spiral Drain",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2087",
+        "externalId": "bw10-3",
+        "localId": "003",
+        "setCode": "bw10",
+        "cardNumber": "3/101",
+        "cardName": "Lileep",
+        "fullDisplayName": "Lileep 3/101 Plasma Blast",
+        "rarity": "Uncommon",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            345
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Suwama Chiaki",
+        "imageLowSrc": "cards/bw10-003-low.png",
+        "imageHighSrc": "cards/bw10-003-high.png",
+        "attacks": [
+            {
+                "name": "Spiral Drain",
+                "damage": "20"
+            }
+        ],
+        "rules": "Put this card onto your Bench only with the effect of Root Fossil Lileep"
+    },
+    {
+        "masterCardId": "2086",
+        "externalId": "bw10-2",
+        "localId": "002",
+        "setCode": "bw10",
+        "cardNumber": "2/101",
+        "cardName": "Masquerain",
+        "fullDisplayName": "Masquerain 2/101 Plasma Blast",
+        "rarity": "Rare",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            284
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/bw10-002-low.png",
+        "imageHighSrc": "cards/bw10-002-high.png",
+        "attacks": [
+            {
+                "name": "Bug Bite",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "2085",
+        "externalId": "bw10-1",
+        "localId": "001",
+        "setCode": "bw10",
+        "cardNumber": "1/101",
+        "cardName": "Surskit",
+        "fullDisplayName": "Surskit 1/101 Plasma Blast",
+        "rarity": "Common",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            283
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/bw10-001-low.png",
+        "imageHighSrc": "cards/bw10-001-high.png",
+        "attacks": [
+            {
+                "name": "Sweet Scent",
+                "damage": null
+            }
+        ]
+    }
 ]

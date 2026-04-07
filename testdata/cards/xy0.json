@@ -1,1541 +1,1190 @@
 [
-  {
-    "masterCardId": "19372",
-    "externalId": "xy0-39",
-    "tcgdex_id": "xy0-39",
-    "localId": "039",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "39/39",
-    "cardName": "Tierno",
-    "fullDisplayName": "Tierno 39/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Supporter"
-    ],
-    "trainerType": "Supporter",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Ken Sugimori",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-039-low.png",
-    "imageHighSrc": "cards/xy0-039-high.png",
-    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19363",
-    "externalId": "xy0-38",
-    "tcgdex_id": "xy0-38",
-    "localId": "038",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "38/39",
-    "cardName": "Switch",
-    "fullDisplayName": "Switch 38/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-038-low.png",
-    "imageHighSrc": "cards/xy0-038-high.png",
-    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19351",
-    "externalId": "xy0-37",
-    "tcgdex_id": "xy0-37",
-    "localId": "037",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "37/39",
-    "cardName": "Potion",
-    "fullDisplayName": "Potion 37/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-037-low.png",
-    "imageHighSrc": "cards/xy0-037-high.png",
-    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19341",
-    "externalId": "xy0-36",
-    "tcgdex_id": "xy0-36",
-    "localId": "036",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "36/39",
-    "cardName": "Pokémon Catcher",
-    "fullDisplayName": "Pokémon Catcher 36/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-036-low.png",
-    "imageHighSrc": "cards/xy0-036-high.png",
-    "rules": "Flip a coin. If heads, switch 1 of your opponent's Benched Pokémon with his or her Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19332",
-    "externalId": "xy0-35",
-    "tcgdex_id": "xy0-35",
-    "localId": "035",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "35/39",
-    "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 35/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-035-low.png",
-    "imageHighSrc": "cards/xy0-035-high.png",
-    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19322",
-    "externalId": "xy0-34",
-    "tcgdex_id": "xy0-34",
-    "localId": "034",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "34/39",
-    "cardName": "Crushing Hammer",
-    "fullDisplayName": "Crushing Hammer 34/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Trainer",
-    "stage": null,
-    "hp": null,
-    "elementTypes": [],
-    "dexIds": null,
-    "subtypes": [
-      "Item"
-    ],
-    "trainerType": "Item",
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-034-low.png",
-    "imageHighSrc": "cards/xy0-034-high.png",
-    "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-  },
-  {
-    "masterCardId": "19311",
-    "externalId": "xy0-33",
-    "tcgdex_id": "xy0-33",
-    "localId": "033",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "33/39",
-    "cardName": "Furfrou",
-    "fullDisplayName": "Furfrou 33/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      676
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-033-low.png",
-    "imageHighSrc": "cards/xy0-033-high.png",
-    "attacks": [
-      {
-        "name": "Tight Jaw",
-        "damage": "20"
-      },
-      {
-        "name": "Sharp Fang",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19302",
-    "externalId": "xy0-32",
-    "tcgdex_id": "xy0-32",
-    "localId": "032",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "32/39",
-    "cardName": "Furfrou",
-    "fullDisplayName": "Furfrou 32/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 90,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      676
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-032-low.png",
-    "imageHighSrc": "cards/xy0-032-high.png",
-    "attacks": [
-      {
-        "name": "Tight Jaw",
-        "damage": "20"
-      },
-      {
-        "name": "Sharp Fang",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19292",
-    "externalId": "xy0-31",
-    "tcgdex_id": "xy0-31",
-    "localId": "031",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "31/39",
-    "cardName": "Fletchling",
-    "fullDisplayName": "Fletchling 31/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 50,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      661
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-031-low.png",
-    "imageHighSrc": "cards/xy0-031-high.png",
-    "attacks": [
-      {
-        "name": "Razor Wind",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19282",
-    "externalId": "xy0-30",
-    "tcgdex_id": "xy0-30",
-    "localId": "030",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "30/39",
-    "cardName": "Bunnelby",
-    "fullDisplayName": "Bunnelby 30/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      659
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-030-low.png",
-    "imageHighSrc": "cards/xy0-030-high.png",
-    "attacks": [
-      {
-        "name": "Tackle",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19273",
-    "externalId": "xy0-29",
-    "tcgdex_id": "xy0-29",
-    "localId": "029",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "29/39",
-    "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 29/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      399
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-029-low.png",
-    "imageHighSrc": "cards/xy0-029-high.png",
-    "attacks": [
-      {
-        "name": "Rollout",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19263",
-    "externalId": "xy0-28",
-    "tcgdex_id": "xy0-28",
-    "localId": "028",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "28/39",
-    "cardName": "Skitty",
-    "fullDisplayName": "Skitty 28/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      300
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-028-low.png",
-    "imageHighSrc": "cards/xy0-028-high.png",
-    "attacks": [
-      {
-        "name": "Jump On",
-        "damage": "20+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19254",
-    "externalId": "xy0-27",
-    "tcgdex_id": "xy0-27",
-    "localId": "027",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "27/39",
-    "cardName": "Miltank",
-    "fullDisplayName": "Miltank 27/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 100,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      241
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-027-low.png",
-    "imageHighSrc": "cards/xy0-027-high.png",
-    "attacks": [
-      {
-        "name": "Sitdown Splash",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19244",
-    "externalId": "xy0-26",
-    "tcgdex_id": "xy0-26",
-    "localId": "026",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "26/39",
-    "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 26/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 120,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      143
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-026-low.png",
-    "imageHighSrc": "cards/xy0-026-high.png",
-    "attacks": [
-      {
-        "name": "Rock Smash",
-        "damage": "10+"
-      },
-      {
-        "name": "Strength",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19234",
-    "externalId": "xy0-25",
-    "tcgdex_id": "xy0-25",
-    "localId": "025",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "25/39",
-    "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 25/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Colorless"
-    ],
-    "dexIds": [
-      83
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-025-low.png",
-    "imageHighSrc": "cards/xy0-025-high.png",
-    "attacks": [
-      {
-        "name": "Slash",
-        "damage": "30"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19223",
-    "externalId": "xy0-24",
-    "tcgdex_id": "xy0-24",
-    "localId": "024",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "24/39",
-    "cardName": "Swirlix",
-    "fullDisplayName": "Swirlix 24/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      684
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-024-low.png",
-    "imageHighSrc": "cards/xy0-024-high.png",
-    "attacks": [
-      {
-        "name": "Draining Kiss",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19213",
-    "externalId": "xy0-23",
-    "tcgdex_id": "xy0-23",
-    "localId": "023",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "23/39",
-    "cardName": "Granbull",
-    "fullDisplayName": "Granbull 23/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 100,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      210
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Snubbull",
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-023-low.png",
-    "imageHighSrc": "cards/xy0-023-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "30"
-      },
-      {
-        "name": "Double Stomp",
-        "damage": "50+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19202",
-    "externalId": "xy0-22",
-    "tcgdex_id": "xy0-22",
-    "localId": "022",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "22/39",
-    "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 22/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fairy"
-    ],
-    "dexIds": [
-      209
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoki Saito",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-022-low.png",
-    "imageHighSrc": "cards/xy0-022-high.png",
-    "attacks": [
-      {
-        "name": "Headbutt",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19191",
-    "externalId": "xy0-21",
-    "tcgdex_id": "xy0-21",
-    "localId": "021",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "21/39",
-    "cardName": "Honedge",
-    "fullDisplayName": "Honedge 21/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      679
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-021-low.png",
-    "imageHighSrc": "cards/xy0-021-high.png",
-    "attacks": [
-      {
-        "name": "Continuous Slash",
-        "damage": "30×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19181",
-    "externalId": "xy0-20",
-    "tcgdex_id": "xy0-20",
-    "localId": "020",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "20/39",
-    "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 20/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      625
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Pawniard",
-    "artist": "Kagemaru Himeno",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-020-low.png",
-    "imageHighSrc": "cards/xy0-020-high.png",
-    "attacks": [
-      {
-        "name": "Wicked Jab",
-        "damage": "20"
-      },
-      {
-        "name": "Metal Claw",
-        "damage": "70"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19170",
-    "externalId": "xy0-19",
-    "tcgdex_id": "xy0-19",
-    "localId": "019",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "19/39",
-    "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 19/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Metal"
-    ],
-    "dexIds": [
-      624
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Kouki Saitou",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-019-low.png",
-    "imageHighSrc": "cards/xy0-019-high.png",
-    "attacks": [
-      {
-        "name": "Pierce",
-        "damage": "10"
-      },
-      {
-        "name": "Cut",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19161",
-    "externalId": "xy0-18",
-    "tcgdex_id": "xy0-18",
-    "localId": "018",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "18/39",
-    "cardName": "Inkay",
-    "fullDisplayName": "Inkay 18/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      686
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-018-low.png",
-    "imageHighSrc": "cards/xy0-018-high.png",
-    "attacks": [
-      {
-        "name": "Peck",
-        "damage": "10"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19152",
-    "externalId": "xy0-17",
-    "tcgdex_id": "xy0-17",
-    "localId": "017",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "17/39",
-    "cardName": "Mightyena",
-    "fullDisplayName": "Mightyena 17/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      262
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Poochyena",
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-017-low.png",
-    "imageHighSrc": "cards/xy0-017-high.png",
-    "attacks": [
-      {
-        "name": "Hard Bite",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19142",
-    "externalId": "xy0-16",
-    "tcgdex_id": "xy0-16",
-    "localId": "016",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "16/39",
-    "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 16/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Darkness"
-    ],
-    "dexIds": [
-      261
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mizue",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-016-low.png",
-    "imageHighSrc": "cards/xy0-016-high.png",
-    "attacks": [
-      {
-        "name": "Bite",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19132",
-    "externalId": "xy0-15",
-    "tcgdex_id": "xy0-15",
-    "localId": "015",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "15/39",
-    "cardName": "Clauncher",
-    "fullDisplayName": "Clauncher 15/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      692
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-015-low.png",
-    "imageHighSrc": "cards/xy0-015-high.png",
-    "attacks": [
-      {
-        "name": "Water Gun",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19121",
-    "externalId": "xy0-14",
-    "tcgdex_id": "xy0-14",
-    "localId": "014",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "14/39",
-    "cardName": "Greninja",
-    "fullDisplayName": "Greninja 14/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      658
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Frogadier",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-014-low.png",
-    "imageHighSrc": "cards/xy0-014-high.png",
-    "attacks": [
-      {
-        "name": "Mat Block",
-        "damage": "40"
-      },
-      {
-        "name": "Aqua Edge",
-        "damage": "80"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19112",
-    "externalId": "xy0-13",
-    "tcgdex_id": "xy0-13",
-    "localId": "013",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "13/39",
-    "cardName": "Frogadier",
-    "fullDisplayName": "Frogadier 13/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      657
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Froakie",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-013-low.png",
-    "imageHighSrc": "cards/xy0-013-high.png",
-    "attacks": [
-      {
-        "name": "Water Drip",
-        "damage": "20"
-      },
-      {
-        "name": "Aqua Wave",
-        "damage": "40+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19102",
-    "externalId": "xy0-12",
-    "tcgdex_id": "xy0-12",
-    "localId": "012",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "12/39",
-    "cardName": "Froakie",
-    "fullDisplayName": "Froakie 12/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      656
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-012-low.png",
-    "imageHighSrc": "cards/xy0-012-high.png",
-    "attacks": [
-      {
-        "name": "Pound",
-        "damage": "10"
-      },
-      {
-        "name": "Water Drip",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19091",
-    "externalId": "xy0-11",
-    "tcgdex_id": "xy0-11",
-    "localId": "011",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "11/39",
-    "cardName": "Panpour",
-    "fullDisplayName": "Panpour 11/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Water"
-    ],
-    "dexIds": [
-      515
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Shin Nagasawa",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-011-low.png",
-    "imageHighSrc": "cards/xy0-011-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19081",
-    "externalId": "xy0-10",
-    "tcgdex_id": "xy0-10",
-    "localId": "010",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "10/39",
-    "cardName": "Delphox",
-    "fullDisplayName": "Delphox 10/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 140,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      655
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Braixen",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-010-low.png",
-    "imageHighSrc": "cards/xy0-010-high.png",
-    "attacks": [
-      {
-        "name": "Will-O-Wisp",
-        "damage": "30"
-      },
-      {
-        "name": "Fire Blast",
-        "damage": "120"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19071",
-    "externalId": "xy0-9",
-    "tcgdex_id": "xy0-9",
-    "localId": "009",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "9/39",
-    "cardName": "Braixen",
-    "fullDisplayName": "Braixen 9/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      654
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Fennekin",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-009-low.png",
-    "imageHighSrc": "cards/xy0-009-high.png",
-    "attacks": [
-      {
-        "name": "Firebreathing",
-        "damage": "20+"
-      },
-      {
-        "name": "Flame Tail",
-        "damage": "60"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19063",
-    "externalId": "xy0-8",
-    "tcgdex_id": "xy0-8",
-    "localId": "008",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "8/39",
-    "cardName": "Fennekin",
-    "fullDisplayName": "Fennekin 8/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      653
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-008-low.png",
-    "imageHighSrc": "cards/xy0-008-high.png",
-    "attacks": [
-      {
-        "name": "Scratch",
-        "damage": "10"
-      },
-      {
-        "name": "Live Coal",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19053",
-    "externalId": "xy0-7",
-    "tcgdex_id": "xy0-7",
-    "localId": "007",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "7/39",
-    "cardName": "Pansear",
-    "fullDisplayName": "Pansear 7/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      513
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Naoyo Kimura",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-007-low.png",
-    "imageHighSrc": "cards/xy0-007-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19043",
-    "externalId": "xy0-6",
-    "tcgdex_id": "xy0-6",
-    "localId": "006",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "6/39",
-    "cardName": "Slugma",
-    "fullDisplayName": "Slugma 6/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 80,
-    "elementTypes": [
-      "Fire"
-    ],
-    "dexIds": [
-      218
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Mitsuhiro Arita",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-006-low.png",
-    "imageHighSrc": "cards/xy0-006-high.png",
-    "attacks": [
-      {
-        "name": "Combustion",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19033",
-    "externalId": "xy0-5",
-    "tcgdex_id": "xy0-5",
-    "localId": "005",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "5/39",
-    "cardName": "Chesnaught",
-    "fullDisplayName": "Chesnaught 5/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 2",
-    "hp": 150,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      652
-    ],
-    "subtypes": [
-      "Stage 2"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Quilladin",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-005-low.png",
-    "imageHighSrc": "cards/xy0-005-high.png",
-    "attacks": [
-      {
-        "name": "Needle Arm",
-        "damage": "50"
-      },
-      {
-        "name": "Tumbling Attack",
-        "damage": "80+"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19023",
-    "externalId": "xy0-4",
-    "tcgdex_id": "xy0-4",
-    "localId": "004",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "4/39",
-    "cardName": "Quilladin",
-    "fullDisplayName": "Quilladin 4/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Stage 1",
-    "hp": 90,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      651
-    ],
-    "subtypes": [
-      "Stage 1"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": "Chespin",
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-004-low.png",
-    "imageHighSrc": "cards/xy0-004-high.png",
-    "attacks": [
-      {
-        "name": "Leech Seed",
-        "damage": "20"
-      },
-      {
-        "name": "Needle Arm",
-        "damage": "50"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19012",
-    "externalId": "xy0-3",
-    "tcgdex_id": "xy0-3",
-    "localId": "003",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "3/39",
-    "cardName": "Chespin",
-    "fullDisplayName": "Chespin 3/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 60,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      650
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "5ban Graphics",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-003-low.png",
-    "imageHighSrc": "cards/xy0-003-high.png",
-    "attacks": [
-      {
-        "name": "Vine Whip",
-        "damage": "10"
-      },
-      {
-        "name": "Seed Bomb",
-        "damage": "20"
-      }
-    ]
-  },
-  {
-    "masterCardId": "19002",
-    "externalId": "xy0-2",
-    "tcgdex_id": "xy0-2",
-    "localId": "002",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "2/39",
-    "cardName": "Pansage",
-    "fullDisplayName": "Pansage 2/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 70,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      511
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Masakazu Fukuda",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-002-low.png",
-    "imageHighSrc": "cards/xy0-002-high.png",
-    "attacks": [
-      {
-        "name": "Collect",
-        "damage": null
-      },
-      {
-        "name": "Fury Swipes",
-        "damage": "10×"
-      }
-    ]
-  },
-  {
-    "masterCardId": "18987",
-    "externalId": "xy0-1",
-    "tcgdex_id": "xy0-1",
-    "localId": "001",
-    "setCode": "xy0",
-    "setTcgdexId": "xy0",
-    "cardNumber": "1/39",
-    "cardName": "Weedle",
-    "fullDisplayName": "Weedle 1/39 Kalos Starter Set",
-    "rarity": "None",
-    "category": "Pokémon",
-    "stage": "Basic",
-    "hp": 40,
-    "elementTypes": [
-      "Grass"
-    ],
-    "dexIds": [
-      13
-    ],
-    "subtypes": [
-      "Basic"
-    ],
-    "trainerType": null,
-    "energyType": null,
-    "regulationMark": null,
-    "evolveFrom": null,
-    "artist": "Akira Komayama",
-    "isActive": true,
-    "noPricing": false,
-    "imageLowSrc": "cards/xy0-001-low.png",
-    "imageHighSrc": "cards/xy0-001-high.png",
-    "attacks": [
-      {
-        "name": "String Shot",
-        "damage": "10"
-      }
-    ]
-  }
+    {
+        "masterCardId": "19372",
+        "externalId": "xy0-39",
+        "localId": "039",
+        "setCode": "xy0",
+        "cardNumber": "39/39",
+        "cardName": "Tierno",
+        "fullDisplayName": "Tierno 39/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Supporter",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Ken Sugimori",
+        "imageLowSrc": "cards/xy0-039-low.png",
+        "imageHighSrc": "cards/xy0-039-high.png",
+        "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19363",
+        "externalId": "xy0-38",
+        "localId": "038",
+        "setCode": "xy0",
+        "cardNumber": "38/39",
+        "cardName": "Switch",
+        "fullDisplayName": "Switch 38/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-038-low.png",
+        "imageHighSrc": "cards/xy0-038-high.png",
+        "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19351",
+        "externalId": "xy0-37",
+        "localId": "037",
+        "setCode": "xy0",
+        "cardNumber": "37/39",
+        "cardName": "Potion",
+        "fullDisplayName": "Potion 37/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-037-low.png",
+        "imageHighSrc": "cards/xy0-037-high.png",
+        "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19341",
+        "externalId": "xy0-36",
+        "localId": "036",
+        "setCode": "xy0",
+        "cardNumber": "36/39",
+        "cardName": "Pokémon Catcher",
+        "fullDisplayName": "Pokémon Catcher 36/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-036-low.png",
+        "imageHighSrc": "cards/xy0-036-high.png",
+        "rules": "Flip a coin. If heads, switch 1 of your opponent's Benched Pokémon with his or her Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19332",
+        "externalId": "xy0-35",
+        "localId": "035",
+        "setCode": "xy0",
+        "cardNumber": "35/39",
+        "cardName": "Poké Ball",
+        "fullDisplayName": "Poké Ball 35/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-035-low.png",
+        "imageHighSrc": "cards/xy0-035-high.png",
+        "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19322",
+        "externalId": "xy0-34",
+        "localId": "034",
+        "setCode": "xy0",
+        "cardNumber": "34/39",
+        "cardName": "Crushing Hammer",
+        "fullDisplayName": "Crushing Hammer 34/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Trainer",
+        "hp": null,
+        "elementTypes": [],
+        "dexIds": null,
+        "trainerType": "Item",
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-034-low.png",
+        "imageHighSrc": "cards/xy0-034-high.png",
+        "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
+    },
+    {
+        "masterCardId": "19311",
+        "externalId": "xy0-33",
+        "localId": "033",
+        "setCode": "xy0",
+        "cardNumber": "33/39",
+        "cardName": "Furfrou",
+        "fullDisplayName": "Furfrou 33/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            676
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-033-low.png",
+        "imageHighSrc": "cards/xy0-033-high.png",
+        "attacks": [
+            {
+                "name": "Tight Jaw",
+                "damage": "20"
+            },
+            {
+                "name": "Sharp Fang",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19302",
+        "externalId": "xy0-32",
+        "localId": "032",
+        "setCode": "xy0",
+        "cardNumber": "32/39",
+        "cardName": "Furfrou",
+        "fullDisplayName": "Furfrou 32/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            676
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-032-low.png",
+        "imageHighSrc": "cards/xy0-032-high.png",
+        "attacks": [
+            {
+                "name": "Tight Jaw",
+                "damage": "20"
+            },
+            {
+                "name": "Sharp Fang",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19292",
+        "externalId": "xy0-31",
+        "localId": "031",
+        "setCode": "xy0",
+        "cardNumber": "31/39",
+        "cardName": "Fletchling",
+        "fullDisplayName": "Fletchling 31/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 50,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            661
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-031-low.png",
+        "imageHighSrc": "cards/xy0-031-high.png",
+        "attacks": [
+            {
+                "name": "Razor Wind",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19282",
+        "externalId": "xy0-30",
+        "localId": "030",
+        "setCode": "xy0",
+        "cardNumber": "30/39",
+        "cardName": "Bunnelby",
+        "fullDisplayName": "Bunnelby 30/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            659
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-030-low.png",
+        "imageHighSrc": "cards/xy0-030-high.png",
+        "attacks": [
+            {
+                "name": "Tackle",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19273",
+        "externalId": "xy0-29",
+        "localId": "029",
+        "setCode": "xy0",
+        "cardNumber": "29/39",
+        "cardName": "Bidoof",
+        "fullDisplayName": "Bidoof 29/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            399
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/xy0-029-low.png",
+        "imageHighSrc": "cards/xy0-029-high.png",
+        "attacks": [
+            {
+                "name": "Rollout",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19263",
+        "externalId": "xy0-28",
+        "localId": "028",
+        "setCode": "xy0",
+        "cardNumber": "28/39",
+        "cardName": "Skitty",
+        "fullDisplayName": "Skitty 28/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            300
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/xy0-028-low.png",
+        "imageHighSrc": "cards/xy0-028-high.png",
+        "attacks": [
+            {
+                "name": "Jump On",
+                "damage": "20+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19254",
+        "externalId": "xy0-27",
+        "localId": "027",
+        "setCode": "xy0",
+        "cardNumber": "27/39",
+        "cardName": "Miltank",
+        "fullDisplayName": "Miltank 27/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            241
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/xy0-027-low.png",
+        "imageHighSrc": "cards/xy0-027-high.png",
+        "attacks": [
+            {
+                "name": "Sitdown Splash",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19244",
+        "externalId": "xy0-26",
+        "localId": "026",
+        "setCode": "xy0",
+        "cardNumber": "26/39",
+        "cardName": "Snorlax",
+        "fullDisplayName": "Snorlax 26/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 120,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            143
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/xy0-026-low.png",
+        "imageHighSrc": "cards/xy0-026-high.png",
+        "attacks": [
+            {
+                "name": "Rock Smash",
+                "damage": "10+"
+            },
+            {
+                "name": "Strength",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19234",
+        "externalId": "xy0-25",
+        "localId": "025",
+        "setCode": "xy0",
+        "cardNumber": "25/39",
+        "cardName": "Farfetch'd",
+        "fullDisplayName": "Farfetch'd 25/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Colorless"
+        ],
+        "dexIds": [
+            83
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/xy0-025-low.png",
+        "imageHighSrc": "cards/xy0-025-high.png",
+        "attacks": [
+            {
+                "name": "Slash",
+                "damage": "30"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19223",
+        "externalId": "xy0-24",
+        "localId": "024",
+        "setCode": "xy0",
+        "cardNumber": "24/39",
+        "cardName": "Swirlix",
+        "fullDisplayName": "Swirlix 24/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            684
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-024-low.png",
+        "imageHighSrc": "cards/xy0-024-high.png",
+        "attacks": [
+            {
+                "name": "Draining Kiss",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19213",
+        "externalId": "xy0-23",
+        "localId": "023",
+        "setCode": "xy0",
+        "cardNumber": "23/39",
+        "cardName": "Granbull",
+        "fullDisplayName": "Granbull 23/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 100,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            210
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/xy0-023-low.png",
+        "imageHighSrc": "cards/xy0-023-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "30"
+            },
+            {
+                "name": "Double Stomp",
+                "damage": "50+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19202",
+        "externalId": "xy0-22",
+        "localId": "022",
+        "setCode": "xy0",
+        "cardNumber": "22/39",
+        "cardName": "Snubbull",
+        "fullDisplayName": "Snubbull 22/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fairy"
+        ],
+        "dexIds": [
+            209
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoki Saito",
+        "imageLowSrc": "cards/xy0-022-low.png",
+        "imageHighSrc": "cards/xy0-022-high.png",
+        "attacks": [
+            {
+                "name": "Headbutt",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19191",
+        "externalId": "xy0-21",
+        "localId": "021",
+        "setCode": "xy0",
+        "cardNumber": "21/39",
+        "cardName": "Honedge",
+        "fullDisplayName": "Honedge 21/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            679
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-021-low.png",
+        "imageHighSrc": "cards/xy0-021-high.png",
+        "attacks": [
+            {
+                "name": "Continuous Slash",
+                "damage": "30×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19181",
+        "externalId": "xy0-20",
+        "localId": "020",
+        "setCode": "xy0",
+        "cardNumber": "20/39",
+        "cardName": "Bisharp",
+        "fullDisplayName": "Bisharp 20/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            625
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kagemaru Himeno",
+        "imageLowSrc": "cards/xy0-020-low.png",
+        "imageHighSrc": "cards/xy0-020-high.png",
+        "attacks": [
+            {
+                "name": "Wicked Jab",
+                "damage": "20"
+            },
+            {
+                "name": "Metal Claw",
+                "damage": "70"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19170",
+        "externalId": "xy0-19",
+        "localId": "019",
+        "setCode": "xy0",
+        "cardNumber": "19/39",
+        "cardName": "Pawniard",
+        "fullDisplayName": "Pawniard 19/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Metal"
+        ],
+        "dexIds": [
+            624
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Kouki Saitou",
+        "imageLowSrc": "cards/xy0-019-low.png",
+        "imageHighSrc": "cards/xy0-019-high.png",
+        "attacks": [
+            {
+                "name": "Pierce",
+                "damage": "10"
+            },
+            {
+                "name": "Cut",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19161",
+        "externalId": "xy0-18",
+        "localId": "018",
+        "setCode": "xy0",
+        "cardNumber": "18/39",
+        "cardName": "Inkay",
+        "fullDisplayName": "Inkay 18/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            686
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-018-low.png",
+        "imageHighSrc": "cards/xy0-018-high.png",
+        "attacks": [
+            {
+                "name": "Peck",
+                "damage": "10"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19152",
+        "externalId": "xy0-17",
+        "localId": "017",
+        "setCode": "xy0",
+        "cardNumber": "17/39",
+        "cardName": "Mightyena",
+        "fullDisplayName": "Mightyena 17/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            262
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/xy0-017-low.png",
+        "imageHighSrc": "cards/xy0-017-high.png",
+        "attacks": [
+            {
+                "name": "Hard Bite",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19142",
+        "externalId": "xy0-16",
+        "localId": "016",
+        "setCode": "xy0",
+        "cardNumber": "16/39",
+        "cardName": "Poochyena",
+        "fullDisplayName": "Poochyena 16/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Darkness"
+        ],
+        "dexIds": [
+            261
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mizue",
+        "imageLowSrc": "cards/xy0-016-low.png",
+        "imageHighSrc": "cards/xy0-016-high.png",
+        "attacks": [
+            {
+                "name": "Bite",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19132",
+        "externalId": "xy0-15",
+        "localId": "015",
+        "setCode": "xy0",
+        "cardNumber": "15/39",
+        "cardName": "Clauncher",
+        "fullDisplayName": "Clauncher 15/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            692
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-015-low.png",
+        "imageHighSrc": "cards/xy0-015-high.png",
+        "attacks": [
+            {
+                "name": "Water Gun",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19121",
+        "externalId": "xy0-14",
+        "localId": "014",
+        "setCode": "xy0",
+        "cardNumber": "14/39",
+        "cardName": "Greninja",
+        "fullDisplayName": "Greninja 14/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            658
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-014-low.png",
+        "imageHighSrc": "cards/xy0-014-high.png",
+        "attacks": [
+            {
+                "name": "Mat Block",
+                "damage": "40"
+            },
+            {
+                "name": "Aqua Edge",
+                "damage": "80"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19112",
+        "externalId": "xy0-13",
+        "localId": "013",
+        "setCode": "xy0",
+        "cardNumber": "13/39",
+        "cardName": "Frogadier",
+        "fullDisplayName": "Frogadier 13/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            657
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-013-low.png",
+        "imageHighSrc": "cards/xy0-013-high.png",
+        "attacks": [
+            {
+                "name": "Water Drip",
+                "damage": "20"
+            },
+            {
+                "name": "Aqua Wave",
+                "damage": "40+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19102",
+        "externalId": "xy0-12",
+        "localId": "012",
+        "setCode": "xy0",
+        "cardNumber": "12/39",
+        "cardName": "Froakie",
+        "fullDisplayName": "Froakie 12/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            656
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-012-low.png",
+        "imageHighSrc": "cards/xy0-012-high.png",
+        "attacks": [
+            {
+                "name": "Pound",
+                "damage": "10"
+            },
+            {
+                "name": "Water Drip",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19091",
+        "externalId": "xy0-11",
+        "localId": "011",
+        "setCode": "xy0",
+        "cardNumber": "11/39",
+        "cardName": "Panpour",
+        "fullDisplayName": "Panpour 11/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Water"
+        ],
+        "dexIds": [
+            515
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Shin Nagasawa",
+        "imageLowSrc": "cards/xy0-011-low.png",
+        "imageHighSrc": "cards/xy0-011-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19081",
+        "externalId": "xy0-10",
+        "localId": "010",
+        "setCode": "xy0",
+        "cardNumber": "10/39",
+        "cardName": "Delphox",
+        "fullDisplayName": "Delphox 10/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 140,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            655
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-010-low.png",
+        "imageHighSrc": "cards/xy0-010-high.png",
+        "attacks": [
+            {
+                "name": "Will-O-Wisp",
+                "damage": "30"
+            },
+            {
+                "name": "Fire Blast",
+                "damage": "120"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19071",
+        "externalId": "xy0-9",
+        "localId": "009",
+        "setCode": "xy0",
+        "cardNumber": "9/39",
+        "cardName": "Braixen",
+        "fullDisplayName": "Braixen 9/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            654
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-009-low.png",
+        "imageHighSrc": "cards/xy0-009-high.png",
+        "attacks": [
+            {
+                "name": "Firebreathing",
+                "damage": "20+"
+            },
+            {
+                "name": "Flame Tail",
+                "damage": "60"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19063",
+        "externalId": "xy0-8",
+        "localId": "008",
+        "setCode": "xy0",
+        "cardNumber": "8/39",
+        "cardName": "Fennekin",
+        "fullDisplayName": "Fennekin 8/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            653
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-008-low.png",
+        "imageHighSrc": "cards/xy0-008-high.png",
+        "attacks": [
+            {
+                "name": "Scratch",
+                "damage": "10"
+            },
+            {
+                "name": "Live Coal",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19053",
+        "externalId": "xy0-7",
+        "localId": "007",
+        "setCode": "xy0",
+        "cardNumber": "7/39",
+        "cardName": "Pansear",
+        "fullDisplayName": "Pansear 7/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            513
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Naoyo Kimura",
+        "imageLowSrc": "cards/xy0-007-low.png",
+        "imageHighSrc": "cards/xy0-007-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19043",
+        "externalId": "xy0-6",
+        "localId": "006",
+        "setCode": "xy0",
+        "cardNumber": "6/39",
+        "cardName": "Slugma",
+        "fullDisplayName": "Slugma 6/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 80,
+        "elementTypes": [
+            "Fire"
+        ],
+        "dexIds": [
+            218
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Mitsuhiro Arita",
+        "imageLowSrc": "cards/xy0-006-low.png",
+        "imageHighSrc": "cards/xy0-006-high.png",
+        "attacks": [
+            {
+                "name": "Combustion",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19033",
+        "externalId": "xy0-5",
+        "localId": "005",
+        "setCode": "xy0",
+        "cardNumber": "5/39",
+        "cardName": "Chesnaught",
+        "fullDisplayName": "Chesnaught 5/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 150,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            652
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-005-low.png",
+        "imageHighSrc": "cards/xy0-005-high.png",
+        "attacks": [
+            {
+                "name": "Needle Arm",
+                "damage": "50"
+            },
+            {
+                "name": "Tumbling Attack",
+                "damage": "80+"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19023",
+        "externalId": "xy0-4",
+        "localId": "004",
+        "setCode": "xy0",
+        "cardNumber": "4/39",
+        "cardName": "Quilladin",
+        "fullDisplayName": "Quilladin 4/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 90,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            651
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-004-low.png",
+        "imageHighSrc": "cards/xy0-004-high.png",
+        "attacks": [
+            {
+                "name": "Leech Seed",
+                "damage": "20"
+            },
+            {
+                "name": "Needle Arm",
+                "damage": "50"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19012",
+        "externalId": "xy0-3",
+        "localId": "003",
+        "setCode": "xy0",
+        "cardNumber": "3/39",
+        "cardName": "Chespin",
+        "fullDisplayName": "Chespin 3/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 60,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            650
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "5ban Graphics",
+        "imageLowSrc": "cards/xy0-003-low.png",
+        "imageHighSrc": "cards/xy0-003-high.png",
+        "attacks": [
+            {
+                "name": "Vine Whip",
+                "damage": "10"
+            },
+            {
+                "name": "Seed Bomb",
+                "damage": "20"
+            }
+        ]
+    },
+    {
+        "masterCardId": "19002",
+        "externalId": "xy0-2",
+        "localId": "002",
+        "setCode": "xy0",
+        "cardNumber": "2/39",
+        "cardName": "Pansage",
+        "fullDisplayName": "Pansage 2/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 70,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            511
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Masakazu Fukuda",
+        "imageLowSrc": "cards/xy0-002-low.png",
+        "imageHighSrc": "cards/xy0-002-high.png",
+        "attacks": [
+            {
+                "name": "Collect",
+                "damage": null
+            },
+            {
+                "name": "Fury Swipes",
+                "damage": "10×"
+            }
+        ]
+    },
+    {
+        "masterCardId": "18987",
+        "externalId": "xy0-1",
+        "localId": "001",
+        "setCode": "xy0",
+        "cardNumber": "1/39",
+        "cardName": "Weedle",
+        "fullDisplayName": "Weedle 1/39 Kalos Starter Set",
+        "rarity": "None",
+        "category": "Pokémon",
+        "hp": 40,
+        "elementTypes": [
+            "Grass"
+        ],
+        "dexIds": [
+            13
+        ],
+        "trainerType": null,
+        "energyType": null,
+        "regulationMark": null,
+        "artist": "Akira Komayama",
+        "imageLowSrc": "cards/xy0-001-low.png",
+        "imageHighSrc": "cards/xy0-001-high.png",
+        "attacks": [
+            {
+                "name": "String Shot",
+                "damage": "10"
+            }
+        ]
+    }
 ]

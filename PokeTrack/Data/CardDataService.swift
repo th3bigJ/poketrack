@@ -235,7 +235,7 @@ final class CardDataService {
         return refs.compactMap { cardByKey["\($0.setCode)|\($0.masterCardId)"] }
     }
 
-    /// Substring match on Pokédex rows (`pokemon.json`): slug `name`, display title, or dex number string.
+    /// Substring match on Pokédex rows (`pokemon.json`): kebab-case `name`, display title, or dex number string.
     func searchPokemon(matching query: String) -> [NationalDexPokemon] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
